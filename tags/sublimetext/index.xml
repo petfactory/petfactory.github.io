@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SublimeText on Petfactory</title>
-    <link>https://petfactory.se/tags/sublimetext/</link>
+    <link>https://petfactory.github.io/tags/sublimetext/</link>
     <description>Recent content in SublimeText on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Oct 2017 11:16:20 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/sublimetext/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/sublimetext/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SublimeText</title>
-      <link>https://petfactory.se/notes/sublime_text/</link>
+      <link>https://petfactory.github.io/notes/sublime_text/</link>
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/notes/sublime_text/</guid>
+      <guid>https://petfactory.github.io/notes/sublime_text/</guid>
       <description>Misc Search and replace pound or hash sign # I wanted to change a H3 header (###) in a markdown file. I first tried the ordinary search field (no regex) but I did not get any matches. What worked for me was to enable the regex search and enter the following:
 ^#{3}\sBuild system dir ~/&amp;lsquo;Library/Application Support/Sublime Text 3/Packages/User&amp;rsquo;
 python3 {&amp;#34;cmd&amp;#34;: [&amp;#34;/path/to/python3&amp;#34;, &amp;#34;-u&amp;#34;, &amp;#34;$file&amp;#34;],&amp;#34;selector&amp;#34;: &amp;#34;source.python&amp;#34;,&amp;#34;file_regex&amp;#34;: &amp;#34;^\\s*File \&amp;#34;(...*?)\&amp;#34;, line ([0-9]*)&amp;#34;}Shortcuts    CMD KEYS     Cursor at each selected line cmd + shift + L   Select occurrences cmd + D   Cursor at line above shift + ctrl + arrow up   Cursor at line below shift + ctrl + arrow down   shift current line up ctrl + cmd + arrow up   shift current line down ctrl + cmd + arrow down    </description>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Petfactory</title>
-    <link>https://petfactory.se/tags/python/</link>
+    <link>https://petfactory.github.io/tags/python/</link>
     <description>Recent content in Python on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Nov 2019 14:11:00 +0100</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Davinci Resolve - intro to python</title>
-      <link>https://petfactory.se/notes/davinci_resolve_intro_to_python/</link>
+      <link>https://petfactory.github.io/notes/davinci_resolve_intro_to_python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/davinci_resolve_intro_to_python/</guid>
+      <guid>https://petfactory.github.io/notes/davinci_resolve_intro_to_python/</guid>
       <description>An old scripting guide can be found here
 Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
     </item>
     
     <item>
       <title>Flask SQLite dev</title>
-      <link>https://petfactory.se/notes/flask_sqlite_dev/</link>
+      <link>https://petfactory.github.io/notes/flask_sqlite_dev/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/notes/flask_sqlite_dev/</guid>
+      <guid>https://petfactory.github.io/notes/flask_sqlite_dev/</guid>
       <description>The database will contain materials, material types and surface properties.
   Material
  id name material type surface properties    Material type
@@ -40,28 +40,28 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
     
     <item>
       <title>Tile Editor</title>
-      <link>https://petfactory.se/notes/tile_editor/</link>
+      <link>https://petfactory.github.io/notes/tile_editor/</link>
       <pubDate>Tue, 01 Jan 2019 20:31:44 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/tile_editor/</guid>
+      <guid>https://petfactory.github.io/notes/tile_editor/</guid>
       <description>The Tile Editor is a tool I am developing that creates tile based city blocks (houses and streets, props etc). The project started inside Maya but I have since then moved to Houdini. The gist of the tool: you have an PySide widget in which you can paint the shape of the buildings, change tile appearance and assign geometry. The tool then generates points and attributes to which geometry is instanced.</description>
     </item>
     
     <item>
       <title>PySide QTableView Custom PaintEvent</title>
-      <link>https://petfactory.se/notes/pysideide_qtableview_custom_paintevent/</link>
+      <link>https://petfactory.github.io/notes/pysideide_qtableview_custom_paintevent/</link>
       <pubDate>Wed, 25 Apr 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/notes/pysideide_qtableview_custom_paintevent/</guid>
+      <guid>https://petfactory.github.io/notes/pysideide_qtableview_custom_paintevent/</guid>
       <description>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &amp;ldquo;empty&amp;rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty.</description>
     </item>
     
     <item>
       <title>PySide stylesheet &amp; custom painting</title>
-      <link>https://petfactory.se/notes/pyside_stylesheet_and_custom_painting/</link>
+      <link>https://petfactory.github.io/notes/pyside_stylesheet_and_custom_painting/</link>
       <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/notes/pyside_stylesheet_and_custom_painting/</guid>
+      <guid>https://petfactory.github.io/notes/pyside_stylesheet_and_custom_painting/</guid>
       <description>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc.</description>
     </item>
     

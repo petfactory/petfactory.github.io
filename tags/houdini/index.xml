@@ -2,75 +2,86 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Houdini on Petfactory</title>
-    <link>https://petfactory.se/tags/houdini/</link>
+    <link>https://petfactory.github.io/tags/houdini/</link>
     <description>Recent content in Houdini on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 13:45:58 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 21:17:10 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/houdini/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/houdini/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Houdini 18 - Sparse pyro</title>
+      <link>https://petfactory.github.io/notes/houdini_18_sparse_pyro/</link>
+      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
+      
+      <guid>https://petfactory.github.io/notes/houdini_18_sparse_pyro/</guid>
+      <description>Some notes on using the sparse pyro solver taken while watching Steven Knippings excellent Volumes III v2.0
+Source points Popnet Setup a particle sim that we will use as source for our smoke sim.
+Point Wrangle Lets append a point wrangle to the particles. We will use the normailzed age to drive the density of the particles. We will use a ramp parameter and use the normalized age to drive the ramp.</description>
+    </item>
+    
+    <item>
       <title>Mocap Dance</title>
-      <link>https://petfactory.se/work/mocap_dance/</link>
+      <link>https://petfactory.github.io/work/mocap_dance/</link>
       <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/mocap_dance/</guid>
+      <guid>https://petfactory.github.io/work/mocap_dance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fluorescent</title>
-      <link>https://petfactory.se/work/fluorescent/</link>
+      <link>https://petfactory.github.io/work/fluorescent/</link>
       <pubDate>Tue, 21 Jan 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/fluorescent/</guid>
+      <guid>https://petfactory.github.io/work/fluorescent/</guid>
       <description>  </description>
     </item>
     
     <item>
       <title>Guided</title>
-      <link>https://petfactory.se/work/guided/</link>
+      <link>https://petfactory.github.io/work/guided/</link>
       <pubDate>Thu, 09 Jan 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/guided/</guid>
+      <guid>https://petfactory.github.io/work/guided/</guid>
       <description>  </description>
     </item>
     
     <item>
       <title>Dodecahedron</title>
-      <link>https://petfactory.se/work/dodecahedron/</link>
+      <link>https://petfactory.github.io/work/dodecahedron/</link>
       <pubDate>Sat, 21 Dec 2019 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/dodecahedron/</guid>
+      <guid>https://petfactory.github.io/work/dodecahedron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raku</title>
-      <link>https://petfactory.se/work/raku/</link>
+      <link>https://petfactory.github.io/work/raku/</link>
       <pubDate>Fri, 20 Dec 2019 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/raku/</guid>
+      <guid>https://petfactory.github.io/work/raku/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ceramics</title>
-      <link>https://petfactory.se/work/ceramics/</link>
+      <link>https://petfactory.github.io/work/ceramics/</link>
       <pubDate>Thu, 19 Dec 2019 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/ceramics/</guid>
+      <guid>https://petfactory.github.io/work/ceramics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Houdini - UV</title>
-      <link>https://petfactory.se/notes/houdini_uv/</link>
+      <link>https://petfactory.github.io/notes/houdini_uv/</link>
       <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_uv/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_uv/</guid>
       <description>Vieport display options Open the vieport display option dialog (press D over the viewport)
  Markers tab &amp;gt; Vertices &amp;gt; UV Overlap  Displays the overlap in red (in the UV view)    UV Layout Target Assignment (UDIM) To force specific primitives to a specific UDIM we can use a primitive attr to specify which one.
  Create a poly tube with end caps. Create groups for the top, btm and the &amp;ldquo;mid&amp;rdquo;  One way to do this is to use the group by normal for the top and btm and for the mid a group combine with &amp;ldquo;equals all but&amp;rdquo; the top and btm.</description>
@@ -78,20 +89,20 @@
     
     <item>
       <title>Houdini - Compositing</title>
-      <link>https://petfactory.se/notes/houdini_compositing/</link>
+      <link>https://petfactory.github.io/notes/houdini_compositing/</link>
       <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_compositing/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_compositing/</guid>
       <description>Preferences In the Edit &amp;gt; Preferences &amp;gt; Compositing we can set how many threads we want to use for the cooking and the Tile Size of each chunk of the tiles that will be processed. We can also set the Resolution Limit. If we do a mosaic of 1 K images we can exceed this limit and that can lead to issues.
 The turn of the thumbnails of each cop node we can disable view &amp;gt; Show Node Previews in the menubar of the cop network view.</description>
     </item>
     
     <item>
       <title>Houdini - TOPS intro</title>
-      <link>https://petfactory.se/notes/houdini_tops_intro/</link>
+      <link>https://petfactory.github.io/notes/houdini_tops_intro/</link>
       <pubDate>Thu, 12 Dec 2019 15:09:45 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_tops_intro/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_tops_intro/</guid>
       <description>TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
 Wedging in TOPS Lets have a quick look att how to set up a basic wedge setup in TOPS.
 Create the source geo  In the obj context create a Geometry node and step in Create a Box node Append a Polybevel to it  distance : 0.</description>
@@ -99,56 +110,56 @@ Create the source geo  In the obj context create a Geometry node and step in Cre
     
     <item>
       <title>Houdini 17 - Pyro</title>
-      <link>https://petfactory.se/notes/houdini_17_pyro/</link>
+      <link>https://petfactory.github.io/notes/houdini_17_pyro/</link>
       <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_17_pyro/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_17_pyro/</guid>
       <description>Add a geo to use as source and append a Pyro Source node to it. This node does not make the volume, it creates points.
 Below are some lines form the docs The Pyro Source SOP converts its input geometry into points suitable for sourcing pyro and smoke simulations. This SOP adds specified attributes to the generated points, which can be rasterized and imported into desired DOP fields by the Volume Source node.</description>
     </item>
     
     <item>
       <title>Proc city 02</title>
-      <link>https://petfactory.se/work/proc_city_02/</link>
+      <link>https://petfactory.github.io/work/proc_city_02/</link>
       <pubDate>Sun, 01 Sep 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/proc_city_02/</guid>
+      <guid>https://petfactory.github.io/work/proc_city_02/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Ray</title>
-      <link>https://petfactory.se/work/ray/</link>
+      <link>https://petfactory.github.io/work/ray/</link>
       <pubDate>Mon, 01 Jul 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/ray/</guid>
+      <guid>https://petfactory.github.io/work/ray/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Atlas Copco - Genuine parts</title>
-      <link>https://petfactory.se/work/genuine_parts/</link>
+      <link>https://petfactory.github.io/work/genuine_parts/</link>
       <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.se/work/genuine_parts/</guid>
+      <guid>https://petfactory.github.io/work/genuine_parts/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Houdini VEX - Snippets</title>
-      <link>https://petfactory.se/notes/houdini_vex/</link>
+      <link>https://petfactory.github.io/notes/houdini_vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_vex/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_vex/</guid>
       <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&#39;seed&#39;))*(chi(&#39;max_num&#39;)+1));s@z_padded = sprintf(&#39;hello_%03i&#39;, i);</description>
     </item>
     
     <item>
       <title>Houdini - Stylesheets</title>
-      <link>https://petfactory.se/notes/houdini_stylesheets/</link>
+      <link>https://petfactory.github.io/notes/houdini_stylesheets/</link>
       <pubDate>Sat, 13 Apr 2019 21:06:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_stylesheets/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_stylesheets/</guid>
       <description>Some notes on how to create a simple object level style sheet.
 Object level style sheet We have a geo node called &amp;ldquo;spheres&amp;rdquo; which consists of a number of packed primitives. We also have 2 material called yellow &amp;amp; blue. Lets add a style sheet to this object node that lets us assign different materials based on viewport selection.
 Style sheet Inspector (Data tree) Open the inspector for the material style sheets.</description>
@@ -156,20 +167,20 @@ Style sheet Inspector (Data tree) Open the inspector for the material style shee
     
     <item>
       <title>Houdini misc</title>
-      <link>https://petfactory.se/notes/houdini_misc/</link>
+      <link>https://petfactory.github.io/notes/houdini_misc/</link>
       <pubDate>Tue, 01 Jan 2019 20:32:44 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/houdini_misc/</guid>
+      <guid>https://petfactory.github.io/notes/houdini_misc/</guid>
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
 UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    </description>
     </item>
     
     <item>
       <title>Tile Editor</title>
-      <link>https://petfactory.se/notes/tile_editor/</link>
+      <link>https://petfactory.github.io/notes/tile_editor/</link>
       <pubDate>Tue, 01 Jan 2019 20:31:44 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/tile_editor/</guid>
+      <guid>https://petfactory.github.io/notes/tile_editor/</guid>
       <description>The Tile Editor is a tool I am developing that creates tile based city blocks (houses and streets, props etc). The project started inside Maya but I have since then moved to Houdini. The gist of the tool: you have an PySide widget in which you can paint the shape of the buildings, change tile appearance and assign geometry. The tool then generates points and attributes to which geometry is instanced.</description>
     </item>
     

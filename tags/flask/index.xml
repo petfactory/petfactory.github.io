@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flask on Petfactory</title>
-    <link>https://petfactory.se/tags/flask/</link>
+    <link>https://petfactory.github.io/tags/flask/</link>
     <description>Recent content in Flask on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Jan 2019 11:16:20 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flask SQLite dev</title>
-      <link>https://petfactory.se/notes/flask_sqlite_dev/</link>
+      <link>https://petfactory.github.io/notes/flask_sqlite_dev/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/notes/flask_sqlite_dev/</guid>
+      <guid>https://petfactory.github.io/notes/flask_sqlite_dev/</guid>
       <description>The database will contain materials, material types and surface properties.
   Material
  id name material type surface properties    Material type

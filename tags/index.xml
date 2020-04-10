@@ -2,183 +2,201 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Petfactory</title>
-    <link>https://petfactory.se/tags/</link>
+    <link>https://petfactory.github.io/tags/</link>
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 13:45:58 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 21:17:10 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Houdini</title>
-      <link>https://petfactory.se/tags/houdini/</link>
-      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
+      <link>https://petfactory.github.io/tags/houdini/</link>
+      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/houdini/</guid>
+      <guid>https://petfactory.github.io/tags/houdini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sim</title>
+      <link>https://petfactory.github.io/tags/sim/</link>
+      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
+      
+      <guid>https://petfactory.github.io/tags/sim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Redshift</title>
-      <link>https://petfactory.se/tags/redshift/</link>
+      <link>https://petfactory.github.io/tags/redshift/</link>
       <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/redshift/</guid>
+      <guid>https://petfactory.github.io/tags/redshift/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Substance painter</title>
-      <link>https://petfactory.se/tags/substance-painter/</link>
+      <link>https://petfactory.github.io/tags/substance-painter/</link>
       <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/substance-painter/</guid>
+      <guid>https://petfactory.github.io/tags/substance-painter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Marvelous Designer</title>
-      <link>https://petfactory.se/tags/marvelous-designer/</link>
+      <link>https://petfactory.github.io/tags/marvelous-designer/</link>
       <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/marvelous-designer/</guid>
+      <guid>https://petfactory.github.io/tags/marvelous-designer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>uv</title>
-      <link>https://petfactory.se/tags/uv/</link>
+      <link>https://petfactory.github.io/tags/uv/</link>
       <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/uv/</guid>
+      <guid>https://petfactory.github.io/tags/uv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tag</title>
-      <link>https://petfactory.se/tags/tag/</link>
+      <link>https://petfactory.github.io/tags/tag/</link>
       <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/tag/</guid>
+      <guid>https://petfactory.github.io/tags/tag/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DaVinci Resolve</title>
-      <link>https://petfactory.se/tags/davinci-resolve/</link>
+      <link>https://petfactory.github.io/tags/davinci-resolve/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/davinci-resolve/</guid>
+      <guid>https://petfactory.github.io/tags/davinci-resolve/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://petfactory.se/tags/python/</link>
+      <link>https://petfactory.github.io/tags/python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/python/</guid>
+      <guid>https://petfactory.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Edit</title>
-      <link>https://petfactory.se/tags/edit/</link>
+      <link>https://petfactory.github.io/tags/edit/</link>
       <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/edit/</guid>
+      <guid>https://petfactory.github.io/tags/edit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://petfactory.se/tags/hugo/</link>
+      <link>https://petfactory.github.io/tags/hugo/</link>
       <pubDate>Wed, 30 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/hugo/</guid>
+      <guid>https://petfactory.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pyro</title>
-      <link>https://petfactory.se/tags/pyro/</link>
+      <link>https://petfactory.github.io/tags/pyro/</link>
       <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/pyro/</guid>
+      <guid>https://petfactory.github.io/tags/pyro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maya</title>
-      <link>https://petfactory.se/tags/maya/</link>
+      <link>https://petfactory.github.io/tags/maya/</link>
       <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/maya/</guid>
+      <guid>https://petfactory.github.io/tags/maya/</guid>
       <description></description>
     </item>
     
     <item>
       <title>V-Ray</title>
-      <link>https://petfactory.se/tags/v-ray/</link>
+      <link>https://petfactory.github.io/tags/v-ray/</link>
       <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/v-ray/</guid>
+      <guid>https://petfactory.github.io/tags/v-ray/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rigging</title>
-      <link>https://petfactory.se/tags/rigging/</link>
+      <link>https://petfactory.github.io/tags/rigging/</link>
       <pubDate>Thu, 01 Aug 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/rigging/</guid>
+      <guid>https://petfactory.github.io/tags/rigging/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nuke</title>
-      <link>https://petfactory.se/tags/nuke/</link>
+      <link>https://petfactory.github.io/tags/nuke/</link>
       <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/nuke/</guid>
+      <guid>https://petfactory.github.io/tags/nuke/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VEX</title>
-      <link>https://petfactory.se/tags/vex/</link>
+      <link>https://petfactory.github.io/tags/vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://petfactory.se/tags/vex/</guid>
+      <guid>https://petfactory.github.io/tags/vex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flask</title>
-      <link>https://petfactory.se/tags/flask/</link>
+      <link>https://petfactory.github.io/tags/flask/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/flask/</guid>
+      <guid>https://petfactory.github.io/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>After Effects</title>
+      <link>https://petfactory.github.io/tags/after-effects/</link>
+      <pubDate>Tue, 01 Jan 2019 20:00:00 +0100</pubDate>
+      
+      <guid>https://petfactory.github.io/tags/after-effects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PySide</title>
-      <link>https://petfactory.se/tags/pyside/</link>
+      <link>https://petfactory.github.io/tags/pyside/</link>
       <pubDate>Wed, 25 Apr 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/pyside/</guid>
+      <guid>https://petfactory.github.io/tags/pyside/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SublimeText</title>
-      <link>https://petfactory.se/tags/sublimetext/</link>
+      <link>https://petfactory.github.io/tags/sublimetext/</link>
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/tags/sublimetext/</guid>
+      <guid>https://petfactory.github.io/tags/sublimetext/</guid>
       <description></description>
     </item>
     

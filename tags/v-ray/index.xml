@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>V-Ray on Petfactory</title>
-    <link>https://petfactory.se/tags/v-ray/</link>
+    <link>https://petfactory.github.io/tags/v-ray/</link>
     <description>Recent content in V-Ray on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Oct 2019 11:16:20 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/v-ray/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/v-ray/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tunnel</title>
-      <link>https://petfactory.se/work/tunnel/</link>
+      <link>https://petfactory.github.io/work/tunnel/</link>
       <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.se/work/tunnel/</guid>
+      <guid>https://petfactory.github.io/work/tunnel/</guid>
       <description>   </description>
     </item>
     

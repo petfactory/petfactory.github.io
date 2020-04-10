@@ -7,19 +7,19 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         
-        <link rel="icon" href="https://petfactory.se/favicons/favicon-32.png" sizes="32x32">
+        <link rel="icon" href="https://petfactory.github.io/favicons/favicon-32.png" sizes="32x32">
 
         
         
         
-        <link rel="apple-touch-icon" href="https://petfactory.se/favicons/favicon-180.png" sizes="180x180">
+        <link rel="apple-touch-icon" href="https://petfactory.github.io/favicons/favicon-180.png" sizes="180x180">
 
 	    
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	    
-        <link rel="stylesheet" href="https://petfactory.se/css/style.css">
-        <link rel="stylesheet" href="https://petfactory.se/css/syntax.css">
+        <link rel="stylesheet" href="https://petfactory.github.io/css/style.css">
+        <link rel="stylesheet" href="https://petfactory.github.io/css/syntax.css">
         
         
         
@@ -39,15 +39,15 @@
     		<div class="container d-flex flex-column flex-md-row justify-content-between main-nav-wrap">
         		
                 <div class="header-logo-wrap">
-                    <a class="py-2 home-icon" href="https://petfactory.se/">
+                    <a class="py-2 home-icon" href="https://petfactory.github.io/">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
                     <span class="header-logo-text">PETFACTORY</span>
                     </a>
                 </div>
-        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/about">ABOUT</a>
-        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/work">WORK</a>
-        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/cv">CV</a>
-                <a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/notes">NOTES</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.github.io/about">ABOUT</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.github.io/work">WORK</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.github.io/cv">CV</a>
+                <a class="py-2 d-none d-md-inline-block" href="https://petfactory.github.io/notes">NOTES</a>
       		</div>
             
     	</nav>
@@ -55,10 +55,10 @@
         <nav id="menu-wrap" class="open closed">
 
             <ul>
-                <li><a href="https://petfactory.se/about">ABOUT</a></li>
-                <li><a href="https://petfactory.se/work">WORK</a></li>
-                <li><a href="https://petfactory.se/cv">CV</a></li>
-                <li><a href="https://petfactory.se/notes">NOTES</a></li>
+                <li><a href="https://petfactory.github.io/about">ABOUT</a></li>
+                <li><a href="https://petfactory.github.io/work">WORK</a></li>
+                <li><a href="https://petfactory.github.io/cv">CV</a></li>
+                <li><a href="https://petfactory.github.io/notes">NOTES</a></li>
             </ul>
 
         </nav> 
@@ -80,23 +80,43 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#opacity">Opacity</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#id-map-fix">ID map fix</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#texture-set">Texture Set</a></li>
-    <li><a href="#channel">Channel</a></li>
-    <li><a href="#brush">Brush</a></li>
-    <li><a href="#lighting">Lighting</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#example-1">Example 1</a></li>
-    <li><a href="#flattening-passthrough">Flattening (passthrough)</a></li>
+    <li><a href="#material-sets--id-maps">Material sets &amp; ID Maps</a></li>
+    <li><a href="#texture-set-list">Texture Set List</a></li>
+    <li><a href="#texture-set-settings">Texture Set Settings</a></li>
+    <li><a href="#layers">Layers</a>
+      <ul>
+        <li><a href="#opacity">Opacity</a></li>
+      </ul>
+    </li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#shader-settings">Shader Settings</a></li>
+    <li><a href="#baking-maps">Baking maps</a>
+      <ul>
+        <li><a href="#id-map-fix">ID map fix</a></li>
+      </ul>
+    </li>
+    <li><a href="#add-custom-asset">Add custom asset</a></li>
+    <li><a href="#workflow">Workflow</a></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="#shortcuts">Shortcuts</a>
+      <ul>
+        <li><a href="#texture-set">Texture Set</a></li>
+        <li><a href="#channel">Channel</a></li>
+        <li><a href="#brush">Brush</a></li>
+        <li><a href="#lighting">Lighting</a></li>
+      </ul>
+    </li>
+    <li><a href="#anchor-points">Anchor Points</a>
+      <ul>
+        <li><a href="#example-1">Example 1</a></li>
+        <li><a href="#flattening-passthrough">Flattening (passthrough)</a></li>
+      </ul>
+    </li>
+    <li><a href="#export-textures">Export textures</a>
+      <ul>
+        <li><a href="#export-presets">Export presets</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -371,6 +391,26 @@
 </ul>
 <p><a href="https://www.youtube.com/watch?v=M3A36NYbzzk">Here</a> is a good link that demonstrates the concept above.
 <a href="https://www.youtube.com/watch?v=w44yuMFtFyM&amp;list=PLB0wXHrWAmCwnqWfKdGEmbtSKN2EzvLrY&amp;index=10">Here</a> is another one.</p>
+<h1 id="export-textures">Export textures</h1>
+<h2 id="export-presets">Export presets</h2>
+<p><a href="https://docs.substance3d.com/spdoc/creating-export-presets-98959398.html">Read the docs</a></p>
+<p>To create a new export preset:</p>
+<ul>
+<li><strong>&gt; File &gt; Export Textures</strong></li>
+<li>In the  <strong>Configuration</strong> Tab click either the duplicate selected preset ot the plus icon to create a new empty preset</li>
+<li>In the top of the <strong>Current Preset</strong> widget (in the center of the widget) click on one of the <strong>Output Maps</strong> to create it.</li>
+<li>To select which data to connect to the newly created output map we can select a map from <strong>Input maps</strong>, <strong>Mesh maps</strong> or <strong>Converted maps</strong> (right side of the widget)</li>
+<li>Click and hold on the desired map and drag and drop on the <strong>Channel type</strong> of the´the newly created output map. If you created an output map with RGB + A you will have two squares and you can connect two maps.</li>
+</ul>
+<p><strong>Note</strong> that the normal map type DirectX or OpenGL that you select in the preferences will be overridden by the normal map type that you have chosen in your export presets. In the case of <strong>Redshift</strong> you want to make sure that the <strong>Normal OpenGL</strong> map is connected to the normal output map of your export preset template.</p>
+<p>Input maps: direct channels that can be added in a texture set. Via the TextureSet settings panel.
+Mesh maps: Textures present in the additional map slots of a Texture Set (baked textures).
+Converted maps: virtual textures, those textures are generated during the export based on the channels present in the document.</p>
+<p>The path to the export presets dir:</p>
+<ul>
+<li>Windows: C:\Users*username*\Documents\Substance Painter\shelf\export-presets</li>
+<li>Mac OS: Macintosh &gt; Users &gt; <em>username</em> &gt; Documents &gt; Substance Painter &gt; shelf &gt; export-presets</li>
+</ul>
 		
 		</div>
 	</div>
@@ -387,7 +427,7 @@
         	<div class="row">
 
         		<div class="col-md-6 footer-logo-wrap">
-                    <a class="py-2 home-icon" href="https://petfactory.se/">
+                    <a class="py-2 home-icon" href="https://petfactory.github.io/">
               		    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
                     </a>
         		  	<span class="footer-logo-lext">petfactory &copy; 2019</span>
@@ -412,6 +452,6 @@
     	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     	
     	
-        <script src="https://petfactory.se/js/menu.js"></script>
+        <script src="https://petfactory.github.io/js/menu.js"></script>
 	</body>
 </html>

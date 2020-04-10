@@ -24,7 +24,7 @@
         
         
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
-	    <title>Houdini misc</title>
+	    <title>Houdini 18 - Sparse pyro</title>
 
 	</head>
 
@@ -80,9 +80,26 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#ui">UI</a>
+    <li><a href="#source-points">Source points</a>
       <ul>
-        <li><a href="#default-desktop">Default desktop</a></li>
+        <li><a href="#popnet">Popnet</a></li>
+        <li><a href="#point-wrangle">Point Wrangle</a></li>
+        <li><a href="#null">Null</a></li>
+      </ul>
+    </li>
+    <li><a href="#source-volume">Source Volume</a>
+      <ul>
+        <li><a href="#volume-rasterize-attributes">Volume Rasterize Attributes</a></li>
+        <li><a href="#density-noise-volume-vop">Density Noise (Volume VOP)</a></li>
+        <li><a href="#null-1">Null</a></li>
+      </ul>
+    </li>
+    <li><a href="#sparse-pyro-sim">Sparse Pyro Sim</a>
+      <ul>
+        <li><a href="#dop-network">Dop Network</a></li>
+        <li><a href="#pyro-solver-sparse">Pyro Solver (Sparse)</a></li>
+        <li><a href="#smoke-object-sparse">Smoke Object (Sparse)</a></li>
+        <li><a href="#volume-source">Volume Source</a></li>
       </ul>
     </li>
   </ul>
@@ -98,14 +115,175 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini misc</h1>
-			<p>A collection of various Houdini related things that doesn´t fit anywhere else.</p>
-<h1 id="ui">UI</h1>
-<h2 id="default-desktop">Default desktop</h2>
+			<h1>Houdini 18 - Sparse pyro</h1>
+			<p>Some notes on using the sparse pyro solver taken while watching Steven Knippings excellent Volumes III v2.0</p>
+<h1 id="source-points">Source points</h1>
+<h2 id="popnet">Popnet</h2>
+<p>Setup a particle sim that we will use as source for our smoke sim.</p>
+<h2 id="point-wrangle">Point Wrangle</h2>
+<p>Lets append a point wrangle to the particles. We will use the normailzed age to drive the density of the particles. We will use a ramp parameter and use the normalized age to drive the ramp. There is a built in attribute called <strong>nage</strong> (it will not show in the attr listed on the node but it is there) which is a shortcut for using @age/@life.
+We will make the ramp 1 at the beginnign and scale out over nage.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@pscale</span> <span style="color:#f92672">=</span> chramp(<span style="color:#e6db74">&#39;density_ramp&#39;</span>, <span style="color:#a6e22e">@nage</span>);
+<span style="color:#a6e22e">@density</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>;
+</code></pre></div><h2 id="null">Null</h2>
+<p>Lets add a null abd call it &ldquo;POINTS&rdquo;</p>
+<h1 id="source-volume">Source Volume</h1>
+<h2 id="volume-rasterize-attributes">Volume Rasterize Attributes</h2>
+<p>Append a volume rasterize attributes to the &ldquo;POINTS&rdquo; null.</p>
 <ul>
-<li>Edit &gt; Preferences &gt; General User Interface
+<li>Volume Rasterize Attributes
 <ul>
-<li>Startup in Desktop : Build</li>
+<li>Attributes: <strong>density</strong></li>
+<li>Voxel Size: <strong>ch(&quot;../pyro/smokeobject_sparse1/divsize&rdquo;)</strong>
+<ul>
+<li>Driven by the simulation voxel size</li>
+</ul>
+</li>
+<li>Coverage Scale: <strong>10</strong>
+<ul>
+<li>The scale of the coverage (which is density by default)</li>
+</ul>
+</li>
+<li>Particle Scale: <strong>0.5</strong> <sup>(read note below)</sup>
+<ul>
+<li><strong>Note!</strong> This is just a multiplier of the pscale, (could leave at 1 but in the lesson it was set at 0.5)</li>
+</ul>
+</li>
+<li>Velocity Blur: <strong>1</strong>
+<ul>
+<li>To make fast moving points appear smoother and less &ldquo;stepped&rdquo; we can use velocity blur</li>
+</ul>
+</li>
+<li>Shutter: <strong>1</strong>
+<ul>
+<li>The longer the shutter is open the more it will be blured</li>
+</ul>
+</li>
+<li>Shutter Offset: <strong>-1</strong>
+<ul>
+<li>To make the blur &ldquo;trail&rdquo; the particle</li>
+</ul>
+</li>
+<li>Blur Samples : <strong>8</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="density-noise-volume-vop">Density Noise (Volume VOP)</h2>
+<p>Lets add noise to our density volume. Append a volume vop and step in. We will use a 4d vector to sample antialias noise, fit the result and multiply it with the incomming density.</p>
+<ul>
+<li>Vector to Vector4</li>
+<li>connect P to the vec input and time to the fourth component</li>
+<li>Anti-Aliased Noise
+<ul>
+<li>4D freq: <strong>2 2 2 1</strong></li>
+<li>Roughness: <strong>0.8</strong></li>
+</ul>
+</li>
+<li>Hook up the hvec output to the pos input of the aa noise.</li>
+<li>Fit
+<ul>
+<li>Destination min: <strong>0.1</strong>
+<ul>
+<li>We use the fit to remap potential negative values to the dest min value. If we raise the dest min we can make sure that we never get 0 density.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>connect the aa noise output to the val input of ther fit node</li>
+</ul>
+<h2 id="null-1">Null</h2>
+<p>Lets add a null and call it &ldquo;SOURCE&rdquo;</p>
+<h1 id="sparse-pyro-sim">Sparse Pyro Sim</h1>
+<h2 id="dop-network">Dop Network</h2>
+<p>Create a <strong>Dop Network</strong> and step in.</p>
+<h2 id="pyro-solver-sparse">Pyro Solver (Sparse)</h2>
+<p>Create a <strong>Pyro Solver (Sparse)</strong> and connect to output.</p>
+<ul>
+<li>Pyro Solver (Sparse)
+<ul>
+<li>Shape
+<ul>
+<li>Dissipation: <strong>Off</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Create and merge in a <strong>Ground Plane</strong> between the output and the pyro solver.</p>
+<h2 id="smoke-object-sparse">Smoke Object (Sparse)</h2>
+<ul>
+<li>Smoke Object
+<ul>
+<li>Guides
+<ul>
+<li>Visualization
+<ul>
+<li>Active Region
+<ul>
+<li>Displays which region of the sim that is being simulated.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Create a <strong>Smoke Object (Sparse)</strong> and connect to the <strong>objects</strong> (1st) input of the pyro solver.</p>
+<h2 id="volume-source">Volume Source</h2>
+<p>Create a <strong>Volume Source</strong> and connect to the <strong>sourcing</strong> (3rd) input of the pyro solver.</p>
+<p><strong>Note!</strong> if we don´t have an explicit <strong>temperature</strong> source volume we can use the density as temperature source. We do this by typing &ldquo;density&rdquo; in the source volume field of the temperature target field (multi parm at the bottom of the parametar tab added when we initialize to source smoke)</p>
+<ul>
+<li>Volume Source
+<ul>
+<li>Input : specify if using <strong>context geometry</strong> or <strong>SOP</strong> path</li>
+<li>Initialize: <strong>Source Smoke</strong>
+<ul>
+<li>Note that we first need to select something else then select source smoke to force the param to update.</li>
+</ul>
+</li>
+<li>Volumes
+<ul>
+<li>Enlarge Fields to Contain Sources: <strong>On</strong>
+<ul>
+<li>When the voxel size of the smoke object is small and the sources is moving fast the source may be sourced outside an active region meaning it will not be used by the sim. If checked each target field will be enlarged to enclose its respective source volume.</li>
+</ul>
+</li>
+<li>Operations: 3 (multiparm)</li>
+<li>(1st)
+<ul>
+<li>Field Rank: Scalar</li>
+<li>Source Volume: density</li>
+<li>Target Field: density</li>
+<li>Operation: Add</li>
+<li>scale: 1</li>
+</ul>
+</li>
+<li>(2nd)
+<ul>
+<li>Field Rank: Scalar</li>
+<li>Source Volume: <strong>density</strong></li>
+<li>Target Field: temperature</li>
+<li>Operation: Add</li>
+<li>scale: <strong>0.1</strong>
+<ul>
+<li>Since we set the coverage scale (for density attrib) on the volume rasterize attributes node to 10 and we are using density to drive temperature we set the scale to 0.1 to get a lower temperature.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(3rd)
+<ul>
+<li>Field Rank: Vector</li>
+<li>Source Volume: v</li>
+<li>Target Field: vel</li>
+<li>Operation: Add</li>
+<li>scale: 1</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

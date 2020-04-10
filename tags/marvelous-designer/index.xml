@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Marvelous Designer on Petfactory</title>
-    <link>https://petfactory.se/tags/marvelous-designer/</link>
+    <link>https://petfactory.github.io/tags/marvelous-designer/</link>
     <description>Recent content in Marvelous Designer on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Jan 2020 11:23:08 +0100</lastBuildDate>
     
-	<atom:link href="https://petfactory.se/tags/marvelous-designer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://petfactory.github.io/tags/marvelous-designer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Marvelous Designer - intro</title>
-      <link>https://petfactory.se/notes/marvelous_designer_intro/</link>
+      <link>https://petfactory.github.io/notes/marvelous_designer_intro/</link>
       <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
       
-      <guid>https://petfactory.se/notes/marvelous_designer_intro/</guid>
+      <guid>https://petfactory.github.io/notes/marvelous_designer_intro/</guid>
       <description>Tips Right Click There are a lot of useful RMB contextual menus:
  Copy/paste multiple  If you select a pattern and press Cmd C and then Cmd V and RMB click you can use number of instances and the spacing. (The direction is decided by the direction you had when RMB clicked) This also works for Internal lines   Precise numerical movement  If you want to move a point, line pattern you can first start to drag and while holding LMB click RMB to get a popup menu where you can set a numerical value.</description>
     </item>
