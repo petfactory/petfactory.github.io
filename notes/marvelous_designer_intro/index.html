@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+    	
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+	    
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	    
+        <link rel="stylesheet" href="https://petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://petfactory.se/css/syntax.css">
+        
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
+	    <title>Marvelous Designer - intro</title>
+
+	</head>
+
+	<body>
+
+        <nav class="site-header"> 
+
+            <div class="mobile-menu-trigger">            
+                <a href="javascript:void(0);" class="menu-icon"><svg fill="#999" width="18" height="18" viewBox="0 0 18 15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg></a>
+            </div>
+
+    		<div class="container d-flex flex-column flex-md-row justify-content-between main-nav-wrap">
+        		
+                <div class="header-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    <span class="header-logo-text">PETFACTORY</span>
+                    </a>
+                </div>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/about">ABOUT</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/work">WORK</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/cv">CV</a>
+                <a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/notes">NOTES</a>
+      		</div>
+            
+    	</nav>
+
+        <nav id="menu-wrap" class="open closed">
+
+            <ul>
+                <li><a href="https://petfactory.se/about">ABOUT</a></li>
+                <li><a href="https://petfactory.se/work">WORK</a></li>
+                <li><a href="https://petfactory.se/cv">CV</a></li>
+                <li><a href="https://petfactory.se/notes">NOTES</a></li>
+            </ul>
+
+        </nav> 
+
+        
+
+        <div class="container-fluid">
+            <div id="banner-wrap">
+            </div>
+        </div>
+
+        <main>
+
+            
+
+<div class="container">
+
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#right-click">Right Click</a></li>
+    <li><a href="#transform">Transform</a></li>
+    <li><a href="#alignment">Alignment</a></li>
+    <li><a href="#selection">Selection</a></li>
+    <li><a href="#internal-lines">Internal Lines</a></li>
+    <li><a href="#ui">UI</a></li>
+    <li><a href="#gotchas">Gotchas</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#torso">Torso</a></li>
+    <li><a href="#sew-the-main-pieces">Sew the main pieces</a></li>
+    <li><a href="#sleeves">Sleeves</a></li>
+    <li><a href="#cuffs">Cuffs</a></li>
+    <li><a href="#hood">Hood</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#avatar">Avatar</a></li>
+    <li><a href="#create">Create</a></li>
+    <li><a href="#edit">Edit</a></li>
+    <li><a href="#cut">Cut</a></li>
+    <li><a href="#sew">Sew</a></li>
+    <li><a href="#tack">Tack</a></li>
+    <li><a href="#reset">Reset</a></li>
+    <li><a href="#display">Display</a></li>
+  </ul>
+</nav>
+		</aside>	
+	</div>
+
+</div>
+
+
+<div class="container notes-wrap">
+
+	<div class="row">
+		
+		<div class="col-md-10 mx-auto">
+			<h1>Marvelous Designer - intro</h1>
+			<h1 id="tips">Tips</h1>
+<h2 id="right-click">Right Click</h2>
+<p>There are a lot of useful RMB contextual menus:</p>
+<ul>
+<li><strong>Copy/paste multiple</strong>
+<ul>
+<li>If you select a pattern and press <strong>Cmd C</strong> and then <strong>Cmd V</strong> and RMB click you can use number of instances and the spacing. (The direction is decided by the direction you had when RMB clicked)
+This also works for Internal lines</li>
+</ul>
+</li>
+<li><strong>Precise numerical movement</strong>
+<ul>
+<li>If you want to move a point, line pattern you can first start to drag and while holding LMB click RMB to get a popup menu where you can set a numerical value.</li>
+</ul>
+</li>
+<li><strong>Add perpendicular internal line</strong>
+<ul>
+<li>In Z or V mode you can RMB click &gt; Add Internal Line</li>
+</ul>
+</li>
+<li><strong>Split line</strong>
+<ul>
+<li>In V mode you get a RMB menu of various ways to split a line.</li>
+</ul>
+</li>
+<li><strong>Unfold</strong>
+<ul>
+<li>In Z mode if you RMB click an segment line you can choose unfold to unfold that is to create a symetrical duplicate mirrored across the segment that were clicked.</li>
+</ul>
+</li>
+<li><strong>Add Point to Intersection</strong>
+<ul>
+<li>In Z mode if you want to add a segment point where an internal line intersects the pattern outline (or another internal line) RMB click the pattern outline or internal line and choose &gt; Add Point to Intersection.</li>
+</ul>
+</li>
+</ul>
+<h2 id="transform">Transform</h2>
+<ul>
+<li><strong>Set pivot position</strong>
+<ul>
+<li>To set the pivot, double click the pivot while in transform mode.</li>
+</ul>
+</li>
+<li><strong>Transform point/segment</strong>
+<ul>
+<li>To get a transform handle (like you do when editing patterns) when you are in the Z - Edit Pattern you can use the submenu of the command. LMB click and hold on Z - Edit Pattern and choose Transform Point/Segment.</li>
+</ul>
+</li>
+<li><strong>Symmetric scaling of points/lines</strong>
+<ul>
+<li>Lets say that you want to make a pattern wider by scaling two points. To do this use the Transform Point/Segment (discussed above) but before you scale double click the pivot to activate it.</li>
+</ul>
+</li>
+</ul>
+<h2 id="alignment">Alignment</h2>
+<p>To verify that pattern edges align (in curvature and or position) it can be useful to align the shared seam/edges. For instance you wish to verify that the pattern flows nicely around the neck on the front and back pattern.</p>
+<ul>
+<li><strong>Align two edges 2D view (rotation)</strong>
+<ul>
+<li>Rotate the pattern that you wish to align so that it roughly matches the desired edge.</li>
+<li>RMB click on the pattern you wish to align select <strong>&gt; Rotate &gt; Parallell to</strong></li>
+<li>Then click the edge you wish to align to</li>
+<li>Finally click the edge that you wish to align.</li>
+</ul>
+</li>
+<li><strong>Align egde with axis</strong>
+<ul>
+<li>In the <strong>A - Transform Pattern</strong> mode RMB click the pattern and choose <strong>&gt; Rotate &gt; Y-Axis</strong> then click the pattern line you want to align.</li>
+</ul>
+</li>
+<li><strong>Snap to points together (translation)</strong>
+<ul>
+<li>In <strong>V</strong> or <strong>Z</strong> mode first click the point that you wish to move.</li>
+<li>Hold <strong>shift</strong> and <strong>RMB</strong> click the destination point and choose <strong>&gt; Match up</strong> from the popup menu.</li>
+</ul>
+</li>
+</ul>
+<h2 id="selection">Selection</h2>
+<ul>
+<li><strong>Lasso select</strong>
+<ul>
+<li>To use the lasso select double click to initiate the selection.</li>
+</ul>
+</li>
+<li><strong>Select All Internal Lines</strong>
+<ul>
+<li>In Z mode double click an internal line, wait until the end points dots are highlighted in yellow, then double click the same line again.</li>
+</ul>
+</li>
+</ul>
+<h2 id="internal-lines">Internal Lines</h2>
+<p>Internal lines can be used to sew to, to cut with, add elastics and more. They also change the topology of the mesh, meaning that the resulting mesh will have polgon edges following the internal line.</p>
+<ul>
+<li><strong>Delete a segment</strong>
+<ul>
+<li>In Z mode if you LMB select a segment of an internal line and press delete the resulting gap will be closed by remaining lines. If you want to delete but keep the gap open, RMB click the segment first and &gt; Divide Internal Line then delete.</li>
+</ul>
+</li>
+<li><strong>Extend/Trim to Pattern Outline</strong>
+<ul>
+<li>In Z mode if you RMB on an internal extend the line.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ui">UI</h2>
+<ul>
+<li><strong>Submenus</strong>
+<ul>
+<li>Buttons that have a small arrow in the lower right corner have sub menus LMB long press to get tp them.</li>
+</ul>
+</li>
+</ul>
+<h2 id="gotchas">Gotchas</h2>
+<p>When I used <strong>Offset Pattern Outline</strong> and <strong>Cut and Sew</strong> that internal line I lost my previous 3D arrangement (when I clicked <strong>cmd F</strong>) it went back to the &ldquo;flat 2D view&rdquo;. I am not sure if this is because the offset and cut an sew actiosn i did. One easy way to get it back was selected all the patterns and its trims and using the arrangement points to get it back. Can be really nice the be able to go back to this position to resim if the sim totally messes up.</p>
+<p>Here is a really nice getting started video by <a href="https://www.youtube.com/watch?v=vQUJti1m-3k&amp;t=600s">JetSetGeometry</a></p>
+<h1 id="hoodie">Hoodie</h1>
+<p>Below are some notes I took while watching a really sweet tutorial by <a href="https://www.youtube.com/watch?v=M5nU5MGH1j8&amp;t=250s">JetSetGeometry</a> on making a hoodie.</p>
+<h2 id="torso">Torso</h2>
+<ul>
+<li>Draw the left side using <strong>H - Polygon</strong> tool</li>
+<li>Use the <strong>C - Edit Curvature</strong> tool and add curvature to the pattern, and/or <strong>Z - Edit Pattern</strong> to move the points or use the bezier handles.</li>
+<li>Switch to <strong>A - Transform pattern</strong> mode and copy/paste the pattern and place on the left side of the original pattern.</li>
+<li>In the 3D view RMB click the pasted pattern an &gt; <strong>Cmd G - Flip Normal</strong></li>
+<li>Enable the <strong>shift F - Arrangement Points</strong> in the 3D view and make sure you are in <strong>Q - Select/Move</strong> mode.</li>
+<li>Click the patterns and the arrangement points that you want to use. You could use the transform gizmo to nudge the placement.</li>
+<li>In the 2D view select the pattern and press <strong>Cmd + D - Symetric Pattern (with sewing)</strong> place the patterns.</li>
+</ul>
+<h2 id="sew-the-main-pieces">Sew the main pieces</h2>
+<ul>
+<li>In the 2D view press <strong>N - Segment Sewing</strong> and click the corresponding pattern edges to sew them.</li>
+</ul>
+<h2 id="sleeves">Sleeves</h2>
+<h2 id="cuffs">Cuffs</h2>
+<p>In the 2D view the sleeve is oriented with the armpit a the length of the arm is pointing straight down. (this is important if you want to follow the steps below)
+We create the cuff with a rectangle polygon that are a bit narrower then the end of the sleeve. Sew the cuff to the sleeve and sew the cuff ends together.</p>
+<p>If we want a thicker cuff, like in a hoodie where the cuff is made up from a fabric that is folded twice we can do the following:</p>
+<ul>
+<li>To make it easier to see what we are doing we do the following in the 3D view:
+<ul>
+<li>Switch to single sided surface <strong>Alt 2</strong> or use the &ldquo;3D view buttons&rdquo;</li>
+<li>Hide the avatar <strong>Shift A</strong></li>
+</ul>
+</li>
+<li>Then we do this in the 2D view:
+<ul>
+<li>RMB click the &ldquo;original&rdquo; cuff pattern <strong>&gt; Layer Clone (Under)</strong> or use <strong>Shift cmd B</strong> (2D view) and place the clone under the original cuff.</li>
+<li>RMB click the clone <strong>&gt; Remove Linked Editing</strong> (2D view)</li>
+<li>In the <strong>B - Edit Sewing</strong> mode we click on the clone seams and delete them.</li>
+<li>Now lets sew the bottom parts together. Enable <strong>N - Segment Sewing</strong> and click the bottom left seam of the clone then click on the bottom left seam of the original seam.</li>
+<li>Now lets sew the top &ldquo;inner&rdquo; seam. Click on the top left seam of the clone and sew it to the top left seam of the original seam. Select the seam and set the <strong>Sewing Line Type</strong> to <strong>Turned</strong></li>
+<li>Sew the ends of the clone together.</li>
+<li>In the <strong>B - Edit sewing</strong> mode RMB click on the lower seam of the clone and <strong>&gt; Merge</strong></li>
+<li>Add an <strong>G - internal Polygon Line</strong> that runs horizontally through the middle of the cuff.</li>
+<li>Step into <strong>Z - Edit Pattern</strong> and and RMB click the created internal line and choose <strong>Offset as Internal Line</strong> the line upwards 2 times with 2mm.</li>
+<li>Do the same downwards by enabling <strong>Reverse Direction</strong> on the pop dialog.</li>
+<li>In <strong>Z - Edit Pattern</strong> mode select all the created lines and set the <strong>Fold Rendering</strong> to off. This will give the fold a smoother look.</li>
+<li>To give the seam where the cuff attatches to the sleeve, in <strong>Z - Edit Pattern</strong> mode RMB click the top seam a choose <strong>Offset as Internal Line</strong> using the same setttings as before.</li>
+<li>Select the newly created internal lines and turn off <strong>Fold Rendering</strong> and raise the <strong>Fold Angle</strong> so that the edge gets a little puffier.</li>
+</ul>
+</li>
+<li>To give it a little bit more volume in the 3D view:
+<ul>
+<li>Select the cuff and change the <strong>Add Thickness - Collision (mm)</strong> to 3.0</li>
+</ul>
+</li>
+</ul>
+<h2 id="hood">Hood</h2>
+<p>First we draw the left piece of the hood. The front edge of the hood will be aligned with the y-axis. To give the hood some structure in the front we will create an inner piece to double up the front. To do this we do the following.</p>
+<ul>
+<li>In the 2D view:
+<ul>
+<li>In <strong>Z - Edit Pattern</strong> RMB click on the front seam (aligned with the y-axis) and <strong>&gt; Offset as Internal Line</strong> and offset 40 mm.</li>
+<li>Enable <strong>I - Trace</strong> tool and click on the newly created internal line and shift click the sorounding 3 lines that makes up a square shape in the front. (dont think the order matters)</li>
+<li>RMB click on the selected lines and <strong>&gt; Trace as a Pattern</strong></li>
+<li>Use <strong>N - Segment Sew</strong> to sew the vertical seams of the created traced pattern to the hod front line and the internal line we created.</li>
+</ul>
+</li>
+<li>In the 3D view:
+<ul>
+<li>RMB click the traced pattern and choose ** &gt; Superimpose (Under)**</li>
+<li>RMB lick the traced pattern and choose <strong>&gt; Cmd G - Flip Normal</strong></li>
+</ul>
+</li>
+<li>Back In the 2D view:
+<ul>
+<li>We want to sew the front seam with the corresponding edge of the traced pattern (this will be the left side since we moved the traced pattern to the right)</li>
+<li>Then sew the right edge of the traced pattern with the internal line we created on the hood. This seam should be a <strong>Turned</strong> seam.</li>
+<li>We will now merge the hood and the traced pattern (like we did with the cuffs) in the <strong>B - Edit Sewing</strong> RMB click the left side of the tarced pattern (the one sewed to the hood) and <strong>&gt; Merge</strong></li>
+<li>What we also can do is to create 2 additional internal lines so that we can sew the folded hood &ldquo;lip&rdquo; with another seam. Create an internal line offset 10 mm to the left of the far right side of the lip. Create the second internal line 10 mm offset to the right of the original internal line we used to trace the pattern.</li>
+<li>sew this lines together.</li>
+<li>Then we can make the edge (were the lip and the hood were merged) a bit smoother with the trick we used on the cuffs. Create a numbner of offseted internal around the &ldquo;merge line&rdquo; and turn of <strong>Fold Rendering</strong> (maybe playaround with the fold angle)</li>
+</ul>
+</li>
+</ul>
+<h1 id="notes">Notes</h1>
+<h2 id="settings">Settings</h2>
+<ul>
+<li>
+<blockquote>
+<p>Settings &gt; User Settings &gt; View Controls &gt; Preset &gt; Maya</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Preferences &gt; Gizmo &gt; Local Coordinate</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="avatar">Avatar</h2>
+<ul>
+<li>
+<blockquote>
+<p>File &gt; Open &gt; Avatar &gt; Female A</p>
+</blockquote>
+<ul>
+<li>Enable Automatically Add Arrangement Points</li>
+</ul>
+</li>
+<li><strong>Skin Offset</strong>
+<ul>
+<li>We can set the skin offset by selecting the avatar and in property editor set the skin offset</li>
+</ul>
+</li>
+</ul>
+<h2 id="create">Create</h2>
+<ul>
+<li><strong>H - Polygon</strong>
+<ul>
+<li><strong>S - Rectangle</strong>
+<ul>
+<li>If you LMB click once you get numerical options for the size &amp; peplicate</li>
+</ul>
+</li>
+<li><strong>E - Ellipse</strong>
+<ul>
+<li>If you LMB click once you get numerical options for the size &amp; peplicate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>G - Internal Polygon/Line</strong>
+<ul>
+<li>Internal lines can for instance be used to sew to, to cut etc. RMB click the internal line for options.</li>
+<li><strong>Internal Rectangle</strong></li>
+<li><strong>R - Internal Ellipse</strong></li>
+<li><strong>Dart</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="edit">Edit</h2>
+<ul>
+<li><strong>A - Transform Pattern</strong>
+<ul>
+<li>You can edit the pivot by double clicking it.</li>
+</ul>
+</li>
+<li><strong>Z - Edit Pattern</strong>
+<ul>
+<li>Edit spline handles and or move points.</li>
+<li>RMB menu &gt; Add Perpendicular Internal Line.</li>
+<li><strong>Transform Point/Segment</strong>
+<ul>
+<li>To get a transform handle (like you do when editing patterns).</li>
+<li>Double click the pivot to scale around it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>C - Edit Curvature</strong>
+<ul>
+<li>Edit the curvature by dragging the curve itself.</li>
+</ul>
+</li>
+<li><strong>V - Edit Curve Points</strong>
+<ul>
+<li>Edit the points of a pattern.</li>
+<li>Add points to the curve that the curve must pass through. Theese points are not like the points of a pattern and can only be edited in this mode.</li>
+<li>RMB menu &gt; Add Perpendicular Internal Line.</li>
+</ul>
+</li>
+<li><strong>X - Add Point/Split Line</strong>
+<ul>
+<li>Adds points to edit the pattern</li>
+<li>Can also add a point on a straight line to split it so that we can segment sew up to that point.</li>
+<li>If you RMB click the line you get options to split the line in various ways.</li>
+</ul>
+</li>
+<li><strong>Smooth Curve</strong>
+<ul>
+<li>If you LMB click on a point a drag you will create rounded corners.</li>
+<li>You can also cut a pattern with this tool.
+<ul>
+<li>Click on two segment lines in a pattern so that the line divides the pattern in to halves.</li>
+<li>Click on the piece that you want to delete</li>
+<li>Click on the curve (the one we made in the first step) again to trim away the piece.</li>
+<li>Or click on the curve (the one we made in the first step) and drag to create a curve and then trim away the piece.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Slash &amp; Spread</strong>
+<ul>
+<li>LMB click the first segment line then then second, this will give you the slash line, then LMB click the piece you want to rotate (spread)
+<ul>
+<li>IRL it is a pattern making technique in which a pattern piece is cut or slashed and then spread apart to add fullness or closed to reduce fullness. Meaning if you get a lot of folding or wrinkels which results in a lot of voulume, by slashing and spreading you can control where the folding and volume happens.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Note that we can move the pattern pieces so that the snap align with the center axis and each other then select one pattern and use the right and left arrows to nudge the pattern outwards.</p>
+<p>If you want to create a mirrored symetry merged with no sewing line all in one go, enable the <strong>Z - edit pattern</strong> mode and RMB click the pattern edge you wish to symetrize around and chosse <strong>Unfold</strong>.</p>
+<h2 id="cut">Cut</h2>
+<p>To cut RMB click on an internal line and choose cut. Note that the line does not have to span the entire pattern, you can cut a slice into a pattern if you want.</p>
+<h2 id="sew">Sew</h2>
+<p>Press <strong>N - Segement Sewing</strong> this allows you to sew entire segements. LMB click on of the edges and click the corresponding pattern edge.
+Press <strong>M - Free Sewing</strong>
+To reverse, delete etc a sewing line go into the <strong>B - Edit Sewing</strong> and RMB click the sew line and select an action from the menu.</p>
+<h2 id="tack">Tack</h2>
+<ul>
+<li>To tack a pattern in mid air press and hold <strong>W</strong> and LMB click on the pattern.</li>
+<li>To Remove the tack hold<strong>CTRL W</strong> and LMB click the tack you wish to remove.</li>
+<li>Remove all tacks <strong>cmd W</strong></li>
+</ul>
+<h2 id="reset">Reset</h2>
+<p>To reset the 3D arrangement select a piece or (multiple by holding shift) and press <strong>cmd F - Reset 3D arrangement (Selected)</strong></p>
+<h2 id="display">Display</h2>
+<table>
+<thead>
+<tr>
+<th>3D garment</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show/hide Selected</td>
+<td><strong>Shift Q</strong></td>
+</tr>
+<tr>
+<td>Show/hide all</td>
+<td><strong>Shift W</strong></td>
+</tr>
+<tr>
+<td>Thick Textured Surface</td>
+<td><strong>Alt 1</strong></td>
+</tr>
+<tr>
+<td>Textured Surface (Single sided)</td>
+<td><strong>Alt 2</strong></td>
+</tr>
+<tr>
+<td>Monochrome Surface (Single sided)</td>
+<td><strong>Alt 2</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Avatar</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show/Hide Avatar</td>
+<td><strong>Shift A</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>2D view</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show/Hide Line Length</td>
+<td><strong>Shift Z</strong></td>
+</tr>
+</tbody>
+</table>
+		
+		</div>
+	</div>
+</div>
+	
+
+
+        </main>
+
+        
+
+        <footer class="container py-5">
+
+        	<div class="row">
+
+        		<div class="col-md-6 footer-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+              		    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    </a>
+        		  	<span class="footer-logo-lext">petfactory &copy; 2019</span>
+            	</div>
+
+        		<div class="col-md-6 social-list">
+        	  		<ul class="">
+        			    <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://github.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://vimeo.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.992 4.275c-.07 1.56-1.16 3.697-3.263 6.41-2.176 2.832-4.017 4.248-5.522 4.248-.933 0-1.722-.862-2.367-2.588L3.55 7.6c-.48-1.724-.993-2.587-1.542-2.587-.12 0-.538.252-1.255.755L0 4.796C.79 4.1 1.568 3.406 2.335 2.71c1.053-.912 1.844-1.39 2.37-1.44 1.246-.12 2.012.733 2.3 2.56.31 1.97.526 3.194.647 3.673.36 1.634.754 2.45 1.185 2.45.335 0 .838-.53 1.51-1.59.67-1.06 1.028-1.866 1.076-2.42.096-.915-.263-1.374-1.077-1.374-.383 0-.778.087-1.185.262.788-2.58 2.29-3.834 4.508-3.762 1.644.048 2.42 1.116 2.324 3.205z" fill-rule="nonzero"/></svg></a></li>
+        			    <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+        	  		</ul>
+        		</div>
+        	</div>
+        </footer>
+
+
+    	
+    	
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	
+    	
+        <script src="https://petfactory.se/js/menu.js"></script>
+	</body>
+</html>

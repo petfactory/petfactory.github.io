@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tag on Petfactory</title>
+    <link>https://petfactory.se/tags/tag/</link>
+    <description>Recent content in tag on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2019 13:56:54 +0100</lastBuildDate>
+    
+	<atom:link href="https://petfactory.se/tags/tag/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini Python notes</title>
+      <link>https://petfactory.se/notes/houdini_python_notes/</link>
+      <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
+      
+      <guid>https://petfactory.se/notes/houdini_python_notes/</guid>
+      <description>Here I will gather information that I find useful.
+Environment variables Houdini uses environment variables for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.
+See the list of environment variables in Houdini.
+Inspect variables To print the value of an environment variable you can use the Houdini Python Shell:</description>
+    </item>
+    
+    <item>
+      <title>Houdini - intro to HDA</title>
+      <link>https://petfactory.se/notes/houdini_intro_to_hda/</link>
+      <pubDate>Thu, 21 Nov 2019 10:50:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/notes/houdini_intro_to_hda/</guid>
+      <description>The notes below are based on info found in the Houdini docs as well as other sources.
+Asset name The general form of an asset’s internal name is
+[namespace::]node_name[::version]
+The namespace and version are both optional. You can have a name with both a namespace and a version, or just a namespace, or just a version, or neither.
+asset name &amp;amp; scripting Some scripting commands require the node category and node name together (for example Object/geo, Sop/copy, Dop/popsolver).</description>
+    </item>
+    
+    <item>
+      <title>DaVinci Resolve - Fusion</title>
+      <link>https://petfactory.se/notes/davinci_resolve_fusion/</link>
+      <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
+      
+      <guid>https://petfactory.se/notes/davinci_resolve_fusion/</guid>
+      <description>Create a fusion comp Timeline to fusion To &amp;ldquo;send&amp;rdquo; a clip from the edit page to the fusion page we set the playhead on the clip and switch over to the fusion page, This will give use 2 nodes the media in and media out
+New Composition We can also create a new Fusion composition. Open up the media pool, RMB click in the content section of a bin and choose &amp;ldquo;New Fusion Composition&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

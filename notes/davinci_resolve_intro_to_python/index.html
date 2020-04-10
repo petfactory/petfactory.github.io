@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+    	
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+	    
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	    
+        <link rel="stylesheet" href="https://petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://petfactory.se/css/syntax.css">
+        
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
+	    <title>Davinci Resolve - intro to python</title>
+
+	</head>
+
+	<body>
+
+        <nav class="site-header"> 
+
+            <div class="mobile-menu-trigger">            
+                <a href="javascript:void(0);" class="menu-icon"><svg fill="#999" width="18" height="18" viewBox="0 0 18 15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg></a>
+            </div>
+
+    		<div class="container d-flex flex-column flex-md-row justify-content-between main-nav-wrap">
+        		
+                <div class="header-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    <span class="header-logo-text">PETFACTORY</span>
+                    </a>
+                </div>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/about">ABOUT</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/work">WORK</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/cv">CV</a>
+                <a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/notes">NOTES</a>
+      		</div>
+            
+    	</nav>
+
+        <nav id="menu-wrap" class="open closed">
+
+            <ul>
+                <li><a href="https://petfactory.se/about">ABOUT</a></li>
+                <li><a href="https://petfactory.se/work">WORK</a></li>
+                <li><a href="https://petfactory.se/cv">CV</a></li>
+                <li><a href="https://petfactory.se/notes">NOTES</a></li>
+            </ul>
+
+        </nav> 
+
+        
+
+        <div class="container-fluid">
+            <div id="banner-wrap">
+            </div>
+        </div>
+
+        <main>
+
+            
+
+<div class="container">
+
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#add-tool">Add tool</a></li>
+    <li><a href="#add-tool-action">Add Tool Action</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#modifier">Modifier</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#data-type">Data type</a></li>
+    <li><a href="#get-attrs">Get attrs</a></li>
+    <li><a href="#set-attrs">Set attrs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ask-user">Ask User</a></li>
+  </ul>
+</nav>
+		</aside>	
+	</div>
+
+</div>
+
+
+<div class="container notes-wrap">
+
+	<div class="row">
+		
+		<div class="col-md-10 mx-auto">
+			<h1>Davinci Resolve - intro to python</h1>
+			<p>An old scripting guide can be found <a href="https://documents.blackmagicdesign.com/UserManuals/Fusion8_Scripting_Guide.pdf">here</a></p>
+<h1 id="python--lua">Python &amp; Lua</h1>
+<p>Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># For example a list like:</span>
+l <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>]
+
+<span style="color:#75715e"># needs to map to a dictionary</span>
+d <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#ae81ff">3</span>:<span style="color:#e6db74">&#39;c&#39;</span> }
+</code></pre></div><p>Please note that Lua uses 1 as the first index key of its tuples, not 0. Python dictionaries do not have
+a particular order. Only the key indicates their order in this case.
+Similarly, all Lua tuples result in dictionaries in Python that need to be parsed into Lists. If order does
+not matter, it can be simply done by:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>values()
+</code></pre></div><p>If order is important their values need to be sorted by their keys before conversion to a list. This can
+be achieved with a list comprehension:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l <span style="color:#f92672">=</span> [item[<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> sorted(d<span style="color:#f92672">.</span>items())]
+</code></pre></div><h1 id="fusion-instance">Fusion Instance</h1>
+<p>The starting point for all access is a Fusion object. A Fusion object represents a running Fusion
+instance. It can create, open, and close compositions, stores application wide settings and
+preferences or persistent metadata. Fusion is able to open and manage multiple compositions from
+one Fusion instance. The graphical user interface represents these with a Tab-Layout.</p>
+<p>In scripting all currently loaded compositions are accessible with <strong>fu.GetCompList()</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp_list <span style="color:#f92672">=</span> fu<span style="color:#f92672">.</span>GetCompList()
+<span style="color:#75715e">#{1.0: &lt;PyRemoteObject object at 0x230367798&gt;, 2.0: &lt;PyRemoteObject object at 0x2303677b0&gt;,... }</span>
+</code></pre></div><p>The currently active
+Composition can be accessed via <strong>fu.CurrentComp</strong>. To load a composition
+use <strong>fu.LoadComp(path, locked)</strong> or create an empty composition using <strong>fu.NewComp(locked,
+auto-close, hidden)</strong>. You can also quit the Fusion instance by using <strong>fu.Quit()</strong>. If you are running
+the script from within Fusion it still will be executed. In reality the script is not bound to the Fusion
+instance. Instead a FuScript application is spawned that evaluates the scripts and communicates
+to the running Fusion instance. If your script exits, eventually the FuScript instance will also be
+stopped. This obviously also applies if running scripts from an external scripting environment as
+explained in the earlier chapter.</p>
+<h1 id="composition-instance">Composition Instance</h1>
+<p>A Composition may also store settings, attributes, and persistent metadata. While the Fusion
+instance holds Global Settings, each composition may have an individual set of settings. This
+behaviour is mimicked in the preferences dialog, where either global settings for each new
+composition, or individual settings of currently opened compositions can be changed. Most of
+the time the composition settings should be accessed to include the overrides for the current
+composition. This includes the PathMapping, which is used to identify paths from Fusion’s relative
+path system.
+The composition can be Saved and Closed, create Undos, Undo actions, and Redo them and Clear
+Undos altogether. Also, playback and rendering can be invoked from a composition.</p>
+<p>Tools on the composition can be queried. A composition can get and set the currently active tool
+via comp.ActiveTool and <strong>comp.SetActiveTool(tool)</strong>. All tools within the composition are queried
+with <strong>comp.GetToolList()</strong> while only the selected tools a queried with <strong>comp.GetToolList(true)</strong>.</p>
+<ul>
+<li><strong>Composition</strong>
+<ul>
+<li>Represents an composition.<br>
+The Composition object’s methods and members are directly available in the console and in comp scripts written in Lua. This means that you can simply type ==CurrentTime or call AddTool(&ldquo;Blur&rdquo;) without the need to prefix the command with comp. Python scripts have to use the full name</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(comp<span style="color:#f92672">.</span>CurrentTime)
+<span style="color:#75715e"># 42.0</span>
+
+</code></pre></div><pre><code>* There might be an more straightforward way of getting the wifth and height of a comp but using the **comp.GetPrefs()** method I can get a dict where I can find various useful info.
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">frame_format <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>GetPrefs()<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Comp&#39;</span>)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;FrameFormat&#39;</span>)
+height <span style="color:#f92672">=</span> frame_format<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Height&#39;</span>)
+width <span style="color:#f92672">=</span> frame_format<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;Width&#39;</span>)
+</code></pre></div><h1 id="flow-view">Flow view</h1>
+<ul>
+<li><strong>FlowView</strong>
+<ul>
+<li>The FlowView represents the flow with all the tools.<br>
+Positions of tools, their selection state and the views zoom level are controlled with this object.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">flow <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>CurrentFrame<span style="color:#f92672">.</span>FlowView
+<span style="color:#75715e"># get the current FlowView</span>
+text <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>FindTool(<span style="color:#e6db74">&#39;Text1&#39;</span>)
+<span style="color:#75715e"># get the tool objetc</span>
+flow<span style="color:#f92672">.</span>Select(text, True)
+<span style="color:#75715e"># Adds blur1 to the selection</span>
+flow<span style="color:#f92672">.</span>Select(text, False)
+<span style="color:#75715e"># Removes blur2 from the selection</span>
+flow:Select()
+<span style="color:#75715e"># Deselects all</span>
+</code></pre></div><h1 id="tools-nodes">Tools (nodes)</h1>
+<p>Tools are uniquely named operators of a particular type. Internally a tool is a subset of an Operator
+that is visible on the flow. It can be a Creator or Filter, 3D Tool, etc.</p>
+<h2 id="add-tool">Add tool</h2>
+<ul>
+<li>Composition.AddTool(id[, defsettings][, xpos][, ypos])
+<ul>
+<li>Adds a tool type at a specified position.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># add background node at x 0, y 0 </span>
+bg <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>AddTool(<span style="color:#e6db74">&#39;Background&#39;</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+</code></pre></div><h2 id="add-tool-action">Add Tool Action</h2>
+<ul>
+<li>Composition.AddToolAction(id[, xpos][, ypos])
+<ul>
+<li>Adds a tool to the comp. Will be placed at the position of the last mouse click.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bg <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>AddToolAction(<span style="color:#e6db74">&#39;Background&#39;</span>)
+</code></pre></div><p><strong>Read access</strong> to the name and its type is given with tool**.Name** and tool.**ID**</p>
+<ul>
+<li>TOOLS_Name
+<ul>
+<li>For read and write access of the name</li>
+</ul>
+</li>
+<li>TOOLB_NameSet
+<ul>
+<li>indicates if the name was manually changed. If not, some tools will show additional information on the tile next to its name. For example, the loader will show the clip’s filename.</li>
+</ul>
+</li>
+<li>TOOLB_PassThrough
+<ul>
+<li>PassThrough-State</li>
+</ul>
+</li>
+<li>TOOLB_Locked
+<ul>
+<li>Lock-State</li>
+</ul>
+</li>
+</ul>
+<h1 id="main-inputs--main-outputs">Main Inputs &amp; Main Outputs</h1>
+<p>In general, tools have Inputs and Outputs. <strong>Property Inputs</strong> being represented by controls in
+the properties view (e.g. the Gain slider in a ColorCorrector) or the Inputs on the flow view that
+connect one tool to the other, so called <strong>Main Inputs</strong>. Outputs are very similar although most of the
+time tools only have one MainOutput on the FlowView. An exception being the Stereo Splitter
+(Fusion Studio) as shown in the figure.</p>
+<h1 id="inputs--outputs">Inputs &amp; Outputs</h1>
+<p>Next to the MainInput and MainOutputs there are other Inputs and Outputs. If Inputs are not hidden
+they can be represented as an Input control in the properties view. Still the underlying DataType
+might be the same. For example a Number DataType might be accessible through a slider control,
+a Checkbox, a DropdownList, a Multibutton etc.</p>
+<h1 id="querying-inputs">Querying Inputs</h1>
+<h1 id="connections">Connections</h1>
+<h1 id="animation">Animation</h1>
+<p>To animate an Input via script, the first step is to add a BezierSpline. A Bezier Spline is an animation
+curve that can be viewed in the spline editor. It is a storehouse for the information contained in the
+animated properties of a tool. To do this for a Merge’s blend property, the following code could
+be employed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp<span style="color:#f92672">.</span>Merge1<span style="color:#f92672">.</span>Blend <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>BezierSpline()
+</code></pre></div><p>By setting the input’s value at a specific time, keyframes will be created.</p>
+<p>If the property is a <strong>Point DataType</strong>, use the <strong>Path</strong> function instead to add a bezier-based path.
+If the desire was to then animate the blend from 1 to 0 over the period of 100 frames, one could use
+the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp<span style="color:#f92672">.</span>Merge1<span style="color:#f92672">.</span>Blend[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+comp<span style="color:#f92672">.</span>Merge1<span style="color:#f92672">.</span>Blend[<span style="color:#ae81ff">100</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><ul>
+<li><strong>BezierSpline</strong>
+<ul>
+<li>Modifier that represents animation on a number value input.
+Keyframes are interpolated with a bezier spline.
+To animate Points use a Path instead.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Size <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>BezierSpline()
+comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Size[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Size[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Size[<span style="color:#ae81ff">15</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</code></pre></div><ul>
+<li><strong>PolyPath</strong>
+<ul>
+<li>The PolyPath class is not documented in the (quite old) fusion scripting docs I found online. Will add info when/if I find it.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Center <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>PolyPath()
+tool<span style="color:#f92672">.</span>AddModifier(<span style="color:#e6db74">&#39;Center&#39;</span>, <span style="color:#e6db74">&#39;PolyPath&#39;</span>)
+comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Center[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2.0</span>: <span style="color:#ae81ff">0</span>}
+comp<span style="color:#f92672">.</span>Transform1<span style="color:#f92672">.</span>Center[<span style="color:#ae81ff">50</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2.0</span>: <span style="color:#ae81ff">1</span>}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tool <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>ActiveTool
+tool<span style="color:#f92672">.</span>Center <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>PolyPath()
+tool<span style="color:#f92672">.</span>Center[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2.0</span>: <span style="color:#ae81ff">0</span>}
+tool<span style="color:#f92672">.</span>Center[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2.0</span>: <span style="color:#ae81ff">0</span>}
+tool<span style="color:#f92672">.</span>Center[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2.0</span>: <span style="color:#ae81ff">1</span>}
+</code></pre></div><h2 id="modifier">Modifier</h2>
+<ul>
+<li>AddModifier(input, modifier)
+<ul>
+<li>Creates a modifier and connects it to an input.
+This provides an easy way to animate the controls of a tool.
+input ID of the tool’s Input to be connected to.
+modifier ID of the modifier to be created.
+Returns a boolean value indicating success.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+tool<span style="color:#f92672">.</span>AddModifier(<span style="color:#e6db74">&#39;Size&#39;</span>, <span style="color:#e6db74">&#39;BezierSpline&#39;</span>)
+tool[<span style="color:#e6db74">&#39;Size&#39;</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+tool[<span style="color:#e6db74">&#39;Size&#39;</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+	tool[<span style="color:#e6db74">&#39;Size&#39;</span>][i] <span style="color:#f92672">=</span> i
+
+</code></pre></div><h1 id="attributes">Attributes</h1>
+<p>Attributes store information about the capabilities of a certain type, as well as some common flags
+that contribute to the object’s state.
+For example, in the case of a Tool the attributes may include the typename of the object, its name
+in the composition, its abbreviation shown in the Toolbar, its PassThrough and selection state, etc.</p>
+<h2 id="data-type">Data type</h2>
+<p>The type character stands for:</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S</td>
+<td>String</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Number (float)</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Handle</td>
+</tr>
+<tr>
+<td>NT</td>
+<td>Number Table</td>
+</tr>
+<tr>
+<td>IT</td>
+<td>Integer Table</td>
+</tr>
+<tr>
+<td>ST</td>
+<td>String Table</td>
+</tr>
+<tr>
+<td>BT</td>
+<td>Boolean Table</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-attrs">Get attrs</h2>
+<p>In order to access the Attributes, the GetAttrs() method can be used. As it is provided by the
+Object superclass, pretty much all objects can have Attributes. So GetAttrs() is a good place to
+look for functionality or data within an object.
+If no argument is given, all Attributes are returned. It is also possible to supply a single tag string to
+narrow down the search.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tool<span style="color:#f92672">.</span>GetAttrs()
+<span style="color:#75715e"># {&#39;TOOLB_CacheToDisk&#39;: False, &#39;TOOLB_HoldOutput&#39;: False, ...</span>
+tool<span style="color:#f92672">.</span>GetAttrs(<span style="color:#e6db74">&#39;TOOLB_Locked&#39;</span>)
+<span style="color:#75715e"># False </span>
+</code></pre></div><h2 id="set-attrs">Set attrs</h2>
+<p>In our example, TOOLB_Locked stands for a Tool Attribute of type boolean with the name &ldquo;Locked.&rdquo;
+Attributes can be changed by using SetAttrs({}). The supplied table is required to have the Tag
+as key and the new value as value. Multiple attributes can be changed at a time, however not all
+Attributes can be changed at all.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tool<span style="color:#f92672">.</span>SetAttrs({<span style="color:#e6db74">&#39;TOOLS_Name&#39;</span>:<span style="color:#e6db74">&#39;my_text&#39;</span>, <span style="color:#e6db74">&#39;TOOLB_Locked&#39;</span>:True})
+</code></pre></div><p>In scripting the value on an Input can be changed directly with an assignment, by using an index
+that represents a specific time or by using tool:SetInput(&ldquo;InputName&rdquo;, value, [time]).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Merge1<span style="color:#f92672">.</span>Angle <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+<span style="color:#75715e">#Sets Angle to 10</span>
+
+Merge1<span style="color:#f92672">.</span>Angle[<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+<span style="color:#75715e">#Sets Angle to 20 on frame 5</span>
+
+Merge1<span style="color:#f92672">.</span>SetInput(<span style="color:#e6db74">&#39;Angle&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">5</span>)
+<span style="color:#75715e"># Same as above</span>
+</code></pre></div><hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#75715e"># get the selected node, note the it is not a method</span>
+tool <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>ActiveTool
+<span style="color:#75715e"># Transform (0x0x21ec42810) [App: &#39;Fusion&#39; on 127.0.0.1, UUID: 142a43b3-c7b5-46d3-8ce2-26b823c9abed]</span>
+
+<span style="color:#75715e"># print the size. We need to pass the frame we wish to query</span>
+<span style="color:#75715e"># this is done with a square bracket</span>
+<span style="color:#66d9ef">print</span>(tool<span style="color:#f92672">.</span>Size[<span style="color:#ae81ff">0</span>])
+<span style="color:#75715e"># 1.0</span>
+
+<span style="color:#75715e"># to set a 1D attr</span>
+tool<span style="color:#f92672">.</span>Size <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0</span>
+
+<span style="color:#75715e"># if we query a 2d attr like center, we get back an dict</span>
+<span style="color:#66d9ef">print</span>(tool<span style="color:#f92672">.</span>Center[<span style="color:#ae81ff">0</span>])
+<span style="color:#75715e"># {1.0: 0.5, 2.0: 0.5, 3.0: 0.0}</span>
+<span style="color:#75715e"># this represent x, y &amp; frame number</span>
+
+<span style="color:#75715e"># To set a 2D attr:</span>
+tool<span style="color:#f92672">.</span>Center <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: <span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">2.0</span>: <span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">3.0</span>: <span style="color:#ae81ff">0</span>}
+<span style="color:#75715e"># if the attr has keyframes you can not set an attr like this</span>
+
+</code></pre></div><hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># get the input list, this is all the ui params and the input to the node</span>
+input_list <span style="color:#f92672">=</span> tool<span style="color:#f92672">.</span>GetInputList()
+<span style="color:#75715e"># {1.0: &lt;PyRemoteObject object at 0x230367168&gt;, 2.0: &lt;PyRemoteObject object at 0x230367150&gt;,...</span>
+
+<span style="color:#66d9ef">print</span>(input_list<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1.0</span>))
+<span style="color:#75715e">#Input (0x0x26e747210) [App: &#39;Fusion&#39; on 127.0.0.1, UUID: cf0a5593-9ce9-43c4-a17e-56afe7b11b44]</span>
+
+<span style="color:#66d9ef">print</span>(input_list<span style="color:#f92672">.</span>get(<span style="color:#ae81ff">1.0</span>)<span style="color:#f92672">.</span>Name)
+<span style="color:#75715e"># Settings</span>
+
+<span style="color:#75715e"># print the index and name of the inputs</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join([<span style="color:#e6db74">&#39;{} - {}&#39;</span><span style="color:#f92672">.</span>format(k, v<span style="color:#f92672">.</span>Name) <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> input_list<span style="color:#f92672">.</span>iteritems()]))
+<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">1.0 - Settings
+</span><span style="color:#e6db74">2.0 - Blend
+</span><span style="color:#e6db74">...
+</span><span style="color:#e6db74">34.0 - Size
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+
+<span style="color:#75715e"># size is index 34</span>
+size_param <span style="color:#f92672">=</span> input_list[<span style="color:#ae81ff">34</span>]
+
+size_attrs <span style="color:#f92672">=</span> size_param<span style="color:#f92672">.</span>GetAttrs()
+pprint<span style="color:#f92672">.</span>pprint(size_attrs)
+<span style="color:#75715e"># will set the size to 2</span>
+
+<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">{&#39;INPB_Active&#39;: False,
+</span><span style="color:#e6db74"> &#39;INPB_Connected&#39;: False,
+</span><span style="color:#e6db74"> &#39;INPB_Disabled&#39;: False,
+</span><span style="color:#e6db74"> ...
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+</code></pre></div><h1 id="dev">Dev</h1>
+<p>Here is a quick way of running an external script from the console. Can be useful if you just want to try out someting quick. Since the module is executed within the fusion environment it has access to comp etc.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">execfile(path<span style="color:#f92672">/</span>to<span style="color:#f92672">/</span>file<span style="color:#f92672">.</span>py)
+</code></pre></div><hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
+<span style="color:#75715e">#import pprint</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_screen_orbit_pos</span>(num, radius, width, height):
+
+	inc <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>pi<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>(num)
+
+	ret_list <span style="color:#f92672">=</span> []
+	<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(num<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+		x <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>cos(inc<span style="color:#f92672">*</span>i)<span style="color:#f92672">*</span>radius<span style="color:#f92672">*.</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span>width<span style="color:#f92672">*.</span><span style="color:#ae81ff">5</span>
+		y <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>sin(inc<span style="color:#f92672">*</span>i)<span style="color:#f92672">*</span>radius<span style="color:#f92672">*.</span><span style="color:#ae81ff">5</span><span style="color:#f92672">+</span>height<span style="color:#f92672">*.</span><span style="color:#ae81ff">5</span>
+		<span style="color:#75715e"># print(x, y)</span>
+		ret_list<span style="color:#f92672">.</span>append((x, y))
+
+	<span style="color:#66d9ef">return</span> ret_list
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convert_pos</span>(pos_list, width, height):
+
+	ret_list <span style="color:#f92672">=</span> []
+	<span style="color:#66d9ef">for</span> i, pos <span style="color:#f92672">in</span> enumerate(pos_list):
+		x <span style="color:#f92672">=</span> pos[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">/</span>float(width)
+		y <span style="color:#f92672">=</span> pos[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">/</span>float(height)
+		<span style="color:#75715e"># print(x, y)</span>
+		ret_list<span style="color:#f92672">.</span>append((x, y))
+
+	<span style="color:#66d9ef">return</span> ret_list
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">animate</span>(pos_list):
+
+	tool <span style="color:#f92672">=</span> comp<span style="color:#f92672">.</span>ActiveTool()
+	tool<span style="color:#f92672">.</span>AddModifier(<span style="color:#e6db74">&#39;Center&#39;</span>, <span style="color:#e6db74">&#39;PolyPath&#39;</span>)
+
+	<span style="color:#66d9ef">for</span> i, pos <span style="color:#f92672">in</span> enumerate(pos_list):
+		<span style="color:#75715e"># print(pos)</span>
+		tool[<span style="color:#e6db74">&#39;Center&#39;</span>][i] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1.0</span>: pos[<span style="color:#ae81ff">0</span>], <span style="color:#ae81ff">2.0</span>: pos[<span style="color:#ae81ff">1</span>]}
+
+
+pos_list <span style="color:#f92672">=</span> get_screen_orbit_pos(num<span style="color:#f92672">=</span><span style="color:#ae81ff">36</span>, radius<span style="color:#f92672">=</span><span style="color:#ae81ff">1080</span>, width<span style="color:#f92672">=</span><span style="color:#ae81ff">1920</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">1080</span>)
+pos_list <span style="color:#f92672">=</span> convert_pos(pos_list<span style="color:#f92672">=</span>pos_list, width<span style="color:#f92672">=</span><span style="color:#ae81ff">1920</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">1080</span>)
+
+<span style="color:#66d9ef">try</span>:
+	animate(pos_list)
+<span style="color:#66d9ef">except</span>:
+	<span style="color:#66d9ef">pass</span>
+</code></pre></div><h1 id="ui">UI</h1>
+<h2 id="ask-user">Ask User</h2>
+<p>A simple way to build and evaluate a dialog is called: comp:AskUser(name, {table of inputs}).
+Each input is a table structured as follows :
+{Input Name, Input Type, Options &hellip;}</p>
+<p>In Python, make sure to create a dictionary with proper indices starting
+with 1 as explained in the Chapter about Python. For Example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dialog <span style="color:#f92672">=</span> {
+	<span style="color:#ae81ff">1</span>: {<span style="color:#ae81ff">1</span>:<span style="color:#e6db74">&#39;path&#39;</span>, <span style="color:#e6db74">&#39;Name&#39;</span>:<span style="color:#e6db74">&#39;Select a Directory&#39;</span>, <span style="color:#ae81ff">2</span>:<span style="color:#e6db74">&#39;PathBrowse&#39;</span>},
+	<span style="color:#ae81ff">2</span>: {<span style="color:#ae81ff">1</span>:<span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#e6db74">&#39;Name&#39;</span>:<span style="color:#e6db74">&#39;Select A Source File&#39;</span>, <span style="color:#ae81ff">2</span>:<span style="color:#e6db74">&#39;FileBrowse&#39;</span>},
+	<span style="color:#ae81ff">3</span>: {<span style="color:#ae81ff">1</span>:<span style="color:#e6db74">&#39;copies&#39;</span>, <span style="color:#e6db74">&#39;Name&#39;</span>:<span style="color:#e6db74">&#39;Number of Copies&#39;</span>, <span style="color:#ae81ff">2</span>:<span style="color:#e6db74">&#39;Slider&#39;</span>, <span style="color:#e6db74">&#39;Default&#39;</span>:<span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#39;Integer&#39;</span>:True, <span style="color:#e6db74">&#39;Min&#39;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;Max&#39;</span>:<span style="color:#ae81ff">5</span>},
+	<span style="color:#ae81ff">4</span>: {<span style="color:#ae81ff">1</span>:<span style="color:#e6db74">&#39;cb&#39;</span>, <span style="color:#e6db74">&#39;Name&#39;</span>:<span style="color:#e6db74">&#39;A Check Box&#39;</span>, <span style="color:#ae81ff">2</span>:<span style="color:#e6db74">&#39;Checkbox&#39;</span>, <span style="color:#e6db74">&#39;Default&#39;</span>:<span style="color:#ae81ff">1</span>}
+}
+ret <span style="color:#f92672">=</span> composition<span style="color:#f92672">.</span>AskUser(<span style="color:#e6db74">&#39;A simple dialog&#39;</span>, dialog)
+<span style="color:#66d9ef">if</span> ret<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;cb&#39;</span>):
+	<span style="color:#75715e"># print &#39;{} - {}&#39;.format(ret.get(&#39;path&#39;), ret.get(&#39;file&#39;))</span>
+	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join([<span style="color:#e6db74">&#39;{}:{}&#39;</span><span style="color:#f92672">.</span>format(k, v) <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> ret<span style="color:#f92672">.</span>iteritems()]))
+<span style="color:#66d9ef">else</span>:
+	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;No diggity&#39;</span>)
+</code></pre></div>		
+		</div>
+	</div>
+</div>
+	
+
+
+        </main>
+
+        
+
+        <footer class="container py-5">
+
+        	<div class="row">
+
+        		<div class="col-md-6 footer-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+              		    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    </a>
+        		  	<span class="footer-logo-lext">petfactory &copy; 2019</span>
+            	</div>
+
+        		<div class="col-md-6 social-list">
+        	  		<ul class="">
+        			    <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://github.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://vimeo.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.992 4.275c-.07 1.56-1.16 3.697-3.263 6.41-2.176 2.832-4.017 4.248-5.522 4.248-.933 0-1.722-.862-2.367-2.588L3.55 7.6c-.48-1.724-.993-2.587-1.542-2.587-.12 0-.538.252-1.255.755L0 4.796C.79 4.1 1.568 3.406 2.335 2.71c1.053-.912 1.844-1.39 2.37-1.44 1.246-.12 2.012.733 2.3 2.56.31 1.97.526 3.194.647 3.673.36 1.634.754 2.45 1.185 2.45.335 0 .838-.53 1.51-1.59.67-1.06 1.028-1.866 1.076-2.42.096-.915-.263-1.374-1.077-1.374-.383 0-.778.087-1.185.262.788-2.58 2.29-3.834 4.508-3.762 1.644.048 2.42 1.116 2.324 3.205z" fill-rule="nonzero"/></svg></a></li>
+        			    <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+        	  		</ul>
+        		</div>
+        	</div>
+        </footer>
+
+
+    	
+    	
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	
+    	
+        <script src="https://petfactory.se/js/menu.js"></script>
+	</body>
+</html>

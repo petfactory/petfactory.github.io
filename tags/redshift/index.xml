@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redshift on Petfactory</title>
+    <link>https://petfactory.se/tags/redshift/</link>
+    <description>Recent content in Redshift on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Feb 2020 13:45:58 +0100</lastBuildDate>
+    
+	<atom:link href="https://petfactory.se/tags/redshift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mocap Dance</title>
+      <link>https://petfactory.se/work/mocap_dance/</link>
+      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/mocap_dance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Proc city 02</title>
+      <link>https://petfactory.se/work/proc_city_02/</link>
+      <pubDate>Sun, 01 Sep 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/proc_city_02/</guid>
+      <description>   </description>
+    </item>
+    
+  </channel>
+</rss>

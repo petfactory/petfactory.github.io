@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Petfactory</title>
+    <link>https://petfactory.se/tags/</link>
+    <description>Recent content in Tags on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Feb 2020 13:45:58 +0100</lastBuildDate>
+    
+	<atom:link href="https://petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini</title>
+      <link>https://petfactory.se/tags/houdini/</link>
+      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/houdini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redshift</title>
+      <link>https://petfactory.se/tags/redshift/</link>
+      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/redshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substance painter</title>
+      <link>https://petfactory.se/tags/substance-painter/</link>
+      <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/substance-painter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marvelous Designer</title>
+      <link>https://petfactory.se/tags/marvelous-designer/</link>
+      <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/marvelous-designer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uv</title>
+      <link>https://petfactory.se/tags/uv/</link>
+      <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/uv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag</title>
+      <link>https://petfactory.se/tags/tag/</link>
+      <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/tag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DaVinci Resolve</title>
+      <link>https://petfactory.se/tags/davinci-resolve/</link>
+      <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/davinci-resolve/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://petfactory.se/tags/python/</link>
+      <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Edit</title>
+      <link>https://petfactory.se/tags/edit/</link>
+      <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/edit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://petfactory.se/tags/hugo/</link>
+      <pubDate>Wed, 30 Oct 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pyro</title>
+      <link>https://petfactory.se/tags/pyro/</link>
+      <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/pyro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maya</title>
+      <link>https://petfactory.se/tags/maya/</link>
+      <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/maya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>V-Ray</title>
+      <link>https://petfactory.se/tags/v-ray/</link>
+      <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/v-ray/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rigging</title>
+      <link>https://petfactory.se/tags/rigging/</link>
+      <pubDate>Thu, 01 Aug 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/rigging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nuke</title>
+      <link>https://petfactory.se/tags/nuke/</link>
+      <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/nuke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VEX</title>
+      <link>https://petfactory.se/tags/vex/</link>
+      <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
+      
+      <guid>https://petfactory.se/tags/vex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>https://petfactory.se/tags/flask/</link>
+      <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PySide</title>
+      <link>https://petfactory.se/tags/pyside/</link>
+      <pubDate>Wed, 25 Apr 2018 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/pyside/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SublimeText</title>
+      <link>https://petfactory.se/tags/sublimetext/</link>
+      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/tags/sublimetext/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

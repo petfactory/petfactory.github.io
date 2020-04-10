@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+    	
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+	    
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	    
+        <link rel="stylesheet" href="https://petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://petfactory.se/css/syntax.css">
+        
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
+	    <title>Hugo</title>
+
+	</head>
+
+	<body>
+
+        <nav class="site-header"> 
+
+            <div class="mobile-menu-trigger">            
+                <a href="javascript:void(0);" class="menu-icon"><svg fill="#999" width="18" height="18" viewBox="0 0 18 15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg></a>
+            </div>
+
+    		<div class="container d-flex flex-column flex-md-row justify-content-between main-nav-wrap">
+        		
+                <div class="header-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    <span class="header-logo-text">PETFACTORY</span>
+                    </a>
+                </div>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/about">ABOUT</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/work">WORK</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/cv">CV</a>
+                <a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/notes">NOTES</a>
+      		</div>
+            
+    	</nav>
+
+        <nav id="menu-wrap" class="open closed">
+
+            <ul>
+                <li><a href="https://petfactory.se/about">ABOUT</a></li>
+                <li><a href="https://petfactory.se/work">WORK</a></li>
+                <li><a href="https://petfactory.se/cv">CV</a></li>
+                <li><a href="https://petfactory.se/notes">NOTES</a></li>
+            </ul>
+
+        </nav> 
+
+        
+
+        <div class="container-fluid">
+            <div id="banner-wrap">
+            </div>
+        </div>
+
+        <main>
+
+            
+
+<div class="container">
+
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#section-templates">Section templates</a></li>
+    <li><a href="#home-page-template">Home page template</a></li>
+    <li><a href="#base-template">Base template</a></li>
+    <li><a href="#variables">Variables</a></li>
+    <li><a href="#functions">Functions</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#svg">SVG</a></li>
+  </ul>
+</nav>
+		</aside>	
+	</div>
+
+</div>
+
+
+<div class="container notes-wrap">
+
+	<div class="row">
+		
+		<div class="col-md-10 mx-auto">
+			<h1>Hugo</h1>
+			<p>Creating/coding for the web is not my primarily focus but i think it is an important skill to have and will be increasingly so. As part of a 1 year program in business and marketing I did almost 20 years ago we had a short course in web development. The instructor insisted that we should use Dreamweaver (Macromedia at the time now Adobe). I did not like it, I thought it hid the internal mechanics and I wanted to get closer to the actual language so I ended up writing everything in notepad. Looking back at it now it makes sense. By manually writing the html you get a better understanding how it all fits togehter and it all gets demystified somehow. For me that is definetly my style of learning, take away all the supporting frameworks and start with what makes it tick. When you understand how it fits together, you could start looking att things that makes it faster/easier to use.</p>
+<p>My next step was to use Flash (also a Macromedia product at the time). This was my first encounter with programming and I loved it. I did html and flash for a couple of years. I really enjoyed using Flash (particularly with AS3) and I used it on many projects to creating &ldquo;functional&rdquo; UI mockups. Then along came html5 and I started looking at other alternatives to create websites. I used Wordpress for a couple of years, then I did my own custom php cms soloution.</p>
+<p>Then I started looking at static site generators. The first couple of years I used Jekyll. It worked ok, but since it is written in Ruby, which I dont use at all, I couldn´t really fully embrace it, but it worked ok. Then, a few years later, after changing my main workstation, I thought I have a look for a new static site generator. Since I am really comfortable with Python I naturally tried Lektor, but since the forum around Lektor does not seem so active, I looked further and decided to try out Hugo, a static site generator written in Go. And I really like it, here are a few things I  like:</p>
+<ul>
+<li>Good documentation, forum and tutorials</li>
+<li>A really nice CLI</li>
+<li>Easy to setup custom pagination</li>
+<li>Logical, robust and really fast</li>
+<li>Syntax highlighting is included and easy to setup</li>
+<li>The server with auto-load/refresh</li>
+<li>Automatic TOC creation</li>
+</ul>
+<p>So this is the latest stop of my web journey. Below are some notes I took when getting to know Hugo!</p>
+<h1 id="list-pages">List pages</h1>
+<p>Hugo will automatically create a list page for all 1st level subdirectories of the content folder. If you want Hugo to create list pages for deeper subdirectories we need to create a file called _index.md in that dir. we can also add content in this md file that will be displayed in the list page.
+If we want to add content to a first level subdirectory list page we can also create a _index.md file (note that the list ok age will be created regardless of this file)</p>
+<h1 id="archetypes">Archetypes</h1>
+<p>Is the template used to control which front matter is created and populated when we run:
+hugo new page.md
+In the archetypes dir we find the default.md which is the default template used for new content. We can also create a specific template for content created in a specific content folder. The we call the archetype md file the same as the content dir.</p>
+<h1 id="taxonomies">Taxonomies</h1>
+<p>We can add the keyword tags and categories to our front matter and Hugo will create a list page structured based on the values.
+Tags and categories are the default taxonomies. If we want to use custom ones we need to specify this in the config.toml file</p>
+<h1 id="templates">Templates</h1>
+<p>List and page templates
+templates for list and single pages are stored in a directory called _default in the layouts directory and are called list.html and single.html. The list and single page layouts stored in the _default directory are, as the name suggests, the template used by default for all single and list pages.</p>
+<h2 id="section-templates">Section templates</h2>
+<p>But we can create special templates used for different content sections. These templates are called section templates. To do this we create a directory with the same name as the directory for the content we wish to create the template for. Lets say we have a directory called dir_c in the content directory. To create section templates for the content in this directory we create a directory in the layouts folder called dir_c. In the directory we can create list.html and single.html</p>
+<h2 id="home-page-template">Home page template</h2>
+<p>The home page is technically a list page so by default it uses a list template but we could give the home page its own template. We do this by creating a template in the root of the layouts folder called index.html</p>
+<h2 id="base-template">Base template</h2>
+<p>The base template are, as the name suggests, the template that are the base of all other templates. To create this template we create a file called baseof.html inside the _default directory inside the layouts directory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+	&lt;<span style="color:#f92672">title</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Title</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">block</span> <span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>And to use this baseof template we write the following (in the layout that we wish to implement the base template)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#a6e22e">define</span> <span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#75715e">}}</span>
+
+	The content will be rendered here...
+
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</code></pre></div><p>Note that we can use more blocks in the base template if we want. We can for instance create a footer and in the base template block add some default content that will be displayed if the block is not defined in the child template. If content is defined in the block (i.e. content is inserted inside the block when it is defined in the child template, it will be used and overwrite the default content)</p>
+<h2 id="variables">Variables</h2>
+<p>Hugo’s templates are context aware and make a large number of values available to you as you’re creating views for your website. We can for instance use variables defined in the front matter, these are called page variables. To acces the title, date and url we use the syntax below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Title</span> <span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Date</span> <span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.URL</span> <span style="color:#75715e">}}</span>
+</code></pre></div><p>If we create some custom front matter variable we need to access it using the Params keyword.Lets say that we hava a key-value pair in the front matter specifying the_answer: 42. If we want to access it in the template we can use the following syntax:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Params.the_answer</span> <span style="color:#75715e">}}</span>
+</code></pre></div><h2 id="functions">Functions</h2>
+<p>To loop through the pages we can use the range function and provide the .Pages as the collection we wish to iteraste through.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">.Pages</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Title</span>  <span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</code></pre></div><h1 id="partial">Partial</h1>
+<h2 id="svg">SVG</h2>
+<p>Using dict to pass multiple values to a partial 
+The partial below creates a SVG and expects fill, height and width from the caller:
+<a href="https://gohugo.io/functions/dict/#example-using-dict-to-pass-multiple-values-to-a-partial">hugo docs</a></p>
+<h1 id="logic">Logic</h1>
+<p>Here is an example of how to use the if .. else if .. else
+We declare some variables (in a template) and display the result.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template">	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">5</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">1</span> <span style="color:#75715e">}}</span>
+
+	<span style="color:#75715e">{{</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">eq</span> <span style="color:#a6e22e">$a</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span>
+		(A) <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> is equal to (B) <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">lt</span> <span style="color:#a6e22e">$a</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span>
+		(A) <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> is less then (B) <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#66d9ef">else</span> <span style="color:#75715e">}}</span>
+		(A) <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> is greater then (B) <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</code></pre></div><p>Note that the comparasion operators is not the &ldquo;typical&rdquo; ones like == instead we use:<br>
+eq ==<br>
+lt &lt;<br>
+le &lt;=<br>
+gt &gt;<br>
+ge &gt;=<br>
+and &amp;&amp;<br>
+or ||<br>
+not !=</p>
+<p>If we use the and &amp;&amp; statement it looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">}}</span>
+
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">and</span> <span style="color:#f92672">(</span><span style="color:#a6e22e">$a</span><span style="color:#f92672">)</span> <span style="color:#f92672">(</span><span style="color:#a6e22e">$b</span><span style="color:#f92672">)</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> and <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span> both are true
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">else</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> and <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span> one or none is true
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</code></pre></div><p>The or || operator looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">}}</span>
+
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">or</span> <span style="color:#f92672">(</span><span style="color:#a6e22e">$a</span><span style="color:#f92672">)</span> <span style="color:#f92672">(</span><span style="color:#a6e22e">$b</span><span style="color:#f92672">)</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> and <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span> one or both is true
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">else</span> <span style="color:#75715e">}}</span>
+	<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$a</span> <span style="color:#75715e">}}</span> and <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$b</span> <span style="color:#75715e">}}</span> neither is true
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+</code></pre></div><h1 id="data-files">Data files</h1>
+<p>Lets loop through a json data file. We have the following json file in our data directory:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+	<span style="color:#f92672">&#34;Batman&#34;</span>:{
+		<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Bruce Wayne&#34;</span>,
+		<span style="color:#f92672">&#34;universe&#34;</span>:<span style="color:#e6db74">&#34;DC&#34;</span>
+	},
+	<span style="color:#f92672">&#34;Ironman&#34;</span>:{
+		<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Tony Stark&#34;</span>,
+		<span style="color:#f92672">&#34;universe&#34;</span>:<span style="color:#e6db74">&#34;Marvel&#34;</span>
+	},
+	<span style="color:#f92672">&#34;Black Widow&#34;</span>:{
+		<span style="color:#f92672">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;Natasha Romanova&#34;</span>,
+		<span style="color:#f92672">&#34;universe&#34;</span>:<span style="color:#e6db74">&#34;Marvel&#34;</span>
+	}
+}
+</code></pre></div><p>To iterate through the data and print the name and universe inside an unordered list we can use this syntax:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template">&lt;<span style="color:#f92672">ul</span>&gt;
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">.Site.Data.superheros</span> <span style="color:#75715e">}}</span>
+	&lt;<span style="color:#f92672">li</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.name</span> <span style="color:#75715e">}}</span> - <span style="color:#75715e">{{</span> <span style="color:#a6e22e">.universe</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">li</span>&gt;
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div><p>If we want to also include the key (the superhero name in this case) we use this syntax:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template">&lt;<span style="color:#f92672">ul</span>&gt;
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">$key</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">$value</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">.Site.Data.superheros</span> <span style="color:#75715e">}}</span>
+	&lt;<span style="color:#f92672">li</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$key</span> <span style="color:#75715e">}}</span> : <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$value</span><span style="color:#a6e22e">.name</span> <span style="color:#75715e">}}</span> - <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$value</span><span style="color:#a6e22e">.universe</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">li</span>&gt;
+<span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
+&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div><h1 id="syntax-highlighting">Syntax highlighting</h1>
+<p>To generate a stylesheet using the monokai style you can run this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo gen chromastyles --style<span style="color:#f92672">=</span>monokai &gt; syntax.css
+</code></pre></div><p>Run hugo gen chromastyles -h for more options. Here you will find a <a href="https://xyproto.github.io/splash/docs/">gallery</a> of available styles.</p>
+<p>I like using GitHub flavored code fences to add syntax highlighting. To enable this, set the pygmentsCodeFences to true in Hugo’s configuration file.</p>
+<p>I also modified the highlight class in my main stylesheet to get the look I wanted:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">highlight</span>{
+	<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+	<span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#272822</span>;
+	<span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+	<span style="color:#66d9ef">padding-right</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+}
+</code></pre></div><h1 id="markdown--images">Markdown &amp; Images</h1>
+<p>To view an image generated from a markdown file I needed to add the following to the config.toml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">canonifyURLs</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span>
+</code></pre></div><p>Then I could use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![](/images/pic.jpg)
+</code></pre></div><p>Some links:</p>
+<ul>
+<li><a href="https://discourse.gohugo.io/t/how-counting-up-a-variable-in-range/586">increment a var in range</a></li>
+</ul>
+		
+		</div>
+	</div>
+</div>
+	
+
+
+        </main>
+
+        
+
+        <footer class="container py-5">
+
+        	<div class="row">
+
+        		<div class="col-md-6 footer-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+              		    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    </a>
+        		  	<span class="footer-logo-lext">petfactory &copy; 2019</span>
+            	</div>
+
+        		<div class="col-md-6 social-list">
+        	  		<ul class="">
+        			    <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://github.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://vimeo.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.992 4.275c-.07 1.56-1.16 3.697-3.263 6.41-2.176 2.832-4.017 4.248-5.522 4.248-.933 0-1.722-.862-2.367-2.588L3.55 7.6c-.48-1.724-.993-2.587-1.542-2.587-.12 0-.538.252-1.255.755L0 4.796C.79 4.1 1.568 3.406 2.335 2.71c1.053-.912 1.844-1.39 2.37-1.44 1.246-.12 2.012.733 2.3 2.56.31 1.97.526 3.194.647 3.673.36 1.634.754 2.45 1.185 2.45.335 0 .838-.53 1.51-1.59.67-1.06 1.028-1.866 1.076-2.42.096-.915-.263-1.374-1.077-1.374-.383 0-.778.087-1.185.262.788-2.58 2.29-3.834 4.508-3.762 1.644.048 2.42 1.116 2.324 3.205z" fill-rule="nonzero"/></svg></a></li>
+        			    <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+        	  		</ul>
+        		</div>
+        	</div>
+        </footer>
+
+
+    	
+    	
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	
+    	
+        <script src="https://petfactory.se/js/menu.js"></script>
+	</body>
+</html>

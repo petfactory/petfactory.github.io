@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Works on Petfactory</title>
+    <link>https://petfactory.se/work/</link>
+    <description>Recent content in Works on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Feb 2020 13:45:58 +0100</lastBuildDate>
+    
+	<atom:link href="https://petfactory.se/work/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mocap Dance</title>
+      <link>https://petfactory.se/work/mocap_dance/</link>
+      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/mocap_dance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fluorescent</title>
+      <link>https://petfactory.se/work/fluorescent/</link>
+      <pubDate>Tue, 21 Jan 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/fluorescent/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Guided</title>
+      <link>https://petfactory.se/work/guided/</link>
+      <pubDate>Thu, 09 Jan 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/guided/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Dodecahedron</title>
+      <link>https://petfactory.se/work/dodecahedron/</link>
+      <pubDate>Sat, 21 Dec 2019 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/dodecahedron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raku</title>
+      <link>https://petfactory.se/work/raku/</link>
+      <pubDate>Fri, 20 Dec 2019 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/raku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ceramics</title>
+      <link>https://petfactory.se/work/ceramics/</link>
+      <pubDate>Thu, 19 Dec 2019 13:45:58 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/ceramics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tunnel</title>
+      <link>https://petfactory.se/work/tunnel/</link>
+      <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://petfactory.se/work/tunnel/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>Proc city 02</title>
+      <link>https://petfactory.se/work/proc_city_02/</link>
+      <pubDate>Sun, 01 Sep 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/proc_city_02/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>The Bot</title>
+      <link>https://petfactory.se/work/the_bot/</link>
+      <pubDate>Thu, 01 Aug 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/the_bot/</guid>
+      <description>       </description>
+    </item>
+    
+    <item>
+      <title>Ray</title>
+      <link>https://petfactory.se/work/ray/</link>
+      <pubDate>Mon, 01 Jul 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/ray/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>Atlas Copco - Genuine parts</title>
+      <link>https://petfactory.se/work/genuine_parts/</link>
+      <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/genuine_parts/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>Jet Set Pets</title>
+      <link>https://petfactory.se/work/jetsetpets/</link>
+      <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
+      
+      <guid>https://petfactory.se/work/jetsetpets/</guid>
+      <description>   </description>
+    </item>
+    
+  </channel>
+</rss>

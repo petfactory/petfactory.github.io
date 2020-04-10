@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Substance painter on Petfactory</title>
+    <link>https://petfactory.se/tags/substance-painter/</link>
+    <description>Recent content in Substance painter on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Feb 2020 20:26:30 +0100</lastBuildDate>
+    
+	<atom:link href="https://petfactory.se/tags/substance-painter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Substance Painter - intro</title>
+      <link>https://petfactory.se/notes/substance_painter_intro/</link>
+      <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
+      
+      <guid>https://petfactory.se/notes/substance_painter_intro/</guid>
+      <description>Some initial notes on learning Substance Painter 2018.
+Material sets &amp;amp; ID Maps Material set (Maya) or shop_materialpath (Houdini). To make it easier to paint it can be good to organize the model using 2 separate models (of the same model) but where the materials are named and assigned differently. Lets say that we wish to separate a model into 3 different texture sets. &amp;ldquo;base&amp;rdquo;, &amp;ldquo;mid&amp;rdquo; and &amp;ldquo;top&amp;rdquo;. We create material called this and assigns them to the geo that we want to separate i.</description>
+    </item>
+    
+  </channel>
+</rss>

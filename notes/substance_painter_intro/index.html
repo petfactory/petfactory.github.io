@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+    	
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+	    
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	    
+        <link rel="stylesheet" href="https://petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://petfactory.se/css/syntax.css">
+        
+        
+        
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
+	    <title>Substance Painter - intro</title>
+
+	</head>
+
+	<body>
+
+        <nav class="site-header"> 
+
+            <div class="mobile-menu-trigger">            
+                <a href="javascript:void(0);" class="menu-icon"><svg fill="#999" width="18" height="18" viewBox="0 0 18 15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg></a>
+            </div>
+
+    		<div class="container d-flex flex-column flex-md-row justify-content-between main-nav-wrap">
+        		
+                <div class="header-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    <span class="header-logo-text">PETFACTORY</span>
+                    </a>
+                </div>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/about">ABOUT</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/work">WORK</a>
+        		<a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/cv">CV</a>
+                <a class="py-2 d-none d-md-inline-block" href="https://petfactory.se/notes">NOTES</a>
+      		</div>
+            
+    	</nav>
+
+        <nav id="menu-wrap" class="open closed">
+
+            <ul>
+                <li><a href="https://petfactory.se/about">ABOUT</a></li>
+                <li><a href="https://petfactory.se/work">WORK</a></li>
+                <li><a href="https://petfactory.se/cv">CV</a></li>
+                <li><a href="https://petfactory.se/notes">NOTES</a></li>
+            </ul>
+
+        </nav> 
+
+        
+
+        <div class="container-fluid">
+            <div id="banner-wrap">
+            </div>
+        </div>
+
+        <main>
+
+            
+
+<div class="container">
+
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#opacity">Opacity</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#id-map-fix">ID map fix</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#texture-set">Texture Set</a></li>
+    <li><a href="#channel">Channel</a></li>
+    <li><a href="#brush">Brush</a></li>
+    <li><a href="#lighting">Lighting</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#example-1">Example 1</a></li>
+    <li><a href="#flattening-passthrough">Flattening (passthrough)</a></li>
+  </ul>
+</nav>
+		</aside>	
+	</div>
+
+</div>
+
+
+<div class="container notes-wrap">
+
+	<div class="row">
+		
+		<div class="col-md-10 mx-auto">
+			<h1>Substance Painter - intro</h1>
+			<p>Some initial notes on learning Substance Painter 2018.</p>
+<h1 id="material-sets--id-maps">Material sets &amp; ID Maps</h1>
+<p>Material set (Maya) or shop_materialpath (Houdini). To make it easier to paint it can be good to organize the model using 2 separate models (of the same model) but where the materials are named and assigned differently. Lets say that we wish to separate a model into 3 different texture sets. &ldquo;base&rdquo;, &ldquo;mid&rdquo; and &ldquo;top&rdquo;. We create material called this and assigns them to the geo that we want to separate i.e. have in separate texture sets.</p>
+<p>In the second model we will create new materials with new names that makes sense like &ldquo;metal&rdquo;, &ldquo;plastic&rdquo; etc and assign this to the geo that it relates to. We can the use this model as the high resolution model when we bake the ID maps. This way we can separate the model in the viewport when we paint but also get good ID maps that we can use in our painting workflow.</p>
+<h1 id="texture-set-list">Texture Set List</h1>
+<p>A texture set is constructed by material ID, meaning the model is geometrically separated by its materials. These sets are listed in the texture set list. A quick way to select a texture set is <strong>Cmd Alt RMB click</strong> on the model to select the corresponding texture set.</p>
+<h1 id="texture-set-settings">Texture Set Settings</h1>
+<p>Each texture set will have its on texture set settings. The settings of the selected texture set will be displayed in the texture set settings.</p>
+<p>Lets say that we want to create a glass material then we need to add an opacity layer to the channels:
+(Note that we also have created a new shader instance as described below in shader settings)</p>
+<ul>
+<li>Add Channel
+<ul>
+<li>To add a channel, we click the <strong>+</strong> icon in the top of the texture set settings window and select the channel we wish to add. (in this case opacity)</li>
+</ul>
+</li>
+</ul>
+<h1 id="layers">Layers</h1>
+<p>Each texture set will also have its on layer stack associated with it. The layers of the selected texture set will be shown in the layers window.</p>
+<p>In the layers window we control which layer is connected to which channel. So lets say that we want to add a layer and have it control the opacity.</p>
+<ul>
+<li>Add a fill layer
+<ul>
+<li>Click on the add fill layer icon (looks like a bucket) in the top of the layer window. Give the name a descriptive name.</li>
+</ul>
+</li>
+<li>With the new fill layer selected in the <strong>Properties</strong> window uncheck all channels excpet the opacity (op)</li>
+</ul>
+<h2 id="opacity">Opacity</h2>
+<p>To change the opacity of a layer you can adjust the slider on the right side of the layer. <strong>Note</strong> that you need to set the dropdown menu att the top left of the layers window to the channel you wish to adjust.</p>
+<h1 id="properties">Properties</h1>
+<p>The properties window will display properties of the selected item. Here we can select which channels a specific fill layer is affecting.</p>
+<ul>
+<li>Quck view menu
+<ul>
+<li>if you hav the properties window closed you can <strong>RMB click</strong> the work area to popup the quick view menu. This will display the properties of the selected item.</li>
+</ul>
+</li>
+</ul>
+<h1 id="shader-settings">Shader Settings</h1>
+<p>In the shader settings window you can see the shader settings of the selected texture set. On the right hand side of the texture set the shader of each texture set will be displayed.</p>
+<p>By default we will probably work with a PBR shaders. But If we want to create a glass material we need to change the shader:</p>
+<ul>
+<li>Create new shader
+<ul>
+<li>You can assign a new shader by LMB click the dropdown menu &gt; New Shader Instance</li>
+</ul>
+</li>
+<li>Edit shader settings
+<ul>
+<li>In the shader settings window click the second button from the top (probably says pbr) and select the PBR-metal-rough-with-aplha-blending material from the popup window.</li>
+</ul>
+</li>
+</ul>
+<h1 id="baking-maps">Baking maps</h1>
+<p>Each texture set has its texture settings. In the <strong>Texture Set Settings</strong> you will find the <strong>Bake Mesh Maps</strong> button. Click to open the baking window. Here we cab select which maps we want to bake. If we are painting a high resolution model we might want to skip the Normal and only bake World space normals. You can select the map type sin the left widget and the associated parameters will be displayed to the right.</p>
+<p>Here are som parameters we might want to change:</p>
+<ul>
+<li>Common
+<ul>
+<li>High Definition Meshes -&gt; path/to/mesh.fbx
+<ul>
+<li><strong>Note</strong> as discussed earlier (Material sets &amp; ID Maps) here we use the same model but with different material names and assignment.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ID
+<ul>
+<li>Color Source -&gt; Material Color
+<ul>
+<li>We do this so that we can use the material sets to generate the ID maps. <strong>Note</strong> as discussed earlier (Material sets &amp; ID Maps)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The changes we do to the baking params only applies to the texture set that is specified in the texture set dropdown at the top in the baking parameters widget. if we want to use the same settings on all texture sets we can click the <strong>Apply to all</strong> button on the righthand side.</p>
+<h2 id="id-map-fix">ID map fix</h2>
+<p>We might get artifacts when we bake the ID maps (some of the colors will be projected to other nearby colors). To fix this we can do the following:</p>
+<p>We first append a suffix to the material names used in the two models that we prepare for substance painter. In the &ldquo;main&rdquo; file that we import when we start the project we give the materials a suffix of _main and in the mesh that we specify in the baking process (as high poly mersh) we give its material the suffix of _id. Then we oipen up the bake window and uncheck all maps but the <strong>ID</strong> map and change the following:</p>
+<ul>
+<li>Common
+<ul>
+<li>Match -&gt; By Mesh Name</li>
+<li>High Poly Mesh Suffix -&gt; _id</li>
+<li>Low Poly Mesh Suffix -&gt; _main</li>
+</ul>
+</li>
+</ul>
+<p>Then we click Bake All Texture Sets again.</p>
+<h1 id="add-custom-asset">Add custom asset</h1>
+<p>To add a rust texture to the shelf this is what we do:</p>
+<ul>
+<li><strong>&gt; File &gt; Import Resources</strong> (or use the rightmost button in the shelf toolbar)</li>
+<li>
+<blockquote>
+<p>Click <strong>Add resources</strong> button</p>
+</blockquote>
+</li>
+<li>Select the texture(s) and press open</li>
+<li>To <strong>organize</strong> the assets we add some tags. select all imported assets and in the rightmost dropdown menu select Textures</li>
+<li>In the textfield that says &ldquo;Optional prefix/path&rdquo; lets write rust (or what makes sense)</li>
+<li>We need to specify to what we want to import the textures to. We do this by clicking the button that says <strong>Import you resources to:</strong> in the lower right corner.
+<ul>
+<li>we can choose between, this session, current project or shelf.</li>
+</ul>
+</li>
+</ul>
+<h1 id="workflow">Workflow</h1>
+<p><a href="https://www.youtube.com/watch?v=io-bAoaUIRE&amp;list=PLB0wXHrWAmCwnqWfKdGEmbtSKN2EzvLrY&amp;index=6">8.16 in</a></p>
+<h1 id="tips">Tips</h1>
+<ul>
+<li>Drag &amp; drop material using ID maps
+<ul>
+<li>Hold <strong>Cmd</strong> while dragging and dropping. (This will add a color selection effect and set the color)</li>
+</ul>
+</li>
+<li>Passthrough blending mode
+<ul>
+<li>This using this mode we can (among other things) use the clone stamp to clone all layer below.</li>
+</ul>
+</li>
+</ul>
+<h1 id="shortcuts">Shortcuts</h1>
+<h2 id="texture-set">Texture Set</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select texure set</td>
+<td>Cmd Alt RMB click</td>
+</tr>
+</tbody>
+</table>
+<h2 id="channel">Channel</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material Mode</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Display Next Channel</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Display Prev Channel</td>
+<td>Shift C</td>
+</tr>
+<tr>
+<td>Display Next Mesh Map</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Display Prev Mesh Map</td>
+<td>Shift B</td>
+</tr>
+</tbody>
+</table>
+<h2 id="brush">Brush</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size</td>
+<td>Cmd Scroll</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Cmd RMB drag left - right</td>
+</tr>
+<tr>
+<td>Wazza</td>
+<td>Cmd RMB drag up - down</td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>Cmd LMB drag left - right</td>
+</tr>
+<tr>
+<td>Rotate</td>
+<td>Cmd LMB drag up - down</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lighting">Lighting</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotate HDRI</td>
+<td>Shift RMB drag</td>
+</tr>
+</tbody>
+</table>
+<h1 id="anchor-points">Anchor Points</h1>
+<h2 id="example-1">Example 1</h2>
+<p>Lets say that we want to create 3 channels - basecolor, roughness and height. We want to drive the <strong>basecolor</strong> with a grunge texture which we will colorize using a gradient effect. We will also use the same grunge texture instance to affect the <strong>roughness</strong>. Finally we will add some additional grunge to it and use the combined channels in our <strong>height</strong> channel.</p>
+<p>Base Color</p>
+<ul>
+<li>Create a <strong>Fill layer</strong>, name it basecolor &amp; enable only the color channel.</li>
+<li>RMB click the layer -&gt; <strong>Add Fill</strong>, enable only the color channel &amp; add a grunge map to the Base Color slot</li>
+<li>RMB click the layer -&gt; <strong>Add Anchor Point</strong>, name it &ldquo;base_noise&rdquo;</li>
+<li>RMB click the layer -&gt; <strong>Add Filter</strong>, enable only the color channel &amp; add a <strong>Gradient</strong> filter</li>
+<li>Set the color 1, 2 &amp; 3 slots to what you like.</li>
+</ul>
+<p>Roughness</p>
+<ul>
+<li>Create a <strong>Fill layer</strong>, name it roughness &amp; enable only the rough channel.</li>
+<li>LMB Click the <strong>Roughness</strong> slot, in the popup menu click <strong>Anchor points</strong> and select the &ldquo;base_noise&rdquo; anchour we created earlier.</li>
+<li>In the added anchor noide we can choose to invert or adjust the levels with the built in levels widget.</li>
+<li>We add some additional grunge to the roughness by RMB click the layer -&gt; <strong>Add Fill</strong> enable only the rough channel, click the Roughness slot and load some nice grunge, (maybe set as triplanar)</li>
+<li>Lastly we will add another anchor so that we can use the roughness in our height layer. RMB click the layer -&gt; <strong>Add Anchor Point</strong>, name it &ldquo;rough&rdquo;</li>
+</ul>
+<p>Height</p>
+<ul>
+<li>
+<ul>
+<li>Create a <strong>Fill layer</strong>, name it height &amp; enable only the height channel.</li>
+</ul>
+</li>
+<li>LMB click the <strong>height</strong> slot, in the popup menu click <strong>Anchor points</strong> and select the &ldquo;rough&rdquo; anchor we created earlier.</li>
+<li>Since we want to use the &ldquo;roughness&rdquo; channel to feed into our height, in the anchor node <strong>Referemced channel</strong> set it to roughness.</li>
+<li>We can adjust the levels with the built in levels control of the anchor node</li>
+<li>We can also adjust the opacity of the height layer. First make sure that the dropdown in the top left corner of the layers window is set to height, then we can adjust the height opacity. (on the right side of the fill layer itself)</li>
+</ul>
+<h2 id="flattening-passthrough">Flattening (passthrough)</h2>
+<p>Lets say that you want to create an anchor to use the combined result of many layers. To do this we can use the passthrough blending mode.</p>
+<ul>
+<li>Create a <strong>Paint</strong> Layer</li>
+<li>Enable the channel that you wish to &ldquo;flatten&rdquo; lets use roughness in our example (disable the other channels)</li>
+<li>Set the dropdown in the top left corner of the layer menu to the channel in question (in our case roughness)</li>
+<li>Set the blending mode of the created layer to <strong>Passthrough</strong></li>
+<li>RMB click the layer -&gt; Add anchor point, give it a useful name</li>
+<li>Now we can target this anchor from layers that are above. (When you target the anchor make sure that you set the right channel to sample)</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=M3A36NYbzzk">Here</a> is a good link that demonstrates the concept above.
+<a href="https://www.youtube.com/watch?v=w44yuMFtFyM&amp;list=PLB0wXHrWAmCwnqWfKdGEmbtSKN2EzvLrY&amp;index=10">Here</a> is another one.</p>
+		
+		</div>
+	</div>
+</div>
+	
+
+
+        </main>
+
+        
+
+        <footer class="container py-5">
+
+        	<div class="row">
+
+        		<div class="col-md-6 footer-logo-wrap">
+                    <a class="py-2 home-icon" href="https://petfactory.se/">
+              		    <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    </a>
+        		  	<span class="footer-logo-lext">petfactory &copy; 2019</span>
+            	</div>
+
+        		<div class="col-md-6 social-list">
+        	  		<ul class="">
+        			    <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://github.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</a></li>
+        			    <li><a target="_blank" class="" href="https://vimeo.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.992 4.275c-.07 1.56-1.16 3.697-3.263 6.41-2.176 2.832-4.017 4.248-5.522 4.248-.933 0-1.722-.862-2.367-2.588L3.55 7.6c-.48-1.724-.993-2.587-1.542-2.587-.12 0-.538.252-1.255.755L0 4.796C.79 4.1 1.568 3.406 2.335 2.71c1.053-.912 1.844-1.39 2.37-1.44 1.246-.12 2.012.733 2.3 2.56.31 1.97.526 3.194.647 3.673.36 1.634.754 2.45 1.185 2.45.335 0 .838-.53 1.51-1.59.67-1.06 1.028-1.866 1.076-2.42.096-.915-.263-1.374-1.077-1.374-.383 0-.778.087-1.185.262.788-2.58 2.29-3.834 4.508-3.762 1.644.048 2.42 1.116 2.324 3.205z" fill-rule="nonzero"/></svg></a></li>
+        			    <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+        	  		</ul>
+        		</div>
+        	</div>
+        </footer>
+
+
+    	
+    	
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    	
+    	
+        <script src="https://petfactory.se/js/menu.js"></script>
+	</body>
+</html>
