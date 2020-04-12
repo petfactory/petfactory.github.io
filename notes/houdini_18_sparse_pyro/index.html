@@ -84,7 +84,7 @@
       <ul>
         <li><a href="#popnet">Popnet</a></li>
         <li><a href="#point-wrangle">Point Wrangle</a></li>
-        <li><a href="#null">Null</a></li>
+        <li><a href="#points-out">Points Out</a></li>
       </ul>
     </li>
     <li><a href="#source-volume">Source Volume</a>
@@ -92,14 +92,22 @@
         <li><a href="#volume-rasterize-attributes-density">Volume Rasterize Attributes (Density)</a></li>
         <li><a href="#volume-vop-density-noise">Volume VOP (Density Noise)</a></li>
         <li><a href="#volume-rasterize-attributes-velocity">Volume Rasterize Attributes (Velocity)</a></li>
-        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a></li>
-        <li><a href="#visualizing-velocity-volume">Visualizing Velocity Volume</a></li>
-        <li><a href="#null-1">Null</a></li>
+        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a>
+          <ul>
+            <li><a href="#visualizing-velocity-volume">Visualizing Velocity Volume</a></li>
+          </ul>
+        </li>
+        <li><a href="#merge-density--velocity">Merge Density &amp; Velocity</a>
+          <ul>
+            <li><a href="#volume-visualization">Volume visualization</a></li>
+          </ul>
+        </li>
+        <li><a href="#source-out">Source Out</a></li>
       </ul>
     </li>
     <li><a href="#sparse-pyro-sim">Sparse Pyro Sim</a>
       <ul>
-        <li><a href="#dop-network">Dop Network</a></li>
+        <li><a href="#dop-network">DOP Network</a></li>
         <li><a href="#pyro-solver-sparse">Pyro Solver (Sparse)</a></li>
         <li><a href="#smoke-object-sparse">Smoke Object (Sparse)</a></li>
         <li><a href="#volume-source-density--temperature">Volume Source (Density &amp; Temperature)</a></li>
@@ -129,8 +137,8 @@
 We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@pscale</span> <span style="color:#f92672">=</span> chramp(<span style="color:#e6db74">&#39;density_ramp&#39;</span>, <span style="color:#a6e22e">@nage</span>);
 <span style="color:#a6e22e">@density</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>;
-</code></pre></div><h2 id="null">Null</h2>
-<p>Lets add a null abd call it &ldquo;POINTS&rdquo;</p>
+</code></pre></div><h2 id="points-out">Points Out</h2>
+<p>Lets add a <strong>Null</strong> abd call it &ldquo;POINTS&rdquo;</p>
 <h1 id="source-volume">Source Volume</h1>
 <h2 id="volume-rasterize-attributes-density">Volume Rasterize Attributes (Density)</h2>
 <p>Append a volume rasterize attributes to the &ldquo;POINTS&rdquo; null.</p>
@@ -225,17 +233,49 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </li>
 </ul>
 <h2 id="volume-vop-velocity-noise">Volume VOP (Velocity Noise)</h2>
-<h2 id="visualizing-velocity-volume">Visualizing Velocity Volume</h2>
+<p>Since the velocity volume is rasterized from a single particle (and since it is one point it has only one velocity attribute) the entire velocity volume have the same velocity. To introduce noise to the volume we will use a Volume VOP.<br>
+Append a the <strong>Volume VOP</strong> to the <strong>Volume Rasterize Attributes</strong> (Velocity) node and step in.</p>
+<h3 id="visualizing-velocity-volume">Visualizing Velocity Volume</h3>
 <p>it might be usefull to visualize the velocity. To do this:</p>
 <ul>
 <li>Create a <strong>Volume Slice</strong> and append to the <strong>velocity volume rasterize attributes</strong></li>
 <li>Create a <strong>Volume Trail</strong> and set the <strong>Volume Slice</strong> as first input and <strong>velocity volume rasterize attributes</strong> as the second input.</li>
 </ul>
-<h2 id="null-1">Null</h2>
-<p>Lets add a null and call it &ldquo;SOURCE&rdquo;</p>
+<h2 id="merge-density--velocity">Merge Density &amp; Velocity</h2>
+<p>We want to merge the density- and the velocity-volume so lets create a <strong>merge</strong> node and hook up the two volume nodes. When we do this the vieport visualization might look a bit weird since it is displaying the density aswell as the velocity volumes. The velocity voulme appears as a &ldquo;square&rdquo; volume block. You might also see that it is only appearing in some of the places, this is because negative velocities will not be visible.<br>
+To control the display of the volumes we can add a volume visualization node. <strong>Note</strong> that this does not delete or edit volumes it only lets us control the display of the volumes.</p>
+<h3 id="volume-visualization">Volume visualization</h3>
+<ul>
+<li>Volume Visualization
+<ul>
+<li>Smoke
+<ul>
+<li>Density Field: <strong>density</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="source-out">Source Out</h2>
+<p>Lets add a <strong>Null</strong> and call it &ldquo;SOURCE&rdquo; (connect the output from the volume visualization node)</p>
 <h1 id="sparse-pyro-sim">Sparse Pyro Sim</h1>
-<h2 id="dop-network">Dop Network</h2>
-<p>Create a <strong>Dop Network</strong> and step in.</p>
+<h2 id="dop-network">DOP Network</h2>
+<p>Create a <strong>DOP Network</strong> and step in.</p>
+<ul>
+<li>DOP Network
+<ul>
+<li>Cache
+<ul>
+<li>Cache Memory: <strong>50000</strong>
+<ul>
+<li>By default the cache memory is set to 5000 MB - 5GB. If the sim needs more RAM then that it will reuse the memoty already used in the beginning of the sim so we will not be able to play through the time line. Lets allow the sim to use 50 GB instead (or however much memory you have available to be used)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="pyro-solver-sparse">Pyro Solver (Sparse)</h2>
 <p>Create a <a href="https://www.sidefx.com/docs/houdini/nodes/dop/pyrosolver_sparse.html"><strong>Pyro Solver (Sparse)</strong></a> and connect to output.</p>
 <ul>
