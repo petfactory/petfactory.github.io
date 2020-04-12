@@ -89,8 +89,11 @@
     </li>
     <li><a href="#source-volume">Source Volume</a>
       <ul>
-        <li><a href="#volume-rasterize-attributes">Volume Rasterize Attributes</a></li>
-        <li><a href="#density-noise-volume-vop">Density Noise (Volume VOP)</a></li>
+        <li><a href="#volume-rasterize-attributes-density">Volume Rasterize Attributes (Density)</a></li>
+        <li><a href="#volume-vop-density-noise">Volume VOP (Density Noise)</a></li>
+        <li><a href="#volume-rasterize-attributes-velocity">Volume Rasterize Attributes (Velocity)</a></li>
+        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a></li>
+        <li><a href="#visualizing-velocity-volume">Visualizing Velocity Volume</a></li>
         <li><a href="#null-1">Null</a></li>
       </ul>
     </li>
@@ -99,7 +102,8 @@
         <li><a href="#dop-network">Dop Network</a></li>
         <li><a href="#pyro-solver-sparse">Pyro Solver (Sparse)</a></li>
         <li><a href="#smoke-object-sparse">Smoke Object (Sparse)</a></li>
-        <li><a href="#volume-source">Volume Source</a></li>
+        <li><a href="#volume-source-density--temperature">Volume Source (Density &amp; Temperature)</a></li>
+        <li><a href="#volume-source-velocity">Volume Source (Velocity)</a></li>
       </ul>
     </li>
   </ul>
@@ -128,7 +132,7 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </code></pre></div><h2 id="null">Null</h2>
 <p>Lets add a null abd call it &ldquo;POINTS&rdquo;</p>
 <h1 id="source-volume">Source Volume</h1>
-<h2 id="volume-rasterize-attributes">Volume Rasterize Attributes</h2>
+<h2 id="volume-rasterize-attributes-density">Volume Rasterize Attributes (Density)</h2>
 <p>Append a volume rasterize attributes to the &ldquo;POINTS&rdquo; null.</p>
 <ul>
 <li>Volume Rasterize Attributes
@@ -149,7 +153,7 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <li><strong>Note!</strong> This is just a multiplier of the pscale, (could leave at 1 but in the lesson it was set at 0.5)</li>
 </ul>
 </li>
-<li>Velocity Blur: <strong>1</strong>
+<li>Velocity Blur: <strong>On</strong>
 <ul>
 <li>To make fast moving points appear smoother and less &ldquo;stepped&rdquo; we can use velocity blur</li>
 </ul>
@@ -168,7 +172,7 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </ul>
 </li>
 </ul>
-<h2 id="density-noise-volume-vop">Density Noise (Volume VOP)</h2>
+<h2 id="volume-vop-density-noise">Volume VOP (Density Noise)</h2>
 <p>Lets add noise to our density volume. Append a volume vop and step in. We will use a 4d vector to sample antialias noise, fit the result and multiply it with the incomming density.</p>
 <ul>
 <li>Vector to Vector4</li>
@@ -191,16 +195,66 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </li>
 <li>connect the aa noise output to the val input of ther fit node</li>
 </ul>
+<h2 id="volume-rasterize-attributes-velocity">Volume Rasterize Attributes (Velocity)</h2>
+<p>Append a volume rasterize attributes to the &ldquo;POINTS&rdquo; null.</p>
+<ul>
+<li>Volume Rasterize Attributes
+<ul>
+<li>Attributes: <strong>v</strong></li>
+<li>Voxel Size: <strong>ch(&quot;../pyro/smokeobject_sparse1/divsize&rdquo;)</strong>
+<ul>
+<li>Driven by the simulation voxel size</li>
+</ul>
+</li>
+<li>Coverage Scale: 1
+<ul>
+<li>The scale of the coverage (which is density by default)</li>
+</ul>
+</li>
+<li>Particle Scale: <strong>0.5</strong> <sup>(read note below)</sup>
+<ul>
+<li><strong>Note!</strong> This is just a multiplier of the pscale, (could leave at 1 but in the lesson it was set at 0.5)</li>
+</ul>
+</li>
+<li>Velocity Blur: Off
+<ul>
+<li><strong>Note</strong> if the particles are moving fast there might be gaps in the velocity sourcing between frames, in that case we turn it on.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="volume-vop-velocity-noise">Volume VOP (Velocity Noise)</h2>
+<h2 id="visualizing-velocity-volume">Visualizing Velocity Volume</h2>
+<p>it might be usefull to visualize the velocity. To do this:</p>
+<ul>
+<li>Create a <strong>Volume Slice</strong> and append to the <strong>velocity volume rasterize attributes</strong></li>
+<li>Create a <strong>Volume Trail</strong> and set the <strong>Volume Slice</strong> as first input and <strong>velocity volume rasterize attributes</strong> as the second input.</li>
+</ul>
 <h2 id="null-1">Null</h2>
 <p>Lets add a null and call it &ldquo;SOURCE&rdquo;</p>
 <h1 id="sparse-pyro-sim">Sparse Pyro Sim</h1>
 <h2 id="dop-network">Dop Network</h2>
 <p>Create a <strong>Dop Network</strong> and step in.</p>
 <h2 id="pyro-solver-sparse">Pyro Solver (Sparse)</h2>
-<p>Create a <strong>Pyro Solver (Sparse)</strong> and connect to output.</p>
+<p>Create a <a href="https://www.sidefx.com/docs/houdini/nodes/dop/pyrosolver_sparse.html"><strong>Pyro Solver (Sparse)</strong></a> and connect to output.</p>
 <ul>
 <li>Pyro Solver (Sparse)
 <ul>
+<li>Simulation
+<ul>
+<li>Advection/Reflection: <strong>Single-Project</strong>
+<ul>
+<li>Advection-Reflection attempts to inject energy lost due to pressure projection back into the simulation. Enabling this option may exhibit better vortex retainment in the flow.<br>
+<strong>Disabled</strong> No reflection is performed; this is the recommended setting for simulations that involve non-zero goal divergence, such as explosions.<br>
+<strong>Single-Project</strong>
+Performs a single pressure projection per timestep and adds the removed velocity components back at the next step. This option is marginally slower than Disabled, but requires an extra vector field to be carried between timesteps.<br>
+<strong>Double-Project</strong>
+Performs two pressure projections and velocity advection passes per timestep. This option is a lot slower than Single-Project, but may yield better results and stability.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Shape
 <ul>
 <li>Dissipation: <strong>Off</strong></li>
@@ -211,9 +265,27 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </ul>
 <p>Create and merge in a <strong>Ground Plane</strong> between the output and the pyro solver.</p>
 <h2 id="smoke-object-sparse">Smoke Object (Sparse)</h2>
+<p>Create a <strong>Smoke Object (Sparse)</strong> and connect to the <strong>objects</strong> (1st) input of the pyro solver.</p>
 <ul>
 <li>Smoke Object
 <ul>
+<li>Properties
+<ul>
+<li>Enable Sparse Solving: <strong>On</strong></li>
+<li>Voxel Size: <strong>0.05 (lowrez)</strong>
+<ul>
+<li>We copy this param and let it drive the voxel size of the volume rasterize attr node</li>
+</ul>
+</li>
+<li>Max Size: <strong>On</strong>
+<ul>
+<li>Set a max size of the sim, by default it will expand as the sim evolves. This might be a good idea if the sims expands beyound the camera frustrum, no need to sim something we do not see.<br>
+<strong>Note</strong> Instead of entering values on the parms on the smokobject we can create a box in the sop level and copy the dimensions to this parm. It might be easier to do this because then we can easily see the sorce particles and make the box dimension fit.<br>
+When we copy the <strong>size</strong> and <strong>center</strong> parms we can <strong>RMB click &gt; Copy Parameter</strong> on the parm name itself and then paste the relative ref on the destination parm. (no need to do it component by component).</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Guides
 <ul>
 <li>Visualization
@@ -230,8 +302,7 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </ul>
 </li>
 </ul>
-<p>Create a <strong>Smoke Object (Sparse)</strong> and connect to the <strong>objects</strong> (1st) input of the pyro solver.</p>
-<h2 id="volume-source">Volume Source</h2>
+<h2 id="volume-source-density--temperature">Volume Source (Density &amp; Temperature)</h2>
 <p>Create a <strong>Volume Source</strong> and connect to the <strong>sourcing</strong> (3rd) input of the pyro solver.</p>
 <p><strong>Note!</strong> if we don´t have an explicit <strong>temperature</strong> source volume we can use the density as temperature source. We do this by typing &ldquo;density&rdquo; in the source volume field of the temperature target field (multi parm at the bottom of the parametar tab added when we initialize to source smoke)</p>
 <ul>
@@ -287,6 +358,9 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </ul>
 </li>
 </ul>
+<h2 id="volume-source-velocity">Volume Source (Velocity)</h2>
+<p>Create a <strong>Volume Source</strong> and connect to the <strong>sourcing</strong> (3rd) input of the pyro solver.</p>
+<p>We will uase the velocity</p>
 		
 		</div>
 	</div>
