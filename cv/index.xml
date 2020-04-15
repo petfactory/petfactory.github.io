@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CV on Petfactory</title>
-    <link>https://petfactory.github.io/cv/</link>
+    <link>https://www.petfactory.se/cv/</link>
     <description>Recent content in CV on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Oct 2019 14:03:33 +0100</lastBuildDate>
     
-	<atom:link href="https://petfactory.github.io/cv/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/cv/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

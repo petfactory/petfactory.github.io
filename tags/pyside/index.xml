@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PySide on Petfactory</title>
-    <link>https://petfactory.github.io/tags/pyside/</link>
+    <link>https://www.petfactory.se/tags/pyside/</link>
     <description>Recent content in PySide on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Apr 2018 11:16:20 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.github.io/tags/pyside/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/tags/pyside/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PySide QTableView Custom PaintEvent</title>
-      <link>https://petfactory.github.io/notes/pysideide_qtableview_custom_paintevent/</link>
+      <link>https://www.petfactory.se/notes/pysideide_qtableview_custom_paintevent/</link>
       <pubDate>Wed, 25 Apr 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/pysideide_qtableview_custom_paintevent/</guid>
+      <guid>https://www.petfactory.se/notes/pysideide_qtableview_custom_paintevent/</guid>
       <description>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &amp;ldquo;empty&amp;rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty.</description>
     </item>
     
     <item>
       <title>PySide stylesheet &amp; custom painting</title>
-      <link>https://petfactory.github.io/notes/pyside_stylesheet_and_custom_painting/</link>
+      <link>https://www.petfactory.se/notes/pyside_stylesheet_and_custom_painting/</link>
       <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/pyside_stylesheet_and_custom_painting/</guid>
+      <guid>https://www.petfactory.se/notes/pyside_stylesheet_and_custom_painting/</guid>
       <description>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc.</description>
     </item>
     

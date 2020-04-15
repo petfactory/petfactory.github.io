@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Edit on Petfactory</title>
-    <link>https://petfactory.github.io/tags/edit/</link>
+    <link>https://www.petfactory.se/tags/edit/</link>
     <description>Recent content in Edit on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Nov 2019 15:12:17 +0100</lastBuildDate>
     
-	<atom:link href="https://petfactory.github.io/tags/edit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/tags/edit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DaVinci Resolve - Edit</title>
-      <link>https://petfactory.github.io/notes/davinci_resolve_edit/</link>
+      <link>https://www.petfactory.se/notes/davinci_resolve_edit/</link>
       <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/davinci_resolve_edit/</guid>
+      <guid>https://www.petfactory.se/notes/davinci_resolve_edit/</guid>
       <description>Quick tips  Keyboard Customization    DaVinci Resolve &amp;gt; Keyboard Customization
     Project settings  Shift 9 click the home icon in the lower right corner of the main ui   File &amp;gt; Project Settings
     Projects Manager  Shift 1 click the cog icon in the lower right corner of the main ui   File &amp;gt; Project Manager

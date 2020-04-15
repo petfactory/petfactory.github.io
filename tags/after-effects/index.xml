@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>After Effects on Petfactory</title>
-    <link>https://petfactory.github.io/tags/after-effects/</link>
+    <link>https://www.petfactory.se/tags/after-effects/</link>
     <description>Recent content in After Effects on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Jan 2019 20:00:00 +0100</lastBuildDate>
     
-	<atom:link href="https://petfactory.github.io/tags/after-effects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/tags/after-effects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>AE - Misc</title>
-      <link>https://petfactory.github.io/notes/ae/</link>
+      <link>https://www.petfactory.se/notes/ae/</link>
       <pubDate>Tue, 01 Jan 2019 20:00:00 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/ae/</guid>
+      <guid>https://www.petfactory.se/notes/ae/</guid>
       <description>Below are some misc snippets regarding AE that might be useful.
 Shortcuts Timeline Custom shortcuts
    Function Key     Set layer in to CTI Alt Gr [   Set layer out to CTI Alt Gr ]   Trim layer(s) in to CTI Ctrl [   Trim layer(s) out to CTI Ctrl ]    Default shortcuts

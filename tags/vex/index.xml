@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VEX on Petfactory</title>
-    <link>https://petfactory.github.io/tags/vex/</link>
+    <link>https://www.petfactory.se/tags/vex/</link>
     <description>Recent content in VEX on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Apr 2019 13:45:10 +0100</lastBuildDate>
     
-	<atom:link href="https://petfactory.github.io/tags/vex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/tags/vex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Houdini VEX - Snippets</title>
-      <link>https://petfactory.github.io/notes/houdini_vex/</link>
+      <link>https://www.petfactory.se/notes/houdini_vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_vex/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
       <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&#39;seed&#39;))*(chi(&#39;max_num&#39;)+1));s@z_padded = sprintf(&#39;hello_%03i&#39;, i);</description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Petfactory</title>
-    <link>https://petfactory.github.io/</link>
+    <link>https://www.petfactory.se/</link>
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Apr 2020 21:17:10 +0200</lastBuildDate>
     
-	<atom:link href="https://petfactory.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Houdini 18 - Sparse pyro</title>
-      <link>https://petfactory.github.io/notes/houdini_18_sparse_pyro/</link>
+      <link>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</link>
       <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_18_sparse_pyro/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</guid>
       <description>Some notes on using the sparse pyro solver taken while watching Steven Knippings excellent Volumes III v2.0
 Source points Popnet Setup a particle sim that we will use as source for our smoke sim.
 Point Wrangle Lets append a point wrangle to the particles. We will use the normailzed age to drive the density of the particles. We will use a ramp parameter and use the normalized age to drive the ramp.</description>
@@ -24,84 +24,84 @@ Point Wrangle Lets append a point wrangle to the particles. We will use the norm
     
     <item>
       <title>Mocap Dance</title>
-      <link>https://petfactory.github.io/work/mocap_dance/</link>
+      <link>https://www.petfactory.se/work/mocap_dance/</link>
       <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/mocap_dance/</guid>
+      <guid>https://www.petfactory.se/work/mocap_dance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Substance Painter - intro</title>
-      <link>https://petfactory.github.io/notes/substance_painter_intro/</link>
+      <link>https://www.petfactory.se/notes/substance_painter_intro/</link>
       <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/substance_painter_intro/</guid>
+      <guid>https://www.petfactory.se/notes/substance_painter_intro/</guid>
       <description>Some initial notes on learning Substance Painter 2018.
 Material sets &amp;amp; ID Maps Material set (Maya) or shop_materialpath (Houdini). To make it easier to paint it can be good to organize the model using 2 separate models (of the same model) but where the materials are named and assigned differently. Lets say that we wish to separate a model into 3 different texture sets. &amp;ldquo;base&amp;rdquo;, &amp;ldquo;mid&amp;rdquo; and &amp;ldquo;top&amp;rdquo;. We create material called this and assigns them to the geo that we want to separate i.</description>
     </item>
     
     <item>
       <title>Marvelous Designer - intro</title>
-      <link>https://petfactory.github.io/notes/marvelous_designer_intro/</link>
+      <link>https://www.petfactory.se/notes/marvelous_designer_intro/</link>
       <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/marvelous_designer_intro/</guid>
+      <guid>https://www.petfactory.se/notes/marvelous_designer_intro/</guid>
       <description>Tips Right Click There are a lot of useful RMB contextual menus:
  Copy/paste multiple  If you select a pattern and press Cmd C and then Cmd V and RMB click you can use number of instances and the spacing. (The direction is decided by the direction you had when RMB clicked) This also works for Internal lines   Precise numerical movement  If you want to move a point, line pattern you can first start to drag and while holding LMB click RMB to get a popup menu where you can set a numerical value.</description>
     </item>
     
     <item>
       <title>Fluorescent</title>
-      <link>https://petfactory.github.io/work/fluorescent/</link>
+      <link>https://www.petfactory.se/work/fluorescent/</link>
       <pubDate>Tue, 21 Jan 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/fluorescent/</guid>
+      <guid>https://www.petfactory.se/work/fluorescent/</guid>
       <description>  </description>
     </item>
     
     <item>
       <title>Guided</title>
-      <link>https://petfactory.github.io/work/guided/</link>
+      <link>https://www.petfactory.se/work/guided/</link>
       <pubDate>Thu, 09 Jan 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/guided/</guid>
+      <guid>https://www.petfactory.se/work/guided/</guid>
       <description>  </description>
     </item>
     
     <item>
       <title>Dodecahedron</title>
-      <link>https://petfactory.github.io/work/dodecahedron/</link>
+      <link>https://www.petfactory.se/work/dodecahedron/</link>
       <pubDate>Sat, 21 Dec 2019 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/dodecahedron/</guid>
+      <guid>https://www.petfactory.se/work/dodecahedron/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raku</title>
-      <link>https://petfactory.github.io/work/raku/</link>
+      <link>https://www.petfactory.se/work/raku/</link>
       <pubDate>Fri, 20 Dec 2019 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/raku/</guid>
+      <guid>https://www.petfactory.se/work/raku/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ceramics</title>
-      <link>https://petfactory.github.io/work/ceramics/</link>
+      <link>https://www.petfactory.se/work/ceramics/</link>
       <pubDate>Thu, 19 Dec 2019 13:45:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/ceramics/</guid>
+      <guid>https://www.petfactory.se/work/ceramics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Houdini - UV</title>
-      <link>https://petfactory.github.io/notes/houdini_uv/</link>
+      <link>https://www.petfactory.se/notes/houdini_uv/</link>
       <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_uv/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_uv/</guid>
       <description>Vieport display options Open the vieport display option dialog (press D over the viewport)
  Markers tab &amp;gt; Vertices &amp;gt; UV Overlap  Displays the overlap in red (in the UV view)    UV Layout Target Assignment (UDIM) To force specific primitives to a specific UDIM we can use a primitive attr to specify which one.
  Create a poly tube with end caps. Create groups for the top, btm and the &amp;ldquo;mid&amp;rdquo;  One way to do this is to use the group by normal for the top and btm and for the mid a group combine with &amp;ldquo;equals all but&amp;rdquo; the top and btm.</description>
@@ -109,20 +109,20 @@ Material sets &amp;amp; ID Maps Material set (Maya) or shop_materialpath (Houdin
     
     <item>
       <title>Houdini - Compositing</title>
-      <link>https://petfactory.github.io/notes/houdini_compositing/</link>
+      <link>https://www.petfactory.se/notes/houdini_compositing/</link>
       <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_compositing/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_compositing/</guid>
       <description>Preferences In the Edit &amp;gt; Preferences &amp;gt; Compositing we can set how many threads we want to use for the cooking and the Tile Size of each chunk of the tiles that will be processed. We can also set the Resolution Limit. If we do a mosaic of 1 K images we can exceed this limit and that can lead to issues.
 The turn of the thumbnails of each cop node we can disable view &amp;gt; Show Node Previews in the menubar of the cop network view.</description>
     </item>
     
     <item>
       <title>Houdini - TOPS intro</title>
-      <link>https://petfactory.github.io/notes/houdini_tops_intro/</link>
+      <link>https://www.petfactory.se/notes/houdini_tops_intro/</link>
       <pubDate>Thu, 12 Dec 2019 15:09:45 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_tops_intro/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_tops_intro/</guid>
       <description>TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
 Wedging in TOPS Lets have a quick look att how to set up a basic wedge setup in TOPS.
 Create the source geo  In the obj context create a Geometry node and step in Create a Box node Append a Polybevel to it  distance : 0.</description>
@@ -130,10 +130,10 @@ Create the source geo  In the obj context create a Geometry node and step in Cre
     
     <item>
       <title>Houdini Python notes</title>
-      <link>https://petfactory.github.io/notes/houdini_python_notes/</link>
+      <link>https://www.petfactory.se/notes/houdini_python_notes/</link>
       <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_python_notes/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_python_notes/</guid>
       <description>Here I will gather information that I find useful.
 Environment variables Houdini uses environment variables for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.
 See the list of environment variables in Houdini.
@@ -142,10 +142,10 @@ Inspect variables To print the value of an environment variable you can use the 
     
     <item>
       <title>Houdini - intro to HDA</title>
-      <link>https://petfactory.github.io/notes/houdini_intro_to_hda/</link>
+      <link>https://www.petfactory.se/notes/houdini_intro_to_hda/</link>
       <pubDate>Thu, 21 Nov 2019 10:50:51 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_intro_to_hda/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_intro_to_hda/</guid>
       <description>The notes below are based on info found in the Houdini docs as well as other sources.
 Asset name The general form of an asset’s internal name is
 [namespace::]node_name[::version]
@@ -155,30 +155,30 @@ asset name &amp;amp; scripting Some scripting commands require the node category
     
     <item>
       <title>Davinci Resolve - intro to python</title>
-      <link>https://petfactory.github.io/notes/davinci_resolve_intro_to_python/</link>
+      <link>https://www.petfactory.se/notes/davinci_resolve_intro_to_python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/davinci_resolve_intro_to_python/</guid>
+      <guid>https://www.petfactory.se/notes/davinci_resolve_intro_to_python/</guid>
       <description>An old scripting guide can be found here
 Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
     </item>
     
     <item>
       <title>DaVinci Resolve - Fusion</title>
-      <link>https://petfactory.github.io/notes/davinci_resolve_fusion/</link>
+      <link>https://www.petfactory.se/notes/davinci_resolve_fusion/</link>
       <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/davinci_resolve_fusion/</guid>
+      <guid>https://www.petfactory.se/notes/davinci_resolve_fusion/</guid>
       <description>Create a fusion comp Timeline to fusion To &amp;ldquo;send&amp;rdquo; a clip from the edit page to the fusion page we set the playhead on the clip and switch over to the fusion page, This will give use 2 nodes the media in and media out
 New Composition We can also create a new Fusion composition. Open up the media pool, RMB click in the content section of a bin and choose &amp;ldquo;New Fusion Composition&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>DaVinci Resolve - Edit</title>
-      <link>https://petfactory.github.io/notes/davinci_resolve_edit/</link>
+      <link>https://www.petfactory.se/notes/davinci_resolve_edit/</link>
       <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/davinci_resolve_edit/</guid>
+      <guid>https://www.petfactory.se/notes/davinci_resolve_edit/</guid>
       <description>Quick tips  Keyboard Customization    DaVinci Resolve &amp;gt; Keyboard Customization
     Project settings  Shift 9 click the home icon in the lower right corner of the main ui   File &amp;gt; Project Settings
     Projects Manager  Shift 1 click the cog icon in the lower right corner of the main ui   File &amp;gt; Project Manager
@@ -187,92 +187,92 @@ New Composition We can also create a new Fusion composition. Open up the media p
     
     <item>
       <title>Hugo</title>
-      <link>https://petfactory.github.io/notes/hugo_notes/</link>
+      <link>https://www.petfactory.se/notes/hugo_notes/</link>
       <pubDate>Wed, 30 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/hugo_notes/</guid>
+      <guid>https://www.petfactory.se/notes/hugo_notes/</guid>
       <description>Creating/coding for the web is not my primarily focus but i think it is an important skill to have and will be increasingly so. As part of a 1 year program in business and marketing I did almost 20 years ago we had a short course in web development. The instructor insisted that we should use Dreamweaver (Macromedia at the time now Adobe). I did not like it, I thought it hid the internal mechanics and I wanted to get closer to the actual language so I ended up writing everything in notepad.</description>
     </item>
     
     <item>
       <title>Houdini 17 - Pyro</title>
-      <link>https://petfactory.github.io/notes/houdini_17_pyro/</link>
+      <link>https://www.petfactory.se/notes/houdini_17_pyro/</link>
       <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_17_pyro/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_17_pyro/</guid>
       <description>Add a geo to use as source and append a Pyro Source node to it. This node does not make the volume, it creates points.
 Below are some lines form the docs The Pyro Source SOP converts its input geometry into points suitable for sourcing pyro and smoke simulations. This SOP adds specified attributes to the generated points, which can be rasterized and imported into desired DOP fields by the Volume Source node.</description>
     </item>
     
     <item>
       <title>Tunnel</title>
-      <link>https://petfactory.github.io/work/tunnel/</link>
+      <link>https://www.petfactory.se/work/tunnel/</link>
       <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/work/tunnel/</guid>
+      <guid>https://www.petfactory.se/work/tunnel/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Proc city 02</title>
-      <link>https://petfactory.github.io/work/proc_city_02/</link>
+      <link>https://www.petfactory.se/work/proc_city_02/</link>
       <pubDate>Sun, 01 Sep 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/proc_city_02/</guid>
+      <guid>https://www.petfactory.se/work/proc_city_02/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>The Bot</title>
-      <link>https://petfactory.github.io/work/the_bot/</link>
+      <link>https://www.petfactory.se/work/the_bot/</link>
       <pubDate>Thu, 01 Aug 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/the_bot/</guid>
+      <guid>https://www.petfactory.se/work/the_bot/</guid>
       <description>       </description>
     </item>
     
     <item>
       <title>Ray</title>
-      <link>https://petfactory.github.io/work/ray/</link>
+      <link>https://www.petfactory.se/work/ray/</link>
       <pubDate>Mon, 01 Jul 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/ray/</guid>
+      <guid>https://www.petfactory.se/work/ray/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Atlas Copco - Genuine parts</title>
-      <link>https://petfactory.github.io/work/genuine_parts/</link>
+      <link>https://www.petfactory.se/work/genuine_parts/</link>
       <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/genuine_parts/</guid>
+      <guid>https://www.petfactory.se/work/genuine_parts/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Jet Set Pets</title>
-      <link>https://petfactory.github.io/work/jetsetpets/</link>
+      <link>https://www.petfactory.se/work/jetsetpets/</link>
       <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/work/jetsetpets/</guid>
+      <guid>https://www.petfactory.se/work/jetsetpets/</guid>
       <description>   </description>
     </item>
     
     <item>
       <title>Houdini VEX - Snippets</title>
-      <link>https://petfactory.github.io/notes/houdini_vex/</link>
+      <link>https://www.petfactory.se/notes/houdini_vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_vex/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
       <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&#39;seed&#39;))*(chi(&#39;max_num&#39;)+1));s@z_padded = sprintf(&#39;hello_%03i&#39;, i);</description>
     </item>
     
     <item>
       <title>Houdini - Stylesheets</title>
-      <link>https://petfactory.github.io/notes/houdini_stylesheets/</link>
+      <link>https://www.petfactory.se/notes/houdini_stylesheets/</link>
       <pubDate>Sat, 13 Apr 2019 21:06:58 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_stylesheets/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_stylesheets/</guid>
       <description>Some notes on how to create a simple object level style sheet.
 Object level style sheet We have a geo node called &amp;ldquo;spheres&amp;rdquo; which consists of a number of packed primitives. We also have 2 material called yellow &amp;amp; blue. Lets add a style sheet to this object node that lets us assign different materials based on viewport selection.
 Style sheet Inspector (Data tree) Open the inspector for the material style sheets.</description>
@@ -280,10 +280,10 @@ Style sheet Inspector (Data tree) Open the inspector for the material style shee
     
     <item>
       <title>Flask SQLite dev</title>
-      <link>https://petfactory.github.io/notes/flask_sqlite_dev/</link>
+      <link>https://www.petfactory.se/notes/flask_sqlite_dev/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/flask_sqlite_dev/</guid>
+      <guid>https://www.petfactory.se/notes/flask_sqlite_dev/</guid>
       <description>The database will contain materials, material types and surface properties.
   Material
  id name material type surface properties    Material type
@@ -297,29 +297,29 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
     
     <item>
       <title>Houdini misc</title>
-      <link>https://petfactory.github.io/notes/houdini_misc/</link>
+      <link>https://www.petfactory.se/notes/houdini_misc/</link>
       <pubDate>Tue, 01 Jan 2019 20:32:44 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/houdini_misc/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_misc/</guid>
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
 UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    </description>
     </item>
     
     <item>
       <title>Tile Editor</title>
-      <link>https://petfactory.github.io/notes/tile_editor/</link>
+      <link>https://www.petfactory.se/notes/tile_editor/</link>
       <pubDate>Tue, 01 Jan 2019 20:31:44 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/tile_editor/</guid>
+      <guid>https://www.petfactory.se/notes/tile_editor/</guid>
       <description>The Tile Editor is a tool I am developing that creates tile based city blocks (houses and streets, props etc). The project started inside Maya but I have since then moved to Houdini. The gist of the tool: you have an PySide widget in which you can paint the shape of the buildings, change tile appearance and assign geometry. The tool then generates points and attributes to which geometry is instanced.</description>
     </item>
     
     <item>
       <title>AE - Misc</title>
-      <link>https://petfactory.github.io/notes/ae/</link>
+      <link>https://www.petfactory.se/notes/ae/</link>
       <pubDate>Tue, 01 Jan 2019 20:00:00 +0100</pubDate>
       
-      <guid>https://petfactory.github.io/notes/ae/</guid>
+      <guid>https://www.petfactory.se/notes/ae/</guid>
       <description>Below are some misc snippets regarding AE that might be useful.
 Shortcuts Timeline Custom shortcuts
    Function Key     Set layer in to CTI Alt Gr [   Set layer out to CTI Alt Gr ]   Trim layer(s) in to CTI Ctrl [   Trim layer(s) out to CTI Ctrl ]    Default shortcuts
@@ -328,28 +328,28 @@ Shortcuts Timeline Custom shortcuts
     
     <item>
       <title>PySide QTableView Custom PaintEvent</title>
-      <link>https://petfactory.github.io/notes/pysideide_qtableview_custom_paintevent/</link>
+      <link>https://www.petfactory.se/notes/pysideide_qtableview_custom_paintevent/</link>
       <pubDate>Wed, 25 Apr 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/pysideide_qtableview_custom_paintevent/</guid>
+      <guid>https://www.petfactory.se/notes/pysideide_qtableview_custom_paintevent/</guid>
       <description>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &amp;ldquo;empty&amp;rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty.</description>
     </item>
     
     <item>
       <title>PySide stylesheet &amp; custom painting</title>
-      <link>https://petfactory.github.io/notes/pyside_stylesheet_and_custom_painting/</link>
+      <link>https://www.petfactory.se/notes/pyside_stylesheet_and_custom_painting/</link>
       <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/pyside_stylesheet_and_custom_painting/</guid>
+      <guid>https://www.petfactory.se/notes/pyside_stylesheet_and_custom_painting/</guid>
       <description>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc.</description>
     </item>
     
     <item>
       <title>SublimeText</title>
-      <link>https://petfactory.github.io/notes/sublime_text/</link>
+      <link>https://www.petfactory.se/notes/sublime_text/</link>
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
-      <guid>https://petfactory.github.io/notes/sublime_text/</guid>
+      <guid>https://www.petfactory.se/notes/sublime_text/</guid>
       <description>Misc Search and replace pound or hash sign # I wanted to change a H3 header (###) in a markdown file. I first tried the ordinary search field (no regex) but I did not get any matches. What worked for me was to enable the regex search and enter the following:
 ^#{3}\sBuild system dir ~/&amp;lsquo;Library/Application Support/Sublime Text 3/Packages/User&amp;rsquo;
 python3 {&amp;#34;cmd&amp;#34;: [&amp;#34;/path/to/python3&amp;#34;, &amp;#34;-u&amp;#34;, &amp;#34;$file&amp;#34;],&amp;#34;selector&amp;#34;: &amp;#34;source.python&amp;#34;,&amp;#34;file_regex&amp;#34;: &amp;#34;^\\s*File \&amp;#34;(...*?)\&amp;#34;, line ([0-9]*)&amp;#34;}Shortcuts    CMD KEYS     Cursor at each selected line cmd + shift + L   Select occurrences cmd + D   Cursor at line above shift + ctrl + arrow up   Cursor at line below shift + ctrl + arrow down   shift current line up ctrl + cmd + arrow up   shift current line down ctrl + cmd + arrow down    </description>
