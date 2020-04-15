@@ -183,15 +183,20 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <h2 id="volume-vop-density-noise">Volume VOP (Density Noise)</h2>
 <p>Lets add noise to our density volume. Append a volume vop and step in. We will use a 4d vector to sample antialias noise, fit the result and multiply it with the incomming density.</p>
 <ul>
-<li>Vector to Vector4</li>
-<li>connect P to the vec input and time to the fourth component</li>
-<li>Anti-Aliased Noise
+<li><strong>Vector to Vector4</strong></li>
+<li>connect <strong>P</strong> to the <strong>vec</strong> input and <strong>Time</strong> to <strong>fval4</strong> (the fourth component)</li>
+<li><strong>Anti-Aliased Noise</strong>
 <ul>
+<li>Signature: <strong>4D Input, 1D Noise</strong>
+<ul>
+<li>Since density is a 1D attribute we will use a 1D noise.</li>
+</ul>
+</li>
 <li>4D freq: <strong>2 2 2 1</strong></li>
 <li>Roughness: <strong>0.8</strong></li>
 </ul>
 </li>
-<li>Hook up the hvec output to the pos input of the aa noise.</li>
+<li>Hook up the <strong>hvec</strong> output to the <strong>pos</strong> input of the <strong>aa noise</strong>.</li>
 <li>Fit
 <ul>
 <li>Destination min: <strong>0.1</strong>
@@ -233,8 +238,30 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </li>
 </ul>
 <h2 id="volume-vop-velocity-noise">Volume VOP (Velocity Noise)</h2>
-<p>Since the velocity volume is rasterized from a single particle (and since it is one point it has only one velocity attribute) the entire velocity volume have the same velocity. To introduce noise to the volume we will use a Volume VOP.<br>
+<p>Since the velocity volume is rasterized from a single particle (and therefore only has one velocity attribute) the entire velocity volume have the same velocity. To introduce noise to the volume we will use a Volume VOP.<br>
 Append a the <strong>Volume VOP</strong> to the <strong>Volume Rasterize Attributes</strong> (Velocity) node and step in.</p>
+<p>Since the default volume in a Volume VOP is set to density we need to explicitly import and export the velocity attribute.</p>
+<ul>
+<li>Create a <strong>Bind</strong> node and in the attribute <strong>Name</strong> field enter <strong>v</strong> and in the <strong>Type</strong> combobox select <strong>3 Floats (vector)</strong></li>
+<li>Create a <strong>Vector to Vector4</strong> node and connect <strong>P</strong> to the <strong>vec</strong> input and <strong>Time</strong> to <strong>fval4</strong> (the fourth component)</li>
+<li><strong>Anti-Aliased Noise</strong>
+<ul>
+<li>Signature: <strong>4D Input, #D Noise</strong>
+<ul>
+<li>Since velocity is a 3D attribute we will use a 3D noise.</li>
+</ul>
+</li>
+<li>4D freq: <strong>2 2 2 1</strong></li>
+<li>Roughness: <strong>0.8</strong></li>
+</ul>
+</li>
+<li>Hook up the <strong>hvec</strong> output to the <strong>pos</strong> input of the <strong>aa noise</strong>.</li>
+<li>Create an <strong>Add</strong> node</li>
+<li>Connect the output attribute <strong>v</strong> from the <strong>Bind</strong> node to the first input of the add node</li>
+<li>Connect the <strong>noise</strong> output from the <strong>AA Noise</strong> node to the second input of the add node.</li>
+<li>Create a <strong>Bind Export</strong> and in the attribute <strong>Name</strong> field enter <strong>v</strong> and in the <strong>Type</strong> combobox select <strong>3 Floats (vector)</strong></li>
+<li>Connect the <strong>sum</strong> output from the add node to the input of the <strong>Bind Export</strong> node.</li>
+</ul>
 <h3 id="visualizing-velocity-volume">Visualizing Velocity Volume</h3>
 <p>it might be usefull to visualize the velocity. To do this:</p>
 <ul>
@@ -401,7 +428,6 @@ When we copy the <strong>size</strong> and <strong>center</strong> parms we can 
 <h2 id="volume-source-velocity">Volume Source (Velocity)</h2>
 <p>Create a <strong>Volume Source</strong> and connect to the <strong>sourcing</strong> (3rd) input of the pyro solver.</p>
 <p>We will uase the velocity</p>
-<p>WE WILL WE WILL</p>
 		
 		</div>
 	</div>
