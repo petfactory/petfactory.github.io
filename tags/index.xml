@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Apr 2020 21:17:10 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 13:45:58 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,45 @@
     <item>
       <title>Houdini</title>
       <link>https://www.petfactory.se/tags/houdini/</link>
-      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
+      <pubDate>Mon, 20 Apr 2020 13:45:58 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/houdini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marvelous Designer</title>
+      <link>https://www.petfactory.se/tags/marvelous-designer/</link>
+      <pubDate>Mon, 20 Apr 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/marvelous-designer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redshift</title>
+      <link>https://www.petfactory.se/tags/redshift/</link>
+      <pubDate>Mon, 20 Apr 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/redshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substance painter</title>
+      <link>https://www.petfactory.se/tags/substance-painter/</link>
+      <pubDate>Mon, 20 Apr 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/substance-painter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substance Designer</title>
+      <link>https://www.petfactory.se/tags/substance-designer/</link>
+      <pubDate>Wed, 15 Apr 2020 16:13:08 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/substance-designer/</guid>
       <description></description>
     </item>
     
@@ -26,33 +62,6 @@
       <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
       
       <guid>https://www.petfactory.se/tags/sim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Marvelous Designer</title>
-      <link>https://www.petfactory.se/tags/marvelous-designer/</link>
-      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/marvelous-designer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redshift</title>
-      <link>https://www.petfactory.se/tags/redshift/</link>
-      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/redshift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Substance painter</title>
-      <link>https://www.petfactory.se/tags/substance-painter/</link>
-      <pubDate>Mon, 24 Feb 2020 13:45:58 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/substance-painter/</guid>
       <description></description>
     </item>
     
