@@ -101,6 +101,12 @@
     <li><a href="#data-files">Data files</a></li>
     <li><a href="#syntax-highlighting">Syntax highlighting</a></li>
     <li><a href="#markdown--images">Markdown &amp; Images</a></li>
+    <li><a href="#tips-and-tricks">Tips and Tricks</a>
+      <ul>
+        <li><a href="#jumping-to-anchor">Jumping to Anchor</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -268,7 +274,11 @@ not !=</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">canonifyURLs</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span>
 </code></pre></div><p>Then I could use:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![](/images/pic.jpg)
-</code></pre></div><p>Some links:</p>
+</code></pre></div><h1 id="tips-and-tricks">Tips and Tricks</h1>
+<h2 id="jumping-to-anchor">Jumping to Anchor</h2>
+<p>If a watch a good tutorial a almost always take notes in blog form. I try to structure the notes to make it logical and easy to navigate. When running hugo server in dev mode the page reloads when the content is edited. This means that if you are working on some contents locaten further down, you need to scroll back down to preview. I added the snippet below so that the when the page reloads it automatically jumps to the anchor I apecify (just remember to take it out before publishing)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#volume-rasterize-attributes-velocity&#34;</span>;
+</code></pre></div><h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://discourse.gohugo.io/t/how-counting-up-a-variable-in-range/586">increment a var in range</a></li>
 </ul>
@@ -314,5 +324,6 @@ not !=</p>
     	
     	
         <script src="https://www.petfactory.se/js/menu.js"></script>
+        
 	</body>
 </html>

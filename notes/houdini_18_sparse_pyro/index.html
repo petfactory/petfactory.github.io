@@ -148,7 +148,7 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <li>Attributes: <strong>density</strong></li>
 <li>Voxel Size: <strong>ch(&quot;../pyro/smokeobject_sparse1/divsize&rdquo;)</strong>
 <ul>
-<li>Driven by the simulation voxel size</li>
+<li>Driven by the simulation voxel size (which we have not created yet)</li>
 </ul>
 </li>
 <li>Coverage Scale: <strong>10</strong>
@@ -216,10 +216,10 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <li>Attributes: <strong>v</strong></li>
 <li>Voxel Size: <strong>ch(&quot;../pyro/smokeobject_sparse1/divsize&rdquo;)</strong>
 <ul>
-<li>Driven by the simulation voxel size</li>
+<li>Driven by the simulation voxel size (which we have not created yet)</li>
 </ul>
 </li>
-<li>Coverage Scale: 1
+<li>Coverage Scale: <strong>1</strong>
 <ul>
 <li>The scale of the coverage (which is density by default)</li>
 </ul>
@@ -229,9 +229,10 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <li><strong>Note!</strong> This is just a multiplier of the pscale, (could leave at 1 but in the lesson it was set at 0.5)</li>
 </ul>
 </li>
-<li>Velocity Blur: Off
+<li>Velocity Blur: <strong>Off</strong> <sup>Maybe</sup>
 <ul>
 <li><strong>Note</strong> if the particles are moving fast there might be gaps in the velocity sourcing between frames, in that case we turn it on.</li>
+<li>We could try having it off to introduce more variation to the sim, but for fast moving particles sources definitely keep it on.</li>
 </ul>
 </li>
 </ul>
@@ -470,5 +471,6 @@ When we copy the <strong>size</strong> and <strong>center</strong> parms we can 
     	
     	
         <script src="https://www.petfactory.se/js/menu.js"></script>
+        
 	</body>
 </html>
