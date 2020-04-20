@@ -92,7 +92,8 @@
         <li><a href="#volume-rasterize-attributes-density">Volume Rasterize Attributes (Density)</a></li>
         <li><a href="#volume-vop-density-noise">Volume VOP (Density Noise)</a></li>
         <li><a href="#volume-rasterize-attributes-velocity">Volume Rasterize Attributes (Velocity)</a></li>
-        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a>
+        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a></li>
+        <li><a href="#volume-velocity">Volume Velocity</a>
           <ul>
             <li><a href="#visualizing-velocity-volume">Visualizing Velocity Volume</a></li>
           </ul>
@@ -112,6 +113,13 @@
         <li><a href="#smoke-object-sparse">Smoke Object (Sparse)</a></li>
         <li><a href="#volume-source-density--temperature">Volume Source (Density &amp; Temperature)</a></li>
         <li><a href="#volume-source-velocity">Volume Source (Velocity)</a></li>
+        <li><a href="#micro-solvers">Micro Solvers</a></li>
+      </ul>
+    </li>
+    <li><a href="#post-sim">Post Sim</a>
+      <ul>
+        <li><a href="#dop-import-field">DOP Import Field</a></li>
+        <li><a href="#volume-visualization-1">Volume Visualization</a></li>
       </ul>
     </li>
   </ul>
@@ -192,7 +200,8 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 <li>Since density is a 1D attribute we will use a 1D noise.</li>
 </ul>
 </li>
-<li>4D freq: <strong>2 2 2 1</strong></li>
+<li>4D Frequency: <strong>2 2 2 1</strong></li>
+<li>Amplitude: <strong>X</strong></li>
 <li>Roughness: <strong>0.8</strong></li>
 </ul>
 </li>
@@ -231,8 +240,8 @@ We will make the ramp 1 at the beginnign and scale out over nage.</p>
 </li>
 <li>Velocity Blur: <strong>Off</strong> <sup>Maybe</sup>
 <ul>
-<li><strong>Note</strong> if the particles are moving fast there might be gaps in the velocity sourcing between frames, in that case we turn it on.</li>
-<li>We could try having it off to introduce more variation to the sim, but for fast moving particles sources definitely keep it on.</li>
+<li><strong>Note</strong> if the particles are moving fast there might be gaps in the velocity sourcing between frames, in that case we turn it on.<br>
+We could try having it off to introduce more variation to the sim, but for fast moving particles sources definitely keep it on.</li>
 </ul>
 </li>
 </ul>
@@ -247,12 +256,13 @@ Append a the <strong>Volume VOP</strong> to the <strong>Volume Rasterize Attribu
 <li>Create a <strong>Vector to Vector4</strong> node and connect <strong>P</strong> to the <strong>vec</strong> input and <strong>Time</strong> to <strong>fval4</strong> (the fourth component)</li>
 <li><strong>Anti-Aliased Noise</strong>
 <ul>
-<li>Signature: <strong>4D Input, #D Noise</strong>
+<li>Signature: <strong>4D Input, 3D Noise</strong>
 <ul>
 <li>Since velocity is a 3D attribute we will use a 3D noise.</li>
 </ul>
 </li>
-<li>4D freq: <strong>2 2 2 1</strong></li>
+<li>4D Frequency: <strong>2 2 2 1</strong></li>
+<li>Amplitude: <strong>50</strong></li>
 <li>Roughness: <strong>0.8</strong></li>
 </ul>
 </li>
@@ -263,6 +273,8 @@ Append a the <strong>Volume VOP</strong> to the <strong>Volume Rasterize Attribu
 <li>Create a <strong>Bind Export</strong> and in the attribute <strong>Name</strong> field enter <strong>v</strong> and in the <strong>Type</strong> combobox select <strong>3 Floats (vector)</strong></li>
 <li>Connect the <strong>sum</strong> output from the add node to the input of the <strong>Bind Export</strong> node.</li>
 </ul>
+<h2 id="volume-velocity">Volume Velocity</h2>
+<p>We could also use the <a href="https://www.sidefx.com/docs/houdini/nodes/sop/volumevelocity.html">Volume Velocity</a> node to add velocity to our velocity volume (it has a volume vop inside and some other features). If we use a custom VOP node we might have more control.</p>
 <h3 id="visualizing-velocity-volume">Visualizing Velocity Volume</h3>
 <p>it might be usefull to visualize the velocity. To do this:</p>
 <ul>
@@ -288,7 +300,7 @@ To control the display of the volumes we can add a volume visualization node. <s
 <p>Lets add a <strong>Null</strong> and call it &ldquo;SOURCE&rdquo; (connect the output from the volume visualization node)</p>
 <h1 id="sparse-pyro-sim">Sparse Pyro Sim</h1>
 <h2 id="dop-network">DOP Network</h2>
-<p>Create a <strong>DOP Network</strong> and step in.</p>
+<p>Create a <strong>DOP Network</strong> and step in. Lets call it <strong>pyro_sim</strong></p>
 <ul>
 <li>DOP Network
 <ul>
@@ -429,6 +441,47 @@ When we copy the <strong>size</strong> and <strong>center</strong> parms we can 
 <h2 id="volume-source-velocity">Volume Source (Velocity)</h2>
 <p>Create a <strong>Volume Source</strong> and connect to the <strong>sourcing</strong> (3rd) input of the pyro solver.</p>
 <p>We will uase the velocity</p>
+<h2 id="micro-solvers">Micro Solvers</h2>
+<h1 id="post-sim">Post Sim</h1>
+<h2 id="dop-import-field">DOP Import Field</h2>
+<p>To import the fields from the pyro sim into the SOP level we will use a <strong>DOP Import Field</strong></p>
+<ul>
+<li>DOP Import Field
+<ul>
+<li>DOP Network: <strong>&quot;../pyro_sim&rdquo;</strong>
+<ul>
+<li>Drag and drop the DOP Network node on the input line edit</li>
+</ul>
+</li>
+<li>Default Object: <strong>&ldquo;smokeobject_sparse1&rdquo;</strong></li>
+<li>Presets: <strong>Smoke</strong>
+<ul>
+<li>When we select smoke in the presets combobox the fields associated with a smoke sim will be added in the multi attr section on the import tab. If you know that you do not need some of the fileds, delete them.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To control the visualization and get a quick preview of the volumes append a <strong>Volume Visualization</strong> node to the DOP Import Filed node.</p>
+<h2 id="volume-visualization-1">Volume Visualization</h2>
+<ul>
+<li>Volume Visualization
+<ul>
+<li>Visualization Mode: <strong>Smoke</strong></li>
+<li>Density Scale: <strong>2</strong> <sup>Note</sup></li>
+<li>Shadow Scale: <strong>1.5</strong> <sup>Note</sup>
+<ul>
+<li>Note: Just test some values for density and shadow scale to get a quick visualization of the fields.</li>
+</ul>
+</li>
+<li>Smoke
+<ul>
+<li>Density Field: <strong>density</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 		
 		</div>
 	</div>
