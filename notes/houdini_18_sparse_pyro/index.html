@@ -92,9 +92,9 @@
         <li><a href="#volume-rasterize-attributes-density">Volume Rasterize Attributes (Density)</a></li>
         <li><a href="#volume-vop-density-noise">Volume VOP (Density Noise)</a></li>
         <li><a href="#volume-rasterize-attributes-velocity">Volume Rasterize Attributes (Velocity)</a></li>
-        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a></li>
-        <li><a href="#volume-velocity">Volume Velocity</a>
+        <li><a href="#volume-vop-velocity-noise">Volume VOP (Velocity Noise)</a>
           <ul>
+            <li><a href="#volume-velocity">Volume Velocity</a></li>
             <li><a href="#visualizing-velocity-volume">Visualizing Velocity Volume</a></li>
           </ul>
         </li>
@@ -112,8 +112,13 @@
         <li><a href="#pyro-solver-sparse">Pyro Solver (Sparse)</a></li>
         <li><a href="#smoke-object-sparse">Smoke Object (Sparse)</a></li>
         <li><a href="#volume-source-density--temperature">Volume Source (Density &amp; Temperature)</a></li>
-        <li><a href="#volume-source-velocity">Volume Source (Velocity)</a></li>
-        <li><a href="#micro-solvers">Micro Solvers</a></li>
+        <li><a href="#micro-solvers">Micro Solvers</a>
+          <ul>
+            <li><a href="#gas-disturb">Gas Disturb</a></li>
+            <li><a href="#gas-turbulency">Gas Turbulency</a></li>
+            <li><a href="#gas-dissipate">Gas Dissipate</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#post-sim">Post Sim</a>
@@ -273,8 +278,8 @@ Append a the <strong>Volume VOP</strong> to the <strong>Volume Rasterize Attribu
 <li>Create a <strong>Bind Export</strong> and in the attribute <strong>Name</strong> field enter <strong>v</strong> and in the <strong>Type</strong> combobox select <strong>3 Floats (vector)</strong></li>
 <li>Connect the <strong>sum</strong> output from the add node to the input of the <strong>Bind Export</strong> node.</li>
 </ul>
-<h2 id="volume-velocity">Volume Velocity</h2>
-<p>We could also use the <a href="https://www.sidefx.com/docs/houdini/nodes/sop/volumevelocity.html">Volume Velocity</a> node to add velocity to our velocity volume (it has a volume vop inside and some other features). If we use a custom VOP node we might have more control.</p>
+<h3 id="volume-velocity">Volume Velocity</h3>
+<p>Instead of a Volume VOP node we could use a <a href="https://www.sidefx.com/docs/houdini/nodes/sop/volumevelocity.html">Volume Velocity</a> node to add velocity noise to our velocity volume (it has a volume vop inside and some other features). If we use a custom VOP node we might have more control.</p>
 <h3 id="visualizing-velocity-volume">Visualizing Velocity Volume</h3>
 <p>it might be usefull to visualize the velocity. To do this:</p>
 <ul>
@@ -354,7 +359,8 @@ Performs two pressure projections and velocity advection passes per timestep. Th
 <li>Enable Sparse Solving: <strong>On</strong></li>
 <li>Voxel Size: <strong>0.05 (lowrez)</strong>
 <ul>
-<li>We copy this param and let it drive the voxel size of the volume rasterize attr node</li>
+<li>We copy this param and let it drive the voxel size of the volume rasterize attr node.<br>
+<strong>Note</strong> if we MMB click the smoke object node (or any other with volume fields) we get the dimensions of the voxels. Note that the dimensions are the <strong>bounding box</strong> of the volume and since it is sparse it might use less voxels then a standard pyro solver. To get a high rez volume we can aim for a 600<em>600</em>600 in rez or a max axis of 600.</li>
 </ul>
 </li>
 <li>Max Size: <strong>On</strong>
@@ -430,7 +436,9 @@ When we copy the <strong>size</strong> and <strong>center</strong> parms we can 
 <li>Source Volume: v</li>
 <li>Target Field: vel</li>
 <li>Operation: Add</li>
-<li>scale: 1</li>
+<li>scale: <strong>0.1</strong>
+<ul>
+<li>Depending on the incomming velocity we adjust the scale to get the look that we want.</li>
 </ul>
 </li>
 </ul>
@@ -438,10 +446,51 @@ When we copy the <strong>size</strong> and <strong>center</strong> parms we can 
 </ul>
 </li>
 </ul>
-<h2 id="volume-source-velocity">Volume Source (Velocity)</h2>
-<p>Create a <strong>Volume Source</strong> and connect to the <strong>sourcing</strong> (3rd) input of the pyro solver.</p>
-<p>We will uase the velocity</p>
+</li>
+</ul>
 <h2 id="micro-solvers">Micro Solvers</h2>
+<p>Create a <strong>Merge</strong> node and connect it to the <strong>Forces</strong> (4:th) input of the pyro solver. Here we can add our various micro solvers.</p>
+<h3 id="gas-disturb">Gas Disturb</h3>
+<p>Smaller noise features, the micro displacement between the smoke and the surrounding air. Roughing up the edge.</p>
+<ul>
+<li>Gas Disturb
+<ul>
+<li>Settings
+<ul>
+<li>Strength: <strong>2.5</strong></li>
+<li>Reference Scale: <em>0.2</em>
+<ul>
+<li>Roughly the size of the &ldquo;noisy features&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gas-turbulency">Gas Turbulency</h3>
+<p>Bigger displacement, macro wind current, large features.</p>
+<ul>
+<li>Gas Turbulence
+<ul>
+<li>Scale: <strong>0.015</strong></li>
+<li>Swirl Size: <strong>10</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="gas-dissipate">Gas Dissipate</h3>
+<ul>
+<li>Diffusion: <strong>0.01</strong>
+<ul>
+<li>Time based blurring of the field. It can be nice to diffuse somewhat. It gives a contrast between older smoke (more blurred) and the newer (crisper, more detail)</li>
+<li>Evaporation Rate: <strong>0.1</strong>
+<ul>
+<li>If set at 0.1 == remove 10 % of the field every 1 second.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="post-sim">Post Sim</h1>
 <h2 id="dop-import-field">DOP Import Field</h2>
 <p>To import the fields from the pyro sim into the SOP level we will use a <strong>DOP Import Field</strong></p>
