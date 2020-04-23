@@ -35,7 +35,7 @@
       <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</guid>
-      <description>QWERTY
+      <description>QWERTY-HERTY
 Some notes on using the sparse pyro solver taken while watching Steven Knippings excellent Volumes III v2.0
 Source points Popnet Setup a particle sim that we will use as source for our smoke sim.
 Point Wrangle Lets append a point wrangle to the particles. We will use the normailzed age to drive the density of the particles. We will use a ramp parameter and use the normalized age to drive the ramp.</description>
