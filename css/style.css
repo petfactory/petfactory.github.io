@@ -185,6 +185,21 @@ h3 {
 }
 
 
+
+/*
+---------------
+ banner
+---------------
+*/
+
+
+#carousel-wrap{
+    margin-bottom: 50px;
+}
+
+#carouselExampleIndicators {
+    z-index: 1;
+}
 /*
 ---------------
  services
