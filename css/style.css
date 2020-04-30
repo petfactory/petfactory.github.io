@@ -669,6 +669,11 @@ margin:-50px 0 0; /* negative fixed header height */
 
 @media (max-width: 767px) {
 
+    .carousel-indicators,
+    .carousel-control-prev,
+    .carousel-control-next{
+        display: none;
+    }
     #banner-wrap{
         /*display: none;*/
         height: 20px;
