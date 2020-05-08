@@ -92,6 +92,7 @@
     <li><a href="#parms">Parms</a>
       <ul>
         <li><a href="#parm-tuple">Parm tuple</a></li>
+        <li><a href="#parms-in-folder">Parms in Folder</a></li>
         <li><a href="#parm-template">Parm template</a></li>
       </ul>
     </li>
@@ -192,36 +193,33 @@ node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span
 <p>In addition to a name, a parameter tuple also has a label that is displayed to the user in the parameter dialog. For example, the &ldquo;t&rdquo; parameter’s label is &ldquo;Translate&rdquo;. The label may contain spaces and punctuation characters.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)
 <span style="color:#75715e"># &lt;hou.ParmTuple t in /obj/geo1&gt;</span>
-
 node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)<span style="color:#f92672">.</span>name()
 <span style="color:#75715e"># &#39;t&#39;</span>
-
 node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)<span style="color:#f92672">.</span>description()
 <span style="color:#75715e"># &#39;Translate&#39;</span>
-
 node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
 <span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
-
 node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)<span style="color:#f92672">.</span>eval()
 <span style="color:#75715e"># (0.0, 0.0, 0.0)</span>
 </code></pre></div><p>So the <strong>&ldquo;t&rdquo;</strong> parm tuple holds a reference to the x, y &amp; z float parms.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)[<span style="color:#ae81ff">0</span>]
 <span style="color:#75715e"># hou.Parm tx in /obj/geo1&gt;</span>
-
 node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;tx&#39;</span>)
 <span style="color:#75715e"># True</span>
 </code></pre></div><p>To find the parm template used for a specific parm we get it with the parmtemplate method:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;tx&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
 <span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
+</code></pre></div><h2 id="parms-in-folder">Parms in Folder</h2>
+<p>If you want to get all the parms in a specific folder you can use the <a href="https://www.sidefx.com/docs/houdini/hom/hou/Node.html#parmsInFolder">parmsInFolder</a> function.</p>
+<p>Lets say that you want all the parms in the PostFX folder (that are inside the Redshift Camera folder of the camera node) note that we need to specify the entire &ldquo;hierarchy&rdquo; to the destination folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
 </code></pre></div><h2 id="parm-template">Parm template</h2>
 <p>A <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
 <p>For example, the &ldquo;t&rdquo; parm tuple on geometry objects can be described by a hou.FloatParmTemplate – it has a label of &ldquo;Transform&rdquo;, a data type of hou.parmData.Float, 3 components, a naming scheme of hou.parmNamingScheme.XYZW, etc.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
 <span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
-
 node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()<span style="color:#f92672">.</span>type()
 <span style="color:#75715e"># parmTemplateType.Float</span>
-
 </code></pre></div><h1 id="copy-to-points">Copy to points</h1>
 <h2 id="attributes-from-target">Attributes from target</h2>
 <p>New to <strong>copy to points</strong> node in Houdini 18 is that we need to add attribs from target via a multiparm attribute.</p>

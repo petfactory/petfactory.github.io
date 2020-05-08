@@ -6,10 +6,19 @@
     <description>Recent content in Houdini on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Apr 2020 13:45:58 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2020 13:45:58 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/houdini/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hoodie</title>
+      <link>https://www.petfactory.se/work/hoodie/</link>
+      <pubDate>Sat, 02 May 2020 13:45:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/hoodie/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Mocap Dance</title>
@@ -26,7 +35,7 @@
       <pubDate>Wed, 15 Apr 2020 16:13:08 +0200</pubDate>
       
       <guid>https://www.petfactory.se/work/equilateral/</guid>
-      <description>  </description>
+      <description>      </description>
     </item>
     
     <item>
@@ -160,7 +169,8 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&#39;seed&#39;))*(chi(&#39;max_num&#39;)+1));s@z_padded = sprintf(&#39;hello_%03i&#39;, i);</description>
+      <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&amp;#39;seed&amp;#39;))*(chi(&amp;#39;max_num&amp;#39;)+1));s@z_padded = sprintf(&amp;#39;hello_%03i&amp;#39;, i);Edit Primitves adjustPrimLength Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.
+#include &amp;lt;groom.h&amp;gt; float length = clamp(chf(&amp;#39;length&amp;#39;), 0, @perimeter);adjustPrimLength(0, @primnum, @perimeter, length);</description>
     </item>
     
     <item>

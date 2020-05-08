@@ -85,6 +85,11 @@
         <li><a href="#zero-padding">Zero padding</a></li>
       </ul>
     </li>
+    <li><a href="#edit-primitves">Edit Primitves</a>
+      <ul>
+        <li><a href="#adjustprimlength">adjustPrimLength</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -101,9 +106,15 @@
 			<h1>Houdini VEX - Snippets</h1>
 			<h1 id="formatting">Formatting</h1>
 <h2 id="zero-padding">Zero padding</h2>
-<pre><code class="language-vex" data-lang="vex">int i = int(rand(@ptnum+chi('seed'))*(chi('max_num')+1));
-s@z_padded = sprintf('hello_%03i', i);
-</code></pre>		
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int i <span style="color:#f92672">=</span> int(rand(<span style="color:#a6e22e">@ptnum</span><span style="color:#f92672">+</span>chi(<span style="color:#e6db74">&#39;seed&#39;</span>))<span style="color:#f92672">*</span>(chi(<span style="color:#e6db74">&#39;max_num&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+s<span style="color:#a6e22e">@z_padded</span> <span style="color:#f92672">=</span> sprintf(<span style="color:#e6db74">&#39;hello_</span><span style="color:#e6db74">%03i</span><span style="color:#e6db74">&#39;</span>, i);
+</code></pre></div><h1 id="edit-primitves">Edit Primitves</h1>
+<h2 id="adjustprimlength">adjustPrimLength</h2>
+<p>Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#include &lt;groom.h&gt;</span>
+float length <span style="color:#f92672">=</span> clamp(chf(<span style="color:#e6db74">&#39;length&#39;</span>), <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@perimeter</span>);
+adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primnum</span>, <span style="color:#a6e22e">@perimeter</span>, length);
+</code></pre></div>		
 		</div>
 	</div>
 </div>

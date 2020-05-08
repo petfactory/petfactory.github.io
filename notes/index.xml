@@ -137,7 +137,7 @@ New Composition We can also create a new Fusion composition. Open up the media p
       <pubDate>Wed, 30 Oct 2019 11:16:20 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/hugo_notes/</guid>
-      <description>Creating/coding for the web is not my primarily focus but i think it is an important skill to have and will be increasingly so. As part of a 1 year program in business and marketing I did almost 20 years ago we had a short course in web development. The instructor insisted that we should use Dreamweaver (Macromedia at the time now Adobe). I did not like it, I thought it hid the internal mechanics and I wanted to get closer to the actual language so I ended up writing everything in notepad.</description>
+      <description>Creating/coding for the web is not my primarily focus but i think it is an important skill to have and will be increasingly so. As part of a 1 year program in business and marketing I did almost 20 years ago we had a short course in web development. The instructor insisted that we should use Dreamweaver (Macromedia at the time). I did not like it, I thought it hid the internal mechanics and I wanted to get closer to the actual language so I ended up writing everything in notepad.</description>
     </item>
     
     <item>
@@ -156,7 +156,8 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&#39;seed&#39;))*(chi(&#39;max_num&#39;)+1));s@z_padded = sprintf(&#39;hello_%03i&#39;, i);</description>
+      <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&amp;#39;seed&amp;#39;))*(chi(&amp;#39;max_num&amp;#39;)+1));s@z_padded = sprintf(&amp;#39;hello_%03i&amp;#39;, i);Edit Primitves adjustPrimLength Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.
+#include &amp;lt;groom.h&amp;gt; float length = clamp(chf(&amp;#39;length&amp;#39;), 0, @perimeter);adjustPrimLength(0, @primnum, @perimeter, length);</description>
     </item>
     
     <item>
