@@ -85,6 +85,18 @@
         <li><a href="#default-desktop">Default desktop</a></li>
       </ul>
     </li>
+    <li><a href="#volume">Volume</a>
+      <ul>
+        <li><a href="#curl-field-velocity">Curl field (velocity)</a></li>
+      </ul>
+    </li>
+    <li><a href="#pop">POP</a>
+      <ul>
+        <li><a href="#birth-rate">Birth Rate</a></li>
+        <li><a href="#rest-attribute">Rest attribute</a></li>
+        <li><a href="#pop-advect-by-volumes">POP Advect by Volumes</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -106,6 +118,66 @@
 <li>Edit &gt; Preferences &gt; General User Interface
 <ul>
 <li>Startup in Desktop : Build</li>
+</ul>
+</li>
+</ul>
+<h1 id="volume">Volume</h1>
+<h2 id="curl-field-velocity">Curl field (velocity)</h2>
+<ul>
+<li>Append a <strong>bound</strong> sop to the geo that we wish to create a curl field around. Add panning if needed. The bound will be the size of our velocity volume.</li>
+<li>Append a <strong>volume</strong> sop to the bound.
+<ul>
+<li>Rank: <strong>Vector</strong></li>
+<li>Name: <strong>vel</strong></li>
+<li>Dimensions
+<ul>
+<li>Uniform Sampling Divs: <strong>100</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Append a <strong>VDB from Polygons</strong> to the input geo.
+<ul>
+<li>Use Worldspace for band</li>
+<li>Exterior Band: <strong>2</strong></li>
+<li>Interior Band: <strong>1</strong></li>
+</ul>
+</li>
+<li>Append a <strong>Volume VOP</strong> and connect the <strong>volume</strong> sop to the first input and the <strong>VDB from Polygons</strong> to the second and dive in.
+<ul>
+<li>Create a <strong>Vector to Vector4</strong> and connect <strong>P</strong> and <strong>time</strong>.</li>
+<li>Create a <strong>Curl Noise</strong> and connect the <strong>hvec</strong> from the Vector to Vector4 and connect the <strong>OpInput2</strong> (our vdb that created the sdf) to the <strong>sdf</strong> input of the curl noise.</li>
+<li>Create a <strong>Bind Export</strong> node and set the name to <strong>vel</strong> and connect the noise output to the input of the bind export.</li>
+<li>We will promote <strong>Frequency</strong>, <strong>Roughness</strong> and <strong>Surface Effect Radius</strong>
+<ul>
+<li>Note that the Surface Effect Radius will control how for the curl noise will be affected from the sdf surface. Larger value means it will reach farther out.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We have now created a velocity volume with a curl noise. We can for instance use this inside a pop simulation to advect the particles.</li>
+</ul>
+<h1 id="pop">POP</h1>
+<h2 id="birth-rate">Birth Rate</h2>
+<p>A good way to control the amount of particles being emitted is to keyframe the <strong>Const. Birt Rate</strong> (Birth tab) with values between 0 and 1. Then we can use the <strong>Scale Point Count by Area</strong> (Source tab) as a multiplier of points emitted.</p>
+<h2 id="rest-attribute">Rest attribute</h2>
+<p>If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source. This attr can then be used at the sop level so do various things, maybe use as Cd. All attributes are inherited by default, we might axplicitly set which attrs to inherit.</p>
+<h2 id="pop-advect-by-volumes">POP Advect by Volumes</h2>
+<p>Lets use a velocity volume to advect particles.</p>
+<ul>
+<li>In the popnet after the source append a <strong>POP Advect by Volumes</strong>.
+<ul>
+<li>Velocity source: point to the velocity volume</li>
+<li>Advection Type: <strong>Update Position</strong>
+<ul>
+<li>This will explicitly set the position (instead of update force that implicitly will affect the position). We might want to set the position if we have nice, detailed velocity noise and would like to use this. (might be worth testing the other options as well)</li>
+<li>Velocity Update: <strong>Final Velocity</strong>
+<ul>
+<li>We want to store the velocity if we want motion blur.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

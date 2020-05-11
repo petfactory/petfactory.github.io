@@ -169,8 +169,8 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>Formatting Zero padding int i = int(rand(@ptnum+chi(&amp;#39;seed&amp;#39;))*(chi(&amp;#39;max_num&amp;#39;)+1));s@z_padded = sprintf(&amp;#39;hello_%03i&amp;#39;, i);Edit Primitves adjustPrimLength Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.
-#include &amp;lt;groom.h&amp;gt; float length = clamp(chf(&amp;#39;length&amp;#39;), 0, @perimeter);adjustPrimLength(0, @primnum, @perimeter, length);</description>
+      <description>Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.
+pscale float ps_life = chramp(&amp;#39;ps_life&amp;#39;, @nage);float ps_bias = fit01(chramp(&amp;#39;ps_bias&amp;#39;, rand(@id)), chf(&amp;#39;ps_min&amp;#39;), chf(&amp;#39;ps_max&amp;#39;));@pscale = ps_life*ps_bias*chf(&amp;#39;ps_mult&amp;#39;);Formatting Zero padding int i = int(rand(@ptnum+chi(&amp;#39;seed&amp;#39;))*(chi(&amp;#39;max_num&amp;#39;)+1));s@z_padded = sprintf(&amp;#39;hello_%03i&amp;#39;, i);Edit Primitves adjustPrimLength Here we can use a measure sop measure the perimeter of the prim.</description>
     </item>
     
     <item>
@@ -191,7 +191,7 @@ Style sheet Inspector (Data tree) Open the inspector for the material style shee
       
       <guid>https://www.petfactory.se/notes/houdini_misc/</guid>
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
-UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    </description>
+UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    Volume Curl field (velocity)  Append a bound sop to the geo that we wish to create a curl field around. Add panning if needed. The bound will be the size of our velocity volume. Append a volume sop to the bound.</description>
     </item>
     
     <item>

@@ -80,6 +80,11 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#transform">Transform</a>
+      <ul>
+        <li><a href="#pscale">pscale</a></li>
+      </ul>
+    </li>
     <li><a href="#formatting">Formatting</a>
       <ul>
         <li><a href="#zero-padding">Zero padding</a></li>
@@ -104,7 +109,13 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini VEX - Snippets</h1>
-			<h1 id="formatting">Formatting</h1>
+			<h1 id="transform">Transform</h1>
+<p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
+<h2 id="pscale">pscale</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">float ps_life <span style="color:#f92672">=</span> chramp(<span style="color:#e6db74">&#39;ps_life&#39;</span>, <span style="color:#a6e22e">@nage</span>);
+float ps_bias <span style="color:#f92672">=</span> fit01(chramp(<span style="color:#e6db74">&#39;ps_bias&#39;</span>, rand(<span style="color:#a6e22e">@id</span>)), chf(<span style="color:#e6db74">&#39;ps_min&#39;</span>), chf(<span style="color:#e6db74">&#39;ps_max&#39;</span>));
+<span style="color:#a6e22e">@pscale</span> <span style="color:#f92672">=</span> ps_life<span style="color:#f92672">*</span>ps_bias<span style="color:#f92672">*</span>chf(<span style="color:#e6db74">&#39;ps_mult&#39;</span>);
+</code></pre></div><h1 id="formatting">Formatting</h1>
 <h2 id="zero-padding">Zero padding</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int i <span style="color:#f92672">=</span> int(rand(<span style="color:#a6e22e">@ptnum</span><span style="color:#f92672">+</span>chi(<span style="color:#e6db74">&#39;seed&#39;</span>))<span style="color:#f92672">*</span>(chi(<span style="color:#e6db74">&#39;max_num&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
 s<span style="color:#a6e22e">@z_padded</span> <span style="color:#f92672">=</span> sprintf(<span style="color:#e6db74">&#39;hello_</span><span style="color:#e6db74">%03i</span><span style="color:#e6db74">&#39;</span>, i);
