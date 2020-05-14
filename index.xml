@@ -321,7 +321,8 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
       
       <guid>https://www.petfactory.se/notes/houdini_misc/</guid>
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
-UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    Volume Curl field (velocity)  Append a bound sop to the geo that we wish to create a curl field around. Add panning if needed. The bound will be the size of our velocity volume. Append a volume sop to the bound.</description>
+UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    Flags Flags represent some state information on the node, such as which node represents the output of the network. Different network types have different flags.
+Selectable template flag If you LMB ctrl click the template flag you will set the selectable template flag.</description>
     </item>
     
     <item>

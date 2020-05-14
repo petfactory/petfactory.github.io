@@ -99,6 +99,11 @@
     </li>
     <li><a href="#logic">Logic</a></li>
     <li><a href="#data-files">Data files</a></li>
+    <li><a href="#shortcodes">Shortcodes</a>
+      <ul>
+        <li><a href="#custom-shortcodes">Custom Shortcodes</a></li>
+      </ul>
+    </li>
     <li><a href="#syntax-highlighting">Syntax highlighting</a></li>
     <li><a href="#markdown--images">Markdown &amp; Images</a></li>
     <li><a href="#tips-and-tricks">Tips and Tricks</a>
@@ -255,7 +260,19 @@ not !=</p>
 	&lt;<span style="color:#f92672">li</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#a6e22e">$key</span> <span style="color:#75715e">}}</span> : <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$value</span><span style="color:#a6e22e">.name</span> <span style="color:#75715e">}}</span> - <span style="color:#75715e">{{</span> <span style="color:#a6e22e">$value</span><span style="color:#a6e22e">.universe</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">li</span>&gt;
 <span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>
 &lt;/<span style="color:#f92672">ul</span>&gt;
-</code></pre></div><h1 id="syntax-highlighting">Syntax highlighting</h1>
+</code></pre></div><h1 id="shortcodes">Shortcodes</h1>
+<p>Shortcodes are a means to consolidate templating into small, reusable snippets that you can embed directly inside of your content.</p>
+<h2 id="custom-shortcodes">Custom Shortcodes</h2>
+<p>To create a <a href="https://gohugo.io/templates/shortcode-templates/">custom shortcode</a>, place an HTML template (lets call it hello.html) in the layouts/shortcodes dir (create the dir if not present)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">&lt;!-- hello.html --&gt;</span>
+&lt;<span style="color:#f92672">div</span>&gt;
+	&lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#75715e">{{</span><span style="color:#a6e22e">.Get</span> <span style="color:#a6e22e">0</span><span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>There are various ways of accessing parameters, in our case lets use a positional parameter. To acces the first parameter we use .Get(0) in our template.</p>
+<p>To use the shortcode in a markdown file we do this. Note that the first part is the name of the template (minus the html extension) and the second part is our first positional argument.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#a6e22e">hello</span> <span style="color:#a6e22e">world</span> <span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#75715e">}}</span>
+</code></pre></div><p><strong>Note</strong> there must be <strong>NO</strong> whitespace between the curly-braces and the less/greater than sign.</p>
+<h1 id="syntax-highlighting">Syntax highlighting</h1>
 <p>To generate a stylesheet using the monokai style you can run this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo gen chromastyles --style<span style="color:#f92672">=</span>monokai &gt; syntax.css
 </code></pre></div><p>Run hugo gen chromastyles -h for more options. Here you will find a <a href="https://xyproto.github.io/splash/docs/">gallery</a> of available styles.</p>
