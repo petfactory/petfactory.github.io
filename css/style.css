@@ -185,6 +185,23 @@ h3 {
 }
 
 
+/*
+---------------
+ download
+---------------
+*/
+
+.download-wrap{
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.download-icon-16 {
+  /*height: 16px;*/
+  /*width: 16px;*/
+  height: auto !important; width: auto !important;
+}
+
 
 /*
 ---------------
