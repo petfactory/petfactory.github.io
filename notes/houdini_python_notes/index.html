@@ -84,8 +84,7 @@
       <ul>
         <li><a href="#inspect-variables">Inspect variables</a></li>
         <li><a href="#configuring-your-environment">Configuring your environment</a></li>
-        <li><a href="#set-with-packages-175-only">Set with packages (17.5+ only)</a></li>
-        <li><a href="#set-with-houdinienv-old-way">Set with houdini.env (old way)</a></li>
+        <li><a href="#houdini-packages">Houdini Packages</a></li>
         <li><a href="#python-path">Python Path</a></li>
       </ul>
     </li>
@@ -125,10 +124,10 @@
 </code></pre></div><p>You can also use the Textport:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo $HOUDINI_OTLSCAN_PATH
 </code></pre></div><h2 id="configuring-your-environment">Configuring your environment</h2>
-<p>Traditionally, the way to set the values of environment variables in Houdini was to edit the houdini.env file. The problem is that not only the user wants to set environment variables, but also studios, plug-in authors, and so on. Multiple parties would end up rewriting or appending to the houdini.env file, sometimes causing errors or redundancy.</p>
+<p>Traditionally, the way to set the values of environment variables in Houdini was to edit the <a href="https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables">houdini.env</a> file. The houdini.env file are found in the $HOUDINI_USER_PREF_DIR (see notes below). The problem is that not only the user wants to set environment variables, but also studios, plug-in authors, and so on. Multiple parties would end up rewriting or appending to the houdini.env file, sometimes causing errors or redundancy.</p>
 <p>The new solution for this kind of set-up is packages. Packages are .json files in HOUDINI_PATH/packages. Each package file contains a specification for how to modify the environment (including the Houdini Path and other variables).</p>
-<h2 id="set-with-packages-175-only">Set with packages (17.5+ only)</h2>
-<p><a href="https://www.sidefx.com/docs/houdini/ref/plugins.html">Houdini Packages</a></p>
+<h2 id="houdini-packages">Houdini Packages</h2>
+<p><a href="https://www.sidefx.com/docs/houdini/ref/plugins.html">Docs</a></p>
 <ul>
 <li>Package files must be valid <strong>JSON</strong> and must have the .json extension.</li>
 <li>Houdini will scan a number directories on startup looking for packages (see docs for which)
@@ -165,10 +164,7 @@
         }
     ]
 }
-</code></pre></div><h2 id="set-with-houdinienv-old-way">Set with houdini.env (old way)</h2>
-<p><a href="https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables">Houdini docs</a></p>
-<p>The houdini.env file are found in the $HOUDINI_USER_PREF_DIR (see above)</p>
-<h2 id="python-path">Python Path</h2>
+</code></pre></div><h2 id="python-path">Python Path</h2>
 <p>We can also use the same package file to add a custom python path</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;env&#34;</span>: [

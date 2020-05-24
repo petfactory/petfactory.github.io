@@ -24,7 +24,7 @@
         
         
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
-	    <title>Houdini - intro to HDA</title>
+	    <title>Substance Designer - notes</title>
 
 	</head>
 
@@ -80,20 +80,25 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#asset-name">Asset name</a>
+    <li><a href="#tips">Tips</a>
       <ul>
-        <li><a href="#asset-name--scripting">asset name &amp; scripting</a></li>
+        <li><a href="#uv">UV</a></li>
       </ul>
     </li>
-    <li><a href="#namespaces">Namespaces</a></li>
-    <li><a href="#versions">Versions</a>
+    <li><a href="#exporting-maps">Exporting Maps</a>
       <ul>
-        <li><a href="#2-types-of-versioning">2 types of versioning</a></li>
+        <li><a href="#export-udim-issue">Export udim issue</a></li>
       </ul>
     </li>
-    <li><a href="#subnet-hda">Subnet HDA</a></li>
-    <li><a href="#geo-level-hda">Geo level HDA</a></li>
-    <li><a href="#custom-hda-path">Custom HDA Path</a></li>
+    <li><a href="#3d-view">3D view</a>
+      <ul>
+        <li><a href="#shortcuts">Shortcuts</a>
+          <ul>
+            <li><a href="#view">View</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -107,54 +112,37 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini - intro to HDA</h1>
-			<p>The notes below are based on info found in the <a href="https://www.sidefx.com/docs/houdini/assets/namespaces.html">Houdini docs</a> as well as other sources.</p>
-<h1 id="asset-name">Asset name</h1>
-<p>The general form of an asset’s internal name is</p>
-<p><strong>[namespace::]node_name[::version]</strong></p>
-<p>The namespace and version are both optional. You can have a name with both a namespace and a version, or just a namespace, or just a version, or neither.</p>
-<h2 id="asset-name--scripting">asset name &amp; scripting</h2>
-<p>Some scripting commands require the node category and node name together (for example Object/geo, Sop/copy, Dop/popsolver). To use namespaced names with these commands, use the form 
-[namespace::]<strong>node_category</strong>/<strong>node_name</strong>[::version]
-For example, com.sundae::<strong>Sop</strong>/<strong>copy</strong>::2.0</p>
-<h1 id="namespaces">Namespaces</h1>
-<p>The namespace identifier lets you name your assets without worrying about using the same name as a built-in Houdini node or as a third-party asset you might use someday. (Note that this only applies to the internal name of the node… you can always use any string you want for the human readable label that appears in the user interface.)</p>
-<p>A useful convention to ensure you use a unique namespace name is to reverse the DNS address of your website. For example, if the creator´s website is at houdini.bacon.org, they would use org.bacon.houdini as the namespace for their assets.</p>
-<h1 id="versions">Versions</h1>
-<p>The version string allows you to create multiple independent versions of an asset without having to change the &ldquo;main name&rdquo;.</p>
-<p>Instances of the old version will still work and use the old implementation, while users placing a new node will get the latest version.</p>
-<p>The version can only contain numbers and periods (.). For example, myasset::2, myasset::2.1, myasset::19.1.3, but not myasset::2a or myasset::alpha.</p>
-<h2 id="2-types-of-versioning">2 types of versioning</h2>
-<p>Houdini supports two different but compatible systems for versioning assets, supporting different use cases:</p>
+			<h1>Substance Designer - notes</h1>
+			<h1 id="tips">Tips</h1>
+<h2 id="uv">UV</h2>
 <ul>
-<li>
-<p>You can incorporate the version number as part of the asset’s <strong>internal name</strong>. For example, mynode::2.0. This makes each version an entirely different asset. This allows different versions to exist in the same scene file simultaneously. When the user creates a node, they get the new version, but existing nodes use the older version and continue to work in the old way without changes.</p>
+<li>To view the UVs in the 2D view
 <ul>
-<li><strong>+</strong> You can make large-scale changes to how the node works, how it interprets inputs, its parameter interface, and so on, without breaking anything.</li>
-<li><strong>+</strong> You don’t need to manually update old nodes.</li>
-<li><strong>-</strong> There is no provision to upgrade old nodes automatically.</li>
+<li>3D view <strong>Scene &gt; Display UVs in 2D view</strong></li>
 </ul>
 </li>
 </ul>
-<hr>
-<ul>
-<li>
-<p>You can use the Version field in the <strong>asset definition</strong>. This was the historical versioning solution before namespaces were added. It is retained for cases where it’s still useful. If an asset instance loads and notices the asset’s version string has changed since the scene file was saved, it will run an upgrade handler script (if it exists). The script can edit the node instance to transform it into the new version.</p>
-<ul>
-<li>This can be useful if you usually make minor, backwards-compatible changes to an asset rather than big breaking changes, especially new parameters. It is mostly useful in a studio environment, where a TD does the work so the artists&rsquo; tools are automatically upgraded.</li>
-<li><strong>+</strong> You can automatically upgrade existing assets with new (backwards-compatible) features.</li>
-<li><strong>-</strong> You need to manually update the upgrade script and script the work of changing an old instance into a new instance, every time you update the asset. You may need to maintain the ability for the script to upgrade one of several old versions to the latest edition (for example, the script might need to be able to update any of version 1, 2, or 3 to version 4).</li>
-</ul>
-</li>
-</ul>
-<h1 id="subnet-hda">Subnet HDA</h1>
-<pre><code>* Select the nodes
-* press **Shift C** to create a subnet
-* RMB click on the subnet &gt; **Create Digital Asset**
-</code></pre>
-<h1 id="geo-level-hda">Geo level HDA</h1>
-<h1 id="custom-hda-path">Custom HDA Path</h1>
-<p><a href="http://localhost:1313/notes/houdini_python_notes/">Set custom path to HDA</a></p>
+<h1 id="exporting-maps">Exporting Maps</h1>
+<h2 id="export-udim-issue">Export udim issue</h2>
+<p>I dont know if it is a bug but what I have experienced is that if you have a model with some materials having multiple uv tiles and some dont if you try to export a graph with multiple udims they do not show up under the <strong>&ldquo;Wrench icon&rdquo; &gt; Export Outputs &gt; Batch (tab)</strong>.
+What I need to do to make them show up is to set <strong>Assign Substance Graph to 3D Mesh</strong> and the select the model &gt; graph &gt; all (udim). When this is done I get back the udim functionality of the export options.</p>
+<h1 id="3d-view">3D view</h1>
+<h2 id="shortcuts">Shortcuts</h2>
+<h3 id="view">View</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotate Env Light</td>
+<td>Ctrl Shift RMB</td>
+</tr>
+</tbody>
+</table>
 		
 		</div>
 	</div>

@@ -24,7 +24,7 @@
         
         
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
-	    <title>Houdini VEX - Snippets</title>
+	    <title>Houdini - HDA</title>
 
 	</head>
 
@@ -80,24 +80,23 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#transform">Transform</a>
+    <li><a href="#asset-name">Asset name</a>
       <ul>
-        <li><a href="#pscale">pscale</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#versions">Versions</a></li>
+        <li><a href="#asset-name--scripting">Asset name &amp; scripting</a></li>
       </ul>
     </li>
-    <li><a href="#formatting">Formatting</a>
+    <li><a href="#custom-hda-path">Custom HDA Path</a></li>
+    <li><a href="#hda-python-scripts">HDA Python Scripts</a>
       <ul>
-        <li><a href="#zero-padding">Zero padding</a></li>
+        <li><a href="#pythonmodule">PythonModule</a></li>
+        <li><a href="#additional-modules">Additional Modules</a></li>
       </ul>
     </li>
-    <li><a href="#edit-primitves">Edit Primitves</a>
+    <li><a href="#extra-files">Extra Files</a>
       <ul>
-        <li><a href="#adjustprimlength">adjustPrimLength</a></li>
-      </ul>
-    </li>
-    <li><a href="#functions">Functions</a>
-      <ul>
-        <li><a href="#frac">frac()</a></li>
+        <li><a href="#geometry">Geometry</a></li>
       </ul>
     </li>
   </ul>
@@ -113,31 +112,109 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini VEX - Snippets</h1>
-			<h1 id="transform">Transform</h1>
-<p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
-<h2 id="pscale">pscale</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">float ps_life <span style="color:#f92672">=</span> chramp(<span style="color:#e6db74">&#39;ps_life&#39;</span>, <span style="color:#a6e22e">@nage</span>);
-float ps_bias <span style="color:#f92672">=</span> fit01(chramp(<span style="color:#e6db74">&#39;ps_bias&#39;</span>, rand(<span style="color:#a6e22e">@id</span>)), chf(<span style="color:#e6db74">&#39;ps_min&#39;</span>), chf(<span style="color:#e6db74">&#39;ps_max&#39;</span>));
-<span style="color:#a6e22e">@pscale</span> <span style="color:#f92672">=</span> ps_life<span style="color:#f92672">*</span>ps_bias<span style="color:#f92672">*</span>chf(<span style="color:#e6db74">&#39;ps_mult&#39;</span>);
-</code></pre></div><h1 id="formatting">Formatting</h1>
-<h2 id="zero-padding">Zero padding</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int i <span style="color:#f92672">=</span> int(rand(<span style="color:#a6e22e">@ptnum</span><span style="color:#f92672">+</span>chi(<span style="color:#e6db74">&#39;seed&#39;</span>))<span style="color:#f92672">*</span>(chi(<span style="color:#e6db74">&#39;max_num&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
-s<span style="color:#a6e22e">@z_padded</span> <span style="color:#f92672">=</span> sprintf(<span style="color:#e6db74">&#39;hello_</span><span style="color:#e6db74">%03i</span><span style="color:#e6db74">&#39;</span>, i);
-</code></pre></div><h1 id="edit-primitves">Edit Primitves</h1>
-<h2 id="adjustprimlength">adjustPrimLength</h2>
-<p>Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#include &lt;groom.h&gt;</span>
-float length <span style="color:#f92672">=</span> clamp(chf(<span style="color:#e6db74">&#39;length&#39;</span>), <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@perimeter</span>);
-adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primnum</span>, <span style="color:#a6e22e">@perimeter</span>, length);
-</code></pre></div><div class="download-wrap">
-	<a href="https://www.petfactory.se/files/houdini/adjust_prim_lengths_v01.hiplc" download>
-		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
-	  	<span>adjust_prim_lengths_v01.hiplc</span>
-	</a>
-</div>
-<h1 id="functions">Functions</h1>
-<h2 id="frac">frac()</h2>
+			<h1>Houdini - HDA</h1>
+			<p>The notes below are based on info found in the <a href="https://www.sidefx.com/docs/houdini/assets/namespaces.html">Houdini docs</a> as well as other sources.</p>
+<h1 id="asset-name">Asset name</h1>
+<p>The general form of an asset’s internal name is</p>
+<p><strong>[namespace::]node_name[::version]</strong></p>
+<p>The namespace and version are both optional. You can have a name with both a namespace and a version, or just a namespace, or just a version, or neither.</p>
+<h2 id="namespaces">Namespaces</h2>
+<p>The namespace identifier lets you name your assets without worrying about using the same name as a built-in Houdini node or as a third-party asset you might use someday. (Note that this only applies to the internal name of the node… you can always use any string you want for the human readable label that appears in the user interface.)
+A useful convention to ensure you use a unique namespace name is to reverse the DNS address of your website. For example, if the creator´s website is at houdini.bacon.org, they would use org.bacon.houdini as the namespace for their assets.</p>
+<h2 id="versions">Versions</h2>
+<p>The version string allows you to create multiple independent versions of an asset without having to change the &ldquo;main name&rdquo;.
+Instances of the old version will still work and use the old implementation, while users placing a new node will get the latest version.
+The version can only contain numbers and periods (.). For example, myasset::2, myasset::2.1, myasset::19.1.3, but not myasset::2a or myasset::alpha.</p>
+<h2 id="asset-name--scripting">Asset name &amp; scripting</h2>
+<p>Some scripting commands require the node category and node name together (for example Object/geo, Sop/copy, Dop/popsolver). To use namespaced names with these commands, use the form 
+[namespace::]<strong>node_category</strong>/<strong>node_name</strong>[::version]
+For example, com.sundae::<strong>Sop</strong>/<strong>copy</strong>::2.0</p>
+<!--
+## 2 types of versioning
+
+Houdini supports two different but compatible systems for versioning assets, supporting different use cases:
+
+* You can incorporate the version number as part of the asset’s **internal name**. For example, mynode::2.0. This makes each version an entirely different asset. This allows different versions to exist in the same scene file simultaneously. When the user creates a node, they get the new version, but existing nodes use the older version and continue to work in the old way without changes.
+
+	* **+** You can make large-scale changes to how the node works, how it interprets inputs, its parameter interface, and so on, without breaking anything.
+	* **+** You don’t need to manually update old nodes.
+	* **-** There is no provision to upgrade old nodes automatically.
+
+---
+
+* You can use the Version field in the **asset definition**. This was the historical versioning solution before namespaces were added. It is retained for cases where it’s still useful. If an asset instance loads and notices the asset’s version string has changed since the scene file was saved, it will run an upgrade handler script (if it exists). The script can edit the node instance to transform it into the new version.
+
+	* This can be useful if you usually make minor, backwards-compatible changes to an asset rather than big breaking changes, especially new parameters. It is mostly useful in a studio environment, where a TD does the work so the artists' tools are automatically upgraded.
+	* **+** You can automatically upgrade existing assets with new (backwards-compatible) features.
+	* **-** You need to manually update the upgrade script and script the work of changing an old instance into a new instance, every time you update the asset. You may need to maintain the ability for the script to upgrade one of several old versions to the latest edition (for example, the script might need to be able to update any of version 1, 2, or 3 to version 4).
+
+-->
+<!--
+# Subnet HDA
+
+* Select the nodes
+* press **Shift C** to create a subnet
+* RMB click on the subnet > **Create Digital Asset**
+
+# Geo level HDA
+
+-->
+<h1 id="custom-hda-path">Custom HDA Path</h1>
+<a href="https://www.petfactory.se/notes/houdini_python_notes#houdini-packages">Set custom path to HDA</a>
+<h1 id="hda-python-scripts">HDA Python Scripts</h1>
+<h2 id="pythonmodule">PythonModule</h2>
+<p><a href="https://www.sidefx.com/docs/houdini/hom/hou/HDAModule.html">HDAModule</a> User-defined Python module containing functions, classes, and constants that are stored with and accessed from a digital asset.</p>
+<ul>
+<li>RMB click the HDA <strong>Allow Editing of Contents</strong></li>
+<li>RMB click the HDA <strong>Type Properites</strong></li>
+<li>On the <strong>scripts</strong> tab select <strong>Python Module</strong> from the <strong>Event Handler</strong> combobox. We now get a python module &ldquo;automatically&rdquo; added to our HDA.</li>
+</ul>
+<p>Lets write som test code and execute it from a button on the HDA.</p>
+<ul>
+<li>On the scripts tab, with the PythonModule selected enter the some code to be called</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>():
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;speak was called from PythonModule&#39;</span>)
+</code></pre></div><ul>
+<li>Add a button to the HDA and as a <strong>python callback script</strong> we add the following snippet:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>phm()<span style="color:#f92672">.</span>speak()
+</code></pre></div><ul>
+<li><strong>Note</strong>
+<ul>
+<li>phm() → hou.HDAModule
+<ul>
+<li>This shortcut lets you write hou.phm() instead of hou.pwd().hdaModule(). You are most likely to use this shortcut from event handlers, button callbacks, and menu generation scripts in digital assets.</li>
+</ul>
+</li>
+<li>To make this work the python module must be named <strong>PythonModule</strong> (which it is if we add it this way)</li>
+</ul>
+</li>
+</ul>
+<h2 id="additional-modules">Additional Modules</h2>
+<p>If you find that a digital asset has too much Python code to store in one module, it’s possible to create submodules. Lets create a separate python module and call it from our &ldquo;main&rdquo; python module.</p>
+<ul>
+<li>RMB click the HDA &gt; Type Properties and select the <strong>Scripts</strong> tab</li>
+<li>In the <strong>Event Handler</strong> combobox select <strong>Custom Script</strong></li>
+<li>Select the python script to include (with the filebrowser labeled &ldquo;filename&rdquo;)</li>
+<li>This will autopopulate the section name with the file name (which is fine i guess, you can remove the .py extension if you want)</li>
+<li>Click <strong>Add File</strong> to add the custom script to the HDA.</li>
+<li>Now we need to import the custom module in our main python module (we also have a speak method in out custom module, which we also call)</li>
+<li><strong>NOTE</strong>
+<ul>
+<li>New to Houdini 18.0, the createModuleFromSection function expects the code in the HDA section to have Python 3 style <strong>print statements</strong>.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># toolutils.createModuleFromSection(module_name, node_type, section_name)</span>
+<span style="color:#f92672">import</span> toolutils
+custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#f92672">.</span>createModuleFromSection(<span style="color:#e6db74">&#34;custom_module&#34;</span>, kwargs[<span style="color:#e6db74">&#34;type&#34;</span>], <span style="color:#e6db74">&#34;custom_module.py&#34;</span>)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>():
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;called &#34;speak&#34; from PythonModule&#39;</span>)
+    custom_module<span style="color:#f92672">.</span>speak()
+</code></pre></div><h1 id="extra-files">Extra Files</h1>
+<h2 id="geometry">Geometry</h2>
 		
 		</div>
 	</div>
