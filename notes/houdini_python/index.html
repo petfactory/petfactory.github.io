@@ -24,7 +24,7 @@
         
         
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
-	    <title>Houdini Python notes</title>
+	    <title>Houdini - Python</title>
 
 	</head>
 
@@ -83,16 +83,23 @@
     <li><a href="#environment-variables">Environment variables</a>
       <ul>
         <li><a href="#inspect-variables">Inspect variables</a></li>
-        <li><a href="#configuring-your-environment">Configuring your environment</a></li>
-        <li><a href="#houdini-packages">Houdini Packages</a></li>
-        <li><a href="#python-path">Python Path</a></li>
+        <li><a href="#environment-config">Environment config</a>
+          <ul>
+            <li><a href="#houdini-packages">Houdini Packages</a></li>
+            <li><a href="#python-path">Python Path</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#parms">Parms</a>
       <ul>
+        <li><a href="#parm-template">Parm template</a>
+          <ul>
+            <li><a href="#multiparm">Multiparm</a></li>
+          </ul>
+        </li>
         <li><a href="#parm-tuple">Parm tuple</a></li>
         <li><a href="#parms-in-folder">Parms in Folder</a></li>
-        <li><a href="#parm-template">Parm template</a></li>
       </ul>
     </li>
     <li><a href="#copy-to-points">Copy to points</a>
@@ -113,7 +120,7 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini Python notes</h1>
+			<h1>Houdini - Python</h1>
 			<p>Here I will gather information that I find useful.</p>
 <h1 id="environment-variables">Environment variables</h1>
 <p>Houdini uses <a href="https://www.sidefx.com/docs/houdini/basics/config_env.html">environment variables</a> for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.</p>
@@ -123,10 +130,10 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#39;HOUDINI_OTLSCAN_PATH&#39;</span>)
 </code></pre></div><p>You can also use the Textport:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo $HOUDINI_OTLSCAN_PATH
-</code></pre></div><h2 id="configuring-your-environment">Configuring your environment</h2>
+</code></pre></div><h2 id="environment-config">Environment config</h2>
 <p>Traditionally, the way to set the values of environment variables in Houdini was to edit the <a href="https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables">houdini.env</a> file. The houdini.env file are found in the $HOUDINI_USER_PREF_DIR (see notes below). The problem is that not only the user wants to set environment variables, but also studios, plug-in authors, and so on. Multiple parties would end up rewriting or appending to the houdini.env file, sometimes causing errors or redundancy.</p>
 <p>The new solution for this kind of set-up is packages. Packages are .json files in HOUDINI_PATH/packages. Each package file contains a specification for how to modify the environment (including the Houdini Path and other variables).</p>
-<h2 id="houdini-packages">Houdini Packages</h2>
+<h3 id="houdini-packages">Houdini Packages</h3>
 <p><a href="https://www.sidefx.com/docs/houdini/ref/plugins.html">Docs</a></p>
 <ul>
 <li>Package files must be valid <strong>JSON</strong> and must have the .json extension.</li>
@@ -164,7 +171,7 @@
         }
     ]
 }
-</code></pre></div><h2 id="python-path">Python Path</h2>
+</code></pre></div><h3 id="python-path">Python Path</h3>
 <p>We can also use the same package file to add a custom python path</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;env&#34;</span>: [
@@ -183,6 +190,38 @@
 
 node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/copytopoints&#39;</span>)
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(p<span style="color:#f92672">.</span>name() <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> node<span style="color:#f92672">.</span>parms()))
+</code></pre></div><h2 id="parm-template">Parm template</h2>
+<p>A <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
+<p>For example, the &ldquo;t&rdquo; parm tuple on geometry objects can be described by a hou.FloatParmTemplate – it has a label of &ldquo;Transform&rdquo;, a data type of hou.parmData.Float, 3 components, a naming scheme of hou.parmNamingScheme.XYZW, etc.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
+<span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
+node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()<span style="color:#f92672">.</span>type()
+<span style="color:#75715e"># parmTemplateType.Float</span>
+</code></pre></div><h3 id="multiparm">Multiparm</h3>
+<p>Here is an example of how to create a multiparm on a attrib wrangle node. The parm will be added to the root of the node (this is also where parms are added when the &ldquo;auto add spare parms&rdquo; is clicked)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">parent_node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj&#39;</span>)<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;geo&#39;</span>)
+wrangle_node <span style="color:#f92672">=</span> parent_node<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;attribwrangle&#39;</span>)
+wrangle_node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;class&#39;</span>)<span style="color:#f92672">.</span>set(<span style="color:#ae81ff">0</span>)
+
+parm_template_group <span style="color:#f92672">=</span> wrangle_node<span style="color:#f92672">.</span>parmTemplateGroup()
+
+multi_folder_parm_template <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>FolderParmTemplate(<span style="color:#e6db74">&#34;positions&#34;</span>, <span style="color:#e6db74">&#34;Positions&#34;</span>, folder_type<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>folderType<span style="color:#f92672">.</span>MultiparmBlock, default_value<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, ends_tab_group<span style="color:#f92672">=</span>False)
+float_parm_template <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>FloatParmTemplate(<span style="color:#e6db74">&#34;pos_#&#34;</span>, <span style="color:#e6db74">&#34;Pos&#34;</span>, <span style="color:#ae81ff">3</span>, default_value<span style="color:#f92672">=</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), min<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, max<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+multi_folder_parm_template<span style="color:#f92672">.</span>addParmTemplate(float_parm_template)
+parm_template_group<span style="color:#f92672">.</span>append(multi_folder_parm_template)
+
+snippet <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">int num = chi(&#39;positions&#39;);
+</span><span style="color:#e6db74">int i, pnt;
+</span><span style="color:#e6db74">vector p;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">for(i=0; i&lt;num; i++){
+</span><span style="color:#e6db74">    p = chv(sprintf(&#39;pos_</span><span style="color:#e6db74">%i</span><span style="color:#e6db74">&#39;, i+1));
+</span><span style="color:#e6db74">    pnt = addpoint(0, p);
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+wrangle_node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;snippet&#39;</span>)<span style="color:#f92672">.</span>set(snippet)
+wrangle_node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group)
 </code></pre></div><h2 id="parm-tuple">Parm tuple</h2>
 <p>The <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTuple.html">ParmTuple</a> class behaves like a Python sequence, so you can index into it using square brackets, iterate over it, call len on it, etc. The elements inside the parameter tuple are hou.Parm objects.</p>
 <p>A parameter tuple’s name may only contain letters, numbers, and underscores. For example, objects contain a parameter tuple named &ldquo;t&rdquo; that contains three float parameters. The names of the parameters inside the tuple are determined from the parameter tuple’s name and its naming scheme. For example, the &ldquo;t&rdquo; parameter uses the XYZW naming scheme, so the three parameters inside it are named &ldquo;tx&rdquo;, &ldquo;ty&rdquo;, and &ldquo;tz&rdquo;. Note that if the parameter tuple only contains one parameter, the tuple and the parameter inside it may have the same name</p>
@@ -209,13 +248,6 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
 <p>If you want to get all the parms in a specific folder you can use the <a href="https://www.sidefx.com/docs/houdini/hom/hou/Node.html#parmsInFolder">parmsInFolder</a> function.</p>
 <p>Lets say that you want all the parms in the PostFX folder (that are inside the Redshift Camera folder of the camera node) note that we need to specify the entire &ldquo;hierarchy&rdquo; to the destination folder.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
-</code></pre></div><h2 id="parm-template">Parm template</h2>
-<p>A <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
-<p>For example, the &ldquo;t&rdquo; parm tuple on geometry objects can be described by a hou.FloatParmTemplate – it has a label of &ldquo;Transform&rdquo;, a data type of hou.parmData.Float, 3 components, a naming scheme of hou.parmNamingScheme.XYZW, etc.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
-<span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
-node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()<span style="color:#f92672">.</span>type()
-<span style="color:#75715e"># parmTemplateType.Float</span>
 </code></pre></div><h1 id="copy-to-points">Copy to points</h1>
 <h2 id="attributes-from-target">Attributes from target</h2>
 <p>New to <strong>copy to points</strong> node in Houdini 18 is that we need to add attribs from target via a multiparm attribute.</p>

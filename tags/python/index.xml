@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Davinci Resolve - intro to python</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_intro_to_python/</link>
+      <title>Davinci Resolve - Python</title>
+      <link>https://www.petfactory.se/notes/davinci_resolve_python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_intro_to_python/</guid>
+      <guid>https://www.petfactory.se/notes/davinci_resolve_python/</guid>
       <description>An old scripting guide can be found here
 Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
     </item>

@@ -94,11 +94,7 @@
         <li><a href="#additional-modules">Additional Modules</a></li>
       </ul>
     </li>
-    <li><a href="#extra-files">Extra Files</a>
-      <ul>
-        <li><a href="#geometry">Geometry</a></li>
-      </ul>
-    </li>
+    <li><a href="#extra-files">Extra Files</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -214,7 +210,22 @@ custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;called &#34;speak&#34; from PythonModule&#39;</span>)
     custom_module<span style="color:#f92672">.</span>speak()
 </code></pre></div><h1 id="extra-files">Extra Files</h1>
-<h2 id="geometry">Geometry</h2>
+<p>Lets add an extra file to an HDA.</p>
+<ul>
+<li>RMB click the <strong>HDA &gt; Type Properties</strong> and select the <strong>Extra Files</strong> tab.</li>
+<li>Click the <strong>Filename</strong> file chooser amnd navigate to the file.</li>
+<li>Click <strong>Add File</strong> and press <strong>Accept</strong> to close the type properties widget.</li>
+</ul>
+<p>Now the file has been saved inside the HDA on disc. So lets load the file within the HDA.</p>
+<ul>
+<li>On the file node (inside the HDA) click the geometry file chooser.</li>
+<li>On the left hand side, in the <strong>Locations</strong> section of the file chooser widget select <strong>opdef:/</strong></li>
+<li>Navigate to the HDA that we just saved our file to.
+<ul>
+<li><strong>Note</strong> we will find the file in a directory of the HDA type. If we created a sop HDA it will be inside the sop dir. If we created the HDA with a namespace the directory of the HDA will be prefixed with this namespace as well. If we have different versions, the versions will be stored in different dirs.</li>
+</ul>
+</li>
+</ul>
 		
 		</div>
 	</div>

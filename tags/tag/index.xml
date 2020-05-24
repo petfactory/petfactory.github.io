@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Houdini Python notes</title>
-      <link>https://www.petfactory.se/notes/houdini_python_notes/</link>
+      <title>Houdini - Python</title>
+      <link>https://www.petfactory.se/notes/houdini_python/</link>
       <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_python_notes/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_python/</guid>
       <description>Here I will gather information that I find useful.
 Environment variables Houdini uses environment variables for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.
 See the list of environment variables in Houdini.
