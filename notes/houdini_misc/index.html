@@ -80,6 +80,18 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#pop">POP</a>
+      <ul>
+        <li><a href="#birth-rate">Birth Rate</a></li>
+        <li><a href="#rest-attribute">Rest attribute</a></li>
+        <li><a href="#pop-advect-by-volumes">POP Advect by Volumes</a></li>
+      </ul>
+    </li>
+    <li><a href="#sop">SOP</a>
+      <ul>
+        <li><a href="#wrangle">Wrangle</a></li>
+      </ul>
+    </li>
     <li><a href="#ui">UI</a>
       <ul>
         <li><a href="#default-desktop">Default desktop</a></li>
@@ -100,13 +112,6 @@
         <li><a href="#curl-field-velocity">Curl field (velocity)</a></li>
       </ul>
     </li>
-    <li><a href="#pop">POP</a>
-      <ul>
-        <li><a href="#birth-rate">Birth Rate</a></li>
-        <li><a href="#rest-attribute">Rest attribute</a></li>
-        <li><a href="#pop-advect-by-volumes">POP Advect by Volumes</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 		</aside>	
@@ -122,6 +127,39 @@
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini misc</h1>
 			<p>A collection of various Houdini related things that doesn´t fit anywhere else.</p>
+<h1 id="pop">POP</h1>
+<h2 id="birth-rate">Birth Rate</h2>
+<p>A good way to control the amount of particles being emitted is to keyframe the <strong>Const. Birt Rate</strong> (Birth tab) with values between 0 and 1. Then we can use the <strong>Scale Point Count by Area</strong> (Source tab) as a multiplier of points emitted.</p>
+<h2 id="rest-attribute">Rest attribute</h2>
+<p>If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source. This attr can then be used at the sop level so do various things, maybe use as Cd. All attributes are inherited by default, we might axplicitly set which attrs to inherit.</p>
+<h2 id="pop-advect-by-volumes">POP Advect by Volumes</h2>
+<p>Lets use a velocity volume to advect particles.</p>
+<ul>
+<li>In the popnet after the source append a <strong>POP Advect by Volumes</strong>.
+<ul>
+<li>Velocity source: point to the velocity volume</li>
+<li>Advection Type: <strong>Update Position</strong>
+<ul>
+<li>This will explicitly set the position (instead of update force that implicitly will affect the position). We might want to set the position if we have nice, detailed velocity noise and would like to use this. (might be worth testing the other options as well)</li>
+<li>Velocity Update: <strong>Final Velocity</strong>
+<ul>
+<li>We want to store the velocity if we want motion blur.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="sop">SOP</h1>
+<h2 id="wrangle">Wrangle</h2>
+<ul>
+<li>Output Selection Group: <strong>group_name</strong>
+<ul>
+<li>The name of a group to use as the output selection. When the highlight flag is enabled for this node, this group will be the output selection used by later modeling tools (if it exists).</li>
+</ul>
+</li>
+</ul>
 <h1 id="ui">UI</h1>
 <h2 id="default-desktop">Default desktop</h2>
 <ul>
@@ -216,30 +254,6 @@
 </ul>
 </li>
 <li>We have now created a velocity volume with a curl noise. We can for instance use this inside a pop simulation to advect the particles.</li>
-</ul>
-<h1 id="pop">POP</h1>
-<h2 id="birth-rate">Birth Rate</h2>
-<p>A good way to control the amount of particles being emitted is to keyframe the <strong>Const. Birt Rate</strong> (Birth tab) with values between 0 and 1. Then we can use the <strong>Scale Point Count by Area</strong> (Source tab) as a multiplier of points emitted.</p>
-<h2 id="rest-attribute">Rest attribute</h2>
-<p>If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source. This attr can then be used at the sop level so do various things, maybe use as Cd. All attributes are inherited by default, we might axplicitly set which attrs to inherit.</p>
-<h2 id="pop-advect-by-volumes">POP Advect by Volumes</h2>
-<p>Lets use a velocity volume to advect particles.</p>
-<ul>
-<li>In the popnet after the source append a <strong>POP Advect by Volumes</strong>.
-<ul>
-<li>Velocity source: point to the velocity volume</li>
-<li>Advection Type: <strong>Update Position</strong>
-<ul>
-<li>This will explicitly set the position (instead of update force that implicitly will affect the position). We might want to set the position if we have nice, detailed velocity noise and would like to use this. (might be worth testing the other options as well)</li>
-<li>Velocity Update: <strong>Final Velocity</strong>
-<ul>
-<li>We want to store the velocity if we want motion blur.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 		
 		</div>

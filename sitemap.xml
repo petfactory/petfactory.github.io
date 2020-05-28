@@ -53,16 +53,6 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/equilateral/</loc>
-    <lastmod>2020-04-15T16:13:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/substance-designer/</loc>
-    <lastmod>2020-04-15T16:13:08+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</loc>
     <lastmod>2020-04-07T21:17:10+02:00</lastmod>
   </url>
@@ -80,6 +70,11 @@
   <url>
     <loc>https://www.petfactory.se/notes/substance_painter_notes/</loc>
     <lastmod>2020-02-07T20:26:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/substance-designer/</loc>
+    <lastmod>2020-02-06T20:26:30+01:00</lastmod>
   </url>
   
   <url>
@@ -255,6 +250,11 @@
   <url>
     <loc>https://www.petfactory.se/tags/nuke/</loc>
     <lastmod>2019-06-01T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/houdini_python_node/</loc>
+    <lastmod>2019-04-15T13:45:10+01:00</lastmod>
   </url>
   
   <url>

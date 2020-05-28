@@ -22,6 +22,15 @@ Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that r
     </item>
     
     <item>
+      <title>Houdini Python Node - Snippets</title>
+      <link>https://www.petfactory.se/notes/houdini_python_node/</link>
+      <pubDate>Mon, 15 Apr 2019 13:45:10 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_python_node/</guid>
+      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) </description>
+    </item>
+    
+    <item>
       <title>Flask SQLite dev</title>
       <link>https://www.petfactory.se/notes/flask_sqlite_dev/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>

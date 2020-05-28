@@ -159,13 +159,22 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
     </item>
     
     <item>
+      <title>Houdini Python Node - Snippets</title>
+      <link>https://www.petfactory.se/notes/houdini_python_node/</link>
+      <pubDate>Mon, 15 Apr 2019 13:45:10 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_python_node/</guid>
+      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) </description>
+    </item>
+    
+    <item>
       <title>Houdini VEX - Snippets</title>
       <link>https://www.petfactory.se/notes/houdini_vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
       <description>Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.
-pscale float ps_life = chramp(&amp;#39;ps_life&amp;#39;, @nage);float ps_bias = fit01(chramp(&amp;#39;ps_bias&amp;#39;, rand(@id)), chf(&amp;#39;ps_min&amp;#39;), chf(&amp;#39;ps_max&amp;#39;));@pscale = ps_life*ps_bias*chf(&amp;#39;ps_mult&amp;#39;);Formatting Zero padding int i = int(rand(@ptnum+chi(&amp;#39;seed&amp;#39;))*(chi(&amp;#39;max_num&amp;#39;)+1));s@z_padded = sprintf(&amp;#39;hello_%03i&amp;#39;, i);Edit Primitves adjustPrimLength Here we can use a measure sop measure the perimeter of the prim.</description>
+pscale float ps_life = chramp(&amp;#39;ps_life&amp;#39;, @nage);float ps_bias = fit01(chramp(&amp;#39;ps_bias&amp;#39;, rand(@id)), chf(&amp;#39;ps_min&amp;#39;), chf(&amp;#39;ps_max&amp;#39;));@pscale = ps_life*ps_bias*chf(&amp;#39;ps_mult&amp;#39;);String Regex Replace string names[] = {&amp;#39;monkeys_12&amp;#39;, &amp;#39;X_AE_A-12&amp;#39;, &amp;#39;my_name&amp;#39;, &amp;#39;Forty_Two____42&amp;#39;};// remove trailing digits including underscore/dash.</description>
     </item>
     
     <item>
@@ -203,8 +212,8 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
       
       <guid>https://www.petfactory.se/notes/houdini_misc/</guid>
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
-UI Default desktop  Edit &amp;gt; Preferences &amp;gt; General User Interface  Startup in Desktop : Build    Flags Flags represent some state information on the node, such as which node represents the output of the network. Different network types have different flags.
-Selectable template flag If you LMB ctrl click the template flag you will set the selectable template flag.</description>
+POP Birth Rate A good way to control the amount of particles being emitted is to keyframe the Const. Birt Rate (Birth tab) with values between 0 and 1. Then we can use the Scale Point Count by Area (Source tab) as a multiplier of points emitted.
+Rest attribute If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source.</description>
     </item>
     
     <item>
