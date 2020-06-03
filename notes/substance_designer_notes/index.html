@@ -83,11 +83,17 @@
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#uv">UV</a></li>
+        <li><a href="#udim">UDIM</a></li>
       </ul>
     </li>
     <li><a href="#exporting-maps">Exporting Maps</a>
       <ul>
         <li><a href="#export-udim-issue">Export udim issue</a></li>
+      </ul>
+    </li>
+    <li><a href="#baking">Baking</a>
+      <ul>
+        <li><a href="#color-map">Color Map</a></li>
       </ul>
     </li>
     <li><a href="#3d-view">3D view</a>
@@ -122,10 +128,22 @@
 </ul>
 </li>
 </ul>
+<h2 id="udim">UDIM</h2>
+<p>If you import a mesh that only have one uv tile but this tile is not the 1001 udim. The baker will not produce any result. What you can do is to select the mesh and in the attribute editor set the <strong>is_udim</strong> to true</p>
 <h1 id="exporting-maps">Exporting Maps</h1>
 <h2 id="export-udim-issue">Export udim issue</h2>
 <p>I dont know if it is a bug but what I have experienced is that if you have a model with some materials having multiple uv tiles and some dont if you try to export a graph with multiple udims they do not show up under the <strong>&ldquo;Wrench icon&rdquo; &gt; Export Outputs &gt; Batch (tab)</strong>.
 What I need to do to make them show up is to set <strong>Assign Substance Graph to 3D Mesh</strong> and the select the model &gt; graph &gt; all (udim). When this is done I get back the udim functionality of the export options.</p>
+<h1 id="baking">Baking</h1>
+<h2 id="color-map">Color Map</h2>
+<p>Sometimes it can be useful to bake a color map.</p>
+<ul>
+<li>Color Map from Mesh
+<ul>
+<li>Apply diffusion: <strong>Off</strong></li>
+</ul>
+</li>
+</ul>
 <h1 id="3d-view">3D view</h1>
 <h2 id="shortcuts">Shortcuts</h2>
 <h3 id="view">View</h3>

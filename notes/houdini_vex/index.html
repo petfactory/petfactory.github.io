@@ -80,6 +80,11 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#general">General</a>
+      <ul>
+        <li><a href="#array-of-unique-detail">Array of Unique (detail)</a></li>
+      </ul>
+    </li>
     <li><a href="#transform">Transform</a>
       <ul>
         <li><a href="#pscale">pscale</a></li>
@@ -123,7 +128,17 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini VEX - Snippets</h1>
-			<h1 id="transform">Transform</h1>
+			<h1 id="general">General</h1>
+<h2 id="array-of-unique-detail">Array of Unique (detail)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int nprim <span style="color:#f92672">=</span> nprimitives(<span style="color:#ae81ff">0</span>);
+s[]<span style="color:#a6e22e">@mat_names</span> <span style="color:#f92672">=</span> {};
+
+int count <span style="color:#f92672">=</span> nuniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>);
+<span style="color:#66d9ef">for</span> (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> count; i<span style="color:#f92672">++</span>) {
+    string val <span style="color:#f92672">=</span> uniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>, i);
+    push(s[]<span style="color:#a6e22e">@mat_names</span>, val);
+}
+</code></pre></div><h1 id="transform">Transform</h1>
 <p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
 <h2 id="pscale">pscale</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">float ps_life <span style="color:#f92672">=</span> chramp(<span style="color:#e6db74">&#39;ps_life&#39;</span>, <span style="color:#a6e22e">@nage</span>);

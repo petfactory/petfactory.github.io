@@ -107,6 +107,11 @@
         <li><a href="#attributes-from-target">Attributes from target</a></li>
       </ul>
     </li>
+    <li><a href="#misc">Misc</a>
+      <ul>
+        <li><a href="#undo">Undo</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -261,6 +266,13 @@ copy<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ta
 <span style="color:#75715e"># lets set the attr</span>
 c<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;applyattribs1&#39;</span>)<span style="color:#f92672">.</span>set(<span style="color:#e6db74">&#39;my_attr&#39;</span>)
 
+</code></pre></div><h1 id="misc">Misc</h1>
+<h2 id="undo">Undo</h2>
+<p>Returns a context manager, within which all changes to Houdini are recorded as a single action on the <a href="https://www.sidefx.com/docs/houdini/hom/hou/undos.html">undo</a> stack.
+For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> hou<span style="color:#f92672">.</span>undos<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#34;Move all nodes to the left&#34;</span>):
+    <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#34;/obj&#34;</span>)<span style="color:#f92672">.</span>children():
+        n<span style="color:#f92672">.</span>move(hou<span style="color:#f92672">.</span>Vector2(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>))
 </code></pre></div>		
 		</div>
 	</div>

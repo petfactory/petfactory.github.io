@@ -178,8 +178,7 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.
-pscale float ps_life = chramp(&amp;#39;ps_life&amp;#39;, @nage);float ps_bias = fit01(chramp(&amp;#39;ps_bias&amp;#39;, rand(@id)), chf(&amp;#39;ps_min&amp;#39;), chf(&amp;#39;ps_max&amp;#39;));@pscale = ps_life*ps_bias*chf(&amp;#39;ps_mult&amp;#39;);String Regex Replace string names[] = {&amp;#39;monkeys_12&amp;#39;, &amp;#39;X_AE_A-12&amp;#39;, &amp;#39;my_name&amp;#39;, &amp;#39;Forty_Two____42&amp;#39;};// remove trailing digits including underscore/dash.</description>
+      <description>General Array of Unique (detail) int nprim = nprimitives(0);s[]@mat_names = {};int count = nuniqueval(0, &amp;#34;prim&amp;#34;, &amp;#34;shop_materialpath&amp;#34;);for (int i = 0; i &amp;lt; count; i++) {string val = uniqueval(0, &amp;#34;prim&amp;#34;, &amp;#34;shop_materialpath&amp;#34;, i);push(s[]@mat_names, val);}Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</description>
     </item>
     
     <item>
