@@ -72,7 +72,6 @@ h3 {
 
 .site-header {
     background-color: #000;
-    /*background-color: rgba(0,0,0,.4);*/
     position: fixed;
     top:0px;
     width:100%;
@@ -90,25 +89,32 @@ h3 {
   text-decoration: none;
 }
 
+#main-nav-content{
+    width: 600px;
+    float: right;
+    margin-top: 4px;
+}
+
+#main-nav-content div{
+    text-align: right;
+}
+
 .header-logo-wrap{
-    /*background-color: #962;*/
     width: 160px;
     height: 30px;
-    margin-top: 11px;
+    margin-top: 12px;
+    position: absolute;
+    /*background-color: #245;*/
 }
 
 .header-logo-text{
-    /*position: absolute;*/
-    /*padding-top: 6px;*/
-    /*left: 2px;*/
+    position: absolute;
+    top: 0px;
+    left: 30px;
     color: #fff;
-    /*font-size: 1.1em;*/
+    font-size: 1.1em;
 }
 
-.main-nav-wrap a{
-    margin-top: 6px;
-
-}
 
 /*
 ---------------
@@ -136,6 +142,9 @@ h3 {
     /*background-color: #760;*/
 }
 
+/*.menu-icon {
+}
+*/
 .open {
     /*max-height: 160px;*/
     /*max-height: 0px;*/
@@ -152,18 +161,21 @@ h3 {
 }
 
 #menu-wrap{
-    margin-top: 10px;
     transition: 0.3s;
-    font-size: 1.1em;
-    height: 200px;
+    font-size: 1.2em;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: rgba(0,0,0,.75);
+    height: 100%;
 }
 
 #menu-wrap a {
     margin-left: 0px; 
     display: block;
     color: #fff;
-    height: 40px;
-    background-color: rgba(0,0,0,.4);
+    height: 50px;
+    /*background-color: rgba(0,0,0,.4);*/
 }
 
 #menu-wrap a:hover{
@@ -173,9 +185,9 @@ h3 {
 #menu-wrap ul {
     list-style: none;
     margin: 0px;
-    padding-left: 0px;
-    /*padding-top: 3px;*/
+    padding-left: 10px;
     padding-bottom: 7px;
+    padding-top: 80px;
 }   
 
 
