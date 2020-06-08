@@ -3,6 +3,7 @@ $(document).ready(function(){
     // $('#menu-wrap').toggleClass('closed');
     
     $('.mobile-menu-trigger').click(function(){
+        // $('#menu-wrap').toggleClass('closed');
         $('#menu-wrap').toggleClass('closed');
         // console.log(12);
     });

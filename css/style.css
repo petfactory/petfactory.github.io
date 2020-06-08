@@ -72,6 +72,7 @@ h3 {
 
 .site-header {
     background-color: #000;
+    /*background-color: rgba(0,0,0,.4);*/
     position: fixed;
     top:0px;
     width:100%;
@@ -97,11 +98,11 @@ h3 {
 }
 
 .header-logo-text{
-    position: relative;
-    top: 2px;
-    left: 2px;
+    /*position: absolute;*/
+    /*padding-top: 6px;*/
+    /*left: 2px;*/
     color: #fff;
-    font-size: 1.1em;
+    /*font-size: 1.1em;*/
 }
 
 .main-nav-wrap a{
@@ -114,6 +115,15 @@ h3 {
  mobile nav
 ---------------
 */
+
+.site-header-mobile {
+    position: fixed;
+    top:0px;
+    width:100%;
+    z-index: 10;
+    height: 50px;
+    display: none;
+}
 .mobile-menu-trigger {
     position: absolute;
     top: 0px;
@@ -127,7 +137,7 @@ h3 {
 }
 
 .open {
-    max-height: 175px;
+    max-height: 160px;
     overflow-y: hidden;
 }
 
@@ -137,20 +147,23 @@ h3 {
 }
 
 #menu-wrap{
-    padding-top: 0px;
+    margin-top: 10px;
     transition: 0.3s;
-    display: none;
+    /*display: none;*/
     /*background-color: #926;*/
     font-size: 1.1em;
+    /*position: fixed;*/
+    height: 200px;
+
 }
 
 #menu-wrap a {
     margin-left: 0px; 
-    padding-left: 12px;
     display: block;
-    color: #888;
+    color: #fff;
     height: 40px;
-    /*background-color: #259;*/
+    /*background-color: #400;*/
+    background-color: rgba(0,0,0,.4);
 }
 
 #menu-wrap a:hover{
@@ -161,7 +174,7 @@ h3 {
     list-style: none;
     margin: 0px;
     padding-left: 0px;
-    padding-top: 3px;
+    /*padding-top: 3px;*/
     padding-bottom: 7px;
 }   
 
@@ -171,6 +184,11 @@ h3 {
  icon
 ---------------
 */
+
+/*.home-icon{
+    position: fixed;
+    top: 0px;
+}*/
 
 .home-icon:hover{
     text-decoration: none;
@@ -686,13 +704,21 @@ margin:-50px 0 0; /* negative fixed header height */
 
 @media (max-width: 767px) {
 
+
+    .site-header-mobile {
+        display: block;
+    }
+
+    .site-header {
+        display: none;
+    }
+
     .carousel-indicators,
     .carousel-control-prev,
     .carousel-control-next{
         display: none;
     }
     #banner-wrap{
-        /*display: none;*/
         height: 20px;
     }
 
@@ -700,30 +726,24 @@ margin:-50px 0 0; /* negative fixed header height */
         margin-top: 0px;
 
     }
-    #menu-wrap {
-        display: block;
-        position: relative;
-    }
 
     .mobile-menu-trigger {
         display: block;
     }
-    .site-header {
-        position: relative;
-    }
+
     .social-list li a{
         padding-right: 100%;
     }
+
     .usp-wrap{
         display: none;
     }
+
     .list-date-wrap{
         float: none;
         font-size: 1.3em;
     }
-/*    .service-lg-c{
-        text-align: left;
-    }*/
+
     .work-hover-info{
         display: none;
     }
