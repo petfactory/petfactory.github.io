@@ -137,24 +137,25 @@ h3 {
 }
 
 .open {
-    max-height: 160px;
-    overflow-y: hidden;
+    /*max-height: 160px;*/
+    /*max-height: 0px;*/
+    /*max-height: 160px;*/
+    /*overflow-y: hidden;*/
+    opacity: 1;
 }
 
 .closed {
-    max-height: 0px;
-    overflow-y: hidden;
+    /*max-height: 0px;*/
+    /*max-height: 160px;*/
+    /*overflow-y: hidden;*/
+    opacity: 0;
 }
 
 #menu-wrap{
     margin-top: 10px;
     transition: 0.3s;
-    /*display: none;*/
-    /*background-color: #926;*/
     font-size: 1.1em;
-    /*position: fixed;*/
     height: 200px;
-
 }
 
 #menu-wrap a {
@@ -162,7 +163,6 @@ h3 {
     display: block;
     color: #fff;
     height: 40px;
-    /*background-color: #400;*/
     background-color: rgba(0,0,0,.4);
 }
 
