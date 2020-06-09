@@ -162,24 +162,20 @@ h3 {
     display: block;
 }
 
-/*.no_display {
-    display: none;
-}
-*/
-
-.menu-wrap a {
+/*.menu-wrap a {*/
+.menu-wrap > ul > li {
     margin-left: 0px; 
     display: block;
     color: #fff;
     height: 50px;
-    /*background-color: rgba(0,0,0,.4);*/
+    background-color: rgba(0,0,0,.4);
 }
 
-.menu-wrap a:hover{
+.menu-wrap > ul > li > a:hover{
      text-decoration: none;
 }
 
-.menu-wrap ul {
+.menu-wrap > ul {
     list-style: none;
     margin: 0px;
     padding-left: 10px;
