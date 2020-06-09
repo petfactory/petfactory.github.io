@@ -100,19 +100,24 @@ h3 {
 }
 
 .header-logo-wrap{
-    width: 160px;
-    height: 30px;
-    margin-top: 12px;
+    padding-top: 12px;
+    margin-left: -18px;
+    padding-left: 18px;
     position: absolute;
+    width: 50px;
+    height: 50px;
     /*background-color: #245;*/
 }
 
 .header-logo-text{
     position: absolute;
+    height: 50px;
+    padding-top: 12px;
     top: 0px;
-    left: 30px;
+    left: 50px;
     color: #fff;
     font-size: 1.1em;
+    /*background-color: #945;*/
 }
 
 
@@ -139,6 +144,7 @@ h3 {
     width: 50px;
     padding-left: 18px;
     padding-top: 12px;
+    /*background-color: #303;*/
 }
 
 .menu-wrap {
@@ -162,16 +168,15 @@ h3 {
     display: block;
 }
 
-.menu-wrap > ul > li > a{
+.menu-wrap-a{
     margin-left: 0px; 
     display: block;
     color: #fff;
     height: 50px;
-    /*background-color: rgba(0,0,0,.4);*/
 }
 
-.menu-wrap > ul > li > a:hover{
-     text-decoration: none;
+.menu-wrap-a:hover{
+    text-decoration: none;
 }
 
 .menu-wrap > ul {
