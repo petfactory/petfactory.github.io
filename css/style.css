@@ -162,13 +162,12 @@ h3 {
     display: block;
 }
 
-/*.menu-wrap a {*/
-.menu-wrap > ul > li {
+.menu-wrap > ul > li > a{
     margin-left: 0px; 
     display: block;
     color: #fff;
     height: 50px;
-    background-color: rgba(0,0,0,.4);
+    /*background-color: rgba(0,0,0,.4);*/
 }
 
 .menu-wrap > ul > li > a:hover{
