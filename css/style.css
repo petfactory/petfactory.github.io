@@ -689,6 +689,32 @@ margin:-50px 0 0; /* negative fixed header height */
 }
 
 
+#social-list-modal-wrap{
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    /*background-color: #245;*/
+}
+
+
+#social-list-modal{
+    /*list-style: none;*/
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#social-list-modal > li {
+   list-style: none;
+   width: calc(100% / 5);
+   display: inline-block;
+   text-align: center;
+   /*background-color: #445;*/
+
+}
+
 /*
 ---------------
  responsive
