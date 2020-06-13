@@ -193,9 +193,22 @@ Houdini supports two different but compatible systems for versioning assets, sup
 
 -->
 <h1 id="custom-hda-path">Custom HDA Path</h1>
-<a href="https://www.petfactory.se/notes/houdini_python_notes#houdini-packages">Set custom path to HDA</a>
+<a href="https://www.petfactory.se/notes/houdini_python#houdini-packages">Set custom path to HDA</a>
 <h1 id="parameters">Parameters</h1>
-<p>One quick way to add parameters to the HDA is to (with the HDA <strong>Operator Type Properties</strong> window open) MMB click the parameter you wish to add to the HDA (this needs to be a parameter of a node in the subnet of the HDA)</p>
+<ul>
+<li><strong>Add Parms to HDA</strong>
+<ul>
+<li><strong>Alt MMB</strong> click the parm of a node (in the HDA subnet) with the Operator Type Properties window open</li>
+</ul>
+</li>
+<li><strong>Conditional display</strong> <a href="http://www.sidefx.com/docs/houdini/ref/windows/optype.html#conditions">(docs)</a>
+<ul>
+<li>{ parm_name [operator] value &hellip;} &hellip;</li>
+<li>Available <strong>operators</strong>: ==, !=, &lt;, &gt;, &gt;=, &lt;=, =~ (matches pattern), !~ (doesn’t match pattern).</li>
+<li>{ enablefeature == 1 count &gt; 10 }</li>
+</ul>
+</li>
+</ul>
 <h1 id="hda-python-scripts">HDA Python Scripts</h1>
 <h2 id="pythonmodule">PythonModule</h2>
 <p><a href="https://www.sidefx.com/docs/houdini/hom/hou/HDAModule.html">HDAModule</a> User-defined Python module containing functions, classes, and constants that are stored with and accessed from a digital asset.</p>

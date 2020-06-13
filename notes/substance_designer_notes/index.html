@@ -116,6 +116,11 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#parameters">Parameters</a>
+      <ul>
+        <li><a href="#conditional-visibility">Conditional Visibility</a></li>
+      </ul>
+    </li>
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#uv">UV</a></li>
@@ -155,7 +160,29 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Substance Designer - notes</h1>
-			<h1 id="tips">Tips</h1>
+			<h1 id="parameters">Parameters</h1>
+<h2 id="conditional-visibility">Conditional Visibility</h2>
+<ul>
+<li>Boolean
+<ul>
+<li>input[&ldquo;MyInput&rdquo;]</li>
+<li>input[&ldquo;MyInput&rdquo;] == true</li>
+<li>!input[&ldquo;MyInput&rdquo;]</li>
+<li>input[&ldquo;MyInput&rdquo;] == false</li>
+<li>input[&ldquo;MyInput&rdquo;] != true</li>
+</ul>
+</li>
+<li>Float
+<ul>
+<li>input[&ldquo;MyInput&rdquo;] &lt; 3</li>
+<li>input[&ldquo;param1&rdquo;] == 2</li>
+<li>input[&ldquo;MyInput&rdquo;].y &lt; 3</li>
+<li>input[&ldquo;param1&rdquo;] || input[&ldquo;param2&rdquo;]
+input[&ldquo;param1&rdquo;] &gt; 0 &amp;&amp; input[&ldquo;param2&rdquo;] &gt; 1</li>
+</ul>
+</li>
+</ul>
+<h1 id="tips">Tips</h1>
 <h2 id="uv">UV</h2>
 <ul>
 <li>To view the UVs in the 2D view
