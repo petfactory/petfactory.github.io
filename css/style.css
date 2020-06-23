@@ -49,9 +49,10 @@ h3 {
  scrollbar
 ---------------
 */
+
 ::-webkit-scrollbar {
   width: 12px;
-  height: 12px;
+  /*height: 12px;*/
   /*-webkit-appearance: none;*/
 }
 
@@ -60,11 +61,15 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #151515;
+    /*background: #151515;*/
+    background: #222;
     /*width: 12px;*/
 }
 
-
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2c2c2c;
+}
 /*
 ---------------
  header and navigation
