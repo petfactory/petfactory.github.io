@@ -147,12 +147,28 @@
             <li><a href="#pivot">Pivot</a></li>
             <li><a href="#snapping">Snapping</a></li>
             <li><a href="#proportional-editing">Proportional Editing</a></li>
+            <li><a href="#mode">Mode</a></li>
           </ul>
         </li>
-        <li><a href="#add">Add</a></li>
+        <li><a href="#display">Display</a></li>
       </ul>
     </li>
     <li><a href="#preferences">Preferences</a></li>
+    <li><a href="#modelling">Modelling</a>
+      <ul>
+        <li><a href="#add">Add</a></li>
+        <li><a href="#delete">Delete</a></li>
+        <li><a href="#object-mode">Object Mode</a></li>
+        <li><a href="#edit-mode">Edit mode</a>
+          <ul>
+            <li><a href="#selection-modes">Selection Modes</a></li>
+            <li><a href="#selection-1">Selection</a></li>
+            <li><a href="#mesh-edit">Mesh Edit</a></li>
+            <li><a href="#delete-1">Delete</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#misc">Misc</a></li>
   </ul>
 </nav>
@@ -228,6 +244,14 @@
 <h1 id="outliner">Outliner</h1>
 <p>In the outliner we can use collections to control how our objects are displayed in the current view layer.</p>
 <h2 id="collections">Collections</h2>
+<p>Collections allows use to structure oure scene for organization or render layer purposes. Each collection can hold object of any kind, including other collections. Altough it is possible to ling objects to multiple collections it might lead to confusion. It is better to organize it some other way.
+If a collections is deleted the objects inside will not be deleted, they are moved outside.</p>
+<p>The eye icon (on the left side) will not affect the render, but will hide objects in the viewport.</p>
+<p>There is a filter icon in the top right corner of the collections panel that will give options such as setting objects as non selectable and more.</p>
+<ul>
+<li>Move to collection : <strong>M</strong></li>
+<li>RMB &gt; Move to Collection (object needs to be selected)</li>
+</ul>
 <h1 id="properties-editor">Properties Editor</h1>
 <p>In the default layout the properties editor is located under the outliner. The properties editor has a vertical tab layout. If you look closely the tabs are seoarated into 4 different sections (there are a slightly larger gap between them)</p>
 <p>Starting from the top:</p>
@@ -507,9 +531,27 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <ul>
 <li>Proportional Editing : <strong>O</strong></li>
 </ul>
-<h2 id="add">Add</h2>
+<h3 id="mode">Mode</h3>
 <ul>
-<li>Add menu : <strong>Shift A</strong></li>
+<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
+<li>Modes
+<ul>
+<li>Object Mode</li>
+<li>Edit Mode</li>
+<li>Sculpt Mode</li>
+<li>Vertex Paint</li>
+<li>Weight Paint</li>
+<li>Texture Paint</li>
+</ul>
+</li>
+</ul>
+<h2 id="display">Display</h2>
+<ul>
+<li><strong>Wireframe on shaded</strong>
+<ul>
+<li>Properties Editor &gt; Object Properties &gt; Viewport Display &gt; Wireframe</li>
+</ul>
+</li>
 </ul>
 <h1 id="preferences">Preferences</h1>
 <p>Here are some of the preferences that I changed to fit my workflow (Maya/Houdini background). I have listed the value of the preference I have set in bold and the default state in parantheses.</p>
@@ -568,6 +610,87 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>Todo
 <ul>
 <li>Look into keeping the blender alt drag to switch ortho views</li>
+</ul>
+</li>
+</ul>
+<h1 id="modelling">Modelling</h1>
+<h2 id="add">Add</h2>
+<p>In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</p>
+<ul>
+<li>Add : <strong>Shift A</strong></li>
+</ul>
+<h2 id="delete">Delete</h2>
+<ul>
+<li><strong>Delete key</strong></li>
+<li><strong>X</strong> : a confirm dialog will appear</li>
+<li>Header Menu &gt; Object &gt; Delete</li>
+</ul>
+<h2 id="object-mode">Object Mode</h2>
+<ul>
+<li>Join two meshes : <strong>Ctrl J</strong>
+<ul>
+<li>via menu <strong>Object &gt; Join</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="edit-mode">Edit mode</h2>
+<ul>
+<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
+</ul>
+<h3 id="selection-modes">Selection Modes</h3>
+<p>When in edit mode we get 3 buttons to the right of the mode drop down menu.</p>
+<ul>
+<li><strong>Vertex</strong> select : <strong>1</strong></li>
+<li><strong>Edge</strong> select : <strong>2</strong></li>
+<li><strong>Face</strong> select : <strong>3</strong></li>
+</ul>
+<p>You can use shift in combination with the numberpad to add multiple selection modes.</p>
+<h3 id="selection-1">Selection</h3>
+<ul>
+<li>Loop Select : <strong>Shift Alt LMB</strong>
+<ul>
+<li>Since I have changed the view control to maya we need to use the shift also</li>
+</ul>
+</li>
+</ul>
+<h3 id="mesh-edit">Mesh Edit</h3>
+<ul>
+<li>Insert Edge Loop and slide: <strong>Ctrl R LMB</strong></li>
+<li>Extrude : <strong>E</strong> (move along normal)
+<ul>
+<li><strong>Extrude tool</strong> (long press the tool for more options)</li>
+<li>Note that if you cancel an extrusion (RMB or pressing esc) the extrude face will still be there. This is handy since with this face still selected and in original position we can press <strong>S</strong> and scale the face in-place.</li>
+</ul>
+</li>
+<li>Bevel :</li>
+<li>knife tool :</li>
+<li>Bisect Tool : (sub-tool of the knife)
+<ul>
+<li>Select faces to cut</li>
+<li>LMB click and drag</li>
+<li>Use the on-screen tool manipulator to adjust cut</li>
+<li>expand the bisect tool operation panel to edit settings</li>
+</ul>
+</li>
+</ul>
+<h3 id="delete-1">Delete</h3>
+<p>If we are in edit mode and press delete key we will get a delete popup menu. Below are some of the options. Read more in the <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/delete.html?highlight=delete%20faces#deleting-dissolving">Delete &amp; Dissolve</a> (docs)</p>
+<ul>
+<li><strong>Vertices</strong> : All vertices in current selection, removing any faces or edges they are connected to.</li>
+<li><strong>Edges</strong> : Any edges in the current selection. Removes any faces that the edge shares with it.</li>
+<li><strong>Face</strong> : The selected faces and &ldquo;internal&rdquo; verts &amp; edges</li>
+<li><strong>Only Edges &amp; Faces</strong> : Deletes faces &amp; edges but leaves the verts.</li>
+<li><strong>Only Faces</strong> : Removes faces, but edges within the face selection are retained.</li>
+<li><strong>Disolve</strong> : This will &ldquo;keep&rdquo; the mesh but delete the components.</li>
+<li><strong>Collapse</strong> : Delete the components and merge to a single point.</li>
+<li><strong>Edge Loop</strong> : It will do the opposite of extrusion. Delete faces down to the next loop available.</li>
+</ul>
+<p>Misc</p>
+<ul>
+<li>Join two Vertices : <strong>F</strong></li>
+<li>Separate : <strong>P</strong>
+<ul>
+<li>or RMB &gt; Separate</li>
 </ul>
 </li>
 </ul>
