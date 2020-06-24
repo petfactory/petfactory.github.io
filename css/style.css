@@ -341,14 +341,8 @@ table{
 }
 
 th {
-    /*border-top: 1px solid #151515;*/
     border-bottom: 1px solid #151515;
     color: #999;
-}
-td {
-    /*width: 20px;*/
-    /*border-top: 1px solid #151515;*/
-    /*border-bottom: 1px solid #151515;*/
 }
 
 tr {
@@ -356,8 +350,9 @@ tr {
 }
 
 tr:nth-child(even){
-    background-color: #050505;
+    background-color: #111;
 }
+
 
 .service-container{
     margin-top: 40px;

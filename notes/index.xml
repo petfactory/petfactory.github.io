@@ -17,8 +17,9 @@
       <pubDate>Mon, 22 Jun 2020 16:27:47 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/blender_notes/</guid>
-      <description>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first.So lets dive in!
-UI Panels  Editor Type  To change the editor type LMB click the top left corner of a panel and select an editor from the popup widget.   Split/Join/Swap  RMB click the thin border between to areas to get options to do this.</description>
+      <description>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first. So lets dive in!
+Here is a nice Blender Fundamentals 2.8 playlist
+Regions Every Editor in Blender is divided into Regions (docs). Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</description>
     </item>
     
     <item>

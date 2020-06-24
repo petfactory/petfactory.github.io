@@ -113,24 +113,51 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#ui">UI</a>
+    <li><a href="#regions">Regions</a>
       <ul>
         <li><a href="#panels">Panels</a></li>
-        <li><a href="#scene">Scene</a></li>
-        <li><a href="#view-layer">View Layer</a>
+      </ul>
+    </li>
+    <li><a href="#scene">Scene</a></li>
+    <li><a href="#view-layer">View Layer</a></li>
+    <li><a href="#outliner">Outliner</a>
+      <ul>
+        <li>
           <ul>
-            <li><a href="#outliner">Outliner</a></li>
-          </ul>
-        </li>
-        <li><a href="#properties-editor">Properties Editor</a></li>
-        <li><a href="#3d-view">3D View</a>
-          <ul>
-            <li><a href="#3d-cursor">3D Cursor</a></li>
+            <li><a href="#collections">Collections</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li><a href="#properties-editor">Properties Editor</a></li>
+    <li><a href="#3d-view">3D View</a>
+      <ul>
+        <li><a href="#toolbar">Toolbar</a>
+          <ul>
+            <li><a href="#pop-up-toolbar">Pop-Up Toolbar</a></li>
+          </ul>
+        </li>
+        <li><a href="#sidebar">Sidebar</a></li>
+        <li><a href="#3d-cursor">3D Cursor</a></li>
+        <li><a href="#selection">Selection</a></li>
+        <li><a href="#transformation">Transformation</a>
+          <ul>
+            <li><a href="#constrain-to-axis">Constrain to Axis</a></li>
+          </ul>
+        </li>
+        <li><a href="#3d-view-header-menu">3D View Header Menu</a>
+          <ul>
+            <li><a href="#transform-orientation">Transform Orientation</a></li>
+            <li><a href="#pivot">Pivot</a></li>
+            <li><a href="#snapping">Snapping</a></li>
+            <li><a href="#proportional-editing">Proportional Editing</a></li>
+          </ul>
+        </li>
+        <li><a href="#add">Add</a></li>
+      </ul>
+    </li>
     <li><a href="#preferences">Preferences</a></li>
+    <li><a href="#misc">Misc</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -145,8 +172,36 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Blender - Notes</h1>
-			<p>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first.So lets dive in!</p>
-<h1 id="ui">UI</h1>
+			<p>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first. So lets dive in!</p>
+<p>Here is a nice <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6">Blender Fundamentals 2.8</a> playlist</p>
+<h1 id="regions">Regions</h1>
+<p>Every Editor in Blender is divided into <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html">Regions (docs)</a>. Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</p>
+<p><img src="https://www.petfactory.se/images/blender_regions.png" alt="Blender UI - Regions"></p>
+<ul>
+<li><strong>Header</strong> : green
+<ul>
+<li><a href="https://www.petfactory.se/notes/blender_notes#3d-view-header-menu">3D View header Menu</a> (Read more)</li>
+<li><strong>RMB click</strong> on a header reveals a context menu with a couple options.</li>
+<li>A Header is a small horizontal strip, which sits either at the top or bottom of an area. All editors have a header acting as a container for menus and commonly used tools. Menus and buttons will change with the editor type and the selected object and mode. <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#header">header</a> (docs)</li>
+</ul>
+</li>
+<li><strong>3D View / Main region</strong> : yellow
+<ul>
+<li><a href="https://www.petfactory.se/notes/blender_notes#3d-view">3D View</a> (Read more)</li>
+</ul>
+</li>
+<li><strong>Toolbar</strong> : blue
+<ul>
+<li><a href="https://www.petfactory.se/notes/blender_notes#toolbar">Toolbar</a> (Read more)</li>
+</ul>
+</li>
+<li><strong>Sidebar</strong> : red
+<ul>
+<li><a href="https://www.petfactory.se/notes/blender_notes#sidebar">Sidebar</a> (Read more)</li>
+</ul>
+</li>
+<li><strong>Adjust Last Operation panel</strong> : pink</li>
+</ul>
 <h2 id="panels">Panels</h2>
 <ul>
 <li><strong>Editor Type</strong>
@@ -170,13 +225,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="scene">Scene</h2>
-<p>In Blender a single file can contain multiple scenes. At the right hand side of the main menu there is a widget labeled <strong>Scene</strong> where you can create a new, select and existing or copy a scene.</p>
-<h2 id="view-layer">View Layer</h2>
-<p>On the right hand side of the scene widget (in the main menu bar) you will find the <strong>View layer</strong> widget.</p>
-<h3 id="outliner">Outliner</h3>
+<h1 id="scene">Scene</h1>
+<p>In Blender a single file can contain multiple scenes. At the right hand side of the main menu there is a widget labeled Scene where you can create a new, select and existing or copy a scene.</p>
+<h1 id="view-layer">View Layer</h1>
+<p>On the right hand side of the scene widget (in the main menu bar) you will find the View layer widget.</p>
+<h1 id="outliner">Outliner</h1>
 <p>In the outliner we can use collections to control how our objects are displayed in the current view layer.</p>
-<h2 id="properties-editor">Properties Editor</h2>
+<h3 id="collections">Collections</h3>
+<h1 id="properties-editor">Properties Editor</h1>
 <p>In the default layout the properties editor is located under the outliner. The properties editor has a vertical tab layout. If you look closely the tabs are seoarated into 4 different sections (there are a slightly larger gap between them)</p>
 <p>Starting from the top:</p>
 <ul>
@@ -264,50 +320,61 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </ul>
 </li>
 </ul>
-<h2 id="3d-view">3D View</h2>
+<h1 id="3d-view">3D View</h1>
+<h2 id="toolbar">Toolbar</h2>
+<p>The <a href="https://docs.blender.org/manual/en/latest/interface/tool_system.html#toolbar">Toolbar</a> ( <strong>T</strong> ) is located in the top left corner of the 3D view.</p>
 <ul>
-<li><strong>Quick Tools</strong>
+<li>Tweak &amp; Select <strong>W</strong> will cycle the tool
 <ul>
-<li><strong>T</strong>
-<ul>
-<li>Toggles the tools on the top right corner of the view</li>
-</ul>
-</li>
-<li><strong>Shift Space</strong>
-<ul>
-<li>Displays the tools at the mouse position. With the key shortcut still pressed we can move the mouse pointer in the list and release the shortcut to select the tool. With this menu open you can also use the shortcuts presented at the end of each tool in the menu. <strong>NOOOTE</strong> lest change this keymap to <strong>SPACE</strong> only.</li>
-</ul>
-</li>
-<li>Common 3D view operations:
-<ul>
+<li>Tweak</li>
 <li>Select Box</li>
+<li>Select Circle</li>
+<li>Select Lasso
+<ul>
+<li>Hold <strong>Shift</strong> to add to selection</li>
+<li>Hold <strong>Ctrl</strong> to subtract from selection</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Cursor</li>
 <li>Move</li>
 <li>Rotate</li>
+<li>Scale
+<ul>
 <li>Scale</li>
+<li>Scale Cage</li>
+</ul>
+</li>
 <li>Transform (Gizmo)</li>
-<li>Annotate</li>
+<li>Annotate
+<ul>
+<li>Annotate Line</li>
+<li>Annotate Line</li>
+<li>Annotate Polygon</li>
+<li>Annotate Eraser</li>
+</ul>
+</li>
 <li>Measure</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><strong>Item Transform/Tool/View</strong>
+<h3 id="pop-up-toolbar">Pop-Up Toolbar</h3>
+<p><strong>Shift Space</strong> Displays the tools at the mouse position. With the key shortcut still pressed we can move the mouse pointer in the list and release the shortcut to select the tool. With this menu open you can also use the shortcuts presented at the end of each tool in the menu. <strong>NOOOTE</strong> lest change this keymap to <strong>SPACE</strong> only.</p>
+<h2 id="sidebar">Sidebar</h2>
+<p>The <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar">Sidebar</a> is located on the right side of the 3D view. This panel contains the transform attributes of the selected item, settings of the editor itself and more.</p>
 <ul>
-<li><strong>N</strong>
+<li>Sidebar :
 <ul>
+<li>Toggle the menu : <strong>N</strong></li>
 <li>The Transform attributes of the selected item can be found in this menu aswell as other tool &amp; view settings.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="3d-cursor">3D Cursor</h3>
+<h2 id="3d-cursor">3D Cursor</h2>
 <p>The 3D Cursor is used as the origin for any added object. It can be used and moved with the snap tool. It can be used as an option for the pivot point.</p>
 <ul>
 <li>Numerical transform
 <ul>
-<li><strong>N</strong> in the quick menu under view &gt; 3D cursor</li>
+<li>In the Sidebar menu: view &gt; 3D cursor</li>
 </ul>
 </li>
 <li>Position The 3D cursor
@@ -321,6 +388,132 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 <li><strong>Shift S</strong></li>
 </ul>
 </li>
+</ul>
+<h2 id="selection">Selection</h2>
+<ul>
+<li>Select
+<ul>
+<li>Select All : <strong>A</strong></li>
+<li>Deselect All : <strong>Alt A</strong></li>
+<li>Invert : <strong>Ctrl i</strong></li>
+</ul>
+</li>
+<li>LMB click
+<ul>
+<li>By holding <strong>Shift</strong> we can click objects to add to our selection.</li>
+<li>The last item clicked will have a brighter orange color to indicate it is the active object.</li>
+<li>Not that when holding shift and clicking on the active object it will be deselected.
+<ul>
+<li>This means that if we have multiple objects selected and we wish to <strong>Shift LMB</strong> deselect an object that is not the active one, when we first click it it will become the active then click again to deselect.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Select Box (Toolbar)
+<ul>
+<li><strong>Shift</strong> to add</li>
+<li><strong>Ctrl</strong> to remove</li>
+</ul>
+</li>
+<li>Select Circle (Toolbar)
+<ul>
+<li><strong>Shift</strong> to add</li>
+<li><strong>Ctrl</strong> to remove</li>
+</ul>
+</li>
+<li>Select Lasso (Toolbar)
+<ul>
+<li><strong>Shift</strong> to add</li>
+<li><strong>Ctrl</strong> to remove</li>
+</ul>
+</li>
+<li>We can also press <strong>B</strong> to get into another type of box select tool
+<ul>
+<li>In this tool we do not need to hold shift to add to selection</li>
+<li><strong>MMB</strong> drag will remove from selection</li>
+</ul>
+</li>
+<li>We can also press <strong>C</strong> to get into another type of circle select tool
+<ul>
+<li>In this tool we do not need to hold shift to add to selection</li>
+<li><strong>MMB</strong> drag will remove from selection</li>
+</ul>
+</li>
+</ul>
+<h2 id="transformation">Transformation</h2>
+<p>You can use the shortcuts below to transform an object.</p>
+<ul>
+<li>Grab (Translate)
+<ul>
+<li>Grab : <strong>G</strong></li>
+<li>Reset : <strong>Alt G</strong></li>
+</ul>
+</li>
+<li>Rotate
+<ul>
+<li>Rotate : <strong>R</strong></li>
+<li>Reset : <strong>Alt R</strong></li>
+</ul>
+</li>
+<li>Scale
+<ul>
+<li>Scale : <strong>G</strong></li>
+<li>Reset : <strong>Alt S</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="constrain-to-axis">Constrain to Axis</h3>
+<p>We can set the transformation orientation 
+If we want to constrain the translation, rotation or scale along a specific axis we can press <strong>X, Y or Z</strong>.
+If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the movement along the <strong>local space</strong> of the object.</p>
+<h2 id="3d-view-header-menu">3D View Header Menu</h2>
+<p>We can of course also use the toolbar transform gizmo. You can set the <strong>orientation</strong> of the gizmo using the dropdown menu labeled orientation below the main menu bar on the left hand side.</p>
+<h3 id="transform-orientation">Transform Orientation</h3>
+<ul>
+<li>Transform Orientation
+<ul>
+<li>Global</li>
+<li>Local</li>
+<li>Normal</li>
+<li>Gimbal</li>
+<li>View</li>
+<li>Cursor</li>
+</ul>
+</li>
+</ul>
+<h3 id="pivot">Pivot</h3>
+<ul>
+<li>Pivot Point
+<ul>
+<li>Bounding Box Center</li>
+<li>3D Cursor</li>
+<li>Individual Origins</li>
+<li>Media Point</li>
+<li>Active Element</li>
+</ul>
+</li>
+</ul>
+<h3 id="snapping">Snapping</h3>
+<ul>
+<li>Snap Settings
+<ul>
+<li>Various snap settings</li>
+<li>Increment</li>
+<li>Vertex</li>
+<li>Edge</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>Toggle Snapping : <strong>Shift Tab</strong></li>
+<li>Snap Menu : <strong>Shift S</strong></li>
+</ul>
+<h3 id="proportional-editing">Proportional Editing</h3>
+<ul>
+<li>Proportional Editing : <strong>O</strong></li>
+</ul>
+<h2 id="add">Add</h2>
+<ul>
+<li>Add menu : <strong>Shift A</strong></li>
 </ul>
 <h1 id="preferences">Preferences</h1>
 <p>Here are some of the preferences that I changed to fit my workflow (Maya/Houdini background). I have listed the value of the preference I have set in bold and the default state in parantheses.</p>
@@ -345,7 +538,7 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 <li>Zoom
 <ul>
-<li>Zoom Axis: <strong>Vertical</strong> (Vertical)
+<li>Zoom Axis: <strong>Horizontal</strong> (Vertical)
 <ul>
 <li>Axis of movement to zoom in or out. I think it should be an option to just use the length of the postion delta here. (I think Houdini uses this?)</li>
 </ul>
@@ -376,11 +569,15 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </ul>
 <hr>
 <ul>
-<li>Mabe change
+<li>Todo
 <ul>
-<li>look into keeping the blender alt drag to switch ortho views</li>
+<li>Look into keeping the blender alt drag to switch ortho views</li>
 </ul>
 </li>
+</ul>
+<h1 id="misc">Misc</h1>
+<ul>
+<li>Scroll long menus: <strong>MMB</strong></li>
 </ul>
 		
 		</div>
