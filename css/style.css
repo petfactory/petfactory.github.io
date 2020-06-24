@@ -547,7 +547,7 @@ margin:-50px 0 0; /* negative fixed header height */
     display: none;
 }
 .toc-aside{
-    font-size: .8em;
+    font-size: .9em;
     font-weight: 500;
     position: absolute;
     left: 1010px;
@@ -556,31 +556,31 @@ margin:-50px 0 0; /* negative fixed header height */
     /*background-color: #246;*/
 }
 .toc-aside a{
-    color: #444;
+    /*color: #444;*/
 }
 
 .toc-aside a:hover{
-    color: #777;
+    color: #999;
 }
 
 /*h1*/
 .toc-aside nav > ul > li > a{
-    color: #777;
-    font-size: 1em;
+    color: #757575;
+    /*font-size: 1em;*/
     /*font-weight: 500;*/
 }
 
 /*h2*/
 .toc-aside nav > ul > li > ul > li > a{
-    color: #595959;
-    font-size: 1.1em;
+    color: #656565;
+    /*font-size: 1em;*/
     /*font-weight: 500;*/
 }
 
 /*h3*/
 .toc-aside nav > ul > li > ul > li > ul > li > a{
-    color: #555;
-    font-size: 1em;
+    color: #454545;
+    /*font-size: 1em;*/
     /*font-weight: 500;*/
 }
 /*h3 ul*/
