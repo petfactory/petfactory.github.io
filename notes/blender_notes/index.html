@@ -164,6 +164,7 @@
             <li><a href="#selection-modes">Selection Modes</a></li>
             <li><a href="#selection-1">Selection</a></li>
             <li><a href="#mesh-edit">Mesh Edit</a></li>
+            <li><a href="#merge">Merge</a></li>
             <li><a href="#delete-1">Delete</a></li>
           </ul>
         </li>
@@ -655,11 +656,21 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 </ul>
 <h3 id="mesh-edit">Mesh Edit</h3>
 <ul>
-<li>Insert Edge Loop and slide: <strong>Ctrl R LMB</strong></li>
+<li>Insert Edge Loop and slide: <strong>Ctrl R LMB</strong>
+<ul>
+<li>or from toolbar</li>
+<li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
+</ul>
+</li>
 <li>Extrude : <strong>E</strong> (move along normal)
 <ul>
 <li><strong>Extrude tool</strong> (long press the tool for more options)</li>
 <li>Note that if you cancel an extrusion (RMB or pressing esc) the extrude face will still be there. This is handy since with this face still selected and in original position we can press <strong>S</strong> and scale the face in-place.</li>
+<li>extrude to mouse postion : <strong>Ctrl RMB</strong>
+<ul>
+<li>Quite handy instead of etruding, reposition amd rotating.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Bevel :</li>
@@ -670,6 +681,24 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>LMB click and drag</li>
 <li>Use the on-screen tool manipulator to adjust cut</li>
 <li>expand the bisect tool operation panel to edit settings</li>
+</ul>
+</li>
+<li>Scale to flatten edge
+<ul>
+<li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="merge">Merge</h3>
+<ul>
+<li>Merge by Distance
+<ul>
+<li>If we have verts that we want to merge one fast way is to press <strong>A</strong> (select all) followed by <strong>M</strong> -&gt; <strong>By Distance</strong>.</li>
+</ul>
+</li>
+<li>Auto Merge
+<ul>
+<li>If we enable auto merge, every time verts end up on top of each other they are merged automatically. You will find this button in the 3D View header bar, next to the mirror options.</li>
 </ul>
 </li>
 </ul>
