@@ -128,13 +128,15 @@
     <li><a href="#properties-editor">Properties Editor</a></li>
     <li><a href="#3d-view">3D View</a>
       <ul>
+        <li><a href="#display--shading">Display / Shading</a></li>
         <li><a href="#toolbar">Toolbar</a>
           <ul>
-            <li><a href="#pop-up-toolbar">Pop-Up Toolbar</a></li>
+            <li><a href="#pop-up">Pop-up</a></li>
           </ul>
         </li>
         <li><a href="#sidebar">Sidebar</a></li>
         <li><a href="#3d-cursor">3D Cursor</a></li>
+        <li><a href="#measure">Measure</a></li>
         <li><a href="#selection">Selection</a></li>
         <li><a href="#transformation">Transformation</a>
           <ul>
@@ -150,27 +152,16 @@
             <li><a href="#mode">Mode</a></li>
           </ul>
         </li>
-        <li><a href="#display">Display</a></li>
       </ul>
     </li>
     <li><a href="#preferences">Preferences</a></li>
-    <li><a href="#modelling">Modelling</a>
+    <li><a href="#misc">Misc</a>
       <ul>
-        <li><a href="#add">Add</a></li>
-        <li><a href="#delete">Delete</a></li>
-        <li><a href="#object-mode">Object Mode</a></li>
-        <li><a href="#edit-mode">Edit mode</a>
-          <ul>
-            <li><a href="#selection-modes">Selection Modes</a></li>
-            <li><a href="#selection-1">Selection</a></li>
-            <li><a href="#mesh-edit">Mesh Edit</a></li>
-            <li><a href="#merge">Merge</a></li>
-            <li><a href="#delete-1">Delete</a></li>
-          </ul>
-        </li>
+        <li><a href="#ui">UI</a></li>
+        <li><a href="#shortcuts">Shortcuts</a></li>
       </ul>
     </li>
-    <li><a href="#misc">Misc</a></li>
+    <li><a href="#add-ons">Add-ons</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -186,34 +177,45 @@
 		<div class="col-md-10 mx-auto">
 			<h1>Blender - Notes</h1>
 			<p>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first. So lets dive in!</p>
-<p>Here is a nice <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6">Blender Fundamentals 2.8</a> playlist</p>
+<p>Here is a nice 
+<a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6" target="_blank" rel="noopener">Blender Fundamentals 2.8</a> playlist</p>
 <h1 id="regions">Regions</h1>
-<p>Every Editor in Blender is divided into <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html">Regions (docs)</a>. Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</p>
+<p>Every Editor in Blender is divided into 
+<a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html" target="_blank" rel="noopener">Regions (docs)</a>. Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</p>
 <p><img src="https://www.petfactory.se/images/blender_regions.png" alt="Blender UI - Regions"></p>
 <ul>
 <li><strong>Header</strong> : green
 <ul>
-<li><a href="https://www.petfactory.se/notes/blender_notes#3d-view-header-menu">3D View header Menu</a> (Read more)</li>
+<li>
+<a href="https://www.petfactory.se/notes/blender_notes/#3d-view-header-menu">3D View header Menu</a> (Read more)</li>
 <li><strong>RMB click</strong> on a header reveals a context menu with a couple options.</li>
-<li>A Header is a small horizontal strip, which sits either at the top or bottom of an area. All editors have a header acting as a container for menus and commonly used tools. Menus and buttons will change with the editor type and the selected object and mode. <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#header">header</a> (docs)</li>
+<li>A Header is a small horizontal strip, which sits either at the top or bottom of an area. All editors have a header acting as a container for menus and commonly used tools. Menus and buttons will change with the editor type and the selected object and mode. 
+<a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#header" target="_blank" rel="noopener">header</a> (docs)</li>
 </ul>
 </li>
 <li><strong>3D View / Main region</strong> : yellow
 <ul>
-<li><a href="https://www.petfactory.se/notes/blender_notes#3d-view">3D View</a> (Read more)</li>
+<li>
+<a href="https://www.petfactory.se/notes/blender_notes/#3d-view">3D View</a> (Read more)</li>
 </ul>
 </li>
 <li><strong>Toolbar</strong> : blue
 <ul>
-<li><a href="https://www.petfactory.se/notes/blender_notes#toolbar">Toolbar</a> (Read more)</li>
+<li>
+<a href="https://www.petfactory.se/notes/blender_notes/#toolbar">Toolbar</a> (Read more)</li>
 </ul>
 </li>
 <li><strong>Sidebar</strong> : red
 <ul>
-<li><a href="https://www.petfactory.se/notes/blender_notes#sidebar">Sidebar</a> (Read more)</li>
+<li>
+<a href="https://www.petfactory.se/notes/blender_notes/#sidebar">Sidebar</a> (Read more)</li>
 </ul>
 </li>
-<li><strong>Adjust Last Operation panel</strong> : pink</li>
+<li><strong>Adjust Last Operation panel</strong> : pink
+<ul>
+<li><strong>F9</strong></li>
+</ul>
+</li>
 </ul>
 <h2 id="panels">Panels</h2>
 <ul>
@@ -262,7 +264,8 @@ If a collections is deleted the objects inside will not be deleted, they are mov
 <li><strong>Active Tool &amp; Workspace settings</strong></li>
 </ul>
 </li>
-<li>Scene specfic <a href="https://www.petfactory.se/notes/blender_notes#scene">(scene)</a>
+<li>Scene specfic 
+<a href="https://www.petfactory.se/notes/blender_notes/#scene">(scene)</a>
 <ul>
 <li><strong>Render Properties</strong>
 <ul>
@@ -276,7 +279,8 @@ If a collections is deleted the objects inside will not be deleted, they are mov
 </li>
 <li><strong>View Layer Properties</strong>
 <ul>
-<li>i.e. Render layers. Note that this operates on the current <a href="https://www.petfactory.se/notes/blender_notes#view-layer">(view layer)</a></li>
+<li>i.e. Render layers. Note that this operates on the current 
+<a href="https://www.petfactory.se/notes/blender_notes/#view-layer">(view layer)</a></li>
 </ul>
 </li>
 <li><strong>Scene Properties</strong>
@@ -342,8 +346,37 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 </ul>
 <h1 id="3d-view">3D View</h1>
+<h2 id="display--shading">Display / Shading</h2>
+<ul>
+<li><strong>Wireframe on shaded</strong>
+<ul>
+<li>Viewport overlays menu (right hand side of the 3D view header)
+<ul>
+<li>Geometry &gt; Wireframe</li>
+</ul>
+</li>
+<li>Per object : Properties Editor &gt; Object Properties &gt; Viewport Display &gt; Wireframe</li>
+</ul>
+</li>
+<li>Toggle <strong>X-Ray</strong> : <strong>Alt Z</strong>
+<ul>
+<li>The X-Ray opacity can be set in the viewport shading menu (in the 3D view header, right hand side of the shading type buttons)</li>
+</ul>
+</li>
+<li>Toggle <strong>Wireframe / Shaded mode</strong> : <strong>Shift Z</strong></li>
+<li>Toggle <strong>Overlay</strong> : <strong>Shift Alt Z</strong></li>
+<li><strong>Hide</strong>
+<ul>
+<li>Hide Selection : <strong>H</strong></li>
+<li>Unhide All : <strong>Alt H</strong></li>
+<li>Hide Unselected : <strong>Shift H</strong></li>
+<li>Note that the hide command temporarily hides objects in the viewport (i.e. what you toggle with the &ldquo;eye-icon&rdquo; in the outliner). It will not have an effect of objects whos visibility have been disabled globally by the &ldquo;monitor-icon&rdquo; (which you have to enable through the fileter menu in the outliner)</li>
+</ul>
+</li>
+</ul>
 <h2 id="toolbar">Toolbar</h2>
-<p>The <a href="https://docs.blender.org/manual/en/latest/interface/tool_system.html#toolbar">Toolbar</a> ( <strong>T</strong> ) is located in the top left corner of the 3D view.</p>
+<p>The 
+<a href="https://docs.blender.org/manual/en/latest/interface/tool_system.html#toolbar" target="_blank" rel="noopener">Toolbar</a> ( <strong>T</strong> ) is located in the top left corner of the 3D view.</p>
 <ul>
 <li>Tweak &amp; Select <strong>W</strong> will cycle the tool
 <ul>
@@ -378,10 +411,11 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 <li>Measure</li>
 </ul>
-<h3 id="pop-up-toolbar">Pop-Up Toolbar</h3>
+<h3 id="pop-up">Pop-up</h3>
 <p><strong>Shift Space</strong> Displays the tools at the mouse position. With the key shortcut still pressed we can move the mouse pointer in the list and release the shortcut to select the tool. With this menu open you can also use the shortcuts presented at the end of each tool in the menu. <strong>NOOOTE</strong> lest change this keymap to <strong>SPACE</strong> only.</p>
 <h2 id="sidebar">Sidebar</h2>
-<p>The <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar">Sidebar</a> is located on the right side of the 3D view. This panel contains the transform attributes of the selected item, settings of the editor itself and more.</p>
+<p>The 
+<a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#sidebar" target="_blank" rel="noopener">Sidebar</a> is located on the right side of the 3D view. This panel contains the transform attributes of the selected item, settings of the editor itself and more.</p>
 <ul>
 <li>Sidebar :
 <ul>
@@ -393,20 +427,49 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 <h2 id="3d-cursor">3D Cursor</h2>
 <p>The 3D Cursor is used as the origin for any added object. It can be used and moved with the snap tool. It can be used as an option for the pivot point.</p>
 <ul>
-<li>Numerical transform
+<li><strong>Numerical transform</strong>
 <ul>
 <li>In the Sidebar menu: view &gt; 3D cursor</li>
 </ul>
 </li>
-<li>Position The 3D cursor
+<li><strong>Position The 3D cursor</strong>
 <ul>
 <li><strong>Shift RMB</strong></li>
 <li>With the cursor tool selected LMB</li>
 </ul>
 </li>
-<li>Pie menu
+<li><strong>Surface Project</strong>
 <ul>
-<li><strong>Shift S</strong></li>
+<li>With the cursor tool selected, there are options in the header bar
+<ul>
+<li>Surface Project</li>
+<li>Orientation : Geometry</li>
+<li><strong>Note</strong> the surface project and orient only seems to work when the cursor tool is activated not with shift RMB.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Snap to Verts
+<ul>
+<li>start dragging the cursor and press and hold <strong>Ctrl</strong> will snap to verts.</li>
+</ul>
+</li>
+</ul>
+<h2 id="measure">Measure</h2>
+<ul>
+<li>Snap to Edges &amp; verts
+<ul>
+<li>start drag and then press &amp; hold <strong>Ctrl</strong></li>
+</ul>
+</li>
+<li>Measure thickness
+<ul>
+<li>start drag and press <strong>Shift</strong></li>
+</ul>
+</li>
+<li>Measure angle
+<ul>
+<li>LMB click in the middle of a measurement to measure angles</li>
 </ul>
 </li>
 </ul>
@@ -414,8 +477,16 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 <ul>
 <li>Select
 <ul>
-<li>Select All : <strong>A</strong></li>
-<li>Deselect All : <strong>Alt A</strong></li>
+<li>Select All : <strong>A</strong>
+<ul>
+<li>A can also be set to toggle selection in the prefs</li>
+</ul>
+</li>
+<li>Deselect All : <strong>Alt A</strong>
+<ul>
+<li>or <strong>AA</strong></li>
+</ul>
+</li>
 <li>Invert : <strong>Ctrl i</strong></li>
 </ul>
 </li>
@@ -526,7 +597,8 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 </ul>
 </li>
 <li>Toggle Snapping : <strong>Shift Tab</strong></li>
-<li>Snap Menu : <strong>Shift S</strong></li>
+<li>Snap Menu : <strong>Ctrl Shift Tab</strong></li>
+<li>Snap Pie Menu : <strong>Shift S</strong></li>
 </ul>
 <h3 id="proportional-editing">Proportional Editing</h3>
 <ul>
@@ -543,14 +615,6 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>Vertex Paint</li>
 <li>Weight Paint</li>
 <li>Texture Paint</li>
-</ul>
-</li>
-</ul>
-<h2 id="display">Display</h2>
-<ul>
-<li><strong>Wireframe on shaded</strong>
-<ul>
-<li>Properties Editor &gt; Object Properties &gt; Viewport Display &gt; Wireframe</li>
 </ul>
 </li>
 </ul>
@@ -593,6 +657,11 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 </li>
 <li>Keymap
 <ul>
+<li>Preferences
+<ul>
+<li>Select All toggles: <strong>On</strong> (off)</li>
+</ul>
+</li>
 <li>3D View
 <ul>
 <li>Rotate View: <strong>Alt LMB</strong> (MMB)</li>
@@ -614,118 +683,25 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 </ul>
 </li>
 </ul>
-<h1 id="modelling">Modelling</h1>
-<h2 id="add">Add</h2>
-<p>In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</p>
-<ul>
-<li>Add : <strong>Shift A</strong></li>
-</ul>
-<h2 id="delete">Delete</h2>
-<ul>
-<li><strong>Delete key</strong></li>
-<li><strong>X</strong> : a confirm dialog will appear</li>
-<li>Header Menu &gt; Object &gt; Delete</li>
-</ul>
-<h2 id="object-mode">Object Mode</h2>
-<ul>
-<li>Join two meshes : <strong>Ctrl J</strong>
-<ul>
-<li>via menu <strong>Object &gt; Join</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="edit-mode">Edit mode</h2>
-<ul>
-<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
-</ul>
-<h3 id="selection-modes">Selection Modes</h3>
-<p>When in edit mode we get 3 buttons to the right of the mode drop down menu.</p>
-<ul>
-<li><strong>Vertex</strong> select : <strong>1</strong></li>
-<li><strong>Edge</strong> select : <strong>2</strong></li>
-<li><strong>Face</strong> select : <strong>3</strong></li>
-</ul>
-<p>You can use shift in combination with the numberpad to add multiple selection modes.</p>
-<h3 id="selection-1">Selection</h3>
-<ul>
-<li>Loop Select : <strong>Shift Alt LMB</strong>
-<ul>
-<li>Since I have changed the view control to maya we need to use the shift also</li>
-</ul>
-</li>
-</ul>
-<h3 id="mesh-edit">Mesh Edit</h3>
-<ul>
-<li>Insert Edge Loop and slide: <strong>Ctrl R LMB</strong>
-<ul>
-<li>or from toolbar</li>
-<li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
-</ul>
-</li>
-<li>Extrude : <strong>E</strong> (move along normal)
-<ul>
-<li><strong>Extrude tool</strong> (long press the tool for more options)</li>
-<li>Note that if you cancel an extrusion (RMB or pressing esc) the extrude face will still be there. This is handy since with this face still selected and in original position we can press <strong>S</strong> and scale the face in-place.</li>
-<li>extrude to mouse postion : <strong>Ctrl RMB</strong>
-<ul>
-<li>Quite handy instead of etruding, reposition amd rotating.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Bevel :</li>
-<li>knife tool :</li>
-<li>Bisect Tool : (sub-tool of the knife)
-<ul>
-<li>Select faces to cut</li>
-<li>LMB click and drag</li>
-<li>Use the on-screen tool manipulator to adjust cut</li>
-<li>expand the bisect tool operation panel to edit settings</li>
-</ul>
-</li>
-<li>Scale to flatten edge
-<ul>
-<li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="merge">Merge</h3>
-<ul>
-<li>Merge by Distance
-<ul>
-<li>If we have verts that we want to merge one fast way is to press <strong>A</strong> (select all) followed by <strong>M</strong> -&gt; <strong>By Distance</strong>.</li>
-</ul>
-</li>
-<li>Auto Merge
-<ul>
-<li>If we enable auto merge, every time verts end up on top of each other they are merged automatically. You will find this button in the 3D View header bar, next to the mirror options.</li>
-</ul>
-</li>
-</ul>
-<h3 id="delete-1">Delete</h3>
-<p>If we are in edit mode and press delete key we will get a delete popup menu. Below are some of the options. Read more in the <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/delete.html?highlight=delete%20faces#deleting-dissolving">Delete &amp; Dissolve</a> (docs)</p>
-<ul>
-<li><strong>Vertices</strong> : All vertices in current selection, removing any faces or edges they are connected to.</li>
-<li><strong>Edges</strong> : Any edges in the current selection. Removes any faces that the edge shares with it.</li>
-<li><strong>Face</strong> : The selected faces and &ldquo;internal&rdquo; verts &amp; edges</li>
-<li><strong>Only Edges &amp; Faces</strong> : Deletes faces &amp; edges but leaves the verts.</li>
-<li><strong>Only Faces</strong> : Removes faces, but edges within the face selection are retained.</li>
-<li><strong>Disolve</strong> : This will &ldquo;keep&rdquo; the mesh but delete the components.</li>
-<li><strong>Collapse</strong> : Delete the components and merge to a single point.</li>
-<li><strong>Edge Loop</strong> : It will do the opposite of extrusion. Delete faces down to the next loop available.</li>
-</ul>
-<p>Misc</p>
-<ul>
-<li>Join two Vertices : <strong>F</strong></li>
-<li>Separate : <strong>P</strong>
-<ul>
-<li>or RMB &gt; Separate</li>
-</ul>
-</li>
-</ul>
 <h1 id="misc">Misc</h1>
+<h2 id="ui">UI</h2>
 <ul>
 <li>Scroll long menus: <strong>MMB</strong></li>
+<li>RMB click on parameters
+<ul>
+<li><strong>Assign Shortcut</strong></li>
+<li><strong>Add to Quick Favourites</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="shortcuts">Shortcuts</h2>
+<ul>
+<li>Search : <strong>F3</strong></li>
+<li>File Menu (&amp; prefs) : <strong>F4</strong></li>
+</ul>
+<h1 id="add-ons">Add-ons</h1>
+<ul>
+<li><strong>Copy Attributes Menu</strong> (Interface)</li>
 </ul>
 		
 		</div>

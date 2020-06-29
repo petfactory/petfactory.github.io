@@ -138,7 +138,12 @@
       </ul>
     </li>
     <li><a href="#syntax-highlighting">Syntax highlighting</a></li>
-    <li><a href="#markdown--images">Markdown &amp; Images</a></li>
+    <li><a href="#configure-markup">Configure Markup</a>
+      <ul>
+        <li><a href="#images">Images</a></li>
+        <li><a href="#external--internal-links">External &amp; Internal links</a></li>
+      </ul>
+    </li>
     <li><a href="#tips-and-tricks">Tips and Tricks</a>
       <ul>
         <li><a href="#increment-variable--loops">Increment variable &amp; loops</a>
@@ -229,7 +234,8 @@ templates for list and single pages are stored in a directory called _default in
 <h2 id="svg">SVG</h2>
 <p>Using dict to pass multiple values to a partial 
 The partial below creates a SVG and expects fill, height and width from the caller:
-<a href="https://gohugo.io/functions/dict/#example-using-dict-to-pass-multiple-values-to-a-partial">hugo docs</a></p>
+
+<a href="https://gohugo.io/functions/dict/#example-using-dict-to-pass-multiple-values-to-a-partial" target="_blank" rel="noopener">hugo docs</a></p>
 <h1 id="logic">Logic</h1>
 <p>Here is an example of how to use the if .. else if .. else
 We declare some variables (in a template) and display the result.</p>
@@ -301,7 +307,8 @@ not !=</p>
 </code></pre></div><h1 id="shortcodes">Shortcodes</h1>
 <p>Shortcodes are a means to consolidate templating into small, reusable snippets that you can embed directly inside of your content.</p>
 <h2 id="custom-shortcodes">Custom Shortcodes</h2>
-<p>To create a <a href="https://gohugo.io/templates/shortcode-templates/">custom shortcode</a>, place an HTML template (lets call it hello.html) in the layouts/shortcodes dir (create the dir if not present)</p>
+<p>To create a 
+<a href="https://gohugo.io/templates/shortcode-templates/" target="_blank" rel="noopener">custom shortcode</a>, place an HTML template (lets call it hello.html) in the layouts/shortcodes dir (create the dir if not present)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">&lt;!-- hello.html --&gt;</span>
 &lt;<span style="color:#f92672">div</span>&gt;
 	&lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#75715e">{{</span><span style="color:#a6e22e">.Get</span> <span style="color:#a6e22e">0</span><span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">h1</span>&gt;
@@ -313,7 +320,8 @@ not !=</p>
 <h1 id="syntax-highlighting">Syntax highlighting</h1>
 <p>To generate a stylesheet using the monokai style you can run this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo gen chromastyles --style<span style="color:#f92672">=</span>monokai &gt; syntax.css
-</code></pre></div><p>Run hugo gen chromastyles -h for more options. Here you will find a <a href="https://xyproto.github.io/splash/docs/">gallery</a> of available styles.</p>
+</code></pre></div><p>Run hugo gen chromastyles -h for more options. Here you will find a 
+<a href="https://xyproto.github.io/splash/docs/" target="_blank" rel="noopener">gallery</a> of available styles.</p>
 <p>I like using GitHub flavored code fences to add syntax highlighting. To enable this, set the pygmentsCodeFences to true in Hugo’s configuration file.</p>
 <p>I also modified the highlight class in my main stylesheet to get the look I wanted:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">highlight</span>{
@@ -324,12 +332,26 @@ not !=</p>
 	<span style="color:#66d9ef">padding-left</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
 	<span style="color:#66d9ef">padding-right</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
 }
-</code></pre></div><h1 id="markdown--images">Markdown &amp; Images</h1>
+</code></pre></div><h1 id="configure-markup">Configure Markup</h1>
+<p>How to handle Markdown and other markup related configuration.</p>
+<h2 id="images">Images</h2>
 <p>To view an image generated from a markdown file I needed to add the following to the config.toml</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">canonifyURLs</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span>
 </code></pre></div><p>Then I could use:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![](/images/pic.jpg)
-</code></pre></div><h1 id="tips-and-tricks">Tips and Tricks</h1>
+</code></pre></div><h2 id="external--internal-links">External &amp; Internal links</h2>
+<p>Apparently The Markdown renderer has changed in the latest Hugo v0.62.0 from Blackfriday to Goldmark which should allow Hugo markdown to be more compatible with other markdown flavours, such as that of GitHub. So setting the blackfriday hrefTargetBlank to true did not work.</p>
+<p>What did work was to create a template to render the links.</p>
+<p>Create a file in <strong>layouts/_default/_markup/render-link.html</strong> with following content</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Destination</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">safeURL</span> <span style="color:#75715e">}}</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">with</span> <span style="color:#a6e22e">.Title</span><span style="color:#75715e">}}</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">{{</span> <span style="color:#a6e22e">.</span> <span style="color:#75715e">}}</span><span style="color:#e6db74">&#34;</span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}{{</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span><span style="color:#a6e22e">.HasPrefix</span> <span style="color:#a6e22e">.Destination</span> <span style="color:#e6db74">&#34;http&#34;</span> <span style="color:#75715e">}}</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener&#34;</span><span style="color:#75715e">{{</span> <span style="color:#66d9ef">end</span> <span style="color:#75715e">}}</span>&gt;<span style="color:#75715e">{{</span> <span style="color:#a6e22e">.Text</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">safeHTML</span> <span style="color:#75715e">}}</span>&lt;/<span style="color:#f92672">a</span>&gt;
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">&lt;!-- Internal link, with optional anchor --&gt;
+[<span style="color:#f92672">Blender - notes</span>](<span style="color:#a6e22e">/notes/blender_notes/#regions</span>)
+&lt;!-- External link --&gt;
+[<span style="color:#f92672">Google</span>](<span style="color:#a6e22e">http://www.google.com</span>)
+</code></pre></div><p>More info 
+<a href="https://gohugo.io/getting-started/configuration-markup#link-with-title-markdown-example" target="_blank" rel="noopener">here</a></p>
+<h1 id="tips-and-tricks">Tips and Tricks</h1>
 <h2 id="increment-variable--loops">Increment variable &amp; loops</h2>
 <h3 id="enumerated-for-loop">Enumerated for loop</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go-html-template" data-lang="go-html-template"><span style="color:#75715e">{{</span> <span style="color:#66d9ef">range</span>  <span style="color:#a6e22e">$i</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">$e</span><span style="color:#f92672">:=</span> <span style="color:#a6e22e">.Site.Data.banner</span> <span style="color:#75715e">}}</span>

@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Houdini - Stylesheets</title>
+        <title>Blender - Modeling</title>
 
     </head>
 
@@ -113,41 +113,33 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#object-level-style-sheet">Object level style sheet</a>
+    <li><a href="#modelling">Modelling</a>
       <ul>
-        <li><a href="#style-sheet-inspector-data-tree">Style sheet Inspector (Data tree)</a></li>
-        <li><a href="#add-style-sheet-parameter">Add Style Sheet Parameter</a></li>
-        <li><a href="#add-style">Add Style</a></li>
+        <li><a href="#object-mode">Object Mode</a>
+          <ul>
+            <li><a href="#add">Add</a></li>
+            <li><a href="#delete">Delete</a></li>
+          </ul>
+        </li>
+        <li><a href="#edit-mode">Edit mode</a>
+          <ul>
+            <li><a href="#selection">Selection</a></li>
+            <li><a href="#mesh-edit">Mesh Edit</a></li>
+            <li><a href="#normals">Normals</a></li>
+            <li><a href="#merge">Merge</a></li>
+            <li><a href="#delete-1">Delete</a></li>
+            <li><a href="#misc">Misc</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#scene-level-style-sheet">Scene level style sheet</a></li>
-    <li><a href="#shared-override-sets">Shared override sets</a>
+    <li><a href="#misc-1">Misc</a>
       <ul>
-        <li><a href="#add-set">Add set</a></li>
-        <li><a href="#use-the-set">Use the set</a></li>
+        <li><a href="#ui">UI</a></li>
+        <li><a href="#shortcuts">Shortcuts</a></li>
       </ul>
     </li>
-    <li><a href="#debugging-style-sheets">Debugging Style Sheets</a>
-      <ul>
-        <li><a href="#object-appearance-pane">Object appearance pane</a></li>
-        <li><a href="#vieport-inspection">Vieport inspection</a></li>
-        <li><a href="#unpacking">Unpacking</a></li>
-        <li><a href="#hom-scripting">HOM scripting</a></li>
-      </ul>
-    </li>
-    <li><a href="#scripted-overrides">Scripted Overrides</a>
-      <ul>
-        <li><a href="#cvex-shader-builder">CVEX Shader Builder</a></li>
-        <li><a href="#add-style-1">Add Style</a></li>
-        <li><a href="#set-texture-from-point-attr">Set Texture from point attr</a></li>
-      </ul>
-    </li>
-    <li><a href="#rbd-material-fracture--stylesheets">RBD Material Fracture &amp; Stylesheets</a>
-      <ul>
-        <li><a href="#the-inside-group">The inside group.</a></li>
-        <li><a href="#random-color-per-piece">Random color per piece</a></li>
-      </ul>
-    </li>
+    <li><a href="#add-ons">Add-ons</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -161,170 +153,153 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini - Stylesheets</h1>
-			<p>Some notes on how to create a simple object level style sheet.</p>
-<h1 id="object-level-style-sheet">Object level style sheet</h1>
-<p>We have a geo node called &ldquo;spheres&rdquo; which consists of a number of packed primitives. We also have 2 material called yellow &amp; blue. Lets add a style sheet to this object node that lets us assign different materials based on viewport selection.</p>
-<h2 id="style-sheet-inspector-data-tree">Style sheet Inspector (Data tree)</h2>
-<p>Open the inspector for the material style sheets.</p>
+			<h1>Blender - Modeling</h1>
+			<p>Here I will gather Blender modeling related info. Blender intro notes found 
+<a href="https://www.petfactory.se/notes/blender_notes/">here</a></p>
+<h1 id="modelling">Modelling</h1>
+<h2 id="object-mode">Object Mode</h2>
 <ul>
-<li>New Pane Tab Type &gt; Inspectors &gt; Data Tree</li>
-<li>Choose a Viewer &gt; Material Style Sheets</li>
-</ul>
-<h2 id="add-style-sheet-parameter">Add Style Sheet Parameter</h2>
+<li>Join two meshes : <strong>Ctrl J</strong>
 <ul>
-<li>In the left column of the <strong>Data Tree</strong> expand the Geo context</li>
-<li>RMB click &ldquo;spheres&rdquo; and select <strong>Add Style Sheet Parameter</strong>
-<ul>
-<li>When we do this a tab on the object node parameter pane gets addd. Here we will see the style sheet in JSON form.</li>
+<li>via menu <strong>Object &gt; Join</strong></li>
 </ul>
 </li>
 </ul>
-<h2 id="add-style">Add Style</h2>
-<p>We have two materials that we will add to the packed geo. We will first add the blue material to all the spheres.</p>
+<h3 id="add">Add</h3>
+<p>In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</p>
 <ul>
-<li>RMB click the Style Sheet Parameter and select <strong>Add Style</strong></li>
-<li>RMB click the added Style and rename it to blue.</li>
-<li>RMB click the added Style and <strong>Add Target</strong>
+<li>Add : <strong>Shift A</strong></li>
+</ul>
+<h3 id="delete">Delete</h3>
 <ul>
-<li>Since we wish to target the packed primitives the default value of <strong>primitives</strong> is fine.</li>
+<li><strong>Delete key</strong></li>
+<li><strong>X</strong> : a confirm dialog will appear</li>
+<li>Header Menu &gt; Object &gt; Delete</li>
+</ul>
+<h2 id="edit-mode">Edit mode</h2>
+<ul>
+<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
+</ul>
+<h3 id="selection">Selection</h3>
+<ul>
+<li>Loop Select : <strong>Shift Alt LMB</strong>
+<ul>
+<li>Since I have changed the view control to maya we need to use the shift also</li>
 </ul>
 </li>
-<li>RMB click the added Style and <strong>Add Override</strong></li>
-<li>Change the <strong>Type</strong> of the override to <strong>Set Material</strong></li>
-<li>In the <strong>Override Value</strong> column we can select the blue material.</li>
+<li>Works for verts, edges &amp; faces</li>
 </ul>
-<p>Now lets add the yellow material. We will now target some of the spheres with viewport selection.</p>
+<p><strong>Selection Modes</strong>
+You can use shift in combination with the numberpad to add multiple selection modes.</p>
 <ul>
-<li>RMB click the Style Sheet Parameter and select <strong>Add Style</strong></li>
-<li>RMB click the added Style and rename it to yellow.</li>
-<li>RMB click the added Style and <strong>Add Target</strong>
-<ul>
-<li>The default value of <strong>primitives</strong> fine.</li>
+<li><strong>Vertex</strong> select : <strong>1</strong></li>
+<li><strong>Edge</strong> select : <strong>2</strong></li>
+<li><strong>Face</strong> select : <strong>3</strong></li>
 </ul>
-</li>
-<li>RMB click the target and choose <strong>Set Target From Viewport Selection</strong>
+<h3 id="mesh-edit">Mesh Edit</h3>
 <ul>
-<li>select a few of the spheres and hit enter.</li>
-<li>This will add a <strong>Condition</strong> to the target and set the type to <strong>Primitive Group</strong> and set the <strong>value</strong> to the selected spheres.</li>
+<li>Insert Edge Loop and slide: <strong>Ctrl R LMB</strong>
+<ul>
+<li>or from toolbar</li>
+<li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
 </ul>
 </li>
-<li>RMB click the added Style and <strong>Add Override</strong></li>
-<li>Change the <strong>Type</strong> of the override to <strong>Set Material</strong></li>
-<li>In the <strong>Override Value</strong> column we can select the yellow material.</li>
-</ul>
-<h1 id="scene-level-style-sheet">Scene level style sheet</h1>
-<p>A scene level style sheet has precedence of object level style sheets. Lets create one.</p>
+<li>Extrude : <strong>E</strong> (move along normal)
 <ul>
-<li>In the material style sheet inspector click the <strong>New Style Sheet</strong> button at the top toolbar. Give it the name looks and click New Style Sheet button.</li>
-<li>RMB click the created style sheet and <strong>Add Style</strong></li>
-<li>RMB click the created style and <strong>Add Override</strong></li>
-<li>Add some overrides</li>
-</ul>
-<h1 id="shared-override-sets">Shared override sets</h1>
-<p>Shared override sets lets you specify the look and use it in multiple places. Lets create one.</p>
-<h2 id="add-set">Add set</h2>
+<li><strong>Extrude tool</strong> (long press the tool for more options)</li>
+<li>Note that if you cancel an extrusion (RMB or pressing esc) the extrude face will still be there. This is handy since with this face still selected and in original position we can press <strong>S</strong> and scale the face in-place.</li>
+<li>extrude to mouse postion : <strong>Ctrl RMB</strong>
 <ul>
-<li>In the material style sheet inspector click the <strong>New Style Sheet</strong> button at the top toolbar. Give it the name looks and click New Style Sheet button.</li>
-<li>RMB click the <strong>Shared Override Sets</strong> and choose <strong>Add Shared Override Set</strong> and call it something nice. (we will call it red)</li>
-<li>RMB click the added set and choose <strong>Add Override</strong></li>
-<li>Add some overrides</li>
-</ul>
-<h2 id="use-the-set">Use the set</h2>
-<ul>
-<li>In the left column RMB click the geo that we want to style and add <strong>Add Style Sheet Parameter</strong></li>
-<li>RMB click the <strong>Imported Styles</strong> and choose <strong>Add Style Sheet Reference</strong></li>
-<li>The default <strong>Type</strong> value of <strong>Embedded Style Sheet</strong> is fine</li>
-<li>In the <strong>Value</strong> column choose the override set that we created (that we called looks). Now we can use the set in our styles.</li>
-<li>RMB click the <strong>Style Sheet Parameter</strong> and <strong>Add Style</strong></li>
-<li>RMB click the new style and <strong>Add Shared Override Set</strong></li>
-<li>In the value column select the shared overide set that we created earlier (the one called red)</li>
-</ul>
-<h1 id="debugging-style-sheets">Debugging Style Sheets</h1>
-<h2 id="object-appearance-pane">Object appearance pane</h2>
-<p>In the <strong>Data Tree</strong> inspector we can switch to <strong>Object Appearance</strong>. Here The styles of each object will be listed and we can quickly jump to inspect the styles.</p>
-<h2 id="vieport-inspection">Vieport inspection</h2>
-<p>We can also use the <strong>Inspect Tool</strong> in the viewport to view material assignments. RMB click the inspect tool and choose <strong>Inspect Primitives</strong> and enable <strong>Show Material Assignment</strong> and finally switch to the select tool to enable the state. Hover over the geo in the viewport to inspect. <strong>Note</strong> that it can only display the styles applied to the packed primitives not to the individual polygons that makes up the packed primitive.</p>
-<h2 id="unpacking">Unpacking</h2>
-<p>If we want to see that kind of detail we can use an unpack sop and enable the <strong>Apply Style Sheets</strong>. To apply a scene level style sheet (named my_scene_style) we enter the snippet below in the scene level stylesheet text area</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;importFiles&#34;</span>: [<span style="color:#e6db74">&#34;my_scene_style&#34;</span>]
-}
-</code></pre></div><p>Open up the <strong>Geometry Spreadsheet</strong> at primitive level in the column <strong>material_stylesheet</strong> you can find what is applied. (To read it easier copy/paste to sublimeText or something). If we unpack even more (increase the unpack iterations) we can dig in even deeper. One drawback to unpacking is that it can be quite expensive to unpack.</p>
-<h2 id="hom-scripting">HOM scripting</h2>
-<p>We can use python to both build and inspect stylesheets (hou.StyleSheet)</p>
-<h1 id="scripted-overrides">Scripted Overrides</h1>
-<p>We have some <strong>packed primitives</strong> that are assigned a material called test. We want to set a random basecolor from a number of colors we specify with a ramp.</p>
-<h2 id="cvex-shader-builder">CVEX Shader Builder</h2>
-<p>First lets create the CVEX script.</p>
-<ul>
-<li>In the /mat context create a <strong>CVEX Shader Builder</strong> node and rename it to color_ramp and jump in.</li>
-<li>Add a <strong>Bind</strong> node and set <strong>Name</strong> to <strong>id</strong> and set the <strong>Type</strong> to <strong>Integer</strong>.</li>
-<li>Create a <strong>Random</strong> node.</li>
-<li>Hook up the output (id) from the bind to the input (pos) of the random node.</li>
-<li>Add a <strong>Ramp Parameter</strong> and set the name to Color</li>
-<li>Hook up the output (rand) from the random node to the input of the ramp</li>
-<li>Create a <strong>Bind Export</strong> node and connect the color output from the ramp to the input of the bind export node.</li>
-<li>On the bind export set the Name to clr and Type to Color</li>
-</ul>
-<h2 id="add-style-1">Add Style</h2>
-<p>Now lets setup the material style sheet.</p>
-<ul>
-<li>Open the inspector for the material style sheets</li>
-<li>RMB click the packed object and <strong>Add Style Sheet Parameter</strong></li>
-<li>RMB click the Style Sheet Parameter and select <strong>Add Style</strong></li>
-<li>RMB click the added Style and rename it to color_ramp.</li>
-<li>RMB click the added Style and <strong>Add Target</strong>
-<ul>
-<li>The default of primitives is what we want. If we do not specify a target it will target the object itself so everyting will get the same color. (If we add a sub-target each polygon will get a random color)</li>
-</ul>
-</li>
-<li>RMB click the added Style and <strong>Add Override Script</strong></li>
-<li>In the <strong>Override Name</strong> column navigate to and select the base color parm of the material.</li>
-<li>Change the <strong>Override Type</strong> to <strong>Script From Node</strong></li>
-<li>in the <strong>Override Value</strong> select the <strong>CVEX</strong> node that we created.</li>
-<li>RMB click the <strong>Override Script</strong> and select <strong>Add Data Binding</strong>
-<ul>
-<li>We do this to let the CVEX script access the id attr that we want to read with the bind node.</li>
+<li>Quite handy instead of etruding, reposition amd rotating.</li>
 </ul>
 </li>
 </ul>
-<p><strong>Note</strong> that you must change the color ramp parameter on the &ldquo;outside&rdquo; CVEX Shader Builder itself, not the ramp node inside to affect the colors. You can also set the ramp color points to constant if you want discrete colors with out interpolation.</p>
-<p>
-<a href="https://vimeo.com/155876134" target="_blank" rel="noopener">Master Class</a> 26:19</p>
-<h2 id="set-texture-from-point-attr">Set Texture from point attr</h2>
-<p>Lets say that we wish to override the base color of a shader based on a string point attr. Here is one way we could do that, not sure if it is the most effective way tough. We have a scene where we have copied some polyspheres to a grid (with pack and instance enabled). Lets append a point wrangle to the copy to points and add a string attr that will use a random image of the default butterfly texture.
-<strong>Note</strong> remember to enable <strong>Use Texture</strong> of the base color, and set the base color to 1.0</p>
-<pre><code class="language-vex" data-lang="vex">int i = int(rand(@ptnum*chi('seed'))*7)+1;
-s@tn = sprintf('butterfly%i.pic', i);
-</code></pre><ul>
-<li>RMB click the Style Sheet Parameter and select <strong>Add Style</strong></li>
-<li>RMB click the added style and <strong>Add Target</strong>
+</li>
+<li>Inset : <strong>I</strong> (capital i)</li>
+<li>Bevel :</li>
+<li>knife tool :</li>
+<li>Bisect Tool : (sub-tool of the knife)
 <ul>
-<li>The default of primitive is what we want.</li>
+<li>Select faces to cut</li>
+<li>LMB click and drag</li>
+<li>Use the on-screen tool manipulator to adjust cut</li>
+<li>expand the bisect tool operation panel to edit settings</li>
 </ul>
 </li>
-<li>RMB click the added style and <strong>Add Override Script</strong>
+<li>Scale to flatten edge
 <ul>
-<li>Set the <strong>Type</strong> to <strong>Material Parameter</strong></li>
-<li>Set the <strong>Override Name</strong> to basecolor_texture</li>
-<li>Change the <strong>Override Type</strong> to <strong>Attribute Binding</strong></li>
-<li>Set the <strong>Override Value</strong> to tn (the point attr we created earlier)</li>
+<li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
 </ul>
 </li>
 </ul>
-<h1 id="rbd-material-fracture--stylesheets">RBD Material Fracture &amp; Stylesheets</h1>
-<p>We have a sphere that we have fractured using the <strong>RMB Material Fracture</strong> node. Then we have appended a <strong>RBD Configure</strong> and an <strong>RBD Pack</strong> node to wrap everything up in one stream. We use a <strong>Copy To Points</strong> to instance our packed rbd object to a grid and use an <strong>RBD Unpack</strong> (remember to enable <strong>Enforce Unique Name Attribute per Instance</strong>) to get our geo, constraints and proxy geo back. This is fed to dopnet with an rbd sim or the RBD Bullet Solver (sop). I wanted to use style sheets to set materials for the fractured inside geo and I wanted to randomize the color of each fractured sphere.</p>
-<h2 id="the-inside-group">The inside group.</h2>
-<p>Since the RBD Material Fracture produces <strong>Packed Fragments</strong> we can not use the inside group in our style sheet. One easy way to get around this is to add a <strong>Primitive</strong> attribute called for instance <strong>inside</strong> to the prims in the inside group in the render geo stream. Then we can use this attr in the style sheet. To do this we create a <strong>Condition</strong> with the type <strong>Primitive Group</strong> and the value <strong>@inside==1</strong></p>
-<h2 id="random-color-per-piece">Random color per piece</h2>
-<p>To get the random color per piece this is what I did.</p>
+<h3 id="normals">Normals</h3>
 <ul>
-<li>Add a point attribute to the points that we use for instancing the spheres to <strong>i@n_id = @ptnum;</strong></li>
-<li>In the copy to points <strong>Attributes from Target</strong> transfer the attr <strong>n_id</strong> to the primitives.</li>
-<li>In the <strong>RBD Unpack</strong> transfer the <strong>n_id</strong> attribute.</li>
-<li>Create a override script to change the basecolor parameter with a script from node (create a CVEX Shader Builder the randomizes color based on id attr)</li>
-<li>Add a data binding to the override script. Let the override name be <strong>id</strong> (if that what was you used in the CVEX node) and set the <strong>Override Value</strong> to <strong>n_id</strong> the attr that we created on the copy to points target points and transfered to our prims.</li>
+<li>Normals Menu : <strong>Alt N</strong></li>
+<li>Recalculate Normals : <strong>Shift N</strong></li>
+</ul>
+<h3 id="merge">Merge</h3>
+<ul>
+<li>Merge by Distance
+<ul>
+<li>If we have verts that we want to merge one fast way is to press <strong>A</strong> (select all) followed by <strong>M</strong> -&gt; <strong>By Distance</strong>.</li>
+</ul>
+</li>
+<li>Auto Merge
+<ul>
+<li>If we enable auto merge, every time verts end up on top of each other they are merged automatically. You will find this button in the 3D View header bar, next to the mirror options.</li>
+</ul>
+</li>
+</ul>
+<h3 id="delete-1">Delete</h3>
+<p>If we are in edit mode and press delete key we will get a delete popup menu. Below are some of the options. Read more in the 
+<a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/delete.html?highlight=delete%20faces#deleting-dissolving" target="_blank" rel="noopener">Delete &amp; Dissolve</a> (docs)</p>
+<ul>
+<li><strong>Vertices</strong> : All vertices in current selection, removing any faces or edges they are connected to.</li>
+<li><strong>Edges</strong> : Any edges in the current selection. Removes any faces that the edge shares with it.</li>
+<li><strong>Face</strong> : The selected faces and &ldquo;internal&rdquo; verts &amp; edges</li>
+<li><strong>Only Edges &amp; Faces</strong> : Deletes faces &amp; edges but leaves the verts.</li>
+<li><strong>Only Faces</strong> : Removes faces, but edges within the face selection are retained.</li>
+<li><strong>Disolve</strong> : This will &ldquo;keep&rdquo; the mesh but delete the components.</li>
+<li><strong>Collapse</strong> : Delete the components and merge to a single point.</li>
+<li><strong>Edge Loop</strong> : It will do the opposite of extrusion. Delete faces down to the next loop available.</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>Join two Vertices : <strong>F</strong></li>
+<li>Separate : <strong>P</strong>
+<ul>
+<li>or RMB &gt; Separate</li>
+</ul>
+</li>
+<li>Subdivide : <strong>RMB &gt; Subdivide</strong></li>
+<li>Polygon info -&gt; Vert / Edges / Faces
+<ul>
+<li>Bottom Right side of 3D view</li>
+</ul>
+</li>
+</ul>
+<h1 id="misc-1">Misc</h1>
+<h2 id="ui">UI</h2>
+<ul>
+<li>Scroll long menus: <strong>MMB</strong></li>
+<li>RMB click on parameters
+<ul>
+<li><strong>Assign Shortcut</strong></li>
+<li><strong>Add to Quick Favourites</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="shortcuts">Shortcuts</h2>
+<ul>
+<li>Search : <strong>F3</strong></li>
+<li>File Menu (&amp; prefs) : <strong>F4</strong></li>
+</ul>
+<h1 id="add-ons">Add-ons</h1>
+<ul>
+<li><strong>LoopTools</strong> (Mesh)</li>
+<li><strong>Copy Attributes Menu</strong> (Interface)</li>
+<li><strong>Bool Tool</strong> (Object)</li>
+<li><strong>F2</strong> (Mesh)</li>
 </ul>
 		
 		</div>

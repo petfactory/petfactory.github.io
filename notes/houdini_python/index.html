@@ -162,18 +162,22 @@
 			<h1>Houdini - Python</h1>
 			<p>Here I will gather information that I find useful.</p>
 <h1 id="environment-variables">Environment variables</h1>
-<p>Houdini uses <a href="https://www.sidefx.com/docs/houdini/basics/config_env.html">environment variables</a> for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.</p>
-<p>See the <a href="https://www.sidefx.com/docs/houdini/ref/env.html">list of environment variables</a> in Houdini.</p>
+<p>Houdini uses 
+<a href="https://www.sidefx.com/docs/houdini/basics/config_env.html" target="_blank" rel="noopener">environment variables</a> for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.</p>
+<p>See the 
+<a href="https://www.sidefx.com/docs/houdini/ref/env.html" target="_blank" rel="noopener">list of environment variables</a> in Houdini.</p>
 <h2 id="inspect-variables">Inspect variables</h2>
 <p>To print the value of an environment variable you can use the Houdini Python Shell:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#39;HOUDINI_OTLSCAN_PATH&#39;</span>)
 </code></pre></div><p>You can also use the Textport:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo $HOUDINI_OTLSCAN_PATH
 </code></pre></div><h2 id="environment-config">Environment config</h2>
-<p>Traditionally, the way to set the values of environment variables in Houdini was to edit the <a href="https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables">houdini.env</a> file. The houdini.env file are found in the $HOUDINI_USER_PREF_DIR (see notes below). The problem is that not only the user wants to set environment variables, but also studios, plug-in authors, and so on. Multiple parties would end up rewriting or appending to the houdini.env file, sometimes causing errors or redundancy.</p>
+<p>Traditionally, the way to set the values of environment variables in Houdini was to edit the 
+<a href="https://www.sidefx.com/docs/houdini/basics/config_env.html#setting-environment-variables" target="_blank" rel="noopener">houdini.env</a> file. The houdini.env file are found in the $HOUDINI_USER_PREF_DIR (see notes below). The problem is that not only the user wants to set environment variables, but also studios, plug-in authors, and so on. Multiple parties would end up rewriting or appending to the houdini.env file, sometimes causing errors or redundancy.</p>
 <p>The new solution for this kind of set-up is packages. Packages are .json files in HOUDINI_PATH/packages. Each package file contains a specification for how to modify the environment (including the Houdini Path and other variables).</p>
 <h3 id="houdini-packages">Houdini Packages</h3>
-<p><a href="https://www.sidefx.com/docs/houdini/ref/plugins.html">Docs</a></p>
+<p>
+<a href="https://www.sidefx.com/docs/houdini/ref/plugins.html" target="_blank" rel="noopener">Docs</a></p>
 <ul>
 <li>Package files must be valid <strong>JSON</strong> and must have the .json extension.</li>
 <li>Houdini will scan a number directories on startup looking for packages (see docs for which)
@@ -230,7 +234,8 @@
 node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/copytopoints&#39;</span>)
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(p<span style="color:#f92672">.</span>name() <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> node<span style="color:#f92672">.</span>parms()))
 </code></pre></div><h2 id="parm-template">Parm template</h2>
-<p>A <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
+<p>A 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html" target="_blank" rel="noopener">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
 <p>For example, the &ldquo;t&rdquo; parm tuple on geometry objects can be described by a hou.FloatParmTemplate – it has a label of &ldquo;Transform&rdquo;, a data type of hou.parmData.Float, 3 components, a naming scheme of hou.parmNamingScheme.XYZW, etc.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;ty&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
 <span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
@@ -262,7 +267,8 @@ snippet <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#3
 wrangle_node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;snippet&#39;</span>)<span style="color:#f92672">.</span>set(snippet)
 wrangle_node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group)
 </code></pre></div><h2 id="parm-tuple">Parm tuple</h2>
-<p>The <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTuple.html">ParmTuple</a> class behaves like a Python sequence, so you can index into it using square brackets, iterate over it, call len on it, etc. The elements inside the parameter tuple are hou.Parm objects.</p>
+<p>The 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTuple.html" target="_blank" rel="noopener">ParmTuple</a> class behaves like a Python sequence, so you can index into it using square brackets, iterate over it, call len on it, etc. The elements inside the parameter tuple are hou.Parm objects.</p>
 <p>A parameter tuple’s name may only contain letters, numbers, and underscores. For example, objects contain a parameter tuple named &ldquo;t&rdquo; that contains three float parameters. The names of the parameters inside the tuple are determined from the parameter tuple’s name and its naming scheme. For example, the &ldquo;t&rdquo; parameter uses the XYZW naming scheme, so the three parameters inside it are named &ldquo;tx&rdquo;, &ldquo;ty&rdquo;, and &ldquo;tz&rdquo;. Note that if the parameter tuple only contains one parameter, the tuple and the parameter inside it may have the same name</p>
 <p>In addition to a name, a parameter tuple also has a label that is displayed to the user in the parameter dialog. For example, the &ldquo;t&rdquo; parameter’s label is &ldquo;Translate&rdquo;. The label may contain spaces and punctuation characters.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#39;t&#39;</span>)
@@ -284,7 +290,8 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;tx&#39;</span>)<span style="color:#f92672">.</span>parmTemplate()
 <span style="color:#75715e"># &lt;hou.FloatParmTemplate name=&#39;t&#39; label=&#39;Translate&#39; length=3 ...</span>
 </code></pre></div><h2 id="parms-in-folder">Parms in Folder</h2>
-<p>If you want to get all the parms in a specific folder you can use the <a href="https://www.sidefx.com/docs/houdini/hom/hou/Node.html#parmsInFolder">parmsInFolder</a> function.</p>
+<p>If you want to get all the parms in a specific folder you can use the 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/Node.html#parmsInFolder" target="_blank" rel="noopener">parmsInFolder</a> function.</p>
 <p>Lets say that you want all the parms in the PostFX folder (that are inside the Redshift Camera folder of the camera node) note that we need to specify the entire &ldquo;hierarchy&rdquo; to the destination folder.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
 </code></pre></div><h1 id="copy-to-points">Copy to points</h1>
@@ -302,7 +309,8 @@ c<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;apply
 
 </code></pre></div><h1 id="misc">Misc</h1>
 <h2 id="undo">Undo</h2>
-<p>Returns a context manager, within which all changes to Houdini are recorded as a single action on the <a href="https://www.sidefx.com/docs/houdini/hom/hou/undos.html">undo</a> stack.
+<p>Returns a context manager, within which all changes to Houdini are recorded as a single action on the 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/undos.html" target="_blank" rel="noopener">undo</a> stack.
 For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> hou<span style="color:#f92672">.</span>undos<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#34;Move all nodes to the left&#34;</span>):
     <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#34;/obj&#34;</span>)<span style="color:#f92672">.</span>children():

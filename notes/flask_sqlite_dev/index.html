@@ -199,7 +199,8 @@ app <span style="color:#f92672">=</span> Flask(__name__)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">db <span style="color:#f92672">=</span> SQLAlchemy(app)
 </code></pre></div><h2 id="declaring-models">Declaring Models</h2>
 <p>The next step is to create the SQLAlchemy database structure. We do this by creatinging class which represent each db table.</p>
-<p>Things to keep in mind <a href="http://flask-sqlalchemy.pocoo.org/2.3/models">Flask-SQLAlchemy docs</a></p>
+<p>Things to keep in mind 
+<a href="http://flask-sqlalchemy.pocoo.org/2.3/models" target="_blank" rel="noopener">Flask-SQLAlchemy docs</a></p>
 <ul>
 <li>
 <p>The baseclass for all your models is called db.Model. It’s stored on the SQLAlchemy instance you have to create. See Quickstart for more details.</p>
@@ -239,7 +240,8 @@ app <span style="color:#f92672">=</span> Flask(__name__)
 <p>Relationships are expressed with the relationship() function. However the foreign key has to be separately declared with the ForeignKey class, as we will do in the material model.</p>
 <p>What does db.relationship() do? That function returns a new property that can do multiple things. In this case we told it to point to the Material class and load multiple of those. How does it know that this will return more than one address? Because SQLAlchemy guesses a useful default from your declaration.</p>
 <p>So what do backref and lazy mean? backref is a simple way to also declare a new property on the Material class. You can then also use my_material.material_type to get to the material type at that material. lazy defines when SQLAlchemy will load the data from the database:</p>
-<p>Read more about relationships <a href="http://flask-sqlalchemy.pocoo.org/2.3/models/#one-to-many-relationships">Flask-SQLAlchemy docs</a></p>
+<p>Read more about relationships 
+<a href="http://flask-sqlalchemy.pocoo.org/2.3/models/#one-to-many-relationships" target="_blank" rel="noopener">Flask-SQLAlchemy docs</a></p>
 <hr>
 <h2 id="surface-property-model">Surface Property model</h2>
 <p>The Surface property will be similar to the material type.</p>

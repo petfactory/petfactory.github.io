@@ -6,10 +6,20 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jun 2020 16:27:47 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2020 16:27:47 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blender - Modeling</title>
+      <link>https://www.petfactory.se/notes/blender_modeling/</link>
+      <pubDate>Tue, 23 Jun 2020 16:27:47 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/blender_modeling/</guid>
+      <description>Here I will gather Blender modeling related info. Blender intro notes found here
+Modelling Object Mode  Join two meshes : Ctrl J  via menu Object &amp;gt; Join    Add In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</description>
+    </item>
     
     <item>
       <title>Blender - Notes</title>

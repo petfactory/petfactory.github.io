@@ -127,7 +127,8 @@
 			<p>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc. But I also wanted to be able to set the color of the arrow.
 The image below is an example of a simplified version of the widget.</p>
 <p><img src="https://www.petfactory.se/images/custom_stylesheet.png" alt="stylesheet and custom drawing"></p>
-<p>In the article &ldquo;Qt Style Sheets and Custom Painting Example&rdquo; from the <a href="https://wiki.qt.io/Qt_Style_Sheets_and_Custom_Painting_Example">Qt docs</a> if found a C++ example of how to do this. After some further googling and some trial and error I got it to work with PySide2.</p>
+<p>In the article &ldquo;Qt Style Sheets and Custom Painting Example&rdquo; from the 
+<a href="https://wiki.qt.io/Qt_Style_Sheets_and_Custom_Painting_Example" target="_blank" rel="noopener">Qt docs</a> if found a C++ example of how to do this. After some further googling and some trial and error I got it to work with PySide2.</p>
 <p>Below is a simplified example of the widgets.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DotLabel</span>(QtWidgets<span style="color:#f92672">.</span>QFrame):
 
@@ -207,7 +208,9 @@ The image below is an example of a simplified version of the widget.</p>
     qproperty-dotColor: rgb(<span style="color:#ae81ff">102</span>, <span style="color:#ae81ff">217</span>, <span style="color:#ae81ff">239</span>);
     <span style="color:#66d9ef">background-color</span>: rgb(<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">90</span>);
 }
-</code></pre></div><p>While in the research phase I came across a nice post by <a href="http://dgovil.com/blog/2017/02/24/qt_stylesheets/">Dhruv Govil</a> not exactly related, more on dynamic properties and stylesheets. There is also this article from the <a href="https://wiki.qt.io/Dynamic_Properties_and_Stylesheets">Qt docs</a></p>
+</code></pre></div><p>While in the research phase I came across a nice post by 
+<a href="http://dgovil.com/blog/2017/02/24/qt_stylesheets/" target="_blank" rel="noopener">Dhruv Govil</a> not exactly related, more on dynamic properties and stylesheets. There is also this article from the 
+<a href="https://wiki.qt.io/Dynamic_Properties_and_Stylesheets" target="_blank" rel="noopener">Qt docs</a></p>
 <p>If you have some feedback or ideas on how to improve this workflow please let me know.</p>
 		
 		</div>

@@ -124,7 +124,8 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>PySide QTableView Custom PaintEvent</h1>
-			<p>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &ldquo;empty&rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty. I liked this approach and implemented that in Python. Below is some information from the <a href="https://srinikom.github.io/pyside-docs/PySide/QtGui/QPainter.html">PySide </a> docs on QPainter. I wanted to understand if I needed to call the begin() and end() when I did the painting.</p>
+			<p>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &ldquo;empty&rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty. I liked this approach and implemented that in Python. Below is some information from the 
+<a href="https://srinikom.github.io/pyside-docs/PySide/QtGui/QPainter.html" target="_blank" rel="noopener">PySide </a> docs on QPainter. I wanted to understand if I needed to call the begin() and end() when I did the painting.</p>
 <ul>
 <li>class PySide.QtGui.QPainter(arg__1)
 <ul>

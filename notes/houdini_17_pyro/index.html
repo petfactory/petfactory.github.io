@@ -134,7 +134,8 @@
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini 17 - Pyro</h1>
 			<p>Add a geo to use as source and append a <em><strong>Pyro Source</strong></em> node to it. This node does not make the volume, it creates points.</p>
-<p>Below are some lines form the <a href="http://www.sidefx.com/docs/houdini/nodes/sop/pyrosource.html">docs</a>
+<p>Below are some lines form the 
+<a href="http://www.sidefx.com/docs/houdini/nodes/sop/pyrosource.html" target="_blank" rel="noopener">docs</a>
 The Pyro Source SOP converts its input geometry into points suitable for sourcing pyro and smoke simulations. This SOP adds specified attributes to the generated points, which can be rasterized and imported into desired DOP fields by the Volume Source node. Pyro Source also contains a handful of initialization presets for driving common simulation scenarios.</p>
 <h1 id="pyro-source">Pyro Source</h1>
 <ul>
@@ -172,7 +173,8 @@ The Pyro Source SOP converts its input geometry into points suitable for sourcin
 </ul>
 <p>Note that the attributes that are set in the initialize step is not fileds, they are point attribs that will be used when we in a later step rasterize the volume.</p>
 <h1 id="attribute-noise-density--temperature">Attribute Noise (density &amp; temperature)</h1>
-<p>To make the source volume more interesting we can add an attribute noise to the point attribs before we rasterize them. So lets so that. We append an <em><strong>Attribute Noise</strong></em> node to the Pyro source. <a href="http://www.sidefx.com/docs/houdini/nodes/sop/attribnoise.html">docs</a></p>
+<p>To make the source volume more interesting we can add an attribute noise to the point attribs before we rasterize them. So lets so that. We append an <em><strong>Attribute Noise</strong></em> node to the Pyro source. 
+<a href="http://www.sidefx.com/docs/houdini/nodes/sop/attribnoise.html" target="_blank" rel="noopener">docs</a></p>
 <ul>
 <li>
 <p>Attribute Noise</p>
@@ -254,7 +256,8 @@ The Pyro Source SOP converts its input geometry into points suitable for sourcin
 </ul>
 <h1 id="rasterize-the-attribs">Rasterize the Attribs</h1>
 <p>To rasterize the attibs we use a <em><strong>Volume Rasterize Attributes</strong></em> node. To rasterize the attributes we first need to tell Houdini wich attributes to rasterize. We do this in the Attributes line edit. The we set the Voxel size. The shelf tools does this by multiplying the the <strong>Particle Separation</strong> by the <strong>Particle Scale</strong> and dididing the result by 4 on the incomming Pyro Source Node.</p>
-<p>Below are some lines form the <a href="http://www.sidefx.com/docs/houdini/nodes/sop/volumerasterizeattributes.html">docs</a></p>
+<p>Below are some lines form the 
+<a href="http://www.sidefx.com/docs/houdini/nodes/sop/volumerasterizeattributes.html" target="_blank" rel="noopener">docs</a></p>
 <ul>
 <li>
 <p>Volume Rasterize Attributes</p>
