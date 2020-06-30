@@ -144,9 +144,10 @@
           <ul>
             <li><a href="#extrude">Extrude</a></li>
             <li><a href="#inset">Inset</a></li>
-            <li><a href="#edge-slide">Edge Slide</a></li>
+            <li><a href="#loop-cut--slide">Loop Cut &amp; Slide</a></li>
             <li><a href="#bevel">Bevel</a></li>
             <li><a href="#knife--bisect">Knife &amp; Bisect</a></li>
+            <li><a href="#fill--join">Fill &amp; Join</a></li>
           </ul>
         </li>
         <li><a href="#normals">Normals</a></li>
@@ -247,6 +248,14 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <li>Select Linked of seleced : <strong>Ctrl L</strong></li>
 </ul>
 </li>
+<li>Select Similar : <strong>Shift G</strong>
+<ul>
+<li>Co-planar</li>
+<li>Normal</li>
+<li>Area</li>
+<li>&hellip;</li>
+</ul>
+</li>
 </ul>
 <h2 id="duplicate">Duplicate</h2>
 <ul>
@@ -264,7 +273,7 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <ul>
 <li><strong>Extrude tool</strong> (long press the tool for more options)</li>
 <li>Note that if you cancel an extrusion (RMB or pressing esc) the extrude face will still be there. This is handy since with this face still selected and in original position we can press <strong>S</strong> and scale the face in-place.</li>
-<li>extrude to mouse postion : <strong>Ctrl RMB</strong>
+<li>Extrude to mouse postion : <strong>Ctrl RMB</strong>
 <ul>
 <li>Quite handy instead of etruding, reposition amd rotating.</li>
 </ul>
@@ -281,12 +290,18 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 </li>
 </ul>
-<h3 id="edge-slide">Edge Slide</h3>
+<h3 id="loop-cut--slide">Loop Cut &amp; Slide</h3>
 <ul>
 <li>Insert Edge Loop and slide: <strong>Ctrl R</strong>
 <ul>
 <li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
 <li>If faces are hidden within the &ldquo;face loop&rdquo; the cut will terminate at the border.</li>
+<li>Number of cuts
+<ul>
+<li>Mouse wheel scroll</li>
+<li>Page up / down</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -310,11 +325,12 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 </li>
 </ul>
-<p>APA</p>
+<h3 id="fill--join">Fill &amp; Join</h3>
 <ul>
-<li>Scale to flatten edge
+<li>Fill : <strong>F</strong></li>
+<li>Join : <strong>J</strong>
 <ul>
-<li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
+<li>todo: look up the difference</li>
 </ul>
 </li>
 </ul>
@@ -325,9 +341,15 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 <h2 id="merge">Merge</h2>
 <ul>
-<li>Merge by Distance
+<li>Merge
 <ul>
-<li>If we have verts that we want to merge one fast way is to press <strong>A</strong> (select all) followed by <strong>M</strong> -&gt; <strong>By Distance</strong>.</li>
+<li><strong>By Distance</strong>
+<ul>
+<li>If we have verts that we want to merge one fast way is to press <strong>A</strong> (select all) followed by <strong>M &gt; By Distance</strong>.</li>
+</ul>
+</li>
+<li><strong>At Last</strong>
+If we want to merge some verts that are not on top of each other we can select them and then <strong>M &gt;  At Last</strong> or some of the other options</li>
 </ul>
 </li>
 <li>Auto Merge
@@ -351,16 +373,24 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 <h2 id="misc-2">Misc</h2>
 <ul>
-<li>Join two Vertices : <strong>F</strong></li>
 <li>Separate : <strong>P</strong>
 <ul>
 <li>or RMB &gt; Separate</li>
 </ul>
 </li>
-<li>Subdivide : <strong>RMB &gt; Subdivide</strong></li>
+<li>Subdivide : <strong>RMB &gt; Subdivide</strong>
+<ul>
+<li>If an edge is selected resulting verts (after the subdivision) will be connected with an edge. This is nice if we subdivide across an edge ring etc.</li>
+</ul>
+</li>
 <li>Polygon info -&gt; Vert / Edges / Faces
 <ul>
 <li>Bottom Right side of 3D view</li>
+</ul>
+</li>
+<li>Scale to flatten edge
+<ul>
+<li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
 </ul>
 </li>
 </ul>

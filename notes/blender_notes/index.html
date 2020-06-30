@@ -128,7 +128,11 @@
     <li><a href="#properties-editor">Properties Editor</a></li>
     <li><a href="#3d-view">3D View</a>
       <ul>
-        <li><a href="#display--shading">Display / Shading</a></li>
+        <li><a href="#display--shading">Display / Shading</a>
+          <ul>
+            <li><a href="#smooth--flat">Smooth / Flat</a></li>
+          </ul>
+        </li>
         <li><a href="#toolbar">Toolbar</a>
           <ul>
             <li><a href="#pop-up">Pop-up</a></li>
@@ -376,6 +380,21 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </ul>
 </li>
 </ul>
+<h3 id="smooth--flat">Smooth / Flat</h3>
+<p>You can choose to shade smooth or flat both in object- and edit mode.
+Here is a general workflow.</p>
+<ul>
+<li>In <strong>object mode</strong>, select the mesh and RMB menu &gt; <strong>Shade Smooth</strong></li>
+<li>With the mesh selected in the properties editor &gt; Object Data Properties &gt; Normals &gt; <strong>Auto Smoth : On</strong></li>
+<li>With the <strong>auto smooth angle</strong> you can control whixh faces is shaded as smooth or flat.</li>
+<li>For more control you can, in edit mode, select edges and RMB &gt; <strong>Mark Sharp</strong></li>
+<li>You can toggle the display of the sharp edges in the vieport overlays menu</li>
+<li>In edit mode we can select the sharp edges and control the selection based on an angle.
+<ul>
+<li>Select &gt; <strong>Select Sharp Edges</strong> (the sharpness controls which edges are considered sharp)</li>
+</ul>
+</li>
+</ul>
 <h2 id="toolbar">Toolbar</h2>
 <p>The 
 <a href="https://docs.blender.org/manual/en/latest/interface/tool_system.html#toolbar" target="_blank" rel="noopener">Toolbar</a> ( <strong>T</strong> ) is located in the top left corner of the 3D view.</p>
@@ -593,7 +612,8 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 </li>
 </ul>
 <h3 id="snap">Snap</h3>
-<p>If we hold <strong>Ctrl</strong> while moving we will snap using the options set in the snap dropdown (Ctrl Shift Tab)</p>
+<p>If we hold <strong>Ctrl</strong> while transforming we will snap using the options set in the snap dropdown (Ctrl Shift Tab) even if the snap is off.
+You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform was initiated with shortcut (G,R,S) the snap icon will not update until the transform is done, but it will toggle the snap.</p>
 <h3 id="transform-orientations">Transform Orientations</h3>
 <ul>
 <li>Transform Orientations : <strong>, (comma key)</strong>
@@ -643,6 +663,11 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>Snap Menu : <strong>Ctrl Shift Tab</strong></li>
 <li>Snap Pie Menu : <strong>Shift S</strong></li>
 <li>Also found in dropdown menu in the center of the 3D View header bar</li>
+<li>Add Snap Points : <strong>A</strong>
+<ul>
+<li>If you press A while you are snapped to a specific feayure you will add a &ldquo;snap point&rdquo; there. You can add multiple snap points. If you move the cursor away from the snapping destination the object will snap to the center of the added snap points.</li>
+</ul>
+</li>
 </ul>
 <h3 id="proportional-editing">Proportional Editing</h3>
 <ul>
