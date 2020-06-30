@@ -140,12 +140,11 @@
         <li><a href="#selection">Selection</a></li>
         <li><a href="#transformation">Transformation</a>
           <ul>
+            <li><a href="#pivot--parents">Pivot &amp; parents</a></li>
             <li><a href="#constrain-to-axis">Constrain to Axis</a></li>
-          </ul>
-        </li>
-        <li><a href="#3d-view-header-menu">3D View Header Menu</a>
-          <ul>
-            <li><a href="#transform-orientation">Transform Orientation</a></li>
+            <li><a href="#numerical">Numerical</a></li>
+            <li><a href="#snap">Snap</a></li>
+            <li><a href="#transform-orientations">Transform Orientations</a></li>
             <li><a href="#pivot">Pivot</a></li>
             <li><a href="#snapping">Snapping</a></li>
             <li><a href="#proportional-editing">Proportional Editing</a></li>
@@ -162,6 +161,11 @@
       </ul>
     </li>
     <li><a href="#add-ons">Add-ons</a></li>
+    <li><a href="#modeling">Modeling</a>
+      <ul>
+        <li><a href="#modeling-notesnotesblender_modeling"><a href="https://www.petfactory.se/notes/blender_modeling/">Modeling Notes</a></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -176,7 +180,8 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Blender - Notes</h1>
-			<p>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first. So lets dive in!</p>
+			<p>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first. Here are some Blender 
+<a href="https://www.petfactory.se/notes/blender_modeling/">modeling</a> notes.</p>
 <p>Here is a nice 
 <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6" target="_blank" rel="noopener">Blender Fundamentals 2.8</a> playlist</p>
 <h1 id="regions">Regions</h1>
@@ -194,10 +199,7 @@
 </ul>
 </li>
 <li><strong>3D View / Main region</strong> : yellow
-<ul>
-<li>
-<a href="https://www.petfactory.se/notes/blender_notes/#3d-view">3D View</a> (Read more)</li>
-</ul>
+  <!-- * [3D View](/notes/blender_notes/#3d-view) (Read more) -->
 </li>
 <li><strong>Toolbar</strong> : blue
 <ul>
@@ -533,7 +535,18 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 </ul>
 <h2 id="transformation">Transformation</h2>
-<p>You can use the shortcuts below to transform an object.</p>
+<h3 id="pivot--parents">Pivot &amp; parents</h3>
+<p>The affect only menu is located in the right hand side of the 3D View header and in the sidebar &gt; Tool &gt; Options &gt; Transform</p>
+<ul>
+<li>Affect only
+<ul>
+<li>Origins : <strong>pivots</strong></li>
+<li>Locations : <strong>only translate</strong></li>
+<li>Parents : <strong>move parent, leave child stationary</strong></li>
+</ul>
+</li>
+</ul>
+<p>You can use the shortcuts below to transform an object. We can of course also use the toolbar transform gizmos.</p>
 <ul>
 <li>Grab (Translate)
 <ul>
@@ -555,14 +568,35 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 </ul>
 <h3 id="constrain-to-axis">Constrain to Axis</h3>
-<p>We can set the transformation orientation 
-If we want to constrain the translation, rotation or scale along a specific axis we can press <strong>X, Y or Z</strong>.
+<p>If we want to constrain the translation, rotation or scale along a specific axis we can press <strong>X, Y or Z</strong>.
 If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the movement along the <strong>local space</strong> of the object.</p>
-<h2 id="3d-view-header-menu">3D View Header Menu</h2>
-<p>We can of course also use the toolbar transform gizmo. You can set the <strong>orientation</strong> of the gizmo using the dropdown menu labeled orientation below the main menu bar on the left hand side.</p>
-<h3 id="transform-orientation">Transform Orientation</h3>
 <ul>
-<li>Transform Orientation
+<li>Axis : <strong>X, Y or Z</strong></li>
+<li>Plane : <strong>Shift X, Y or Z</strong>
+<ul>
+<li>If we want to transform on the XY plane -&gt; Shift Z</li>
+</ul>
+</li>
+</ul>
+<h3 id="numerical">Numerical</h3>
+<p>If you want to move a specfic amount you can use the keybord. Lets say that we want to translate 2 units in the x-axis.</p>
+<ul>
+<li><strong>G X 2</strong>
+<ul>
+<li>Translate 2 units along x-axis</li>
+</ul>
+</li>
+<li><strong>S Z 0</strong>
+<ul>
+<li>Scale the selected components to 0 along the z-axis</li>
+</ul>
+</li>
+</ul>
+<h3 id="snap">Snap</h3>
+<p>If we hold <strong>Ctrl</strong> while moving we will snap using the options set in the snap dropdown (Ctrl Shift Tab)</p>
+<h3 id="transform-orientations">Transform Orientations</h3>
+<ul>
+<li>Transform Orientations : <strong>, (comma key)</strong>
 <ul>
 <li>Global</li>
 <li>Local</li>
@@ -572,10 +606,11 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>Cursor</li>
 </ul>
 </li>
+<li>Also found in dropdown menu in the center of the 3D View header bar</li>
 </ul>
 <h3 id="pivot">Pivot</h3>
 <ul>
-<li>Pivot Point
+<li>Pivot Point : <strong>. (period key)</strong>
 <ul>
 <li>Bounding Box Center</li>
 <li>3D Cursor</li>
@@ -584,25 +619,35 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>Active Element</li>
 </ul>
 </li>
+<li>Also found in dropdown menu in the center of the 3D View header bar</li>
 </ul>
 <h3 id="snapping">Snapping</h3>
 <ul>
 <li>Snap Settings
 <ul>
-<li>Various snap settings</li>
 <li>Increment</li>
 <li>Vertex</li>
 <li>Edge</li>
-<li>&hellip;</li>
+<li>Face</li>
+<li>Volume</li>
+<li>Edge Center</li>
+<li>Edge Perpendicular</li>
+</ul>
+</li>
+<li>Absolute Grid Snap
+<ul>
+<li>Must be enabled for <strong>grid snap</strong></li>
 </ul>
 </li>
 <li>Toggle Snapping : <strong>Shift Tab</strong></li>
 <li>Snap Menu : <strong>Ctrl Shift Tab</strong></li>
 <li>Snap Pie Menu : <strong>Shift S</strong></li>
+<li>Also found in dropdown menu in the center of the 3D View header bar</li>
 </ul>
 <h3 id="proportional-editing">Proportional Editing</h3>
 <ul>
 <li>Proportional Editing : <strong>O</strong></li>
+<li>Also found in dropdown menu in the center of the 3D View header bar</li>
 </ul>
 <h3 id="mode">Mode</h3>
 <ul>
@@ -680,6 +725,8 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <li>Todo
 <ul>
 <li>Look into keeping the blender alt drag to switch ortho views</li>
+<li>Might use shift x for snap menu</li>
+<li>Might use x for toggle snap</li>
 </ul>
 </li>
 </ul>
@@ -703,6 +750,11 @@ If we press the <strong>X, Y or Z</strong> twice in a row we will contrain the m
 <ul>
 <li><strong>Copy Attributes Menu</strong> (Interface)</li>
 </ul>
+<h1 id="modeling">Modeling</h1>
+<h2 id="modeling-notesnotesblender_modeling">
+<a href="https://www.petfactory.se/notes/blender_modeling/">Modeling Notes</a></h2>
+<p>Blender 
+<a href="https://www.petfactory.se/notes/blender_modeling/">modeling</a> notes.</p>
 		
 		</div>
 	</div>

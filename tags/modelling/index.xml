@@ -17,8 +17,10 @@
       <pubDate>Tue, 23 Jun 2020 16:27:47 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/blender_modeling/</guid>
-      <description>Here I will gather Blender modeling related info. Blender intro notes found here
-Modelling Object Mode  Join two meshes : Ctrl J  via menu Object &amp;gt; Join    Add In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</description>
+      <description>Here I will gather Blender modeling related info.
+Intro Intro Notes Blender intro notes.
+General Gotchas Non-uniform object scale
+If an object has non-uniform scale you can run into errors when doing operation on the mesh level (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube with the &amp;ldquo;object level&amp;rdquo; x-scale of .1 and the verts &amp;ldquo;mesh level&amp;rdquo; are scaled to compensate for this (x-scale 10) the cube looks fine.</description>
     </item>
     
   </channel>

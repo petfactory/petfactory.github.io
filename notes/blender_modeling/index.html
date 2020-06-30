@@ -113,30 +113,46 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#modelling">Modelling</a>
+    <li><a href="#intro">Intro</a>
       <ul>
-        <li><a href="#object-mode">Object Mode</a>
-          <ul>
-            <li><a href="#add">Add</a></li>
-            <li><a href="#delete">Delete</a></li>
-          </ul>
-        </li>
-        <li><a href="#edit-mode">Edit mode</a>
-          <ul>
-            <li><a href="#selection">Selection</a></li>
-            <li><a href="#mesh-edit">Mesh Edit</a></li>
-            <li><a href="#normals">Normals</a></li>
-            <li><a href="#merge">Merge</a></li>
-            <li><a href="#delete-1">Delete</a></li>
-            <li><a href="#misc">Misc</a></li>
-          </ul>
-        </li>
+        <li><a href="#intro-notesnotesblender_notes"><a href="https://www.petfactory.se/notes/blender_notes/">Intro Notes</a></a></li>
       </ul>
     </li>
-    <li><a href="#misc-1">Misc</a>
+    <li><a href="#general">General</a>
       <ul>
-        <li><a href="#ui">UI</a></li>
-        <li><a href="#shortcuts">Shortcuts</a></li>
+        <li><a href="#gotchas">Gotchas</a></li>
+        <li><a href="#misc">Misc</a></li>
+        <li><a href="#modes">Modes</a></li>
+      </ul>
+    </li>
+    <li><a href="#object-mode">Object Mode</a>
+      <ul>
+        <li><a href="#misc-1">Misc</a></li>
+      </ul>
+    </li>
+    <li><a href="#edit-mode">Edit mode</a>
+      <ul>
+        <li><a href="#verts-edges--faces">Verts, Edges &amp; Faces</a>
+          <ul>
+            <li><a href="#selection-modes">Selection Modes</a></li>
+            <li><a href="#menus">Menus</a></li>
+          </ul>
+        </li>
+        <li><a href="#selection">Selection</a></li>
+        <li><a href="#duplicate">Duplicate</a></li>
+        <li><a href="#mesh-edit">Mesh Edit</a>
+          <ul>
+            <li><a href="#extrude">Extrude</a></li>
+            <li><a href="#inset">Inset</a></li>
+            <li><a href="#edge-slide">Edge Slide</a></li>
+            <li><a href="#bevel">Bevel</a></li>
+            <li><a href="#knife--bisect">Knife &amp; Bisect</a></li>
+          </ul>
+        </li>
+        <li><a href="#normals">Normals</a></li>
+        <li><a href="#merge">Merge</a></li>
+        <li><a href="#delete">Delete</a></li>
+        <li><a href="#misc-2">Misc</a></li>
       </ul>
     </li>
     <li><a href="#add-ons">Add-ons</a></li>
@@ -154,56 +170,96 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Blender - Modeling</h1>
-			<p>Here I will gather Blender modeling related info. Blender intro notes found 
-<a href="https://www.petfactory.se/notes/blender_notes/">here</a></p>
-<h1 id="modelling">Modelling</h1>
-<h2 id="object-mode">Object Mode</h2>
+			<p>Here I will gather Blender modeling related info.</p>
+<h1 id="intro">Intro</h1>
+<h2 id="intro-notesnotesblender_notes">
+<a href="https://www.petfactory.se/notes/blender_notes/">Intro Notes</a></h2>
+<p>Blender 
+<a href="https://www.petfactory.se/notes/blender_notes/">intro</a> notes.</p>
+<h1 id="general">General</h1>
+<h2 id="gotchas">Gotchas</h2>
+<p><strong>Non-uniform object scale</strong><br>
+If an object has non-uniform scale you can run into errors when doing operation on the mesh level (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube with the &ldquo;object level&rdquo; x-scale of .1 and the verts &ldquo;mesh level&rdquo; are scaled to compensate for this (x-scale 10) the cube looks fine. But when we for instance bevel an edge we will get weird results. To fix this apply the object level transform (in this case scale) and we will get the result we expect.</p>
+<ul>
+<li>Objct Mode
+<ul>
+<li>Object &gt; Apply &gt; Scale</li>
+<li>You can also choose to apply all transforms to &ldquo;zero out&rdquo; the object level transforms.</li>
+<li>This is similar to Maya &gt; Freeze transform</li>
+</ul>
+</li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li>Repeat last command : <strong>Shift R</strong></li>
+</ul>
+<h2 id="modes">Modes</h2>
+<ul>
+<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
+</ul>
+<h1 id="object-mode">Object Mode</h1>
+<h2 id="misc-1">Misc</h2>
 <ul>
 <li>Join two meshes : <strong>Ctrl J</strong>
 <ul>
 <li>via menu <strong>Object &gt; Join</strong></li>
 </ul>
 </li>
-</ul>
-<h3 id="add">Add</h3>
-<p>In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</p>
+<li>Add : <strong>Shift A</strong>
 <ul>
-<li>Add : <strong>Shift A</strong></li>
+<li>In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</li>
 </ul>
-<h3 id="delete">Delete</h3>
+</li>
+<li>Delete : <strong>Delete key</strong>
 <ul>
-<li><strong>Delete key</strong></li>
 <li><strong>X</strong> : a confirm dialog will appear</li>
 <li>Header Menu &gt; Object &gt; Delete</li>
 </ul>
-<h2 id="edit-mode">Edit mode</h2>
-<ul>
-<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
-</ul>
-<h3 id="selection">Selection</h3>
-<ul>
-<li>Loop Select : <strong>Shift Alt LMB</strong>
-<ul>
-<li>Since I have changed the view control to maya we need to use the shift also</li>
-</ul>
 </li>
-<li>Works for verts, edges &amp; faces</li>
 </ul>
-<p><strong>Selection Modes</strong>
-You can use shift in combination with the numberpad to add multiple selection modes.</p>
+<h1 id="edit-mode">Edit mode</h1>
+<h2 id="verts-edges--faces">Verts, Edges &amp; Faces</h2>
+<h3 id="selection-modes">Selection Modes</h3>
+<p>You can use shift in combination with the numberpad to add multiple selection modes.</p>
 <ul>
 <li><strong>Vertex</strong> select : <strong>1</strong></li>
 <li><strong>Edge</strong> select : <strong>2</strong></li>
 <li><strong>Face</strong> select : <strong>3</strong></li>
 </ul>
-<h3 id="mesh-edit">Mesh Edit</h3>
+<h3 id="menus">Menus</h3>
 <ul>
-<li>Insert Edge Loop and slide: <strong>Ctrl R LMB</strong>
+<li>Vertex Menu : <strong>Ctrl V</strong></li>
+<li>Edge Menu : <strong>Ctrl E</strong></li>
+<li>Face Menu : <strong>Ctrl F</strong></li>
+</ul>
+<h2 id="selection">Selection</h2>
 <ul>
-<li>or from toolbar</li>
-<li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
+<li>Loop Select : <strong>Shift Alt LMB</strong>
+<ul>
+<li>Since I have changed the view control to maya we need to use the shift also</li>
+<li>Works for verts, edges &amp; faces</li>
 </ul>
 </li>
+<li>Ring Select : <strong>Ctrl Alt LMB</strong></li>
+<li>Select Linked (connected components)
+<ul>
+<li>Select Linked under cursor: <strong>L</strong></li>
+<li>Select Linked of seleced : <strong>Ctrl L</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="duplicate">Duplicate</h2>
+<ul>
+<li>Duplicate selected : <strong>Shift D</strong>
+<ul>
+<li>Works for all components across meshes</li>
+</ul>
+</li>
+</ul>
+<h2 id="mesh-edit">Mesh Edit</h2>
+<p>The shortcuts for each of the mesh edit command will be listed below. You can also use the toolbar <strong>T</strong> to use the tool. If you longpress on the tools with a small arrow in the bottom left corner you will get additional tool options.</p>
+<h3 id="extrude">Extrude</h3>
+<ul>
 <li>Extrude : <strong>E</strong> (move along normal)
 <ul>
 <li><strong>Extrude tool</strong> (long press the tool for more options)</li>
@@ -215,9 +271,36 @@ You can use shift in combination with the numberpad to add multiple selection mo
 </li>
 </ul>
 </li>
-<li>Inset : <strong>I</strong> (capital i)</li>
-<li>Bevel :</li>
-<li>knife tool :</li>
+</ul>
+<h3 id="inset">Inset</h3>
+<ul>
+<li>Inset : <strong>I</strong> (capital i)
+<ul>
+<li>Toggle individual / connected : <strong>I</strong></li>
+<li>Extrude : Press and hold <strong>Ctrl</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="edge-slide">Edge Slide</h3>
+<ul>
+<li>Insert Edge Loop and slide: <strong>Ctrl R</strong>
+<ul>
+<li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
+<li>If faces are hidden within the &ldquo;face loop&rdquo; the cut will terminate at the border.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bevel">Bevel</h3>
+<ul>
+<li>Bevel : <strong>Ctrl B</strong></li>
+</ul>
+<h3 id="knife--bisect">Knife &amp; Bisect</h3>
+<ul>
+<li>knife tool : <strong>K</strong>
+<ul>
+<li>hold Ctrl to snap to edge midpoint.</li>
+</ul>
+</li>
 <li>Bisect Tool : (sub-tool of the knife)
 <ul>
 <li>Select faces to cut</li>
@@ -226,18 +309,21 @@ You can use shift in combination with the numberpad to add multiple selection mo
 <li>expand the bisect tool operation panel to edit settings</li>
 </ul>
 </li>
+</ul>
+<p>APA</p>
+<ul>
 <li>Scale to flatten edge
 <ul>
 <li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
 </ul>
 </li>
 </ul>
-<h3 id="normals">Normals</h3>
+<h2 id="normals">Normals</h2>
 <ul>
 <li>Normals Menu : <strong>Alt N</strong></li>
 <li>Recalculate Normals : <strong>Shift N</strong></li>
 </ul>
-<h3 id="merge">Merge</h3>
+<h2 id="merge">Merge</h2>
 <ul>
 <li>Merge by Distance
 <ul>
@@ -250,7 +336,7 @@ You can use shift in combination with the numberpad to add multiple selection mo
 </ul>
 </li>
 </ul>
-<h3 id="delete-1">Delete</h3>
+<h2 id="delete">Delete</h2>
 <p>If we are in edit mode and press delete key we will get a delete popup menu. Below are some of the options. Read more in the 
 <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/delete.html?highlight=delete%20faces#deleting-dissolving" target="_blank" rel="noopener">Delete &amp; Dissolve</a> (docs)</p>
 <ul>
@@ -263,7 +349,7 @@ You can use shift in combination with the numberpad to add multiple selection mo
 <li><strong>Collapse</strong> : Delete the components and merge to a single point.</li>
 <li><strong>Edge Loop</strong> : It will do the opposite of extrusion. Delete faces down to the next loop available.</li>
 </ul>
-<h3 id="misc">Misc</h3>
+<h2 id="misc-2">Misc</h2>
 <ul>
 <li>Join two Vertices : <strong>F</strong></li>
 <li>Separate : <strong>P</strong>
@@ -277,22 +363,6 @@ You can use shift in combination with the numberpad to add multiple selection mo
 <li>Bottom Right side of 3D view</li>
 </ul>
 </li>
-</ul>
-<h1 id="misc-1">Misc</h1>
-<h2 id="ui">UI</h2>
-<ul>
-<li>Scroll long menus: <strong>MMB</strong></li>
-<li>RMB click on parameters
-<ul>
-<li><strong>Assign Shortcut</strong></li>
-<li><strong>Add to Quick Favourites</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="shortcuts">Shortcuts</h2>
-<ul>
-<li>Search : <strong>F3</strong></li>
-<li>File Menu (&amp; prefs) : <strong>F4</strong></li>
 </ul>
 <h1 id="add-ons">Add-ons</h1>
 <ul>
