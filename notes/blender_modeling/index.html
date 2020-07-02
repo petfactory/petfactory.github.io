@@ -127,6 +127,7 @@
     </li>
     <li><a href="#object-mode">Object Mode</a>
       <ul>
+        <li><a href="#add">Add</a></li>
         <li><a href="#misc-1">Misc</a></li>
       </ul>
     </li>
@@ -156,7 +157,13 @@
         <li><a href="#misc-2">Misc</a></li>
       </ul>
     </li>
+    <li><a href="#modifiers">Modifiers</a></li>
     <li><a href="#add-ons">Add-ons</a></li>
+    <li><a href="#how-to">How to</a>
+      <ul>
+        <li><a href="#cap-a-cylinder">Cap a cylinder</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -180,7 +187,7 @@
 <h1 id="general">General</h1>
 <h2 id="gotchas">Gotchas</h2>
 <p><strong>Non-uniform object scale</strong><br>
-If an object has non-uniform scale you can run into errors when doing operation on the mesh level (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube with the &ldquo;object level&rdquo; x-scale of .1 and the verts &ldquo;mesh level&rdquo; are scaled to compensate for this (x-scale 10) the cube looks fine. But when we for instance bevel an edge we will get weird results. To fix this apply the object level transform (in this case scale) and we will get the result we expect.</p>
+If an object has non-uniform scale you can run into errors when doing operation on the mesh (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube object with an x-scale of .1 (in object mode) and the verts (in edit mode) are scaled to compensate for this (x-scale 10) resulting in a cube that looks uniform. But when we, for instance bevel an edge, we will get weird results. To fix this apply the object level transform (in this case scale) and we will get the result we expect.</p>
 <ul>
 <li>Objct Mode
 <ul>
@@ -199,19 +206,25 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <li>Toggle Object/Edit mode : <strong>Tab</strong></li>
 </ul>
 <h1 id="object-mode">Object Mode</h1>
-<h2 id="misc-1">Misc</h2>
+<h2 id="add">Add</h2>
+<p>Note that blender comes with a bunch of add-ons that we can choose to enable. We can open the <strong>Edit &gt; Preferences &gt; Add-ons</strong>. There is a dropdown menu that lets us filter the add-ons by category. If we select <strong>Add Mesh</strong> from the list we can for instance enable <strong>Add Mesh: Extra Objects</strong></p>
 <ul>
-<li>Join two meshes : <strong>Ctrl J</strong>
-<ul>
-<li>via menu <strong>Object &gt; Join</strong></li>
-</ul>
-</li>
 <li>Add : <strong>Shift A</strong>
 <ul>
 <li>In the 3D view header menu there is an add button that will open up the add menu. The item will be added at the 3D Cursor position. Note that if we are in the edit mode the mesh added will be part of the object that we are editing.</li>
 </ul>
 </li>
-<li>Delete : <strong>Delete key</strong>
+</ul>
+<h2 id="misc-1">Misc</h2>
+<ul>
+<li>
+<p>Join two meshes : <strong>Ctrl J</strong></p>
+<ul>
+<li>via menu <strong>Object &gt; Join</strong></li>
+</ul>
+</li>
+<li>
+<p>Delete : <strong>Delete key</strong></p>
 <ul>
 <li><strong>X</strong> : a confirm dialog will appear</li>
 <li>Header Menu &gt; Object &gt; Delete</li>
@@ -242,6 +255,17 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 </li>
 <li>Ring Select : <strong>Ctrl Alt LMB</strong></li>
+<li>Shortest path : <strong>Ctrl LMB</strong>
+<ul>
+<li>Selects the shortest path between the 2 clicked components.</li>
+<li>Works on verts, edges &amp; faces.</li>
+</ul>
+</li>
+<li>&ldquo;Flood select&rdquo; shortest path : <strong>Ctrl Shift LMB</strong>
+<ul>
+<li>It will select all components inside the area defined by the two clicked components.</li>
+</ul>
+</li>
 <li>Select Linked (connected components)
 <ul>
 <li>Select Linked under cursor: <strong>L</strong></li>
@@ -269,8 +293,13 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <p>The shortcuts for each of the mesh edit command will be listed below. You can also use the toolbar <strong>T</strong> to use the tool. If you longpress on the tools with a small arrow in the bottom left corner you will get additional tool options.</p>
 <h3 id="extrude">Extrude</h3>
 <ul>
-<li>Extrude : <strong>E</strong> (move along normal)
+<li>Extrude : <strong>E</strong>
 <ul>
+<li>Extrude Menu : <strong>Alt E</strong>
+<ul>
+<li><strong>Offset Even</strong> : option in the last tool settings (F9) gives the extruded faces uniform thickness.</li>
+</ul>
+</li>
 <li><strong>Extrude tool</strong> (long press the tool for more options)</li>
 <li>Note that if you cancel an extrusion (RMB or pressing esc) the extrude face will still be there. This is handy since with this face still selected and in original position we can press <strong>S</strong> and scale the face in-place.</li>
 <li>Extrude to mouse postion : <strong>Ctrl RMB</strong>
@@ -285,8 +314,10 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <ul>
 <li>Inset : <strong>I</strong> (capital i)
 <ul>
-<li>Toggle individual / connected : <strong>I</strong></li>
-<li>Extrude : Press and hold <strong>Ctrl</strong></li>
+<li>Individual : <strong>I</strong></li>
+<li>Outset : <strong>O</strong></li>
+<li>Boundary : <strong>B</strong></li>
+<li>Depth (extrude) : Press and hold <strong>Ctrl</strong></li>
 </ul>
 </li>
 </ul>
@@ -294,6 +325,12 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <ul>
 <li>Insert Edge Loop and slide: <strong>Ctrl R</strong>
 <ul>
+<li>Even cut : <strong>E</strong>
+<ul>
+<li>This will make the cut have the same shape as the edges marked by the red dot.</li>
+<li>Flip the even cut : <strong>F</strong></li>
+</ul>
+</li>
 <li>Slide Edge Loop again : <strong>GG</strong> (double tap G)</li>
 <li>If faces are hidden within the &ldquo;face loop&rdquo; the cut will terminate at the border.</li>
 <li>Number of cuts
@@ -308,12 +345,21 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <h3 id="bevel">Bevel</h3>
 <ul>
 <li>Bevel : <strong>Ctrl B</strong></li>
+<li>Bevel Vert : <strong>Ctrl Shift B</strong></li>
 </ul>
 <h3 id="knife--bisect">Knife &amp; Bisect</h3>
 <ul>
 <li>knife tool : <strong>K</strong>
 <ul>
-<li>hold Ctrl to snap to edge midpoint.</li>
+<li>Snap to edge midpoint : <strong>Hold CTRL</strong></li>
+<li>straight/45 deg cut (toggle) : <strong>C</strong></li>
+</ul>
+</li>
+<li>Knife Project : <strong>Search</strong>
+<ul>
+<li>Go into edit mode of the mesh that you wish to project to.</li>
+<li>Select the object (in the outliner) that has the edges that you wish to project.</li>
+<li>Press spacebar (search) and start typing &ldquo;knife project&rdquo; select it when it appears.</li>
 </ul>
 </li>
 <li>Bisect Tool : (sub-tool of the knife)
@@ -362,6 +408,8 @@ If we want to merge some verts that are not on top of each other we can select t
 <p>If we are in edit mode and press delete key we will get a delete popup menu. Below are some of the options. Read more in the 
 <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/delete.html?highlight=delete%20faces#deleting-dissolving" target="_blank" rel="noopener">Delete &amp; Dissolve</a> (docs)</p>
 <ul>
+<li>Delete : <strong>Delete key</strong> or <strong>X</strong>
+<ul>
 <li><strong>Vertices</strong> : All vertices in current selection, removing any faces or edges they are connected to.</li>
 <li><strong>Edges</strong> : Any edges in the current selection. Removes any faces that the edge shares with it.</li>
 <li><strong>Face</strong> : The selected faces and &ldquo;internal&rdquo; verts &amp; edges</li>
@@ -370,6 +418,16 @@ If we want to merge some verts that are not on top of each other we can select t
 <li><strong>Disolve</strong> : This will &ldquo;keep&rdquo; the mesh but delete the components.</li>
 <li><strong>Collapse</strong> : Delete the components and merge to a single point.</li>
 <li><strong>Edge Loop</strong> : It will do the opposite of extrusion. Delete faces down to the next loop available.</li>
+</ul>
+</li>
+</ul>
+<p>To dislove the selection witout having the menu pop up:</p>
+<ul>
+<li>Dissolve Selection : <strong>Ctrl X</strong>
+<ul>
+<li>No popup menu</li>
+</ul>
+</li>
 </ul>
 <h2 id="misc-2">Misc</h2>
 <ul>
@@ -393,13 +451,65 @@ If we want to merge some verts that are not on top of each other we can select t
 <li><strong>S</strong> -&gt; <strong>Z</strong> -&gt; <strong>0</strong></li>
 </ul>
 </li>
+<li>Rip : <strong>V</strong>
+<ul>
+<li>Works on verts &amp; adges</li>
+<li>separates the component in the direction it is dragged.</li>
+</ul>
+</li>
+</ul>
+<h1 id="modifiers">Modifiers</h1>
+<ul>
+<li><strong>Subdivision Surface</strong>
+<ul>
+<li>Add subd modifier : <strong>Ctrl 1</strong> (ctrl 0, 1, 2 &hellip;)
+<ul>
+<li>The shortcut only works in object mode.</li>
+<li>Increases the viewport subdivs not the render ones.</li>
+</ul>
+</li>
+<li>The 4th icon (the triangle that looks like the object data icon) is toggling the cage as drawn ontop of the modifier or as the actual lowrez cage.</li>
+<li>Creasing</li>
+</ul>
+</li>
 </ul>
 <h1 id="add-ons">Add-ons</h1>
+<p>Note that blender comes with a bunch of add-ons that we can choose to enable. We can open the <strong>Edit &gt; Preferences &gt; Add-ons</strong>. There is a dropdown menu that lets us filter the add-ons by category.</p>
 <ul>
 <li><strong>LoopTools</strong> (Mesh)</li>
 <li><strong>Copy Attributes Menu</strong> (Interface)</li>
 <li><strong>Bool Tool</strong> (Object)</li>
 <li><strong>F2</strong> (Mesh)</li>
+</ul>
+<h1 id="how-to">How to</h1>
+<h2 id="cap-a-cylinder">Cap a cylinder</h2>
+<ul>
+<li>Manual way
+<ul>
+<li>Select the cap face and inset (I)</li>
+<li>With the &ldquo;inner&rdquo; face selected, <strong>Ctrl F</strong> Face (menu) &gt; <strong>Poke Faces</strong></li>
+<li>Select center vert, <strong>Ctrl Shift B</strong> (bevel vert so that we can get the edge ring in the next step)</li>
+<li>In edge mode <strong>Ctrl Alt LMB</strong> one of the &ldquo;poked edges&quot;go select the edgwe ring</li>
+<li>Menu at the top of the 3D view: <strong>Select &gt; Checker Deselect</strong>
+<ul>
+<li>You can adjsut the parm of this function, but we want to selected every other edge so leace Deselected at 1.</li>
+</ul>
+</li>
+<li>Dissolve the selected edges <strong>Ctrl X</strong></li>
+<li>Select the center face press <strong>M</strong> Merge &gt; At Center</li>
+</ul>
+</li>
+<li>Grid fill
+<ul>
+<li>Select the cap face and inset (I)</li>
+<li>Delete the center face</li>
+<li>select the inner edge <strong>Ctrl F</strong> Face menu &gt; <strong>Grid Fill</strong>
+<ul>
+<li>Optimally tweak the parms of the grid fill</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 		
 		</div>

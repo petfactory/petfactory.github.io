@@ -20,7 +20,7 @@
       <description>Here I will gather Blender modeling related info.
 Intro Intro Notes Blender intro notes.
 General Gotchas Non-uniform object scale
-If an object has non-uniform scale you can run into errors when doing operation on the mesh level (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube with the &amp;ldquo;object level&amp;rdquo; x-scale of .1 and the verts &amp;ldquo;mesh level&amp;rdquo; are scaled to compensate for this (x-scale 10) the cube looks fine.</description>
+If an object has non-uniform scale you can run into errors when doing operation on the mesh (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube object with an x-scale of .1 (in object mode) and the verts (in edit mode) are scaled to compensate for this (x-scale 10) resulting in a cube that looks uniform.</description>
     </item>
     
     <item>
