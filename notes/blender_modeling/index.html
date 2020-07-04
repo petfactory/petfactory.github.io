@@ -139,12 +139,7 @@
     </li>
     <li><a href="#edit-mode">Edit mode</a>
       <ul>
-        <li><a href="#verts-edges--faces">Verts, Edges &amp; Faces</a>
-          <ul>
-            <li><a href="#selection-modes">Selection Modes</a></li>
-            <li><a href="#menus">Menus</a></li>
-          </ul>
-        </li>
+        <li><a href="#verts-edges--faces">Verts, Edges &amp; Faces</a></li>
         <li><a href="#selection">Selection</a></li>
         <li><a href="#duplicate">Duplicate</a></li>
         <li><a href="#mesh-edit">Mesh Edit</a>
@@ -154,31 +149,19 @@
             <li><a href="#loop-cut--slide">Loop Cut &amp; Slide</a></li>
             <li><a href="#bevel">Bevel</a></li>
             <li><a href="#knife--bisect">Knife &amp; Bisect</a></li>
-            <li><a href="#fill--join">Fill &amp; Join</a></li>
           </ul>
         </li>
+        <li><a href="#fill-join--separate">Fill, Join &amp; Separate</a></li>
         <li><a href="#normals">Normals</a></li>
         <li><a href="#merge">Merge</a></li>
         <li><a href="#delete">Delete</a></li>
         <li><a href="#misc-2">Misc</a></li>
       </ul>
     </li>
-    <li><a href="#modifiers">Modifiers</a>
-      <ul>
-        <li><a href="#tips">Tips</a></li>
-        <li><a href="#types">Types</a></li>
-      </ul>
-    </li>
     <li><a href="#add-ons">Add-ons</a></li>
     <li><a href="#how-to">How to</a>
       <ul>
         <li><a href="#cap-a-cylinder">Cap a cylinder</a></li>
-        <li><a href="#tips-on-the-boolean-modifier">Tips on the Boolean modifier</a>
-          <ul>
-            <li><a href="#artifacts">Artifacts</a></li>
-            <li><a href="#misc-3">Misc</a></li>
-          </ul>
-        </li>
       </ul>
     </li>
   </ul>
@@ -209,6 +192,7 @@ If an object has non-uniform scale you can run into errors when doing operation 
 <ul>
 <li>Objct Mode
 <ul>
+<li>Apply menu : <strong>Ctrl A</strong></li>
 <li>Object &gt; Apply &gt; Scale</li>
 <li>You can also choose to apply all transforms to &ldquo;zero out&rdquo; the object level transforms.</li>
 <li>This is similar to Maya &gt; Freeze transform</li>
@@ -251,18 +235,22 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 <h1 id="edit-mode">Edit mode</h1>
 <h2 id="verts-edges--faces">Verts, Edges &amp; Faces</h2>
-<h3 id="selection-modes">Selection Modes</h3>
-<p>You can use shift in combination with the numberpad to add multiple selection modes.</p>
+<ul>
+<li>Selection Modes
 <ul>
 <li><strong>Vertex</strong> select : <strong>1</strong></li>
 <li><strong>Edge</strong> select : <strong>2</strong></li>
 <li><strong>Face</strong> select : <strong>3</strong></li>
+<li>You can use shift in combination with the numberpad to add multiple selection modes.</li>
 </ul>
-<h3 id="menus">Menus</h3>
+</li>
+<li>Menus
 <ul>
 <li>Vertex Menu : <strong>Ctrl V</strong></li>
 <li>Edge Menu : <strong>Ctrl E</strong></li>
 <li>Face Menu : <strong>Ctrl F</strong></li>
+</ul>
+</li>
 </ul>
 <h2 id="selection">Selection</h2>
 <ul>
@@ -418,12 +406,42 @@ If an object has non-uniform scale you can run into errors when doing operation 
 </ul>
 </li>
 </ul>
-<h3 id="fill--join">Fill &amp; Join</h3>
+<h2 id="fill-join--separate">Fill, Join &amp; Separate</h2>
 <ul>
-<li>Fill : <strong>F</strong></li>
+<li>Edit Mode
+<ul>
+<li>Fill : <strong>F</strong>
+<ul>
+<li>Creates a face between the selected components</li>
+<li>If used on to verts of an n-gon the edge created will not be connected to the face (use <strong>Join</strong> for this)</li>
+</ul>
+</li>
+<li>Fill : <strong>Alt F</strong>
+<ul>
+<li>Adds triangles</li>
+<li>Beautify option</li>
+</ul>
+</li>
+<li><strong>Face menu &gt; Grid Fill</strong></li>
 <li>Join : <strong>J</strong>
 <ul>
-<li>todo: look up the difference</li>
+<li>When used in edit mode it will create an edge between two selected verts</li>
+<li>Note that there have to be a face connecting the verts</li>
+<li>The resulting edge will be connected to the face and it will add verts to any preexisting edges that the new edge will cross.</li>
+</ul>
+</li>
+<li>Separate : <strong>P</strong>
+<ul>
+<li>Popup menu with various ways to separate the selected components. (i.e. separate into new object/mesh)</li>
+<li>Or with RMB &gt; Separate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Object Mode</li>
+<li>Join : <strong>J</strong>
+<ul>
+<li>When used on <strong>object</strong> mode the selected mesh will be joined to one object (one mesh)</li>
 </ul>
 </li>
 </ul>
@@ -478,11 +496,6 @@ If we want to merge some verts that are not on top of each other we can select t
 </ul>
 <h2 id="misc-2">Misc</h2>
 <ul>
-<li>Separate : <strong>P</strong>
-<ul>
-<li>or RMB &gt; Separate</li>
-</ul>
-</li>
 <li>Subdivide : <strong>RMB &gt; Subdivide</strong>
 <ul>
 <li>If an edge is selected resulting verts (after the subdivision) will be connected with an edge. This is nice if we subdivide across an edge ring etc.</li>
@@ -502,39 +515,6 @@ If we want to merge some verts that are not on top of each other we can select t
 <ul>
 <li>Works on verts &amp; adges</li>
 <li>separates the component in the direction it is dragged.</li>
-</ul>
-</li>
-</ul>
-<h1 id="modifiers">Modifiers</h1>
-<h2 id="tips">Tips</h2>
-<ul>
-<li>One way to apply all modifiers is to use <strong>Object &gt; Convert to &gt; Mesh from Curve/Meta/Surf/Text</strong></li>
-</ul>
-<h2 id="types">Types</h2>
-<ul>
-<li><strong>Subdivision Surface</strong>
-<ul>
-<li>Add subd modifier : <strong>Ctrl 1</strong> (ctrl 0, 1, 2 &hellip;)
-<ul>
-<li>The shortcut only works in object mode.</li>
-<li>Increases the viewport subdivs not the render ones.</li>
-</ul>
-</li>
-<li>The 4th icon (the triangle that looks like the object data icon) is toggling the cage as drawn ontop of the modifier or as the actual lowrez cage.</li>
-<li><strong>Creasing</strong> : There are severeal ways to edit the crease:
-<ul>
-<li>Sidebar menu (N) &gt; Edge Data &gt; Crease</li>
-<li>Edge menu &gt; Edge Crease</li>
-<li>RMB menu &gt; Edge Crease</li>
-<li>Shift E</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Data Transfer</strong>
-<ul>
-<li>Used to transfer data from one mesh to another</li>
-<li>Can transfer vertex, edge &amp; face data</li>
 </ul>
 </li>
 </ul>
@@ -578,48 +558,6 @@ If we want to merge some verts that are not on top of each other we can select t
 <li>Optimally tweak the parms of the grid fill</li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-<h2 id="tips-on-the-boolean-modifier">Tips on the Boolean modifier</h2>
-<p>Lets say that we have some boolean modifiers and then a bevel modifier how to fix shading artifacts.</p>
-<h3 id="artifacts">Artifacts</h3>
-<ul>
-<li>Select all sharp edges &gt; <strong>Mark Sharp</strong> (edit mode)
-<ul>
-<li>Deselct manually if there are edges you do not want to include</li>
-<li>Note that since we have a bevel modifier the edges will still be &ldquo;smooth&rdquo;</li>
-</ul>
-</li>
-<li>Add a <strong>Weighted Normal Modifier</strong></li>
-<li><strong>Nudge the boolean object</strong> used to make the (boolean) operation, this might fix ome issues.</li>
-<li>Change the <strong>order of boolean operations</strong>, this might also help to reduce the problem.</li>
-<li><strong>Slide/move the edges and merge</strong> them to get rid of the near miss verts that would mess up the bevel modifier
-<ul>
-<li>Note : to be able to edit the geometry we have to collapse the boolean modifier.</li>
-</ul>
-</li>
-<li>Use the <strong>knife tool</strong> to insert some supporting edges.
-<ul>
-<li>This also requires that we collapse the boolean modifiers.</li>
-</ul>
-</li>
-<li>Avoid overlaping meshes</li>
-<li>Avoid flipped normals</li>
-<li>Make sure that there are no double faces, overlapping double verts etc.
-<ul>
-<li>Select all m &gt; by distance</li>
-<li>Use the select by trait to troubleshoot</li>
-</ul>
-</li>
-</ul>
-<h3 id="misc-3">Misc</h3>
-<ul>
-<li>Parenting cutters
-<ul>
-<li>Create an empty object</li>
-<li>Select all the objects/cutters</li>
-<li>Ctrl P &gt; Object (Keep Transform)</li>
 </ul>
 </li>
 </ul>

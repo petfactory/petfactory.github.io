@@ -17,7 +17,7 @@
       <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/blender_modifiers/</guid>
-      <description>Blender Intro Modelling Modifiers </description>
+      <description>Blender Intro Modelling Modifiers General  One way to apply all modifiers is to use Object &amp;gt; Convert to &amp;gt; Mesh from Curve/Meta/Surf/Text  Subdivision Surface  Add subd modifier : Ctrl 1 (ctrl 0, 1, 2 &amp;hellip;)  The shortcut only works in object mode. Increases the viewport subdivs not the render ones.   The 4th icon (the triangle that looks like the object data icon) is toggling the cage as drawn ontop of the modifier or as the actual lowrez cage.</description>
     </item>
     
     <item>
