@@ -6,10 +6,19 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2020 16:27:47 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 16:24:47 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blender - Modifiers</title>
+      <link>https://www.petfactory.se/notes/blender_modifiers/</link>
+      <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/blender_modifiers/</guid>
+      <description>Blender Intro Modelling Modifiers </description>
+    </item>
     
     <item>
       <title>Blender - Modeling</title>
@@ -17,9 +26,7 @@
       <pubDate>Tue, 23 Jun 2020 16:27:47 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/blender_modeling/</guid>
-      <description>Here I will gather Blender modeling related info.
-Intro Intro Notes Blender intro notes.
-General Gotchas Non-uniform object scale
+      <description>Blender Intro Modelling Modifiers General Gotchas Non-uniform object scale
 If an object has non-uniform scale you can run into errors when doing operation on the mesh (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube object with an x-scale of .1 (in object mode) and the verts (in edit mode) are scaled to compensate for this (x-scale 10) resulting in a cube that looks uniform.</description>
     </item>
     
@@ -29,7 +36,7 @@ If an object has non-uniform scale you can run into errors when doing operation 
       <pubDate>Mon, 22 Jun 2020 16:27:47 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/blender_notes/</guid>
-      <description>It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first. Here are some Blender modeling notes.
+      <description>Blender Intro Modelling Modifiers It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first.
 Here is a nice Blender Fundamentals 2.8 playlist
 Regions Every Editor in Blender is divided into Regions (docs). Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</description>
     </item>
