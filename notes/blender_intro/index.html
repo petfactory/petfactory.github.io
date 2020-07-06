@@ -117,7 +117,7 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#intronotesblender_notes"><a href="https://www.petfactory.se/notes/blender_notes/">Intro</a></a></li>
+            <li><a href="#intronotesblender_intro"><a href="https://www.petfactory.se/notes/blender_intro/">Intro</a></a></li>
             <li><a href="#modellingnotesblender_modeling"><a href="https://www.petfactory.se/notes/blender_modeling/">Modelling</a></a></li>
             <li><a href="#modifiersnotesblender_modifiers"><a href="https://www.petfactory.se/notes/blender_modifiers/">Modifiers</a></a></li>
           </ul>
@@ -137,6 +137,16 @@
       </ul>
     </li>
     <li><a href="#properties-editor">Properties Editor</a></li>
+    <li><a href="#general">General</a>
+      <ul>
+        <li><a href="#modes">Modes</a></li>
+        <li><a href="#object-mode">Object Mode</a>
+          <ul>
+            <li><a href="#parenting">Parenting</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#3d-view">3D View</a>
       <ul>
         <li><a href="#display--shading">Display / Shading</a>
@@ -164,10 +174,9 @@
             <li><a href="#numerical">Numerical</a></li>
             <li><a href="#snap">Snap</a></li>
             <li><a href="#transform-orientations">Transform Orientations</a></li>
-            <li><a href="#pivot">Pivot</a></li>
+            <li><a href="#pivot--location">Pivot / Location</a></li>
             <li><a href="#snapping">Snapping</a></li>
             <li><a href="#proportional-editing">Proportional Editing</a></li>
-            <li><a href="#mode">Mode</a></li>
           </ul>
         </li>
       </ul>
@@ -195,8 +204,8 @@
 		<div class="col-md-10 mx-auto">
 			<h1>Blender - Notes</h1>
 			<h1 id="blender">Blender</h1>
-<h3 id="intronotesblender_notes">
-<a href="https://www.petfactory.se/notes/blender_notes/">Intro</a></h3>
+<h3 id="intronotesblender_intro">
+<a href="https://www.petfactory.se/notes/blender_intro/">Intro</a></h3>
 <h3 id="modellingnotesblender_modeling">
 <a href="https://www.petfactory.se/notes/blender_modeling/">Modelling</a></h3>
 <h3 id="modifiersnotesblender_modifiers">
@@ -211,26 +220,24 @@
 <ul>
 <li><strong>Header</strong> : green
 <ul>
-<li>
-<a href="https://www.petfactory.se/notes/blender_notes/#3d-view-header-menu">3D View header Menu</a> (Read more)</li>
 <li><strong>RMB click</strong> on a header reveals a context menu with a couple options.</li>
 <li>A Header is a small horizontal strip, which sits either at the top or bottom of an area. All editors have a header acting as a container for menus and commonly used tools. Menus and buttons will change with the editor type and the selected object and mode. 
 <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html#header" target="_blank" rel="noopener">header</a> (docs)</li>
 </ul>
 </li>
 <li><strong>3D View / Main region</strong> : yellow
-  <!-- * [3D View](/notes/blender_notes/#3d-view) (Read more) -->
+  <!-- * [3D View](/notes/blender_intro/#3d-view) (Read more) -->
 </li>
 <li><strong>Toolbar</strong> : blue
 <ul>
 <li>
-<a href="https://www.petfactory.se/notes/blender_notes/#toolbar">Toolbar</a> (Read more)</li>
+<a href="https://www.petfactory.se/notes/blender_intro/#toolbar">Toolbar</a> (Read more)</li>
 </ul>
 </li>
 <li><strong>Sidebar</strong> : red
 <ul>
 <li>
-<a href="https://www.petfactory.se/notes/blender_notes/#sidebar">Sidebar</a> (Read more)</li>
+<a href="https://www.petfactory.se/notes/blender_intro/#sidebar">Sidebar</a> (Read more)</li>
 </ul>
 </li>
 <li><strong>Adjust Last Operation panel</strong> : pink
@@ -287,7 +294,7 @@ If a collections is deleted the objects inside will not be deleted, they are mov
 </ul>
 </li>
 <li>Scene specfic 
-<a href="https://www.petfactory.se/notes/blender_notes/#scene">(scene)</a>
+<a href="https://www.petfactory.se/notes/blender_intro/#scene">(scene)</a>
 <ul>
 <li><strong>Render Properties</strong>
 <ul>
@@ -302,7 +309,7 @@ If a collections is deleted the objects inside will not be deleted, they are mov
 <li><strong>View Layer Properties</strong>
 <ul>
 <li>i.e. Render layers. Note that this operates on the current 
-<a href="https://www.petfactory.se/notes/blender_notes/#view-layer">(view layer)</a></li>
+<a href="https://www.petfactory.se/notes/blender_intro/#view-layer">(view layer)</a></li>
 </ul>
 </li>
 <li><strong>Scene Properties</strong>
@@ -366,6 +373,32 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 </ul>
 </li>
+</ul>
+<h1 id="general">General</h1>
+<h2 id="modes">Modes</h2>
+<ul>
+<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
+<li>Modes
+<ul>
+<li>Object Mode</li>
+<li>Edit Mode</li>
+<li>Sculpt Mode</li>
+<li>Vertex Paint</li>
+<li>Weight Paint</li>
+<li>Texture Paint</li>
+</ul>
+</li>
+</ul>
+<h2 id="object-mode">Object Mode</h2>
+<h3 id="parenting">Parenting</h3>
+<ul>
+<li>Parent : <strong>Ctrl P</strong>
+<ul>
+<li>You can hide the <strong>relationship lines</strong> from the Vieport Overlays menu.</li>
+</ul>
+</li>
+<li>Unparent : <strong>Alt P</strong></li>
+<li>Or use the Object &gt; Parent menu</li>
 </ul>
 <h1 id="3d-view">3D View</h1>
 <h2 id="display--shading">Display / Shading</h2>
@@ -665,9 +698,10 @@ You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform wa
 </li>
 <li>Also found in dropdown menu in the center of the 3D View header bar</li>
 </ul>
-<h3 id="pivot">Pivot</h3>
+<h3 id="pivot--location">Pivot / Location</h3>
 <ul>
-<li>Pivot Point : <strong>. (period key)</strong>
+<li>
+<p>Pivot Point : <strong>. (period key)</strong></p>
 <ul>
 <li>Bounding Box Center</li>
 <li>3D Cursor</li>
@@ -676,7 +710,16 @@ You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform wa
 <li>Active Element</li>
 </ul>
 </li>
-<li>Also found in dropdown menu in the center of the 3D View header bar</li>
+<li>
+<p>Also found in dropdown menu in the center of the 3D View header bar</p>
+</li>
+<li>
+<p>Tips</p>
+<ul>
+<li>Align the 3D cursor to the midpoint of a selection <strong>Shift S &gt; Cursor to Selected</strong></li>
+<li>Snap the location (pivot) to the 3d Cursor there is a menu in object mode <strong>Object &gt; Set Origin &gt; Origin to 3D Cursor</strong></li>
+</ul>
+</li>
 </ul>
 <h3 id="snapping">Snapping</h3>
 <ul>
@@ -715,20 +758,6 @@ You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform wa
 <ul>
 <li>Proportional Editing : <strong>O</strong></li>
 <li>Also found in dropdown menu in the center of the 3D View header bar</li>
-</ul>
-<h3 id="mode">Mode</h3>
-<ul>
-<li>Toggle Object/Edit mode : <strong>Tab</strong></li>
-<li>Modes
-<ul>
-<li>Object Mode</li>
-<li>Edit Mode</li>
-<li>Sculpt Mode</li>
-<li>Vertex Paint</li>
-<li>Weight Paint</li>
-<li>Texture Paint</li>
-</ul>
-</li>
 </ul>
 <h1 id="preferences">Preferences</h1>
 <p>Here are some of the preferences that I changed to fit my workflow (Maya/Houdini background). I have listed the value of the preference I have set in bold and the default state in parantheses.</p>
@@ -793,8 +822,9 @@ You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform wa
 <li>Todo
 <ul>
 <li>Look into keeping the blender alt drag to switch ortho views</li>
-<li>Might use shift x for snap menu</li>
+<li>Might use alt x for snap menu</li>
 <li>Might use x for toggle snap</li>
+<li>insert &gt; origins</li>
 </ul>
 </li>
 </ul>

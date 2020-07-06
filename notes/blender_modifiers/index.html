@@ -117,21 +117,59 @@
       <ul>
         <li>
           <ul>
-            <li><a href="#intronotesblender_notes"><a href="https://www.petfactory.se/notes/blender_notes/">Intro</a></a></li>
+            <li><a href="#intronotesblender_intro"><a href="https://www.petfactory.se/notes/blender_intro/">Intro</a></a></li>
             <li><a href="#modellingnotesblender_modeling"><a href="https://www.petfactory.se/notes/blender_modeling/">Modelling</a></a></li>
             <li><a href="#modifiersnotesblender_modifiers"><a href="https://www.petfactory.se/notes/blender_modifiers/">Modifiers</a></a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#general">General</a></li>
-    <li><a href="#subdivision-surface">Subdivision Surface</a>
+    <li><a href="#general">General</a>
       <ul>
-        <li><a href="#artifacts">Artifacts</a></li>
+        <li><a href="#vertex-groups">Vertex groups</a>
+          <ul>
+            <li><a href="#example">example</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#data-transfer">Data Transfer</a></li>
-    <li><a href="#boolean">Boolean</a></li>
+    <li><a href="#modifiers">Modifiers</a>
+      <ul>
+        <li><a href="#bevel">Bevel</a></li>
+        <li><a href="#mirror">Mirror</a></li>
+        <li><a href="#solidify">Solidify</a></li>
+        <li><a href="#subdivision-surface">Subdivision Surface</a></li>
+        <li><a href="#smooth">Smooth</a></li>
+        <li><a href="#smooth-corrective">Smooth Corrective</a></li>
+        <li><a href="#shrinkwrap">Shrinkwrap</a>
+          <ul>
+            <li><a href="#example-1">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#surface-deform">Surface Deform</a>
+          <ul>
+            <li><a href="#example-2">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#lattice">Lattice</a>
+          <ul>
+            <li><a href="#example-3">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#curve">Curve</a>
+          <ul>
+            <li><a href="#example-4">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#boolean">Boolean</a>
+          <ul>
+            <li><a href="#artifacts">Artifacts</a></li>
+            <li><a href="#parenting">Parenting</a></li>
+          </ul>
+        </li>
+        <li><a href="#data-transfer">Data Transfer</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -147,17 +185,159 @@
 		<div class="col-md-10 mx-auto">
 			<h1>Blender - Modifiers</h1>
 			<h1 id="blender">Blender</h1>
-<h3 id="intronotesblender_notes">
-<a href="https://www.petfactory.se/notes/blender_notes/">Intro</a></h3>
+<h3 id="intronotesblender_intro">
+<a href="https://www.petfactory.se/notes/blender_intro/">Intro</a></h3>
 <h3 id="modellingnotesblender_modeling">
 <a href="https://www.petfactory.se/notes/blender_modeling/">Modelling</a></h3>
 <h3 id="modifiersnotesblender_modifiers">
 <a href="https://www.petfactory.se/notes/blender_modifiers/">Modifiers</a></h3>
 <h1 id="general">General</h1>
 <ul>
-<li>One way to apply all modifiers is to use <strong>Object &gt; Convert to &gt; Mesh from Curve/Meta/Surf/Text</strong></li>
+<li>Here is the Blender modifier 
+<a href="https://docs.blender.org/manual/en/latest/modeling/modifiers/index.html" target="_blank" rel="noopener">docs</a></li>
+<li><strong>Apply all modifiers</strong>
+<ul>
+<li><strong>Object &gt; Convert to &gt; Mesh from Curve/Meta/Surf/Text</strong></li>
 </ul>
-<h1 id="subdivision-surface">Subdivision Surface</h1>
+</li>
+<li><strong>Copy Modifiers</strong>
+<ul>
+<li><strong>Note</strong> that we need the <strong>Copy Attributes Menu</strong> (Interface) add-on installed</li>
+<li>Select all the objects to copy the modifier to</li>
+<li>Lastly select the object with the modifiers to copy</li>
+<li><strong>Ctrl C &gt; Copy Modifiers</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="vertex-groups">Vertex groups</h2>
+<ul>
+<li>How to create a vertex group
+<ul>
+<li>Go into edit mode of the mesh you want to add the group to</li>
+<li>Click the <strong>Object Data Properties</strong></li>
+<li>Expand the <strong>Vertex Groups</strong> area</li>
+<li>Click the <strong>+</strong> button, and optionally name the group</li>
+<li>Use the <strong>Weights</strong> slider (or enter numerically) to specify the weight to be added.</li>
+<li>Select the verts you wish to add</li>
+<li>Click assign.</li>
+<li>Note that you can add verts with different weights to the same group</li>
+</ul>
+</li>
+</ul>
+<h3 id="example">example</h3>
+<p>Using vertex groups with the smooth modifier. Lets say that we wish to use the smooth modifier on a mesh but we wish to kwpp the edge verts where they are.</p>
+<ul>
+<li>Create a vertex group</li>
+<li>Set the weight to 0 &amp; select the edge verts and apply to the group.
+<ul>
+<li>Tip one easy way to select the edge is to seelct all the faces of the mesh and Select &gt; Select Loops &gt; Select Boundry Loop (found in the select menu)</li>
+</ul>
+</li>
+<li>Ctrl I to invert the selection, set the weight to 1 and apply to the same group.</li>
+<li>Then we can specify this group in the smooth modifier.</li>
+</ul>
+<h1 id="modifiers">Modifiers</h1>
+<h2 id="bevel">Bevel</h2>
+<ul>
+<li><strong>Bevel</strong> : Generate
+<ul>
+<li><strong>Profile</strong>
+<ul>
+<li>Controls how concave/convex the profile will be. If we increase the profile (for a sharper corner) we might resolve some shading issues. 0.7 can be a nice value.</li>
+</ul>
+</li>
+<li><strong>Clamp Overlap</strong>
+<ul>
+<li>With this enabled the bevel will clamp (be terminated) when it hits some edges.</li>
+</ul>
+</li>
+<li><strong>Loop slide</strong>
+<ul>
+<li>Prefers sliding along edges to even width (meaning disabling this option might lead to a more even bevel)</li>
+</ul>
+</li>
+<li><strong>Miter Type</strong>
+<ul>
+<li><strong>Outer</strong>
+<ul>
+<li>Controls the bevel at the intersections between a beveled edge and an edge that is not beveled (i.e. when we use some type of limit method)</li>
+</ul>
+</li>
+<li><strong>Inner</strong>
+<ul>
+<li>Controls the bevel at the intersections between two beveled edges.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Limit Method</strong>
+<ul>
+<li><strong>None</strong>
+<ul>
+<li>The same bevel will be used on the entire mesh</li>
+</ul>
+</li>
+<li><strong>Angle</strong>
+<ul>
+<li>Only bevel the edges whos faces have an abgle greater than specified angle</li>
+</ul>
+</li>
+<li><strong>Weight</strong>
+<ul>
+<li>Use the bevel weight (which is set in edit mode per edge) and is used as a multiplier to the amount of bevel given by the modifier.</li>
+</ul>
+</li>
+<li><strong>Vertex Group</strong>
+<ul>
+<li>Will only apply the bevel on edges that are part of the vertex group specified</li>
+<li>How to create a 
+<a href="https://www.petfactory.se/notes/blender_modifiers/#vertex-group">vertex group</a></li>
+<li>Select the vertex group you created in the previous step</li>
+<li>Seems like you can only use one vertex group per bevel modifier (unlike Houdini)</li>
+<li>It seems like the vertex group weight can only be on or off (everything less than .5 will be considerd off and above .5 as on) i.e. the weight can not be used as a multiplier?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Note</strong>
+<ul>
+<li>You can stack multiple bevel modifiers with different limit method on top of eachother</li>
+<li>Make sure the bevel modifier is the last modifier in the stack (maybe an exception is modifiers that afffect the normal)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="mirror">Mirror</h2>
+<p>The Mirror modifier mirrors a mesh along its local X, Y and/or Z axes, across the Object Origin. It can also use another object as the mirror center, then use that object’s local axes instead of its own.</p>
+<ul>
+<li><strong>Mirror</strong> : Generate
+<ul>
+<li><strong>Mirror Object</strong>
+<ul>
+<li>Lets us specify and object to mirror around</li>
+<li>If the mirror object is rotated, the mirror will also be rotated</li>
+<li>an Empty &gt; Plain Axis is suitable to use as this object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="solidify">Solidify</h2>
+<ul>
+<li><strong>Solidify</strong> : Generate
+<ul>
+<li><strong>Offset</strong>
+<ul>
+<li>Can be used to offset the resulting mesh. An oofset of 0 (default) will solidify equal amount on both directions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="subdivision-surface">Subdivision Surface</h2>
+<ul>
+<li><strong>Subdivision Surface</strong> : Generate
 <ul>
 <li>Add subd modifier : <strong>Ctrl 1</strong> (ctrl 0, 1, 2 &hellip;)
 <ul>
@@ -175,7 +355,196 @@
 </ul>
 </li>
 </ul>
-<h2 id="artifacts">Artifacts</h2>
+</li>
+</ul>
+<h2 id="smooth">Smooth</h2>
+<p>The Smooth modifier smooths a mesh by flattening the angles between adjacent faces in it, just like the Smooth tool in Edit Mode. It smooths without subdividing the mesh, the number of vertices remains the same.
+This modifier is not limited to smoothing, though. Its control factor can be configured outside the (0.0 to 1.0) range (including negative values), which can result in interesting deformations.</p>
+<ul>
+<li><strong>Smooth</strong> : Deform
+<ul>
+<li><strong>Factor</strong>
+<ul>
+<li>Strength of the modifier effect. Should probably keep it between 0-1 (you can exceed this range, but the mesh will explode:)</li>
+</ul>
+</li>
+<li><strong>Repeat</strong>
+<ul>
+<li>Number of iterations I guess</li>
+</ul>
+</li>
+<li><strong>Note</strong>
+<ul>
+<li>It can be good to use vertex groups to limit the effect.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="smooth-corrective">Smooth Corrective</h2>
+<p>The Smooth Corrective modifier is used to reduce highly distorted areas of a mesh by smoothing the deformations. This is typically useful after an Armature modifier, where distortion around joints may be hard to avoid, even with careful weight painting.</p>
+<ul>
+<li><strong>Smooth Corrective</strong> : Deform
+<ul>
+<li><strong>Smooth Type</strong>
+<ul>
+<li><strong>Simple</strong>
+<ul>
+<li>This simply relaxes vertices to their connected edges.</li>
+</ul>
+</li>
+<li><strong>Length Weight</strong>
+<ul>
+<li>Uses a method of relaxing that weights by the distance of surrounding vertices. This option can give higher quality smoothing in some cases, by better preserving the shape of the original form.</li>
+</ul>
+</li>
+<li><strong>Only Smooth</strong>
+<ul>
+<li>This option is included to preview the smoothing used, before correction is applied.</li>
+</ul>
+</li>
+<li><strong>Pin Boundaries</strong>
+<ul>
+<li>Prevent boundary vertices from smoothing.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="shrinkwrap">Shrinkwrap</h2>
+<ul>
+<li><strong>Shrinkwrap</strong> : Deform</li>
+</ul>
+<p>One nice usage of the shrinkwrap modifier is to use a &ldquo;base mesh&rdquo; with smooth clean topology to project a more detailed version on to. We do this to enusre that our edeges, holes and cuts of the detailed mesh are smooth.</p>
+<p>Another usage is to make the edges of an object fit the surface of another.</p>
+<h3 id="example-1">Example</h3>
+<ul>
+<li>Example
+<ul>
+<li>Lets say we have a curved surface and we wish to kitbash some object and we wish the kitbash objects outer edges to blend in with the curved surface.</li>
+<li>Set the origion (pivot) of the kitbash object to the center/bottom of the kitbash object.</li>
+<li>Set up some vertex groups that we can use when we limit the shrinkwrap modifier. The outermost edgr ring of verts should have a weight of 1. Then we gradually lower the weight for each successive vert ring.</li>
+<li>In object mode set the <strong>snap to face</strong> and snap with median &amp; allow <strong>Rotation to Target</strong></li>
+<li>Add the <strong>Shrinkwrap modifer</strong> and set the vertex group to the one created earlier.</li>
+</ul>
+</li>
+</ul>
+<h2 id="surface-deform">Surface Deform</h2>
+<p>The Surface Deform modifier allows an arbitrary mesh surface to control the deformation of another, essentially transferring its motion/deformation. One great use for this is to have a proxy mesh for cloth simulation, which will in turn drive the motion of your final and more detailed mesh, which would otherwise not be suitable for simulation.</p>
+<ul>
+<li><strong>Surface Deform</strong> : Deform</li>
+</ul>
+<h3 id="example-2">Example</h3>
+<p>Lets say that we have a kitbash model that we wish to deform so that the geometry flows along a curved surface.</p>
+<ul>
+<li>Example
+<ul>
+<li>In object mode, add a plane, and position/scale it so that its boundaries &ldquo;fits&rdquo; (maybe slightly extends it?) the mesh that we want to affect. Add some subdivisions to the plane so that it has enough for it to deform well.</li>
+<li>For good measure, <strong>Ctrl A</strong> and apply all transforms.</li>
+<li>We might also want to set the display options of the plane to wireframe.</li>
+<li>Select the kitbash model and <strong>Add Modifier &gt; Surface Deform</strong></li>
+<li>As <strong>Target</strong> we use the plane we created.</li>
+<li>Then we click the <strong>Bind</strong> button (at the bottom of the surface deform modifier)</li>
+<li>Then we parent the kitbash model to the plane.
+<ul>
+<li>Select the kitbash geo</li>
+<li>Shift LMB the plane</li>
+<li>Ctrl P &gt; Object (Keep Transform)</li>
+</ul>
+</li>
+<li>Then we can use the snap, with face &amp; align rotation with target enabled.</li>
+<li>To make the plane wrap the destination geo add a Shrinkwrap modifier to the plane, and set the curved surface as target. This will shrinkwrap the plane to the curved geo which in turn will surface deform the kitbash geo.</li>
+<li>We might want to increase the offset of the shinkwrap modifier to avoid z-fighting with the curve geo.</li>
+</ul>
+</li>
+</ul>
+<h2 id="lattice">Lattice</h2>
+<p>The Lattice modifier deforms the base object according to the shape of a Lattice object. Objects to be deformed can be meshes, curves, surfaces, text, lattices and even particles.</p>
+<ul>
+<li><strong>Lattice</strong> : Deform</li>
+</ul>
+<h3 id="example-3">Example</h3>
+<p>Lets say that we have an object that are translated and rotated and we wish to use a lattice to deform the object.</p>
+<ul>
+<li>Example
+<ul>
+<li>Create a lattice object <strong>Add &gt; Lattice</strong> (in object mode)</li>
+<li>If we need to position/rotate the lattice:
+<ul>
+<li>Select the lattice object then shift select the object to deform</li>
+<li><strong>Ctrl C</strong> &gt; Copy Location</li>
+<li><strong>Ctrl C</strong> &gt; Copy Rotation</li>
+</ul>
+</li>
+<li>Scale the lattice to fit</li>
+<li>In the <strong>Object Data Properties</strong> you will find the divisions of the latttice.</li>
+<li>Apply the Lattice Modifier select the target to be the lattice object we created</li>
+<li>Deform the lattice object as needed (in Edit mode).</li>
+</ul>
+</li>
+</ul>
+<h2 id="curve">Curve</h2>
+<p>The Curve modifier provides a simple but efficient method of deforming a mesh along a curve object.</p>
+<ul>
+<li><strong>Curve</strong> : Deform
+<ul>
+<li><strong>Note</strong>
+<ul>
+<li>This modifier works in global space, in other words, the actual position of the geometry relative to the curve is determinant to get a correct result.</li>
+<li>Typically, you’ll want your object’s origin to be at the center of your geometry (not offset far away from it, you can e.g. Set Origin to Geometry).</li>
+<li>And then you’ll want to start with your object’s origin at the same location as your curve object’s origin (you may use snap tools for that…).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-4">Example</h3>
+<p>Lets create a simple example with a cylinder and a bezier cruve.</p>
+<ul>
+<li>Example
+<ul>
+<li>Scene setup (not part of the modifier)
+<ul>
+<li>Create a cylinder <strong>Shift A</strong> Mesh &gt; Cylinder</li>
+<li>Scale it .05 uniformly <strong>S .05</strong></li>
+<li>Scale it 20 in z <strong>S Z 20</strong></li>
+<li>In edit mode add a lot of loop cuts (along the z axis to allow for deformation)</li>
+<li>Add a bezier curve <strong>Shift A</strong> &gt; Curve &gt; Bezier
+<ul>
+<li>To edit the curve go into edit mode, click one of the verts and <strong>RMB click</strong> to add a curve point. Depending of which point you select you will add the point to the beginning or the end of the curve</li>
+<li>Also note that you can select a curve point and press <strong>Alt S</strong> to edit the size &ldquo;weight&rdquo; of the curve point (it will be used by the curve modifier)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Apply the Modifier
+<ul>
+<li>Select the cylinder geo</li>
+<li><strong>Add Modifier &gt; Curve</strong></li>
+<li>As the <strong>Object</strong> select the bezier curve</li>
+<li>Select <strong>Deformation Axis</strong> (in our case z)</li>
+<li>Lets move our mesh in the local z-axis to move it along the deformation axis
+<ul>
+<li>Select the mesh tap <strong>G ZZ</strong> to move in local z</li>
+<li>Or use the translation gizmo, change transformation orientation to local and move along the local z-axis.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="boolean">Boolean</h2>
+<ul>
+<li><strong>Boolean</strong> : Generate
+<ul>
+<li>42</li>
+</ul>
+</li>
+</ul>
+<h3 id="artifacts">Artifacts</h3>
 <ul>
 <li>Select all sharp edges &gt; <strong>Mark Sharp</strong> (edit mode)
 <ul>
@@ -205,12 +574,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="data-transfer">Data Transfer</h1>
-<ul>
-<li>Used to transfer data from one mesh to another</li>
-<li>Can transfer vertex, edge &amp; face data</li>
-</ul>
-<h1 id="boolean">Boolean</h1>
+<h3 id="parenting">Parenting</h3>
 <ul>
 <li>Parenting cutters
 <ul>
@@ -219,6 +583,11 @@
 <li>Ctrl P &gt; Object (Keep Transform)</li>
 </ul>
 </li>
+</ul>
+<h2 id="data-transfer">Data Transfer</h2>
+<ul>
+<li>Used to transfer data from one mesh to another</li>
+<li>Can transfer vertex, edge &amp; face data</li>
 </ul>
 		
 		</div>

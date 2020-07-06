@@ -1,2 +1,2 @@
-location.hash = "#custom-python-module";
+location.hash = "#shrinkwrap";
 

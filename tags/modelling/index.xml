@@ -17,7 +17,7 @@
       <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/blender_modifiers/</guid>
-      <description>Blender Intro Modelling Modifiers General  One way to apply all modifiers is to use Object &amp;gt; Convert to &amp;gt; Mesh from Curve/Meta/Surf/Text  Subdivision Surface  Add subd modifier : Ctrl 1 (ctrl 0, 1, 2 &amp;hellip;)  The shortcut only works in object mode. Increases the viewport subdivs not the render ones.   The 4th icon (the triangle that looks like the object data icon) is toggling the cage as drawn ontop of the modifier or as the actual lowrez cage.</description>
+      <description>Blender Intro Modelling Modifiers General  Here is the Blender modifier docs Apply all modifiers  Object &amp;gt; Convert to &amp;gt; Mesh from Curve/Meta/Surf/Text   Copy Modifiers  Note that we need the Copy Attributes Menu (Interface) add-on installed Select all the objects to copy the modifier to Lastly select the object with the modifiers to copy Ctrl C &amp;gt; Copy Modifiers    Vertex groups  How to create a vertex group  Go into edit mode of the mesh you want to add the group to Click the Object Data Properties Expand the Vertex Groups area Click the + button, and optionally name the group Use the Weights slider (or enter numerically) to specify the weight to be added.</description>
     </item>
     
     <item>
