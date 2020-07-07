@@ -135,30 +135,45 @@
     </li>
     <li><a href="#modifiers">Modifiers</a>
       <ul>
+        <li><a href="#array">Array</a>
+          <ul>
+            <li><a href="#example-1">Example</a></li>
+          </ul>
+        </li>
         <li><a href="#bevel">Bevel</a></li>
         <li><a href="#mirror">Mirror</a></li>
         <li><a href="#solidify">Solidify</a></li>
+        <li><a href="#simple-deform">Simple Deform</a>
+          <ul>
+            <li><a href="#example-2">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#wireframe">Wireframe</a>
+          <ul>
+            <li><a href="#example-3">Example</a></li>
+          </ul>
+        </li>
         <li><a href="#subdivision-surface">Subdivision Surface</a></li>
         <li><a href="#smooth">Smooth</a></li>
         <li><a href="#smooth-corrective">Smooth Corrective</a></li>
         <li><a href="#shrinkwrap">Shrinkwrap</a>
           <ul>
-            <li><a href="#example-1">Example</a></li>
+            <li><a href="#example-4">Example</a></li>
           </ul>
         </li>
         <li><a href="#surface-deform">Surface Deform</a>
           <ul>
-            <li><a href="#example-2">Example</a></li>
+            <li><a href="#example-5">Example</a></li>
           </ul>
         </li>
         <li><a href="#lattice">Lattice</a>
           <ul>
-            <li><a href="#example-3">Example</a></li>
+            <li><a href="#example-6">Example</a></li>
           </ul>
         </li>
         <li><a href="#curve">Curve</a>
           <ul>
-            <li><a href="#example-4">Example</a></li>
+            <li><a href="#example-7">Example</a></li>
           </ul>
         </li>
         <li><a href="#boolean">Boolean</a>
@@ -237,6 +252,58 @@
 <li>Then we can specify this group in the smooth modifier.</li>
 </ul>
 <h1 id="modifiers">Modifiers</h1>
+<h2 id="array">Array</h2>
+<ul>
+<li><strong>Array</strong> : Generate
+<ul>
+<li><strong>Fit Type</strong>
+<ul>
+<li><strong>Fixed Count</strong></li>
+<li><strong>Fixed Length</strong></li>
+<li><strong>Fit Curve</strong></li>
+</ul>
+</li>
+<li><strong>Constant Offset</strong>
+<ul>
+<li>This offset remains the same even if the object is transformed in edit mode.</li>
+</ul>
+</li>
+<li><strong>Relative Offset</strong>
+<ul>
+<li>The offset is relative to the objects bounding box i.e. if we transform the components in a way that changes the bounding box the offset will change in realtion to this.</li>
+</ul>
+</li>
+<li><strong>Object Offset</strong>
+<ul>
+<li>Add another object transformation to the total offset. Can be used to create a radial array.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="example-1">Example</h3>
+<ul>
+<li>Example
+<ul>
+<li><strong>Radial Array</strong>
+<ul>
+<li>Create a cylinder
+<ul>
+<li>Scale it uniformly to 0.5 <strong>S .5</strong></li>
+<li>Move it in x-axis 2 units <strong>G X 2</strong></li>
+<li>Apply the transformation <strong>Ctrl A &gt; Apply all Transformations</strong>. By doing this we also move the pivot (location) to the world origin. We can also leave the transformation but then we need to set the origin to match the origin to the origin of the object that we will use as object offset.</li>
+</ul>
+</li>
+<li>Create an <strong>Empty &gt; Plain Axes</strong> (this object will be used to control the rotation of the radial array)</li>
+<li>Apple an <strong>Array Modifier</strong> to the cylinder</li>
+<li>Enable <strong>Object Offset</strong> and select the empty object as the object to use.</li>
+<li>Set the <strong>Fit Type</strong> to Fixed Count set the count input to 6</li>
+<li>Rotate the empty object 60 degrees on the z-axis <strong>R Z 60</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="bevel">Bevel</h2>
 <ul>
 <li><strong>Bevel</strong> : Generate
@@ -335,6 +402,52 @@
 </ul>
 </li>
 </ul>
+<h2 id="simple-deform">Simple Deform</h2>
+<p>The Simple Deform modifier allows the application of a simple deformation to an object. Meshes, lattices, curves, surfaces and texts are supported objects. The deformation is either a rotation (Twist, Bend) or a scaling (Taper, Stretch). The amount of deformation is specified by the Deform Angle (rotation) or Deform Factor (scaling).</p>
+<ul>
+<li><strong>Simple Deform</strong> : Deform</li>
+</ul>
+<h3 id="example-2">Example</h3>
+<p>The <strong>Simple Deform</strong> in bend mode can be used together with an <strong>Array</strong> modifier to bend a mesh in 360 degrees to create a round symetrical mesh</p>
+<ul>
+<li>Example
+<ul>
+<li>Use the default cube and add an <strong>Array</strong> modifier to it set the count to what you like.
+<ul>
+<li>If you wish to use a subd modifier layter or wants the edges to merge remove the faces between the array instances so that they can merge to one mesh</li>
+<li>Also make sure that the offset is set so that the array instances are &ldquo;edge to edge&rdquo; if you want them to merge.</li>
+</ul>
+</li>
+<li>Add a <strong>Simple Deform</strong> modifier
+<ul>
+<li>Set the axis to <strong>z</strong></li>
+<li>Set the angle to 360</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wireframe">Wireframe</h2>
+<p>The Wireframe modifier transforms a mesh into a wireframe by iterating over its faces, collecting all edges and turning those edges into four-sided polygons</p>
+<ul>
+<li><strong>Wireframe</strong> : Generate</li>
+</ul>
+<h3 id="example-3">Example</h3>
+<ul>
+<li>Creating a 45 degrees meshed cube
+<ul>
+<li>Using the deafult cube, go into edit mode <strong>RMB &gt; Subdivide</strong> &gt; Number of Cuts : 3</li>
+<li>Add a subdivision modifier (to create a rounded corners and add some addituonal subdivisions
+<ul>
+<li>Set the subdivison to 2</li>
+</ul>
+</li>
+<li>Add a <strong>Decimate</strong> modifier (we will use this to &ldquo;rotate&rdquo; our edges 45 degrees)</li>
+<li>Enable the <strong>Un-Subdivide</strong> radio button and set the <strong>Iterations</strong> to 1</li>
+<li>Add a <strong>Wireframe</strong> modifier and tweak to your needs.</li>
+</ul>
+</li>
+</ul>
 <h2 id="subdivision-surface">Subdivision Surface</h2>
 <ul>
 <li><strong>Subdivision Surface</strong> : Generate
@@ -419,7 +532,7 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 </ul>
 <p>One nice usage of the shrinkwrap modifier is to use a &ldquo;base mesh&rdquo; with smooth clean topology to project a more detailed version on to. We do this to enusre that our edeges, holes and cuts of the detailed mesh are smooth.</p>
 <p>Another usage is to make the edges of an object fit the surface of another.</p>
-<h3 id="example-1">Example</h3>
+<h3 id="example-4">Example</h3>
 <ul>
 <li>Example
 <ul>
@@ -436,7 +549,7 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 <ul>
 <li><strong>Surface Deform</strong> : Deform</li>
 </ul>
-<h3 id="example-2">Example</h3>
+<h3 id="example-5">Example</h3>
 <p>Lets say that we have a kitbash model that we wish to deform so that the geometry flows along a curved surface.</p>
 <ul>
 <li>Example
@@ -465,7 +578,7 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 <ul>
 <li><strong>Lattice</strong> : Deform</li>
 </ul>
-<h3 id="example-3">Example</h3>
+<h3 id="example-6">Example</h3>
 <p>Lets say that we have an object that are translated and rotated and we wish to use a lattice to deform the object.</p>
 <ul>
 <li>Example
@@ -500,7 +613,7 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 </ul>
 </li>
 </ul>
-<h3 id="example-4">Example</h3>
+<h3 id="example-7">Example</h3>
 <p>Lets create a simple example with a cylinder and a bezier cruve.</p>
 <ul>
 <li>Example
@@ -514,7 +627,8 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 <li>Add a bezier curve <strong>Shift A</strong> &gt; Curve &gt; Bezier
 <ul>
 <li>To edit the curve go into edit mode, click one of the verts and <strong>RMB click</strong> to add a curve point. Depending of which point you select you will add the point to the beginning or the end of the curve</li>
-<li>Also note that you can select a curve point and press <strong>Alt S</strong> to edit the size &ldquo;weight&rdquo; of the curve point (it will be used by the curve modifier)</li>
+<li>Also note that you can select a curve point and press <strong>Alt S</strong> to edit the size radius of the curve point (it will be used by the curve modifier) You can find this attribute in the <strong>Sidebar</strong> &gt; Items (tab) &gt; Transform &gt; <strong>Radius</strong>. Here you will also find the <strong>Tilt</strong> attribute.</li>
+<li>Also note that in the <strong>Object Data Properties</strong> of the curve object you will find the Resolution Preview U (This controls how much the curve will be segemnted in the viewport)</li>
 </ul>
 </li>
 </ul>
