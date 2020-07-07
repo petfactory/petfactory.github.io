@@ -182,7 +182,11 @@
             <li><a href="#parenting">Parenting</a></li>
           </ul>
         </li>
-        <li><a href="#data-transfer">Data Transfer</a></li>
+        <li><a href="#data-transfer">Data Transfer</a>
+          <ul>
+            <li><a href="#example-8">Example</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -652,11 +656,7 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 </ul>
 <h2 id="boolean">Boolean</h2>
 <ul>
-<li><strong>Boolean</strong> : Generate
-<ul>
-<li>42</li>
-</ul>
-</li>
+<li><strong>Boolean</strong> : Generate</li>
 </ul>
 <h3 id="artifacts">Artifacts</h3>
 <ul>
@@ -699,9 +699,30 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 </li>
 </ul>
 <h2 id="data-transfer">Data Transfer</h2>
+<p>The Data Transfer modifier transfers several types of data from one mesh to another. Data types include vertex groups, UV maps, vertex colors, custom normals…</p>
 <ul>
-<li>Used to transfer data from one mesh to another</li>
-<li>Can transfer vertex, edge &amp; face data</li>
+<li><strong>Data Transfer</strong> : Modify</li>
+</ul>
+<h3 id="example-8">Example</h3>
+<p>One way to use this modifier is to transfer normals from one surface to another. One example of this is if we create some boolean cuts and get weird normals we can use the original surface (before we do any cuts) and transfer the normals from this.</p>
+<ul>
+<li>Transfer Normals
+<ul>
+<li>Create one copy of the curved surface (before we do any boolean operations)</li>
+<li>On the curved surface that we have created the boolean cuts select all the faces that we wish to exclude from the data transfer modifier. On the Object Data Properties tab create a vertex group (give it a useful name) make sure that the weight is set to 1 and press assign. (Note that we can have faces selected when we do this it does not haveto be verts)</li>
+<li>Add a <strong>Data Transfer</strong> modifier</li>
+<li>Enable the <strong>Face Cornber Data</strong> check box</li>
+<li>Enable <strong>Custom Normals</strong></li>
+<li>In the <strong>Vertex Group</strong> filed select the vertex group we created eralier and click the icon to the right side (the &ldquo;double arrow&rdquo;) to invert the group.</li>
+</ul>
+</li>
+<li>Transfer Normals &amp; Shrinkwrap
+<ul>
+<li>Lets say that we have curved surface and want to join/integrate some geo to the surface with a nice blend we can use the shrinkwrap modifier and the data transfer modifier together.</li>
+<li>We use the shrinkwrap to project the closest ring of verts of the kitbash geo onto the curved surface. We control which verts that will be shrinkwrapped with verteg groups.</li>
+<li>The data tarnsfer is used like in the previous example to transfer the normals from the curved surface to the outer most parts trhat will be shrinkwrapped to the surface.</li>
+</ul>
+</li>
 </ul>
 		
 		</div>

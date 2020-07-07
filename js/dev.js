@@ -1,2 +1,2 @@
-location.hash = "#shrinkwrap";
+location.hash = "#data-transfer";
 
