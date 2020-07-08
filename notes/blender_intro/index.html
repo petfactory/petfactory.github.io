@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Blender - Notes</title>
+        <title>Blender - Intro</title>
 
     </head>
 
@@ -151,6 +151,7 @@
       <ul>
         <li><a href="#display--shading">Display / Shading</a>
           <ul>
+            <li><a href="#normals">Normals</a></li>
             <li><a href="#smooth--flat">Smooth / Flat</a></li>
           </ul>
         </li>
@@ -202,7 +203,7 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Blender - Notes</h1>
+			<h1>Blender - Intro</h1>
 			<h1 id="blender">Blender</h1>
 <h3 id="intronotesblender_intro">
 <a href="https://www.petfactory.se/notes/blender_intro/">Intro</a></h3>
@@ -403,6 +404,11 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 <h1 id="3d-view">3D View</h1>
 <h2 id="display--shading">Display / Shading</h2>
 <ul>
+<li><strong>Backface culling</strong>
+<ul>
+<li>This is enabled through the <strong>Shading menu</strong> top right side of the 3D view.</li>
+</ul>
+</li>
 <li><strong>Wireframe on shaded</strong>
 <ul>
 <li>Viewport overlays menu (right hand side of the 3D view header)
@@ -429,18 +435,53 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </ul>
 </li>
 </ul>
+<h3 id="normals">Normals</h3>
+<ul>
+<li><strong>Display normals</strong>
+<ul>
+<li>In the bottom of the Vieport Overlays menu we find options for displaying normals. We can set the size ond choose to display:
+<ul>
+<li>Vertex normals</li>
+<li>Split normals (vertex per face normals)
+<ul>
+<li>If the mesh is set top smooth shaded and we display our split normals our vertex normals are all pointing in the same direction so it looks like we have only one normal but in fact we have a normal per vertex. If we set the shading to hard we will clearly se that we have a normal per vertex.</li>
+</ul>
+</li>
+<li>Normals (face normals)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Flip Normals</strong>
+<ul>
+<li><strong>Alt N</strong> &gt; Flip</li>
+</ul>
+</li>
+<li><strong>Recalculate Normals</strong> : Conforms the normals of the selected faces so that tey all points in either outside or inside of the mesh.
+<ul>
+<li><strong>Alt N</strong> &gt; Recalculate Outside</li>
+<li><strong>Alt N</strong> &gt; Recalculate Inside</li>
+</ul>
+</li>
+</ul>
 <h3 id="smooth--flat">Smooth / Flat</h3>
-<p>You can choose to shade smooth or flat both in object- and edit mode.
-Here is a general workflow.</p>
+<p>You can choose to shade <strong>smooth</strong> or <strong>flat</strong> both in object- and edit mode. <strong>Note</strong> if we select a few faces in edit mode and set to smooth shaded, then we go out to object mode select the mesh and set to flat shaded it will set hard shaded on all of the faces in the mesh (i.e. &ldquo;overwrite what we set in edit mode&rdquo;)</p>
+<p>Here is an example of how we can use auto-smooth and sharp edges to control the behaviour of our normals.</p>
 <ul>
-<li>In <strong>object mode</strong>, select the mesh and RMB menu &gt; <strong>Shade Smooth</strong></li>
-<li>With the mesh selected in the properties editor &gt; Object Data Properties &gt; Normals &gt; <strong>Auto Smoth : On</strong></li>
-<li>With the <strong>auto smooth angle</strong> you can control whixh faces is shaded as smooth or flat.</li>
-<li>For more control you can, in edit mode, select edges and RMB &gt; <strong>Mark Sharp</strong></li>
+<li>Create a cube</li>
+<li>With the cube selected in the properties editor &gt; Object Data Properties &gt; Normals &gt; <strong>Auto Smoth : On</strong> and set the angle to 180.</li>
+<li>In object mode with the cube selected <strong>RMB &gt; Shade Smooth</strong></li>
+<li>Go in edit mode and display the <strong>split normals</strong> (Viewport overlays menu)</li>
+<li>We clearly see that our per face vertex normals are averaged together and all points in the same direction.</li>
+<li>Drag the <strong>Auto Smooth Angle</strong> below 90 degress and you can clearly see when the normals stop avereging and the mesh faces shades as flat.</li>
+<li>Turn the angle back up to 180.</li>
+<li>Select some of the edges and <strong>RMB &gt; Mark Sharp</strong> and you will notice the same effect. This way we can explicitly control which edges should render as sharp vs smooth.</li>
+<li><strong>Tips</strong>
+<ul>
 <li>You can toggle the display of the sharp edges in the vieport overlays menu</li>
-<li>In edit mode we can select the sharp edges and control the selection based on an angle.
-<ul>
+<li>In edit mode we can select edges based on the angle between its faces.</li>
 <li>Select &gt; <strong>Select Sharp Edges</strong> (the sharpness controls which edges are considered sharp)</li>
+<li>Then we can set mark the selected edges as sharp.</li>
 </ul>
 </li>
 </ul>
@@ -618,6 +659,11 @@ Here is a general workflow.</p>
 <li>Select by trait
 <ul>
 <li>Non Manifold (vertex &amp; edge mode)</li>
+<li>Loose Geometry
+<ul>
+<li>Is a good to tool to use when cleaning up loose edges and verts.</li>
+</ul>
+</li>
 <li>&hellip;</li>
 </ul>
 </li>
