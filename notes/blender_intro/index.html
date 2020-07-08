@@ -149,6 +149,8 @@
     </li>
     <li><a href="#3d-view">3D View</a>
       <ul>
+        <li><a href="#contextual-views">Contextual Views</a></li>
+        <li><a href="#orthographic">Orthographic</a></li>
         <li><a href="#display--shading">Display / Shading</a>
           <ul>
             <li><a href="#normals">Normals</a></li>
@@ -170,7 +172,7 @@
         </li>
         <li><a href="#transformation">Transformation</a>
           <ul>
-            <li><a href="#pivot--parents">Pivot &amp; parents</a></li>
+            <li><a href="#options">Options</a></li>
             <li><a href="#constrain-to-axis">Constrain to Axis</a></li>
             <li><a href="#numerical">Numerical</a></li>
             <li><a href="#snap">Snap</a></li>
@@ -254,9 +256,20 @@
 <li>To change the editor type LMB click the top left corner of a panel and select an editor from the popup widget.</li>
 </ul>
 </li>
-<li><strong>Split/Join/Swap</strong>
+<li><strong>Create new Area</strong>
 <ul>
-<li>RMB click the thin border between to areas to get options to do this.</li>
+<li>Drag in the upper right corner of an area to create a new one</li>
+<li>Hover the mouse over the border of an area and when the mouse pointer becomes 2 arrows RMB &gt; Horixontal or Vertical split.</li>
+</ul>
+</li>
+<li><strong>Swap Area</strong>
+<ul>
+<li>Hover the mouse over the border of two areas RMB &gt; Swap</li>
+</ul>
+</li>
+<li><strong>Join Area</strong>
+<ul>
+<li>Hover the mouse over the border of two area RMB &gt; Join and drag the mouse in the direction to join.</li>
 </ul>
 </li>
 <li><strong>Maximize Panel</strong>
@@ -393,15 +406,101 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 <h2 id="object-mode">Object Mode</h2>
 <h3 id="parenting">Parenting</h3>
 <ul>
-<li>Parent : <strong>Ctrl P</strong>
+<li>
+<p>Parent : <strong>Ctrl P</strong></p>
 <ul>
+<li><strong>Object</strong>
+<ul>
+<li>Object Parent is the most general form of parenting that Blender supports. If will take selected objects and make the last selected object the Parent Object, while all other selected objects will be Child Objects.</li>
+</ul>
+</li>
+<li><strong>Object (Keep Transform)</strong>
+<ul>
+<li>Works in a very similar way to Object Parent the major difference is in whether the Child Objects will remember any previous transformations applied to them from the previous Parent Object.</li>
+<li>The child object will keep its transform in relation to the parent</li>
+<li>You can remove the child transform offset by: <strong>Alt P &gt; Clear Parent Inverse</strong></li>
+</ul>
+</li>
+<li><strong>Object (Without Inverse)</strong>
+<ul>
+<li>Parents the objects but does not keep the child object transform.</li>
+</ul>
+</li>
 <li>You can hide the <strong>relationship lines</strong> from the Vieport Overlays menu.</li>
 </ul>
 </li>
-<li>Unparent : <strong>Alt P</strong></li>
-<li>Or use the Object &gt; Parent menu</li>
+<li>
+<p>Unparent : <strong>Alt P</strong></p>
+</li>
+<li>
+<p>Or use the Object &gt; Parent menu</p>
+</li>
 </ul>
 <h1 id="3d-view">3D View</h1>
+<h2 id="contextual-views">Contextual Views</h2>
+<p>The 3D Viewport has several 
+<a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/views.html#contextual-views" target="_blank" rel="noopener">&ldquo;contextual view&rdquo;</a> modes that can be set for a particular 3D Viewport. These views can change how the overall 3D Viewport looks or how you interact with objects.</p>
+<ul>
+<li><strong>Global view</strong>
+<ul>
+<li>Shows all of the 3D objects in the scene.</li>
+</ul>
+</li>
+<li><strong>Local view</strong>
+<ul>
+<li>Toggle Local View: <strong>/</strong> (division key numpad)</li>
+<li>Remove selected object from local view: <strong>M</strong></li>
+<li>Isolates the selected object or objects, so that they are the only ones visible in the viewport. This is useful for working on objects that are obscured by other ones, or to speed up the viewport performance in heavy scenes.</li>
+<li>Also accesible through View Menu &gt; Local View &gt; Toggle Local View</li>
+</ul>
+</li>
+<li><strong>Quad View</strong>
+<ul>
+<li>Toggle Quad View : <strong>Ctrl Alt Q</strong></li>
+<li>Split the 3D Viewport into four views: Three Orthographic “side views” and one Camera/User View.</li>
+<li>When Quad View is enabled the options below will be visible in the <strong>Sidebar &gt; View &gt; Quad View</strong>
+<ul>
+<li>Lock
+<ul>
+<li>If you want to be able to rotate each view, you can uncheck the Locked option.</li>
+</ul>
+</li>
+<li>Box
+<ul>
+<li>Syncs the view position between side views. (Requires Lock to be enabled.)</li>
+</ul>
+</li>
+<li>Clip
+<ul>
+<li>Clip objects based on what is visible in other side views. (Requires Box to be enabled.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="orthographic">Orthographic</h2>
+<p>Below is the shortcuts for setting the orthographic views. Note that they are set with the <strong>numpad</strong></p>
+<ul>
+<li>Orthohgraphic
+<ul>
+<li>Front - Back : <strong>1</strong> - <strong>Ctrl 1</strong></li>
+<li>Top - Bottom : <strong>7</strong> - <strong>Ctrl 7</strong></li>
+<li>Right - Left : <strong>3</strong> - <strong>Ctrl 3</strong></li>
+</ul>
+</li>
+</ul>
+<p>If we hold shift and use the same shortcuts we can align the view with the active.</p>
+<ul>
+<li>Align view to active
+<ul>
+<li>Front - Back : <strong>Shift 1</strong> - <strong>Shift Ctrl 1</strong></li>
+<li>Top - Bottom : <strong>Shift 7</strong> - <strong>Shift Ctrl 7</strong></li>
+<li>Right - Left : <strong>Shift 3</strong> - <strong>Shift Ctrl 3</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="display--shading">Display / Shading</h2>
 <ul>
 <li><strong>Backface culling</strong>
@@ -669,14 +768,14 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 </ul>
 <h2 id="transformation">Transformation</h2>
-<h3 id="pivot--parents">Pivot &amp; parents</h3>
+<h3 id="options">Options</h3>
 <p>The affect only menu is located in the right hand side of the 3D View header and in the sidebar &gt; Tool &gt; Options &gt; Transform</p>
 <ul>
 <li>Affect only
 <ul>
-<li>Origins : <strong>pivots</strong></li>
-<li>Locations : <strong>only translate</strong></li>
-<li>Parents : <strong>move parent, leave child stationary</strong></li>
+<li>Origins : <strong>Pivots</strong></li>
+<li>Locations : <strong>Move, rotate &amp; scale the location only</strong>. This will affect only where the location is but leave the rotation and scale of the object as it is. This means that if we scale up using this the objects will get further appart but keep the same scale.</li>
+<li>Parents : <strong>Move parent, leave child stationary</strong></li>
 </ul>
 </li>
 </ul>
@@ -743,24 +842,30 @@ You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform wa
 </ul>
 </li>
 <li>Also found in dropdown menu in the center of the 3D View header bar</li>
+<li><strong>Custom Orientation</strong>
+<ul>
+<li>We can add a custom orientation by selecting a <strong>component</strong> (vertex, edge &amp; face) or an <strong>object</strong>  and in the Transform orientation menu press the <strong>+</strong> button.</li>
+</ul>
+</li>
 </ul>
 <h3 id="pivot--location">Pivot / Location</h3>
 <ul>
-<li>
-<p>Pivot Point : <strong>. (period key)</strong></p>
+<li>Pivot Point Menu: <strong>. (period key)</strong>
 <ul>
 <li>Bounding Box Center</li>
 <li>3D Cursor</li>
 <li>Individual Origins</li>
 <li>Media Point</li>
 <li>Active Element</li>
+<li>Also found in dropdown menu in the center of the 3D View header bar</li>
 </ul>
 </li>
-<li>
-<p>Also found in dropdown menu in the center of the 3D View header bar</p>
+<li><strong>Note</strong>
+<ul>
+<li>If we enable <strong>Affect Only Locations</strong> and use a pivot options other then invividual origins we will scale, translate and rotate the origin itself without affecting the rotation or the scale of the object itself.</li>
+</ul>
 </li>
-<li>
-<p>Tips</p>
+<li>Tips
 <ul>
 <li>Align the 3D cursor to the midpoint of a selection <strong>Shift S &gt; Cursor to Selected</strong></li>
 <li>Snap the location (pivot) to the 3d Cursor there is a menu in object mode <strong>Object &gt; Set Origin &gt; Origin to 3D Cursor</strong></li>
