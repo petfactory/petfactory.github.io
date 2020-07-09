@@ -151,8 +151,11 @@
       <ul>
         <li><a href="#contextual-views">Contextual Views</a></li>
         <li><a href="#orthographic">Orthographic</a></li>
+        <li><a href="#camera">Camera</a></li>
         <li><a href="#display--shading">Display / Shading</a>
           <ul>
+            <li><a href="#viewport-shading">Viewport Shading</a></li>
+            <li><a href="#hide">Hide</a></li>
             <li><a href="#normals">Normals</a></li>
             <li><a href="#smooth--flat">Smooth / Flat</a></li>
           </ul>
@@ -501,6 +504,19 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </ul>
 </li>
 </ul>
+<h2 id="camera">Camera</h2>
+<p>We can create our own camera and switch that to an orthographic camera if we want.</p>
+<ul>
+<li>Custom Ortho Camera
+<ul>
+<li>In object mode Shift A &gt; Camera</li>
+<li>Select the camera and go to the <strong>Object data Properties</strong> tab</li>
+<li>Set the <strong>Type &gt; Orthographic</strong></li>
+<li>Change the orthographic scale to change what is visible in the view.</li>
+<li>Rotate/move as needed</li>
+</ul>
+</li>
+</ul>
 <h2 id="display--shading">Display / Shading</h2>
 <ul>
 <li><strong>Backface culling</strong>
@@ -525,6 +541,29 @@ If a mesh is selected: vertex, normals, uv attrs. If a camera is selected camera
 </li>
 <li>Toggle <strong>Wireframe / Shaded mode</strong> : <strong>Shift Z</strong></li>
 <li>Toggle <strong>Overlay</strong> : <strong>Shift Alt Z</strong></li>
+</ul>
+<h3 id="viewport-shading">Viewport Shading</h3>
+<p>The 
+<a href="https://docs.blender.org/manual/en/latest/render/workbench/index.html" target="_blank" rel="noopener">Workbench</a> engine is a render engine optimized for fast rendering during modeling and animation preview. It is not intended to be a render engine that will render final images for a project. Its primary task is to display a scene in the 3D Viewport when it is being worked on.</p>
+<p>The Workbench engine does not use the lights of the scene. The lighting conditions that will be used can be set in the Lighting panel.</p>
+<ul>
+<li>Lighting
+<strong>Flat</strong>
+* Do not calculate any lighting. The base color of the scene will be rendered.
+<strong>Studio</strong>
+* Use studio lights to light the objects. The studio lights can be configured in the preferences. Studio lights can follow the camera or be fixed. When fixed the angle of the lights can be adjusted.
+* World Space Lighting
+* Uses world space lighting so lights do not follow the view camera.
+* Rotation
+* The rotation of the studio lights on the Z axis.
+<strong>MatCap</strong>
+* Use a material capture to light the objects in the scene.
+* Custom MatCaps can be loaded in the preferences.
+* MatCaps can be flipped horizontally by clicking the Flip MatCap button.
+* Click on the &ldquo;shader ball&rdquo; to change matcap.</li>
+</ul>
+<h3 id="hide">Hide</h3>
+<ul>
 <li><strong>Hide</strong>
 <ul>
 <li>Hide Selection : <strong>H</strong></li>
