@@ -188,6 +188,8 @@
             <li><a href="#example-9">Example</a></li>
           </ul>
         </li>
+        <li><a href="#weighted-normal">Weighted Normal</a></li>
+        <li><a href="#weld">Weld</a></li>
       </ul>
     </li>
   </ul>
@@ -314,7 +316,7 @@
 <li><strong>Bevel</strong> : Generate
 <ul>
 <li>
-<p><strong>Offset</strong> : Bevel amount</p>
+<p><strong>Bevel Amount</strong></p>
 <ul>
 <li>Offset
 <ul>
@@ -348,7 +350,8 @@
 <p><strong>Loop slide</strong> : Prefers sliding along edges to even width (meaning disabling this option might lead to a more even bevel)</p>
 </li>
 <li>
-<p><strong>Harden Normals</strong> : When enabled, the per-vertex face normals of the bevel faces are adjusted to match the surrounding faces, and the normals of the surrounding faces are not affected. This will keep the surrounding faces flat (if they were before), with the bevel faces shading smoothly into them. For this effect to work, you need custom normals data, which requires Auto Smooth option to be enabled (see Normals).</p>
+<p><strong>Harden Normals</strong> : When enabled, the per-vertex face normals of the bevel faces are adjusted to match the surrounding faces, and the normals of the surrounding faces are not affected. This will keep the surrounding faces flat (if they were before), with the bevel faces shading smoothly into them. For this effect to work, you need custom normals data, which requires Auto Smooth option to be enabled (see Normals).
+<strong>Note</strong> quite similar to weighted normals, but with less options.</p>
 </li>
 <li>
 <p><strong>Miter Type</strong></p>
@@ -463,6 +466,11 @@
 <li>Set the angle to 360</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><strong>Note</strong>
+<ul>
+<li>If we bend a shape 360 we might want to weld the endpoints, to do this procedurally we can use a <strong>weld</strong> modifier.</li>
 </ul>
 </li>
 </ul>
@@ -781,6 +789,52 @@ This modifier is not limited to smoothing, though. Its control factor can be con
 <li>Lets say that we have curved surface and want to join/integrate some geo to the surface with a nice blend we can use the shrinkwrap modifier and the data transfer modifier together.</li>
 <li>We use the shrinkwrap to project the closest ring of verts of the kitbash geo onto the curved surface. We control which verts that will be shrinkwrapped with verteg groups.</li>
 <li>The data tarnsfer is used like in the previous example to transfer the normals from the curved surface to the outer most parts trhat will be shrinkwrapped to the surface.</li>
+</ul>
+</li>
+</ul>
+<h2 id="weighted-normal">Weighted Normal</h2>
+<p>Changes the custom normals of a mesh, using various selectable methods. This can be useful to make some faces appear very flat during shading, among other effects. See Normals for a description of normals and custom normals.</p>
+<p><strong>Note</strong> this modifier requires custom normals to be enabled, which can be done by enabling Auto Smooth in the Properties &gt; Object Data &gt; Normals.</p>
+<ul>
+<li><strong>Weighted Normal</strong> : Modify
+<ul>
+<li><strong>Weighting Mode</strong> : The normals around a vertex will be combined to create a custom (per face corner) normal using various weights for each. The Weighting Mode defines how to compute the weights.
+<ul>
+<li><strong>Face Area</strong> : Weight according to the area of the face that the normal originates. A larger area means that the normal from that face will get a higher weight in final result.</li>
+<li><strong>Corner Angle</strong> : Weight according to the angle each face forms at the vertex. This is the method Blender uses by default when combining face normals to compute a vertex one.</li>
+<li><strong>Face Area and Angle</strong> : Weights are obtained by multiplying the face area and corner angle ones.</li>
+</ul>
+</li>
+<li><strong>Weight</strong> : Determines how strongly the weights are biased according to the face areas and/or corner angles, a bit like a contrast setting for a picture.<br>
+A value of 50 means all faces are weighted uniformly.<br>
+More than 50 means faces with higher area or angles are given even more weight (more “contrast”).<br>
+Less than 50 means faces with higher area or angles are given lesser weights (less “contrast”).</li>
+<li><strong>Threshold</strong> : A weight-rounding threshold which means that, if two angles or areas differ by less than that threshold, they will get equal weights.
+<ul>
+<li><strong>Note</strong> we can use the threshold to get some normal averaging to smooth out normals in some areas where the normals lookas to flat/hard. By raising the threshold we can start to introduce som averaging.</li>
+</ul>
+</li>
+<li><strong>Face Influence</strong> : Use face weights (weak, medium, or strong) as assigned by the Set Strength tool or by the <strong>Set Strength mode of a Bevel modifier</strong>.
+<ul>
+<li><strong>Note</strong> the face influence can be used with the face strength set by a bevel Modifier (as stated above)</li>
+<li>We can also select a face Alt N &gt; Normals &gt; Set Face Strength</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>For example, if three faces meet at a vertex and have the face weights weak, medium, and strong, then only the normal associated with the strong face will be used to set the final result.</p>
+<h2 id="weld">Weld</h2>
+<p>The Weld modifier looks for groups of vertices within a threshold and merges them, collapsing the surrounding geometry.</p>
+<ul>
+<li><strong>Weld</strong> : Generate
+<ul>
+<li>
+<p><strong>Distance</strong> : Maximum distance that the vertices must have each other to be merged.</p>
+</li>
+<li>
+<p><strong>Duplicate Limit</strong> : For a better performance, limits the number of elements found per vertex. 0 makes it infinite.</p>
+</li>
 </ul>
 </li>
 </ul>
