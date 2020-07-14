@@ -155,6 +155,12 @@
         <li><a href="#normals">Normals</a></li>
         <li><a href="#merge">Merge</a></li>
         <li><a href="#delete">Delete</a></li>
+        <li><a href="#symmetry">Symmetry</a>
+          <ul>
+            <li><a href="#mirror-vertices">Mirror vertices</a></li>
+            <li><a href="#symetrize">Symetrize</a></li>
+          </ul>
+        </li>
         <li><a href="#misc-2">Misc</a></li>
       </ul>
     </li>
@@ -505,6 +511,55 @@ If we want to merge some verts that are not on top of each other we can select t
 </ul>
 </li>
 </ul>
+<h2 id="symmetry">Symmetry</h2>
+<h3 id="mirror-vertices">Mirror vertices</h3>
+<ul>
+<li><strong>Mirror Vertices</strong>
+<ul>
+<li><strong>RMB &gt; Mirror Vertices</strong> (edit mode)
+<ul>
+<li><strong>Interactive</strong> Mirror : Ctrl M
+<ul>
+<li>Mirror options hotkeys at the bottom of 3D View</li>
+</ul>
+</li>
+<li><strong>Global</strong>
+<ul>
+<li>X, Y &amp; Z</li>
+</ul>
+</li>
+<li><strong>Local</strong>
+<ul>
+<li>X, Y &amp; Z</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Here is a quick way to duplicate and mirror verts around the 3D cursor</p>
+<ul>
+<li>Duplicate &amp; mirror
+<ul>
+<li>Position the 3D cursor to mirror around</li>
+<li>Set the Pivot point to 3D cursor <strong>.(period key)</strong> &gt; 3D Cursor</li>
+<li>Select some verts</li>
+<li>Duplicate <strong>Shift D</strong></li>
+<li>RMB (or esc) to cancel grab</li>
+<li>Interactive mirror <strong>Ctrl M</strong></li>
+<li>Press some of the hotkeys (displayed at the bottom of the 3D view) to do the mirroring</li>
+</ul>
+</li>
+</ul>
+<h3 id="symetrize">Symetrize</h3>
+<ul>
+<li><strong>Symmetrize</strong> : Edit Mode. Destructive symetrization in edit mode. Note that thi suses the object locatuion (pivot point) to mirror around. It performs a clip, mirror and merge operation (if verts exists on the &ldquo;other side of the mirror plane&rdquo;)
+<ul>
+<li><strong>Mesh &gt; Symmetrize</strong> (edit mode)</li>
+</ul>
+</li>
+</ul>
 <h2 id="misc-2">Misc</h2>
 <ul>
 <li>Subdivide : <strong>RMB &gt; Subdivide</strong>
@@ -524,7 +579,7 @@ If we want to merge some verts that are not on top of each other we can select t
 </li>
 <li>Rip : <strong>V</strong>
 <ul>
-<li>Works on verts &amp; adges</li>
+<li>Works on verts &amp; Edges</li>
 <li>separates the component in the direction it is dragged.</li>
 </ul>
 </li>
