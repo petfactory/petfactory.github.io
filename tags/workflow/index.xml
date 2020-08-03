@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflow on Petfactory</title>
+    <link>https://www.petfactory.se/tags/workflow/</link>
+    <description>Recent content in Workflow on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2020 14:53:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Workflow - General</title>
+      <link>https://www.petfactory.se/notes/general_tips/</link>
+      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/general_tips/</guid>
+      <description>Here I will post (perhaps) useful things that falls outside more specfic topics.
+Windows 10 Desktops Lets say you are watching a tutorial, following along, taking notes (using markdown) and previewing the notes in a browser. To qucikly switch between app layouts we can use desktops.
+To set this up on Windows 10:
+ Open Task view, set up the fist desktop the way you like. Click the + to add a new desktop.</description>
+    </item>
+    
+  </channel>
+</rss>

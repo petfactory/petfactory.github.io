@@ -167,6 +167,7 @@
     <li><a href="#add-ons">Add-ons</a></li>
     <li><a href="#how-to">How to</a>
       <ul>
+        <li><a href="#retopo-poly-build">Retopo (Poly Build)</a></li>
         <li><a href="#work-in-face-aligned-ortho">Work in &ldquo;face aligned ortho&rdquo;</a></li>
         <li><a href="#cap-a-cylinder">Cap a cylinder</a></li>
       </ul>
@@ -598,6 +599,29 @@ If we want to merge some verts that are not on top of each other we can select t
 <li><strong>F2</strong> (Mesh)</li>
 </ul>
 <h1 id="how-to">How to</h1>
+<h2 id="retopo-poly-build">Retopo (Poly Build)</h2>
+<ul>
+<li>Add a plane as base</li>
+<li>Set the mesh to draw in front <strong>Object Properties &gt; Viewport Display &gt; In Front</strong> : Enabled
+<ul>
+<li>This makes it easier to see the mesh that we create.</li>
+</ul>
+</li>
+<li>Select the plane geo, go into edit mode and enable the <strong>Poly Build</strong> tool.</li>
+<li>In the sidebar (N-menu) enable aouto merge <strong>Sidebar &gt; Tool &gt; Options &gt; Auto Merge</strong> and edit the threshold to fit your needs.</li>
+<li>In the snap settings:
+<ul>
+<li><strong>Face</strong></li>
+<li><strong>Project individual elements</strong></li>
+</ul>
+</li>
+<li><strong>Note</strong>
+<ul>
+<li>You can also select a row of edges and <strong>E</strong> to extrude</li>
+<li>You can enable <strong>O</strong> -&gt; <strong>Proportional Editing</strong> (soft select) with  and affect many components with soft drop off.</li>
+</ul>
+</li>
+</ul>
 <h2 id="work-in-face-aligned-ortho">Work in &ldquo;face aligned ortho&rdquo;</h2>
 <p>What I mean with this is to edit the mesh ion an orthographic view aligned to a selected face of a mesh.</p>
 <ul>

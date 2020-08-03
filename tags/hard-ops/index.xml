@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hard Ops on Petfactory</title>
+    <link>https://www.petfactory.se/tags/hard-ops/</link>
+    <description>Recent content in Hard Ops on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jul 2020 14:53:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/hard-ops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blender - Hard Ops</title>
+      <link>https://www.petfactory.se/notes/blender_hardops/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/blender_hardops/</guid>
+      <description>Hard Ops official docs
+Tips Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  ST3 Mesh Tools  Selection to Boolean : Create a boolean from the selected face.  Select the face(s) Q &amp;gt; ST3 Mesh Tools &amp;gt; Selection to Boolean LMB click once, you can now move the mouse to adjust the extrude depth. Press X to switch to setting the offset. Press X again to set the offset Pressing X again will cycle back to setting the extrude depth.</description>
+    </item>
+    
+  </channel>
+</rss>

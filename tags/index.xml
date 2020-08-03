@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jul 2020 16:24:47 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 14:53:41 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>Blender</title>
       <link>https://www.petfactory.se/tags/blender/</link>
-      <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
       
       <guid>https://www.petfactory.se/tags/blender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boxcutter</title>
+      <link>https://www.petfactory.se/tags/boxcutter/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/boxcutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hard Ops</title>
+      <link>https://www.petfactory.se/tags/hard-ops/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/hard-ops/</guid>
       <description></description>
     </item>
     
@@ -89,6 +107,24 @@
       <pubDate>Thu, 06 Feb 2020 20:26:30 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/substance-designer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>https://www.petfactory.se/tags/general/</link>
+      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workflow</title>
+      <link>https://www.petfactory.se/tags/workflow/</link>
+      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/workflow/</guid>
       <description></description>
     </item>
     

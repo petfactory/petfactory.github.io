@@ -6,10 +6,31 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jul 2020 16:24:47 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 14:53:41 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blender - Boxcutter</title>
+      <link>https://www.petfactory.se/notes/blender_boxcutter/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/blender_boxcutter/</guid>
+      <description>Boxcutter official docs
+Tips Navigation When you have Maya style navigation set up this there is an option to preserve Alt and RMB keys.
+ Preserve Alt : &amp;gt; Preferences &amp;gt; Add-ons &amp;gt; BoxCutter &amp;gt; Keymap &amp;gt; Preserve Alt Preserve RMB : &amp;gt; Preferences &amp;gt; Add-ons &amp;gt; BoxCutter &amp;gt; Keymap &amp;gt; Preserve RMB  Cutters Linebox When you use the box shape there is an option called linebox that allows you to easily create Wedge shaped cuts.</description>
+    </item>
+    
+    <item>
+      <title>Blender - Hard Ops</title>
+      <link>https://www.petfactory.se/notes/blender_hardops/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/blender_hardops/</guid>
+      <description>Hard Ops official docs
+Tips Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  ST3 Mesh Tools  Selection to Boolean : Create a boolean from the selected face.  Select the face(s) Q &amp;gt; ST3 Mesh Tools &amp;gt; Selection to Boolean LMB click once, you can now move the mouse to adjust the extrude depth. Press X to switch to setting the offset. Press X again to set the offset Pressing X again will cycle back to setting the extrude depth.</description>
+    </item>
     
     <item>
       <title>Blender - Modifiers</title>
@@ -38,7 +59,9 @@ If an object has non-uniform scale you can run into errors when doing operation 
       <guid>https://www.petfactory.se/notes/blender_intro/</guid>
       <description>Blender Intro Modelling Modifiers It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first.
 Here is a nice Blender Fundamentals 2.8 playlist
-Regions Every Editor in Blender is divided into Regions (docs). Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</description>
+Config The blender config is located here:
+C:\Users\your_name\AppData\Roaming\Blender Foundation\Blender\2.83To reset all config simply rename or delete the folder (the version you want to reset)
+Regions Every Editor in Blender is divided into Regions (docs).</description>
     </item>
     
     <item>
@@ -78,6 +101,18 @@ Point Wrangle Lets append a point wrangle to the particles. We will use the norm
       <guid>https://www.petfactory.se/notes/marvelous_designer/</guid>
       <description>Tips Right Click There are a lot of useful RMB contextual menus:
  Copy/paste multiple  If you select a pattern and press Cmd C and then Cmd V and RMB click you can use number of instances and the spacing. (The direction is decided by the direction you had when RMB clicked) This also works for Internal lines   Precise numerical movement  If you want to move a point, line pattern you can first start to drag and while holding LMB click RMB to get a popup menu where you can set a numerical value.</description>
+    </item>
+    
+    <item>
+      <title>Workflow - General</title>
+      <link>https://www.petfactory.se/notes/general_tips/</link>
+      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/general_tips/</guid>
+      <description>Here I will post (perhaps) useful things that falls outside more specfic topics.
+Windows 10 Desktops Lets say you are watching a tutorial, following along, taking notes (using markdown) and previewing the notes in a browser. To qucikly switch between app layouts we can use desktops.
+To set this up on Windows 10:
+ Open Task view, set up the fist desktop the way you like. Click the + to add a new desktop.</description>
     </item>
     
     <item>
