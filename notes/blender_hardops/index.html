@@ -113,10 +113,21 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#tips">Tips</a>
+    <li><a href="#shortcuts">Shortcuts</a></li>
+    <li><a href="#object-mode">Object Mode</a>
       <ul>
-        <li><a href="#shortcuts">Shortcuts</a></li>
+        <li><a href="#operations">Operations</a></li>
+      </ul>
+    </li>
+    <li><a href="#edit-mode">Edit Mode</a>
+      <ul>
+        <li><a href="#curveextract">Curve/Extract</a></li>
         <li><a href="#st3-mesh-tools">ST3 Mesh Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to">How To</a>
+      <ul>
+        <li><a href="#create-panels">Create panels</a></li>
       </ul>
     </li>
   </ul>
@@ -135,11 +146,34 @@
 			<h1>Blender - Hard Ops</h1>
 			<p>
 <a href="https://hardops-manual.readthedocs.io/en/latest/" target="_blank" rel="noopener">Hard Ops official docs</a></p>
-<h1 id="tips">Tips</h1>
-<h2 id="shortcuts">Shortcuts</h2>
+<h1 id="shortcuts">Shortcuts</h1>
 <ul>
 <li><strong>Hops Menu</strong> : Q</li>
 <li><strong>Bevel Helper</strong> : Ctrl Shift B</li>
+</ul>
+<h1 id="object-mode">Object Mode</h1>
+<h2 id="operations">Operations</h2>
+<ul>
+<li>Operations
+<ul>
+<li>Smart Apply
+<ul>
+<li><strong>LMB</strong> : Smart apply modifiers (kkeps last bevel and weighted normal)</li>
+<li><strong>Shift LMB</strong> Smart apply duplicate (With clear last bevel and weighted normal)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="edit-mode">Edit Mode</h1>
+<h2 id="curveextract">Curve/Extract</h2>
+<ul>
+<li>Curve/Extract
+<ul>
+<li><strong>LMB</strong> : Converts edge to curve.</li>
+<li><strong>Shift LMB</strong> : Converts selection to plate.</li>
+</ul>
+</li>
 </ul>
 <h2 id="st3-mesh-tools">ST3 Mesh Tools</h2>
 <ul>
@@ -161,6 +195,17 @@
 <li>Hold <strong>Ctrl</strong> to sbap to percentage</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<h1 id="how-to">How To</h1>
+<h2 id="create-panels">Create panels</h2>
+<ul>
+<li>Create hardsurface panels (plates)
+<ul>
+<li>Use <strong>Q &gt; Smart Apply</strong> with <strong>Shift LMB</strong> to duplicate the base mesh</li>
+<li>Use knife to cut the faces to be used as panels</li>
+<li>Use <strong>Q &gt; Curve/Extract</strong> with <strong>Shift LMB</strong></li>
 </ul>
 </li>
 </ul>

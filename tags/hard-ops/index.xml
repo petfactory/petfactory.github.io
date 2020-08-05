@@ -18,7 +18,7 @@
       
       <guid>https://www.petfactory.se/notes/blender_hardops/</guid>
       <description>Hard Ops official docs
-Tips Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  ST3 Mesh Tools  Selection to Boolean : Create a boolean from the selected face.  Select the face(s) Q &amp;gt; ST3 Mesh Tools &amp;gt; Selection to Boolean LMB click once, you can now move the mouse to adjust the extrude depth. Press X to switch to setting the offset. Press X again to set the offset Pressing X again will cycle back to setting the extrude depth.</description>
+Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  Object Mode Operations  Operations  Smart Apply  LMB : Smart apply modifiers (kkeps last bevel and weighted normal) Shift LMB Smart apply duplicate (With clear last bevel and weighted normal)      Edit Mode Curve/Extract  Curve/Extract  LMB : Converts edge to curve. Shift LMB : Converts selection to plate.</description>
     </item>
     
   </channel>

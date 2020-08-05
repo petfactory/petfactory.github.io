@@ -18,8 +18,8 @@
       
       <guid>https://www.petfactory.se/notes/blender_boxcutter/</guid>
       <description>Boxcutter official docs
-Tips Navigation When you have Maya style navigation set up this there is an option to preserve Alt and RMB keys.
- Preserve Alt : &amp;gt; Preferences &amp;gt; Add-ons &amp;gt; BoxCutter &amp;gt; Keymap &amp;gt; Preserve Alt Preserve RMB : &amp;gt; Preferences &amp;gt; Add-ons &amp;gt; BoxCutter &amp;gt; Keymap &amp;gt; Preserve RMB  Cutters Linebox When you use the box shape there is an option called linebox that allows you to easily create Wedge shaped cuts.</description>
+Shortcuts  Enable box cutter : Alt W (Will cycle hardpos if available) BoxCutter pie menu : D BoxCutter popup menu : Ctrl D  Tips Navigation When you have Maya style navigation set up this there is an option to preserve Alt and RMB keys.
+ Edit &amp;gt; Preferences &amp;gt; Add-ons &amp;gt; BoxCutter &amp;gt; Keymap &amp;gt;  Preserve Alt Preserve RMB    Cutters Linebox When you use the box shape there is an option called linebox that allows you to easily create Wedge shaped cuts.</description>
     </item>
     
     <item>
@@ -29,7 +29,7 @@ Tips Navigation When you have Maya style navigation set up this there is an opti
       
       <guid>https://www.petfactory.se/notes/blender_hardops/</guid>
       <description>Hard Ops official docs
-Tips Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  ST3 Mesh Tools  Selection to Boolean : Create a boolean from the selected face.  Select the face(s) Q &amp;gt; ST3 Mesh Tools &amp;gt; Selection to Boolean LMB click once, you can now move the mouse to adjust the extrude depth. Press X to switch to setting the offset. Press X again to set the offset Pressing X again will cycle back to setting the extrude depth.</description>
+Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  Object Mode Operations  Operations  Smart Apply  LMB : Smart apply modifiers (kkeps last bevel and weighted normal) Shift LMB Smart apply duplicate (With clear last bevel and weighted normal)      Edit Mode Curve/Extract  Curve/Extract  LMB : Converts edge to curve. Shift LMB : Converts selection to plate.</description>
     </item>
     
     <item>
