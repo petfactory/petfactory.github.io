@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/petbot/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/redshift/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/tags/blender/</loc>
     <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
@@ -33,16 +63,6 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/</loc>
-    <lastmod>2020-07-29T14:53:41+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/</loc>
-    <lastmod>2020-07-29T14:53:41+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/blender_modifiers/</loc>
     <lastmod>2020-07-04T16:24:47+02:00</lastmod>
   </url>
@@ -63,22 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/houdini/</loc>
-    <lastmod>2020-05-27T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/redshift/</loc>
-    <lastmod>2020-05-27T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/work/the_bot_20/</loc>
-    <lastmod>2020-05-27T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/work/</loc>
     <lastmod>2020-05-27T15:10:51+01:00</lastmod>
   </url>
   

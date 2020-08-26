@@ -60,7 +60,8 @@ If an object has non-uniform scale you can run into errors when doing operation 
       <description>Blender Intro Modelling Modifiers It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first.
 Here is a nice Blender Fundamentals 2.8 playlist
 Config The blender config is located here:
-C:\Users\your_name\AppData\Roaming\Blender Foundation\Blender\2.83To reset all config simply rename or delete the folder (the version you want to reset)
+C:\Users\your_name\AppData\Roaming\Blender Foundation\Blender\2.83
+To reset all config simply rename or delete the folder (the version you want to reset)
 Regions Every Editor in Blender is divided into Regions (docs).</description>
     </item>
     

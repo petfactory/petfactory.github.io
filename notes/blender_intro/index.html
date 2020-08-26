@@ -193,6 +193,7 @@
       <ul>
         <li><a href="#ui">UI</a></li>
         <li><a href="#shortcuts">Shortcuts</a></li>
+        <li><a href="#command-line">Command Line</a></li>
       </ul>
     </li>
     <li><a href="#add-ons">Add-ons</a></li>
@@ -221,9 +222,9 @@
 <p>Here is a nice 
 <a href="https://www.youtube.com/playlist?list=PLa1F2ddGya_-UvuAqHAksYnB0qL9yWDO6" target="_blank" rel="noopener">Blender Fundamentals 2.8</a> playlist</p>
 <h1 id="config">Config</h1>
-<p>The blender config is located here:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">C:\Users\your_name\AppData\Roaming\Blender Foundation\Blender\<span style="color:#ae81ff">2.83</span>
-</code></pre></div><p>To reset all config simply rename or delete the folder (the version you want to reset)</p>
+<p>The blender config is located here:<br>
+<strong>C:\Users\your_name\AppData\Roaming\Blender Foundation\Blender\2.83</strong></p>
+<p>To reset all config simply rename or delete the folder (the version you want to reset)</p>
 <h1 id="regions">Regions</h1>
 <p>Every Editor in Blender is divided into 
 <a href="https://docs.blender.org/manual/en/latest/interface/window_system/regions.html" target="_blank" rel="noopener">Regions (docs)</a>. Regions can have smaller structuring elements like tabs and panels with buttons, controls and widgets placed within them.</p>
@@ -1096,7 +1097,13 @@ You can also toggle snap on/off with <strong>Shift Tab</strong>. If the xform wa
 <li>Search : <strong>F3</strong></li>
 <li>File Menu (&amp; prefs) : <strong>F4</strong></li>
 </ul>
-<h1 id="add-ons">Add-ons</h1>
+<h2 id="command-line">Command Line</h2>
+<p>
+<a href="https://docs.blender.org/manual/en/latest/advanced/command_line/launch/windows.html" target="_blank" rel="noopener">Command line docs</a></p>
+<p>cd c:&lt;blender installation directory&gt;</p>
+<p>You can also add the Blender folder to your system PATH so that you do not have to cd to it each time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">blender --background <span style="color:#e6db74">&#34;C:\path\to\3d_file.blend&#34;</span> --render-output <span style="color:#e6db74">&#34;C:\path\to\output&#34;</span> --render-frame 1
+</code></pre></div><h1 id="add-ons">Add-ons</h1>
 <p>To install add-ons</p>
 <ul>
 <li>Edit &gt; Preferences &gt; Add-ons &gt; Install (at the top)</li>
