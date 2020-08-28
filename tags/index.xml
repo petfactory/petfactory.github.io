@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Alias</title>
+      <link>https://www.petfactory.se/tags/alias/</link>
+      <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/alias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Blender</title>
       <link>https://www.petfactory.se/tags/blender/</link>
       <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
@@ -30,6 +39,24 @@
     </item>
     
     <item>
+      <title>Marvelous Designer</title>
+      <link>https://www.petfactory.se/tags/marvelous-designer/</link>
+      <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/marvelous-designer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maya</title>
+      <link>https://www.petfactory.se/tags/maya/</link>
+      <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/maya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Redshift</title>
       <link>https://www.petfactory.se/tags/redshift/</link>
       <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
@@ -44,6 +71,15 @@
       <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/resolve/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substance Painter</title>
+      <link>https://www.petfactory.se/tags/substance-painter/</link>
+      <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/substance-painter/</guid>
       <description></description>
     </item>
     
@@ -80,24 +116,6 @@
       <pubDate>Sat, 02 May 2020 13:45:58 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/davinci-resolve/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Marvelous Designer</title>
-      <link>https://www.petfactory.se/tags/marvelous-designer/</link>
-      <pubDate>Sat, 02 May 2020 13:45:58 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/marvelous-designer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Substance Painter</title>
-      <link>https://www.petfactory.se/tags/substance-painter/</link>
-      <pubDate>Sat, 02 May 2020 13:45:58 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/substance-painter/</guid>
       <description></description>
     </item>
     
@@ -188,15 +206,6 @@
       <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
       
       <guid>https://www.petfactory.se/tags/pyro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maya</title>
-      <link>https://www.petfactory.se/tags/maya/</link>
-      <pubDate>Tue, 01 Oct 2019 11:16:20 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/maya/</guid>
       <description></description>
     </item>
     

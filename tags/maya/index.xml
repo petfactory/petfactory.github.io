@@ -6,10 +6,19 @@
     <description>Recent content in Maya on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Oct 2019 11:16:20 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2020 15:10:51 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/maya/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Petbot</title>
+      <link>https://www.petfactory.se/work/petbot/</link>
+      <pubDate>Wed, 26 Aug 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/petbot/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tunnel</title>

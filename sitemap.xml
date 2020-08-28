@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.petfactory.se/tags/alias/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/tags/blender/</loc>
     <lastmod>2020-08-26T15:10:51+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/marvelous-designer/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/maya/</loc>
     <lastmod>2020-08-26T15:10:51+01:00</lastmod>
   </url>
   
@@ -29,6 +44,11 @@
   
   <url>
     <loc>https://www.petfactory.se/tags/resolve/</loc>
+    <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/substance-painter/</loc>
     <lastmod>2020-08-26T15:10:51+01:00</lastmod>
   </url>
   
@@ -99,16 +119,6 @@
   
   <url>
     <loc>https://www.petfactory.se/work/hoodie/</loc>
-    <lastmod>2020-05-02T13:45:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/marvelous-designer/</loc>
-    <lastmod>2020-05-02T13:45:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/substance-painter/</loc>
     <lastmod>2020-05-02T13:45:58+01:00</lastmod>
   </url>
   
@@ -275,11 +285,6 @@
   <url>
     <loc>https://www.petfactory.se/cv/</loc>
     <lastmod>2019-10-28T14:03:33+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/maya/</loc>
-    <lastmod>2019-10-01T11:16:20+02:00</lastmod>
   </url>
   
   <url>
