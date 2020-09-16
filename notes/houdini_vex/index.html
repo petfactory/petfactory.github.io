@@ -142,6 +142,11 @@
         <li><a href="#adjustprimlength">adjustPrimLength</a></li>
       </ul>
     </li>
+    <li><a href="#uv">UV</a>
+      <ul>
+        <li><a href="#scale-uvs-around-udim-center">Scale UVs around UDIM center</a></li>
+      </ul>
+    </li>
     <li><a href="#functions">Functions</a>
       <ul>
         <li><a href="#frac">frac()</a></li>
@@ -208,7 +213,17 @@ adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22
 	  	<span>adjust_prim_lengths_v01.hiplc</span>
 	</a>
 </div>
-<h1 id="functions">Functions</h1>
+<h1 id="uv">UV</h1>
+<h2 id="scale-uvs-around-udim-center">Scale UVs around UDIM center</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int u <span style="color:#f92672">=</span> int(floor(v<span style="color:#a6e22e">@uv</span>[<span style="color:#ae81ff">0</span>]));
+int v <span style="color:#f92672">=</span> int(floor(v<span style="color:#a6e22e">@uv</span>[<span style="color:#ae81ff">1</span>]));
+int udim <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">+</span> u<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> v<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>;
+i<span style="color:#a6e22e">@udim</span> <span style="color:#f92672">=</span> udim;
+
+vector2 center <span style="color:#f92672">=</span> set(u<span style="color:#f92672">+.</span><span style="color:#ae81ff">5</span>, v<span style="color:#f92672">+.</span><span style="color:#ae81ff">5</span>);
+vector disp <span style="color:#f92672">=</span> (<span style="color:#a6e22e">@uv</span><span style="color:#f92672">-</span>center)<span style="color:#f92672">*</span>chf(<span style="color:#e6db74">&#39;uv_mult&#39;</span>);
+<span style="color:#a6e22e">@uv</span> <span style="color:#f92672">+=</span> disp;
+</code></pre></div><h1 id="functions">Functions</h1>
 <h2 id="frac">frac()</h2>
 		
 		</div>
