@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Animation on Petfactory</title>
+    <link>https://www.petfactory.se/tags/animation/</link>
+    <description>Recent content in Animation on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Sep 2020 14:24:14 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/animation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini - Animation</title>
+      <link>https://www.petfactory.se/notes/houdini_animation/</link>
+      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_animation/</guid>
+      <description>Animation Editor Or graph editor in Maya speek.
+ Set Keyframe : Alt LMB (click the parm) Delete Keyframe : Ctrl LMB (click the parm)  It will leave the current value (of the animation curve as) a static value   Reset to Default : Ctrl MMB (click the parm) Open Animation Editor : Shift LMB (click the parm) Edit Channel Properties : Select the channel, with the mouse pointer over the animation editor press Alt E  Or RMB click the channel &amp;gt; Channels &amp;gt; Channels Properties It is in this widget you can set how the curve will extrapolate before &amp;amp; after the keyframes    Copy/Paste Keyframes  Shift LMB click the parm to open the animation editor Select the keyframes and Ctrl C to copy Shift LMB click the parm that you want to paste to  This will open up the animation editor, with the channel selected in the channel list   Ctrl V paste the keyframes.</description>
+    </item>
+    
+  </channel>
+</rss>
