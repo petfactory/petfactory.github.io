@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>glamBot</title>
-      <link>https://www.petfactory.se/notes/glambot/</link>
-      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/glambot/</guid>
-      <description>Animation Editor Or graph editor in Maya speek.
- Set Keyframe : Alt LMB (click the parm) Delete Keyframe : Ctrl LMB (click the parm)  It will leave the current value (of the animation curve as) a static value   Reset to Default : Ctrl MMB (click the parm) Open Animation Editor : Shift LMB (click the parm) Edit Channel Properties : Select the channel, with the mouse pointer over the animation editor press Alt E  Or RMB click the channel &amp;gt; Channels &amp;gt; Channels Properties It is in this widget you can set how the curve will extrapolate before &amp;amp; after the keyframes    Copy/Paste Keyframes  Shift LMB click the parm to open the animation editor Select the keyframes and Ctrl C to copy Shift LMB click the parm that you want to paste to  This will open up the animation editor, with the channel selected in the channel list   Ctrl V paste the keyframes.</description>
-    </item>
-    
-    <item>
       <title>Houdini - Animation</title>
       <link>https://www.petfactory.se/notes/houdini_animation/</link>
       <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
@@ -29,6 +19,18 @@
       <guid>https://www.petfactory.se/notes/houdini_animation/</guid>
       <description>Animation Editor Or graph editor in Maya speek.
  Set Keyframe : Alt LMB (click the parm) Delete Keyframe : Ctrl LMB (click the parm)  It will leave the current value (of the animation curve as) a static value   Reset to Default : Ctrl MMB (click the parm) Open Animation Editor : Shift LMB (click the parm) Edit Channel Properties : Select the channel, with the mouse pointer over the animation editor press Alt E  Or RMB click the channel &amp;gt; Channels &amp;gt; Channels Properties It is in this widget you can set how the curve will extrapolate before &amp;amp; after the keyframes    Copy/Paste Keyframes  Shift LMB click the parm to open the animation editor Select the keyframes and Ctrl C to copy Shift LMB click the parm that you want to paste to  This will open up the animation editor, with the channel selected in the channel list   Ctrl V paste the keyframes.</description>
+    </item>
+    
+    <item>
+      <title>Houdini - Crowd</title>
+      <link>https://www.petfactory.se/notes/houdini_crowd/</link>
+      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_crowd/</guid>
+      <description>Houdini 18 crowd docs
+Theese notes are based on the excellent tutorial by Mikael Pettersen, a little bit of CGWiki and random bits of information I stumble up on.
+Minimal Setup Lets setup a minimal but &amp;ldquo;working&amp;rdquo; crowd.
+ First create some geo, bones and capture the geometry. Then create a subnet to house all the parts we created in the previous step, This is our character rig. Create a new Geometry node and dive in.</description>
     </item>
     
     <item>
