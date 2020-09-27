@@ -114,34 +114,30 @@
 			<nav id="TableOfContents">
   <ul>
     <li><a href="#minimal-setup">Minimal Setup</a></li>
-    <li><a href="#agent-from-fbx">Agent from FBX</a>
+    <li><a href="#agent-prim-setup">Agent Prim Setup</a>
       <ul>
-        <li><a href="#agent-prim-setup-rest">Agent Prim Setup (Rest)</a>
+        <li><a href="#agent-from-fbx">Agent from FBX</a>
           <ul>
             <li><a href="#agent">Agent</a></li>
             <li><a href="#agent-layer">Agent Layer</a></li>
-            <li><a href="#agent-definition-cache">Agent Definition Cache</a></li>
-          </ul>
-        </li>
-        <li><a href="#agent-prim-setup-clips">Agent Prim Setup (Clips)</a>
-          <ul>
-            <li><a href="#agent-1">Agent</a></li>
             <li><a href="#foot-planting">Foot Planting</a></li>
-            <li><a href="#agent-definition-cache-1">Agent Definition Cache</a></li>
+            <li><a href="#agent-definition-cache">Agent Definition Cache</a></li>
           </ul>
         </li>
       </ul>
     </li>
     <li><a href="#crowd-source">Crowd Source</a>
       <ul>
-        <li><a href="#agent-definition-cache-2">Agent Definition Cache</a>
+        <li>
           <ul>
-            <li><a href="#agent-2">Agent</a></li>
+            <li><a href="#agent-1">Agent</a></li>
             <li><a href="#foot-planting-1">Foot Planting</a></li>
+            <li><a href="#agent-layer-1">Agent Layer</a></li>
+            <li><a href="#clip-properties">Clip Properties</a></li>
+            <li><a href="#transitions">Transitions</a></li>
             <li><a href="#crowd-source-1">Crowd Source</a></li>
           </ul>
         </li>
-        <li><a href="#clip-properties">Clip Properties</a></li>
       </ul>
     </li>
     <li><a href="#crowd-sim">Crowd Sim</a>
@@ -156,10 +152,16 @@
         </li>
       </ul>
     </li>
-    <li><a href="#extra">Extra</a>
+    <li><a href="#how-to">How To</a>
       <ul>
-        <li><a href="#test-simulation--crowd-transition">Test Simulation : Crowd Transition</a></li>
-        <li><a href="#inspect-locomotion-curves">Inspect Locomotion Curves</a></li>
+        <li>
+          <ul>
+            <li><a href="#test-simulation--crowd-transition">Test Simulation : Crowd Transition</a></li>
+            <li><a href="#inspect-footplant-channel">Inspect Footplant Channel</a></li>
+            <li><a href="#time-offset-chop-channel">Time Offset CHOP Channel</a></li>
+            <li><a href="#inspect-locomotion-channel">Inspect Locomotion Channel</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -196,18 +198,18 @@
 <li>In the randomize tab we can randomize (duhh) varoius properties</li>
 <li>In the second input of the crowd source node we can supply our own points as &ldquo;source&rdquo; for the agents.</li>
 </ul>
-<h1 id="agent-from-fbx">Agent from FBX</h1>
+<h1 id="agent-prim-setup">Agent Prim Setup</h1>
+<h2 id="agent-from-fbx">Agent from FBX</h2>
 <p>Lets say that we have some fbx files, a <em>rest</em> pose, a <em>walk</em> and a <em>run</em> animation. Lets create an agent primitive from theese files, write them out to disc and then read them back in.</p>
-<h2 id="agent-prim-setup-rest">Agent Prim Setup (Rest)</h2>
-<p>Create a <strong>Geometry</strong> node call it &ldquo;agent_prim_setup&rdquo; and dive in. First we will use the rest pose, to setup some agent layers (shape variations that we the can use in our crowd sim to add variation/randomness). We will only add theese layers to the rest pose, the walk and run files we will just write out the clips (meaning the animation) So lets start with the rest pose setup.</p>
+<p>Create a <strong>Geometry</strong> node call it &ldquo;agent_prim&rdquo; and dive in. First we will use the rest pose, to setup some agent layers (shape variations that we the can use in our crowd sim to add variation/randomness). We will only add theese layers to the rest pose, the walk and run files we will just write out the clips (meaning the animation) So lets start with the rest pose setup.</p>
 <h3 id="agent">Agent</h3>
-<p>Create and 
+<p>Create an 
 <a href="https://www.sidefx.com/docs/houdini/nodes/sop/agent.html" target="_blank" rel="noopener">Agent</a> node and call it &ldquo;rest&rdquo;.</p>
 <ul>
 <li><strong>Agent</strong>
 <ul>
-<li><strong>Agent Name</strong> : dude (or something suitable)</li>
-<li><strong>Current Clip</strong> : rest
+<li><strong>Agent Name</strong> : dude (it is important that we use the same name for all the clips that we setup)</li>
+<li><strong>Current Clip</strong> : a name that describes the motion of the rest, clip, walk, run etc.
 <ul>
 <li><strong>note</strong> that you first must set the Clip Name (located under the &ldquo;Clip&rdquo; section at the lower half of the parms, when this is set the clip name is available in the dropdown)</li>
 </ul>
@@ -216,12 +218,16 @@
 <li><strong>FBX File</strong> : path/to/file.fbx</li>
 <li><strong>Converts Units</strong>
 <ul>
-<li>You might need to check this if the size is off</li>
+<li>You might need to check this if the size is off.</li>
 </ul>
 </li>
 <li><strong>Clip</strong>
 <ul>
-<li><strong>Clip Name</strong> : rest</li>
+<li><strong>Clip Name</strong> : a name that describes the motion of the rest, clip, walk, run etc.
+<ul>
+<li><strong>Note</strong> that you must set the same name in the Current Clip parm at the top of the parm list.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>Locomotion</strong>
@@ -245,7 +251,7 @@ From cgwiki:
 </li>
 </ul>
 <h3 id="agent-layer">Agent Layer</h3>
-<p>This node creates custom agent layers which can be used to add variations to the look of the agent. A layer specifies an assignment of shapes from the agent’s shape library to transforms in its rig. The shapes can be in the original fbx file or you can specify a SOP path within the houdini file. If you do not want or dont have variations skip this step.</p>
+<p><strong>Note! Only for the rest</strong>. This node creates custom agent layers which can be used to add variations to the look of the agent. A layer specifies an assignment of shapes from the agent’s shape library to transforms in its rig. The shapes can be in the original fbx file or you can specify a SOP path within the houdini file. If you do not want or dont have variations skip this step.</p>
 <p><strong>Note</strong> that you can chain multiple Agent Layer nodes to add more layers.</p>
 <p>Append an 
 <a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentlayer.html" target="_blank" rel="noopener">Agent Layer</a> node to the Agent node.</p>
@@ -271,82 +277,20 @@ From cgwiki:
 </ul>
 </li>
 </ul>
-<h3 id="agent-definition-cache">Agent Definition Cache</h3>
-<p>Create an 
-<a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentdefinitioncache.html" target="_blank" rel="noopener">Agent Definition Cache</a> and append it to the Agent Layer node (if present). This node will assit us in writing out the agent data to disk, so that we can reuse the data in other scene files.</p>
-<ul>
-<li><strong>Agent Definition Cache</strong>
-<ul>
-<li><strong>Agent Name</strong> : Set this name to match the name set in the Agent node.</li>
-<li><strong>Rig</strong> : on</li>
-<li><strong>Agent Layers</strong> : on</li>
-<li><strong>Shape Library</strong> : on</li>
-<li><strong>Clips</strong> : on</li>
-<li><strong>Transform Groups</strong> : on</li>
-</ul>
-</li>
-</ul>
-<p>Press save to disk to cache the agent prim.</p>
-<h2 id="agent-prim-setup-clips">Agent Prim Setup (Clips)</h2>
-<p>Now we will write out the clips (animations) so that we can use them from our cache. We will repeat the steps below for each clip we want to write out to disc.</p>
-<h3 id="agent-1">Agent</h3>
-<p>Create and 
-<a href="https://www.sidefx.com/docs/houdini/nodes/sop/agent.html" target="_blank" rel="noopener">Agent</a> node and call it &ldquo;walk&rdquo; (whatever best describes the clip).</p>
-<ul>
-<li><strong>Agent</strong>
-<ul>
-<li><strong>Agent Name</strong> : dude (use the same name as we did when we wrote out the rest data.)</li>
-<li><strong>Current Clip</strong> : walk (whatever best describes the clip)
-<ul>
-<li><strong>note</strong> that you first must set the Clip Name (located under the &ldquo;Clip&rdquo; section at the lower half of the parms, when this is set the clip name is available in the dropdown)</li>
-</ul>
-</li>
-<li><strong>Input</strong> : FBX</li>
-<li><strong>FBX File</strong> : path/to/file.fbx</li>
-<li><strong>Converts Units</strong>
-<ul>
-<li>You might need to check this if the size is off</li>
-</ul>
-</li>
-<li><strong>Clip</strong>
-<ul>
-<li><strong>Clip Name</strong> : walk (whatever best describes the clip)</li>
-</ul>
-</li>
-<li><strong>Locomotion</strong>
-<ul>
-<li><strong>Convert to In-Place Animation</strong> : on</li>
-<li><strong>Locomotion Node</strong> : The node that &ldquo;drives&rdquo; the rig forward, possibly hips
-<ul>
-<li>The object inside the Character Rig that controls the locomotion of the character (the node in the character rig that has translation channels that move it forward in space). When Convert to In-Place Animation, Houdini uses this to remove the translation from the character animation to keep the character in place. (The crowd solver node assumes that the agent animation is in-place since it will be attached to a moving particle.)</li>
-</ul>
-</li>
-<li><strong>Locomotion Orient</strong> : try LeftUpLeg_To_LeftLeg (using mocapbiped3)
-<ul>
-<li>If this parameter and Locomotion Node are specified, the generated <strong>locomotion</strong> transform will also contain rotational information using the vector from the Locomotion Node to the Locomotion Orient node<br>
-From cgwiki:
-&ldquo;The locomotion stuff can handle changes of direction, but needs more information than just where the hips are. There&rsquo;s a second locomotion parameter on the agent sop for orient, but I couldn&rsquo;t understand why it didn&rsquo;t work when I assigned it the hips again. After chatting with sidefx (and re-reading the docs), this field isn&rsquo;t to read the rotation of the hips. You give it another joint, it constructs a vector from the hips to that joint, and uses that vector to cancel out rotation. In this case I used one of the upper leg joints (LeftUpLeg_To_LeftLeg).&rdquo;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 <h3 id="foot-planting">Foot Planting</h3>
 <p>The reason to use foot planting is to avoid the feet sliding on the ground. We can use an 
 <a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentprep.html" target="_blank" rel="noopener">Agent Prep</a> node to assist us with this. The concept is to use an agent prep node in combination with a CHOP network to detect when the foot should be considered stationary. There are two ways to do this, the first one is based on a speed threshold and the other is based on the distance to the terrain.</p>
 <p>We can add the agent prep node before the agents are cached to disc or after (when they are read back in). It is probably better to do this before, since then the data is already present if we read the agent cache in some other setup later.</p>
-<p><strong>Note</strong> that we need to add an Agent prep in the &ldquo;crowd_src&rdquo; geometry network to let houdini know which bones that will be part of the IK chaoin that houdini will create to achieve the foot locking. Notes on this will be in the &ldquo;Crowd Source&rdquo; section.</p>
+<p><strong>Note</strong> that we <strong>also</strong> need to add an Agent prep in the &ldquo;crowd_src&rdquo; geometry network to let houdini know which bones that will be part of the IK chaoin that houdini will create to achieve the foot locking. Notes on this will be in the &ldquo;Crowd Source&rdquo; section.</p>
 <ul>
-<li>Create an <strong>Agent Prep</strong> node and append it to the Agent node.</li>
+<li>Create an <strong>Agent Prep</strong> node and append it to the Agent node (or the Agent Layer mode if you used one)</li>
 <li>Switch to the <strong>Additional Channels</strong> tab</li>
 <li>Click on the <strong>Create Footplant CHOP Network</strong>
 <ul>
 <li>This will create a chop network that basically gets all the animation curves from the clip and pipes them back out through a Merge node. What we will do is to add some foot plant channels that will be merged with the other channels and then written out to disk.</li>
 </ul>
 </li>
-<li>Now we will create 2 <strong>Foot Plant</strong> chop nodes, one for the ankle and one for the toe.
+<li>Enter the created CHOP network. Now we will create 2 <strong>Foot Plant</strong> chop nodes, one for the ankle and one for the toe.
 <ul>
 <li>Create a <strong>Foot Plant</strong> chop node, name it &ldquo;ankle_planted&rdquo;</li>
 <li><strong>Source</strong> : Agent</li>
@@ -355,34 +299,34 @@ From cgwiki:
 <li><strong>Channel Name</strong> : By default it is $OS (or set it explicitly) this is the name of the channel that will be created.</li>
 <li>Connect it to the merge Node</li>
 <li>Repeat the steps above for the toe bone.</li>
+<li><strong>Remember</strong> that if you have a left &amp; right side you need to create 4 footplant nodes (a good idea is to suffix theese wit L &amp; R, or whaterver makes ense to you)</li>
+<li>To inspect the foot plant channels 
+<a href="https://www.petfactory.se/notes/houdini_crowd/#inspect-footplant-channel">do this</a></li>
 </ul>
 </li>
 <li>On the <strong>Additional Channels</strong> of the Agent Prep press <strong>Reload Channels</strong></li>
 </ul>
-<h3 id="agent-definition-cache-1">Agent Definition Cache</h3>
-<p>Create an <strong>Agent Definition Cache</strong> and append to the Agent node. This node will assit us in writing out the agent data to disk, so that we can reuse the data in other scene files.</p>
+<h3 id="agent-definition-cache">Agent Definition Cache</h3>
+<p>Create an 
+<a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentdefinitioncache.html" target="_blank" rel="noopener">Agent Definition Cache</a> and append it to the Agent Prep node (if present). This node will assit us in writing out the agent data to disk, so that we can reuse the data in other scene files.</p>
+<p><strong>Note!</strong> for the <strong>rest</strong> agent we will cache everything to disc but for the other clips we only want to cache the <strong>Clips</strong>, as shown below.</p>
 <ul>
 <li><strong>Agent Definition Cache</strong>
 <ul>
-<li><strong>Agent Name</strong> : dude (Set this name to match the name set in the Agent node.)</li>
-<li><strong>Rig</strong> : off</li>
-<li><strong>Agent Layers</strong> : off</li>
-<li><strong>Shape Library</strong> : off</li>
-<li><strong>Clips</strong> : on
-<ul>
-<li><strong>note</strong> that we only enable the clips since everything else is cached from the rest agent defination cache node.</li>
-</ul>
-</li>
-<li><strong>Transform Groups</strong> : off</li>
+<li><strong>Agent Name</strong> : Set this name to match the name set in the Agent node.</li>
+<li><strong>Rig</strong> : on | off</li>
+<li><strong>Agent Layers</strong> : on | off</li>
+<li><strong>Shape Library</strong> : on | off</li>
+<li><strong>Clips</strong> : on | <strong>on</strong></li>
+<li><strong>Transform Groups</strong> : on | off</li>
 </ul>
 </li>
 </ul>
 <p>Press save to disk to cache the agent prim.</p>
 <h1 id="crowd-source">Crowd Source</h1>
 <p>In this geo network we will load the agents we cached out to disc, add a crowd source and do other preparations of the agent prims to be used as a source in our crowd sim.</p>
-<h2 id="agent-definition-cache-2">Agent Definition Cache</h2>
 <p>Create a <strong>Geometry</strong> node call it &ldquo;crowd_src&rdquo; and dive in.</p>
-<h3 id="agent-2">Agent</h3>
+<h3 id="agent-1">Agent</h3>
 <p>Create an 
 <a href="https://www.sidefx.com/docs/houdini/nodes/sop/agent.html" target="_blank" rel="noopener">Agent</a> node.</p>
 <ul>
@@ -414,8 +358,32 @@ From cgwiki:
 </li>
 <li>specify the <strong>Ankle Plant Channel</strong> (the one we wrote to disc earlier)</li>
 <li>specify the <strong>Toe Plant Channel</strong> (the one we wrote to disc earlier)</li>
-<li>Might need to adjust the ankle &amp; toe offset.</li>
+<li><strong>Note</strong> when we enable foot locking (and use a terrain?) we might need to adjust the ankle &amp; toe offset to offset from the terrain.</li>
 </ul>
+<h3 id="agent-layer-1">Agent Layer</h3>
+<p>Note that we could also add layers to our clips here, if we did not do it earlier (before they were cached)</p>
+<h3 id="clip-properties">Clip Properties</h3>
+<p>The 
+<a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentclipproperties.html" target="_blank" rel="noopener">Agent Clip Properties</a> node will help us with creating a loop from a specified frame range of a selected animation clip. This SOP creates geometry (which can be attached to a crowd object) describing advanced options for how animation clips should be played back by the crowd solver. Each point in the geometry represents an animation clip, and point attributes describe properties such as a sub-range of frames that should be looped.</p>
+<p><strong>Note</strong> that this node will not be part of the &ldquo;main node chain&rdquo; but will be branching of from the agent sop. (I think it also works to append it to the Agent Prep if one is used). The &ldquo;geo&rdquo; produced by the clip properties node is one point per added clip. Theese points will have attributes that we can access from the crowd simulation through the crowd object.</p>
+<ul>
+<li>Create a <strong>Agent Clip Properties</strong> node and append it to the Agent node or Agent Prep. (Dont think it matters)</li>
+<li>Click the + to the right of <strong>Clips</strong> to add a clip</li>
+<li>Select a <strong>Clip Name</strong> from the dropdown</li>
+<li>Enable <strong>Loop Range</strong> and set the start and end frames.</li>
+<li>You probably want to enable <strong>Blend While Lopoping</strong>, possibly adjust the frames before and after.</li>
+<li>Finally we create a <strong>Null</strong> node call it <strong>OUT_clip_prop</strong> and append it to the Agent Clip Properties node.</li>
+</ul>
+<p><strong>Note</strong> If we want to test the behaviour of our Agent in combination with the Agent Clip Properties node we can use a Test Simulation: Crowd Transition. 
+<a href="https://www.petfactory.se/notes/houdini_crowd/#test-simulation--crowd-transition">See here</a></p>
+<p><strong>Note</strong> Lets say that we wish to create a new clip from an already existing clip. To do this we can enable the <strong>Clip Name Alias</strong> in the Agent Clip Properties.</p>
+<ul>
+<li>Add a new clip in the agent clip properties multiparm.</li>
+<li>Select the <strong>Clip Name</strong></li>
+<li>Then we enable <strong>Clip Name Alias</strong> and enter the name of the clip we wish to create.</li>
+<li>Set the lopp range, blending etc.</li>
+</ul>
+<h3 id="transitions">Transitions</h3>
 <h3 id="crowd-source-1">Crowd Source</h3>
 <p>Create a <strong>Crowd Source</strong> node and append it to the Agen Prep node (if we used one otherwise to the Agent node). If we enter a polygon mesh into the second input (of the source node) agents will be scattered on the incomming geo. If we instead hook up points, the points will be used directly.</p>
 <ul>
@@ -435,20 +403,7 @@ From cgwiki:
 </ul>
 </li>
 </ul>
-<p>Finally create a <strong>Null</strong> node, append it to the crowd source and call it <strong>OUT</strong></p>
-<h2 id="clip-properties">Clip Properties</h2>
-<p>The 
-<a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentclipproperties.html" target="_blank" rel="noopener">Agent Clip Properties</a> node will help us with creating a loop from a specified frame range of a selected animation clip.</p>
-<p><strong>Note</strong> that this node will not be part of the &ldquo;main node chain&rdquo; but will be branching of from the agent sop. The &ldquo;geo&rdquo; produced by the clip properties node is one point per added clip. Theese points will have attributes that we can access from the crowd simulation through the crowd object.</p>
-<ul>
-<li>Create a <strong>Agent Clip Properties</strong> node and append it to the Agent node.</li>
-<li>Click the + to the right of <strong>Clips</strong> to add a clip</li>
-<li>Select a <strong>Clip Name</strong> from the dropdown</li>
-<li>Enable <strong>Loop Range</strong> and set the start and end frames.</li>
-<li>You probably want to enable <strong>Blend While Lopoping</strong>, possibly adjust the frames before and after.</li>
-<li>Finally we create a <strong>Null</strong> node call it <strong>OUT_clip_prop</strong> and append it to the Agent Clip Properties node.</li>
-</ul>
-<p><strong>Note</strong> If we want to test the behaviour of our Agent in combination with the Agent Clip Properties node we can use a <strong>Test Simulation: Crowd Transition</strong>. See the Extra section at the bottom of this site.</p>
+<p>Finally create a <strong>Null</strong> node, append it to the crowd source and call it <strong>OUT_crowd_src</strong></p>
 <h1 id="crowd-sim">Crowd Sim</h1>
 <p>Lets create a crowd sim using the agent we just wrote to disc.</p>
 <p>As usual in Houdini we will do the simulation in a DOP Network. Note that we can feed the agent to the dop network without using a crowd source node, but then we need to do more manual setting of attributes. For instance setting the state attribute on the agent prim using a point wrangle like: s@state = &lsquo;rest&rsquo;;. The Crowd Source node provides a convenient way of setting initial attributes aswell as randomizing attributes for a more interseting looking sim.</p>
@@ -457,20 +412,59 @@ From cgwiki:
 <h3 id="crowd-solver">Crowd Solver</h3>
 <p>Create a Crowd Solver and connect it to the Output node.</p>
 <ul>
-<li><strong>Crowd Solver</strong></li>
+<li><strong>Crowd Solver</strong>
+<ul>
+<li><strong>Terrain</strong>
+<ul>
+<li><strong>Enable Foot Locking</strong> : on
+<ul>
+<li>Enable Show Guide Geometry to preview when footloocking is used.</li>
+</ul>
+</li>
+<li><strong>Enable Terrain Projection</strong> : on
+<ul>
+<li>Set the source to SOP and set the path.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="crowd-object">Crowd Object</h3>
 <p>Create a Crowd Object and connect it to the 1:st Crowd Solver node.</p>
 <ul>
-<li><strong>Crowd Object</strong></li>
+<li><strong>Crowd Object</strong>
+<ul>
+<li><strong>Crowd</strong>
+<ul>
+<li><strong>Clip Properties</strong>
+<ul>
+<li><strong>Source</strong> : SOP</li>
+<li><strong>Clip Properties</strong> : set the sop path to the OUT_clip_prop null node we created in the crowd_src geo.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="crowd-source-2">Crowd Source</h3>
 <p>Create a Crowd Source and connect it to the 2:nd Crowd Solver node.</p>
 <ul>
-<li><strong>Crowd Source</strong></li>
+<li><strong>Crowd Source</strong>
+<ul>
+<li><strong>Source</strong>
+<ul>
+<li><strong>Geometry Source</strong> : Use Parameter Values</li>
+<li><strong>SOP</strong> : set the path to the OUT_crowd_src we created in the crowd_src geo.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="crowd-state">Crowd State</h3>
-<p>Create a Crowd State and connect it to the 3:rd Crowd Solver node.</p>
+<p>Create a Crowd State for each state (animation clip). Connect the states to a merge node and connect the merge to the 3:rd Crowd Solver node.</p>
 <ul>
 <li><strong>Crowd State</strong>
 <ul>
@@ -486,8 +480,8 @@ From cgwiki:
 </ul>
 </li>
 </ul>
-<h1 id="extra">Extra</h1>
-<h2 id="test-simulation--crowd-transition">Test Simulation : Crowd Transition</h2>
+<h1 id="how-to">How To</h1>
+<h3 id="test-simulation--crowd-transition">Test Simulation : Crowd Transition</h3>
 <ul>
 <li>Create a <strong>Test Simulation: Crowd Transition</strong></li>
 <li>Connect the <strong>Agent</strong> sop to the first input</li>
@@ -495,7 +489,28 @@ From cgwiki:
 <li>Specify the <strong>Initial Clip</strong></li>
 <li>If we want to test the foot locking, switch to the <strong>Terrain</strong> tab and <strong>Enable Foot Locking</strong></li>
 </ul>
-<h2 id="inspect-locomotion-curves">Inspect Locomotion Curves</h2>
+<h3 id="inspect-footplant-channel">Inspect Footplant Channel</h3>
+<p>In the CHOP network that was created to add the footplant channels</p>
+<ul>
+<li>create a delete node</li>
+<li><strong>Delete</strong> : Non-scoped Channels</li>
+<li><strong>Channel Names</strong> : *planted*</li>
+<li>Set the display flag to the delete node (an turn off the same on the merge node)</li>
+<li>Open the Motion FX View and view the channels</li>
+<li>It can be nice to turn on the <strong>Frame Indicator</strong> (<strong>T</strong>) to view the current time in the Motion FX View.</li>
+<li>Split the viewport and view the animation in the scene view in sync with the channels in the Motion FX View.</li>
+<li><strong>Note</strong> if you want to edit the timing of the footplant channel (or any other channel for that matter) 
+<a href="https://www.petfactory.se/notes/houdini_crowd/#time-offset-chop-channel">do this</a></li>
+</ul>
+<h3 id="time-offset-chop-channel">Time Offset CHOP Channel</h3>
+<p>Lets say that we would like to have the ankle locked earlier/later but not adjust the settings of the foot plant chop node. One way to do this is to edit the foot plant channels created by the foot plant chop.</p>
+<ul>
+<li>Create a <strong>Shift</strong> node and append tp the Foot palnt node.</li>
+<li>Create a <strong>Math</strong> node and connect the Shift Node and the Foot plant node.</li>
+<li>Set the <strong>Combine CHOPs</strong> : Maximum.</li>
+<li>Connect the output of the Math node to the Merge node (and disconnect the footplant)</li>
+</ul>
+<h3 id="inspect-locomotion-channel">Inspect Locomotion Channel</h3>
 <p>If you want to inspect the locomotion curves of an agent (lets say the agent that we use in our &ldquo;crowd_src&rdquo; network) we can do like this:</p>
 <ul>
 <li>Create a <strong>CHOP</strong> Network (could do this in the same geo network as the agent we wish to examine) and step inside.</li>
