@@ -365,9 +365,9 @@ From cgwiki:
 <h3 id="clip-properties">Clip Properties</h3>
 <p>The 
 <a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentclipproperties.html" target="_blank" rel="noopener">Agent Clip Properties</a> node will help us with creating a loop from a specified frame range of a selected animation clip. This SOP creates geometry (which can be attached to a crowd object) describing advanced options for how animation clips should be played back by the crowd solver. Each point in the geometry represents an animation clip, and point attributes describe properties such as a sub-range of frames that should be looped.</p>
-<p><strong>Note</strong> that this node will not be part of the &ldquo;main node chain&rdquo; but will be branching of from the agent sop. (I think it also works to append it to the Agent Prep if one is used). The &ldquo;geo&rdquo; produced by the clip properties node is one point per added clip. Theese points will have attributes that we can access from the crowd simulation through the crowd object.</p>
+<p><strong>Note</strong> that this node will not be part of the &ldquo;main node chain&rdquo; but will be branching of to the side.</p>
 <ul>
-<li>Create a <strong>Agent Clip Properties</strong> node and append it to the Agent node or Agent Prep. (Dont think it matters)</li>
+<li>Create a <strong>Agent Clip Properties</strong> node and append it to the [Agent node, Agent Prep or Agent Layer] (Dont think it matters)</li>
 <li>Click the + to the right of <strong>Clips</strong> to add a clip</li>
 <li>Select a <strong>Clip Name</strong> from the dropdown</li>
 <li>Enable <strong>Loop Range</strong> and set the start and end frames.</li>
@@ -384,6 +384,69 @@ From cgwiki:
 <li>Set the lopp range, blending etc.</li>
 </ul>
 <h3 id="transitions">Transitions</h3>
+<p>
+<a href="https://www.sidefx.com/docs/houdini/nodes/sop/agentcliptransitiongraph.html" target="_blank" rel="noopener">Agent Clip Transition Graph</a> A crowd object’s clip transition graph may optionally be used to control transitions between states and animation clips. It provides information about which clips are allowed to transition to each other, and where in the clips those transitions should occur. This can be used by the Crowd Transition DOP to delay state transitions until an appropriate point in the current animation clip, and to smoothly blend into the next clip. Additionally, the clip transition graph allows per-clip control over this behavior (which is useful if the transition’s Input State parameter specifies multiple states, or if Randomize Clips is enabled for any of the input states).</p>
+<p><strong>Note</strong> If we <strong>Clip Name Alias</strong> in the Agent Clip Properties (which creates a new clip from an existing one), we need to connect the output of the Agent Clip Properties to the third input of the Agent Clip Transition Graph. (To let it know it exists, sine it is not a part of the clips commeing from the &ldquo;agent node chain&rdquo;)</p>
+<p>Each point in the clip transition graph geometry represents an animation clip, and each two-point polygon represents a (one-way) transition between the clips. During a state transition, if the points corresponding to the input and output states&rsquo; animation clips are not directly connected, the Crowd Transition DOP will use the shortest path between the two clips.</p>
+<p>So lets first create a transition between &ldquo;idle&rdquo; clip to a &ldquo;walk&rdquo; clip.</p>
+<ul>
+<li>Create an <strong>Agent Clip Transition Graph</strong> and connect the output of the agent chain (before it goes in to a crowd src node) to the first input of the Agent Clip Transition Graph.</li>
+<li>Connect the output of the Agent Clip Properties node to third input.</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Agent Clip Transition Graph</strong>
+<ul>
+<li><strong>Transitions</strong>
+<ul>
+<li><strong>Compute Transition Graph</strong> : off
+<ul>
+<li>We will do this manually for now</li>
+</ul>
+</li>
+<li><strong>Extra Transitions</strong> : add as many as you need.
+<ul>
+<li><strong>Clip A</strong> : idle</li>
+<li><strong>Clip B</strong> : walk</li>
+</ul>
+</li>
+<li><strong>Transition Regions</strong> : add as many as we need
+<ul>
+<li>more regions means that the agents have more &ldquo;time windows&rdquo; to react to a state change, meaning they will be able to faster transition into a reqiested state.</li>
+</ul>
+</li>
+<li><strong>Sync Frame A</strong> : 25
+<ul>
+<li>Specifies a frame in Clip A where the pose is similar to Sync Frame B in Clip B.</li>
+<li>As a guideline we can setup one for every second (25 frames)</li>
+<li>So the next sync frame, in the second Transition Region (if we add one) should be 50 and the transition region should be set to 50 - 51</li>
+</ul>
+</li>
+<li><strong>Transition Region</strong> : 25 - 26
+<ul>
+<li>Specifies the range of frames where a transition may begin. This should typically include Sync Frame A.</li>
+</ul>
+</li>
+<li><strong>Sync Frame B</strong>
+<ul>
+<li>Specifies a frame in Clip B where the pose is similar to Sync Frame A in Clip A.</li>
+<li><strong>Note</strong> this frame is the start frame of the loop setup for the clip in the Agent Clip Properties. To set the start frame of the clip, go to the Agent Clip Properties, find the clip and set the <strong>Start Frame</strong> to 1 (or what you need)</li>
+</ul>
+</li>
+<li><strong>Blend Frames</strong> : 6
+<ul>
+<li>Specifies the length of the transition between the clips.</li>
+</ul>
+</li>
+<li><strong>Show Guide Geometry</strong>: it can be helpful to view this when setting up</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note</strong> The Test Simulation: Crowd Transition SOP can be used to quickly preview transitions between particular clips before setting up a crowd simulation. 
+<a href="https://www.petfactory.se/notes/houdini_crowd/#test-simulation--crowd-transition">See here</a></p>
+<p>Finally create a <strong>OUT_transitions</strong> Null node and append to the Agent Clip Transition Graph. We will reference this node from the Crowd Object in our Crowd sim.</p>
 <h3 id="crowd-source-1">Crowd Source</h3>
 <p>Create a <strong>Crowd Source</strong> node and append it to the Agen Prep node (if we used one otherwise to the Agent node). If we enter a polygon mesh into the second input (of the source node) agents will be scattered on the incomming geo. If we instead hook up points, the points will be used directly.</p>
 <ul>
@@ -483,10 +546,29 @@ From cgwiki:
 <h1 id="how-to">How To</h1>
 <h3 id="test-simulation--crowd-transition">Test Simulation : Crowd Transition</h3>
 <ul>
-<li>Create a <strong>Test Simulation: Crowd Transition</strong></li>
+<li>Create a (Test Simulation: Crowd Transition)[https://www.sidefx.com/docs/houdini/nodes/sop/testsim_crowdtransition.html]</li>
 <li>Connect the <strong>Agent</strong> sop to the first input</li>
+<li>if we have an <strong>Agent Clip Transition Graph</strong> node connect it sop to the second input</li>
 <li>Connect the <strong>Agent Clip Properties</strong> sop to the fourth input</li>
-<li>Specify the <strong>Initial Clip</strong></li>
+<li>Specify the <strong>Initial Clip</strong> : idle
+<ul>
+<li>This is the clip the transition will start from</li>
+</ul>
+</li>
+<li><strong>Clip Sequence</strong> : 1 (or a many as you need) Specifies an ordered sequence of clips to transition to, starting from the Initial Clip.
+<ul>
+<li><strong>Clip</strong> : walk (or whaterver you need)
+<ul>
+<li>The name of the animation clip to transition to.</li>
+</ul>
+</li>
+<li><strong>Trigger Frame</strong> : 10 (or whaterver you need)
+<ul>
+<li>Specifies when to activate the trigger and begin transitioning to this clip.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>If we want to test the foot locking, switch to the <strong>Terrain</strong> tab and <strong>Enable Foot Locking</strong></li>
 </ul>
 <h3 id="inspect-footplant-channel">Inspect Footplant Channel</h3>
