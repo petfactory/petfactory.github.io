@@ -62,13 +62,16 @@ h3 {
 
 ::-webkit-scrollbar-thumb {
     /*background: #151515;*/
-    background: #222;
+    /*background: #222;*/
+    background: #555;
+    /*background: #e83e8c;*/
     /*width: 12px;*/
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2c2c2c;
+  /*background: #2c2c2c;*/
+  background: #e83e8c;
 }
 /*
 ---------------

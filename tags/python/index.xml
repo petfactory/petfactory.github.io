@@ -74,5 +74,16 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
       <description>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc.</description>
     </item>
     
+    <item>
+      <title>PySide2</title>
+      <link>https://www.petfactory.se/notes/pyside2/</link>
+      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/pyside2/</guid>
+      <description>This assumes you are using Python 3.
+Install with pip (Windows) Setup a virtual environment Lets say we want to install PySide in a virtual env. First we need to create the virtual enveronment. What I usually do is to create a directory for my project, cd into it and then run:
+python3 -m venv venvWhat this will do is to create a virtual environment (inside a new folder called venv) that will be placed inside the current directory.</description>
+    </item>
+    
   </channel>
 </rss>
