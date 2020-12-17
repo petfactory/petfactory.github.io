@@ -113,11 +113,15 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#wedging-in-tops">Wedging in TOPS</a>
+    <li><a href="#wedging">Wedging</a>
       <ul>
-        <li><a href="#create-the-source-geo">Create the source geo</a></li>
-        <li><a href="#set-up-the-wedge">Set up the wedge</a></li>
-        <li><a href="#write-the-wedges-to-disc">Write the wedges to disc</a></li>
+        <li><a href="#simple-geo">Simple Geo</a>
+          <ul>
+            <li><a href="#create-the-source-geo">Create the source geo</a></li>
+            <li><a href="#set-up-the-wedge">Set up the wedge</a></li>
+            <li><a href="#write-the-wedges-to-disc">Write the wedges to disc</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -136,9 +140,10 @@
 			<h1>Houdini - TOPS</h1>
 			<p>
 <a href="https://www.sidefx.com/docs/houdini/tops/index.html" target="_blank" rel="noopener">TOP</a> nodes define a workflow where data is fed into the network, turned into &ldquo;work items&rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.</p>
-<h1 id="wedging-in-tops">Wedging in TOPS</h1>
+<h1 id="wedging">Wedging</h1>
+<h2 id="simple-geo">Simple Geo</h2>
 <p>Lets have a quick look att how to set up a basic wedge setup in TOPS.</p>
-<h2 id="create-the-source-geo">Create the source geo</h2>
+<h3 id="create-the-source-geo">Create the source geo</h3>
 <ul>
 <li>In the obj context create a Geometry node and step in</li>
 <li>Create a Box node</li>
@@ -150,7 +155,7 @@
 </li>
 <li>Append a Null node and give it the name &ldquo;OUT&rdquo;</li>
 </ul>
-<h2 id="set-up-the-wedge">Set up the wedge</h2>
+<h3 id="set-up-the-wedge">Set up the wedge</h3>
 <ul>
 <li>Go to the tasks context and jump in the top network. (or create a new either in the geo context or the tasks)</li>
 <li>Create a wedge node
@@ -169,7 +174,7 @@
 <li>To create the work items select the wedge node and choose <strong>Dirty nad Cook This Node</strong> from the RMB menu. Or press <strong>Shift V</strong></li>
 <li>If you click the work items on the wedge node you will se the model update in the viewport. Note that you can press <strong>Capture All</strong> to store the current value of the parms being wedged and press <strong>Restore All</strong> to get those value back.</li>
 </ul>
-<h2 id="write-the-wedges-to-disc">Write the wedges to disc</h2>
+<h3 id="write-the-wedges-to-disc">Write the wedges to disc</h3>
 <ul>
 <li>Append a <strong>ROP Geometry Output</strong> node to the wedge.
 <ul>
