@@ -113,15 +113,21 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#wedging">Wedging</a>
+    <li><a href="#wedge-geo-variations">Wedge geo variations</a>
       <ul>
-        <li><a href="#simple-geo">Simple Geo</a>
+        <li>
           <ul>
-            <li><a href="#create-the-source-geo">Create the source geo</a></li>
-            <li><a href="#set-up-the-wedge">Set up the wedge</a></li>
-            <li><a href="#write-the-wedges-to-disc">Write the wedges to disc</a></li>
+            <li><a href="#pull-vs-push">Pull vs Push</a></li>
           </ul>
         </li>
+        <li><a href="#push">Push</a>
+          <ul>
+            <li><a href="#source-geo">Source Geo</a></li>
+            <li><a href="#setup-wedge">Setup Wedge</a></li>
+          </ul>
+        </li>
+        <li><a href="#pull">Pull</a></li>
+        <li><a href="#write-the-wedges-to-disc">Write the wedges to disc</a></li>
       </ul>
     </li>
   </ul>
@@ -140,41 +146,61 @@
 			<h1>Houdini - TOPS</h1>
 			<p>
 <a href="https://www.sidefx.com/docs/houdini/tops/index.html" target="_blank" rel="noopener">TOP</a> nodes define a workflow where data is fed into the network, turned into &ldquo;work items&rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.</p>
-<h1 id="wedging">Wedging</h1>
-<h2 id="simple-geo">Simple Geo</h2>
-<p>Lets have a quick look att how to set up a basic wedge setup in TOPS.</p>
-<h3 id="create-the-source-geo">Create the source geo</h3>
+<h1 id="wedge-geo-variations">Wedge geo variations</h1>
+<p>Lets setup a TOP network to write out geo variations to disc. We will do this using a 
+<a href="https://www.sidefx.com/docs/houdini/nodes/top/wedge.html" target="_blank" rel="noopener">Wedge</a> node.</p>
+<h3 id="pull-vs-push">Pull vs Push</h3>
+<p>For each wedged attribute, you can use it to set a parameter on the render node in one of two ways:</p>
+<ul>
+<li>Pull
+<ul>
+<li>On the render node or any other node cooked by the render, you can use @attribute references in parameter expressions to &ldquo;pull&rdquo; attribute values from the work item.<br>
+Pull references are very convenient and flexible. However, it does require using TOPs-specific expressions, so it may not be appropriate if you want the ROP node to also be usable manually or without TOPs.</li>
+</ul>
+</li>
+<li>Push
+<ul>
+<li>On the Wedge TOP, you can explicitly specify node parameters in the scene to &ldquo;push&rdquo; the attribute value into at render time. This creates special attributes the render node knows to use at render time to override the specific node parameters.<br>
+This lets you wedge values in the scene without having to use TOPs-only expressions in its parameters, so the node can still be rendered manually or without TOPs.</li>
+</ul>
+</li>
+</ul>
+<h2 id="push">Push</h2>
+<p>On the Wedge TOP, you can explicitly specify node parameters in the scene to &ldquo;push&rdquo; the attribute value into at render time. This creates special attributes the render node knows to use at render time to override the specific node parameters.<br>
+This lets you wedge values in the scene without having to use TOPs-only expressions in its parameters, so the node can still be rendered manually or without TOPs.</p>
+<h3 id="source-geo">Source Geo</h3>
 <ul>
 <li>In the obj context create a Geometry node and step in</li>
 <li>Create a Box node</li>
-<li>Append a Polybevel to it
-<ul>
-<li>distance : 0.1</li>
-<li>Divisions : 3</li>
-</ul>
-</li>
 <li>Append a Null node and give it the name &ldquo;OUT&rdquo;</li>
 </ul>
-<h3 id="set-up-the-wedge">Set up the wedge</h3>
+<h3 id="setup-wedge">Setup Wedge</h3>
 <ul>
-<li>Go to the tasks context and jump in the top network. (or create a new either in the geo context or the tasks)</li>
+<li>In the Geometry node (that we just created) create a <strong>TOP Network</strong>
+<ul>
+<li>We could also go to the <strong>Tasks</strong> context and dive in the default topnet or create a new Top Network there.</li>
+</ul>
+</li>
 <li>Create a wedge node
 <ul>
 <li>Set the <strong>Wedge Count</strong> to 5</li>
-<li>Add one wedge attribute and give it the name &ldquo;distance&rdquo;
+<li>Add one wedge attribute
 <ul>
-<li>start : .05</li>
-<li>end : .2</li>
-<li>Enable <strong>Target Parameter</strong> and set the sop path to the node we wish to wedge, in this case the distance of the polybevel node.</li>
-<li>Enable <strong>Overwrite Target Parameter on Work Item Selection</strong> Note that this will <strong>push</strong> the attribute to the selected parameter. You can still change the parameter on the node in the obj context as before. You could also use <strong>pull</strong> the attr from the wedge by using @distance in the attr on the polybevel node.</li>
+<li>Enable the <strong>Target Parameter</strong> and click the chooser icon next to the target parameter field to choose a parameter to override interactively. The Wedge creates special attributes that tell render TOPs to render with the overrides at runtime, so the HIP file is not affected.</li>
+<li>Set the <strong>start</strong> and <strong>end</strong> values to 1 and 5.</li>
+<li>Enable <strong>Overwrite Target Parameter on Work Item Selection</strong> If you use the Target parameter checkbox on a variable to &ldquo;push&rdquo; the variable into a ROP parameter, you can turn this on to do that push whenever you select a work item in the network editor. This gives you the same previewing effect as using &ldquo;pull&rdquo; references. However, the way this works is to actually change the value of the target parameter, so it will cause recooks and mark the HIP file as unsaved, and saving the HIP file will save the &ldquo;previewed&rdquo; changes. The current value of the parameter is saved on the wedge TOP when the target parameter is selected, and is restored on work item deselection. It is possible to manually capture or restore values using the Capture and Restore buttons.<br>
+Note that this parameter only affects the active Houdini Session. When the network actually runs, it calls the ROP with the &ldquo;pushed&rdquo; values without affecting the current HIP file.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>To create the work items select the wedge node and choose <strong>Dirty nad Cook This Node</strong> from the RMB menu. Or press <strong>Shift V</strong></li>
-<li>If you click the work items on the wedge node you will se the model update in the viewport. Note that you can press <strong>Capture All</strong> to store the current value of the parms being wedged and press <strong>Restore All</strong> to get those value back.</li>
+<li>To create the work items select the wedge node and choose <strong>Dirty and Cook This Node</strong> from the RMB menu. Or press <strong>Shift V</strong></li>
+<li>If you click the work items on the wedge node you will see the geo update in the viewport. When you click outside the node the attributes will go back to the captured value.</li>
+<li>Note you can click the <strong>Capture All</strong> button in the top part of the wedge parameteter pane to capture all the current values of the wedge node. This will then be the value that is the &ldquo;default&rdquo; values of the wedge node. You can also capture individual parameters using the <strong>Capture</strong> button on the right hand side of each parameter.</li>
 </ul>
-<h3 id="write-the-wedges-to-disc">Write the wedges to disc</h3>
+<h2 id="pull">Pull</h2>
+<p>pass</p>
+<h2 id="write-the-wedges-to-disc">Write the wedges to disc</h2>
 <ul>
 <li>Append a <strong>ROP Geometry Output</strong> node to the wedge.
 <ul>

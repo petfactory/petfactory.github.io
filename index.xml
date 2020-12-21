@@ -265,8 +265,8 @@ The turn of the thumbnails of each cop node we can disable view &amp;gt; Show No
       
       <guid>https://www.petfactory.se/notes/houdini_tops/</guid>
       <description>TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
-Wedging Simple Geo Lets have a quick look att how to set up a basic wedge setup in TOPS.
-Create the source geo  In the obj context create a Geometry node and step in Create a Box node Append a Polybevel to it  distance : 0.</description>
+Wedge geo variations Lets setup a TOP network to write out geo variations to disc. We will do this using a Wedge node.
+Pull vs Push For each wedged attribute, you can use it to set a parameter on the render node in one of two ways:</description>
     </item>
     
     <item>
