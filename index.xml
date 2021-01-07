@@ -6,10 +6,21 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 16:13:08 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jan 2021 15:03:19 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unreal - Python</title>
+      <link>https://www.petfactory.se/notes/unreal_python/</link>
+      <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/unreal_python/</guid>
+      <description>Setup Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    We need to enable developer mode on a per project basis
+ Edit &amp;gt; Project Settings &amp;gt; Plugins &amp;gt; Python  Developer Mode : Enable    We can find the output log here:</description>
+    </item>
     
     <item>
       <title>Equilateral</title>
