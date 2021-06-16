@@ -17,9 +17,8 @@
       <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
-      <description>Setup Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
- Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    We need to enable developer mode on a per project basis
- Edit &amp;gt; Project Settings &amp;gt; Plugins &amp;gt; Python  Developer Mode : Enable    We can find the output log here:</description>
+      <description>Enable Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code.</description>
     </item>
     
     <item>

@@ -131,6 +131,7 @@
         <li><a href="#write-the-wedges-to-disc">Write the wedges to disc</a></li>
       </ul>
     </li>
+    <li><a href="#wedgeing--contact-sheet">Wedgeing &amp; contact sheet</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -210,6 +211,14 @@ Note that this parameter only affects the active Houdini Session. When the netwo
 <li>Dirty and cook the node (Shift V)</li>
 </ul>
 </li>
+</ul>
+<h1 id="wedgeing--contact-sheet">Wedgeing &amp; contact sheet</h1>
+<p>Using Image Magick to create a contact sheet of still images of wedges.</p>
+<ul>
+<li>Make sure Image Magick is installed. <a href="https://imagemagick.org/script/download.php">https://imagemagick.org/script/download.php</a> and download an installer. I downloaded ImageMagick-7.0.10-60-Q16-HDRI-x64-dll.exe	Win64 dynamic at 16 bits-per-pixel component.</li>
+<li>Run the installer and make sure that <strong>Add application directory to seystem path</strong> and <strong>install FFMpeg</strong> is checked.</li>
+<li>To verify that the installation was successfuöl open the cmd promt and run <strong>magick</strong> witout and args. If the program was installed and is on the path you will get an Error: Invalid argument or not enough arguments. But it shows that the pogram is available.</li>
+<li>If you have problems with the environment variables you can explicitly point to magick.exe and ffmpeg.exe in houdini. The path to magick.exe and ffmpeg.exe is: C:\Program Files\ImageMagick-7.0.10-Q16-HDRI (Depending on which version you installed)</li>
 </ul>
 		
 		</div>

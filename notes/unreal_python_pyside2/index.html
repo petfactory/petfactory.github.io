@@ -114,16 +114,17 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#setup-python">Setup Python</a>
+    <li><a href="#enable-python">Enable Python</a>
       <ul>
         <li><a href="#python-version">Python Version</a></li>
-        <li><a href="#python-and-qt">Python and Qt</a>
+        <li><a href="#pyside2">PySide2</a>
           <ul>
-            <li><a href="#pyside2-example">Pyside2 example</a></li>
+            <li><a href="#example">Example</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li><a href="#init-script">Init Script</a></li>
     <li><a href="#docs">Docs</a></li>
   </ul>
 </nav>
@@ -139,7 +140,7 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Unreal - Python / PySide2</h1>
-			<h1 id="setup-python">Setup Python</h1>
+			<h1 id="enable-python">Enable Python</h1>
 <p>Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.</p>
 <ul>
 <li>Edit &gt; Plugins &gt; Scripting &gt;
@@ -148,7 +149,7 @@
 </ul>
 </li>
 </ul>
-<p>We need to enable developer mode on a per project basis</p>
+<p>Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs. The stub file will be found here: <strong>Your Project &gt; Intermediate &gt; PythonStub &gt; unreal.py</strong>. The stub file is generated every time the editor starts and is generated with your exact set of available code, plugins etc. Note that the file is quite large, about 10 mb, so your might have to increase the parsing limit of your external IDE to get the auto-complete working.</p>
 <ul>
 <li>Edit &gt; Project Settings &gt; Plugins &gt; Python
 <ul>
@@ -175,14 +176,15 @@
 <ul>
 <li>C:\Program Files\Epic Games\UE_4.26\Engine\Binaries\ThirdParty\Python3\Win64</li>
 </ul>
-<h2 id="python-and-qt">Python and Qt</h2>
-<p>If you look inside the python install dir you can se pip there. I read somewhere that you can just use pip to install PySide in the python dir that comes with unreal. I have not tried that yet but instead I just created a virtual env elsewhere and pointed unreal to the site-packages of that install. See this post on 
-<a href="https://www.petfactory.se/notes/pyside2/"> Setup a virtual environment</a></p>
+<p>You can not change the version of Python in a binary build (a build from the launcher). This is because the Python plugin needs to be recompiled. If you are using a source build, the simplest way of replacing the Pyhon version is to setr an environment variable called &ldquo;UE_PYTHON_DIR&rdquo; and point that to the Python installation you wish to use. The downside to this is that it is not very portable since it ends up baking a path into your build to a local Python SDK. This means that if it were run on another system the user must have the same version of python in the same place. A better way to replace the Python version is to replace the Python version that are shipped with the engine. Theese are stored inside the Third Party directory and then rebuild. Because the location is inside the engine path it will be portable.</p>
+<h2 id="pyside2">PySide2</h2>
+<p>If you look inside the python install dir you can se pip there. I read somewhere that you can just use pip to install PySide in the python dir that comes with unreal. I have not tried that yet. Instead I just created a virtual env elsewhere, installed Pyside2 in that env and pointed unreal to the site-packages of that install. See this post to 
+<a href="https://www.petfactory.se/notes/pyside2/"> setup a virtual environment</a></p>
 <p>Then we need to point to the site-pacakges dir.</p>
 <ul>
 <li>Project Settings &gt; Plugins &gt; Python &gt; Additional Paths: ../path/to/venv/Lib/site-packages</li>
 </ul>
-<h3 id="pyside2-example">Pyside2 example</h3>
+<h3 id="example">Example</h3>
 <p>Here is a small snippet of how to creater a widget that is parented to the main window.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
 
@@ -217,7 +219,21 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
 <ul>
 <li>File &gt; Execute Python Script : Browse to the script location</li>
 </ul>
-<h1 id="docs">Docs</h1>
+<h1 id="init-script">Init Script</h1>
+<p>To list the paths that unreal looks for python scripts we can run the following in the output log:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(sys<span style="color:#f92672">.</span>path))
+</code></pre></div><p>I had a look through that list and decided to place the init script in the <strong>C:/Users/user_name/Documents/UnrealEngine/Python</strong> dir. By default this dir does not exist. To verify this we can run the following or simply use the explorer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+os<span style="color:#f92672">.</span>startfile(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
+<span style="color:#75715e"># LogPython: Error: FileNotFoundError: [WinError 2] The system cannot find the file specified: &#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>
+</code></pre></div><p>Create the dirctory manually or run the following snippet in the console:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">os<span style="color:#f92672">.</span>makedirs(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
+os<span style="color:#f92672">.</span>startfile(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
+<span style="color:#75715e"># the dir should pop open</span>
+</code></pre></div><p>Unreal will execute all files named <strong>init_unreal.py</strong> that are found on the sys.path. So lets createa file called that and add the followinf to that file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unreal
+unreal<span style="color:#f92672">.</span>log_warning(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</code></pre></div><h1 id="docs">Docs</h1>
 <ul>
 <li>
 <a href="https://docs.unrealengine.com/en-US/PythonAPI/index.html" target="_blank" rel="noopener">Unreal Python API Documentation</a></li>
@@ -226,6 +242,7 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
 <li>
 <a href="https://www.youtube.com/watch?v=0guOMTiwmhk&amp;t=601s" target="_blank" rel="noopener">Python in Unreal Engine | Inside Unreal</a></li>
 </ul>
+<p>1:26:22</p>
 		
 		</div>
 	</div>

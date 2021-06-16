@@ -6,10 +6,19 @@
     <description>Recent content in Rigging on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Aug 2019 15:10:51 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 30 Jan 2021 16:40:32 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/rigging/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini - KineFX notes</title>
+      <link>https://www.petfactory.se/notes/houdini_kinefx_notes/</link>
+      <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_kinefx_notes/</guid>
+      <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
+    </item>
     
     <item>
       <title>The Bot</title>

@@ -6,10 +6,19 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Jan 2021 15:03:19 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 30 Jan 2021 16:40:32 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini - KineFX notes</title>
+      <link>https://www.petfactory.se/notes/houdini_kinefx_notes/</link>
+      <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_kinefx_notes/</guid>
+      <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
+    </item>
     
     <item>
       <title>Unreal - Python / PySide2</title>
@@ -17,9 +26,8 @@
       <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
-      <description>Setup Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
- Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    We need to enable developer mode on a per project basis
- Edit &amp;gt; Project Settings &amp;gt; Plugins &amp;gt; Python  Developer Mode : Enable    We can find the output log here:</description>
+      <description>Enable Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code.</description>
     </item>
     
     <item>

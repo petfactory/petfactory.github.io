@@ -3,22 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/houdini_kinefx_notes/</loc>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/</loc>
-    <lastmod>2021-01-06T15:03:19+01:00</lastmod>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/</loc>
-    <lastmod>2021-01-06T15:03:19+01:00</lastmod>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/python/</loc>
-    <lastmod>2021-01-06T15:03:19+01:00</lastmod>
+    <loc>https://www.petfactory.se/tags/rigging/</loc>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/</loc>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/python/</loc>
     <lastmod>2021-01-06T15:03:19+01:00</lastmod>
   </url>
   
@@ -34,11 +49,6 @@
   
   <url>
     <loc>https://www.petfactory.se/work/equilateral/</loc>
-    <lastmod>2020-12-18T16:13:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/houdini/</loc>
     <lastmod>2020-12-18T16:13:08+02:00</lastmod>
   </url>
   
@@ -340,11 +350,6 @@
   <url>
     <loc>https://www.petfactory.se/work/proc_city_02/</loc>
     <lastmod>2019-09-01T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/rigging/</loc>
-    <lastmod>2019-08-01T15:10:51+01:00</lastmod>
   </url>
   
   <url>
