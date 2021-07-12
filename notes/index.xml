@@ -6,10 +6,21 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Jan 2021 16:40:32 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 10 Jul 2021 18:37:41 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE4 Getting - Started</title>
+      <link>https://www.petfactory.se/notes/ue4_getting_started/</link>
+      <pubDate>Sat, 10 Jul 2021 18:37:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_getting_started/</guid>
+      <description>GETTING STARTED
+Install First we click the plus icon and select the version. When we click the install button we get a promt to choose instasll location. Here we can click the options button to choose we we want to include. If we know we are not interested in some of the target platforms we can uncheck them to avoid to have to download and install that data.
+Settings &amp;amp; Prefs Editor Preferences Some editor prefs that I prefer to set (Houdini, Maya background)</description>
+    </item>
     
     <item>
       <title>Houdini - KineFX notes</title>
