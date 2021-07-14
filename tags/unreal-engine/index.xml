@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unreal Engine on Petfactory</title>
+    <link>https://www.petfactory.se/tags/unreal-engine/</link>
+    <description>Recent content in Unreal Engine on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Jul 2021 10:53:11 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/unreal-engine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UE4 - Pipeline</title>
+      <link>https://www.petfactory.se/notes/ue4_pipeline/</link>
+      <pubDate>Tue, 13 Jul 2021 10:53:11 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_pipeline/</guid>
+      <description>General  System Units  UE uses centimeter (1 UE unit = 1cm)    Naming Convention Using a good naming convention is important to make the project more efficient to work with. For instance, if we have a good naming convention we can understand just by looking at the file name what the purpose of a texture is. It also helps when fiultering the content browser, and make the project easier to understand by organizing the content in a logical way.</description>
+    </item>
+    
+    <item>
+      <title>UE4 - Getting started</title>
+      <link>https://www.petfactory.se/notes/ue4_getting_started/</link>
+      <pubDate>Sat, 10 Jul 2021 18:37:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_getting_started/</guid>
+      <description>Below are some notes from Getting Started in Unreal Engine
+Install First we click the plus icon and select the version. When we click the install button we get a promt to choose instasll location. Here we can click the options button to choose we we want to include. If we know we are not interested in some of the target platforms we can uncheck them to avoid to have to download and install that data.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,19 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Jul 2021 18:37:41 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jul 2021 10:53:11 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE4 - Pipeline</title>
+      <link>https://www.petfactory.se/notes/ue4_pipeline/</link>
+      <pubDate>Tue, 13 Jul 2021 10:53:11 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_pipeline/</guid>
+      <description>General  System Units  UE uses centimeter (1 UE unit = 1cm)    Naming Convention Using a good naming convention is important to make the project more efficient to work with. For instance, if we have a good naming convention we can understand just by looking at the file name what the purpose of a texture is. It also helps when fiultering the content browser, and make the project easier to understand by organizing the content in a logical way.</description>
+    </item>
     
     <item>
       <title>UE4 - Getting started</title>

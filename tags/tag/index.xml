@@ -6,20 +6,10 @@
     <description>Recent content in tag on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Jul 2021 18:37:41 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2019 13:56:54 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/tag/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>UE4 - Getting started</title>
-      <link>https://www.petfactory.se/notes/ue4_getting_started/</link>
-      <pubDate>Sat, 10 Jul 2021 18:37:41 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/ue4_getting_started/</guid>
-      <description>Below are some notes from Getting Started in Unreal Engine
-Install First we click the plus icon and select the version. When we click the install button we get a promt to choose instasll location. Here we can click the options button to choose we we want to include. If we know we are not interested in some of the target platforms we can uncheck them to avoid to have to download and install that data.</description>
-    </item>
     
     <item>
       <title>Houdini - Python</title>
