@@ -147,10 +147,12 @@
         <li><a href="#master-material">Master Material</a>
           <ul>
             <li><a href="#concepts">Concepts</a></li>
+            <li><a href="#create-a-master-material">Create a Master Material</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li><a href="#1020">10:20</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -519,6 +521,220 @@ Determines how inputs are combined to create the materials final color.
 </ul>
 </li>
 </ul>
+<h3 id="create-a-master-material">Create a Master Material</h3>
+<ul>
+<li><strong>Create the master material</strong>
+<ul>
+<li>In the content browser naviagte to where you want your material to be saved</li>
+<li>RMB click &gt; Material (in the content browser) and give it a name</li>
+<li>Double click to open it in the material editor</li>
+</ul>
+</li>
+<li><strong>Add Base Color</strong>
+<ul>
+<li>RMB click or Press tab to open the node search field</li>
+<li>Start typing vector, and select <strong>Parameters &gt; VectorParameter</strong> from the list</li>
+<li>Select the parameter node and in the details panel:
+<ul>
+<li>General
+<ul>
+<li>Parameter Name : &ldquo;Base_Color&rdquo;<br>
+The namne of the parameter</li>
+</ul>
+</li>
+<li>Material Expression Vector Parameter:
+<ul>
+<li>Default Value:<br>
+This will be the default base color value</li>
+</ul>
+</li>
+<li>Material Expression
+<ul>
+<li>Group : &ldquo;BaseColor&rdquo;<br>
+This is useful &hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add a base color texture node</strong>
+<ul>
+<li>To add a texture node we can either:
+<ul>
+<li>Drag and drop the texture from the content browser to the material editor</li>
+<li>Or select the texture in the content browser, click one time in the material editor (to give it focus) hold <strong>T</strong> and LMB click in the material editor.</li>
+</ul>
+</li>
+<li>To be able to use the texture sample node as a parameter we need to RMB click it &gt; <strong>Convert to Parameter</strong></li>
+<li>On the texture sample node
+<ul>
+<li>General
+<ul>
+<li>Parameter Name : &ldquo;Base_Color_Texture&rdquo;</li>
+<li>Group : &ldquo;BaseColor&rdquo;<br>
+This should be found in the dropdown since we already created a group called the same.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Static Switch node (base color)</strong>
+<ul>
+<li>In this material we want the ability to switch between a base color or to use a texture for the base color.</li>
+<li>RMB click or press tab, then start typing &ldquo;switch&rdquo; in the node search field</li>
+<li>Select <strong>Parameters &gt; StaticSwitchParameter</strong> and press enter.</li>
+<li>As the parameter use something that describes what the switch does for instance &ldquo;UseTextureAsBasecolor&rdquo;</li>
+<li>Then we connect the output from the texture sample node to the True input of the switch node and the output from the vectorParameter node (that we use for base color) to the False input.</li>
+</ul>
+</li>
+<li><strong>Create a parameter to control Metallic</strong>
+<ul>
+<li>Hold the 1 key and LMB click in the material editor, this will create a 1D constant node</li>
+<li>RMB click &gt; Convert to Parameter.
+<ul>
+<li>General
+<ul>
+<li>Parameter Name : &ldquo;Metallic&rdquo;</li>
+</ul>
+</li>
+<li>Material Expression Scalar Parameter:
+<ul>
+<li>Default Value: 0.0<br>
+This will be the default metallic value</li>
+<li>Slider Min : 0.0<br>
+Because the min of a metallic shopuld be 0.0</li>
+<li>Slider Max : 1.0<br>
+Because the max of a metallic shopuld be 1.0</li>
+</ul>
+</li>
+<li>Material Expression
+<ul>
+<li>Group : &ldquo;Metallic&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Connecdt to the <strong>Metallic</strong> slot of the material.</li>
+</ul>
+</li>
+<li><strong>Setup a packed texture to be used as roughness</strong>
+<ul>
+<li>Drag and drop the texture (that have packed channels) in the material editor</li>
+<li>RMB click the texture sample node &gt; <strong>Convert to Parameter</strong></li>
+<li>Set the parameter name
+<ul>
+<li>General &gt; Parameter Name : &ldquo;Roughness_Texture&rdquo;</li>
+</ul>
+</li>
+<li>Set the group
+<ul>
+<li>Material Expression &gt; Group : &ldquo;Roughness&rdquo;</li>
+</ul>
+</li>
+<li>Change the sampler type to masks since we want to access a packed channel
+<ul>
+<li>Material Expression Texture Base &gt; Sampler Type : <strong>Masks</strong></li>
+<li><strong>NOTE</strong>
+<ul>
+<li>I get an error when the smapler type is set to masks, look into this&hellip;</li>
+<li>[SM5] (Node TextureSampleParameter2D) TextureSampleParameter&gt; Sampler type is Masks, should be Color for /Game/StarterContent/Textures/T_Brick_Clay_New_M.T_Brick_Clay_New_M</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then we want to create a mask parameter node that let us choose which channel of the texture we want to use as our roughness
+<ul>
+<li>RMB click, tab &gt; 	<strong>Parameters &gt; StaticComponentMaskParameter</strong></li>
+<li>On the node give it the name &ldquo;Roghness Masks&rdquo;</li>
+<li>In the Material Expression &gt; group field we also add &ldquo;Roughness&rdquo;</li>
+</ul>
+</li>
+<li>Connect the output from the texture sample node to the input of the mask parameter.</li>
+<li>Then we will create a lerp node that will let us adjust the roughness texture
+<ul>
+<li>Hold the L key and click in the material editor</li>
+<li>Connect the output from the mask parameter to the input of the lerp node</li>
+<li>then we will create to 1D constants that we will use as parameter for the A (min) and B (max) of the lerp node.</li>
+<li>Hold thw 1 key and click to times in the material editor</li>
+<li>Select both of the nodes, RMB &gt; Convert to Parameter.</li>
+<li>Select one of the parameter nodes
+<ul>
+<li>Set the parameter name
+<ul>
+<li>General &gt; Parameter Name : &ldquo;Roughness_Low&rdquo;</li>
+</ul>
+</li>
+<li>Set the group
+<ul>
+<li>Material Expression &gt; Group : &ldquo;Roughness&rdquo;</li>
+</ul>
+</li>
+<li>Set min, max and default values
+<ul>
+<li>Material Expression Scalar Parameter
+<ul>
+<li>Default Value : 0.0</li>
+<li>Slider Min : 0.0001</li>
+<li>Slider Max : 1.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Select the other parameter nodes
+<ul>
+<li>Set the parameter name
+<ul>
+<li>General &gt; Parameter Name : &ldquo;Roughness_High&rdquo;</li>
+</ul>
+</li>
+<li>Set the group
+<ul>
+<li>Material Expression &gt; Group : &ldquo;Roughness&rdquo;</li>
+</ul>
+</li>
+<li>Set min, max and default values
+<ul>
+<li>Material Expression Scalar Parameter
+<ul>
+<li>Default Value : 0.5</li>
+<li>Slider Min : 0.001</li>
+<li>Slider Max : 1.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then we will connect &ldquo;roughness_low&rdquo; to the A on the lerp node and &ldquo;roughness_high&rdquo; to the B.</li>
+</ul>
+</li>
+<li>Then we will connect the output of the lerp node to the roughness input of our material.</li>
+</ul>
+</li>
+<li><strong>Add a normal map</strong>
+<ul>
+<li>Drag and drop the normal texture in the material editor</li>
+<li>RMB click the texture node &gt; Convert to Parameter</li>
+<li>Set the parameter name
+<ul>
+<li>General &gt; Parameter Name : &ldquo;Normal_Map&rdquo;</li>
+</ul>
+</li>
+<li>Set the group
+<ul>
+<li>Material Expression &gt; Group : &ldquo;Normal&rdquo;</li>
+</ul>
+</li>
+<li>Make sure the the sampler tyoe is set to Normal</li>
+<li>Then we connect the output of this node to the Normal input of the material. <strong>Note</strong> that we can RMB click the output pin &gt; <strong>Connect to Normal</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="1020">10:20</h1>
 		
 		</div>
 	</div>

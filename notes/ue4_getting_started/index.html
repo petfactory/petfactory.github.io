@@ -134,11 +134,21 @@
         <li><a href="#migrate-assets">Migrate assets</a></li>
       </ul>
     </li>
-    <li><a href="#lighting">Lighting</a>
+    <li><a href="#lighting--visual-effetcts">Lighting &amp; Visual Effetcts</a>
       <ul>
-        <li><a href="#directional-light">Directional light</a></li>
-        <li><a href="#sky-light">Sky Light</a></li>
-        <li><a href="#post-process-volume">Post Process Volume</a></li>
+        <li><a href="#lighting">Lighting</a>
+          <ul>
+            <li><a href="#directional-light">Directional light</a></li>
+            <li><a href="#sky-light">Sky Light</a></li>
+          </ul>
+        </li>
+        <li><a href="#visual-effects">Visual Effects</a>
+          <ul>
+            <li><a href="#post-process-volume">Post Process Volume</a></li>
+            <li><a href="#sky-atmosphere">Sky Atmosphere</a></li>
+          </ul>
+        </li>
+        <li><a href="#setup-simple-lighting">Setup simple lighting</a></li>
       </ul>
     </li>
     <li><a href="#blueprint">Blueprint</a>
@@ -374,8 +384,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="lighting">Lighting</h1>
-<h2 id="directional-light">Directional light</h2>
+<h1 id="lighting--visual-effetcts">Lighting &amp; Visual Effetcts</h1>
+<h2 id="lighting">Lighting</h2>
+<h3 id="directional-light">Directional light</h3>
 <p>Simulates a light source that is infinitely far away. The shadows cast is parallell.</p>
 <ul>
 <li><strong>Lights &gt; Directional light</strong>
@@ -412,25 +423,29 @@
 </ul>
 </li>
 </ul>
-<h2 id="sky-light">Sky Light</h2>
+<h3 id="sky-light">Sky Light</h3>
 <p>The light in the parts shadowed by the directional light. Captures the distant parts of your level and applies that to the scene as a light. That means the sky&rsquo;s appearance and its lighting/reflections will match, even if your sky is coming from atmosphere, or layered clouds on top of a skybox, or distant mountains. You can also manually specify a cubemap to use.</p>
 <ul>
 <li><strong>Lights &gt; Sky light</strong>
 <ul>
 <li>Light
 <ul>
-<li>Intensity Scale</li>
+<li>Intensity Scale : 4
+<ul>
+<li>Atleast Set to higher than 1</li>
+</ul>
+</li>
 <li>Light Color</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="post-process-volume">Post Process Volume</h2>
+<h2 id="visual-effects">Visual Effects</h2>
+<h3 id="post-process-volume">Post Process Volume</h3>
 <p>Unreal Engine provides Post Process Effects to allow artists and designers to tweak the overall look and feel of the scene. Examples of elements and effects include bloom (HDR blooming effect on bright objects), ambient occlusion, and tone mapping.</p>
 <ul>
-<li>
-<p><strong>Visual Effects &gt; Post Process Volume</strong></p>
+<li><strong>Visual Effects &gt; Post Process Volume</strong>
 <ul>
 <li>Lens
 <ul>
@@ -457,8 +472,14 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Drag and drop a Directional light** from the palce actors panel to the 3d view</p>
+</ul>
+<h3 id="sky-atmosphere">Sky Atmosphere</h3>
+<ul>
+<li><strong>Visual Effects &gt; Sky Atmosphere</strong></li>
+</ul>
+<h2 id="setup-simple-lighting">Setup simple lighting</h2>
+<ul>
+<li>Drag and drop a Directional light from the palce actors panel to the 3d view
 <ul>
 <li>Atmosphere and Clound
 <ul>
@@ -471,9 +492,7 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Drag in a <strong>Sky Atmosphere</strong></p>
-</li>
+<li>Drag in a <strong>Sky Atmosphere</strong></li>
 </ul>
 <h1 id="blueprint">Blueprint</h1>
 <h2 id="input-mapping">Input mapping</h2>
