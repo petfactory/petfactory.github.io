@@ -148,11 +148,16 @@
           <ul>
             <li><a href="#concepts">Concepts</a></li>
             <li><a href="#create-a-master-material">Create a Master Material</a></li>
+            <li><a href="#modify-our-master-material">Modify our master material</a></li>
+          </ul>
+        </li>
+        <li><a href="#material-function">Material Function</a>
+          <ul>
+            <li><a href="#use-a-material-function">Use a material function</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#1020">10:20</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -585,7 +590,8 @@ This should be found in the dropdown since we already created a group called the
 <li>In this material we want the ability to switch between a base color or to use a texture for the base color.</li>
 <li>RMB click or press tab, then start typing &ldquo;switch&rdquo; in the node search field</li>
 <li>Select <strong>Parameters &gt; StaticSwitchParameter</strong> and press enter.</li>
-<li>As the parameter use something that describes what the switch does for instance &ldquo;UseTextureAsBasecolor&rdquo;</li>
+<li>As the parameter name use something that describes what the switch does for instance &ldquo;UseTextureAsBasecolor&rdquo;</li>
+<li>Also make sure that the group is set to &ldquo;BaseColor&rdquo;</li>
 <li>Then we connect the output from the texture sample node to the True input of the switch node and the output from the vectorParameter node (that we use for base color) to the False input.</li>
 </ul>
 </li>
@@ -734,7 +740,133 @@ Because the max of a metallic shopuld be 1.0</li>
 </ul>
 </li>
 </ul>
-<h1 id="1020">10:20</h1>
+<h3 id="modify-our-master-material">Modify our master material</h3>
+<p>As said before, it is wise to create different master materials for different use cases instead of trying to create a one size fits all master material. One quick way to create a new master material is to edit an existing master material. Lets edit the one we just created so that we can use it as a glass material.</p>
+<ul>
+<li>RMB click the master material &gt; <strong>Duplicate (Ctrl W)</strong></li>
+<li>Lets call it MAT_Glass_Master</li>
+<li>To make a material &ldquo;transparent&rdquo; we need to change the Blend Mode to Translucent or Masked the difference is
+<ul>
+<li><strong>Translucent</strong>
+<ul>
+<li>The material can have a varying range of transparency.</li>
+<li>This is more expensive than using a mask, but looks better</li>
+<li>If the Blend Mode is set to <strong>Translucent</strong> the <strong>Opacity</strong> slot on the material is available</li>
+</ul>
+</li>
+<li><strong>Masked</strong>
+<ul>
+<li>The material transparency is either on or off, based on the mask channel.</li>
+<li>If the Blend Mode is set to <strong>Masked</strong> the <strong>Opacity Mask</strong> slot on the material is available</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set <strong>Material &gt; Blend Mode &gt; Translucent</strong></li>
+<li>Set <strong>Translucency &gt; Lighting Mode &gt; Surface ForwardShading</strong>
+<ul>
+<li>This gives the best light / translucency interaction but is also the most expensive.</li>
+<li><strong>NOTE</strong> this is inside the translucency tab</li>
+</ul>
+</li>
+<li>Hold 1 key and LMB click in the material editor to create a float constant</li>
+<li>RMB click and convert it to a parameter</li>
+<li>Edit properties
+<ul>
+<li>Set the parameter name
+<ul>
+<li>General &gt; Parameter Name : &ldquo;Opacity&rdquo;</li>
+</ul>
+</li>
+<li>Set the group
+<ul>
+<li>Material Expression &gt; Group : &ldquo;Opacity&rdquo;</li>
+</ul>
+</li>
+<li>Set min, max and default values
+<ul>
+<li>Material Expression Scalar Parameter
+<ul>
+<li>Default Value : 0.25</li>
+<li>Slider Min : 0.0001</li>
+<li>Slider Max : 1.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lets remove the base color setup we did (delete base color texture and the static switch) and just plug the base color (vec3 parm) directly into the base color input of the material.</li>
+<li>We will keep our roughness setup since that gives a lot of flexibility</li>
+<li>We can obviously change the roughness texture aswell as the normal map to better fit the glass material. This can also be changed in the material instance at a later stage.</li>
+</ul>
+<h2 id="material-function">Material Function</h2>
+<p>A material function is a way to share code between materials and keeping the behaviour consistent across materials.</p>
+<ul>
+<li>In the content browser, navigate to the desired location.</li>
+<li>RMB &gt; Materials &amp; Textures &gt; Material Function</li>
+<li>Give it the name &ldquo;MF_tile_uv&rdquo;</li>
+<li>Double click to go inside</li>
+<li>Select the Output Result node
+<ul>
+<li>Material Expression Function Output
+<ul>
+<li>Output Name : TilingOut</li>
+<li>Description : Texture tiling utility</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Add a <strong>Texture Coordinate</strong> (Coordinates)</li>
+<li>Add a <strong>Functions Input</strong> (Functions)
+<ul>
+<li>Material Expression Function Input
+<ul>
+<li>Input Name : &ldquo;Texture Scale&rdquo;</li>
+<li>Input Type : Function Input Scalar</li>
+<li>Preview Value : X 1.0
+<ul>
+<li>To preview this input when editing the material function we set the x value (of the XYZW) inputs to 1.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Add a multiply, hold M and LMB click.</li>
+<li>Connect the output of the Texture Coordinate to the A input of the multiply node and the output of the Function Input to thr B input.</li>
+<li>Connect the output from the Multiply node to the input of the Output node</li>
+<li>Then press apply and save (I think it is enough tp press save?)</li>
+</ul>
+<h3 id="use-a-material-function">Use a material function</h3>
+<p>Lets use the material function we just created to control the uv tiling of our master material.</p>
+<ul>
+<li>From the content browser drag and drop the material function into our master material.</li>
+<li>Create a 1D constant that we can use to control the texture scale. (Hold 1 key and LMB click to create the node)</li>
+<li>RMB click &gt; Convert to Parameter</li>
+<li>Set parameters
+<ul>
+<li>General
+<ul>
+<li>Parameter Name : &ldquo;Texture Scale&rdquo;</li>
+</ul>
+</li>
+<li>Material Expression Scalar Parameter
+<ul>
+<li>Default Value : 1.0</li>
+<li>Slider Min: 0.5</li>
+<li>Slider Max : 25.0</li>
+</ul>
+</li>
+<li>Material Expression
+<ul>
+<li>Group : &ldquo;UV&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then we will connect the output of our material function to the UV input of all our texture parameter nodes.</li>
+</ul>
 		
 		</div>
 	</div>
