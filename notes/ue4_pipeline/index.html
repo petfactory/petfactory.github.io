@@ -143,7 +143,6 @@
     </li>
     <li><a href="#materials">Materials</a>
       <ul>
-        <li><a href="#material-instance">Material Instance</a></li>
         <li><a href="#master-material">Master Material</a>
           <ul>
             <li><a href="#concepts">Concepts</a></li>
@@ -154,6 +153,16 @@
         <li><a href="#material-function">Material Function</a>
           <ul>
             <li><a href="#use-a-material-function">Use a material function</a></li>
+          </ul>
+        </li>
+        <li><a href="#material-instance">Material Instance</a>
+          <ul>
+            <li><a href="#creating-a-material-instance">Creating a material instance</a></li>
+          </ul>
+        </li>
+        <li><a href="#vertex-animation">Vertex Animation</a>
+          <ul>
+            <li><a href="#setup-vertex-animation">Setup Vertex animation</a></li>
           </ul>
         </li>
       </ul>
@@ -181,7 +190,7 @@
 </li>
 </ul>
 <h2 id="naming-convention">Naming Convention</h2>
-<p>Using a good naming convention is important to make the project more efficient to work with. For instance, if we have a good naming convention we can understand just by looking at the file name what the purpose of a texture is. It also helps when fiultering the content browser, and make the project easier to understand by organizing the content in a logical way. It will also allow for the assets to be processed by python i a predictable way. Here are some examples of how we could name textures:</p>
+<p>Using a good naming convention is important to make the project more efficient to work with. For instance, if we have a good naming convention we can understand just by looking at the file name what the purpose of a texture is. It also helps when filtering the content browser, and make the project easier to understand by organizing the content in a logical way. It will also allow for the assets to be more easily processed with python. Here are some examples of how we could name textures:</p>
 <ul>
 <li><strong>SM_LargeRock_00</strong> : <strong>S</strong>tatic <strong>M</strong>esh for a large rock asset version 0</li>
 <li><strong>T_LargeRock_00_BC</strong> : <strong>T</strong>exture with <strong>B</strong>ase <strong>C</strong>olor channel for a large rock asset version 0</li>
@@ -194,7 +203,7 @@
 <li>Unreal will detect if the imported texture is a normal map and apply appropriate settings.</li>
 </ul>
 <h2 id="texture-groups">Texture Groups</h2>
-<p>Texture groups is a way to organize textures in groups. We can then use this texture groups to non destructively change texture resolution by setting the lod bias to use a smaller size. This could be done to see if we cab hget better performance by reducing the size of certain groups.</p>
+<p>Texture groups is a way to organize textures in groups. We can then use this texture groups to non destructively change texture resolution by setting the lod bias to use a smaller size. This could be done to see if we can get better performance by reducing the size of certain groups.</p>
 <h2 id="size">Size</h2>
 <ul>
 <li>Textures should always be a <strong>power of two</strong>
@@ -283,7 +292,7 @@ This is because we dont want the channels to be gamma corrected. Since we will u
 <ul>
 <li><strong>Collision mesh</strong>
 <ul>
-<li>Can be created inside your dcc
+<li>Can be created inside your DCC
 <ul>
 <li>If we want to create the collision mesh inside our DCC we first model it.</li>
 <li>Then we need to name it **UCX_[full name of mesh]_Number**</li>
@@ -293,7 +302,7 @@ This is because we dont want the channels to be gamma corrected. Since we will u
 <li>Or created inside Unreal Engine
 <ul>
 <li>Go into the static mesh editor</li>
-<li>From the main toolbar menu toy can use various functions found in the Collision menu to create a collision mesh</li>
+<li>From the main toolbar menu you can use various functions found in the Collision menu to create a collision mesh</li>
 <li>You can also use convex decomposition. Make sure that the convex decomposition window is open (Main Menu &gt; Window &gt; Convex Decomposition)</li>
 <li>Then we can hit apply (if you do not get the collision mesh you want chnange the parameters and hit apply again)</li>
 </ul>
@@ -302,7 +311,7 @@ This is because we dont want the channels to be gamma corrected. Since we will u
 </li>
 </ul>
 <h2 id="overdraw">Overdraw</h2>
-<p>Overdraw is when the engine needs to process a part of a mesh that will later not be used. Lets say we have a plane that we will assign a branch texture to. To reduce overdraw it is better to use a bit more verts to more closely hug the outline of the texture than to have large parts that will be invisible.</p>
+<p>Overdraw is when the engine needs to process a part of a mesh that will later not be used. Lets say we have a plane that we will assign a leaf texture to. To reduce overdraw it is better to use a bit more verts to more closely hug the outline of the leaves than to have large parts that will be invisible.</p>
 <p>We can use the view mode shader complexity to view overdraw. View mode &gt; Optimization View Modes &gt; Shader Complexity <strong>Alt 8</strong></p>
 <table>
 <thead>
@@ -457,10 +466,8 @@ Determines how inputs are combined to create the materials final color.
 </ul>
 </li>
 </ul>
-<h2 id="material-instance">Material Instance</h2>
-<p>A material can not change during runtime, this is where material instances comes in. A <strong>Material Instance</strong> can change properties during runtime (color values, textures, etc) and we don not have to recompile that material when we do this. There is a slight performance advantage to use material instances over materials, but this is minimal and only noticable if we use thousands of materials. The main advantage is the flexibility to edit the material properties in runtime and without the need to recompile. You can setup a master material that have tweakable properties that are exposed and editable in the material instances.</p>
 <h2 id="master-material">Master Material</h2>
-<p>Inside the amster material youi can use parameter nodes that expose the parameter to the material instance, this can be done for color values, roughness values, textures etc.</p>
+<p>Inside the master material you can use parameter nodes that expose the parameter to the material instance, this can be done for color values, roughness values, textures etc.</p>
 <ul>
 <li><strong>Do</strong>
 <ul>
@@ -866,6 +873,115 @@ Because the max of a metallic shopuld be 1.0</li>
 </ul>
 </li>
 <li>Then we will connect the output of our material function to the UV input of all our texture parameter nodes.</li>
+</ul>
+<h2 id="material-instance">Material Instance</h2>
+<p>A material can not change during runtime, this is where material instances comes in. A <strong>Material Instance</strong> can change properties during runtime (color values, textures, etc) and we don not have to recompile that material when we do this. There is a slight performance advantage to use material instances over materials, but this is minimal and only noticable if we use thousands of materials. The main advantage is the flexibility to edit the material properties in runtime and without the need to recompile. You can setup a master material that have tweakable properties that are exposed and editable in the material instances.</p>
+<h3 id="creating-a-material-instance">Creating a material instance</h3>
+<ul>
+<li>
+<p>Creating</p>
+<ul>
+<li>RMB click the master material &gt; Create Material Instance</li>
+<li>RMB click the content browser &gt; Materials &amp; Textures &gt; Material Instance
+<ul>
+<li>This will create an &ldquo;empty material instance&rdquo;</li>
+<li>Then we can drag and drop the master material in the parent slot of the material instance (when it is opened in the material editor)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Material instance</p>
+<ul>
+<li>Parameter Groups
+<ul>
+<li>BaseColor</li>
+<li>Roughness</li>
+<li>Etc&hellip;<br>
+The parameters that we createed inside the master material will be placed in the group that we specify on the parameter. If no groups were specified they will end up inside the Global Scalar Parameter Values. Using groups is a nice way to organize the material.</li>
+</ul>
+</li>
+<li>General
+<ul>
+<li>Phys Material<br>
+Used for sounds, effects etc</li>
+<li>Parent Material
+The master Material (can be set/changed here)</li>
+</ul>
+</li>
+<li>Light Mass Settings</li>
+<li>Material Property Overrides<br>
+This should only be used to test/try out things. Mayabe quickly test two sided etc. If checges are needed here it is an indication that the master material is probably not a good fit to be used as a parent for this material insatnce.
+<ul>
+<li>Blend Mode</li>
+<li>Shading Model</li>
+<li>Two sided</li>
+<li>Etc&hellip;</li>
+</ul>
+</li>
+<li>Previewing<br>
+Here we can specify which mesh to use for previewing inside the amterial editor.
+<ul>
+<li>Preview Mesh</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="vertex-animation">Vertex Animation</h2>
+<p>Vertex animation is a really cheap way to add complex animation to a mesh. It is run on the GPU and is basically offsetting the vertex positions over time. One limitation of vertex animation is since it is run on the GPU the CPU has no/(limited?) access so it is basically used as eyecandy since we can not easily &ldquo;interact&rdquo; with the animation in gameplay/realtime.</p>
+<h3 id="setup-vertex-animation">Setup Vertex animation</h3>
+<ul>
+<li>In the content browser navigate to where you want to save the material</li>
+<li>RMB click &gt; Material (Create Basic Asset)</li>
+<li>Give it a good name, and double click to jump in.</li>
+<li>We need to change our blend mode to masked, since we are going to use a texture for the leaves that have a mask for the transparency.
+<ul>
+<li>Material
+<ul>
+<li>Blend Mode : <strong>Masked</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If we are going to use this as texture for leaves we probably want to use a two sided material
+<ul>
+<li>Material
+<ul>
+<li>Two Sided : <strong>ON</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lets drag and drop a texture to use for the base color and alpha
+<ul>
+<li>Connect the RGB to BaseColor</li>
+<li>Connect the alpha to Opacity Mask</li>
+</ul>
+</li>
+<li>If we have a normal map, drag and drop, connect to Normal</li>
+<li>Lets add a parameter for roughness
+<ul>
+<li>Hold 1 and LMB click to create a 1D constant, RMB click convert to parameter</li>
+<li>Set the parameter name &amp; group to &ldquo;roughness&rdquo;</li>
+<li>Default value 0.5, min 0.0, max 1.0</li>
+</ul>
+</li>
+<li>Add the material function that will create the vertex animation
+<ul>
+<li>RMB or tab and start typing &ldquo;simple&hellip;&rdquo;</li>
+<li>Select <strong>Misc &gt; SimplGrassWind</strong> from the list. (I guess this is part of the starter content)</li>
+<li>Connect to the <strong>World Position Offset</strong> on the material</li>
+<li>Then we need to add some inputs to our simple grass wind material function</li>
+<li>We need 2 scalar  and 1 vector constant.
+<ul>
+<li>Hold 1 and click 2 times in the editor to create the scalar constants</li>
+<li>Hold 3 and LMB click to create the vector constant.</li>
+<li>If we want to expose this for our material instance we can convert the inputs to parameters, give them nice names, add to suitable groups, set some nice defaults, min and max.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 		
 		</div>
