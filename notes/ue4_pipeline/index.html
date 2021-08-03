@@ -167,6 +167,24 @@
         </li>
       </ul>
     </li>
+    <li><a href="#performance--optimization">Performance &amp; Optimization</a>
+      <ul>
+        <li><a href="#texture-streaming">Texture streaming</a>
+          <ul>
+            <li><a href="#pool-size">Pool Size</a></li>
+            <li><a href="#never-stream">Never Stream</a></li>
+          </ul>
+        </li>
+        <li><a href="#lods--merging-static-meshes">LODs &amp; merging static meshes</a>
+          <ul>
+            <li><a href="#lod-1">LOD</a></li>
+            <li><a href="#merge-actor-tool">Merge Actor Tool</a></li>
+            <li><a href="#hlod">HLOD</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#lighting-shadow--post-process">Lighting, Shadow &amp; Post Process</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -186,6 +204,12 @@
 <li><strong>System Units</strong>
 <ul>
 <li>UE uses centimeter (1 UE unit = 1cm)</li>
+</ul>
+</li>
+<li>Copy assets (as text)
+<ul>
+<li>If you select some static meshes and <strong>Ctrl C</strong> you save the selected assets, their translation etc to the clipboard</li>
+<li>You can then paste the data to a text editor. This data can the be <strong>Ctrl V</strong> in Unreal editor to &ldquo;replace&rdquo; the actors.</li>
 </ul>
 </li>
 </ul>
@@ -983,6 +1007,154 @@ Here we can specify which mesh to use for previewing inside the amterial editor.
 </ul>
 </li>
 </ul>
+<h1 id="performance--optimization">Performance &amp; Optimization</h1>
+<h2 id="texture-streaming">Texture streaming</h2>
+<p>Texture streaming is using different mipmaps of the texture based on the distance to the camera and where the camera is looking. If you textures appear a bit blurry you might have a problem with the texture streaming. There is pool size for the texture streaming that unreal can fill up with mipmaps. If you use a lot of high resolution textures you might get a warning telling you &ldquo;texture pool size limit exceded&rdquo;. It basically tells you that your pre-allocated memory for textures is running low.</p>
+<h3 id="pool-size">Pool Size</h3>
+<p>To increase the size of the texture pool size:</p>
+<ul>
+<li>Console
+<ul>
+<li>r.Streaming.PoolSize=5000
+<ul>
+<li>where to number is ther size in MB</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DefaultEngine.ini<br>
+You can also do this in the DefaultEngine.ini found in the Config folder of your project
+<ul>
+<li>Under the [/Script/Engine.RenderSettings] you can set
+<ul>
+<li>r.Streaming.PoolsSize=5000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="never-stream">Never Stream</h3>
+<p>You can set a texture to never stream. This ensures that the highest resolution is always used. This should not be set in most circumstances, but you might want to enable thsi for textures used in UI or that display text that are close to the user.</p>
+<ul>
+<li>Double click the texture in the content Browser
+<ul>
+<li>Details panel
+<ul>
+<li>Level of Detail
+<ul>
+<li>Never Stream : <strong>on</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="lods--merging-static-meshes">LODs &amp; merging static meshes</h2>
+<h3 id="lod-1">LOD</h3>
+<ul>
+<li>LOD Tips
+<ul>
+<li>The eye is really good at picking up silouettes, that is why keeping a good silouette of the LODs are important.</li>
+<li>To justify the extra memory required by having LODs, the &ldquo;reduction steps&rdquo; between the meshed must not be to small.</li>
+<li>Some ballpark percentages when it comes to LOD reduction <strong>75</strong>, <strong>25</strong> and <strong>12</strong>%</li>
+<li>The switching between the LODs are based on the screen size the mesh have. If you need to manually set distance you need to eanble LOD Settings &gt; Auto Compute LOD Distances. The current screen size of the mesh is located in the top left corner of the 3D viewport in the static mesh editor.</li>
+<li>You can force a LOD model to be used &ldquo;per instance&rdquo; of the static mesh.
+<ul>
+<li>Select the static mesh in the main editor world outliner</li>
+<li>In the details panel Rendering &gt; LOD &gt; Forced LOD Model</li>
+<li>You can also set the min LOD to use etc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Automatic LOD creation tools</p>
+<ul>
+<li>If you dont have LODs you can easily construct them inside UE, here is how you do it
+<ul>
+<li>Double click the static mesh to open it in the editor</li>
+<li>Expand the <strong>LOD Settings</strong> tab</li>
+<li>In the <strong>LOD Group</strong> dropdown you can choose a preset to use<br>
+When you change the item selected you will be promted if you want to change the LOD. Click yes to reconstruct the LODs. <strong>Note</strong> theese settings are stored in the BaseEngine.ini file (it is located in the unreal engine install dir. I read somewhere that you can define your own project LOD settings in the Project / Config / DefaultEngine.ini)</li>
+<li>If you want to see all your LODs at the same time you enable the <strong>Custom</strong> checkbox in the <strong>LOD Picker</strong> section</li>
+</ul>
+</li>
+</ul>
+<h3 id="merge-actor-tool">Merge Actor Tool</h3>
+<p>The Merge Actor Tool is used to combine meshes to reduce draw calls and to bake textures to a texture atlas so that we can reduce the number of materiuals used. Here is how it is used.</p>
+<ul>
+<li>Select the meshes in the world outliner or the viewport.</li>
+<li>Window &gt; Developer Tools &gt; Merge Actor
+<ul>
+<li>This will open up the merge actor tool and display the selected meshes in a list.</li>
+</ul>
+</li>
+<li><strong>Mesh Settings</strong>
+<ul>
+<li><strong>Pivot Point at Zero</strong> : On<br>
+This can be good to use for easy placement of the merged actor. You simply drag it in to the 3D view and reset the trtanslation and it should match up with the original meshes. One drawback is the if you want to translate the mesh the pivot could be really far of the mesh center.</li>
+<li><strong>LOD Selection Type</strong> : Use Specific LOD Level<br>
+To be able to bake the textures to a texture atlas we need to set this to Use Specific LOD Level</li>
+<li><strong>Specific LOD</strong> : 0<br>
+We use the 0 LOD to get the most quality. We could later decimate it using the LOD autogeneration tools to further optimize the mesh.</li>
+</ul>
+</li>
+<li><strong>Material Settings</strong>
+<ul>
+<li><strong>Merge Materials</strong> : On<br>
+This will create a texture atlas of all the textures</li>
+<li><strong>Material Settings</strong><br>
+Here we can adjust the size of the textures, which maps to include, the blend mode of the material etc.
+<ul>
+<li>Texture Size</li>
+<li>Texture Sizing Type<br>
+Various ways of how to pack the textures. Which type you should use is a little trial and error and depending on the current assets.</li>
+<li>Normal Map</li>
+<li>Metallic Map</li>
+<li>etc&hellip;</li>
+<li>Blend Mode<br>
+This will set the blend mode of the parent material.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Landscape Culling</strong>
+<ul>
+<li>Use Landscape Culling<br>
+If enabled all assets the landsacpe will be discarded.</li>
+</ul>
+</li>
+<li><strong>Replace Source Actors</strong> : Off<br>
+This is best to keep off. One workflow could be to keep this off and run the merge actor tool.
+<ul>
+<li>Copy the source actors to the clipboard and paste in a text editor.</li>
+<li>Delete the source mesh in Unreal.</li>
+<li>Drag in the new merged actor. since we palced the pivot point a zero we can just reset the transform to get the correct position.</li>
+<li>If we need to get back the orig actors we can just copy/paste the file that we have stored in our texteditor.</li>
+</ul>
+</li>
+<li>When the tool is run it will promt you for a folder in the content browser where the mesh and textures will be saved.</li>
+</ul>
+<h3 id="hlod">HLOD</h3>
+<p>Hierarchical Level of Detail (or HLOD), in its simplest form, is a way to combine pre-existing Static Mesh Actors into a single HLOD Proxy Mesh and Material (with atlased Textures). Using HLOD may lead to increased performance as they reduce draw calls down to one call per Proxy Mesh as opposed to a draw call for each individual Static Mesh Actor. When generating HLOD Proxy Meshes, there several parameters you can adjust which help define how Static Mesh Actors are grouped together as clusters that will ultimately be built into Proxy Meshes.</p>
+<p>A benefit with the HLODs is that it allows us to merge meshes non-destructively. Lets se how we use it.</p>
+<ul>
+<li>First we need to make sure that HLOD is enabled.
+<ul>
+<li><strong>World Settings &gt; LOD System &gt; Enable Hierarchical LODSystem</strong> : On</li>
+</ul>
+</li>
+<li>Then we open the HLOD tool
+<ul>
+<li><strong>Window &gt; Hierarchical LOD Outliner</strong></li>
+</ul>
+</li>
+<li>Then we click the <strong>Generate Clusters</strong> button.</li>
+<li>Based on the settings in the Hierarchical LODSetup section (available both the the World Settings and HLOD tool) it will generate clusters. The static meshes that are contained in a cluster will be merged to one. The material will also be merged.</li>
+<li>When I find that I need this tool I will come back and update this section. But for now I will stop here :)</li>
+</ul>
+<h1 id="lighting-shadow--post-process">Lighting, Shadow &amp; Post Process</h1>
 		
 		</div>
 	</div>
