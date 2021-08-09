@@ -17,7 +17,7 @@
       <pubDate>Tue, 13 Jul 2021 10:53:11 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue4_pipeline/</guid>
-      <description>General  System Units  UE uses centimeter (1 UE unit = 1cm)   Copy assets (as text)  If you select some static meshes and Ctrl C you save the selected assets, their translation etc to the clipboard You can then paste the data to a text editor. This data can the be Ctrl V in Unreal editor to &amp;ldquo;replace&amp;rdquo; the actors.    Naming Convention Using a good naming convention is important to make the project more efficient to work with.</description>
+      <description>General Tips  System Units  UE uses centimeter (1 UE unit = 1cm)   Copy assets (as text)  If you select some static meshes and Ctrl C you save the selected assets, their translation etc to the clipboard You can then paste the data to a text editor. This data can the be Ctrl V in Unreal editor to &amp;ldquo;replace&amp;rdquo; the actors.   Anti-Aliasing  Project Settings &amp;gt; Engine &amp;gt; Rendering &amp;gt; Default Settings &amp;gt; Anti-Aliasing Method    Naming Convention Using a good naming convention is important to make the project more efficient to work with.</description>
     </item>
     
     <item>

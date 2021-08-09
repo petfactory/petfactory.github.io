@@ -116,6 +116,7 @@
   <ul>
     <li><a href="#general">General</a>
       <ul>
+        <li><a href="#tips">Tips</a></li>
         <li><a href="#naming-convention">Naming Convention</a></li>
       </ul>
     </li>
@@ -128,7 +129,7 @@
         <li><a href="#alpha">Alpha</a></li>
         <li><a href="#texture-packing">Texture Packing</a></li>
         <li><a href="#formats">Formats</a></li>
-        <li><a href="#tips">Tips</a></li>
+        <li><a href="#tips-1">Tips</a></li>
       </ul>
     </li>
     <li><a href="#static-meshes">Static Meshes</a>
@@ -182,9 +183,27 @@
             <li><a href="#hlod">HLOD</a></li>
           </ul>
         </li>
+        <li><a href="#lighting-shadow--post-process">Lighting, Shadow &amp; Post Process</a>
+          <ul>
+            <li><a href="#lighting">Lighting</a></li>
+            <li><a href="#build-lighting">Build Lighting</a></li>
+            <li><a href="#shadowing">Shadowing</a></li>
+            <li><a href="#post-pross">Post Pross</a></li>
+          </ul>
+        </li>
+        <li><a href="#volumes">Volumes</a>
+          <ul>
+            <li><a href="#lightmass-importance-volumes">Lightmass Importance Volumes</a></li>
+            <li><a href="#cull-distance-volumes">Cull Distance Volumes</a></li>
+          </ul>
+        </li>
+        <li><a href="#reflections">Reflections</a>
+          <ul>
+            <li><a href="#higher-quality-reflections">Higher Quality Reflections</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#lighting-shadow--post-process">Lighting, Shadow &amp; Post Process</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -200,8 +219,9 @@
 		<div class="col-md-10 mx-auto">
 			<h1>UE4 - Pipeline</h1>
 			<h1 id="general">General</h1>
+<h2 id="tips">Tips</h2>
 <ul>
-<li><strong>System Units</strong>
+<li>System Units
 <ul>
 <li>UE uses centimeter (1 UE unit = 1cm)</li>
 </ul>
@@ -210,6 +230,11 @@
 <ul>
 <li>If you select some static meshes and <strong>Ctrl C</strong> you save the selected assets, their translation etc to the clipboard</li>
 <li>You can then paste the data to a text editor. This data can the be <strong>Ctrl V</strong> in Unreal editor to &ldquo;replace&rdquo; the actors.</li>
+</ul>
+</li>
+<li>Anti-Aliasing
+<ul>
+<li>Project Settings &gt; Engine &gt; Rendering &gt; Default Settings &gt; Anti-Aliasing Method</li>
 </ul>
 </li>
 </ul>
@@ -301,7 +326,7 @@ This is because we dont want the channels to be gamma corrected. Since we will u
 </ul>
 </li>
 </ul>
-<h2 id="tips">Tips</h2>
+<h2 id="tips-1">Tips</h2>
 <p>If you get artifacts from the mipmaps (thin lines, chain link fences etc) you could try to change the <strong>Mip Gen Settings</strong> on the texture node. This will sharpen, blur etc the mips which might help with the artifacts.</p>
 <h1 id="static-meshes">Static Meshes</h1>
 <h2 id="lightmaps">Lightmaps</h2>
@@ -1154,7 +1179,271 @@ This is best to keep off. One workflow could be to keep this off and run the mer
 <li>Based on the settings in the Hierarchical LODSetup section (available both the the World Settings and HLOD tool) it will generate clusters. The static meshes that are contained in a cluster will be merged to one. The material will also be merged.</li>
 <li>When I find that I need this tool I will come back and update this section. But for now I will stop here :)</li>
 </ul>
-<h1 id="lighting-shadow--post-process">Lighting, Shadow &amp; Post Process</h1>
+<h2 id="lighting-shadow--post-process">Lighting, Shadow &amp; Post Process</h2>
+<h3 id="lighting">Lighting</h3>
+<ul>
+<li><strong>Mobility</strong>
+<ul>
+<li>Static
+<ul>
+<li>Cheapest</li>
+<li>Fast</li>
+<li>Completely baked</li>
+</ul>
+</li>
+<li>Stationary
+<ul>
+<li>Semi-expensive</li>
+<li>Can interact with the scene, a dynamic actor will cast a shadow</li>
+<li>You can change the light color &amp; intensity at runtime&hellip;</li>
+<li>&hellip;But not move them.</li>
+</ul>
+</li>
+<li>Movable
+<ul>
+<li>Most expensive</li>
+<li>Fully dynamic</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="build-lighting">Build Lighting</h3>
+<ul>
+<li>Build Options
+<ul>
+<li>Lighting Quality
+<ul>
+<li>Production
+<ul>
+<li>Best quality, take a long time, only do before the gameis shipped</li>
+</ul>
+</li>
+<li>High
+<ul>
+<li>Even better</li>
+</ul>
+</li>
+<li>Medium
+<ul>
+<li>Slightly slower, but better results</li>
+</ul>
+</li>
+<li>Preview
+<ul>
+<li>Low quality but really fast, give a indication if the lighting is heading in the right directrion. Fast iteration no need for long builds</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="shadowing">Shadowing</h3>
+<ul>
+<li><strong>Static Shadows</strong><br>
+Baked shadows, nice fallof
+<ul>
+<li>Static light type</li>
+<li>Cheap</li>
+<li>No scene interaction</li>
+</ul>
+</li>
+<li><strong>Dynamic Shadows</strong><br>
+Dynamic but the shadow fallof does not look as nice as baked
+<ul>
+<li>Stationary &amp; Moveable light type 
+Note that stationary is almost like a mix of a static and moveable (can blend baked shadow with a dynamic shadow, I guess that the shadow fram a static mesh is baked when using stationary?)</li>
+<li>Expensive</li>
+<li>Scene interaction</li>
+</ul>
+</li>
+</ul>
+<p>Other shadow types</p>
+<ul>
+<li><strong>Cascaded shadows</strong>
+<ul>
+<li>Only available on directional lights
+<ul>
+<li>Options under the section Cascaded Shadow Maps</li>
+</ul>
+</li>
+<li>Can &ldquo;blend&rdquo; static and dynamic shadows</li>
+<li>Based on the distance from the camera the shadow is blended from dynamic to static for performance reasons.</li>
+<li></li>
+</ul>
+</li>
+<li>Distance Field Shadows
+<ul>
+<li>Uses the mesh distance field to generate the shadow</li>
+<li>Really nice quality</li>
+<li>Really expensive</li>
+<li>Need to enable it under project settings
+<ul>
+<li>Rendering &gt; Lighting &gt; Generate Mesh Distance Fields</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Contact shadows
+<ul>
+<li>Done in screen space</li>
+<li>Add shadows for small details in the mesh</li>
+<li>Expensive, use for animatic/cut scenes</li>
+<li>Uses paralax occlusion mapping</li>
+<li>Point light (only for point light?)
+<ul>
+<li>Light &gt; Contact Shadow Length : 0.125 and increase
+<ul>
+<li>keep the values below 1.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="post-pross">Post Pross</h3>
+<ul>
+<li>Post Process Volume
+<ul>
+<li>Mobile Tone Mapper
+<ul>
+<li>Only for mobile platforms</li>
+</ul>
+</li>
+<li>Post Process Volume Settings
+<ul>
+<li>Unbound : <strong>On</strong><br>
+If this affects the whole world, if this is off the process will only be used inside the volume</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="volumes">Volumes</h2>
+<p>A lot of player interaction can be controlled with volumes, for instance where players are allowed to go, sound effects, postprocesses etc.</p>
+<h3 id="lightmass-importance-volumes">Lightmass Importance Volumes</h3>
+<ul>
+<li>Lightmass Importance Volumes has two purposes:
+<ul>
+<li><strong>Determines the bounds of the light mass calculation</strong>
+<ul>
+<li>A good way to speed up the calculation of light in the level. For instance, it would be wasteful to calculate light where the player can not see.</li>
+</ul>
+</li>
+<li><strong>Let dynamic objects know about the static lighting</strong>
+<ul>
+<li>To do this lighting probes are placed inside to Lightmass Importance Volume and the dynamic objects sample this probes to get lighting information. To view this probes use the show menu in the top left dropdown menu of the 3D view.</li>
+<li>Show &gt; Visualize &gt; Volume Lighting Samples</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tips
+<ul>
+<li>There is no need to get too detailed with multiple voulumes to &ldquo;closely cover&rdquo; the level geo. When the lighting is built the it will look at the min max of the volumes, so do not spend to much time to setup the volumes with multiple volumes.</li>
+<li>Make sure it covers the whole playable area, and that it extends a bit below the ground to ensure that everyting is included in the lighting calcualtion</li>
+<li>To set the density of the lightmass you go to the World Settings &gt; Lightmass &gt; Lightmass Settings &gt; Static Lighting Level Scale</li>
+<li>The <strong>Lightmass Character Indirect Details Volume</strong>
+<ul>
+<li>is used to add lighting samples where the Lightmass Importance Volumes might not add samples or add to few. Since the samples are placed inside the lightmass importance volume and above the geometry there might be places where samples are needed but not placed when only usimg the lightmass importance volume. An example of this would be an elevator shaft where the elevator will move in the game but when the samples are placed the engine does not not this, so there will be no samples there.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cull-distance-volumes">Cull Distance Volumes</h3>
+<p>Cull Distance Volumes are a useful optimization tool that defines what distance to draw (or make visible) any Actor within the volume. These volumes store any number of size and distance combinations called Cull Distance Pairs. These are mapped to the bounds of an Actor (along its longest dimension) and then assigned to that Actor instance in the level. Cull Distance Volumes are most useful for optimizing large outdoor levels that have detailed interiors. The interiors can be culled when they are small enough to be considered unimportant.</p>
+<p>If the cull distance volume does not work for a specfic asset there is also an option on the static mesh actors to specify at distance the should be culled. <strong>Rendering &gt; LOD &gt; Desired Max Draw Distance</strong>
+So the workflow could be use the Cull Distance Volume to catch most of the actors, then tweak the ones that does not work i.e. are culled to early or to soon.</p>
+<p>Note that you have to be in <strong>game mode</strong> to view the culling.</p>
+<h2 id="reflections">Reflections</h2>
+<ul>
+<li>
+<p>Tips</p>
+<ul>
+<li>You can use the reflection <strong>view mode</strong> to view the reflections</li>
+<li>The reflection captures will create one cube map per capture node so adding a lot of them could affect performance.</li>
+<li>sphere and box reflection captures will not create reflections of dynamic actors.</li>
+<li>Screen space reflections and Planar relections will relect dynamic actors.</li>
+<li>You can use a combination of varius reflection types to get the effect that you want.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sphere Reflection Capture</strong></p>
+<ul>
+<li>The most common one</li>
+<li>Workflow example
+<ul>
+<li>Place one large spherical reflection capture to encompass the whole scene, then we could add additional smaller ones to refine certain areas that we want a bit more detailed refelctions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Box Reflection Capture</strong></p>
+<ul>
+<li>Mainly use in hallways/long corridors</li>
+<li>Could introduce artifacs in the edges</li>
+</ul>
+</li>
+<li>
+<p><strong>Planar Reflection</strong></p>
+<ul>
+<li>Before we can use planar reflection we need to enable:
+<ul>
+<li><strong>Project Settings &gt; Rendering &gt; Lighting &gt; Support global clip plane for Planar Reflections</strong><br>
+What this does is taking a copy of the geometry and flipping it upside down to use for reflections. This means that the cost of the reflection will be directly related to how expensive the meshes and material are.</li>
+<li>If you get artifacts in the edges where the reflections meets the meshes you might want to enable the Planar Reflections &gt; Render Scene Two Sided</li>
+<li>You can also choose if you want to exclude certain actors, lighting and post-processes from the planar reflection.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Screen Space Reflections</strong></p>
+<ul>
+<li>This is enabled as a post-process effect</li>
+<li>Will give reflections of dynamic actors</li>
+<li>Note that a creen space reflections will break down if an object moves out side of the camera frustrum since the effect is based on what is visible to the camera.</li>
+</ul>
+</li>
+</ul>
+<h3 id="higher-quality-reflections">Higher Quality Reflections</h3>
+<ul>
+<li><strong>Reflection Capture Resolution</strong>
+<ul>
+<li>Project Settings &gt; Rendering &gt; Reflections
+<ul>
+<li>Reflection Capture Resolution : You could increase this value to get higher quality<br>
+Note that for higher values the memory and performance impact could be severe</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sky Light</strong>
+<ul>
+<li>Increase the cubemap resolution of the Skylight.</li>
+</ul>
+</li>
+<li><strong>Mesh Normal &amp; Tangent encoding</strong>
+<ul>
+<li><strong>Project Settings</strong> <br>
+Selects which GBuffer format should be used. Affects performance primarily via how much GPU memory banwidth used.
+<ul>
+<li>Rendering &gt; Optimizations &gt; GBuffer Format : <strong>High Precision Normals</strong></li>
+</ul>
+</li>
+<li><strong>Static Mesh</strong><br>
+Double click the static mesh in the content browser to open it up in the editor
+<ul>
+<li>LOD 0 &gt; Build Settings &gt; Use High Precision Tangent Basis : <strong>On</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 		
 		</div>
 	</div>
