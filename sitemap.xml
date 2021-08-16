@@ -4,26 +4,36 @@
   
   <url>
     <loc>https://www.petfactory.se/notes/</loc>
-    <lastmod>2021-07-13T10:53:11+02:00</lastmod>
+    <lastmod>2021-08-10T22:03:02+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/</loc>
-    <lastmod>2021-07-13T10:53:11+02:00</lastmod>
+    <lastmod>2021-08-10T22:03:02+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/</loc>
-    <lastmod>2021-07-13T10:53:11+02:00</lastmod>
+    <lastmod>2021-08-10T22:03:02+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue4_pipeline/</loc>
-    <lastmod>2021-07-13T10:53:11+02:00</lastmod>
+    <loc>https://www.petfactory.se/notes/ue5_notes/</loc>
+    <lastmod>2021-08-10T22:03:02+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/unreal/</loc>
+    <lastmod>2021-08-10T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/unreal-5/</loc>
+    <lastmod>2021-08-10T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/ue4_pipeline/</loc>
     <lastmod>2021-07-13T10:53:11+02:00</lastmod>
   </url>
   
@@ -393,7 +403,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_python_node/</loc>
+    <loc>https://www.petfactory.se/notes/houdini_python_snippets/</loc>
     <lastmod>2019-04-15T13:45:10+01:00</lastmod>
   </url>
   

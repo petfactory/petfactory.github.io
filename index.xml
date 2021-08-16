@@ -6,10 +6,19 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Jul 2021 10:53:11 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 10 Aug 2021 22:03:02 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Notes</title>
+      <link>https://www.petfactory.se/notes/ue5_notes/</link>
+      <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_notes/</guid>
+      <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
+    </item>
     
     <item>
       <title>UE4 - Pipeline</title>
@@ -438,12 +447,12 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
     </item>
     
     <item>
-      <title>Houdini Python Node - Snippets</title>
-      <link>https://www.petfactory.se/notes/houdini_python_node/</link>
+      <title>Houdini - Python Snippets</title>
+      <link>https://www.petfactory.se/notes/houdini_python_snippets/</link>
       <pubDate>Mon, 15 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_python_node/</guid>
-      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) </description>
+      <guid>https://www.petfactory.se/notes/houdini_python_snippets/</guid>
+      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) Parms Add Button Add a button to a cop network that when it is pressed will render a child node called &amp;ldquo;rop_cop1&amp;rdquo;. It seems that the commented out line is not necessary? Seems to do the same as the 2 lines above.</description>
     </item>
     
     <item>

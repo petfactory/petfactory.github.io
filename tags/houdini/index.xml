@@ -222,12 +222,12 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
     </item>
     
     <item>
-      <title>Houdini Python Node - Snippets</title>
-      <link>https://www.petfactory.se/notes/houdini_python_node/</link>
+      <title>Houdini - Python Snippets</title>
+      <link>https://www.petfactory.se/notes/houdini_python_snippets/</link>
       <pubDate>Mon, 15 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_python_node/</guid>
-      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) </description>
+      <guid>https://www.petfactory.se/notes/houdini_python_snippets/</guid>
+      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) Parms Add Button Add a button to a cop network that when it is pressed will render a child node called &amp;ldquo;rop_cop1&amp;rdquo;. It seems that the commented out line is not necessary? Seems to do the same as the 2 lines above.</description>
     </item>
     
     <item>
