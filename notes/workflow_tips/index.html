@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Workflow - General</title>
-        <meta name="description" content="Petfactory | Design and Animation | Workflow - General" />
+        <title>Petfactory | Workflow - Tips</title>
+        <meta name="description" content="Petfactory | Design and Animation | Workflow - Tips" />
 
     </head>
 
@@ -114,6 +114,11 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#imagemagick">Imagemagick</a>
+      <ul>
+        <li><a href="#resize">Resize</a></li>
+      </ul>
+    </li>
     <li><a href="#windows-10">Windows 10</a>
       <ul>
         <li><a href="#desktops">Desktops</a></li>
@@ -132,9 +137,16 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Workflow - General</h1>
+			<h1>Workflow - Tips</h1>
 			<p>Here I will post (perhaps) useful things that falls outside more specfic topics.</p>
-<h1 id="windows-10">Windows 10</h1>
+<h1 id="imagemagick">Imagemagick</h1>
+<p>You can RMB click and choose <strong>Git Bash here</strong> (or any other console you want to use)</p>
+<h2 id="resize">Resize</h2>
+<p>In-place resizing</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">magick mogrify -resize 50% *.png
+</code></pre></div><p>Resize to a separate folder (make sure the folder exists)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">magick mogrify -resize 50% -path ./DST *.png
+</code></pre></div><h1 id="windows-10">Windows 10</h1>
 <h2 id="desktops">Desktops</h2>
 <p>Lets say you are watching a tutorial, following along, taking notes (using markdown)  and previewing the notes in a browser. To qucikly switch between app layouts we can use desktops.</p>
 <p>To set this up on Windows 10:</p>
