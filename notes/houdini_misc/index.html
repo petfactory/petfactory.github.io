@@ -128,6 +128,11 @@
     </li>
     <li><a href="#ui">UI</a>
       <ul>
+        <li><a href="#parameters">Parameters</a>
+          <ul>
+            <li><a href="#color">Color</a></li>
+          </ul>
+        </li>
         <li><a href="#shelves">Shelves</a></li>
         <li><a href="#default-desktop">Default desktop</a></li>
         <li><a href="#flags">Flags</a>
@@ -189,13 +194,51 @@
 <h1 id="sop">SOP</h1>
 <h2 id="wrangle">Wrangle</h2>
 <ul>
-<li>Output Selection Group: <strong>group_name</strong>
+<li><strong>Output Selection Group</strong><br>
+Sets a group that will be highlighted when the node is viewed.
 <ul>
-<li>The name of a group to use as the output selection. When the highlight flag is enabled for this node, this group will be the output selection used by later modeling tools (if it exists).</li>
+<li>
+<p>In the wrangle write some code that will create a group</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="color:#66d9ef">if</span>(@P.y<span style="color:#960050;background-color:#1e0010"> &gt; 0){</span>
+    @group_test = 1;
+}
+</code></pre></div><pre><code></code></pre></li>
+<li>
+<p>Then on the tab <em>Bindings</em> we set the Output Selection Group to the group we want to be selected, in our case <em>&ldquo;test&rdquo;</em></p>
+</li>
 </ul>
 </li>
 </ul>
 <h1 id="ui">UI</h1>
+<h2 id="parameters">Parameters</h2>
+<h3 id="color">Color</h3>
+<ul>
+<li><strong>Color Parameter</strong>
+<ul>
+<li><strong>Sample screen color</strong>
+<ul>
+<li>If you MMB press and hold on a color parameter you can sample the screen color.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Node Color</strong>
+<ul>
+<li><strong>Color palette</strong>
+<ul>
+<li>Press C in the network view to open up the color palette</li>
+</ul>
+</li>
+<li><strong>Set Node default color</strong>
+<ul>
+<li>If you hold Ctrl while drag an drop on a node you will set the node default color.</li>
+<li><strong>Note</strong> When you set the default color a JSON file called <strong>Default_Theme_theme.nodecolors</strong> will be created in the folder <em>C:\Users\username\Documents\houdini18.5</em>. A brute force way to reset all node colors is to delete this file. (I did not learn this from the docs but just tried it and it seems to work fine, so do this at your own discretion) You can also have a look at the documentation on the 
+<a href="https://www.sidefx.com/docs/houdini/commands/opdefaultcolor" target="_blank" rel="noopener">opdefaultcolor</a> HScript command which is used to change the initial color of a node when it is put down (changing colors this way will also edit/create the same JSON file as described before)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="shelves">Shelves</h2>
 <p>Recently I had an issue that the added shelves were not saved when Houdini was closed and reopened. A post in the Houdini forum mentioned that you could try to run Houdini as administrator one time to fix this issue, and it did!</p>
 <h2 id="default-desktop">Default desktop</h2>
