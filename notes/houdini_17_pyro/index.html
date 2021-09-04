@@ -117,7 +117,7 @@
     <li><a href="#pyro-source">Pyro Source</a></li>
     <li><a href="#attribute-noise-density--temperature">Attribute Noise (density &amp; temperature)</a></li>
     <li><a href="#attribute-noise-v">Attribute Noise (v)</a></li>
-    <li><a href="#rasterize-the-attribs">Rasterize the Attribs</a></li>
+    <li><a href="#volume-rasterize-attributes">Volume Rasterize Attributes</a></li>
     <li><a href="#dop-network">Dop Network</a></li>
     <li><a href="#explosion">Explosion</a></li>
   </ul>
@@ -172,7 +172,7 @@ The Pyro Source SOP converts its input geometry into points suitable for sourcin
 </ul>
 </li>
 </ul>
-<p>Note that the attributes that are set in the initialize step is not fileds, they are point attribs that will be used when we in a later step rasterize the volume.</p>
+<p><strong>Note</strong> that the attributes that are created in the initialize step are point attributes that will be used when we in a later step rasterize the point attributes to get a volume.</p>
 <h1 id="attribute-noise-density--temperature">Attribute Noise (density &amp; temperature)</h1>
 <p>To make the source volume more interesting we can add an attribute noise to the point attribs before we rasterize them. So lets so that. We append an <em><strong>Attribute Noise</strong></em> node to the Pyro source. 
 <a href="http://www.sidefx.com/docs/houdini/nodes/sop/attribnoise.html" target="_blank" rel="noopener">docs</a></p>
@@ -255,7 +255,7 @@ The Pyro Source SOP converts its input geometry into points suitable for sourcin
 </ul>
 </li>
 </ul>
-<h1 id="rasterize-the-attribs">Rasterize the Attribs</h1>
+<h1 id="volume-rasterize-attributes">Volume Rasterize Attributes</h1>
 <p>To rasterize the attibs we use a <em><strong>Volume Rasterize Attributes</strong></em> node. To rasterize the attributes we first need to tell Houdini wich attributes to rasterize. We do this in the Attributes line edit. The we set the Voxel size. The shelf tools does this by multiplying the the <strong>Particle Separation</strong> by the <strong>Particle Scale</strong> and dididing the result by 4 on the incomming Pyro Source Node.</p>
 <p>Below are some lines form the 
 <a href="http://www.sidefx.com/docs/houdini/nodes/sop/volumerasterizeattributes.html" target="_blank" rel="noopener">docs</a></p>

@@ -6,10 +6,19 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Aug 2021 22:47:22 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 05 Sep 2021 01:05:27 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Icicle</title>
+      <link>https://www.petfactory.se/work/icicle/</link>
+      <pubDate>Sun, 05 Sep 2021 01:05:27 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/work/icicle/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>UE5 - Cinematics</title>
