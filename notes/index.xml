@@ -190,7 +190,7 @@ Point Wrangle Lets append a point wrangle to the particles. We will use the norm
       
       <guid>https://www.petfactory.se/notes/workflow_tips/</guid>
       <description>Here I will post (perhaps) useful things that falls outside more specfic topics.
-Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
+Python Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
 Resize In-place resizing
 magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
 magick mogrify -resize 50% -path ./DST *.pngWindows 10 Desktops Lets say you are watching a tutorial, following along, taking notes (using markdown) and previewing the notes in a browser.</description>
@@ -406,7 +406,7 @@ Shortcuts Timeline Custom shortcuts
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/pyside2/</guid>
-      <description>This assumes you are using Python 3.
+      <description>This assumes you are using Python 3. (I am also using Git Bash as my shell)
 Install with pip (Windows) Setup a virtual environment Lets say we want to install PySide in a virtual env. First we need to create the virtual enveronment. What I usually do is to create a directory for my project, cd into it and then run:
 python3 -m venv venvWhat this will do is to create a virtual environment (inside a new folder called venv) that will be placed inside the current directory.</description>
     </item>
