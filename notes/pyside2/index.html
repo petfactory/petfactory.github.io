@@ -120,8 +120,12 @@
         <li><a href="#hello-world-app">Hello World app</a></li>
       </ul>
     </li>
-    <li><a href="#custom-painting---style-sheets">Custom Painting - Style Sheets</a></li>
-    <li><a href="#custom-painting---empty-model">Custom Painting - Empty Model</a></li>
+    <li><a href="#custom-painting">Custom Painting</a>
+      <ul>
+        <li><a href="#style-sheets">Style Sheets</a></li>
+        <li><a href="#empty-model">Empty Model</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -173,7 +177,8 @@
     w <span style="color:#f92672">=</span> HelloWidget()
     w<span style="color:#f92672">.</span>show()
     app<span style="color:#f92672">.</span>exec_()
-</code></pre></div><h1 id="custom-painting---style-sheets">Custom Painting - Style Sheets</h1>
+</code></pre></div><h1 id="custom-painting">Custom Painting</h1>
+<h2 id="style-sheets">Style Sheets</h2>
 <p>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc. But I also wanted to be able to set the color of the arrow.
 The image below is an example of a simplified version of the widget.</p>
 <p><img src="https://www.petfactory.se/images/custom_stylesheet.png" alt="stylesheet and custom drawing"></p>
@@ -261,7 +266,7 @@ The image below is an example of a simplified version of the widget.</p>
 </code></pre></div><p>While in the research phase I came across a nice post by 
 <a href="http://dgovil.com/blog/2017/02/24/qt_stylesheets/" target="_blank" rel="noopener">Dhruv Govil</a> not exactly related, more on dynamic properties and stylesheets. There is also this article from the 
 <a href="https://wiki.qt.io/Dynamic_Properties_and_Stylesheets" target="_blank" rel="noopener">Qt docs</a></p>
-<h1 id="custom-painting---empty-model">Custom Painting - Empty Model</h1>
+<h2 id="empty-model">Empty Model</h2>
 <p>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &ldquo;empty&rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty. I liked this approach and implemented that in Python. Below is some information from the 
 <a href="https://srinikom.github.io/pyside-docs/PySide/QtGui/QPainter.html" target="_blank" rel="noopener">PySide </a> docs on QPainter. I wanted to understand if I needed to call the begin() and end() when I did the painting.</p>
 <ul>
