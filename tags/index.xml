@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Sep 2021 01:05:27 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 21 Sep 2021 11:18:51 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OCIO</title>
+      <link>https://www.petfactory.se/tags/ocio/</link>
+      <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/ocio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://www.petfactory.se/tags/python/</link>
+      <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Houdini</title>
@@ -71,15 +89,6 @@
       <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/rigging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.petfactory.se/tags/python/</link>
-      <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/python/</guid>
       <description></description>
     </item>
     
@@ -318,29 +327,11 @@
     </item>
     
     <item>
-      <title>PySide</title>
-      <link>https://www.petfactory.se/tags/pyside/</link>
-      <pubDate>Wed, 25 Apr 2018 11:16:20 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/pyside/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PySide2</title>
       <link>https://www.petfactory.se/tags/pyside2/</link>
-      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
+      <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
       
       <guid>https://www.petfactory.se/tags/pyside2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Qt</title>
-      <link>https://www.petfactory.se/tags/qt/</link>
-      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/qt/</guid>
       <description></description>
     </item>
     

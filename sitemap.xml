@@ -3,22 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.petfactory.se/notes/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/ocio/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/ocio_python/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/python/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/tags/houdini/</loc>
     <lastmod>2021-09-05T01:05:27+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/work/icicle/</loc>
-    <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/</loc>
-    <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/</loc>
     <lastmod>2021-09-05T01:05:27+02:00</lastmod>
   </url>
   
@@ -30,11 +50,6 @@
   <url>
     <loc>https://www.petfactory.se/work/</loc>
     <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/</loc>
-    <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
   
   <url>
@@ -85,11 +100,6 @@
   <url>
     <loc>https://www.petfactory.se/tags/rigging/</loc>
     <lastmod>2021-01-30T16:40:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/python/</loc>
-    <lastmod>2021-01-06T15:03:19+01:00</lastmod>
   </url>
   
   <url>
@@ -468,32 +478,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/pyside/</loc>
-    <lastmod>2018-04-25T11:16:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/pysideide_qtableview_custom_paintevent/</loc>
-    <lastmod>2018-04-25T11:16:20+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/pyside_stylesheet_and_custom_painting/</loc>
+    <loc>https://www.petfactory.se/tags/pyside2/</loc>
     <lastmod>2018-03-17T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/pyside2/</loc>
-    <lastmod>2017-10-14T11:16:20+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/pyside2/</loc>
-    <lastmod>2017-10-14T11:16:20+02:00</lastmod>
+    <lastmod>2018-03-17T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/qt/</loc>
+    <loc>https://www.petfactory.se/notes/python/</loc>
     <lastmod>2017-10-14T11:16:20+02:00</lastmod>
   </url>
   

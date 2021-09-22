@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | PySide2</title>
-        <meta name="description" content="Petfactory | Design and Animation | PySide2" />
+        <title>Petfactory | PySide2 - Notes</title>
+        <meta name="description" content="Petfactory | Design and Animation | PySide2 - Notes" />
 
     </head>
 
@@ -114,15 +114,14 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#install-with-pip-windows">Install with pip (Windows)</a>
+    <li><a href="#pyside2">Pyside2</a>
       <ul>
-        <li><a href="#setup-a-virtual-environment">Setup a virtual environment</a></li>
         <li><a href="#install-pyside2">Install PySide2</a></li>
-        <li><a href="#use-the-venv-in-sublimetext">Use the venv in SublimeText</a></li>
         <li><a href="#hello-world-app">Hello World app</a></li>
-        <li><a href="#misc-info">Misc info</a></li>
       </ul>
     </li>
+    <li><a href="#custom-painting---style-sheets">Custom Painting - Style Sheets</a></li>
+    <li><a href="#custom-painting---empty-model">Custom Painting - Empty Model</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -136,26 +135,12 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>PySide2</h1>
-			<p>This assumes you are using Python 3. (I am also using Git Bash as my shell)</p>
-<h1 id="install-with-pip-windows">Install with pip (Windows)</h1>
-<h2 id="setup-a-virtual-environment">Setup a virtual environment</h2>
-<p>Lets say we want to install PySide in a virtual env. First we need to create the virtual enveronment. What I usually do is to create a directory for my project, cd into it and then run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">python3 -m venv venv
-</code></pre></div><p>What this will do is to create a virtual environment (inside a new folder called venv) that will be placed inside the current directory.
-The next step is to activate the environment, we do this by runnung:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">. venv/Scripts/activate
-</code></pre></div><p>If the venv was activated your terminal should display <strong>(venv)</strong> in front of the drive letter.</p>
+			<h1>PySide2 - Notes</h1>
+			<h1 id="pyside2">Pyside2</h1>
 <h2 id="install-pyside2">Install PySide2</h2>
-<p>To install PySide2 (including Shiboken2 &amp; Qt) run:</p>
+<p>To install PySide2 (including Shiboken2 &amp; Qt) make sure that we first activate our 
+<a href="https://www.petfactory.se/notes/python/#venv">venv</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pip install PySide2
-</code></pre></div><h2 id="use-the-venv-in-sublimetext">Use the venv in SublimeText</h2>
-<p>There are probably better ways of running a venv in sublime but this brute force method works fine. Just add a new build system and point it to the python.exe in you venv.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
-    <span style="color:#e6db74">&#34;cmd&#34;</span>: [<span style="color:#e6db74">&#34;C:/path/to/venv/Scripts/python.exe&#34;</span>, <span style="color:#e6db74">&#34;-u&#34;</span>, <span style="color:#e6db74">&#34;$file&#34;</span>],
-    <span style="color:#e6db74">&#34;selector&#34;</span>: <span style="color:#e6db74">&#34;source.python&#34;</span>,
-    <span style="color:#e6db74">&#34;file_regex&#34;</span>: <span style="color:#e6db74">&#34;^</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">s*File </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">(...*?)</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">, line ([0-9]*)&#34;</span>
-}
 </code></pre></div><h2 id="hello-world-app">Hello World app</h2>
 <p>Lets build a simple ui and run with sublimeText. Select the build system we just created and build <strong>Ctrl B</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtCore
@@ -179,7 +164,7 @@ The next step is to activate the environment, we do this by runnung:</p>
         vbox<span style="color:#f92672">.</span>addWidget(button)
 
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>(self, name):
-    	<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;Hello {name}&#39;</span>)
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;Hello {name}&#39;</span>)
 
 
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
@@ -188,17 +173,134 @@ The next step is to activate the environment, we do this by runnung:</p>
     w <span style="color:#f92672">=</span> HelloWidget()
     w<span style="color:#f92672">.</span>show()
     app<span style="color:#f92672">.</span>exec_()
-</code></pre></div><h2 id="misc-info">Misc info</h2>
-<p>To see which packages that are already installed we can ran:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pip list
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">Package    Version
----------- -------
-pip        20.2.1
-setuptools 49.2.1
-WARNING: You are using pip version 20.2.1; however, version 20.2.4 is available.
-You should consider upgrading via the &#39;c:\path\to\python.exe -m pip install --upgrade pip&#39; command.
-</code></pre></div><p>If you wish to deactivate the venv run this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">deactivate
+</code></pre></div><h1 id="custom-painting---style-sheets">Custom Painting - Style Sheets</h1>
+<p>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc. But I also wanted to be able to set the color of the arrow.
+The image below is an example of a simplified version of the widget.</p>
+<p><img src="https://www.petfactory.se/images/custom_stylesheet.png" alt="stylesheet and custom drawing"></p>
+<p>In the article &ldquo;Qt Style Sheets and Custom Painting Example&rdquo; from the 
+<a href="https://wiki.qt.io/Qt_Style_Sheets_and_Custom_Painting_Example" target="_blank" rel="noopener">Qt docs</a> if found a C++ example of how to do this. After some further googling and some trial and error I got it to work with PySide2.</p>
+<p>Below is a simplified example of the widgets.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DotLabel</span>(QtWidgets<span style="color:#f92672">.</span>QFrame):
+
+    <span style="color:#66d9ef">def</span> __init__(self, name, height<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, parent<span style="color:#f92672">=</span>None):
+        super(DotLabel, self)<span style="color:#f92672">.</span>__init__(parent)
+
+        self<span style="color:#f92672">.</span>_dot_color <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QColor(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+        self<span style="color:#f92672">.</span>_name <span style="color:#f92672">=</span> name
+        self<span style="color:#f92672">.</span>_height <span style="color:#f92672">=</span> height
+        self<span style="color:#f92672">.</span>setFixedHeight(height)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_dot_color</span>(self):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>_dot_color
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_dot_color</span>(self, color):
+        self<span style="color:#f92672">.</span>_dot_color <span style="color:#f92672">=</span> color
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">paintEvent</span>(self, e):
+
+        qp <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QPainter(self)
+        qp<span style="color:#f92672">.</span>setRenderHint(QtGui<span style="color:#f92672">.</span>QPainter<span style="color:#f92672">.</span>Antialiasing)
+        rect <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>QRect(self<span style="color:#f92672">.</span>_height, <span style="color:#ae81ff">0</span>, self<span style="color:#f92672">.</span>width(), self<span style="color:#f92672">.</span>_height)
+        qp<span style="color:#f92672">.</span>drawText(rect, QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>AlignVCenter, self<span style="color:#f92672">.</span>_name)
+        qp<span style="color:#f92672">.</span>setBrush(self<span style="color:#f92672">.</span>get_dot_color())
+        qp<span style="color:#f92672">.</span>setPen(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>NoPen)
+        qp<span style="color:#f92672">.</span>drawEllipse(QtCore<span style="color:#f92672">.</span>QPoint(self<span style="color:#f92672">.</span>_height<span style="color:#f92672">*.</span><span style="color:#ae81ff">5</span>, self<span style="color:#f92672">.</span>_height<span style="color:#f92672">*.</span><span style="color:#ae81ff">5</span>), self<span style="color:#f92672">.</span>_height<span style="color:#f92672">*.</span><span style="color:#ae81ff">20</span>, self<span style="color:#f92672">.</span>_height<span style="color:#f92672">*.</span><span style="color:#ae81ff">20</span>)
+        qp<span style="color:#f92672">.</span>end()
+
+    dotColor <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>Property(QtGui<span style="color:#f92672">.</span>QColor, get_dot_color, set_dot_color)
+
+</code></pre></div><p>And in the &ldquo;main&rdquo; widget.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestWidget</span>(QtWidgets<span style="color:#f92672">.</span>QWidget):
+    
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super(TestWidget, self)<span style="color:#f92672">.</span>__init__(parent)
+
+        self<span style="color:#f92672">.</span>setGeometry(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">240</span>,<span style="color:#ae81ff">400</span>,<span style="color:#ae81ff">200</span>)
+
+        vbox <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QVBoxLayout(self)
+
+        <span style="color:#75715e"># add widgets</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+
+            dot <span style="color:#f92672">=</span> DotLabel(<span style="color:#e6db74">&#39;Petfactory {}&#39;</span><span style="color:#f92672">.</span>format(i), <span style="color:#ae81ff">20</span><span style="color:#f92672">+</span>i<span style="color:#f92672">*</span><span style="color:#ae81ff">20</span>)
+            dot<span style="color:#f92672">.</span>setObjectName(<span style="color:#e6db74">&#39;dot_{}&#39;</span><span style="color:#f92672">.</span>format(i))
+            vbox<span style="color:#f92672">.</span>addWidget(dot)
+
+        <span style="color:#75715e"># apply stylesheet</span>
+        s_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>dirname(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(__file__)), <span style="color:#e6db74">&#39;stylesheet.qss&#39;</span>)
+        <span style="color:#66d9ef">with</span> open(s_path, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> f:
+            self<span style="color:#f92672">.</span>setStyleSheet(f<span style="color:#f92672">.</span>read())
+</code></pre></div><p>Example from the style sheet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">DotLabel</span> {
+    <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#34;Futura&#34;</span>;
+}
+
+<span style="color:#f92672">DotLabel</span>#dot_0 {
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> rgb(<span style="color:#ae81ff">253</span>, <span style="color:#ae81ff">151</span>, <span style="color:#ae81ff">32</span>);
+    <span style="color:#66d9ef">color</span>: rgb(<span style="color:#ae81ff">253</span>, <span style="color:#ae81ff">151</span>, <span style="color:#ae81ff">32</span>);
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
+    qproperty-dotColor: rgb(<span style="color:#ae81ff">253</span>, <span style="color:#ae81ff">151</span>, <span style="color:#ae81ff">32</span>);
+}
+
+<span style="color:#f92672">DotLabel</span>#dot_1 {
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">color</span>: rgb(<span style="color:#ae81ff">166</span>, <span style="color:#ae81ff">226</span>, <span style="color:#ae81ff">46</span>);
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">24</span><span style="color:#66d9ef">px</span>;
+    qproperty-dotColor: rgb(<span style="color:#ae81ff">166</span>, <span style="color:#ae81ff">226</span>, <span style="color:#ae81ff">46</span>);
+    <span style="color:#66d9ef">background-color</span>: rgb(<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">90</span>);
+}
+
+<span style="color:#f92672">DotLabel</span>#dot_2 {
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">color</span>: rgb(<span style="color:#ae81ff">102</span>, <span style="color:#ae81ff">217</span>, <span style="color:#ae81ff">239</span>);
+    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
+    qproperty-dotColor: rgb(<span style="color:#ae81ff">102</span>, <span style="color:#ae81ff">217</span>, <span style="color:#ae81ff">239</span>);
+    <span style="color:#66d9ef">background-color</span>: rgb(<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">90</span>);
+}
+</code></pre></div><p>While in the research phase I came across a nice post by 
+<a href="http://dgovil.com/blog/2017/02/24/qt_stylesheets/" target="_blank" rel="noopener">Dhruv Govil</a> not exactly related, more on dynamic properties and stylesheets. There is also this article from the 
+<a href="https://wiki.qt.io/Dynamic_Properties_and_Stylesheets" target="_blank" rel="noopener">Qt docs</a></p>
+<h1 id="custom-painting---empty-model">Custom Painting - Empty Model</h1>
+<p>In a tool I am writing I have a table view in which I want to display some informative text to the user when the view is &ldquo;empty&rdquo; i.e. the model has no rows. My initial idea was to overlay the view with a label but this felt a bit to hacky. I ended up on a SO post that subclassed a QTableView and implemented som custom drawing in the paintEvent when the model was empty. I liked this approach and implemented that in Python. Below is some information from the 
+<a href="https://srinikom.github.io/pyside-docs/PySide/QtGui/QPainter.html" target="_blank" rel="noopener">PySide </a> docs on QPainter. I wanted to understand if I needed to call the begin() and end() when I did the painting.</p>
+<ul>
+<li>class PySide.QtGui.QPainter(arg__1)
+<ul>
+<li>Parameters: arg__1 – PySide.QtGui.QPaintDevice</li>
+</ul>
+</li>
+</ul>
+<p>Constructs a painter that begins painting the paint device immediately.</p>
+<p>This constructor is convenient for short-lived painters, e.g. in a QWidget.paintEvent() and should be used only once. The constructor calls PySide.QtGui.QPainter.begin() for you and the PySide.QtGui.QPainter destructor automatically calls PySide.QtGui.QPainter.end() .</p>
+<p>Here’s an example using PySide.QtGui.QPainter.begin() and PySide.QtGui.QPainter.end() :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">paintEvent</span>(self, paintEvent):
+    p <span style="color:#f92672">=</span> QPainter()
+    p<span style="color:#f92672">.</span>begin(self)
+    p<span style="color:#f92672">.</span>drawLine(<span style="color:#f92672">...</span>) <span style="color:#75715e"># drawing code</span>
+    p<span style="color:#f92672">.</span>end()
+</code></pre></div><p>The same example using this constructor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">paintEvent</span>(self, paintEvent):
+    p <span style="color:#f92672">=</span> QPainter(self)
+    p<span style="color:#f92672">.</span>drawLine(<span style="color:#f92672">...</span>) <span style="color:#75715e"># drawing code</span>
+</code></pre></div><p>And this is the CustomTableView</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CustomTableView</span>(QtWidgets<span style="color:#f92672">.</span>QTableView):
+
+    <span style="color:#66d9ef">def</span> __init__(self, <span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs):
+        super(CustomTableView, self)<span style="color:#f92672">.</span>__init__(<span style="color:#f92672">*</span>args, <span style="color:#f92672">**</span>kwargs)
+        self<span style="color:#f92672">.</span>_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; Right Click to Add / Remove &#39;</span>
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">paintEvent</span>(self, event):
+
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>model() <span style="color:#f92672">and</span> self<span style="color:#f92672">.</span>model()<span style="color:#f92672">.</span>rowCount() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+            super(CustomTableView, self)<span style="color:#f92672">.</span>paintEvent(event)
+
+        <span style="color:#66d9ef">else</span>:
+            qp <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QPainter(self<span style="color:#f92672">.</span>viewport())
+            qp<span style="color:#f92672">.</span>setPen(QtGui<span style="color:#f92672">.</span>QColor(<span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">175</span>, <span style="color:#ae81ff">175</span>))
+            rect <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>QRect(qp<span style="color:#f92672">.</span>fontMetrics()<span style="color:#f92672">.</span>boundingRect(self<span style="color:#f92672">.</span>_text))
+            rect<span style="color:#f92672">.</span>moveCenter(self<span style="color:#f92672">.</span>viewport()<span style="color:#f92672">.</span>rect()<span style="color:#f92672">.</span>center())
+            qp<span style="color:#f92672">.</span>drawText(rect, QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>AlignCenter, self<span style="color:#f92672">.</span>_text)
 </code></pre></div>		
 		</div>
 	</div>

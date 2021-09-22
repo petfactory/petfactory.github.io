@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OCIO on Petfactory</title>
+    <link>https://www.petfactory.se/tags/ocio/</link>
+    <description>Recent content in OCIO on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Sep 2021 11:18:51 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/ocio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OCIO - Python</title>
+      <link>https://www.petfactory.se/notes/ocio_python/</link>
+      <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ocio_python/</guid>
+      <description>I am writing a tool for Houdini that can create, save and apply color themes to color ramp parameters. In this project I needed to convert sRGB to &amp;ldquo;linear&amp;rdquo;. There are many algorithms to do this but this lead me to strat taking a look at OCIO. I have barely dipped my toes in it but here are som notes to get it up and running in Python.
+ First I activate the venv into which I want to install OCIO Then I run pip install opencolorio With the package installed make sure that your IDE can access the package We also need to download a OCIO configuration file from here  import osimport PyOpenColorIO as OCIOdef apply_rgb(rgb, src_space, dst_space):try:config = OCIO.</description>
+    </item>
+    
+  </channel>
+</rss>
