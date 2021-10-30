@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>Icicle</title>
-      <link>https://www.petfactory.se/work/icicle/</link>
-      <pubDate>Sun, 05 Sep 2021 01:05:27 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/work/icicle/</guid>
-      <description>   </description>
-    </item>
-    
-    <item>
       <title>UE5 - Cinematics</title>
       <link>https://www.petfactory.se/notes/ue5_cinematics/</link>
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
@@ -583,7 +574,7 @@ Venv Setup a virtual environment It is a good idea to install packages in virtua
       <guid>https://www.petfactory.se/notes/sublime_text/</guid>
       <description>Misc Search and replace pound or hash sign # I wanted to change a H3 header (###) in a markdown file. I first tried the ordinary search field (no regex) but I did not get any matches. What worked for me was to enable the regex search and enter the following:
 ^#{3}\sBuild system dir ~/&amp;lsquo;Library/Application Support/Sublime Text 3/Packages/User&amp;rsquo;
-python3 {&amp;#34;cmd&amp;#34;: [&amp;#34;/path/to/python3&amp;#34;, &amp;#34;-u&amp;#34;, &amp;#34;$file&amp;#34;],&amp;#34;selector&amp;#34;: &amp;#34;source.python&amp;#34;,&amp;#34;file_regex&amp;#34;: &amp;#34;^\\s*File \&amp;#34;(...*?)\&amp;#34;, line ([0-9]*)&amp;#34;}Shortcuts    CMD KEYS     Cursor at each selected line cmd + shift + L   Select occurrences cmd + D   Cursor at line above shift + ctrl + arrow up   Cursor at line below shift + ctrl + arrow down   shift current line up ctrl + cmd + arrow up   shift current line down ctrl + cmd + arrow down    </description>
+python3 {&amp;#34;cmd&amp;#34;: [&amp;#34;/path/to/python3&amp;#34;, &amp;#34;-u&amp;#34;, &amp;#34;$file&amp;#34;],&amp;#34;selector&amp;#34;: &amp;#34;source.python&amp;#34;,&amp;#34;file_regex&amp;#34;: &amp;#34;^\\s*File \&amp;#34;(...*?)\&amp;#34;, line ([0-9]*)&amp;#34;}Shortcuts    Cursor -     Cursor at each selected line Ctrl + Shift + L   Select occurrences Ctrl + D   Add Cursor at line above Shift + Alt + arrow up   Add Cursor at line below shift + Alt + arrow down       Edit -     Shift current line up Shift + Ctrl + Arrow up   Shift current line down Shift + Ctrl + Arrow down       Layout -     Set Number of columns    1 Column Alt + Shift + 1   2 Columns Alt + Shift + 2   etc &amp;hellip;   Switch to Columns    Column 1 Ctrl + 1   Column 2 Ctrl + 2   etc &amp;hellip;   Set tab in current columnn    Tab 1 Alt + 1   Tab 2 Alt + 2   etc &amp;hellip;   Switch tab in current columnn Ctrl + Tab    </description>
     </item>
     
   </channel>

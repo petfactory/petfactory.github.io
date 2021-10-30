@@ -33,26 +33,6 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/houdini/</loc>
-    <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/work/icicle/</loc>
-    <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/v-ray/</loc>
-    <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/work/</loc>
-    <lastmod>2021-09-05T01:05:27+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/tags/ue5/</loc>
     <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
@@ -93,6 +73,11 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <lastmod>2021-01-30T16:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/houdini_kinefx_notes/</loc>
     <lastmod>2021-01-30T16:40:32+01:00</lastmod>
   </url>
@@ -119,6 +104,11 @@
   
   <url>
     <loc>https://www.petfactory.se/tags/substance-designer/</loc>
+    <lastmod>2020-12-18T16:13:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/</loc>
     <lastmod>2020-12-18T16:13:08+02:00</lastmod>
   </url>
   
@@ -394,6 +384,11 @@
   
   <url>
     <loc>https://www.petfactory.se/work/tunnel/</loc>
+    <lastmod>2019-10-01T11:16:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/v-ray/</loc>
     <lastmod>2019-10-01T11:16:20+02:00</lastmod>
   </url>
   
