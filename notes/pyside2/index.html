@@ -126,6 +126,11 @@
         <li><a href="#empty-model">Empty Model</a></li>
       </ul>
     </li>
+    <li><a href="#qtreeview">QTreeView</a>
+      <ul>
+        <li><a href="#qstandarditem">QStandardItem</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -306,6 +311,11 @@ The image below is an example of a simplified version of the widget.</p>
             rect <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>QRect(qp<span style="color:#f92672">.</span>fontMetrics()<span style="color:#f92672">.</span>boundingRect(self<span style="color:#f92672">.</span>_text))
             rect<span style="color:#f92672">.</span>moveCenter(self<span style="color:#f92672">.</span>viewport()<span style="color:#f92672">.</span>rect()<span style="color:#f92672">.</span>center())
             qp<span style="color:#f92672">.</span>drawText(rect, QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>AlignCenter, self<span style="color:#f92672">.</span>_text)
+</code></pre></div><h1 id="qtreeview">QTreeView</h1>
+<h2 id="qstandarditem">QStandardItem</h2>
+<p>To make an item checkable but not editable using flags</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">item<span style="color:#f92672">.</span>setCheckable(True)
+item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
 </code></pre></div>		
 		</div>
 	</div>
