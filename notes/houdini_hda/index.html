@@ -216,6 +216,11 @@ Houdini supports two different but compatible systems for versioning assets, sup
 <li>{ parm_name [operator] value &hellip;} &hellip;</li>
 <li>Available <strong>operators</strong>: ==, !=, &lt;, &gt;, &gt;=, &lt;=, =~ (matches pattern), !~ (doesn’t match pattern).</li>
 <li>{ enablefeature == 1 count &gt; 10 }</li>
+<li><strong>Note</strong> if you want to use inside a multiparm remember to suffix the parm name with an <strong>#</strong>
+<ul>
+<li>{ use_prefix# == 1}</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
