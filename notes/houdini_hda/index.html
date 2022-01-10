@@ -114,11 +114,10 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#asset-name">Asset name</a>
+    <li><a href="#digital-asset">Digital Asset</a>
       <ul>
-        <li><a href="#namespaces">Namespaces</a></li>
-        <li><a href="#versions">Versions</a></li>
-        <li><a href="#asset-name--scripting">Asset name &amp; scripting</a></li>
+        <li><a href="#preferences">Preferences</a></li>
+        <li><a href="#create-new">Create New</a></li>
       </ul>
     </li>
     <li><a href="#custom-hda-path">Custom HDA Path</a></li>
@@ -127,16 +126,32 @@
         <li><a href="#how-to">How to</a></li>
       </ul>
     </li>
+    <li><a href="#extra-files">Extra Files</a>
+      <ul>
+        <li><a href="#icon">Icon</a></li>
+      </ul>
+    </li>
     <li><a href="#hda-python-scripts">HDA Python Scripts</a>
       <ul>
         <li><a href="#pythonmodule">PythonModule</a></li>
         <li><a href="#additional-modules">Additional Modules</a></li>
       </ul>
     </li>
-    <li><a href="#extra-files">Extra Files</a></li>
+    <li><a href="#help">Help</a></li>
     <li><a href="#expressions">Expressions</a>
       <ul>
         <li><a href="#string-parm-python-expression">String parm python expression</a></li>
+      </ul>
+    </li>
+    <li><a href="#extra">Extra</a>
+      <ul>
+        <li><a href="#asset-name">Asset name</a>
+          <ul>
+            <li><a href="#namespaces">Namespaces</a></li>
+            <li><a href="#versions">Versions</a></li>
+            <li><a href="#asset-name--scripting">Asset name &amp; scripting</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -155,51 +170,55 @@
 			<h1>Houdini - HDA</h1>
 			<p>The notes below are based on info found in the 
 <a href="https://www.sidefx.com/docs/houdini/assets/namespaces.html" target="_blank" rel="noopener">Houdini docs</a> as well as other sources.</p>
-<h1 id="asset-name">Asset name</h1>
-<p>The general form of an asset’s internal name is</p>
-<p><strong>[namespace::]node_name[::version]</strong></p>
-<p>The namespace and version are both optional. You can have a name with both a namespace and a version, or just a namespace, or just a version, or neither.</p>
-<h2 id="namespaces">Namespaces</h2>
-<p>The namespace identifier lets you name your assets without worrying about using the same name as a built-in Houdini node or as a third-party asset you might use someday. (Note that this only applies to the internal name of the node… you can always use any string you want for the human readable label that appears in the user interface.)
-A useful convention to ensure you use a unique namespace name is to reverse the DNS address of your website. For example, if the creator´s website is at houdini.bacon.org, they would use org.bacon.houdini as the namespace for their assets.</p>
-<h2 id="versions">Versions</h2>
-<p>The version string allows you to create multiple independent versions of an asset without having to change the &ldquo;main name&rdquo;.
-Instances of the old version will still work and use the old implementation, while users placing a new node will get the latest version.
-The version can only contain numbers and periods (.). For example, myasset::2, myasset::2.1, myasset::19.1.3, but not myasset::2a or myasset::alpha.</p>
-<h2 id="asset-name--scripting">Asset name &amp; scripting</h2>
-<p>Some scripting commands require the node category and node name together (for example Object/geo, Sop/copy, Dop/popsolver). To use namespaced names with these commands, use the form 
-[namespace::]<strong>node_category</strong>/<strong>node_name</strong>[::version]
-For example, com.sundae::<strong>Sop</strong>/<strong>copy</strong>::2.0</p>
-<!--
-## 2 types of versioning
-
-Houdini supports two different but compatible systems for versioning assets, supporting different use cases:
-
-* You can incorporate the version number as part of the asset’s **internal name**. For example, mynode::2.0. This makes each version an entirely different asset. This allows different versions to exist in the same scene file simultaneously. When the user creates a node, they get the new version, but existing nodes use the older version and continue to work in the old way without changes.
-
-	* **+** You can make large-scale changes to how the node works, how it interprets inputs, its parameter interface, and so on, without breaking anything.
-	* **+** You don’t need to manually update old nodes.
-	* **-** There is no provision to upgrade old nodes automatically.
-
----
-
-* You can use the Version field in the **asset definition**. This was the historical versioning solution before namespaces were added. It is retained for cases where it’s still useful. If an asset instance loads and notices the asset’s version string has changed since the scene file was saved, it will run an upgrade handler script (if it exists). The script can edit the node instance to transform it into the new version.
-
-	* This can be useful if you usually make minor, backwards-compatible changes to an asset rather than big breaking changes, especially new parameters. It is mostly useful in a studio environment, where a TD does the work so the artists' tools are automatically upgraded.
-	* **+** You can automatically upgrade existing assets with new (backwards-compatible) features.
-	* **-** You need to manually update the upgrade script and script the work of changing an old instance into a new instance, every time you update the asset. You may need to maintain the ability for the script to upgrade one of several old versions to the latest edition (for example, the script might need to be able to update any of version 1, 2, or 3 to version 4).
-
--->
-<!--
-# Subnet HDA
-
-* Select the nodes
-* press **Shift C** to create a subnet
-* RMB click on the subnet > **Create Digital Asset**
-
-# Geo level HDA
-
--->
+<h1 id="digital-asset">Digital Asset</h1>
+<p>For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.</p>
+<h2 id="preferences">Preferences</h2>
+<p>Before you create an HDA it is a good idea to configure the preferences. Below is the way I have setup my prefs, but that is depending on your workflow etc.</p>
+<ul>
+<li>RMB click the subnet &gt; <strong>Digital Asset &gt; Preferences</strong></li>
+<li>Digital Asset Save Preferences
+<ul>
+<li><strong>Name Construction</strong>
+<ul>
+<li><strong>Author Entries</strong><br>
+Here I am using the reverse domain name notation, which in my case is:
+<ul>
+<li>se.petfactory</li>
+</ul>
+</li>
+<li><strong>Athor Namespace</strong> : On</li>
+<li><strong>Branch Namespace</strong> : Off</li>
+<li><strong>Versioning</strong> : On</li>
+</ul>
+</li>
+<li><strong>Tab Menu</strong>
+<ul>
+<li><strong>Menu Entry</strong> : Digital Assets</li>
+<li><strong>Asset Label</strong> : Automatic</li>
+<li><strong>Display Branch in Label</strong> : Off</li>
+</ul>
+</li>
+<li><strong>Save To</strong>
+<ul>
+<li><strong>Library Directory</strong> : Custom Preference -&gt; path/to/your/dir</li>
+<li><strong>Library File Name</strong> Automatic</li>
+<li><strong>Prefix Type Category</strong> : On</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="create-new">Create New</h2>
+<ul>
+<li>Select the node(s) you want to create a digital asset from.</li>
+<li>Click the create subnet button (in the top of the node graph tool bar)
+<ul>
+<li>Or <strong>Ctrl + C</strong></li>
+</ul>
+</li>
+<li>RMB click the subnet &gt; <strong>Digital Asset &gt; Create New</strong></li>
+<li>If you setup the preferences the way you like, the only thing you need to set is <strong>Type Name</strong>. (Possible the version number)</li>
+</ul>
 <h1 id="custom-hda-path">Custom HDA Path</h1>
 <p>
 <a href="https://www.petfactory.se/notes/houdini_python/#houdini-packages">Set custom path to HDA</a></p>
@@ -263,6 +282,26 @@ rigtreeutils<span style="color:#f92672">.</span>selectPointGroupParm(kwargs)
 </ul>
 </li>
 </ul>
+<h1 id="extra-files">Extra Files</h1>
+<p>Lets add an extra file to an HDA.</p>
+<ul>
+<li>RMB click the <strong>HDA &gt; Type Properties</strong> and select the <strong>Extra Files</strong> tab.</li>
+<li>Click the <strong>Filename</strong> file chooser amnd navigate to the file.</li>
+<li>Click <strong>Add File</strong> and press <strong>Accept</strong> to close the type properties widget.</li>
+</ul>
+<p>Now the file has been saved inside the HDA on disc. So lets load the file within the HDA.</p>
+<ul>
+<li>On the file node (inside the HDA) click the geometry file chooser.</li>
+<li>On the left hand side, in the <strong>Locations</strong> section of the file chooser widget select <strong>opdef:/</strong></li>
+<li>Navigate to the HDA that we just saved our file to.
+<ul>
+<li><strong>Note</strong> we will find the file in a directory of the HDA type. If we created a sop HDA it will be inside the sop dir. If we created the HDA with a namespace the directory of the HDA will be prefixed with this namespace as well. If we have different versions, the versions will be stored in different dirs.</li>
+</ul>
+</li>
+</ul>
+<h2 id="icon">Icon</h2>
+<p>It can be fun to add your own icon to the HDA. It is a good idea to use a .svg. To add an icon follow the steps outlined above (extra files).
+Note if you add an icon to the asset, you can also use it in the help card.</p>
 <h1 id="hda-python-scripts">HDA Python Scripts</h1>
 <h2 id="pythonmodule">PythonModule</h2>
 <p>
@@ -316,23 +355,9 @@ custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>():
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;called &#34;speak&#34; from PythonModule&#39;</span>)
     custom_module<span style="color:#f92672">.</span>speak()
-</code></pre></div><h1 id="extra-files">Extra Files</h1>
-<p>Lets add an extra file to an HDA.</p>
-<ul>
-<li>RMB click the <strong>HDA &gt; Type Properties</strong> and select the <strong>Extra Files</strong> tab.</li>
-<li>Click the <strong>Filename</strong> file chooser amnd navigate to the file.</li>
-<li>Click <strong>Add File</strong> and press <strong>Accept</strong> to close the type properties widget.</li>
-</ul>
-<p>Now the file has been saved inside the HDA on disc. So lets load the file within the HDA.</p>
-<ul>
-<li>On the file node (inside the HDA) click the geometry file chooser.</li>
-<li>On the left hand side, in the <strong>Locations</strong> section of the file chooser widget select <strong>opdef:/</strong></li>
-<li>Navigate to the HDA that we just saved our file to.
-<ul>
-<li><strong>Note</strong> we will find the file in a directory of the HDA type. If we created a sop HDA it will be inside the sop dir. If we created the HDA with a namespace the directory of the HDA will be prefixed with this namespace as well. If we have different versions, the versions will be stored in different dirs.</li>
-</ul>
-</li>
-</ul>
+</code></pre></div><h1 id="help">Help</h1>
+<p>It is a really good idea to add some help notes. Both for yourself down the line and if you share the HDA. There is a help tab on the HDA where you can add some notes. Read the 
+<a href="https://www.sidefx.com/docs/houdini/help/nodes.html" target="_blank" rel="noopener">docs</a> here</p>
 <h1 id="expressions">Expressions</h1>
 <h2 id="string-parm-python-expression">String parm python expression</h2>
 <p>In an HDA I was building I wanted a way to construct the filepath of a rop file output node inside a cop network. To get an idea of how I could approach this I had a look inside the labs map baker.</p>
@@ -364,7 +389,54 @@ matpath <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</s
 file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{}/{}.{}.jpg&#39;</span><span style="color:#f92672">.</span>format(out_dir, matpath, udim)
 
 <span style="color:#66d9ef">return</span> file_path
-</code></pre></div>		
+</code></pre></div><h1 id="extra">Extra</h1>
+<h2 id="asset-name">Asset name</h2>
+<p>The general form of an asset’s internal name is</p>
+<p><strong>[namespace::]node_name[::version]</strong></p>
+<p>The namespace and version are both optional. You can have a name with both a namespace and a version, or just a namespace, or just a version, or neither.</p>
+<h3 id="namespaces">Namespaces</h3>
+<p>The namespace identifier lets you name your assets without worrying about using the same name as a built-in Houdini node or as a third-party asset you might use someday. (Note that this only applies to the internal name of the node… you can always use any string you want for the human readable label that appears in the user interface.)
+A useful convention to ensure you use a unique namespace name is to reverse the DNS address of your website. For example, if the creator´s website is at houdini.bacon.org, they would use org.bacon.houdini as the namespace for their assets.</p>
+<h3 id="versions">Versions</h3>
+<p>The version string allows you to create multiple independent versions of an asset without having to change the &ldquo;main name&rdquo;.
+Instances of the old version will still work and use the old implementation, while users placing a new node will get the latest version.
+The version can only contain numbers and periods (.). For example, myasset::2, myasset::2.1, myasset::19.1.3, but not myasset::2a or myasset::alpha.</p>
+<h3 id="asset-name--scripting">Asset name &amp; scripting</h3>
+<p>Some scripting commands require the node category and node name together (for example Object/geo, Sop/copy, Dop/popsolver). To use namespaced names with these commands, use the form 
+[namespace::]<strong>node_category</strong>/<strong>node_name</strong>[::version]
+For example, com.sundae::<strong>Sop</strong>/<strong>copy</strong>::2.0</p>
+<!--
+## 2 types of versioning
+
+Houdini supports two different but compatible systems for versioning assets, supporting different use cases:
+
+* You can incorporate the version number as part of the asset’s **internal name**. For example, mynode::2.0. This makes each version an entirely different asset. This allows different versions to exist in the same scene file simultaneously. When the user creates a node, they get the new version, but existing nodes use the older version and continue to work in the old way without changes.
+
+	* **+** You can make large-scale changes to how the node works, how it interprets inputs, its parameter interface, and so on, without breaking anything.
+	* **+** You don’t need to manually update old nodes.
+	* **-** There is no provision to upgrade old nodes automatically.
+
+---
+
+* You can use the Version field in the **asset definition**. This was the historical versioning solution before namespaces were added. It is retained for cases where it’s still useful. If an asset instance loads and notices the asset’s version string has changed since the scene file was saved, it will run an upgrade handler script (if it exists). The script can edit the node instance to transform it into the new version.
+
+	* This can be useful if you usually make minor, backwards-compatible changes to an asset rather than big breaking changes, especially new parameters. It is mostly useful in a studio environment, where a TD does the work so the artists' tools are automatically upgraded.
+	* **+** You can automatically upgrade existing assets with new (backwards-compatible) features.
+	* **-** You need to manually update the upgrade script and script the work of changing an old instance into a new instance, every time you update the asset. You may need to maintain the ability for the script to upgrade one of several old versions to the latest edition (for example, the script might need to be able to update any of version 1, 2, or 3 to version 4).
+
+-->
+<!--
+# Subnet HDA
+
+* Select the nodes
+* press **Shift C** to create a subnet
+* RMB click on the subnet > **Create Digital Asset**
+
+# Geo level HDA
+
+--><blockquote>
+</blockquote>
+		
 		</div>
 	</div>
 </div>
