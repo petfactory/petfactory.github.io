@@ -41,6 +41,15 @@
     </item>
     
     <item>
+      <title>UE4 - Blueprint</title>
+      <link>https://www.petfactory.se/notes/ue4_blueprint/</link>
+      <pubDate>Wed, 14 Jul 2021 18:37:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_blueprint/</guid>
+      <description>Blueprint communication  Direct blueprint communication blueprint Interfaces blueprint Events  Interface  Interfaces  A collection of one or more functions - name only, no implementation Any Blueprint that has the Interface added is guaranteed to have those functions The functions of the Interface can be given functionality in each of the Blueprints that added it Blueprint Interfaces allow different Blueprints to share with and send data to one another The use of Blueprint Interfaces allows for a common method of interacting with multiple disparate types of Objects that all share some specific functionality In other words  You send data, called Interface Messages throgh that asset to listening objects By default, nothing recieves interface messages You have to implement the blueprint inteface onto the blueprints that will be recieving This means that anything that doesnt need to respond to an interface simply doesnt have to implement the interface.</description>
+    </item>
+    
+    <item>
       <title>UE4 - Pipeline</title>
       <link>https://www.petfactory.se/notes/ue4_pipeline/</link>
       <pubDate>Tue, 13 Jul 2021 10:53:11 +0200</pubDate>
