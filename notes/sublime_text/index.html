@@ -116,7 +116,8 @@
   <ul>
     <li><a href="#misc">Misc</a>
       <ul>
-        <li><a href="#search-and-replace-pound-or-hash-sign-">Search and replace pound or hash sign #</a></li>
+        <li><a href="#diff-files">Diff files</a></li>
+        <li><a href="#search-and-replace-">Search and replace #</a></li>
       </ul>
     </li>
     <li><a href="#build-system-dir">Build system dir</a>
@@ -140,7 +141,33 @@
 		<div class="col-md-10 mx-auto">
 			<h1>SublimeText</h1>
 			<h1 id="misc">Misc</h1>
-<h2 id="search-and-replace-pound-or-hash-sign-">Search and replace pound or hash sign #</h2>
+<h2 id="diff-files">Diff files</h2>
+<ul>
+<li><strong>Diff two files</strong>
+<ul>
+<li>Make sure the files are in the &ldquo;Folders&rdquo; section
+<ul>
+<li>You can add folders to the project by dragging and dropping</li>
+</ul>
+</li>
+<li>Selct the first file, then Ctrl select the second</li>
+<li>RMB click &gt; Diff Files&hellip;</li>
+</ul>
+</li>
+<li><strong>Only works with UTF-8 files</strong>
+<ul>
+<li>If you can not diff to files that should be &ldquo;diffable&rdquo; then you probably have some non-ascii characters</li>
+<li>A quick way to inspect teh file is to press &ldquo;Ctrl F&rdquo; then press &ldquo;Alt R&rdquo; to enable Regex mode
+<ul>
+<li>You can also click the regex button on the left most edge of the search input field</li>
+</ul>
+</li>
+<li>Then paste the regex <strong>[^\x00-\x7F]</strong> in the searc input field</li>
+<li>Press find</li>
+</ul>
+</li>
+</ul>
+<h2 id="search-and-replace-">Search and replace #</h2>
 <p>I wanted to change a H3 header (###) in a markdown file. I first tried the ordinary search field (no regex) but I did not get any matches. What worked for me was to enable the regex search and enter the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">^#<span style="color:#f92672">{</span>3<span style="color:#f92672">}</span><span style="color:#ae81ff">\s</span>
 </code></pre></div><h1 id="build-system-dir">Build system dir</h1>

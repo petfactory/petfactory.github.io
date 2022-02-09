@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://www.petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://www.petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        
+        <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
+        <title>Petfactory | UE4 - Blueprint Communication</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE4 - Blueprint Communication" />
+
+    </head>
+
+    <body>
+
+        <div class="site-header"> 
+
+            <div class="container main-nav-wrap">
+
+                <a class="py-2 home-icon" href="https://www.petfactory.se/">
+                    <div class="header-logo-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                        <div class="header-logo-text">PETFACTORY</div>
+                    </div>
+                </a>
+
+                <nav class="d-flex bd-highlight" id="main-nav-content">
+                    <div class="p-2 flex-fill bd-highlight"><a href="https://www.petfactory.se/about">ABOUT</a></div>
+                    <div class="p-2 flex-fill bd-highlight"><a href="https://www.petfactory.se/work">WORK</a></div>
+                    <div class="p-2 flex-fill bd-highlight"><a href="https://www.petfactory.se/cv">CV</a></div>
+                    <div class="p-2 flex-fill bd-highlight"><a href="https://www.petfactory.se/notes">NOTES</a></div>
+                </nav>
+
+            </div>
+            
+        </div>
+
+
+        <div class="site-header-mobile"> 
+
+            
+            <div class="menu-wrap">
+
+                <ul>
+                    <li><a class="menu-wrap-a" href="https://www.petfactory.se/about">ABOUT</a></li>
+                    <li><a class="menu-wrap-a" href="https://www.petfactory.se/work">WORK</a></li>
+                    <li><a class="menu-wrap-a" href="https://www.petfactory.se/cv">CV</a></li>
+                    <li><a class="menu-wrap-a" href="https://www.petfactory.se/notes">NOTES</a></li>
+                </ul>
+
+                
+                
+                <div id="social-list-modal-wrap">
+                    <ul id="social-list-modal">
+                        <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+                        <li><a target="_blank" class="" href="https://vimeo.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.992 4.275c-.07 1.56-1.16 3.697-3.263 6.41-2.176 2.832-4.017 4.248-5.522 4.248-.933 0-1.722-.862-2.367-2.588L3.55 7.6c-.48-1.724-.993-2.587-1.542-2.587-.12 0-.538.252-1.255.755L0 4.796C.79 4.1 1.568 3.406 2.335 2.71c1.053-.912 1.844-1.39 2.37-1.44 1.246-.12 2.012.733 2.3 2.56.31 1.97.526 3.194.647 3.673.36 1.634.754 2.45 1.185 2.45.335 0 .838-.53 1.51-1.59.67-1.06 1.028-1.866 1.076-2.42.096-.915-.263-1.374-1.077-1.374-.383 0-.778.087-1.185.262.788-2.58 2.29-3.834 4.508-3.762 1.644.048 2.42 1.116 2.324 3.205z" fill-rule="nonzero"/></svg></a></li>
+                        <li><a target="_blank" class="" href="https://www.youtube.com/channel/UCvk7lMI0ihnUr4KSfTlPEfQ"><svg fill="#444" width="20" height="20" viewBox="0 0 64 64"><path d="M54.15,10.031l-20.9-0.019l-21.718,0.019c-5.433,0-11.534,3.626-11.534,8.944v26.474c0,5.316,6.101,8.559,11.534,8.559 H54.15c5.432,0,9.834-3.242,9.834-8.559V18.976C63.984,13.657,59.582,10.031,54.15,10.031z M27.856,42.205L27.73,22.044 l14.03,10.168L27.856,42.205z"/></svg>
+
+
+
+
+</a></li>
+                        <li><a target="_blank" class="" href="https://github.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</a></li>
+                        <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="container">
+
+                <a class="py-2 home-icon" href="https://www.petfactory.se/">
+                    <div class="header-logo-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    </div>
+                </a>
+
+                <a href="javascript:void(0);" class="menu-icon">
+                    <div class="mobile-menu-trigger">            
+                        <svg fill="#fff" width="18" height="18" viewBox="0 0 18 15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+        <main id="content-main-wrap">
+
+            
+
+<div class="top-spacer"></div>
+
+<div class="container">
+
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a>
+      <ul>
+        <li><a href="#types-of-communication">Types of communication</a>
+          <ul>
+            <li><a href="#when-to-use">When to use</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#direct-blueprint-communication">Direct Blueprint Communication</a>
+      <ul>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#when-to-use-1">When to use</a></li>
+        <li><a href="#demo">Demo</a></li>
+      </ul>
+    </li>
+    <li><a href="#blueprint-interfaces">Blueprint Interfaces</a>
+      <ul>
+        <li><a href="#concept-1">Concept</a></li>
+        <li><a href="#how-it-works-1">How it works</a></li>
+        <li><a href="#when-to-use-2">When to use</a></li>
+        <li><a href="#how-to">How to</a></li>
+        <li><a href="#extra">Extra</a></li>
+        <li><a href="#demo-1">Demo</a>
+          <ul>
+            <li><a href="#sender">Sender</a></li>
+            <li><a href="#reciever">Reciever</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#event-dispatchers">Event Dispatchers</a>
+      <ul>
+        <li><a href="#concept-2">Concept</a></li>
+        <li><a href="#how-it-works-2">How it works</a></li>
+        <li><a href="#when-to-use-3">When to use</a></li>
+        <li><a href="#demo-2">Demo</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#misc">Misc</a></li>
+  </ul>
+</nav>
+		</aside>	
+	</div>
+
+</div>
+
+
+<div class="container notes-wrap">
+
+	<div class="row">
+		
+		<div class="col-md-10 mx-auto">
+			<h1>UE4 - Blueprint Communication</h1>
+			<p>Below are som notes from a really good video on blueprint communication by Zak Parrish<br>
+
+<a href="https://youtu.be/EM_HYqQdToE" target="_blank" rel="noopener">Blueprint Communications | Live Training | Unreal Engine</a></p>
+<h1 id="intro">Intro</h1>
+<ul>
+<li>A way for separate individual obejcts to talk to each other</li>
+<li>Useful for:
+<ul>
+<li>Broadcasting an event to a number of listeners</li>
+<li>Telling a specfic object to do something</li>
+<li>Quering another object</li>
+</ul>
+</li>
+<li>UE4 has no way to just &ldquo;send a broad signal to everyone&rdquo;
+<ul>
+<li>Trivia: had it in UE2, but it wasn’t very efficient</li>
+</ul>
+</li>
+<li>Communication will always involve the following:
+<ul>
+<li>A Sending Blueprint</li>
+<li>At least one Receiving Blueprint</li>
+</ul>
+</li>
+<li>Communication will always require a reference at some point
+<ul>
+<li>The Sender or Receiver has to become aware of the other</li>
+</ul>
+</li>
+<li>All Blueprint communication is 1-way
+<ul>
+<li>Blueprints can send data back and forth, but it requires both Blueprints to set up their own individual paths of communication</li>
+<li>Queries are possible, but are initiated by the Sender (still 1-way)</li>
+</ul>
+</li>
+</ul>
+<h2 id="types-of-communication">Types of communication</h2>
+<ul>
+<li>3 primary Blueprint communication Methods
+<ul>
+<li><strong>Direct Communication</strong></li>
+<li><strong>Blueprint Interface message calls</strong></li>
+<li><strong>Event Dispatchers</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="when-to-use">When to use</h3>
+<ul>
+<li><strong>Flow of communication</strong>
+<ul>
+<li>Is the sender pushing the data to the reciever? then use:
+<ul>
+<li>Direct communication</li>
+<li>Blueprint interface communication</li>
+</ul>
+</li>
+<li>Are the receivers actively listening for the sender to do something? then use:
+<ul>
+<li>Event dispatchers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Which party can get a reference to the other</strong>
+<ul>
+<li>Can the Sender get a reference to the Receiver(s)? then use:
+<ul>
+<li>Direct communication</li>
+<li>Blueprint Interface Communication</li>
+</ul>
+</li>
+<li>Can only the Receivers get a reference to the Sender? then use:
+<ul>
+<li>Event Dispatchers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="direct-blueprint-communication">Direct Blueprint Communication</h1>
+<h2 id="concept">Concept</h2>
+<ul>
+<li>One Blueprint is talking to another
+<ul>
+<li>Sender gains access to Receiver</li>
+<li>Sender can then
+<ul>
+<li>query data and variables</li>
+<li>Send data and update variables</li>
+<li>Call functionality on the Receiver</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Always 1-to-1 communication, not 1-to-many
+<ul>
+<li>You can use flow control techniques such as Loops to talk to many things</li>
+<li>Each iteration of the loop is still 1-to-1!</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-it-works">How it works</h2>
+<ul>
+<li><strong>Sender gets a reference to the Receiver</strong>
+<ul>
+<li>Many, many ways to do this. Examples would be:
+<ul>
+<li>Assigned at the start of game (BeginPlay)</li>
+<li>Overlaps</li>
+<li>Get All Objects/Actors of Class (very slow, use with caution)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sender may need to Cast</strong> this reference to the thing it wants to talk to
+<ul>
+<li>This is is just a test to verify what it is you are talking to</li>
+<li>If the Cast is successful, then the connection is complete
+<ul>
+<li>Sender can send data to or pull data from the receiver</li>
+<li>Sender can call functions directly on the receiver</li>
+</ul>
+</li>
+<li>If a cast fails you can always cast to something else</li>
+<li>If you already have a reference of the proper type, you don’t need to Cast!</li>
+<li>Casting to a parent class you can not use functionality of child classes</li>
+<li>Casting to low lowers flexibility and eliminates teh possibility of accessing sibling classes without further testing</li>
+</ul>
+</li>
+</ul>
+<h2 id="when-to-use-1">When to use</h2>
+<ul>
+<li><strong>You already know the following:</strong>
+<ul>
+<li>The Sending object</li>
+<li>The Receiving object(s) - or you at least have a clear way to get a reference to them</li>
+<li>What functionality or data you’re going to tap into</li>
+<li>Basically, you know everything that could ever happen between these two things, you just need to make something happen.</li>
+</ul>
+</li>
+<li><strong>If you don’t know everything:</strong>
+<ul>
+<li>You will likely wind up making a lot of Branch (If) nodes
+<ul>
+<li>If it’s a Box, open it</li>
+<li>If it’s a Light, toggle it</li>
+</ul>
+</li>
+<li>This is generally not good. You should probably be using a different form of communication.</li>
+</ul>
+</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<p>In this example we will extend the 3rd Person template and add some interaction to it. Launch a project using the 3rd Perseon template.</p>
+<ul>
+<li><strong>Add a Health variable</strong> to our 3rd person Blueprint.
+<ul>
+<li>Open up the ThirdPersonCharacter BP (Content &gt; ThirdPersonBP &gt; Blueprints) and double click it to open it up</li>
+<li>Switch to the &ldquo;Event Graph&rdquo; tab.</li>
+<li>In the Variable section of the My Bluepeint pane, click the plus icon to add a varaible.
+<ul>
+<li>Call it &ldquo;Health&rdquo;</li>
+<li>Set the type to Float</li>
+<li>Click compile</li>
+<li>Set the deafult value to 100</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup health drain</strong><br>
+Here we setup a health drain system using the built in node pain causing volume
+<ul>
+<li>Drag out a pain causing volume to the 3d view.
+<ul>
+<li>set the damage per second to 10</li>
+</ul>
+</li>
+<li>Since the volume does not render, we drag out a cube, position it on the ground and scales it so that if fits the volume.</li>
+<li>Add a text render (optinally, only for viz purposes)
+<ul>
+<li>Set the text to &ldquo;Hurt&rdquo;</li>
+<li>Position it the way you like, set color</li>
+</ul>
+</li>
+<li>Enter the ThirdPersonCharacter BP and switch to the Event Graph</li>
+<li>Add an AnyDamage Event, start typing &ldquo;any da&hellip;&rdquo; select the Event AnyDamage</li>
+<li>From the variables section drag out the Health variable we created earlier, select GET</li>
+<li>From the output pin of the Health variable (we just added) drag out and release and type &ldquo;-&rdquo; select float - float</li>
+<li>connect the &ldquo;Damage&rdquo; output pin to the to the second input of the subtract node.</li>
+<li>Drag out the Health variable and this time select &ldquo;Set Health&rdquo;</li>
+<li>connect the output pin from the subtract node to the input of the Health Set node</li>
+<li>Also connect the output execute pin from the AnyDamage event to the Health node.</li>
+<li>Click Compile</li>
+<li>Note
+<ul>
+<li>We could add a print function to verify that our health draning is working.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Direct blueprint communication</strong>
+<ul>
+<li>Create a &ldquo;Healing Volume&rdquo;
+<ul>
+<li>RMB click in the content browser (in a place where you want to store your bp) &gt; Blueprint Class
+<ul>
+<li>Based on Actor</li>
+<li>Call it &ldquo;HealingVolume&rdquo;</li>
+</ul>
+</li>
+<li>Double click the blueprint to open it up</li>
+<li>Add a Box Collision Component, call it Volume
+<ul>
+<li>Set teh extent to (100, 100, 100)</li>
+</ul>
+</li>
+<li>click the Event Graph tab to open it up</li>
+<li>From the ActorBeginOverlap, drag out the &ldquo;Other Actor&rdquo; otput pin and release, strt typing &ldquo;th&rdquo; and select &ldquo;Cast to Third Person Character&rdquo;</li>
+<li>Set the Health
+<ul>
+<li><strong>Note</strong>
+<ul>
+<li>We could set the &ldquo;Health&rdquo; variable directly on the Third Person Character instance (taht we got a reference ty by casting) but that is not a good idea.
+<ul>
+<li>This would mean that the &ldquo;Healing volume&rdquo; has functionality that edits a variable of another instance</li>
+<li>If there was a bug it could be hard to find where thsi was called from</li>
+<li>Also might not be obvious to other peolpe opening you blueprint later on</li>
+</ul>
+</li>
+<li>Instead we will create a function inside the Third Person Character that sets the health, and we will call this function from the healing volume.</li>
+</ul>
+</li>
+<li><strong>Add Heal All function</strong>
+<ul>
+<li>Go inside the Third Person Character blueprint</li>
+<li>In the My Blueprint pane under the Functions section click the plus icon to add a function and call it &ldquo;HealAll&rdquo;</li>
+<li>Inside the Heal All function drag out a setter of the Health variable</li>
+<li>Connect the execute pin from the function to the setter</li>
+<li>set the Health value of the setter to 100</li>
+<li>optionally, we could add debug print node to informed that we have been healed</li>
+<li>Comiple and save</li>
+</ul>
+</li>
+<li><strong>Call the Heal All function</strong>
+<ul>
+<li>Open up the healing volume blueprint</li>
+<li>From the &ldquo;As Third Person Character&rdquo; output pin drag and release and start typing &ldquo;heal a&hellip;&rdquo; select &ldquo;Heal All&rdquo;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For visualization during gameplay we can select the textRenderActor and the cube we used for the health drain and place the according to the healing volume.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="blueprint-interfaces">Blueprint Interfaces</h1>
+<ul>
+<li>
+<a href="https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/UserGuide/Types/Interface/" target="_blank" rel="noopener">Docs</a></li>
+</ul>
+<h2 id="concept-1">Concept</h2>
+<ul>
+<li>A way to specify functionality without any kind of implementation</li>
+<li>Any Blueprint that implements the interface is guaranteed to have those functions</li>
+<li>The functions of the Interface can be given functionality in each of the Blueprints that implements it</li>
+<li>Interfaces are 1-to-one communication</li>
+<li>The sender needs some reference to the receiver</li>
+<li>Interfaces dont care whether or not trhe receiving object knows about them.</li>
+</ul>
+<h2 id="how-it-works-1">How it works</h2>
+<ul>
+<li>Interfaces are a unique form of communication, they are their own asset</li>
+<li>Blueprint Interfaces allow different Blueprints to share with and send data to one another</li>
+<li>The use of Blueprint Interfaces allows for a common method of interacting with multiple disparate types of Objects that all share some specific functionality</li>
+<li>In other words
+<ul>
+<li>You send data, called <em>Interface Messages</em> through that asset to listening objects</li>
+<li>By default, nothing recieves interface messages</li>
+<li>You have to implement the blueprint inteface onto the blueprints that will be recieving</li>
+<li>This means that anything that doesnt need to respond to an interface simply doesnt have to implement the interface.</li>
+<li>Only recievers need to implement the interface</li>
+<li>Anything can send interface messages, whether it implements the interrface or not</li>
+<li>it is perfectly safe to send interface messages to objects that dows not implement the interface, nothig will happen.</li>
+</ul>
+</li>
+</ul>
+<h2 id="when-to-use-2">When to use</h2>
+<ul>
+<li>When you are sending a signal to some object and you dont really care what it does once it receives the signal
+<ul>
+<li>In fact, you dont even care if the receiver knows about the signal</li>
+<li>You just want to send a signal to an object, if the know what to do whith it, great!</li>
+</ul>
+</li>
+<li>Example
+<ul>
+<li>Button B send out an InteractWithThings signal
+<ul>
+<li>Receiving object &lsquo;X&rsquo; knows what to do with the signal because it implements the interface, and performs some action</li>
+<li>Receiving object &lsquo;Y&rsquo; also implements the interface but performs some other action.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to">How to</h2>
+<ul>
+<li><strong>Create an interface</strong>
+<ul>
+<li>Blueprint Interfaces are created in the content browser
+<ul>
+<li>RMB click &gt; Blueprints &gt; Blueprint Interface</li>
+</ul>
+</li>
+<li>They have some limitations
+<ul>
+<li>Add new variables</li>
+<li>Edit graphs</li>
+<li>Add Components</li>
+</ul>
+</li>
+<li>In the blueprint interface editor:
+<ul>
+<li>You automatically get you first function</li>
+<li>You can setup inputs/outputs</li>
+<li>You cant setup any functionality, the graph is grayed out</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Implementing an interface</strong>
+<ul>
+<li>In the receiving class, go under class settings</li>
+<li>under implemented interfaces, add your new interface</li>
+<li>recompile</li>
+<li>you can now create an event in your graph named the same thing as your function</li>
+<li>now when this class (instance I guess) receives the message for that interface function, something happens</li>
+</ul>
+</li>
+<li><strong>Note</strong>
+<ul>
+<li>If the interface has a return value (output) it gets implemented as a <strong>Function</strong> on the receiving object.</li>
+<li>If the interface has no return value (output) it gets implemented as an <strong>Event</strong> on the receiving object.
+<ul>
+<li>It can still have inputs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="extra">Extra</h2>
+<ul>
+<li>Interfaces can be used for communication bewteen sub-levels</li>
+<li>Self calling
+<ul>
+<li>Once an interface function has been implemented on the receiver, the receiver can then call that functionality on itself.</li>
+<li>this is useful to guarentee that a given object has a certain set of functionality<br>
+Think of this like a shortcut so you dont have to repeatedly setup the same functions on objects that inherit from different hierarchy branches</li>
+</ul>
+</li>
+</ul>
+<h2 id="demo-1">Demo</h2>
+<h3 id="sender">Sender</h3>
+<p>In this example we will extend the 3rd Perseon template and add some interaction to it. Launch a project using the 3rd Perseon template.</p>
+<ul>
+<li><strong>Setup inputs</strong>
+<ul>
+<li>Project settings &gt; Engine &gt; Input &gt; Bindings</li>
+<li>Lets add one action
+<ul>
+<li>Under action mappings click the plus to add a new action mapping
+<ul>
+<li>Give it the name &ldquo;InteractButton&rdquo;</li>
+<li>Set the key value (to trigger the action) to the &ldquo;E&rdquo; key<br>
+To more easily find the key, type &ldquo;e&rdquo; followed by a space to find the key in the dropdownlist</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create an interface</strong>
+<ul>
+<li>In the content editor (in the directory you want to save your blueprints) RMB click &gt; Blueprints &gt; Blueprint Interface</li>
+<li>call it &ldquo;iInteractable&rdquo;<br>
+the name used for the interface can start with lowercase &ldquo;i&rdquo; followed by an adjective. For instance &ldquo;iInteractable&rdquo;, &ldquo;iClonable&rdquo;, &hellip;</li>
+<li>Double click the interface to open it up</li>
+<li><strong>Add functions</strong>
+<ul>
+<li>Give the first (already existing) function the name &ldquo;Interact&rdquo;</li>
+<li>Create a new function (by clicking the plus in the top right corner of the &ldquo;My blueprint&rdquo; tab) and call it &ldquo;GetInteractState&rdquo;<br>
+Note that when you add a new function a new tab on top of the network pane is added</li>
+<li>With the &ldquo;GetInteractState&rdquo; selected in the &ldquo;My blueprint&rdquo; pane, click the plus on the right side of the outputs in the details pane. The type should be boolean and the name we can set to &ldquo;InteractState&rdquo;</li>
+<li><strong>Compile</strong> Click compile in the top left corner of the editor 
+For the interface to be available in the editor we must compile it</li>
+<li>We can close the blueprint editor</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup the sender</strong><br>
+Here we will extend the ThirdPersonCharacter blueprint to make it possible to call the functions we specified in our interface using the input we setup earlier.
+<ul>
+<li><strong>Open the ThirdPersonCharacter BP</strong>
+<ul>
+<li>Find the ThirdPersonCharacter BP (Content &gt; ThirdPersonBP &gt; Blueprints) and double click it to open it up</li>
+<li>Select the Event Graph tab (if not open we can double click the EventGraphg in the Graphs section of the &ldquo;MyBlueprint&rdquo; tab)</li>
+<li>Lets add the input action we setup earlier. Hit tab and start typing &ldquo;interac&hellip;&rdquo; select the action event &ldquo;InteractButton&rdquo;. This input action will trigger every time we press and relaes the E key as we set it up earlier.</li>
+</ul>
+</li>
+<li><strong>Find object to interact with</strong><br>
+The idea is to do a trace in the scene to see if we can find some object to interact with.
+<ul>
+<li><strong>Setup input for the SphereTraceByChannel</strong>
+<ul>
+<li>Press tab and start typing &ldquo;trace&hellip;&rdquo; select &ldquo;SphereTraceByChannel&rdquo;<br>
+This node will sweep a sphere along the given line and returns the first blocking hit encountered. This trace finds the objects that RESPONDS to the given TraceChannel. Target is Kismet System Library</li>
+<li>Now we will need a place to start the trace from, we will use the capsule componenrt of the 3rd person. From the Components pane (top left side, if not showing go to window &gt; Graph editor and make it visible) darg and drop the Capsule Component to the blueprint graph</li>
+<li>From the capsule component node (we just added to the graph), LMB press and drag out the blue pin into the graph and let go, in the popup dialog start typing &ldquo;get world&hellip;&rdquo; and choose &ldquo;GetWorldLocation&rdquo;</li>
+<li>Connect the yellow output from the GetWorldLocation node to the &ldquo;Start&rdquo; input of the SphereTraceByChannel node. (this will be our trace start point)</li>
+<li>now we need to calculate the end position. Drag the blue output of the capsule component, release and start typing &ldquo;getf&hellip;&rdquo; select &ldquo;Get Forward Vector&rdquo;.</li>
+<li>To control the length of the line we will trace lets multiply the forward vector, drag out the yellow output from the get forwadr vector node, type &ldquo;*&rdquo; select &ldquo;Vector * Float&rdquo; and enter the value 100 in the multiply node.
+<ul>
+<li>Note that in UE5 Early access the second input type of the multiply node is based on the input type, but if we want a float we can RMB the second input pin &gt; Convert Pin &gt; Float</li>
+</ul>
+</li>
+<li>We will the promote the value of the multiply node to a variable, RMB click the green value pin &gt; Promote to Varaible. This will select the variable in the my blueprint pane, so we can just start typing &ldquo;TraceLength&rdquo; to give it that name.<br>
+The value we entered, will be set as the default value of the variable.</li>
+<li>Then we add the capsule world location and the multiplied forward vector to get the end position, from the &ldquo;GetWorldLocation&rdquo; node yellow output pin drag out and from the piopup list type &ldquo;+&rdquo; and select &ldquo;Vector + Vector&rdquo;</li>
+<li>connect the output pin from the multiply node to the second input of the add node and connect to the &ldquo;End&rdquo; input of the &ldquo;SphereTraceByChannel&rdquo; node.</li>
+<li>on the &ldquo;SphereTraceByChannel&rdquo; node set the radius value to 50, RMB click the value and promote to parameter, name it &ldquo;Trace Radius&rdquo;</li>
+<li>We also need to connect the &ldquo;Pressed&rdquo; execute pin from the &ldquo;InputAction InteractButton&rdquo; (that we added earlier) to the input execute pin of the SphereTraceByChannel node.(this will run the trace when the action is triggered)</li>
+</ul>
+</li>
+<li><strong>Handle the trace hit objects</strong>
+<ul>
+<li>the output &ldquo;Out Hit&rdquo; of the SphereTraceByChannel node is a struct. We can split the struct to access &ldquo;components&rdquo;, RMB click the Out Hit &gt; Split Struct Pin.</li>
+<li>The &ldquo;Out Hit Hit Actor&rdquo; is the actor that we hit (if we hit any, that is)</li>
+<li>To validate that the object we hit is valid we will use an isValid node. Click the out hit hit actor. drag out in the graph and release, start typing &ldquo;isv&hellip;&rdquo; select the &ldquo;? Is Valid&rdquo; (note that it have a prefixed question mark)</li>
+<li>we also need to connect the output execute pin from the SphereTraceByChannel node to the input execute pin of the isValid node.</li>
+<li>now we can verify if we hit a valid actor and send our &ldquo;Interact&rdquo; message that we created in the interface we setup earlier. press tab and start typing &ldquo;Interac&hellip;&rdquo; select &ldquo;Interact (message)&rdquo; (you can se that it belongs to I Interactable or iInteractable as we called it)</li>
+<li>Connct the out &ldquo;hit hit actor&rdquo; from the &ldquo;SphereTraceByChannel&rdquo; and connect it to the &ldquo;Target&rdquo; input of the &ldquo;Interact&rdquo; node (the interface we created)</li>
+<li>then we will connect the &ldquo;Is Valid&rdquo; execute pin form the isValid node to the input execute pin of the &ldquo;Interact&rdquo; node</li>
+</ul>
+</li>
+<li><strong>Debug the traceing</strong>
+<ul>
+<li>Now we have a way to look for objects to interact with. To test and debug this functionality we can set the &ldquo;Draw Debug Type&rdquo; of the SphereTraceByChannel node to &ldquo;For duration&rdquo; this will show the trace in the viewport.</li>
+<li><strong>Compile</strong> rememnber to compile the blueprint, hit save and close the bp.</li>
+<li>Now we can play the map and see our trace in action.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Lets collapse the trace setup into a macro so that we can reuse it elsewhere in the graph. Note this is optional, it will not change the functionality, but make it easier to re use the functionality.</p>
+<ul>
+<li><strong>Collapse to Macro</strong> (optional)
+<ul>
+<li>Select all nodes we created before except the &ldquo;InputAction (Interact button)&rdquo; and the &ldquo;Interact&rdquo; (Message) function of the iInteractable interface and RMB click and select &ldquo;Collapse to Macro&rdquo;. Give the macro the name &ldquo;TraceForInteaction&rdquo;
+<ul>
+<li>A macro is a way to collapse nodes into one node that can be reused elsewhere (inside the same blueprint). If you want to node setup to be used in another blueprint, you should &ldquo;collapse to function&rdquo; instead. The &ldquo;Collapse Nodes&rdquo; simply groups the node inside a parent node. If you duplicate a macro or a function, you will get instances of the same where if you duplicate colapsed nodes you will get duplicates.</li>
+</ul>
+</li>
+<li><strong>Clean up the output pins</strong>. Double click to enter the macro, select the &ldquo;Outputs&rdquo; node, and in the details pane expand the outputs section and click the arrow on the right side of the &ldquo;Out Hit Hit Actor&rdquo; to move it to the button (we could of course also move isValid up) and hit compile.<br>
+This step is not necessary but can visually look nicer</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="reciever">Reciever</h3>
+<p>Lets build a door that we can interact with.</p>
+<ul>
+<li><strong>Create the Door blueprint</strong>
+<ul>
+<li>Navigate to a dir in the content browser where you want to save your door blueprint.</li>
+<li>RMB Click &gt; Blueprints &gt; Blueprint Class
+<ul>
+<li>Pick parent class &gt; Actor<br>
+And call it &ldquo;InteractiveDoor&rdquo;</li>
+</ul>
+</li>
+<li><strong>Add the interface</strong>
+<ul>
+<li>Double click the blueprint to open it up</li>
+<li>In the top bar select class settings, in the details panel under the section Interfaces click the add button and select the &ldquo;iInteractable&rdquo; interface form the list.
+<ul>
+<li>Tip: you can type &ldquo;ii&rdquo; to quickly find the iIntaractable in the list</li>
+<li>Note: when the interface is added, it will be visible in the My Blueprint tab under the Interfaces section. It will also list the functions and events that we created in the interface.
+<strong>Important</strong> you must press compile for the interface functiosn to be visible in the event graph&hellip; so press compile.</li>
+</ul>
+</li>
+<li>Lets promote the interact state (that we get from the GetInteractState function in inteface) to a variable that we can use in our event graph.
+<ul>
+<li>Double click the &ldquo;Get Interact State&rdquo; in the interfaces section of the My Blueprints tab. This will open it in the graph.</li>
+<li>RMB click the &ldquo;Interact State&rdquo; on the return node &gt; Promote to Variable
+<ul>
+<li>This will make it possible to use this variable elsewhere in this blueprint.</li>
+<li>Also note that it appears in the Variable section in the my blueprints tab</li>
+</ul>
+</li>
+<li>Click Compile</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add door components</strong>
+<ul>
+<li><strong>Display and Collision</strong>
+<ul>
+<li>Lets add a component that will be the visual represenatation of the door
+<ul>
+<li>In the components pane click Add Component &gt; Cube.</li>
+<li>Rename it to &ldquo;Door&rdquo;</li>
+<li>Lets scale the door so that it looks like a door</li>
+</ul>
+</li>
+<li>Then we will add a Box Collision component that we will interact with
+<ul>
+<li>In the components pane click Add Component and type &ldquo;box&hellip;&rdquo; in the search filed and click &ldquo;Box Collision&rdquo;</li>
+<li>Note that this needs to be a direct parent of the DefaultSceneRoot. If it is a child of the Cube it will move wioth the cube if that is aninated and is not what we want.</li>
+<li>This is importatnt if lets say the doors open upwards or opens in a way that we can not reach when the door is in the opened state. (The SphereTraceByChannel will trace in the forward direction so we might have no way to reach the door)</li>
+<li>Next we will edit the collision behaviour of the box collision component to match what we have setup in the SphereTraceByChannel node.
+<ul>
+<li>With the box collision node selected, in the details panel under the collision section we will set the Collision Preset to custom. (this will expand the menu)</li>
+<li>Click the Ignore checkbox to ignore all events</li>
+<li>Then we will enable the Block checkbox on the visibility (channel of the custom collision)
+<ul>
+<li>If we go inside our &ldquo;Trace for Interacation&rdquo; macro we made earlier we will se that the &ldquo;Trace Channel&rdquo; of the TraceBySphereChannel is set to visibility.</li>
+<li>Todo: look into difference btw overlap and block&hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup animation</strong><br>
+There are many ways to setup animation this is one way&hellip;
+<ul>
+<li><strong>Add start location</strong>
+<ul>
+<li>In the My Blueprint pane in the Variables section click the plus to add a new variable</li>
+<li>Make it a vector and call it StartLocation. This can be done directly in the variables section in the My Blueprint pane or with the variable selected we can edit the properties in the details pane.
+<ul>
+<li>Note that on the right hand side you can choose if the vector should be an single value, array, set or map(dict) we want it to be a single value.</li>
+</ul>
+</li>
+<li>Click Compile</li>
+<li>Select the &ldquo;Door&rdquo; (the cube component that we use to display our door) and in the details pane under the Transform section RMB click Location &gt; Copy</li>
+<li>Select the StartLocation variable and in the details pane under default value RMB click Start Location and Paste the copied location.</li>
+</ul>
+</li>
+<li><strong>Add end location</strong>
+<ul>
+<li>In the My Blueprint pane in the Variables section click the plus to add a new variable</li>
+<li>Set it to a (single value) vector and call it EndLocation</li>
+<li>Set the default value to (0,0,300)</li>
+<li>We want the end location to be editable with a 3d widget:
+<ul>
+<li>In the details pane under the varaible section, enable the &ldquo;Instance Editable&rdquo; checkbox
+<ul>
+<li>Note that we also can make it public and editable by turning on the eye icon in the My Bluprints pane on the right side of the varaible in the variables section.</li>
+</ul>
+</li>
+<li>Also enable the &ldquo;Show 3D Widget&rdquo; in the details pane under the varaible section</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add Timeline</strong>
+<ul>
+<li>Step into the event graph of the interactive door blueprint</li>
+<li>Add a &ldquo;timeline&rdquo; node
+<ul>
+<li>Press tab, start typing &ldquo;timel&hellip;&rdquo; select &ldquo;add Timeline&rdquo; and call it &ldquo;DoorTimeline&rdquo;</li>
+<li>Double click to enter the timeline node</li>
+<li>Click the &ldquo;Add Float Track&rdquo; (the left f icon top left)
+<ul>
+<li>Call the track &ldquo;DoorInterpolation&rdquo;</li>
+</ul>
+</li>
+<li>Shift click 2 times in the time line to add keyframes. It is not really importatnt where we click we can edit this later.</li>
+<li>select the first keyframe, set both time and value to 0</li>
+<li>select the second keyframem and set the time to 0.75 and the value to 1</li>
+<li>select both keyframes and press 6 to flatten the curve handles or RMB &gt; Flatten
+<ul>
+<li>In UE5 it seems like we first need to press 1 (auto) then 6 (flatten)</li>
+</ul>
+</li>
+<li><strong>Note</strong> be sure to enable the &ldquo;Use Last Keyframe&rdquo; if this is not enabled you can get some weird results with the animation, probably caused caused by the timeline keeps on playeing until the end of the timeline.
+<ul>
+<li>I guess you also could manually set the length of the time line to the time of the last keyframe. Maybe use last keyframe is a shortcut for that?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup the lerp</strong>
+<ul>
+<li>click on the &ldquo;Door Interpolation&rdquo; output pin on the timeline node, drag out and release in the graph, start typing &ldquo;lerp&hellip;&rdquo; and select &ldquo;Lerp (Vector)&rdquo;</li>
+<li>From the &ldquo;Variables setion&rdquo; of the My Bluprint pane drag and drop the StartLocation to the A input pin of the lerp node</li>
+<li>And drop the EndLocation to the B input pin of the lerp node</li>
+<li>Drag out the Door component (from the components pane) and drop it on the event graph</li>
+<li>From the door component (that was dropped in the graph) drag out from the output pin and release in the graph, start type &ldquo;set rel&hellip;&rdquo; select &ldquo;Set Relative Location&rdquo;</li>
+<li>Connect the output from the lerp node to the &ldquo;New Location&rdquo; input of the Set Relative Location node</li>
+<li>Connect the execute pin from the timeline node to the input execute pin of the Set Relative Location node</li>
+</ul>
+</li>
+<li><strong>Drive timeline with Event</strong>
+<ul>
+<li>Add the interact event. In the event graph press tab and start typing &ldquo;inter&hellip;&rdquo; select &ldquo;Event Interact&rdquo;
+<ul>
+<li>This is the event that gets called when the E key is pressed</li>
+</ul>
+</li>
+<li>Next lets add the Interact State varaible to the graph so that we can check the state. from the Varaibles section of the My Blueprint pane drag and drop the &ldquo;Interact State&rdquo; variable to the event graph &gt; Choose the &ldquo;Get Interact state&rdquo;.</li>
+<li>Add a Branch node by holding B and LMB clicking the graph (or use the tab menu)</li>
+<li>Connect the out execute pin from the Interact event to the input execute pin of the branch node</li>
+<li>Connect the output from the (Get) Interact State to the Condition input of the Branch node.</li>
+<li>Based on the state of the interact variable we want to do 2 things:
+<ul>
+<li>If the Interact state is true it means that the door has been opened so we want to set the state to false and close the door
+<ul>
+<li>So lets get a setter of the interact state by draging and dropping the Interact State variable to the graph and &gt; choose the &ldquo;Set Interact state&rdquo;</li>
+<li>Then connect the &ldquo;True&rdquo; execute pin from the branch and connect to the setter of the Interact state.</li>
+<li>Connect the output of the setter to the &ldquo;Reverse&rdquo; input execute pin of the Timeline node.</li>
+</ul>
+</li>
+<li>And if the state is false, we want to set the state to true and open the door
+<ul>
+<li>drag and drop a new Interact State setter (or copy/paste)</li>
+<li>Then connect the &ldquo;False&rdquo; execute pin from the branch and connect to the setter of the Interact state (that we created in the step before).</li>
+<li>Note: We now want to set the Interact State to true, so we need to enable the checkbox of the setter.</li>
+<li>Connect the output of the setter to the &ldquo;Play&rdquo; input execute pin of the Timeline node.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We should now have a working interacatble door!
+<ul>
+<li>We could set the Draw Debug Type of the TraceSphereByChannel node to None</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="event-dispatchers">Event Dispatchers</h1>
+<h2 id="concept-2">Concept</h2>
+<ul>
+<li>A way to establish a listening-type relationship so that the Receiver is &ldquo;listening&rdquo; for an event on the Sender to take place. It can then respond however it likes.</li>
+</ul>
+<h2 id="how-it-works-2">How it works</h2>
+<ul>
+<li>In the Sender Class
+<ul>
+<li>Create a new Event Dispatcher in the My Blueprint panel</li>
+<li>If you have to pass along any data (like current Health) that becomes an Input</li>
+<li>At some point in your Event Graph your sender must Call this Event Dispatcher
+<ul>
+<li>Drag a reference to the Event Dispatcher into the Graph, choose Call.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the Receiver Class
+<ul>
+<li>You must have a reference to the sender! It’s your responsibility to get that!</li>
+<li>Once you’ve confirmed the Sender class is the one you want (you might need to Cast here)&hellip;
+<ul>
+<li>You Bind to the Event Dispatcher by name</li>
+<li>Create a Custom Event from the Event Pin</li>
+<li>That Custom Event will be fired whenever the Sender calls their Event Dispatcher</li>
+</ul>
+</li>
+<li>Know that you may need to stop listening at some point
+<ul>
+<li>This means unbinding the event.</li>
+<li>This is very easy if you stored a reference to the Sender class before Binding.</li>
+</ul>
+</li>
+<li>If no objects have made a Bind to an Event Dispatcher:
+<ul>
+<li>When the Dispatcher is called, no one is listening and nothing happens. This is perfectly safe.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Event dispatchers on the sender</strong>
+<ul>
+<li>From the Sender’s perspective, you only need to setup the Event Dispatcher and then Call it at some point in the Event Graph
+<ul>
+<li>Generally in response to some important event happening on the Sender</li>
+<li>Notice that the Call does not require a reference to any other object! Instead, the Sender calls the Dispatcher on itself!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Event Dispatchers on the Receiver</strong>
+<ul>
+<li>Any object wanting to become an Event Dispatch Receiver must:
+<ul>
+<li>Have or obtain a reference to the Sender object</li>
+<li>Bind its own Custom Event to that Dispatcher
+<ul>
+<li>This Custom Event must have the same Signature as the Event Dispatcher</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once the Bind is complete, the next time the Dispatcher is called, the Receiver’s Custom Event will fire in response!</li>
+</ul>
+</li>
+<li><strong>Event Dispatcher Signatures</strong>
+<ul>
+<li>Signatures are a specific combination of inputs on a Dispatcher</li>
+<li>These can be shared if you are going to be creating a Dispatcher for an already existing event</li>
+<li>Signatures can be used to make Dispatchers intelligent
+<ul>
+<li>Test the input data, do different things based on what you find</li>
+</ul>
+</li>
+<li>Unreal does most of the heavy lifting for managing signatures
+<ul>
+<li>But if you’re trying to Bind an already existing Custom Event, the signature must match!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Event Dispatcher Options</strong><br>
+When you drag an Event Dispatcher into an Event Graph or try to access one from a Receiving object, you see a lot of options. What do they all mean?
+<ul>
+<li><strong>Call</strong>
+<ul>
+<li>This will broadcast the Event Dispatcher to any Receivers, if there are any</li>
+</ul>
+</li>
+<li><strong>Bind</strong>
+<ul>
+<li>This will create a Bind node, used to bind a specific Custom Event so it fires in response to the Dispatcher</li>
+</ul>
+</li>
+<li><strong>Unbind</strong>
+<ul>
+<li>Creates an Unbind node, used to unbind a specific Custom Event from an Event Dispatcher so you’re no longer “listening” for it</li>
+</ul>
+</li>
+<li><strong>Unbind All</strong>
+<ul>
+<li>Creates an Unbind All node, which will unbind all events from this Dispatcher across all objects in the game. No more listeners!</li>
+</ul>
+</li>
+<li><strong>Event</strong>
+<ul>
+<li>Adds a Custom Event with a Signature matching the Event Dispatcher</li>
+</ul>
+</li>
+<li><strong>Assign</strong>
+<ul>
+<li>a Bind node with an attached Custom Event that has a Signature matching the Event Dispatcher</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="when-to-use-3">When to use</h2>
+<ul>
+<li>When you have a single event on a Sender that needs to be received by a lot of different Receivers, each doing their own thing
+<ul>
+<li>The Sender cannot receive a return value from Receivers</li>
+</ul>
+</li>
+<li>You start off knowing who the Sender is
+<ul>
+<li>But you don’t know or care who the Receivers are</li>
+<li>You plan to setup n-number of Receivers later</li>
+</ul>
+</li>
+<li>The Receivers all get a reference (know about) the Sender</li>
+<li>The Receivers also know when to start listening for specific events
+<ul>
+<li>Also potentially know when to stop listening!</li>
+<li>Depending on your setup, it may be dangerous to leave a Bind in place forever
+<ul>
+<li>In these cases, you will need to Unbind</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="demo-2">Demo</h2>
+<p>We will continue using the 3rd Person template we modified in the direct communication demo.</p>
+<ul>
+<li><strong>Create the UI widget</strong>
+<ul>
+<li>RMB click the content browser (in a dir where you saves your blueprints) &gt; User Interface &gt; Widget Blueprint call it &ldquo;HealthUI&rdquo;</li>
+<li>From the Palette pane under the panel section drag and drop a &ldquo;Horizontal Box&rdquo; to the work area.
+<ul>
+<li>Position it and scale so that it looks good.</li>
+</ul>
+</li>
+<li>From the palette &gt; common drag a &ldquo;Text&rdquo; widget and drop it insiude the horizontal box
+<ul>
+<li>Set the content &gt; text to &ldquo;Health: &quot;</li>
+<li>optinally edit some of the text settings to make it look nice</li>
+</ul>
+</li>
+<li>From the palette &gt; common drag a &ldquo;Progress Bar&rdquo; and drop it on the right side of the text
+widget
+<ul>
+<li>with the progressbar selected in the details pane under the slot(Horizontal box slot) click the &ldquo;Fill&rdquo; button to fill the horizontal box</li>
+<li>In the top of the details pane make sure &ldquo;Is Variable&rdquo; is enabled</li>
+<li>give the progress bar the name &ldquo;HealthBar&rdquo;</li>
+</ul>
+</li>
+<li>click compile and save</li>
+</ul>
+</li>
+<li><strong>Add the UI</strong>
+<ul>
+<li>Open up the ThirdPersonCharacter blueprint</li>
+<li>In the event graph press tab and start typing &ldquo;beg&hellip;&rdquo; select &ldquo;Event BeginPlay&rdquo;</li>
+<li>press tab start typing &ldquo;create wi&hellip;&rdquo; select &ldquo;Create Widget&rdquo;
+<ul>
+<li>On the right side of the class input pin select &ldquo;HealthUI&rdquo; from the dropdown</li>
+</ul>
+</li>
+<li>Connect the output execute pin of the &ldquo;Begin Play&rdquo; event of the &ldquo;Create Widget&rdquo; input execute pin</li>
+<li>Assign &ldquo;Owning Player&rdquo; (not necessary in this case but good practice)
+<ul>
+<li>press tab and start typing &ldquo;get con&hellip;&rdquo; select &ldquo;Get Controller&rdquo;</li>
+<li>The Owning Player expects a player controller so we need to cast to that
+<ul>
+<li>press the return value output pin (of the get controller) and drag out and release in the graph start typing &ldquo;player&hellip;&rdquo; select &ldquo;Cast to Player Controller&rdquo;
+<ul>
+<li>Since we are inside a third person character bp we know that the cast will work so we can RMB click the cast to player controller node and select &gt; &ldquo;Convert to pure cast&rdquo; (at the bottom of th e menu)
+<ul>
+<li>This will remove the execution pins to make the node more versatile (note the cast could still fail. resulting in an invalid output)</li>
+<li>This is only useful if you know for certain that the cast will be successful, which we know since we are inside a third persion blueprint that has a player controller</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create a variable for the ui
+<ul>
+<li>on the &ldquo;Create (Health UI) Widget&rdquo; RMB click the &ldquo;return value&rdquo; output pin and select &ldquo;Promote to Variable&rdquo; call it &ldquo;HealthHUD&rdquo;</li>
+</ul>
+</li>
+<li>Add to viewport
+<ul>
+<li>On the blue output pin of the set varaible node press and drag out to the graph, start typing &ldquo;add to&hellip;&rdquo; select &ldquo;Add to Viewport&rdquo;
+<ul>
+<li>sidenote the &ldquo;Add to Player Screen&rdquo; is for split screen games</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add Event Dispatcher</strong>
+<ul>
+<li>Performance
+<ul>
+<li>Do not use Bind (update on every tick) to update Health it is not performant</li>
+<li>Instead use an Event drivent approach where you only update then the Health value has changed</li>
+<li>Even in cases where you want to update quite often, lets say meter in a flight simulator and you want to update the altometer, you could use a timer to update maybe 10 times per second</li>
+</ul>
+</li>
+<li>In the ThirdPersonCharacter blueprint (that we set up in the direct communication demo) we printed the health to the screen, we will now instead update the HealthHUD, so lets remove the print nodes</li>
+<li>In the My Blueprint pane under the Event Dispatchers click the plus button to add an event dispatcher and call it &ldquo;UpdateUI&rdquo;</li>
+<li>With the event dispatcher selected, in the details pane under the inputs section click the plus icon
+<ul>
+<li>Call it &ldquo;Health&rdquo; and set the type to Float
+<ul>
+<li>Note that you have a drop down where you can copy signatures from other event dispatcher to save time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Drag the event dispatcher into the graph and select &ldquo;Call&rdquo; from the popup menu</li>
+<li>Connect the execute &amp; Health output pins from the &ldquo;Set&rdquo; node to the input pins of the event dispatcher.</li>
+<li>Open the &ldquo;Heal All&rdquo; function, drag and drop the UpdateUI event disptacher, select &ldquo;Call&rdquo; and connect the pins as before</li>
+<li>Compile and save</li>
+<li>Now we have an event dispatcher we can listen to from our Healt ui and update the graphics</li>
+<li>Lets also dispatch an event when the HealtUI gets added to the viewport (on BeginPlay)
+<ul>
+<li>Either drag out the UpdateUI event dispatcher as before or</li>
+<li>drag out the output execute pin of the &ldquo;Add to Viewport&rdquo; node and start typing &ldquo;call&hellip;&rdquo; select &ldquo;Call UpdateUI&rdquo;</li>
+<li>From the variables section of the My Blueprint tab drag out the Health variable and drop on the Health input pin of the &ldquo;Call UpdateUI&rdquo; event dispatcher.
+<ul>
+<li>Note that if we drop it on the pin we do not get promted if we wanr a get or set it understands that we want to get thae variable.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li></li>
+<li><strong>Bind to the event</strong>
+<ul>
+<li><strong>Set the HealthBar progress</strong>
+<ul>
+<li>Doubleclick the HealthUI widget to open it up</li>
+<li>In the top right corner click the Graph button to open up the Event Graph of the widget</li>
+<li>Press tab start typing &ldquo;get owni&hellip;&rdquo; select &ldquo;Get Owning Player Pawn&rdquo;</li>
+<li>Drag out the blue output pin of the get owning palyer pawn release and start typing &ldquo;cas&hellip;&rdquo; select &ldquo;Cast to ThirdPersonCharacter&rdquo;</li>
+<li>Connect the &ldquo;Event Construct&rdquo; output execute pin to the input execute pin of &ldquo;cast to third person character&rdquo; node.
+<ul>
+<li>the &ldquo;Event Construct&rdquo; is called after the underlaying slate widget is constructed</li>
+</ul>
+</li>
+<li>Drag out from the output pin &ldquo;As Third Person Character&rdquo; on the &ldquo;Cast to ThirdPersonCharacter&rdquo; node release and strat typing &ldquo;assi&hellip;&rdquo; select &ldquo;Assign UpdateUI&rdquo;
+<ul>
+<li>This will add a custom event and hook up necessary things</li>
+</ul>
+</li>
+<li>Lets name the custom event &ldquo;UpdateHealthBar&rdquo; since that is what the custom event will do</li>
+<li>Since we gave our progressbar the name &ldquo;HealthBar&rdquo; it will be listed in the variables section on the My Blueprint tab.</li>
+<li>Drag out the &ldquo;HealthBar&rdquo; variable to the graph and choose &ldquo;Get HealthBar&rdquo;</li>
+<li>from the blue output pin of the &ldquo;HealthBar&rdquo; variable drag out and release start typing &ldquo;set&rdquo; choose &ldquo;Set Percent&rdquo;</li>
+<li>Since the progressbar goes from 0-1 and our Health is in range 0-100 we need to divide the Health with 100.
+<ul>
+<li>From the &ldquo;Health&rdquo; output pin of our &ldquo;UpdateHealtBar&rdquo; custom event drag out and release type &ldquo;/&rdquo; and select &ldquo;float / float&rdquo;</li>
+<li>In the green input field enter 100</li>
+<li>finally connect the output of the &ldquo;float Divide&rdquo; node to the input pin &ldquo;In Percent&rdquo; of the &ldquo;Set Percent&rdquo; node</li>
+<li>Also connect the output execute pin of the &ldquo;UpdateHealtBar&rdquo; custom event to the input execute pin of the &ldquo;Set Percent&rdquo; node</li>
+<li>press compile and save</li>
+</ul>
+</li>
+<li>we now have a working HealthBar!</li>
+</ul>
+</li>
+<li><strong>Set color of the healthBar</strong> (optinal)<br>
+Lets set the color of the health bar when it drops under a certain amout
+<ul>
+<li>From the &ldquo;Health Bar&rdquo; (the varaible in our graph that is a reference to the progress bar in our ui widget) from the blue output pin drag and release and start typing &ldquo;col&hellip;&rdquo; select &ldquo;Set Fill Colour and Opacity&rdquo;
+<ul>
+<li>on the node change the &ldquo;In Color&rdquo; to red</li>
+</ul>
+</li>
+<li>Now we mneed to check the amount of health, and if the value is below a certain value
+<ul>
+<li>From the node where we divide the &ldquo;Health&rdquo; variable by 100, click the green output pin press, drahg out and release and type &ldquo;&lt;&rdquo; select &ldquo;float &lt; float&rdquo;</li>
+<li>on the &ldquo;less than&rdquo; node select the input value and set it to 0.5
+<ul>
+<li>this means that the boolean will be true if the health drops under 50 %</li>
+</ul>
+</li>
+<li>Add a branch node (Hold &ldquo;B&rdquo; and click in the graph)</li>
+<li>Connect the output pin of the &ldquo;Less than&rdquo; node and connect to the &ldquo;Condition&rdquo; input pin of the branch node</li>
+<li>Connect the output execute pin of the &ldquo;Set Percent&rdquo; node to the input execute pin of the Branch node</li>
+<li>Connect the &ldquo;True&rdquo; output execute pin of the branch node to the input execute pin of the &ldquo;Set Fill Colour and Opacity&rdquo; node</li>
+<li>Finally we want to set the health bar to green if we have more then 50 % health
+<ul>
+<li>Copy the &ldquo;Set Fill Colour and Opacity&rdquo; node</li>
+<li>Set the color to green</li>
+<li>Connect the &ldquo;False&rdquo; output execute pin opf the branch node to the input execute pin of the &ldquo;Set Fill Colour and Opacity&rdquo; node (that sets the green color)</li>
+<li>connect the blue output pin from the &ldquo;Health Bar&rdquo; (the varaible in our graph that is a reference to the progress bar in our ui widget) to the &ldquo;Target&rdquo; of our &ldquo;Set Fill Colour and Opacity&rdquo; node (that sets the green color)</li>
+</ul>
+</li>
+<li>Compile and save</li>
+<li>We should now have a working ui!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="conclusion">Conclusion</h1>
+<ul>
+<li>Lots of ways to get Blueprints to communicate</li>
+<li>In many cases, more than one approach will apply
+<ul>
+<li>Just because there are other ways to do it doesn’t necessarily mean you’re wrong</li>
+<li>Also doesn’t mean you’re right.
+<ul>
+<li>Consider all the angles discussed here and it should become clear which one to use</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Teams need to work together to determine best approach</li>
+<li>Unify and standardize
+<ul>
+<li>Agree on what types of approaches are to be used under what circumstances</li>
+<li>If everyone is handling communication a bit differently, it’s hard to work together</li>
+<li>Blueprint Coding Standards
+<ul>
+<li>Make them early</li>
+<li>Use them immediately</li>
+<li>Enforce them for all projects</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="misc">Misc</h1>
+<ul>
+<li>Bluprint standard tabs
+<ul>
+<li>If you have closed the viewport, eventgraph and construction script you can open the:
+<ul>
+<li><strong>Viewport</strong> by double clicking a component in the &ldquo;Comnponents&rdquo; pane</li>
+<li><strong>EventGraph</strong> by double clicking the EventGraph in the &ldquo;Graphs&rdquo; section of the in the My Blueprint tab</li>
+<li><strong>Construction Script</strong> by double clicking the Construction Script in the &ldquo;Functions&rdquo; section of the in the My Blueprint tab</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Blueprint Parent Class
+<ul>
+<li>You can view the parent class of a blue print if you open the blueprint up, click on the Class Settings button on top toolbar and in the details pane under Class options you can see the parent class</li>
+</ul>
+</li>
+<li>Print String
+<ul>
+<li>There are some options on the Print string node if you expande the node. You can set duration, color etc.</li>
+</ul>
+</li>
+<li>Child class
+<ul>
+<li>To create a child class (based on an already existing blueprint, which will become the parent class) in the content browser RMB the blueprint &gt; Create Child Blueprint Class</li>
+</ul>
+</li>
+</ul>
+		
+		</div>
+	</div>
+</div>
+	
+
+
+        </main>
+
+        
+
+        <footer class="container py-5">
+
+            <div class="row">
+
+                <div class="col-md-6 footer-logo-wrap">
+                    <a class="py-2 home-icon" href="https://www.petfactory.se/">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                    </a>
+                    <span class="footer-logo-lext">petfactory &copy; 2022</span>
+                </div>
+
+                <div class="col-md-6 social-list">
+                    <ul>
+                        <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+                        <li><a target="_blank" class="" href="https://vimeo.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.992 4.275c-.07 1.56-1.16 3.697-3.263 6.41-2.176 2.832-4.017 4.248-5.522 4.248-.933 0-1.722-.862-2.367-2.588L3.55 7.6c-.48-1.724-.993-2.587-1.542-2.587-.12 0-.538.252-1.255.755L0 4.796C.79 4.1 1.568 3.406 2.335 2.71c1.053-.912 1.844-1.39 2.37-1.44 1.246-.12 2.012.733 2.3 2.56.31 1.97.526 3.194.647 3.673.36 1.634.754 2.45 1.185 2.45.335 0 .838-.53 1.51-1.59.67-1.06 1.028-1.866 1.076-2.42.096-.915-.263-1.374-1.077-1.374-.383 0-.778.087-1.185.262.788-2.58 2.29-3.834 4.508-3.762 1.644.048 2.42 1.116 2.324 3.205z" fill-rule="nonzero"/></svg></a></li>
+                        <li><a target="_blank" class="" href="https://www.youtube.com/channel/UCvk7lMI0ihnUr4KSfTlPEfQ"><svg fill="#444" width="20" height="20" viewBox="0 0 64 64"><path d="M54.15,10.031l-20.9-0.019l-21.718,0.019c-5.433,0-11.534,3.626-11.534,8.944v26.474c0,5.316,6.101,8.559,11.534,8.559 H54.15c5.432,0,9.834-3.242,9.834-8.559V18.976C63.984,13.657,59.582,10.031,54.15,10.031z M27.856,42.205L27.73,22.044 l14.03,10.168L27.856,42.205z"/></svg>
+
+
+
+
+</a></li>
+                        <li><a target="_blank" class="" href="https://github.com/petfactory"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</a></li>
+                        <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+
+        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://www.petfactory.se/js/menu.js"></script>
+        
+    </body>
+</html>

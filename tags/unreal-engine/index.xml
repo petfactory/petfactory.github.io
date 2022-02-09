@@ -12,12 +12,14 @@
     
     
     <item>
-      <title>UE4 - Blueprint</title>
-      <link>https://www.petfactory.se/notes/ue4_blueprint/</link>
+      <title>UE4 - Blueprint Communication</title>
+      <link>https://www.petfactory.se/notes/ue4_blueprint_communication/</link>
       <pubDate>Wed, 14 Jul 2021 18:37:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue4_blueprint/</guid>
-      <description>Blueprint communication  Direct blueprint communication blueprint Interfaces blueprint Events  Interface  Interfaces  A collection of one or more functions - name only, no implementation Any Blueprint that has the Interface added is guaranteed to have those functions The functions of the Interface can be given functionality in each of the Blueprints that added it Blueprint Interfaces allow different Blueprints to share with and send data to one another The use of Blueprint Interfaces allows for a common method of interacting with multiple disparate types of Objects that all share some specific functionality In other words  You send data, called Interface Messages throgh that asset to listening objects By default, nothing recieves interface messages You have to implement the blueprint inteface onto the blueprints that will be recieving This means that anything that doesnt need to respond to an interface simply doesnt have to implement the interface.</description>
+      <guid>https://www.petfactory.se/notes/ue4_blueprint_communication/</guid>
+      <description>Below are som notes from a really good video on blueprint communication by Zak Parrish
+Blueprint Communications | Live Training | Unreal Engine
+Intro  A way for separate individual obejcts to talk to each other Useful for:  Broadcasting an event to a number of listeners Telling a specfic object to do something Quering another object   UE4 has no way to just &amp;ldquo;send a broad signal to everyone&amp;rdquo;  Trivia: had it in UE2, but it wasn’t very efficient   Communication will always involve the following:  A Sending Blueprint At least one Receiving Blueprint   Communication will always require a reference at some point  The Sender or Receiver has to become aware of the other   All Blueprint communication is 1-way  Blueprints can send data back and forth, but it requires both Blueprints to set up their own individual paths of communication Queries are possible, but are initiated by the Sender (still 1-way)    Types of communication  3 primary Blueprint communication Methods  Direct Communication Blueprint Interface message calls Event Dispatchers    When to use  Flow of communication  Is the sender pushing the data to the reciever?</description>
     </item>
     
     <item>
