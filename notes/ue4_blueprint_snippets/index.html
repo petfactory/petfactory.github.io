@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Notes</title>
-        <meta name="description" content="Petfactory | Design and Animation | Notes" />
+        <title>Petfactory | UE4 - Blueprint Snippets</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE4 - Blueprint Snippets" />
 
     </head>
 
@@ -108,155 +108,154 @@
 
 <div class="top-spacer"></div>
 
-<div class="container-fluid">
-
-
-
-
-
-
-
-
-	
-		    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2019
-				</div>
-				
-	        </div>
-
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			<a class="list-title list-title-link" href="https://www.petfactory.se/notes/tile_editor/"><span>Tile Editor</span></a>
-        			<br>
-        			
-        			<span class="list-small">Building a tile based city tool</span>
-	            </div>
-	        </div>
-	    </div>
-	
-
-
-	
-		    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ae/"><span>AE - Misc</span></a>
-        			<br>
-        			
-        			<span class="list-small">Some misc notes on AE</span>
-	            </div>
-	        </div>
-	    </div>
-	
-
-
-	
-		    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2018
-				</div>
-				
-	        </div>
-
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			<a class="list-title list-title-link" href="https://www.petfactory.se/notes/pyside2/"><span>PySide2 - Notes</span></a>
-        			<br>
-        			
-        			<span class="list-small">PySide2 notes</span>
-	            </div>
-	        </div>
-	    </div>
-	
-
-
-	
-		    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2017
-				</div>
-				
-	        </div>
-
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			<a class="list-title list-title-link" href="https://www.petfactory.se/notes/python/"><span>Python - General</span></a>
-        			<br>
-        			
-        			<span class="list-small">Some general Python notes</span>
-	            </div>
-	        </div>
-	    </div>
-	
-
-
-	
-		    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			<a class="list-title list-title-link" href="https://www.petfactory.se/notes/sublime_text/"><span>SublimeText</span></a>
-        			<br>
-        			
-        			<span class="list-small">SublimeText - note to self</span>
-	            </div>
-	        </div>
-	    </div>
-	
-
-
-</div>
-
 <div class="container">
-	<div class="row">
-		<div class="col-md-6">
-		</div>
-		 <div class="col-md-6">
-		 	<div class="pagination-wrap">
-				
 
-<nav aria-label="Page navigation">
-    <ul class="pagination">
-        
-        <li class="page-item"><a href="https://www.petfactory.se/notes/page/2/" rel="prev" class="page-link">&laquo; Prev</a></li>
-        
-        
-        
-        <li class="page-item"><a href="https://www.petfactory.se/notes/" class="page-link">1</a></li>
-        
-        
-        
-        <li class="page-item"><a href="https://www.petfactory.se/notes/page/2/" class="page-link">2</a></li>
-        
-        
-        
-        <li class="page-item active-item"><a href="https://www.petfactory.se/notes/page/3/" class="page-link">3</a></li>
-        
-        
-
-        
-    </ul>
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#trigger-sequence-with-key">Trigger sequence with key</a></li>
+  </ul>
 </nav>
+		</aside>	
+	</div>
 
-			</div>
-		</div>	
-	</div>	
 </div>
 
+
+<div class="container notes-wrap">
+
+	<div class="row">
+		
+		<div class="col-md-10 mx-auto">
+			<h1>UE4 - Blueprint Snippets</h1>
+			<h1 id="trigger-sequence-with-key">Trigger sequence with key</h1>
+<ul>
+<li>Lets add something to animate
+<ul>
+<li>We will add a simple cube</li>
+</ul>
+</li>
+<li><strong>Create a sequence</strong>
+<ul>
+<li>In the top bar click Cinematics &gt; Add Level Sequence
+<ul>
+<li>Or in the content browser RMB click &gt; Animation &gt; Level Sequence
+<ul>
+<li>Note: that if you do it this way you have to manually drag it to the viewport aswell</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If the sequence is not open double click to open in the Sequencer</li>
+<li>With the sequence selected in the world outliner, in the details panel under the section &ldquo;Playback&rdquo; make sure that:
+<ul>
+<li>&ldquo;Playback&rdquo; is set to &ldquo;Dont Loop&rdquo; and</li>
+<li>&ldquo;Pause at End&rdquo; is enabled</li>
+</ul>
+</li>
+<li>Select the object you want to animate in the world outliner and drag and drop in the sequencer.
+<ul>
+<li>Or with the object selected, in the Sequencer RMB click &gt; Add Actor to Sequencer &gt; Add &lsquo;Cube&rsquo;</li>
+</ul>
+</li>
+<li>Depending on what you added you might have to add a track<br>
+In our case since we do not have to do this, but if you do not have the track you need to animate do the following:
+<ul>
+<li>In the sequencer on the right side of the object in the sequencer click the plus button to add a track &gt; Transform (or whatever it is you need)</li>
+</ul>
+</li>
+<li>We want to animate the Location Z
+<ul>
+<li>Expand the Transform and the Location</li>
+<li>Make sure you are at frame 0 and click the circle at the right side of the Location Z property</li>
+<li>Move to frame 24, change the location Z of the cube (in the viewport or in the details panel)
+<ul>
+<li>Alternatively we could enable Auto Key (in the top bar of the sequencer) if this is enabled a key will be set automnatically if a value is changed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set the end of the sequence to the same as the last keyframe (in our case 24)
+<ul>
+<li>In the righthand side of the sequencer (the time/keyframe area) drag the marker in the top section (the red marker) so that it matches with last keyframe</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup the blueprint</strong>
+<ul>
+<li><strong>Get the Sequence actor</strong>
+<ul>
+<li>In the content browser RMB &gt; Blueprints &gt; Blueprint Class
+<ul>
+<li>Based on Actor and call it &ldquo;BP_PlayAnim&rdquo;</li>
+</ul>
+</li>
+<li>Double click to go inside and switch to the EventGraph tab</li>
+<li><strong>Make sure input is eanbled</strong>
+<ul>
+<li>On the Event BeginPlay, drag out the output execute pin and release, start typing &ldquo;ena&hellip;&rdquo; select &ldquo;Enable Input&rdquo;</li>
+<li>Press tab and start typing &ldquo;get pl&rdquo; select &ldquo;Get Player Controller&rdquo;</li>
+<li>Connect the output pin &ldquo;Return value&rdquo; of the &ldquo;Get Player Controller&rdquo; and connect it to &ldquo;Player Controller&rdquo; input pin of the &ldquo;Enable Input&rdquo; node</li>
+</ul>
+</li>
+<li><strong>Get the Sequence</strong>
+<ul>
+<li>Drag out the output execute pin of &ldquo;Enable Input&rdquo; and release strat typing &ldquo;get al&hellip;&rdquo; select &ldquo;Get All Actors of Class&rdquo;</li>
+<li>set the input &ldquo;Actor Class&rdquo; (of the &ldquo;Get All Actors of Class&rdquo; node) to &ldquo;Level Sequence Actor&rdquo;
+<ul>
+<li>This will return an array of level sequence actors, so get the first actor in the array we will use a Get copy node</li>
+</ul>
+</li>
+<li>Drag out the &ldquo;Out Actors&rdquo; pin (of the &ldquo;Get All Actors of Class&rdquo; node) release and start typing &ldquo;get&hellip;&rdquo; select &ldquo;Get Copy&rdquo;</li>
+<li>We will promote the output of the Get Copy node to a variable so that we can use it elsewhere.
+<ul>
+<li>RMB click on the blue output pin () &gt; Promote to Variable, call it &ldquo;MySequence&rdquo;</li>
+</ul>
+</li>
+<li>Then we will connect the output execute pin of the &ldquo;Get All Actors of Class&rdquo; node to the input execute pin of the &ldquo;Set&rdquo; variable node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Trigger sequrnce with input</strong>
+<ul>
+<li>Get the &ldquo;O&rdquo; key input
+<ul>
+<li>press tab in the graph and start typing &ldquo;o ke&hellip;&rdquo; select the &ldquo;O&rdquo; key</li>
+</ul>
+</li>
+<li>Enable Flip-flop
+<ul>
+<li>Drag out from the &ldquo;Pressed&rdquo; execute pin of the key event node and start typing &ldquo;flip flo&hellip;&rdquo; select &ldquo;Flip Flop&rdquo;</li>
+</ul>
+</li>
+<li>From the variables section in the My Blueprints tab drag out the &ldquo;MySequence&rdquo; variable that we promoted earlier choose GET</li>
+<li>Play
+<ul>
+<li>From the output pin of the &ldquo;MySequence&rdquo; (variable) drag out, release and start typing &ldquo;play(&hellip;&rdquo; select Play(SequencePlayer)</li>
+<li>Connect the output execute pin &ldquo;A&rdquo; to the input execute pin of the &ldquo;Play&rdquo; node</li>
+</ul>
+</li>
+<li>Play Reverse
+<ul>
+<li>From the output pin of the &ldquo;MySequence&rdquo; (variable) drag out, release and start typing &ldquo;rev&hellip;&rdquo; select Play Reverse(SequencePlayer)</li>
+<li>Connect the output execute pin &ldquo;B&rdquo; to the input execute pin of the &ldquo;Play Reverse&rdquo; node</li>
+</ul>
+</li>
+<li>Make sure to click compile and save</li>
+<li>Finally we must drag and drop the &ldquo;BP_PlayAnim&rdquo; blueprint into the viewport (it will show up in the world outliner)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+		
+		</div>
+	</div>
+</div>
+	
 
 
         </main>
