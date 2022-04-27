@@ -114,6 +114,24 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#misc">Misc</a></li>
+    <li><a href="#ui">UI</a>
+      <ul>
+        <li><a href="#level-bp-hud">Level BP HUD</a></li>
+      </ul>
+    </li>
+    <li><a href="#configure-mouse-click-on-actor">Configure Mouse Click on actor</a>
+      <ul>
+        <li><a href="#player-controller">Player Controller</a></li>
+        <li><a href="#game-mode">Game Mode</a></li>
+        <li><a href="#camera">Camera</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-tables">Data tables</a>
+      <ul>
+        <li><a href="#simple-datatable">Simple Datatable</a></li>
+      </ul>
+    </li>
     <li><a href="#trigger-sequence-with-key">Trigger sequence with key</a></li>
   </ul>
 </nav>
@@ -129,7 +147,314 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE4 - Blueprint Snippets</h1>
-			<h1 id="trigger-sequence-with-key">Trigger sequence with key</h1>
+			<h1 id="misc">Misc</h1>
+<ul>
+<li><strong>Enable Input</strong>
+<ul>
+<li>By default the key input is disabled in the standard template.
+<ul>
+<li>This is why we need to enable Input in the BeginPlay event</li>
+</ul>
+</li>
+<li>In a level blueprint we do not need to do this</li>
+</ul>
+</li>
+<li><strong>Consume Keyboard event</strong>
+<ul>
+<li>By default a keyboard event has the property &ldquo;Consume&rdquo; enabled
+<ul>
+<li>if it is enabled it will prevent actors with a lower priority to handle the input</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Logic Sequence (Flow Control)</strong>
+<ul>
+<li>If you want to call n number of functions from one input you can use the &ldquo;Sequence&rdquo; (Flow Control) node. This allows multiple chains of logic to be called in a sequence.</li>
+</ul>
+</li>
+</ul>
+<h1 id="ui">UI</h1>
+<h2 id="level-bp-hud">Level BP HUD</h2>
+<p>Lets create a HUD that gets added in the level bp.</p>
+<ul>
+<li><strong>Create the UI Widget</strong>
+<ul>
+<li>Content Browser &gt; RMB &gt; User Interface &gt; Widget Blueprint
+<ul>
+<li>Lets call it &ldquo;HUD&rdquo;</li>
+<li>Double click to enter the widget</li>
+</ul>
+</li>
+<li>Add Text Widget
+<ul>
+<li>From the Palette drag out a Text widget
+<ul>
+<li>To keep it sinmple we will only add a text widget</li>
+</ul>
+</li>
+<li>With the text widget selected, in the details panel at the top give it the name &ldquo;MyText&rdquo; and enable the &ldquo;Is Variable&rdquo; (This is importatnt if we want to set the value at runtime)</li>
+<li>Compile and save</li>
+</ul>
+</li>
+<li>Add an update function
+<ul>
+<li>Switch to the &ldquo;Graph&rdquo; section (by clickeing the button top right corner)</li>
+<li>In the &ldquo;MyBlueprint&rdquo; panel under the &ldquo;Functions&rdquo; section add a new function and call it &ldquo;UpdateHUD&rdquo;</li>
+<li>Add an input top the function
+<ul>
+<li>With the &ldquo;UpdateHUD&rdquo; function node selected, in the details panel click the plus icon in the &ldquo;Inputs&rdquo; section to add an input. Call it &ldquo;Name&rdquo; and set the datatype to &ldquo;Text&rdquo;</li>
+</ul>
+</li>
+<li>Click compile and save</li>
+<li>From the &ldquo;MyBlueprints&rdquo; panel drag out &ldquo;MyText&rdquo; variable to the graph (of UpdateHUD function) select &ldquo;Get (MyText)&rdquo;</li>
+<li>From the output pin of the Get MyText drag release and start typing &ldquo;set tex&hellip;&rdquo; select &ldquo;(Widget) Set Text (Text)&rdquo;</li>
+<li>Connect the output execute pin of the &ldquo;Update HUD&rdquo; function node to the input execute pin of the set text node</li>
+<li>Also connect &ldquo;Name&rdquo; to &ldquo;In Text&rdquo;</li>
+<li>Click compile and save</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add the Widget to viewport</strong>
+<ul>
+<li>Open the level blueprint</li>
+<li>From the &ldquo;Event BeginPlay&rdquo; drag out the execute pin release and start typing &ldquo;create w&rdquo; select &ldquo;User Interface : Create Widget&rdquo;</li>
+<li>In the &ldquo;Class&rdquo; input dropdown select &ldquo;HUD&rdquo; (The widget BP we created earlier)</li>
+<li>Lets promote the widget so we can use it elsewhere in the event graph
+<ul>
+<li>On the &ldquo;Return Value&rdquo; of the Create Widget node RMB &gt; &ldquo;Promote to Variable&rdquo;</li>
+</ul>
+</li>
+<li>From the &ldquo;Return Value&rdquo; output pin (of the &ldquo;Set&rdquo; variable node) drag out, release and start typing &ldquo;add to&hellip;&rdquo; select &ldquo;Add To Viewport&rdquo;</li>
+</ul>
+</li>
+<li><strong>Update HUD</strong>
+<ul>
+<li>In this test example we use the level bp to print some dummy text to the vieport. We listen for a keyborad event and the print some text. Instead lets use our hud to display this text.</li>
+<li>From the &ldquo;MyBlueprint&rdquo; panel under the &ldquo;Variables&rdquo; drag out the &ldquo;HUD&rdquo; varaiable and cjhoose &ldquo;Get&rdquo;</li>
+<li>From the blue output pin drag out and release and start typing &ldquo;up&hellip;&rdquo; select &ldquo;UpdateHUD&rdquo; (The function that we made earlier)</li>
+<li>Then we simply connect the input execute pins of the keyboard event aswell as the text input. We now have our hud spiplay the text.</li>
+</ul>
+</li>
+</ul>
+<h1 id="configure-mouse-click-on-actor">Configure Mouse Click on actor</h1>
+<h2 id="player-controller">Player Controller</h2>
+<ul>
+<li>Player Controller
+<ul>
+<li>Create player controller bp
+<ul>
+<li>Content browser &gt; RMB &gt; Blueprints &gt; Blueprint Class (Based on PlayerController)
+<ul>
+<li>Under the all classes you can use the input field to search for classes to base the bp on</li>
+<li>Lets call it PC_configurator</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Double click to open the player controller</li>
+<li>Edit mouse properties
+<ul>
+<li>In the details panel &gt; Mouse Interface
+<ul>
+<li>Show Mouse Cursor : Enable</li>
+<li>Enable Click Events : Enable</li>
+<li>Enable Touch Events : Enable</li>
+<li>Enable Mouse Over Events : Enable</li>
+<li>Enable Touch Over : Enable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Compile and Save</li>
+</ul>
+</li>
+</ul>
+<h2 id="game-mode">Game Mode</h2>
+<ul>
+<li>Game Mode
+<ul>
+<li>Create the game mode bp
+<ul>
+<li>Content browser &gt; RMB &gt; Blueprints &gt; Blueprint Class (Based on GameMode)
+<ul>
+<li>Under the all classes you can use the input field to search for classes to base the bp on</li>
+<li>Lets call it GM_configurator</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Double click to open the game mode</li>
+<li>Set the player controller
+<ul>
+<li>In the details panel &gt; Classes &gt; Player Controller Class
+<ul>
+<li>Set it to the PC_plauer_controller bp we just created</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Compile and Save</li>
+<li>Set the Game mode
+<ul>
+<li>In the world settings &gt; Game Mode &gt; GameMode Override
+<ul>
+<li>Set it to the GM_configurator we just created</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="camera">Camera</h2>
+<ul>
+<li>Camera
+<ul>
+<li>Add camera
+<ul>
+<li>From the palce actors drag out a camera amd drop in the view</li>
+<li>Lets name it &ldquo;MyCamera&rdquo;
+<ul>
+<li>you can do this in the world outliner</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Place the camera
+<ul>
+<li>In the &ldquo;Perspective&rdquo; drop down top left on the viewport select Placed Cameras &gt; MyCamera and frame the scene in a nice way</li>
+<li>When you are happy with the camera placement, click the icon to the left side of the &ldquo;Pilot Active - MyCamera&rdquo; (below the perspective dropdown)</li>
+</ul>
+</li>
+<li>Set the Camera to be used
+<ul>
+<li>Open the level blueprint</li>
+<li>In the EventGraph press tab and start typing &ldquo;get pl&hellip;&rdquo; select &ldquo;Get Player Controller&rdquo;</li>
+<li>From the return value output pin of the Get Player Controller node drag out and release and start typing &ldquo;set v&hellip;&rdquo; select &ldquo;Set View Target With Blend&rdquo;</li>
+<li>Add the camera
+<ul>
+<li>From the world outliner drag in the camera we created and drop it in the event graph</li>
+</ul>
+</li>
+<li>Connect the camera to the &ldquo;New View Target&rdquo;</li>
+<li>Connect the Event Begin Play execute pin to the input execute pin of the Set View Target With Blend node.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="data-tables">Data tables</h1>
+<ul>
+<li>A DataTable is like a spreadsheet of values that can be fed into inputs in a Blueprint. In this example, we illustrate the process of implementing a simple DataTable.</li>
+</ul>
+<h2 id="simple-datatable">Simple Datatable</h2>
+<p>Here is an example of how to setup and use a csv as a datatable source</p>
+<ul>
+<li><strong>Create a csv file:</strong>
+<ul>
+<li>we will use: (Make sure you have no extra whitespace in the headers)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">UE_Item_Name;Item_Name;Item_Description
+0; Name A; Desc A
+1; Name B; Desc B
+2; Name C; Desc C
+</code></pre></div><pre><code></code></pre></li>
+<li><strong>Note</strong>
+<ul>
+<li>The first column will be used as an internal id to look up the rows. The column will internally be named &ldquo;Row Name&rdquo; so what you call it in the csv file does not matter. The value used in this column must be unique as it is used as an index but if does not have to be sequential.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a User defined Struct</strong>
+<ul>
+<li>In the content browser RMB &gt; Blueprints &gt; Structure<br>
+We will use this to let unreal understand the structure of the csv file we are about to read from
+<ul>
+<li>Lets call it &ldquo;MyItems&rdquo;</li>
+<li>Double click it to open it up</li>
+</ul>
+</li>
+<li>The varaibles of the structure represents the columns in our scv file
+<ul>
+<li>The first column of the csv file is used internally by UE to auto increment and give each row a unique id, so we should not add a variable for that column.</li>
+<li>Lets call the first variable &ldquo;Item_Name&rdquo; and set the datatype to &ldquo;Text&rdquo;</li>
+<li>Lets add a new variable and call that &ldquo;Item_Description&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Import csv file to ue</strong>
+<ul>
+<li>Drag and drop the csv file in the content browser
+<ul>
+<li>In the &ldquo;Choose datatable row type&rdquo; we will enter the &ldquo;MyItems&rdquo; struct that we defined earlier.</li>
+<li>click apply
+<ul>
+<li>Note if we doulble click the imported csv file we can inspect the data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Read the data</strong>
+<ul>
+<li>Lets create a simple blue print that will read and print the data</li>
+<li>Open up the level blueprint
+<ul>
+<li>in top menu bar Blueprints &gt; Open Level Blueprint)</li>
+<li>(or we could also ofc create a new blueprint if we would like)</li>
+</ul>
+</li>
+<li>Add a key input
+<ul>
+<li>In the Event graph press tab and type &ldquo;2&rdquo; select &ldquo;Keyboard Events 2&rdquo;</li>
+</ul>
+</li>
+<li>Get the datatable row
+<ul>
+<li>Drag out from the pressed execute pin, start typing &ldquo;get datat&hellip;&rdquo; select &ldquo;Get Datatable Row&rdquo;</li>
+<li>In the input &ldquo;Data Table&rdquo; pin click the dropdown and select the csv file we just imported.</li>
+</ul>
+</li>
+<li>Specify which row ro read
+<ul>
+<li>We will use a random int to  select which row to use
+<ul>
+<li>press trab start typing &ldquo;rand i&rdquo; select &ldquo;Random Integer&rdquo;</li>
+<li>Since we 3 rows we set the &ldquo;Max&rdquo; input of the rand int to 3 (this will generate a rand int from 0-2)</li>
+</ul>
+</li>
+<li>From the return value of the rand int srag out and start typing &ldquo;tost&hellip;&rdquo; select &ldquo;To String(Integer)&rdquo;</li>
+<li>Connect the output of the &ldquo;to string&rdquo; node to the &ldquo;Row Name&rdquo; input of the &ldquo;Get Datatable Row&rdquo; node</li>
+</ul>
+</li>
+<li>Use the Data
+<ul>
+<li>In our example we will just print the row contents to the screen</li>
+<li>We could split the &ldquo;Out Row&rdquo; struct pin or we could use a &ldquo;Break&rdquo; node to do the same in a node instead, lets do the latter.
+<ul>
+<li>From the &ldquo;Out Row&rdquo; drag out and start typing &ldquo;br&hellip;&rdquo; select &ldquo;Break MyItems&rdquo;.</li>
+</ul>
+</li>
+<li>Append the columns
+<ul>
+<li>press tab and start typing &ldquo;appen&hellip;&rdquo; select &ldquo;String Append&rdquo;</li>
+<li>Connect the outputs that the broke up earlier to the inputs of the append and hook the result up to a print node
+<ul>
+<li>Remeber to connect the execute pin of the print node</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="trigger-sequence-with-key">Trigger sequence with key</h1>
 <ul>
 <li>Lets add something to animate
 <ul>

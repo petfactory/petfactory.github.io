@@ -46,7 +46,7 @@
       <pubDate>Thu, 15 Jul 2021 16:24:36 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue4_blueprint_snippets/</guid>
-      <description>Trigger sequence with key  Lets add something to animate  We will add a simple cube   Create a sequence  In the top bar click Cinematics &amp;gt; Add Level Sequence  Or in the content browser RMB click &amp;gt; Animation &amp;gt; Level Sequence  Note: that if you do it this way you have to manually drag it to the viewport aswell     If the sequence is not open double click to open in the Sequencer With the sequence selected in the world outliner, in the details panel under the section &amp;ldquo;Playback&amp;rdquo; make sure that:  &amp;ldquo;Playback&amp;rdquo; is set to &amp;ldquo;Dont Loop&amp;rdquo; and &amp;ldquo;Pause at End&amp;rdquo; is enabled   Select the object you want to animate in the world outliner and drag and drop in the sequencer.</description>
+      <description>Misc  Enable Input  By default the key input is disabled in the standard template.  This is why we need to enable Input in the BeginPlay event   In a level blueprint we do not need to do this   Consume Keyboard event  By default a keyboard event has the property &amp;ldquo;Consume&amp;rdquo; enabled  if it is enabled it will prevent actors with a lower priority to handle the input     Logic Sequence (Flow Control)  If you want to call n number of functions from one input you can use the &amp;ldquo;Sequence&amp;rdquo; (Flow Control) node.</description>
     </item>
     
     <item>
@@ -347,7 +347,9 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>General Array of Unique (detail) int nprim = nprimitives(0);s[]@mat_names = {};int count = nuniqueval(0, &amp;#34;prim&amp;#34;, &amp;#34;shop_materialpath&amp;#34;);for (int i = 0; i &amp;lt; count; i++) {string val = uniqueval(0, &amp;#34;prim&amp;#34;, &amp;#34;shop_materialpath&amp;#34;, i);push(s[]@mat_names, val);}Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</description>
+      <description>General Partition points Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &amp;ldquo;cluster centers&amp;rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &amp;ldquo;the original points&amp;rdquo; and with the snap distance control how many centers you want.
+Point wrangle
+int npt = nearpoint(1, @P);vector p = point(1, &amp;#39;P&amp;#39;, npt);vector relbb = relbbox(0, p);if(relbb.</description>
     </item>
     
     <item>

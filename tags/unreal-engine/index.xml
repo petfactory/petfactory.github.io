@@ -17,7 +17,7 @@
       <pubDate>Thu, 15 Jul 2021 16:24:36 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue4_blueprint_snippets/</guid>
-      <description>Trigger sequence with key  Lets add something to animate  We will add a simple cube   Create a sequence  In the top bar click Cinematics &amp;gt; Add Level Sequence  Or in the content browser RMB click &amp;gt; Animation &amp;gt; Level Sequence  Note: that if you do it this way you have to manually drag it to the viewport aswell     If the sequence is not open double click to open in the Sequencer With the sequence selected in the world outliner, in the details panel under the section &amp;ldquo;Playback&amp;rdquo; make sure that:  &amp;ldquo;Playback&amp;rdquo; is set to &amp;ldquo;Dont Loop&amp;rdquo; and &amp;ldquo;Pause at End&amp;rdquo; is enabled   Select the object you want to animate in the world outliner and drag and drop in the sequencer.</description>
+      <description>Misc  Enable Input  By default the key input is disabled in the standard template.  This is why we need to enable Input in the BeginPlay event   In a level blueprint we do not need to do this   Consume Keyboard event  By default a keyboard event has the property &amp;ldquo;Consume&amp;rdquo; enabled  if it is enabled it will prevent actors with a lower priority to handle the input     Logic Sequence (Flow Control)  If you want to call n number of functions from one input you can use the &amp;ldquo;Sequence&amp;rdquo; (Flow Control) node.</description>
     </item>
     
     <item>

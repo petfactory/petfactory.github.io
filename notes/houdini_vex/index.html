@@ -116,6 +116,7 @@
   <ul>
     <li><a href="#general">General</a>
       <ul>
+        <li><a href="#partition-points">Partition points</a></li>
         <li><a href="#array-of-unique-detail">Array of Unique (detail)</a></li>
       </ul>
     </li>
@@ -168,7 +169,19 @@
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini VEX - Snippets</h1>
 			<h1 id="general">General</h1>
-<h2 id="array-of-unique-detail">Array of Unique (detail)</h2>
+<h2 id="partition-points">Partition points</h2>
+<p>Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &ldquo;cluster centers&rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &ldquo;the original points&rdquo; and with the snap distance control how many centers you want.</p>
+<p><strong>Point wrangle</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int npt <span style="color:#f92672">=</span> nearpoint(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">@P</span>);
+vector p <span style="color:#f92672">=</span> point(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;P&#39;</span>, npt);
+vector relbb <span style="color:#f92672">=</span> relbbox(<span style="color:#ae81ff">0</span>, p);
+<span style="color:#66d9ef">if</span>(relbb<span style="color:#f92672">.</span>y <span style="color:#f92672">&lt;=</span> chf(<span style="color:#e6db74">&#39;threshold&#39;</span>)){
+    <span style="color:#a6e22e">@my_attrib</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+}
+<span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">@my_attrib</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h2 id="array-of-unique-detail">Array of Unique (detail)</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int nprim <span style="color:#f92672">=</span> nprimitives(<span style="color:#ae81ff">0</span>);
 s[]<span style="color:#a6e22e">@mat_names</span> <span style="color:#f92672">=</span> {};
 
