@@ -33,6 +33,11 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/vex/</loc>
+    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/tags/ue5/</loc>
     <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
@@ -108,12 +113,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/redshift/</loc>
-    <lastmod>2020-12-18T16:13:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/substance-designer/</loc>
+    <loc>https://www.petfactory.se/tags/work/</loc>
     <lastmod>2020-12-18T16:13:08+02:00</lastmod>
   </url>
   
@@ -123,37 +123,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/alias/</loc>
-    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/blender/</loc>
-    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/work/glambot/</loc>
-    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/marvelous-designer/</loc>
-    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/maya/</loc>
-    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/resolve/</loc>
-    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/substance-painter/</loc>
     <lastmod>2020-09-19T15:10:51+01:00</lastmod>
   </url>
   
@@ -180,6 +150,11 @@
   <url>
     <loc>https://www.petfactory.se/work/petbot/</loc>
     <lastmod>2020-08-26T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/blender/</loc>
+    <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
   
   <url>
@@ -228,11 +203,6 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/davinci-resolve/</loc>
-    <lastmod>2020-05-02T13:45:58+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/work/hoodie/</loc>
     <lastmod>2020-05-02T13:45:58+01:00</lastmod>
   </url>
@@ -253,13 +223,28 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/substance-painter/</loc>
+    <lastmod>2020-02-07T20:26:30+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/substance_painter_notes/</loc>
     <lastmod>2020-02-07T20:26:30+01:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/substance-designer/</loc>
+    <lastmod>2020-02-06T20:26:30+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/substance_designer_notes/</loc>
     <lastmod>2020-02-06T20:26:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/marvelous-designer/</loc>
+    <lastmod>2020-01-28T11:23:08+01:00</lastmod>
   </url>
   
   <url>
@@ -343,6 +328,11 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/davinci-resolve/</loc>
+    <lastmod>2019-11-20T14:11:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/davinci_resolve_python/</loc>
     <lastmod>2019-11-20T14:11:00+01:00</lastmod>
   </url>
@@ -398,11 +388,6 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/v-ray/</loc>
-    <lastmod>2019-10-01T11:16:20+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/work/proc_city_02/</loc>
     <lastmod>2019-09-01T15:10:51+01:00</lastmod>
   </url>
@@ -428,22 +413,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/nuke/</loc>
-    <lastmod>2019-06-01T15:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/houdini_python_snippets/</loc>
     <lastmod>2019-04-15T13:45:10+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/notes/houdini_vex/</loc>
-    <lastmod>2019-04-14T13:45:10+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/vex/</loc>
     <lastmod>2019-04-14T13:45:10+01:00</lastmod>
   </url>
   

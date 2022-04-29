@@ -80,12 +80,12 @@ h3 {
 */
 
 .site-header {
-    background-color: #000;
     position: fixed;
     top:0px;
     width:100%;
     z-index: 10;
-    height: 50px;
+    height: 90px;
+    background-color: #000;
 }
 
 .site-header a {
@@ -98,16 +98,9 @@ h3 {
   text-decoration: none;
 }
 
-#main-nav-content{
-    width: 600px;
-    float: right;
-    margin-top: 4px;
+/*#main-nav-wrap {
 }
-
-#main-nav-content div{
-    text-align: right;
-}
-
+*/
 .header-logo-wrap{
     padding-top: 12px;
     margin-left: -18px;
@@ -115,6 +108,7 @@ h3 {
     position: absolute;
     width: 50px;
     height: 50px;
+    top: 20px;
     /*background-color: #245;*/
 }
 
@@ -128,6 +122,61 @@ h3 {
     font-size: 1.1em;
     /*background-color: #945;*/
 }
+
+
+#main-nav {
+    width: 600px;
+    float: right;
+    margin-top: 14px;
+}
+
+#main-menu {
+    margin-top:8px;
+    width:900px;
+}
+
+#main-menu li {
+    position:relative;display:block;
+    float:left;
+    margin-left:50px;
+    color: #888;
+}
+
+#main-menu a {
+    display:block;
+    padding-bottom:12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration:none;
+    background-color:#000;
+    color:#888;
+}
+#main-menu a:hover {
+    color:#fff;
+}
+
+#main-menu li ul {
+    position:absolute;
+    margin: 0px;
+    left:-54px;
+    top:40px;
+    display:none;
+    padding-left: 4px;
+}
+
+#main-menu li ul li {
+    width:150px;
+    height: 40px;
+}
+
+#main-menu li:hover ul {
+    display:block;
+}
+
+
+
 
 
 /*
@@ -146,7 +195,7 @@ h3 {
 }
 .mobile-menu-trigger {
     position: absolute;
-    top: 0px;
+    top: 5px;
     right: 0px;
     display: none;
     height: 50px;
@@ -371,6 +420,11 @@ tr:nth-child(even){
  work
 ---------------
 */
+
+.work-img {
+    width:100%;
+    height:auto;
+}
 
 .work-grid{
     border: 1px solid #000;
@@ -742,6 +796,11 @@ margin:-50px 0 0; /* negative fixed header height */
 
 
 @media (max-width: 767px) {
+
+    .header-logo-wrap{
+        top: 5px;
+        /*background-color: #245;*/
+    }
 
 
     .site-header-mobile {

@@ -20,14 +20,5 @@
       <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
     </item>
     
-    <item>
-      <title>The Bot</title>
-      <link>https://www.petfactory.se/work/the_bot/</link>
-      <pubDate>Thu, 01 Aug 2019 15:10:51 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/work/the_bot/</guid>
-      <description>       </description>
-    </item>
-    
   </channel>
 </rss>

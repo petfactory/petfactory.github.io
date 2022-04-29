@@ -24,17 +24,6 @@ Inspect variables To print the value of an environment variable you can use the 
     </item>
     
     <item>
-      <title>Houdini - HDA</title>
-      <link>https://www.petfactory.se/notes/houdini_hda/</link>
-      <pubDate>Thu, 21 Nov 2019 10:50:51 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/houdini_hda/</guid>
-      <description>The notes below are based on info found in the Houdini docs as well as other sources.
-Digital Asset For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.
-Preferences Before you create an HDA it is a good idea to configure the preferences. Below is the way I have setup my prefs, but that is depending on your workflow etc.</description>
-    </item>
-    
-    <item>
       <title>DaVinci Resolve - Fusion</title>
       <link>https://www.petfactory.se/notes/davinci_resolve_fusion/</link>
       <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
