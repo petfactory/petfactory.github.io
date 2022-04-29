@@ -6,10 +6,29 @@
     <description>Recent content in Unreal Engine on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jul 2021 16:24:36 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 18 Aug 2021 22:47:22 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/unreal-engine/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Cinematics</title>
+      <link>https://www.petfactory.se/notes/ue5_cinematics/</link>
+      <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_cinematics/</guid>
+      <description>Sequencer Tips This is a good lecture on sequencer.
+ Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.</description>
+    </item>
+    
+    <item>
+      <title>UE5 - Notes</title>
+      <link>https://www.petfactory.se/notes/ue5_notes/</link>
+      <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_notes/</guid>
+      <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
+    </item>
     
     <item>
       <title>UE4 - Blueprint Snippets</title>

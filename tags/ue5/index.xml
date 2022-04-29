@@ -21,5 +21,14 @@
  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.</description>
     </item>
     
+    <item>
+      <title>UE5 - Notes</title>
+      <link>https://www.petfactory.se/notes/ue5_notes/</link>
+      <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_notes/</guid>
+      <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
+    </item>
+    
   </channel>
 </rss>
