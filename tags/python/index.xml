@@ -32,6 +32,18 @@
     </item>
     
     <item>
+      <title>Houdini - Python</title>
+      <link>https://www.petfactory.se/notes/houdini_python/</link>
+      <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_python/</guid>
+      <description>Here I will gather information that I find useful.
+Environment variables Houdini uses environment variables for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.
+See the list of environment variables in Houdini.
+Inspect variables To print the value of an environment variable you can use the Houdini Python Shell:</description>
+    </item>
+    
+    <item>
       <title>Davinci Resolve - Python</title>
       <link>https://www.petfactory.se/notes/davinci_resolve_python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>

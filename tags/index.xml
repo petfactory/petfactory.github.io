@@ -210,20 +210,20 @@
     </item>
     
     <item>
-      <title>tag</title>
-      <link>https://www.petfactory.se/tags/tag/</link>
-      <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/tag/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DaVinci Resolve</title>
       <link>https://www.petfactory.se/tags/davinci-resolve/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/davinci-resolve/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag</title>
+      <link>https://www.petfactory.se/tags/tag/</link>
+      <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/tag/</guid>
       <description></description>
     </item>
     
