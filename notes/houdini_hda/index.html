@@ -307,8 +307,8 @@ kwargs[<span style="color:#e6db74">&#39;inputindex&#39;</span>] <span style="col
 kwargs[<span style="color:#e6db74">&#39;ordered&#39;</span>] <span style="color:#f92672">=</span> True
 soputils<span style="color:#f92672">.</span>selectGroupParm(kwargs)
 </code></pre></div><ul>
-<li><strong>Note</strong> that you can change the kwargs[&lsquo;inputindex&rsquo;] to the input index of the node that you want to select geo from. You can also cahnge geometry type.</li>
-<li><strong>Note</strong> that you can skip the &ldquo;ordered&rdquo; key in the kwrags dict. This will be the default behaviuor like it is in the select field of a group node. If you do not have the &ldquo;ordered&rdquo; set, and if you select all points the select field will be set to empty (which in a group node means select all) which might not ne what you want.</li>
+<li><strong>Note</strong> that you can change the kwargs[&lsquo;inputindex&rsquo;] to the input index of the node that you want to select geo from. You can also change geometry type.</li>
+<li><strong>Note</strong> that you can skip the &ldquo;ordered&rdquo; key in the kwargs dict. This will be the default behaviour (like it is in the select field of a group node). If the &ldquo;ordered&rdquo; key is not present, and if you select all points the select field will be set to empty (which in a group node means select all) which might not be what you want.</li>
 </ul>
 </li>
 </ul>
@@ -335,7 +335,7 @@ You might want to do something with the selected points, to do this:
 
     <span style="color:#66d9ef">try</span>:
         pnts <span style="color:#f92672">=</span> input_node<span style="color:#f92672">.</span>geometry()<span style="color:#f92672">.</span>globPoints(pattern)
-        <span style="color:#75715e"># do somethig with the poits...</span>
+        <span style="color:#75715e"># do somethig with the points...</span>
         <span style="color:#66d9ef">print</span>(pnts)
 
     <span style="color:#66d9ef">except</span> hou<span style="color:#f92672">.</span>OperationFailed <span style="color:#66d9ef">as</span> e:
