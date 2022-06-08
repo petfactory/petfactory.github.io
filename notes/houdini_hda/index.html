@@ -174,7 +174,7 @@
     <li><a href="#custom-hda-path">Custom HDA Path</a></li>
     <li><a href="#parameters">Parameters</a>
       <ul>
-        <li><a href="#how-to">How to</a></li>
+        <li><a href="#viewport-selection">Viewport Selection</a></li>
       </ul>
     </li>
     <li><a href="#extra-files">Extra Files</a>
@@ -294,21 +294,53 @@ Here I am using the reverse domain name notation, which in my case is:
 </ul>
 </li>
 </ul>
-<h2 id="how-to">How to</h2>
+<h2 id="viewport-selection">Viewport Selection</h2>
 <ul>
 <li><strong>Add Vieport Geometry Selection parameter</strong>
 <ul>
 <li>Go to Edit Parameter Interface</li>
-<li>Add a string parameter to you node</li>
-<li>Under the &ldquo;Action Button&rdquo; tab of you string parameter enter the following python snippet:
+<li>Add a string parameter to your node</li>
+<li>Under the &ldquo;Action Button&rdquo; tab of the string parameter enter the following python snippet:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> soputils 
 kwargs[<span style="color:#e6db74">&#39;geometrytype&#39;</span>] <span style="color:#f92672">=</span> (hou<span style="color:#f92672">.</span>geometryType<span style="color:#f92672">.</span>Points,) 
-kwargs[<span style="color:#e6db74">&#39;inputindex&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> 
+kwargs[<span style="color:#e6db74">&#39;inputindex&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+kwargs[<span style="color:#e6db74">&#39;ordered&#39;</span>] <span style="color:#f92672">=</span> True
 soputils<span style="color:#f92672">.</span>selectGroupParm(kwargs)
 </code></pre></div><ul>
-<li>Note that you can change the kwargs[&lsquo;inputindex&rsquo;] to the input index of the node that you wnat to select geo from. You can also cahnge geometry type.</li>
+<li><strong>Note</strong> that you can change the kwargs[&lsquo;inputindex&rsquo;] to the input index of the node that you want to select geo from. You can also cahnge geometry type.</li>
+<li><strong>Note</strong> that you can skip the &ldquo;ordered&rdquo; key in the kwrags dict. This will be the default behaviuor like it is in the select field of a group node. If you do not have the &ldquo;ordered&rdquo; set, and if you select all points the select field will be set to empty (which in a group node means select all) which might not ne what you want.</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><strong>Process the selected points</strong><br>
+You might want to do something with the selected points, to do this:
+<ul>
+<li>In the &ldquo;Action Button&rdquo; tab (of the string parameter) append the following code to call a script in your hda python module.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]<span style="color:#f92672">.</span>hdaModule()<span style="color:#f92672">.</span>process_points(kwargs)
+</code></pre></div><pre><code></code></pre></li>
+<li>In your HDA Python Module add a function that will be called from the callback script.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_points</span>(kwargs):
+
+    node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    parm_name <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;parmtuple&#39;</span>]<span style="color:#f92672">.</span>name()
+    pattern <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]<span style="color:#f92672">.</span>parm(parm_name)<span style="color:#f92672">.</span>eval()
+
+    <span style="color:#75715e"># the index of the input node   </span>
+    input_index <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;inputindex&#39;</span>]
+    input_node <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>input(input_index)
+
+    <span style="color:#75715e"># the index of the multiparm</span>
+    script_multiparm_index <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;script_multiparm_index&#39;</span>]
+
+    <span style="color:#66d9ef">try</span>:
+        pnts <span style="color:#f92672">=</span> input_node<span style="color:#f92672">.</span>geometry()<span style="color:#f92672">.</span>globPoints(pattern)
+        <span style="color:#75715e"># do somethig with the poits...</span>
+        <span style="color:#66d9ef">print</span>(pnts)
+
+    <span style="color:#66d9ef">except</span> hou<span style="color:#f92672">.</span>OperationFailed <span style="color:#66d9ef">as</span> e:
+        <span style="color:#66d9ef">print</span>(e)
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -366,12 +398,13 @@ Note if you add an icon to the asset, you can also use it in the help card.</p>
 <ul>
 <li>On the scripts tab, with the PythonModule selected enter the some code to be called</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>():
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;speak was called from PythonModule&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>(kwargs):
+	node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;speak was called from PythonModule&#39;</span>, node)
 </code></pre></div><ul>
 <li>Add a button to the HDA and as a <strong>python callback script</strong> we add the following snippet:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>phm()<span style="color:#f92672">.</span>speak()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>phm()<span style="color:#f92672">.</span>speak(kwargs)
 </code></pre></div><ul>
 <li><strong>Note</strong>
 <ul>

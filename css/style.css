@@ -604,8 +604,8 @@ the code hightlight divs on ios*/
 :target:before {
 content:"";
 display:block;
-height:50px; /* fixed header height*/
-margin:-50px 0 0; /* negative fixed header height */
+height:90px; /* fixed header height*/
+margin:-90px 0 0; /* negative fixed header height */
 }
 
 .toc-wrap{
