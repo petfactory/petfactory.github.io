@@ -21,7 +21,10 @@ a:hover {
 }
 
 hr{
-    border-top: 1px solid #151515;
+    /*border-top: 1px solid #151515;*/
+    border-bottom: 1px solid #333;
+    padding-top: 20px;
+    margin-bottom: 30px;
 }
 
 ul ul li {
@@ -35,12 +38,15 @@ strong {
 
 h1 {
     font-size: 1.8em;
+    color: #e83e8c;
 }
 h2 {
     font-size: 1.4em;
+    color: #777;
 }
 h3 {
     font-size: 1.2em;
+    color: #555;
 }
 
 

@@ -80,11 +80,11 @@ Install First we click the plus icon and select the version. When we click the i
     </item>
     
     <item>
-      <title>Houdini - KineFX notes</title>
-      <link>https://www.petfactory.se/notes/houdini_kinefx_notes/</link>
+      <title>Houdini - KineFX</title>
+      <link>https://www.petfactory.se/notes/houdini_kinefx/</link>
       <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_kinefx_notes/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_kinefx/</guid>
       <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
     </item>
     
@@ -333,16 +333,7 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
     </item>
     
     <item>
-      <title>Houdini - Python Snippets</title>
-      <link>https://www.petfactory.se/notes/houdini_python_snippets/</link>
-      <pubDate>Mon, 15 Apr 2019 13:45:10 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/houdini_python_snippets/</guid>
-      <description>String Regex Replace import reREGEX_TRAILING_DIGITS = re.compile(r&amp;#39;^([a-zA-Z_]*?)[0-9]*$&amp;#39;)node = hou.pwd()geo = node.geometry()for prim in geo.prims():mat_name = prim.attribValue(&amp;#39;shop_materialpath&amp;#39;)m = REGEX_TRAILING_DIGITS.match(mat_name)if m:capt_grp = m.groups()[0]prim.setAttribValue(&amp;#39;shop_materialpath&amp;#39;, capt_grp) Parms Add Button Add a button to a cop network that when it is pressed will render a child node called &amp;ldquo;rop_cop1&amp;rdquo;. It seems that the commented out line is not necessary? Seems to do the same as the 2 lines above.</description>
-    </item>
-    
-    <item>
-      <title>Houdini VEX - Snippets</title>
+      <title>Houdini - VEX</title>
       <link>https://www.petfactory.se/notes/houdini_vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
@@ -350,17 +341,6 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <description>General Partition points Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &amp;ldquo;cluster centers&amp;rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &amp;ldquo;the original points&amp;rdquo; and with the snap distance control how many centers you want.
 Point wrangle
 int npt = nearpoint(1, @P);vector p = point(1, &amp;#39;P&amp;#39;, npt);vector relbb = relbbox(0, p);if(relbb.</description>
-    </item>
-    
-    <item>
-      <title>Houdini - Stylesheets</title>
-      <link>https://www.petfactory.se/notes/houdini_stylesheets/</link>
-      <pubDate>Sat, 13 Apr 2019 21:06:58 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/houdini_stylesheets/</guid>
-      <description>Some notes on how to create a simple object level style sheet.
-Object level style sheet We have a geo node called &amp;ldquo;spheres&amp;rdquo; which consists of a number of packed primitives. We also have 2 material called yellow &amp;amp; blue. Lets add a style sheet to this object node that lets us assign different materials based on viewport selection.
-Style sheet Inspector (Data tree) Open the inspector for the material style sheets.</description>
     </item>
     
     <item>
@@ -381,7 +361,7 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
     </item>
     
     <item>
-      <title>Houdini misc</title>
+      <title>Houdini - Misc</title>
       <link>https://www.petfactory.se/notes/houdini_misc/</link>
       <pubDate>Tue, 01 Jan 2019 20:32:44 +0100</pubDate>
       
