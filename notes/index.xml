@@ -6,10 +6,21 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 11:18:51 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jun 2022 15:09:45 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini - LOPS</title>
+      <link>https://www.petfactory.se/notes/houdini_lops/</link>
+      <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_lops/</guid>
+      <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
+Nodes Rendering Render Geometry Settings Applies renderer-specific geometry settings to geometry in the scene graph.
+unshaded_color_01.hiplcUsing a mtlxuniform_edf and a render geometry settings node to render an unshaded color material </description>
+    </item>
     
     <item>
       <title>OCIO - Python</title>

@@ -6,10 +6,20 @@
     <description>Recent content in Work on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Dec 2020 16:13:08 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 May 2022 15:20:58 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/work/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lego - Chappie</title>
+      <link>https://www.petfactory.se/work/lego_chappie/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/lego_chappie/</guid>
+      <description>Lego model from: Mecabricks
+Mocap from: Mixamo</description>
+    </item>
     
     <item>
       <title>Equilateral</title>

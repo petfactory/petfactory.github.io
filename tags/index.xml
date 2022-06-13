@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 11:18:51 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jun 2022 15:09:45 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini</title>
+      <link>https://www.petfactory.se/tags/houdini/</link>
+      <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/houdini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>USD</title>
+      <link>https://www.petfactory.se/tags/usd/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/usd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Work</title>
+      <link>https://www.petfactory.se/tags/work/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/work/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>OCIO</title>
@@ -66,29 +93,11 @@
     </item>
     
     <item>
-      <title>Houdini</title>
-      <link>https://www.petfactory.se/tags/houdini/</link>
-      <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/houdini/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Rigging</title>
       <link>https://www.petfactory.se/tags/rigging/</link>
       <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/rigging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Work</title>
-      <link>https://www.petfactory.se/tags/work/</link>
-      <pubDate>Fri, 18 Dec 2020 16:13:08 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/work/</guid>
       <description></description>
     </item>
     
