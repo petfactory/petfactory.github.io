@@ -13,6 +13,16 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/houdini-notes/</loc>
+    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/lops-notes/</loc>
+    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/</loc>
     <lastmod>2022-06-12T15:09:45+01:00</lastmod>
   </url>
@@ -28,6 +38,11 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/kinefx/</loc>
+    <lastmod>2022-05-01T15:20:58+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/work/lego_cars/</loc>
     <lastmod>2022-05-01T15:20:58+01:00</lastmod>
   </url>
@@ -38,12 +53,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/usd/</loc>
-    <lastmod>2022-05-01T15:20:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/work/</loc>
+    <loc>https://www.petfactory.se/tags/solaris/</loc>
     <lastmod>2022-05-01T15:20:58+01:00</lastmod>
   </url>
   
@@ -53,12 +63,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/ocio/</loc>
+    <loc>https://www.petfactory.se/notes/ocio_python/</loc>
     <lastmod>2021-09-21T11:18:51+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ocio_python/</loc>
+    <loc>https://www.petfactory.se/tags/ocio-notes/</loc>
     <lastmod>2021-09-21T11:18:51+02:00</lastmod>
   </url>
   
@@ -68,13 +78,8 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/vex/</loc>
+    <loc>https://www.petfactory.se/tags/python-notes/</loc>
     <lastmod>2021-09-21T11:18:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/ue5/</loc>
-    <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
   
   <url>
@@ -83,17 +88,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/unreal/</loc>
+    <loc>https://www.petfactory.se/tags/ue5-notes/</loc>
     <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/unreal-engine/</loc>
+    <loc>https://www.petfactory.se/tags/unreal-engine-notes/</loc>
     <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue5_notes/</loc>
+    <loc>https://www.petfactory.se/notes/ue5-notes/</loc>
     <lastmod>2021-08-10T22:03:02+02:00</lastmod>
   </url>
   
@@ -108,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue4_pipeline/</loc>
+    <loc>https://www.petfactory.se/notes/ue4-pipeline/</loc>
     <lastmod>2021-07-13T10:53:11+02:00</lastmod>
   </url>
   
@@ -123,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/rigging/</loc>
+    <loc>https://www.petfactory.se/tags/kinefx-notes/</loc>
     <lastmod>2021-01-30T16:40:32+01:00</lastmod>
   </url>
   
@@ -138,17 +143,57 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/redshift/</loc>
+    <lastmod>2020-12-18T16:13:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/substance-designer/</loc>
+    <lastmod>2020-12-18T16:13:08+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/alias/</loc>
+    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/blender/</loc>
+    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/work/glambot/</loc>
     <lastmod>2020-09-19T15:10:51+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/animation/</loc>
+    <loc>https://www.petfactory.se/tags/marvelous-designer/</loc>
+    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/maya/</loc>
+    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/resolve/</loc>
+    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/substance-painter/</loc>
+    <lastmod>2020-09-19T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/animation-notes/</loc>
     <lastmod>2020-09-18T14:24:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/crowd/</loc>
+    <loc>https://www.petfactory.se/tags/crowd-notes/</loc>
     <lastmod>2020-09-18T14:24:14+02:00</lastmod>
   </url>
   
@@ -168,11 +213,6 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/blender/</loc>
-    <lastmod>2020-07-29T14:53:41+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/blender_boxcutter/</loc>
     <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
@@ -183,12 +223,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/boxcutter/</loc>
+    <loc>https://www.petfactory.se/tags/blender-notes/</loc>
     <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/hard-ops/</loc>
+    <loc>https://www.petfactory.se/tags/boxcutter-notes/</loc>
+    <lastmod>2020-07-29T14:53:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/hard-ops-notes/</loc>
     <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
   
@@ -198,7 +243,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/modelling/</loc>
+    <loc>https://www.petfactory.se/tags/modelling-notes/</loc>
     <lastmod>2020-07-04T16:24:47+02:00</lastmod>
   </url>
   
@@ -213,8 +258,23 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/rigging/</loc>
+    <lastmod>2020-05-27T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/work/the_bot_20/</loc>
     <lastmod>2020-05-27T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/v-ray/</loc>
+    <lastmod>2020-05-27T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/davinci-resolve/</loc>
+    <lastmod>2020-05-02T13:45:58+01:00</lastmod>
   </url>
   
   <url>
@@ -233,13 +293,8 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/sim/</loc>
+    <loc>https://www.petfactory.se/tags/pyro-notes/</loc>
     <lastmod>2020-04-07T21:17:10+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/substance-painter/</loc>
-    <lastmod>2020-02-07T20:26:30+01:00</lastmod>
   </url>
   
   <url>
@@ -248,8 +303,8 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/substance-designer/</loc>
-    <lastmod>2020-02-06T20:26:30+01:00</lastmod>
+    <loc>https://www.petfactory.se/tags/substance-painter-notes/</loc>
+    <lastmod>2020-02-07T20:26:30+01:00</lastmod>
   </url>
   
   <url>
@@ -258,12 +313,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/marvelous-designer/</loc>
-    <lastmod>2020-01-28T11:23:08+01:00</lastmod>
+    <loc>https://www.petfactory.se/tags/substance-designer-notes/</loc>
+    <lastmod>2020-02-06T20:26:30+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/notes/marvelous_designer/</loc>
+    <lastmod>2020-01-28T11:23:08+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/marvelous-designer-notes/</loc>
     <lastmod>2020-01-28T11:23:08+01:00</lastmod>
   </url>
   
@@ -278,23 +338,23 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/general/</loc>
-    <lastmod>2020-01-01T14:53:41+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/workflow/</loc>
-    <lastmod>2020-01-01T14:53:41+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/workflow_tips/</loc>
+    <lastmod>2020-01-01T14:53:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/workflow-notes/</loc>
     <lastmod>2020-01-01T14:53:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/work/dodecahedron/</loc>
     <lastmod>2019-12-21T13:45:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/mantra/</loc>
+    <lastmod>2019-12-20T13:45:58+01:00</lastmod>
   </url>
   
   <url>
@@ -318,8 +378,13 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/uv/</loc>
+    <loc>https://www.petfactory.se/tags/uv-notes/</loc>
     <lastmod>2019-12-19T11:33:41+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/cops-notes/</loc>
+    <lastmod>2019-12-16T12:27:59+01:00</lastmod>
   </url>
   
   <url>
@@ -333,22 +398,32 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/tops-notes/</loc>
+    <lastmod>2019-12-12T15:09:45+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/houdini_python/</loc>
     <lastmod>2019-12-01T13:56:54+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_hda/</loc>
+    <loc>https://www.petfactory.se/tags/hda-notes/</loc>
     <lastmod>2019-11-21T10:50:51+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/davinci-resolve/</loc>
-    <lastmod>2019-11-20T14:11:00+01:00</lastmod>
+    <loc>https://www.petfactory.se/notes/houdini-hda/</loc>
+    <lastmod>2019-11-21T10:50:51+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/notes/davinci_resolve_python/</loc>
+    <lastmod>2019-11-20T14:11:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/davinci-resolve-notes/</loc>
     <lastmod>2019-11-20T14:11:00+01:00</lastmod>
   </url>
   
@@ -358,7 +433,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/tag/</loc>
+    <loc>https://www.petfactory.se/tags/fusion-notes/</loc>
     <lastmod>2019-11-12T21:58:27+01:00</lastmod>
   </url>
   
@@ -368,27 +443,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/edit/</loc>
-    <lastmod>2019-11-07T15:12:17+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/hugo/</loc>
-    <lastmod>2019-10-30T11:16:20+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/hugo_notes/</loc>
     <lastmod>2019-10-30T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_17_pyro/</loc>
-    <lastmod>2019-10-29T11:16:20+02:00</lastmod>
+    <loc>https://www.petfactory.se/tags/hugo-notes/</loc>
+    <lastmod>2019-10-30T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/pyro/</loc>
+    <loc>https://www.petfactory.se/notes/houdini_17_pyro/</loc>
     <lastmod>2019-10-29T11:16:20+02:00</lastmod>
   </url>
   
@@ -433,7 +498,17 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/tags/nuke/</loc>
+    <lastmod>2019-06-01T15:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/notes/houdini_vex/</loc>
+    <lastmod>2019-04-14T13:45:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/vex-notes/</loc>
     <lastmod>2019-04-14T13:45:10+01:00</lastmod>
   </url>
   
@@ -453,27 +528,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/tile_editor/</loc>
-    <lastmod>2019-01-01T20:31:44+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/ae/</loc>
-    <lastmod>2019-01-01T20:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/after-effects/</loc>
-    <lastmod>2019-01-01T20:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/pyside2/</loc>
+    <loc>https://www.petfactory.se/notes/pyside2/</loc>
     <lastmod>2018-03-17T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/pyside2/</loc>
+    <loc>https://www.petfactory.se/tags/pyside2-notes/</loc>
     <lastmod>2018-03-17T11:16:20+02:00</lastmod>
   </url>
   
@@ -483,12 +543,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/sublimetext/</loc>
+    <loc>https://www.petfactory.se/notes/sublime_text/</loc>
     <lastmod>2017-10-14T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/sublime_text/</loc>
+    <loc>https://www.petfactory.se/tags/sublimetext-notes/</loc>
     <lastmod>2017-10-14T11:16:20+02:00</lastmod>
   </url>
   

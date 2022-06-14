@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pyro-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/pyro-notes/</link>
+    <description>Recent content in Pyro-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Apr 2020 21:17:10 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/pyro-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini 18 - Sparse pyro</title>
+      <link>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</link>
+      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</guid>
+      <description>Some notes on using the sparse pyro solver taken while watching Steven Knippings excellent Volumes III v2.0
+Source points Popnet Setup a particle sim that we will use as source for our smoke sim.
+Point Wrangle Lets append a point wrangle to the particles. We will use the normailzed age to drive the density of the particles. We will use a ramp parameter and use the normalized age to drive the ramp.</description>
+    </item>
+    
+    <item>
+      <title>Houdini 17 - Pyro</title>
+      <link>https://www.petfactory.se/notes/houdini_17_pyro/</link>
+      <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_17_pyro/</guid>
+      <description>Add a geo to use as source and append a Pyro Source node to it. This node does not make the volume, it creates points.
+Below are some lines form the docs The Pyro Source SOP converts its input geometry into points suitable for sourcing pyro and smoke simulations. This SOP adds specified attributes to the generated points, which can be rasterized and imported into desired DOP fields by the Volume Source node.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOPS-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/tops-notes/</link>
+    <description>Recent content in TOPS-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Dec 2019 15:09:45 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/tops-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini - TOPS</title>
+      <link>https://www.petfactory.se/notes/houdini_tops/</link>
+      <pubDate>Thu, 12 Dec 2019 15:09:45 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_tops/</guid>
+      <description>TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
+Wedge geo variations Lets setup a TOP network to write out geo variations to disc. We will do this using a Wedge node.
+Pull vs Push For each wedged attribute, you can use it to set a parameter on the render node in one of two ways:</description>
+    </item>
+    
+  </channel>
+</rss>

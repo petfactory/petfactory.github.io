@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crowd-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/crowd-notes/</link>
+    <description>Recent content in Crowd-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Sep 2020 14:24:14 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/crowd-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini - Crowd</title>
+      <link>https://www.petfactory.se/notes/houdini_crowd/</link>
+      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_crowd/</guid>
+      <description>Houdini 18 crowd docs
+Theese notes are based on the excellent tutorial by Mikael Pettersen, a little bit of CGWiki and random bits of information I stumble up on.
+Minimal Setup Lets setup a minimal but &amp;ldquo;working&amp;rdquo; crowd.
+ First create some geo, bones and capture the geometry. Then create a subnet to house all the parts we created in the previous step, This is our character rig. Create a new Geometry node and dive in.</description>
+    </item>
+    
+  </channel>
+</rss>

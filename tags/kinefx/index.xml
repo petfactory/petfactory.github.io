@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KineFX on Petfactory</title>
+    <link>https://www.petfactory.se/tags/kinefx/</link>
+    <description>Recent content in KineFX on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 May 2022 15:20:58 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/kinefx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lego - Chappie</title>
+      <link>https://www.petfactory.se/work/lego_chappie/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/lego_chappie/</guid>
+      <description>Lego model from: Mecabricks
+Mocap from: Mixamo</description>
+    </item>
+    
+  </channel>
+</rss>

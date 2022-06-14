@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VEX-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/vex-notes/</link>
+    <description>Recent content in VEX-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Apr 2019 13:45:10 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/vex-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini - VEX</title>
+      <link>https://www.petfactory.se/notes/houdini_vex/</link>
+      <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
+      <description>General Partition points Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &amp;ldquo;cluster centers&amp;rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &amp;ldquo;the original points&amp;rdquo; and with the snap distance control how many centers you want.
+Point wrangle
+int npt = nearpoint(1, @P);vector p = point(1, &amp;#39;P&amp;#39;, npt);vector relbb = relbbox(0, p);if(relbb.</description>
+    </item>
+    
+  </channel>
+</rss>

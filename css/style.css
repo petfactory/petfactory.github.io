@@ -558,6 +558,12 @@ tr:nth-child(even){
 }
 
 
+.tag-link{
+    font-size: 1em;
+    color: #555;
+
+}
+
 /*
 ---------------
  list (cv, notes)

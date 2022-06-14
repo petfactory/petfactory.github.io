@@ -65,10 +65,10 @@ Mocap from: Mixamo</description>
     
     <item>
       <title>UE5 - Notes</title>
-      <link>https://www.petfactory.se/notes/ue5_notes/</link>
+      <link>https://www.petfactory.se/notes/ue5-notes/</link>
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5_notes/</guid>
+      <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
       <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
     </item>
     
@@ -94,10 +94,10 @@ Intro  A way for separate individual obejcts to talk to each other Useful for:  
     
     <item>
       <title>UE4 - Pipeline</title>
-      <link>https://www.petfactory.se/notes/ue4_pipeline/</link>
+      <link>https://www.petfactory.se/notes/ue4-pipeline/</link>
       <pubDate>Tue, 13 Jul 2021 10:53:11 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue4_pipeline/</guid>
+      <guid>https://www.petfactory.se/notes/ue4-pipeline/</guid>
       <description>General Tips  System Units  UE uses centimeter (1 UE unit = 1cm)   Copy assets (as text)  If you select some static meshes and Ctrl C you save the selected assets, their translation etc to the clipboard You can then paste the data to a text editor. This data can the be Ctrl V in Unreal editor to &amp;ldquo;replace&amp;rdquo; the actors.   Anti-Aliasing  Project Settings &amp;gt; Engine &amp;gt; Rendering &amp;gt; Default Settings &amp;gt; Anti-Aliasing Method    Naming Convention Using a good naming convention is important to make the project more efficient to work with.</description>
     </item>
     
@@ -412,10 +412,10 @@ Inspect variables To print the value of an environment variable you can use the 
     
     <item>
       <title>Houdini - HDA</title>
-      <link>https://www.petfactory.se/notes/houdini_hda/</link>
+      <link>https://www.petfactory.se/notes/houdini-hda/</link>
       <pubDate>Thu, 21 Nov 2019 10:50:51 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_hda/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-hda/</guid>
       <description>The notes below are based on info found in the Houdini docs as well as other sources.
 Digital Asset For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.
 Preferences Before you create an HDA it is a good idea to configure the preferences. Below is the way I have setup my prefs, but that is depending on your workflow etc.</description>
@@ -563,27 +563,6 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
 POP Birth Rate A good way to control the amount of particles being emitted is to keyframe the Const. Birt Rate (Birth tab) with values between 0 and 1. Then we can use the Scale Point Count by Area (Source tab) as a multiplier of points emitted.
 Rest attribute If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source.</description>
-    </item>
-    
-    <item>
-      <title>Tile Editor</title>
-      <link>https://www.petfactory.se/notes/tile_editor/</link>
-      <pubDate>Tue, 01 Jan 2019 20:31:44 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/tile_editor/</guid>
-      <description>The Tile Editor is a tool I am developing that creates tile based city blocks (houses and streets, props etc). The project started inside Maya but I have since then moved to Houdini. The gist of the tool: you have an PySide widget in which you can paint the shape of the buildings, change tile appearance and assign geometry. The tool then generates points and attributes to which geometry is instanced.</description>
-    </item>
-    
-    <item>
-      <title>AE - Misc</title>
-      <link>https://www.petfactory.se/notes/ae/</link>
-      <pubDate>Tue, 01 Jan 2019 20:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/ae/</guid>
-      <description>Below are some misc snippets regarding AE that might be useful.
-Shortcuts Timeline Custom shortcuts
-   Function Key     Set layer in to CTI Alt Gr [   Set layer out to CTI Alt Gr ]   Trim layer(s) in to CTI Ctrl [   Trim layer(s) out to CTI Ctrl ]    Default shortcuts
-   Function Key     Go to start of layer Alt Shift Ctrl L-Arrow   Go to end of layer Alt Shift Ctrl R-Arrow   Workarea begin B   Workarea end N   Go to time dialog Alt Shift J   CTI to next Keyframe 1 K   CTI to prev Keyframe 1 J    * 1 - Also workarea and markers</description>
     </item>
     
     <item>

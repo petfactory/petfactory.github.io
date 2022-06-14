@@ -6,31 +6,18 @@
     <description>Recent content in DaVinci Resolve on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Nov 2019 14:11:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2020 13:45:58 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/davinci-resolve/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Davinci Resolve - Python</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_python/</link>
-      <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
+      <title>Hoodie</title>
+      <link>https://www.petfactory.se/work/hoodie/</link>
+      <pubDate>Sat, 02 May 2020 13:45:58 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_python/</guid>
-      <description>An old scripting guide can be found here
-Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
-    </item>
-    
-    <item>
-      <title>DaVinci Resolve - Edit</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_edit/</link>
-      <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/davinci_resolve_edit/</guid>
-      <description>Quick tips  Keyboard Customization    DaVinci Resolve &amp;gt; Keyboard Customization
-    Project settings  Shift 9 click the home icon in the lower right corner of the main ui   File &amp;gt; Project Settings
-    Projects Manager  Shift 1 click the cog icon in the lower right corner of the main ui   File &amp;gt; Project Manager
-    Reset UI    Workspace &amp;gt; Reset UI Layout</description>
+      <guid>https://www.petfactory.se/work/hoodie/</guid>
+      <description>   </description>
     </item>
     
   </channel>

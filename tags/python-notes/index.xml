@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/python-notes/</link>
+    <description>Recent content in Python-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Sep 2021 11:18:51 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/python-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OCIO - Python</title>
+      <link>https://www.petfactory.se/notes/ocio_python/</link>
+      <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ocio_python/</guid>
+      <description>I am writing a tool for Houdini that can create, save and apply color themes to color ramp parameters. In this project I needed to convert between color spaces. There are many ways to do this, but this led me to start exploring OCIO using Python. Below is a snippet that changes the color space of a list of rgb values from srgb to linear srgb.
+ First I activate the venv into which I want to install OCIO Then I run pip install opencolorio With the package installed make sure that your IDE can access the package We also need to download a OCIO configuration file from here  import osimport PyOpenColorIO as OCIOdef apply_rgb(rgb, src_space, dst_space):try:config = OCIO.</description>
+    </item>
+    
+    <item>
+      <title>Unreal - Python / PySide2</title>
+      <link>https://www.petfactory.se/notes/unreal_python_pyside2/</link>
+      <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
+      <description>Enable Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code.</description>
+    </item>
+    
+    <item>
+      <title>Workflow - Tips</title>
+      <link>https://www.petfactory.se/notes/workflow_tips/</link>
+      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/workflow_tips/</guid>
+      <description>Here I will post (perhaps) useful things that falls outside more specfic topics.
+Python Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
+Resize In-place resizing
+magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
+magick mogrify -resize 50% -path ./DST *.pngWindows 10 Desktops Lets say you are watching a tutorial, following along, taking notes (using markdown) and previewing the notes in a browser.</description>
+    </item>
+    
+    <item>
+      <title>Houdini - Python</title>
+      <link>https://www.petfactory.se/notes/houdini_python/</link>
+      <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_python/</guid>
+      <description>Here I will gather information that I find useful.
+Environment variables Houdini uses environment variables for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.
+See the list of environment variables in Houdini.
+Inspect variables To print the value of an environment variable you can use the Houdini Python Shell:</description>
+    </item>
+    
+    <item>
+      <title>Davinci Resolve - Python</title>
+      <link>https://www.petfactory.se/notes/davinci_resolve_python/</link>
+      <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/davinci_resolve_python/</guid>
+      <description>An old scripting guide can be found here
+Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
+    </item>
+    
+    <item>
+      <title>PySide2 - Notes</title>
+      <link>https://www.petfactory.se/notes/pyside2/</link>
+      <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/pyside2/</guid>
+      <description>Pyside2 Install PySide2 To install PySide2 (including Shiboken2 &amp;amp; Qt) make sure that we first activate our venv
+pip install PySide2Hello World app Lets build a simple ui and run with sublimeText. Select the build system we just created and build Ctrl B
+from PySide2 import QtCorefrom PySide2 import QtWidgetsfrom PySide2 import QtGuiimport sysfrom functools import partialclass HelloWidget(QtWidgets.QWidget):def __init__(self, parent=None):super(HelloWidget, self).__init__(parent)self.setGeometry(400, 400, 250, 50)self.</description>
+    </item>
+    
+    <item>
+      <title>Python - General</title>
+      <link>https://www.petfactory.se/notes/python/</link>
+      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/python/</guid>
+      <description>This assumes you are using Python 3. (I am also using Git Bash as my shell)
+Venv Setup a virtual environment It is a good idea to install packages in virtual environment so that we do not clutter our main python install, and we can easily get rid of the packages if we want. First we need to create the virtual enveronment. Navigat to a folder where you want your venv and type cd into it and then run:</description>
+    </item>
+    
+    <item>
+      <title>SublimeText</title>
+      <link>https://www.petfactory.se/notes/sublime_text/</link>
+      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/sublime_text/</guid>
+      <description>Misc Diff files  Diff two files  Make sure the files are in the &amp;ldquo;Folders&amp;rdquo; section  You can add folders to the project by dragging and dropping   Selct the first file, then Ctrl select the second RMB click &amp;gt; Diff Files&amp;hellip;   Only works with UTF-8 files  If you can not diff to files that should be &amp;ldquo;diffable&amp;rdquo; then you probably have some non-ascii characters A quick way to inspect teh file is to press &amp;ldquo;Ctrl F&amp;rdquo; then press &amp;ldquo;Alt R&amp;rdquo; to enable Regex mode  You can also click the regex button on the left most edge of the search input field   Then paste the regex [^\x00-\x7F] in the searc input field Press find    Search and replace # I wanted to change a H3 header (###) in a markdown file.</description>
+    </item>
+    
+  </channel>
+</rss>

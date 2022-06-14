@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unreal Engine-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
+    <description>Recent content in Unreal Engine-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Aug 2021 22:47:22 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/unreal-engine-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UE5 - Cinematics</title>
+      <link>https://www.petfactory.se/notes/ue5_cinematics/</link>
+      <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_cinematics/</guid>
+      <description>Sequencer Tips This is a good lecture on sequencer.
+ Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.</description>
+    </item>
+    
+    <item>
+      <title>UE5 - Notes</title>
+      <link>https://www.petfactory.se/notes/ue5-notes/</link>
+      <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
+      <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
+    </item>
+    
+    <item>
+      <title>UE4 - Blueprint Snippets</title>
+      <link>https://www.petfactory.se/notes/ue4_blueprint_snippets/</link>
+      <pubDate>Thu, 15 Jul 2021 16:24:36 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_blueprint_snippets/</guid>
+      <description>Misc  Enable Input  By default the key input is disabled in the standard template.  This is why we need to enable Input in the BeginPlay event   In a level blueprint we do not need to do this   Consume Keyboard event  By default a keyboard event has the property &amp;ldquo;Consume&amp;rdquo; enabled  if it is enabled it will prevent actors with a lower priority to handle the input     Logic Sequence (Flow Control)  If you want to call n number of functions from one input you can use the &amp;ldquo;Sequence&amp;rdquo; (Flow Control) node.</description>
+    </item>
+    
+    <item>
+      <title>UE4 - Blueprint Communication</title>
+      <link>https://www.petfactory.se/notes/ue4_blueprint_communication/</link>
+      <pubDate>Wed, 14 Jul 2021 18:37:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_blueprint_communication/</guid>
+      <description>Below are som notes from a really good video on blueprint communication by Zak Parrish
+Blueprint Communications | Live Training | Unreal Engine
+Intro  A way for separate individual obejcts to talk to each other Useful for:  Broadcasting an event to a number of listeners Telling a specfic object to do something Quering another object   UE4 has no way to just &amp;ldquo;send a broad signal to everyone&amp;rdquo;  Trivia: had it in UE2, but it wasn’t very efficient   Communication will always involve the following:  A Sending Blueprint At least one Receiving Blueprint   Communication will always require a reference at some point  The Sender or Receiver has to become aware of the other   All Blueprint communication is 1-way  Blueprints can send data back and forth, but it requires both Blueprints to set up their own individual paths of communication Queries are possible, but are initiated by the Sender (still 1-way)    Types of communication  3 primary Blueprint communication Methods  Direct Communication Blueprint Interface message calls Event Dispatchers    When to use  Flow of communication  Is the sender pushing the data to the reciever?</description>
+    </item>
+    
+    <item>
+      <title>UE4 - Pipeline</title>
+      <link>https://www.petfactory.se/notes/ue4-pipeline/</link>
+      <pubDate>Tue, 13 Jul 2021 10:53:11 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4-pipeline/</guid>
+      <description>General Tips  System Units  UE uses centimeter (1 UE unit = 1cm)   Copy assets (as text)  If you select some static meshes and Ctrl C you save the selected assets, their translation etc to the clipboard You can then paste the data to a text editor. This data can the be Ctrl V in Unreal editor to &amp;ldquo;replace&amp;rdquo; the actors.   Anti-Aliasing  Project Settings &amp;gt; Engine &amp;gt; Rendering &amp;gt; Default Settings &amp;gt; Anti-Aliasing Method    Naming Convention Using a good naming convention is important to make the project more efficient to work with.</description>
+    </item>
+    
+    <item>
+      <title>UE4 - Getting started</title>
+      <link>https://www.petfactory.se/notes/ue4_getting_started/</link>
+      <pubDate>Sat, 10 Jul 2021 18:37:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue4_getting_started/</guid>
+      <description>Below are some notes from Getting Started in Unreal Engine
+Install First we click the plus icon and select the version. When we click the install button we get a promt to choose instasll location. Here we can click the options button to choose we we want to include. If we know we are not interested in some of the target platforms we can uncheck them to avoid to have to download and install that data.</description>
+    </item>
+    
+    <item>
+      <title>Unreal - Python / PySide2</title>
+      <link>https://www.petfactory.se/notes/unreal_python_pyside2/</link>
+      <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
+      <description>Enable Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -21,29 +21,47 @@
     </item>
     
     <item>
-      <title>USD</title>
-      <link>https://www.petfactory.se/tags/usd/</link>
-      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      <title>Houdini-notes</title>
+      <link>https://www.petfactory.se/tags/houdini-notes/</link>
+      <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/usd/</guid>
+      <guid>https://www.petfactory.se/tags/houdini-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Work</title>
-      <link>https://www.petfactory.se/tags/work/</link>
-      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      <title>LOPS-notes</title>
+      <link>https://www.petfactory.se/tags/lops-notes/</link>
+      <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/work/</guid>
+      <guid>https://www.petfactory.se/tags/lops-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>OCIO</title>
-      <link>https://www.petfactory.se/tags/ocio/</link>
+      <title>KineFX</title>
+      <link>https://www.petfactory.se/tags/kinefx/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/kinefx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solaris</title>
+      <link>https://www.petfactory.se/tags/solaris/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/solaris/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OCIO-notes</title>
+      <link>https://www.petfactory.se/tags/ocio-notes/</link>
       <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/ocio/</guid>
+      <guid>https://www.petfactory.se/tags/ocio-notes/</guid>
       <description></description>
     </item>
     
@@ -57,209 +75,326 @@
     </item>
     
     <item>
-      <title>VEX</title>
-      <link>https://www.petfactory.se/tags/vex/</link>
+      <title>Python-notes</title>
+      <link>https://www.petfactory.se/tags/python-notes/</link>
       <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/vex/</guid>
+      <guid>https://www.petfactory.se/tags/python-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>UE5</title>
-      <link>https://www.petfactory.se/tags/ue5/</link>
+      <title>UE5-notes</title>
+      <link>https://www.petfactory.se/tags/ue5-notes/</link>
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/ue5/</guid>
+      <guid>https://www.petfactory.se/tags/ue5-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Unreal</title>
-      <link>https://www.petfactory.se/tags/unreal/</link>
+      <title>Unreal Engine-notes</title>
+      <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/unreal/</guid>
+      <guid>https://www.petfactory.se/tags/unreal-engine-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Unreal Engine</title>
-      <link>https://www.petfactory.se/tags/unreal-engine/</link>
-      <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/unreal-engine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rigging</title>
-      <link>https://www.petfactory.se/tags/rigging/</link>
+      <title>KineFx-notes</title>
+      <link>https://www.petfactory.se/tags/kinefx-notes/</link>
       <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/rigging/</guid>
+      <guid>https://www.petfactory.se/tags/kinefx-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Animation</title>
-      <link>https://www.petfactory.se/tags/animation/</link>
-      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
+      <title>Redshift</title>
+      <link>https://www.petfactory.se/tags/redshift/</link>
+      <pubDate>Fri, 18 Dec 2020 16:13:08 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/animation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Crowd</title>
-      <link>https://www.petfactory.se/tags/crowd/</link>
-      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/crowd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blender</title>
-      <link>https://www.petfactory.se/tags/blender/</link>
-      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/blender/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Boxcutter</title>
-      <link>https://www.petfactory.se/tags/boxcutter/</link>
-      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/boxcutter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hard Ops</title>
-      <link>https://www.petfactory.se/tags/hard-ops/</link>
-      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/hard-ops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Modelling</title>
-      <link>https://www.petfactory.se/tags/modelling/</link>
-      <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/modelling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sim</title>
-      <link>https://www.petfactory.se/tags/sim/</link>
-      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/sim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Substance Painter</title>
-      <link>https://www.petfactory.se/tags/substance-painter/</link>
-      <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/substance-painter/</guid>
+      <guid>https://www.petfactory.se/tags/redshift/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Substance Designer</title>
       <link>https://www.petfactory.se/tags/substance-designer/</link>
-      <pubDate>Thu, 06 Feb 2020 20:26:30 +0100</pubDate>
+      <pubDate>Fri, 18 Dec 2020 16:13:08 +0200</pubDate>
       
       <guid>https://www.petfactory.se/tags/substance-designer/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Alias</title>
+      <link>https://www.petfactory.se/tags/alias/</link>
+      <pubDate>Sat, 19 Sep 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/alias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blender</title>
+      <link>https://www.petfactory.se/tags/blender/</link>
+      <pubDate>Sat, 19 Sep 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/blender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Marvelous Designer</title>
       <link>https://www.petfactory.se/tags/marvelous-designer/</link>
-      <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
+      <pubDate>Sat, 19 Sep 2020 15:10:51 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/marvelous-designer/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>General</title>
-      <link>https://www.petfactory.se/tags/general/</link>
-      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      <title>Maya</title>
+      <link>https://www.petfactory.se/tags/maya/</link>
+      <pubDate>Sat, 19 Sep 2020 15:10:51 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/general/</guid>
+      <guid>https://www.petfactory.se/tags/maya/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Workflow</title>
-      <link>https://www.petfactory.se/tags/workflow/</link>
-      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      <title>Resolve</title>
+      <link>https://www.petfactory.se/tags/resolve/</link>
+      <pubDate>Sat, 19 Sep 2020 15:10:51 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/workflow/</guid>
+      <guid>https://www.petfactory.se/tags/resolve/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>uv</title>
-      <link>https://www.petfactory.se/tags/uv/</link>
-      <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
+      <title>Substance Painter</title>
+      <link>https://www.petfactory.se/tags/substance-painter/</link>
+      <pubDate>Sat, 19 Sep 2020 15:10:51 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/uv/</guid>
+      <guid>https://www.petfactory.se/tags/substance-painter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Animation-notes</title>
+      <link>https://www.petfactory.se/tags/animation-notes/</link>
+      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/animation-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crowd-notes</title>
+      <link>https://www.petfactory.se/tags/crowd-notes/</link>
+      <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/crowd-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blender-notes</title>
+      <link>https://www.petfactory.se/tags/blender-notes/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/blender-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boxcutter-notes</title>
+      <link>https://www.petfactory.se/tags/boxcutter-notes/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/boxcutter-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hard Ops-notes</title>
+      <link>https://www.petfactory.se/tags/hard-ops-notes/</link>
+      <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/hard-ops-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelling-notes</title>
+      <link>https://www.petfactory.se/tags/modelling-notes/</link>
+      <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/modelling-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rigging</title>
+      <link>https://www.petfactory.se/tags/rigging/</link>
+      <pubDate>Wed, 27 May 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/rigging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>V-Ray</title>
+      <link>https://www.petfactory.se/tags/v-ray/</link>
+      <pubDate>Wed, 27 May 2020 15:10:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/v-ray/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DaVinci Resolve</title>
       <link>https://www.petfactory.se/tags/davinci-resolve/</link>
-      <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
+      <pubDate>Sat, 02 May 2020 13:45:58 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/davinci-resolve/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tag</title>
-      <link>https://www.petfactory.se/tags/tag/</link>
+      <title>Pyro-notes</title>
+      <link>https://www.petfactory.se/tags/pyro-notes/</link>
+      <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/pyro-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substance Painter-notes</title>
+      <link>https://www.petfactory.se/tags/substance-painter-notes/</link>
+      <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/substance-painter-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Substance Designer-notes</title>
+      <link>https://www.petfactory.se/tags/substance-designer-notes/</link>
+      <pubDate>Thu, 06 Feb 2020 20:26:30 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/substance-designer-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marvelous Designer-notes</title>
+      <link>https://www.petfactory.se/tags/marvelous-designer-notes/</link>
+      <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/marvelous-designer-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workflow-notes</title>
+      <link>https://www.petfactory.se/tags/workflow-notes/</link>
+      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/workflow-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mantra</title>
+      <link>https://www.petfactory.se/tags/mantra/</link>
+      <pubDate>Fri, 20 Dec 2019 13:45:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/mantra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uv-notes</title>
+      <link>https://www.petfactory.se/tags/uv-notes/</link>
+      <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/uv-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>COPS-notes</title>
+      <link>https://www.petfactory.se/tags/cops-notes/</link>
+      <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/cops-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TOPS-notes</title>
+      <link>https://www.petfactory.se/tags/tops-notes/</link>
+      <pubDate>Thu, 12 Dec 2019 15:09:45 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/tops-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HDA-notes</title>
+      <link>https://www.petfactory.se/tags/hda-notes/</link>
+      <pubDate>Thu, 21 Nov 2019 10:50:51 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/hda-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DaVinci Resolve-notes</title>
+      <link>https://www.petfactory.se/tags/davinci-resolve-notes/</link>
+      <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/davinci-resolve-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fusion-notes</title>
+      <link>https://www.petfactory.se/tags/fusion-notes/</link>
       <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/tag/</guid>
+      <guid>https://www.petfactory.se/tags/fusion-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Edit</title>
-      <link>https://www.petfactory.se/tags/edit/</link>
-      <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/edit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://www.petfactory.se/tags/hugo/</link>
+      <title>Hugo-notes</title>
+      <link>https://www.petfactory.se/tags/hugo-notes/</link>
       <pubDate>Wed, 30 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/hugo/</guid>
+      <guid>https://www.petfactory.se/tags/hugo-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Pyro</title>
-      <link>https://www.petfactory.se/tags/pyro/</link>
-      <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
+      <title>Nuke</title>
+      <link>https://www.petfactory.se/tags/nuke/</link>
+      <pubDate>Sat, 01 Jun 2019 15:10:51 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/tags/pyro/</guid>
+      <guid>https://www.petfactory.se/tags/nuke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VEX-notes</title>
+      <link>https://www.petfactory.se/tags/vex-notes/</link>
+      <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/vex-notes/</guid>
       <description></description>
     </item>
     
@@ -273,29 +408,20 @@
     </item>
     
     <item>
-      <title>After Effects</title>
-      <link>https://www.petfactory.se/tags/after-effects/</link>
-      <pubDate>Tue, 01 Jan 2019 20:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/after-effects/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PySide2</title>
-      <link>https://www.petfactory.se/tags/pyside2/</link>
+      <title>PySide2-notes</title>
+      <link>https://www.petfactory.se/tags/pyside2-notes/</link>
       <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/pyside2/</guid>
+      <guid>https://www.petfactory.se/tags/pyside2-notes/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>SublimeText</title>
-      <link>https://www.petfactory.se/tags/sublimetext/</link>
+      <title>SublimeText-notes&#34;</title>
+      <link>https://www.petfactory.se/tags/sublimetext-notes/</link>
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/tags/sublimetext/</guid>
+      <guid>https://www.petfactory.se/tags/sublimetext-notes/</guid>
       <description></description>
     </item>
     

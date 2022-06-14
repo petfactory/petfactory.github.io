@@ -1,36 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>VEX on Petfactory</title>
-    <link>https://www.petfactory.se/tags/vex/</link>
-    <description>Recent content in VEX on Petfactory</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 11:18:51 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.petfactory.se/tags/vex/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>OCIO - Python</title>
-      <link>https://www.petfactory.se/notes/ocio_python/</link>
-      <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/ocio_python/</guid>
-      <description>I am writing a tool for Houdini that can create, save and apply color themes to color ramp parameters. In this project I needed to convert between color spaces. There are many ways to do this, but this led me to start exploring OCIO using Python. Below is a snippet that changes the color space of a list of rgb values from srgb to linear srgb.
- First I activate the venv into which I want to install OCIO Then I run pip install opencolorio With the package installed make sure that your IDE can access the package We also need to download a OCIO configuration file from here  import osimport PyOpenColorIO as OCIOdef apply_rgb(rgb, src_space, dst_space):try:config = OCIO.</description>
-    </item>
-    
-    <item>
-      <title>Houdini - VEX</title>
-      <link>https://www.petfactory.se/notes/houdini_vex/</link>
-      <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>General Partition points Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &amp;ldquo;cluster centers&amp;rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &amp;ldquo;the original points&amp;rdquo; and with the snap distance control how many centers you want.
-Point wrangle
-int npt = nearpoint(1, @P);vector p = point(1, &amp;#39;P&amp;#39;, npt);vector relbb = relbbox(0, p);if(relbb.</description>
-    </item>
-    
-  </channel>
-</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PySide2-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/pyside2-notes/</link>
+    <description>Recent content in PySide2-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Mar 2018 11:16:20 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/pyside2-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PySide2 - Notes</title>
+      <link>https://www.petfactory.se/notes/pyside2/</link>
+      <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/pyside2/</guid>
+      <description>Pyside2 Install PySide2 To install PySide2 (including Shiboken2 &amp;amp; Qt) make sure that we first activate our venv
+pip install PySide2Hello World app Lets build a simple ui and run with sublimeText. Select the build system we just created and build Ctrl B
+from PySide2 import QtCorefrom PySide2 import QtWidgetsfrom PySide2 import QtGuiimport sysfrom functools import partialclass HelloWidget(QtWidgets.QWidget):def __init__(self, parent=None):super(HelloWidget, self).__init__(parent)self.setGeometry(400, 400, 250, 50)self.</description>
+    </item>
+    
+    <item>
+      <title>Python - General</title>
+      <link>https://www.petfactory.se/notes/python/</link>
+      <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/python/</guid>
+      <description>This assumes you are using Python 3. (I am also using Git Bash as my shell)
+Venv Setup a virtual environment It is a good idea to install packages in virtual environment so that we do not clutter our main python install, and we can easily get rid of the packages if we want. First we need to create the virtual enveronment. Navigat to a folder where you want your venv and type cd into it and then run:</description>
+    </item>
+    
+  </channel>
+</rss>

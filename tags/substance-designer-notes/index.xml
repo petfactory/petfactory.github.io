@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Substance Designer-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/substance-designer-notes/</link>
+    <description>Recent content in Substance Designer-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 06 Feb 2020 20:26:30 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/substance-designer-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Substance Designer - notes</title>
+      <link>https://www.petfactory.se/notes/substance_designer_notes/</link>
+      <pubDate>Thu, 06 Feb 2020 20:26:30 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/substance_designer_notes/</guid>
+      <description>Parameters Conditional Visibility  Boolean  input[&amp;ldquo;MyInput&amp;rdquo;] input[&amp;ldquo;MyInput&amp;rdquo;] == true !input[&amp;ldquo;MyInput&amp;rdquo;] input[&amp;ldquo;MyInput&amp;rdquo;] == false input[&amp;ldquo;MyInput&amp;rdquo;] != true   Float  input[&amp;ldquo;MyInput&amp;rdquo;] &amp;lt; 3 input[&amp;ldquo;param1&amp;rdquo;] == 2 input[&amp;ldquo;MyInput&amp;rdquo;].y &amp;lt; 3 input[&amp;ldquo;param1&amp;rdquo;] || input[&amp;ldquo;param2&amp;rdquo;] input[&amp;ldquo;param1&amp;rdquo;] &amp;gt; 0 &amp;amp;&amp;amp; input[&amp;ldquo;param2&amp;rdquo;] &amp;gt; 1    Tips UV  To view the UVs in the 2D view  3D view Scene &amp;gt; Display UVs in 2D view    UDIM If you import a mesh that only have one uv tile but this tile is not the 1001 udim.</description>
+    </item>
+    
+  </channel>
+</rss>
