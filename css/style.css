@@ -564,6 +564,16 @@ tr:nth-child(even){
 
 }
 
+.tags-poster {
+    height: 100px;
+    position: absolute;
+    left: -280px;
+}
+
+.tags-poster-text{
+    min-height: 100px;
+}
+
 /*
 ---------------
  list (cv, notes)
