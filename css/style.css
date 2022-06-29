@@ -33,7 +33,7 @@ ul ul li {
 }
 
 strong {
-    color: #999;
+    color: #888;
 }
 
 h1 {
@@ -42,7 +42,8 @@ h1 {
 }
 h2 {
     font-size: 1.4em;
-    color: #777;
+    color: #999;
+    /*color: #e83e8c;*/
 }
 h3 {
     font-size: 1.2em;

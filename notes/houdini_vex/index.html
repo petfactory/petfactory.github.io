@@ -178,16 +178,8 @@
     </li>
     <li><a href="#string">String</a>
       <ul>
-        <li><a href="#regex">Regex</a>
-          <ul>
-            <li><a href="#replace">Replace</a></li>
-          </ul>
-        </li>
-        <li><a href="#formatting">Formatting</a>
-          <ul>
-            <li><a href="#zero-padding">Zero padding</a></li>
-          </ul>
-        </li>
+        <li><a href="#regex">Regex</a></li>
+        <li><a href="#formatting">Formatting</a></li>
       </ul>
     </li>
     <li><a href="#edit-primitves">Edit Primitves</a>
@@ -223,64 +215,70 @@
 <h2 id="partition-points">Partition points</h2>
 <p>Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &ldquo;cluster centers&rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &ldquo;the original points&rdquo; and with the snap distance control how many centers you want.</p>
 <p><strong>Point wrangle</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int npt <span style="color:#f92672">=</span> nearpoint(<span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">@P</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> npt <span style="color:#f92672">=</span> nearpoint(<span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">@</span>P);
 vector p <span style="color:#f92672">=</span> point(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;P&#39;</span>, npt);
 vector relbb <span style="color:#f92672">=</span> relbbox(<span style="color:#ae81ff">0</span>, p);
-<span style="color:#66d9ef">if</span>(relbb<span style="color:#f92672">.</span>y <span style="color:#f92672">&lt;=</span> chf(<span style="color:#e6db74">&#39;threshold&#39;</span>)){
-    <span style="color:#a6e22e">@my_attrib</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">if</span>(relbb.y <span style="color:#f92672">&lt;=</span> chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>threshold<span style="color:#960050;background-color:#1e0010">&#39;</span>)){
+    <span style="color:#960050;background-color:#1e0010">@</span>my_attrib <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 }
 <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">@my_attrib</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#960050;background-color:#1e0010">@</span>my_attrib <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><h2 id="array-of-unique-detail">Array of Unique (detail)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int nprim <span style="color:#f92672">=</span> nprimitives(<span style="color:#ae81ff">0</span>);
-s[]<span style="color:#a6e22e">@mat_names</span> <span style="color:#f92672">=</span> {};
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> nprim <span style="color:#f92672">=</span> nprimitives(<span style="color:#ae81ff">0</span>);
+s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names <span style="color:#f92672">=</span> {};
 
-int count <span style="color:#f92672">=</span> nuniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>);
-<span style="color:#66d9ef">for</span> (int i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> count; i<span style="color:#f92672">++</span>) {
+<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> nuniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>);
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> count; i<span style="color:#f92672">++</span>) {
     string val <span style="color:#f92672">=</span> uniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>, i);
-    push(s[]<span style="color:#a6e22e">@mat_names</span>, val);
+    push(s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names, val);
 }
 </code></pre></div><h1 id="transform">Transform</h1>
 <p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
 <h2 id="pscale">pscale</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">float ps_life <span style="color:#f92672">=</span> chramp(<span style="color:#e6db74">&#39;ps_life&#39;</span>, <span style="color:#a6e22e">@nage</span>);
-float ps_bias <span style="color:#f92672">=</span> fit01(chramp(<span style="color:#e6db74">&#39;ps_bias&#39;</span>, rand(<span style="color:#a6e22e">@id</span>)), chf(<span style="color:#e6db74">&#39;ps_min&#39;</span>), chf(<span style="color:#e6db74">&#39;ps_max&#39;</span>));
-<span style="color:#a6e22e">@pscale</span> <span style="color:#f92672">=</span> ps_life<span style="color:#f92672">*</span>ps_bias<span style="color:#f92672">*</span>chf(<span style="color:#e6db74">&#39;ps_mult&#39;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">float</span> ps_life <span style="color:#f92672">=</span> chramp(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_life<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">@</span>nage);
+<span style="color:#66d9ef">float</span> ps_bias <span style="color:#f92672">=</span> fit01(chramp(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_bias<span style="color:#960050;background-color:#1e0010">&#39;</span>, rand(<span style="color:#960050;background-color:#1e0010">@</span>id)), chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_min<span style="color:#960050;background-color:#1e0010">&#39;</span>), chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_max<span style="color:#960050;background-color:#1e0010">&#39;</span>));
+<span style="color:#960050;background-color:#1e0010">@</span>pscale <span style="color:#f92672">=</span> ps_life<span style="color:#f92672">*</span>ps_bias<span style="color:#f92672">*</span>chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_mult<span style="color:#960050;background-color:#1e0010">&#39;</span>);
 </code></pre></div><h1 id="string">String</h1>
 <h2 id="regex">Regex</h2>
-<h3 id="replace">Replace</h3>
+<p><strong>Replace</strong></p>
 <p>Using capture group and replace</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">string names[] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;monkeys_12&#39;</span>, <span style="color:#e6db74">&#39;X_AE_A-12&#39;</span>, <span style="color:#e6db74">&#39;my_name&#39;</span>, <span style="color:#e6db74">&#39;Forty_Two____42&#39;</span>};
-<span style="color:#f92672">//</span> remove trailing digits including underscore<span style="color:#f92672">/</span>dash<span style="color:#f92672">...</span>
-<span style="color:#f92672">//</span> <span style="color:#f92672">...</span>matching <span style="color:#66d9ef">as</span> few <span style="color:#66d9ef">as</span> possible <span style="color:#f92672">in</span> our capturing group
-<span style="color:#f92672">//</span> note that we use the first capturing group <span style="color:#f92672">in</span> our replacement string
-string regex <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^([a-zA-Z_]*?)[-_0-9]*$&#39;</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">string names[] <span style="color:#f92672">=</span> {<span style="color:#960050;background-color:#1e0010">&#39;</span>monkeys_12<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>X_AE_A<span style="color:#f92672">-</span><span style="color:#ae81ff">12</span><span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>my_name<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>Forty_Two____42<span style="color:#960050;background-color:#1e0010">&#39;</span>};
+<span style="color:#75715e">// remove trailing digits including underscore/dash...
+</span><span style="color:#75715e">// ...matching as few as possible in our capturing group
+</span><span style="color:#75715e">// note that we use the first capturing group in our replacement string
+</span><span style="color:#75715e"></span>string regex <span style="color:#f92672">=</span> r<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">^</span>([a<span style="color:#f92672">-</span>zA<span style="color:#f92672">-</span>Z_]<span style="color:#f92672">*?</span>)[<span style="color:#f92672">-</span>_0<span style="color:#f92672">-</span><span style="color:#ae81ff">9</span>]<span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">$&#39;</span>;
 
-int pnt;
-foreach(int i; string name; names){
+<span style="color:#66d9ef">int</span> pnt;
+foreach(<span style="color:#66d9ef">int</span> i; string name; names){
     pnt <span style="color:#f92672">=</span> addpoint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
-    name <span style="color:#f92672">=</span> re_replace(regex, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;\1&#34;</span>, name);
-    setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;name&#39;</span>, pnt, name);
+    name <span style="color:#f92672">=</span> re_replace(regex, r<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\1</span><span style="color:#e6db74">&#34;</span>, name);
+    setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>name<span style="color:#960050;background-color:#1e0010">&#39;</span>, pnt, name);
 }
-</code></pre></div><p>Slashes to underscrore</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">string names[] <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;/mat/one&#39;</span>, <span style="color:#e6db74">&#39;/mat/two&#39;</span>};
+</code></pre></div><hr>
+<p>Slashes to underscrore</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">string names[] <span style="color:#f92672">=</span> {<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">/</span>mat<span style="color:#f92672">/</span>one<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">/</span>mat<span style="color:#f92672">/</span>two<span style="color:#960050;background-color:#1e0010">&#39;</span>};
 
-foreach(int i; string name; names){
-    int pnt <span style="color:#f92672">=</span> addpoint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+foreach(<span style="color:#66d9ef">int</span> i; string name; names){
+    <span style="color:#66d9ef">int</span> pnt <span style="color:#f92672">=</span> addpoint(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
     name <span style="color:#f92672">=</span> re_replace(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;_&#39;</span>, name);
-    setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;name&#39;</span>, pnt, name);
+    setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>name<span style="color:#960050;background-color:#1e0010">&#39;</span>, pnt, name);
 }
-</code></pre></div><h2 id="formatting">Formatting</h2>
-<h3 id="zero-padding">Zero padding</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int i <span style="color:#f92672">=</span> int(rand(<span style="color:#a6e22e">@ptnum</span><span style="color:#f92672">+</span>chi(<span style="color:#e6db74">&#39;seed&#39;</span>))<span style="color:#f92672">*</span>(chi(<span style="color:#e6db74">&#39;max_num&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
-s<span style="color:#a6e22e">@z_padded</span> <span style="color:#f92672">=</span> sprintf(<span style="color:#e6db74">&#39;hello_</span><span style="color:#e6db74">%03i</span><span style="color:#e6db74">&#39;</span>, i);
-</code></pre></div><h1 id="edit-primitves">Edit Primitves</h1>
+</code></pre></div><hr>
+<h2 id="formatting">Formatting</h2>
+<p><strong>Zero padding</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(rand(<span style="color:#960050;background-color:#1e0010">@</span>ptnum<span style="color:#f92672">+</span>chi(<span style="color:#960050;background-color:#1e0010">&#39;</span>seed<span style="color:#960050;background-color:#1e0010">&#39;</span>))<span style="color:#f92672">*</span>(chi(<span style="color:#960050;background-color:#1e0010">&#39;</span>max_num<span style="color:#960050;background-color:#1e0010">&#39;</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+s<span style="color:#960050;background-color:#1e0010">@</span>z_padded <span style="color:#f92672">=</span> sprintf(<span style="color:#960050;background-color:#1e0010">&#39;</span>hello_<span style="color:#f92672">%</span><span style="color:#ae81ff">03</span>i<span style="color:#960050;background-color:#1e0010">&#39;</span>, i);
+</code></pre></div><hr>
+<p><strong>Round float</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">s<span style="color:#960050;background-color:#1e0010">@</span>name <span style="color:#f92672">=</span> sprintf(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">%</span><span style="color:#ae81ff">.1f</span><span style="color:#960050;background-color:#1e0010">&#39;</span>, u<span style="color:#960050;background-color:#1e0010">@</span>uv.u);
+</code></pre></div><hr>
+<h1 id="edit-primitves">Edit Primitves</h1>
 <h2 id="adjustprimlength">adjustPrimLength</h2>
 <p>Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#include &lt;groom.h&gt;</span>
-float length <span style="color:#f92672">=</span> clamp(chf(<span style="color:#e6db74">&#39;length&#39;</span>), <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@perimeter</span>);
-adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primnum</span>, <span style="color:#a6e22e">@perimeter</span>, length);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;groom.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">float</span> length <span style="color:#f92672">=</span> clamp(chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>length<span style="color:#960050;background-color:#1e0010">&#39;</span>), <span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">@</span>perimeter);
+adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">@</span>primnum, <span style="color:#960050;background-color:#1e0010">@</span>perimeter, length);
 </code></pre></div><div class="download-wrap">
 
 	<a href="https://www.petfactory.se/files/houdini/adjust_prim_lengths_v01.hiplc" download>
@@ -293,14 +291,14 @@ adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22
 </div>
 <h1 id="uv">UV</h1>
 <h2 id="scale-uvs-around-udim-center">Scale UVs around UDIM center</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int u <span style="color:#f92672">=</span> int(floor(v<span style="color:#a6e22e">@uv</span>[<span style="color:#ae81ff">0</span>]));
-int v <span style="color:#f92672">=</span> int(floor(v<span style="color:#a6e22e">@uv</span>[<span style="color:#ae81ff">1</span>]));
-int udim <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">+</span> u<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> v<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>;
-i<span style="color:#a6e22e">@udim</span> <span style="color:#f92672">=</span> udim;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> u <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(floor(v<span style="color:#960050;background-color:#1e0010">@</span>uv[<span style="color:#ae81ff">0</span>]));
+<span style="color:#66d9ef">int</span> v <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(floor(v<span style="color:#960050;background-color:#1e0010">@</span>uv[<span style="color:#ae81ff">1</span>]));
+<span style="color:#66d9ef">int</span> udim <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">+</span> u<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> v<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>;
+i<span style="color:#960050;background-color:#1e0010">@</span>udim <span style="color:#f92672">=</span> udim;
 
-vector2 center <span style="color:#f92672">=</span> set(u<span style="color:#f92672">+.</span><span style="color:#ae81ff">5</span>, v<span style="color:#f92672">+.</span><span style="color:#ae81ff">5</span>);
-vector disp <span style="color:#f92672">=</span> (<span style="color:#a6e22e">@uv</span><span style="color:#f92672">-</span>center)<span style="color:#f92672">*</span>chf(<span style="color:#e6db74">&#39;uv_mult&#39;</span>);
-<span style="color:#a6e22e">@uv</span> <span style="color:#f92672">+=</span> disp;
+vector2 center <span style="color:#f92672">=</span> set(u<span style="color:#f92672">+</span><span style="color:#ae81ff">.5</span>, v<span style="color:#f92672">+</span><span style="color:#ae81ff">.5</span>);
+vector disp <span style="color:#f92672">=</span> (<span style="color:#960050;background-color:#1e0010">@</span>uv<span style="color:#f92672">-</span>center)<span style="color:#f92672">*</span>chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>uv_mult<span style="color:#960050;background-color:#1e0010">&#39;</span>);
+<span style="color:#960050;background-color:#1e0010">@</span>uv <span style="color:#f92672">+=</span> disp;
 </code></pre></div><h1 id="functions">Functions</h1>
 <h2 id="frac">frac()</h2>
 		

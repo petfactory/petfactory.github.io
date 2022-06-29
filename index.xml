@@ -17,9 +17,10 @@
       <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_lops/</guid>
-      <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
-Nodes Rendering Render Geometry Settings Applies renderer-specific geometry settings to geometry in the scene graph.
-unshaded_color_01.hiplcUsing a mtlxuniform_edf and a render geometry settings node to render an unshaded color material </description>
+      <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
+Nodes Rendering Camera Latlong cubemap in Karma
+I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. Paul Ambrosiussen as well as Matt Estela
+karma_lens_shader_01.hiplcLatlong / Polar CVEX Lens shader  Settings Applies renderer-specific geometry settings to geometry in the scene graph.</description>
     </item>
     
     <item>
@@ -69,7 +70,7 @@ Mocap from: Mixamo</description>
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
+      <description>Viewport  Get mouse control when game plays : Shift F1  Navigation  Perspective view:  Alt + G Ctrl + MMB -&amp;gt; south east / west Ctrl + MMB click -&amp;gt; menu   Front view  Alt + H Ctrl + MMB -&amp;gt; east   Back view  Alt + Shift + H Ctrl + MMB -&amp;gt; west   Top view  Alt + J Ctrl + MMB -&amp;gt; north   Bottom view  Alt + Shift + J Ctrl + MMB -&amp;gt; south   Left view  Alt + K Ctrl + MMB -&amp;gt; north east   Right view  Alt + Shift + K Ctrl + MMB -&amp;gt; north west    Manipulation  Toggle the manipulator  Space bar    Pivot  Set pivot of selected  With the object selected hold Alt + MMB click on an surface to where you want to set your pivot LMB click on the object to reset    Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?</description>
     </item>
     
     <item>
@@ -121,7 +122,7 @@ Install First we click the plus icon and select the version. When we click the i
     </item>
     
     <item>
-      <title>Unreal - Python / PySide2</title>
+      <title>UE4 - Python / PySide2</title>
       <link>https://www.petfactory.se/notes/unreal_python_pyside2/</link>
       <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
       

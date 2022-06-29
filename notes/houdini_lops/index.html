@@ -169,7 +169,9 @@
       <ul>
         <li><a href="#rendering">Rendering</a>
           <ul>
-            <li><a href="#render-geometry-settings">Render Geometry Settings</a></li>
+            <li><a href="#camera">Camera</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#materials">Materials</a></li>
           </ul>
         </li>
       </ul>
@@ -193,7 +195,23 @@
 <a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
 <h1 id="nodes">Nodes</h1>
 <h2 id="rendering">Rendering</h2>
-<h3 id="render-geometry-settings">Render Geometry Settings</h3>
+<h3 id="camera">Camera</h3>
+<p><strong>Latlong cubemap in Karma</strong><br>
+I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. 
+<a href="https://www.sidefx.com/tutorials/lens-shaders-for-gamedev/" target="_blank" rel="noopener">Paul Ambrosiussen</a> as well as 
+<a href="https://www.tokeru.com/cgwiki/?title=HoudiniOculusWip" target="_blank" rel="noopener">Matt Estela</a></p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/karma_lens_shader_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">karma_lens_shader_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Latlong / Polar CVEX Lens shader</span>
+
+</div>
+<hr>
+<h3 id="settings">Settings</h3>
 <p>Applies renderer-specific geometry settings to geometry in the scene graph.</p>
 <div class="download-wrap">
 
@@ -205,6 +223,21 @@
 	<span class="download-info">Using a mtlxuniform_edf and a render geometry settings node to render an unshaded color material</span>
 
 </div>
+<hr>
+<h3 id="materials">Materials</h3>
+<p>Read more about material assignment in lops 
+<a href="https://www.tokeru.com/cgwiki/index.php?title=HoudiniLops#Assign_material_Lop_with_shop_materialpath" target="_blank" rel="noopener">cgwiki</a>. Below is a hip file where I try out varius ways of editing material attributes in lops.</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/lop_assign_material_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">lop_assign_material_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">setting materials in lops using attributes from sops</span>
+
+</div>
+<hr>
 		
 		</div>
 	</div>

@@ -27,7 +27,7 @@
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Vieport  Get mouse control when game plays : Shift F1  Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?  Filters  Enable All : Ctrl LMB click (the filter buttons) Disable All : Alt LMB click (the filter buttons)  Textures Tips  Substance Painter  Normal Map Format : DirectX Compute Tangent Space Per Fragment : On   UDIM (Docs 4.</description>
+      <description>Viewport  Get mouse control when game plays : Shift F1  Navigation  Perspective view:  Alt + G Ctrl + MMB -&amp;gt; south east / west Ctrl + MMB click -&amp;gt; menu   Front view  Alt + H Ctrl + MMB -&amp;gt; east   Back view  Alt + Shift + H Ctrl + MMB -&amp;gt; west   Top view  Alt + J Ctrl + MMB -&amp;gt; north   Bottom view  Alt + Shift + J Ctrl + MMB -&amp;gt; south   Left view  Alt + K Ctrl + MMB -&amp;gt; north east   Right view  Alt + Shift + K Ctrl + MMB -&amp;gt; north west    Manipulation  Toggle the manipulator  Space bar    Pivot  Set pivot of selected  With the object selected hold Alt + MMB click on an surface to where you want to set your pivot LMB click on the object to reset    Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?</description>
     </item>
     
   </channel>
