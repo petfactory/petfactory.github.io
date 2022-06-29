@@ -198,8 +198,9 @@
 <h3 id="camera">Camera</h3>
 <p><strong>Latlong cubemap in Karma</strong><br>
 I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. 
-<a href="https://www.sidefx.com/tutorials/lens-shaders-for-gamedev/" target="_blank" rel="noopener">Paul Ambrosiussen</a> as well as 
-<a href="https://www.tokeru.com/cgwiki/?title=HoudiniOculusWip" target="_blank" rel="noopener">Matt Estela</a></p>
+<a href="https://www.sidefx.com/tutorials/lens-shaders-for-gamedev/" target="_blank" rel="noopener">Paul Ambrosiussen</a> and 
+<a href="https://www.tokeru.com/cgwiki/?title=HoudiniOculusWip" target="_blank" rel="noopener">Matt Estela</a> has some good information on the subject.<br>
+There seems to be a bug when Karma is rendering with Hython so the lensshader using cvex errors out (will maybe be fixed in Houdini 19.5). A workaround is to use the vrlens shader that you can create in a shopnet context.</p>
 <div class="download-wrap">
 
 	<a href="https://www.petfactory.se/files/houdini/karma_lens_shader_01.hiplc" download>

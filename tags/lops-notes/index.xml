@@ -19,8 +19,7 @@
       <guid>https://www.petfactory.se/notes/houdini_lops/</guid>
       <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
 Nodes Rendering Camera Latlong cubemap in Karma
-I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. Paul Ambrosiussen as well as Matt Estela
-karma_lens_shader_01.hiplcLatlong / Polar CVEX Lens shader  Settings Applies renderer-specific geometry settings to geometry in the scene graph.</description>
+I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. Paul Ambrosiussen and Matt Estela has some good information on the subject.</description>
     </item>
     
   </channel>
