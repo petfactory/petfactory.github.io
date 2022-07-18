@@ -10,6 +10,10 @@ body {
     overflow-y: scroll;
 }
 
+em {
+    color: #999;
+}
+
 a {
     color: #bbb;
     transition: ease-in-out color .15s;

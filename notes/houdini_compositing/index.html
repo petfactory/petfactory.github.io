@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Houdini - Compositing</title>
-        <meta name="description" content="Petfactory | Design and Animation | Houdini - Compositing" />
+        <title>Petfactory | Houdini - COPS</title>
+        <meta name="description" content="Petfactory | Design and Animation | Houdini - COPS" />
 
     </head>
 
@@ -175,6 +175,7 @@
     <li><a href="#how-to">How to</a>
       <ul>
         <li><a href="#add-alpha-channel-to-rgb">Add alpha channel to RGB</a></li>
+        <li><a href="#save-unpremultiplied-tga--png">Save unpremultiplied TGA &amp; PNG</a></li>
       </ul>
     </li>
   </ul>
@@ -190,7 +191,7 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini - Compositing</h1>
+			<h1>Houdini - COPS</h1>
 			<h1 id="preferences">Preferences</h1>
 <p>In the Edit &gt; Preferences &gt; Compositing we can set how many <strong>threads</strong> we want to use for the cooking and the <strong>Tile Size</strong> of each chunk of the tiles that will be processed. We can also set the <strong>Resolution Limit</strong>. If we do a mosaic of 1 K images we can exceed this limit and that can lead to issues.</p>
 <p>The turn of the <strong>thumbnails</strong> of each cop node we can disable <strong>view &gt; Show Node Previews</strong> in the menubar of the cop network view.</p>
@@ -298,6 +299,10 @@
 <li>Use the red channel of the second input as the alpha</li>
 </ul>
 </li>
+</ul>
+<h2 id="save-unpremultiplied-tga--png">Save unpremultiplied TGA &amp; PNG</h2>
+<ul>
+<li>Rop File Output &gt; Metadata tab &gt; PNG/TGA Premultiplication</li>
 </ul>
 		
 		</div>

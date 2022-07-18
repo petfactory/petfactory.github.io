@@ -6,10 +6,19 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jun 2022 15:09:45 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jul 2022 22:03:02 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Materials</title>
+      <link>https://www.petfactory.se/notes/ue5-materials/</link>
+      <pubDate>Sun, 17 Jul 2022 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-materials/</guid>
+      <description>PBR  Base Color  Real world materials are not darker than 20 srgb or brighter than 240 srgb Rough surfaces have a higher minimun, around 50 srgb Out of range values will not light correctly, so staying in range is critical On a non-metallic material this controls the diffuse  On a metallic material this controls the specular On a metallic material the diffuse is black     Specular  A multiplier for the direct and indirect specular lighting Defining the reflectivity when looking straight at the surface Non-metal surfaces reflects about 4% of the light Specular value:  0.</description>
+    </item>
     
     <item>
       <title>Houdini - LOPS</title>
@@ -69,7 +78,7 @@ Mocap from: Mixamo</description>
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Viewport  Get mouse control when game plays : Shift F1  Navigation  Perspective view:  Alt + G Ctrl + MMB -&amp;gt; south east / west Ctrl + MMB click -&amp;gt; menu   Front view  Alt + H Ctrl + MMB -&amp;gt; east   Back view  Alt + Shift + H Ctrl + MMB -&amp;gt; west   Top view  Alt + J Ctrl + MMB -&amp;gt; north   Bottom view  Alt + Shift + J Ctrl + MMB -&amp;gt; south   Left view  Alt + K Ctrl + MMB -&amp;gt; north east   Right view  Alt + Shift + K Ctrl + MMB -&amp;gt; north west    Manipulation  Toggle the manipulator  Space bar    Pivot  Set pivot of selected  With the object selected hold Alt + MMB click on an surface to where you want to set your pivot LMB click on the object to reset    Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?</description>
+      <description>Viewport  Get mouse control when game plays : Shift F1  Camera  Toggle exact camera view  Ctrl + Shift + C    Navigation  Perspective view:  Alt + G Ctrl + MMB -&amp;gt; south east / west Ctrl + MMB click -&amp;gt; menu   Front view  Alt + H Ctrl + MMB -&amp;gt; east   Back view  Alt + Shift + H Ctrl + MMB -&amp;gt; west   Top view  Alt + J Ctrl + MMB -&amp;gt; north   Bottom view  Alt + Shift + J Ctrl + MMB -&amp;gt; south   Left view  Alt + K Ctrl + MMB -&amp;gt; north east   Right view  Alt + Shift + K Ctrl + MMB -&amp;gt; north west    Manipulation  Toggle the manipulator  Space bar    Pivot  Set pivot of selected  With the object selected hold Alt + MMB click on an surface to where you want to set your pivot LMB click on the object to reset    Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?</description>
     </item>
     
     <item>
@@ -323,11 +332,11 @@ Point Wrangle Lets append a point wrangle to the particles. We will use the norm
       <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/workflow_tips/</guid>
-      <description>Here I will post (perhaps) useful things that falls outside more specfic topics.
-Python Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
+      <description>Here I will post (mildly) useful things that falls outside more specfic topics.
+Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
 Resize In-place resizing
 magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
-magick mogrify -resize 50% -path ./DST *.pngWindows 10 Desktops Lets say you are watching a tutorial, following along, taking notes (using markdown) and previewing the notes in a browser.</description>
+magick mogrify -resize 50% -path ./DST *.</description>
     </item>
     
     <item>
@@ -378,7 +387,7 @@ magick mogrify -resize 50% -path ./DST *.pngWindows 10 Desktops Lets say you ar
     </item>
     
     <item>
-      <title>Houdini - Compositing</title>
+      <title>Houdini - COPS</title>
       <link>https://www.petfactory.se/notes/houdini_compositing/</link>
       <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
       
