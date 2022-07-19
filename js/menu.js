@@ -2,19 +2,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // unreal snippet ---------------------------
 
-    var ue_clipboard = document.getElementsByClassName("unreal-copy")[0];
+    var ue_clipboard = document.getElementsByClassName("unreal-copy");
 
-    ue_clipboard.addEventListener('click', function(e) {
+    if (ue_clipboard.length > 0) {
 
-        var data = ue_clipboard.previousElementSibling.dataset.unreal
-        navigator.clipboard.writeText(data);
-        // console.log(data);
+        ue_clipboard[0].addEventListener('click', function(e) {
 
-    }, false);
+            var data = ue_clipboard[0].previousElementSibling.dataset.unreal
+            navigator.clipboard.writeText(data);
+            // console.log(data);
 
-    // ---------------------------------
+        }, false);
+    }
 
-    // console.log('loded');
+
     var trigger = document.getElementsByClassName('mobile-menu-trigger')[0];
     var menu_wrap = document.getElementsByClassName('menu-wrap')[0];
 
@@ -46,9 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 menu_wrap.classList.remove('disp-block');
         }
     }, false);
-
-
-    // trigger.click();
 
 });
 
