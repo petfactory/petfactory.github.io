@@ -308,7 +308,7 @@ h3 {
 }
 
 .unreal-snippet-wrap{
-    width: 600px;
+    max-width: 600px;
     position: relative;
     padding-top: 10px;
     border-top: 1px solid #222;

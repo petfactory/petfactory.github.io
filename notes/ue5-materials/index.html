@@ -176,6 +176,7 @@
         <li><a href="#compression">Compression</a></li>
       </ul>
     </li>
+    <li><a href="#samples">Samples</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -190,7 +191,159 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE5 - Materials</h1>
-			<div class="unreal-snippet-wrap">
+			<h1 id="pbr">PBR</h1>
+<ul>
+<li><strong>Base Color</strong>
+<ul>
+<li>Real world materials are not darker than 20 srgb or brighter than 240 srgb</li>
+<li>Rough surfaces have a higher minimun, around 50 srgb</li>
+<li>Out of range values will not light correctly, so staying in range is critical</li>
+<li>On a non-metallic material this controls the diffuse
+<ul>
+<li>On a metallic material this controls the specular</li>
+<li>On a metallic material the diffuse is black</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Specular</strong>
+<ul>
+<li>A multiplier for the direct and indirect specular lighting</li>
+<li>Defining the reflectivity when looking straight at the surface</li>
+<li>Non-metal surfaces reflects about 4% of the light</li>
+<li>Specular value:
+<ul>
+<li><em>0.5</em> represents <em>4%</em> reflection</li>
+<li><em>1.0</em> represents <em>8%</em> reflection (to high for most materials)</li>
+</ul>
+</li>
+<li>At glancing angles all surfaces are 100 % reflective
+<ul>
+<li>The fresnell term is built into the engine</li>
+</ul>
+</li>
+<li>Specular maps should mostly be at 0.5</li>
+<li>Only use lower values to mask areas that should not be reflective like crevices
+<ul>
+<li>A crevice map multiplied with 0.5 makes a good specular map.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Roughness</strong>
+<ul>
+<li>Represents the roughness of the surface at a microscopic scale.</li>
+<li>White is rough and black is smooth</li>
+<li>Controls the focus of reflections
+<ul>
+<li>Smooth = tight, sharp reflections</li>
+<li>Rough = blurry, diffuse reflections</li>
+</ul>
+</li>
+<li>No technical constraints - completely artistic choice
+<ul>
+<li>A roughness map can be used to define the &ldquo;character&rdquo; of the surface and show its history</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Metallic</strong>
+<ul>
+<li>Switches the shader to metallic mode</li>
+<li>When the metallic is set to 1 (a metallic material)
+<ul>
+<li>Now the <em>base color</em> controls the <em>specular</em> of the material</li>
+<li>Now the specular range is up to 100%</li>
+<li>Most metals are between 60-100% reflective</li>
+<li>Be sure to use real-world measurements for metal &ldquo;base color&rdquo;
+<ul>
+<li>Metals have colored reflections</li>
+<li>The values should be around 180 srgb or brighter</li>
+<li>The base color controls the specular</li>
+</ul>
+</li>
+<li>The specular parameter is ignored (since it is controlled by the base color)</li>
+<li>The diffuse is always black</li>
+</ul>
+</li>
+<li>Values of either 0 or 1 should be used.
+<ul>
+<li>Values in between should be avoided since that will produce a weird mix of non-metal / metal behaviour</li>
+<li>A few pixles of &ldquo;inbetween values&rdquo; where a map transitions from 0 to 1 are ok, but generally the map should be 0 or 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Ambient Occlusion</strong>
+<ul>
+<li>Only used if we use a baked gloabl illumination solution.</li>
+</ul>
+</li>
+</ul>
+<h1 id="nodes">Nodes</h1>
+<h2 id="math--misc">Math / Misc</h2>
+<ul>
+<li>Mask - [math] <em>componentMask</em>
+<ul>
+<li>Selects a specific subset of channels (R, G, B, and/or A)</li>
+</ul>
+</li>
+<li>Split Components - [Misc] <em>splitComponents</em>
+<ul>
+<li>Can split out components of a vec3. (Can not output alpha vec4)</li>
+</ul>
+</li>
+<li>Append - [Math] <em>appendVector</em>
+<ul>
+<li>Construct a vector with more channels than the original. You can appen to floats to create a vec2 or one float and a vec2 to cfreate a vec3.</li>
+</ul>
+</li>
+<li>AppenMany - [Misc] <em>appendMany</em>
+<ul>
+<li>Allows you to append up to 4 scalars in one function</li>
+</ul>
+</li>
+<li>Swizzle - [Misc] <em>swizzle</em>
+<ul>
+<li>Can rearrange the components of a vector</li>
+</ul>
+</li>
+</ul>
+<h1 id="textures">Textures</h1>
+<ul>
+<li>Dropping one resolution step reduces memory 4 times.</li>
+<li>Using 4k textures is very expensive</li>
+<li>Uncompressed textures need to be at a low resolution, otherwise they will require alot of memory.</li>
+<li>Using a alpha channel doubles memory usage, since the alpha channel are stored at a higher quality
+<ul>
+<li>Therefore if you pack channels you should pack the channel that needs the best quality in the alpha.</li>
+</ul>
+</li>
+</ul>
+<h2 id="compression">Compression</h2>
+<ul>
+<li>Optimization
+<ul>
+<li><strong>Reduce in game texture size</strong>
+<ul>
+<li>texture editor &gt; details tab &gt; compression &gt; advanced</li>
+<li>Set the <em>maximum texture size</em> to the size you want</li>
+<li>Note that a value of 0 will use the original size</li>
+</ul>
+</li>
+<li><strong>Compress without Alpha</strong>
+<ul>
+<li>If your texture has an alpha channel but you do not need it you can make the editor skip the alpha</li>
+<li>This will reduce the size by half</li>
+<li>texture editor &gt; details tab &gt; compression</li>
+<li>enable <em>Compress without alpha</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="samples">Samples</h1>
+<div class="unreal-snippet-wrap">
 
 	
 	<a class="unreal-snippet-title" href="https://www.petfactory.se//files/unreal_snippets/random_tiles.txt" data-unreal="Begin Object Class=/Script/UnrealEd.MaterialGraphNode_Root Name=&#34;MaterialGraphNode_Root_0&#34;
@@ -963,157 +1116,6 @@ End Object
 	</div>
 
 </div>
-<h1 id="pbr">PBR</h1>
-<ul>
-<li><strong>Base Color</strong>
-<ul>
-<li>Real world materials are not darker than 20 srgb or brighter than 240 srgb</li>
-<li>Rough surfaces have a higher minimun, around 50 srgb</li>
-<li>Out of range values will not light correctly, so staying in range is critical</li>
-<li>On a non-metallic material this controls the diffuse
-<ul>
-<li>On a metallic material this controls the specular</li>
-<li>On a metallic material the diffuse is black</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Specular</strong>
-<ul>
-<li>A multiplier for the direct and indirect specular lighting</li>
-<li>Defining the reflectivity when looking straight at the surface</li>
-<li>Non-metal surfaces reflects about 4% of the light</li>
-<li>Specular value:
-<ul>
-<li><em>0.5</em> represents <em>4%</em> reflection</li>
-<li><em>1.0</em> represents <em>8%</em> reflection (to high for most materials)</li>
-</ul>
-</li>
-<li>At glancing angles all surfaces are 100 % reflective
-<ul>
-<li>The fresnell term is built into the engine</li>
-</ul>
-</li>
-<li>Specular maps should mostly be at 0.5</li>
-<li>Only use lower values to mask areas that should not be reflective like crevices
-<ul>
-<li>A crevice map multiplied with 0.5 makes a good specular map.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Roughness</strong>
-<ul>
-<li>Represents the roughness of the surface at a microscopic scale.</li>
-<li>White is rough and black is smooth</li>
-<li>Controls the focus of reflections
-<ul>
-<li>Smooth = tight, sharp reflections</li>
-<li>Rough = blurry, diffuse reflections</li>
-</ul>
-</li>
-<li>No technical constraints - completely artistic choice
-<ul>
-<li>A roughness map can be used to define the &ldquo;character&rdquo; of the surface and show its history</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Metallic</strong>
-<ul>
-<li>Switches the shader to metallic mode</li>
-<li>When the metallic is set to 1 (a metallic material)
-<ul>
-<li>Now the <em>base color</em> controls the <em>specular</em> of the material</li>
-<li>Now the specular range is up to 100%</li>
-<li>Most metals are between 60-100% reflective</li>
-<li>Be sure to use real-world measurements for metal &ldquo;base color&rdquo;
-<ul>
-<li>Metals have colored reflections</li>
-<li>The values should be around 180 srgb or brighter</li>
-<li>The base color controls the specular</li>
-</ul>
-</li>
-<li>The specular parameter is ignored (since it is controlled by the base color)</li>
-<li>The diffuse is always black</li>
-</ul>
-</li>
-<li>Values of either 0 or 1 should be used.
-<ul>
-<li>Values in between should be avoided since that will produce a weird mix of non-metal / metal behaviour</li>
-<li>A few pixles of &ldquo;inbetween values&rdquo; where a map transitions from 0 to 1 are ok, but generally the map should be 0 or 1</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Ambient Occlusion</strong>
-<ul>
-<li>Only used if we use a baked gloabl illumination solution.</li>
-</ul>
-</li>
-</ul>
-<h1 id="nodes">Nodes</h1>
-<h2 id="math--misc">Math / Misc</h2>
-<ul>
-<li>Mask - [math] <em>componentMask</em>
-<ul>
-<li>Selects a specific subset of channels (R, G, B, and/or A)</li>
-</ul>
-</li>
-<li>Split Components - [Misc] <em>splitComponents</em>
-<ul>
-<li>Can split out components of a vec3. (Can not output alpha vec4)</li>
-</ul>
-</li>
-<li>Append - [Math] <em>appendVector</em>
-<ul>
-<li>Construct a vector with more channels than the original. You can appen to floats to create a vec2 or one float and a vec2 to cfreate a vec3.</li>
-</ul>
-</li>
-<li>AppenMany - [Misc] <em>appendMany</em>
-<ul>
-<li>Allows you to append up to 4 scalars in one function</li>
-</ul>
-</li>
-<li>Swizzle - [Misc] <em>swizzle</em>
-<ul>
-<li>Can rearrange the components of a vector</li>
-</ul>
-</li>
-</ul>
-<h1 id="textures">Textures</h1>
-<ul>
-<li>Dropping one resolution step reduces memory 4 times.</li>
-<li>Using 4k textures is very expensive</li>
-<li>Uncompressed textures need to be at a low resolution, otherwise they will require alot of memory.</li>
-<li>Using a alpha channel doubles memory usage, since the alpha channel are stored at a higher quality
-<ul>
-<li>Therefore if you pack channels you should pack the channel that needs the best quality in the alpha.</li>
-</ul>
-</li>
-</ul>
-<h2 id="compression">Compression</h2>
-<ul>
-<li>Optimization
-<ul>
-<li><strong>Reduce in game texture size</strong>
-<ul>
-<li>texture editor &gt; details tab &gt; compression &gt; advanced</li>
-<li>Set the <em>maximum texture size</em> to the size you want</li>
-<li>Note that a value of 0 will use the original size</li>
-</ul>
-</li>
-<li><strong>Compress without Alpha</strong>
-<ul>
-<li>If your texture has an alpha channel but you do not need it you can make the editor skip the alpha</li>
-<li>This will reduce the size by half</li>
-<li>texture editor &gt; details tab &gt; compression</li>
-<li>enable <em>Compress without alpha</em></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 		
 		</div>
 	</div>

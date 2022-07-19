@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // unreal snippet ---------------------------
+    // unreal snippet --------------------------
 
     var ue_clipboard = document.getElementsByClassName("unreal-copy");
 
@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, false);
     }
 
+
+    // mobile menu --------------------------
 
     var trigger = document.getElementsByClassName('mobile-menu-trigger')[0];
     var menu_wrap = document.getElementsByClassName('menu-wrap')[0];
