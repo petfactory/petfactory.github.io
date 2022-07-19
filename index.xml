@@ -17,7 +17,7 @@
       <pubDate>Sun, 17 Jul 2022 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-materials/</guid>
-      <description>PBR  Base Color  Real world materials are not darker than 20 srgb or brighter than 240 srgb Rough surfaces have a higher minimun, around 50 srgb Out of range values will not light correctly, so staying in range is critical On a non-metallic material this controls the diffuse  On a metallic material this controls the specular On a metallic material the diffuse is black     Specular  A multiplier for the direct and indirect specular lighting Defining the reflectivity when looking straight at the surface Non-metal surfaces reflects about 4% of the light Specular value:  0.</description>
+      <description>random_tiles.txtCtrl-CCreate random tiles PBR  Base Color  Real world materials are not darker than 20 srgb or brighter than 240 srgb Rough surfaces have a higher minimun, around 50 srgb Out of range values will not light correctly, so staying in range is critical On a non-metallic material this controls the diffuse  On a metallic material this controls the specular On a metallic material the diffuse is black     Specular  A multiplier for the direct and indirect specular lighting Defining the reflectivity when looking straight at the surface Non-metal surfaces reflects about 4% of the light Specular value:  0.</description>
     </item>
     
     <item>
