@@ -166,6 +166,16 @@
 			<nav id="TableOfContents">
   <ul>
     <li><a href="#pbr">PBR</a></li>
+    <li><a href="#nodes">Nodes</a>
+      <ul>
+        <li><a href="#math--misc">Math / Misc</a></li>
+      </ul>
+    </li>
+    <li><a href="#textures">Textures</a>
+      <ul>
+        <li><a href="#compression">Compression</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -266,6 +276,68 @@
 <li><strong>Ambient Occlusion</strong>
 <ul>
 <li>Only used if we use a baked gloabl illumination solution.</li>
+</ul>
+</li>
+</ul>
+<h1 id="nodes">Nodes</h1>
+<h2 id="math--misc">Math / Misc</h2>
+<ul>
+<li>Mask - [math] <em>componentMask</em>
+<ul>
+<li>Selects a specific subset of channels (R, G, B, and/or A)</li>
+</ul>
+</li>
+<li>Split Components - [Misc] <em>splitComponents</em>
+<ul>
+<li>Can split out components of a vec3. (Can not output alpha vec4)</li>
+</ul>
+</li>
+<li>Append - [Math] <em>appendVector</em>
+<ul>
+<li>Construct a vector with more channels than the original. You can appen to floats to create a vec2 or one float and a vec2 to cfreate a vec3.</li>
+</ul>
+</li>
+<li>AppenMany - [Misc] <em>appendMany</em>
+<ul>
+<li>Allows you to append up to 4 scalars in one function</li>
+</ul>
+</li>
+<li>Swizzle - [Misc] <em>swizzle</em>
+<ul>
+<li>Can rearrange the components of a vector</li>
+</ul>
+</li>
+</ul>
+<h1 id="textures">Textures</h1>
+<ul>
+<li>Dropping one resolution step reduces memory 4 times.</li>
+<li>Using 4k textures is very expensive</li>
+<li>Uncompressed textures need to be at a low resolution, otherwise they will require alot of memory.</li>
+<li>Using a alpha channel doubles memory usage, since the alpha channel are stored at a higher quality
+<ul>
+<li>Therefore if you pack channels you should pack the channel that needs the best quality in the alpha.</li>
+</ul>
+</li>
+</ul>
+<h2 id="compression">Compression</h2>
+<ul>
+<li>Optimization
+<ul>
+<li><strong>Reduce in game texture size</strong>
+<ul>
+<li>texture editor &gt; details tab &gt; compression &gt; advanced</li>
+<li>Set the <em>maximum texture size</em> to the size you want</li>
+<li>Note that a value of 0 will use the original size</li>
+</ul>
+</li>
+<li><strong>Compress without Alpha</strong>
+<ul>
+<li>If your texture has an alpha channel but you do not need it you can make the editor skip the alpha</li>
+<li>This will reduce the size by half</li>
+<li>texture editor &gt; details tab &gt; compression</li>
+<li>enable <em>Compress without alpha</em></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

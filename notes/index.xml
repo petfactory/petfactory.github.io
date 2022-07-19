@@ -57,7 +57,11 @@ I needed to render out a cube map using Karma so this led me to dig deeper into 
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Viewport  Get mouse control when game plays : Shift F1  Camera  Toggle exact camera view  Ctrl + Shift + C    Navigation  Perspective view:  Alt + G Ctrl + MMB -&amp;gt; south east / west Ctrl + MMB click -&amp;gt; menu   Front view  Alt + H Ctrl + MMB -&amp;gt; east   Back view  Alt + Shift + H Ctrl + MMB -&amp;gt; west   Top view  Alt + J Ctrl + MMB -&amp;gt; north   Bottom view  Alt + Shift + J Ctrl + MMB -&amp;gt; south   Left view  Alt + K Ctrl + MMB -&amp;gt; north east   Right view  Alt + Shift + K Ctrl + MMB -&amp;gt; north west    Manipulation  Toggle the manipulator  Space bar    Pivot  Set pivot of selected  With the object selected hold Alt + MMB click on an surface to where you want to set your pivot LMB click on the object to reset    Content Browser  Toggle content browser : Ctrl Space Show Content browser folder in Explorer : RMB click &amp;gt; Show in Explorer Seems like the DDC has moved to inside the project structure?</description>
+      <description>Settings Configuration files The UE5 docs on configuration files
+A tips &amp;amp; tricks video of setting up configuration files
+ Invert Middle Mouse Pan
+To pan the viewport I like to invert the middle mouse pan.  You can do this on a per project basis using the ui:  Edit &amp;gt; Editor Preferences &amp;gt; Level Editor &amp;gt; Viewports &amp;gt; Invert Middle Mouse Pan : On
+Note this will only be set for the project   To invert the middle mouse pan on all new projects  Open the config directory of the engine version you want to edit  The path is something like C:\Program Files\Epic Games\UE_5.</description>
     </item>
     
     <item>
@@ -259,10 +263,10 @@ magick mogrify -resize 50% -path ./DST *.</description>
     
     <item>
       <title>Houdini - COPS</title>
-      <link>https://www.petfactory.se/notes/houdini_compositing/</link>
+      <link>https://www.petfactory.se/notes/houdini_cops/</link>
       <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_compositing/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_cops/</guid>
       <description>Preferences In the Edit &amp;gt; Preferences &amp;gt; Compositing we can set how many threads we want to use for the cooking and the Tile Size of each chunk of the tiles that will be processed. We can also set the Resolution Limit. If we do a mosaic of 1 K images we can exceed this limit and that can lead to issues.
 The turn of the thumbnails of each cop node we can disable view &amp;gt; Show Node Previews in the menubar of the cop network view.</description>
     </item>

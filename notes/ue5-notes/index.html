@@ -165,6 +165,11 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#settings">Settings</a>
+      <ul>
+        <li><a href="#configuration-files">Configuration files</a></li>
+      </ul>
+    </li>
     <li><a href="#viewport">Viewport</a>
       <ul>
         <li><a href="#camera">Camera</a></li>
@@ -176,6 +181,7 @@
         </li>
       </ul>
     </li>
+    <li><a href="#node-graph">Node Graph</a></li>
     <li><a href="#content-browser">Content Browser</a>
       <ul>
         <li><a href="#filters">Filters</a></li>
@@ -208,7 +214,39 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE5 - Notes</h1>
-			<h1 id="viewport">Viewport</h1>
+			<h1 id="settings">Settings</h1>
+<h2 id="configuration-files">Configuration files</h2>
+<p>The 
+<a href="https://docs.unrealengine.com/5.0/en-US/configuration-files-in-unreal-engine/" target="_blank" rel="noopener">UE5 docs</a> on configuration files<br>
+A 
+<a href="https://www.youtube.com/watch?v=iOYRBt0hKuw" target="_blank" rel="noopener">tips &amp; tricks video</a> of setting up configuration files</p>
+<ul>
+<li><strong>Invert Middle Mouse Pan</strong><br>
+To pan the viewport I like to invert the middle mouse pan.
+<ul>
+<li>You can do this on a per project basis using the ui:
+<ul>
+<li>Edit &gt; Editor Preferences &gt; Level Editor &gt; Viewports &gt; Invert Middle Mouse Pan : <em>On</em><br>
+<em>Note</em> this will only be set for the project</li>
+</ul>
+</li>
+<li>To invert the middle mouse pan on all new projects
+<ul>
+<li>Open the config directory of the engine version you want to edit
+<ul>
+<li>The path is something like C:\Program Files\Epic Games\UE_5.0\Engine\Config</li>
+<li>Open the file BaseEditorPerProjectUserSettings.ini</li>
+<li>Find the setting bInvertMiddleMousePan and set it to true:<br>
+bInvertMiddleMousePan=True</li>
+<li>Save the file</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="viewport">Viewport</h1>
 <ul>
 <li>Get mouse control when game plays : <strong>Shift F1</strong></li>
 </ul>
@@ -280,6 +318,19 @@
 <ul>
 <li>With the object selected hold Alt + MMB click on an surface to where you want to set your pivot</li>
 <li>LMB click on the object to reset</li>
+</ul>
+</li>
+</ul>
+<h1 id="node-graph">Node Graph</h1>
+<ul>
+<li><strong>Disconnect pin</strong>
+<ul>
+<li>hold alt and LMB click the pin</li>
+</ul>
+</li>
+<li><strong>Move connection</strong>
+<ul>
+<li>Hold Ctrl LMB click and drag to reconnect elsewhere</li>
 </ul>
 </li>
 </ul>

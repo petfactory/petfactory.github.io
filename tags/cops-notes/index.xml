@@ -13,10 +13,10 @@
     
     <item>
       <title>Houdini - COPS</title>
-      <link>https://www.petfactory.se/notes/houdini_compositing/</link>
+      <link>https://www.petfactory.se/notes/houdini_cops/</link>
       <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_compositing/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_cops/</guid>
       <description>Preferences In the Edit &amp;gt; Preferences &amp;gt; Compositing we can set how many threads we want to use for the cooking and the Tile Size of each chunk of the tiles that will be processed. We can also set the Resolution Limit. If we do a mosaic of 1 K images we can exceed this limit and that can lead to issues.
 The turn of the thumbnails of each cop node we can disable view &amp;gt; Show Node Previews in the menubar of the cop network view.</description>
     </item>
