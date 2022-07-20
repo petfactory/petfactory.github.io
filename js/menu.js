@@ -2,18 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // unreal snippet --------------------------
 
-    var ue_clipboard = document.getElementsByClassName("unreal-copy");
+    const ue_clipboard = document.querySelectorAll('.unreal-copy');
 
-    if (ue_clipboard.length > 0) {
+    ue_clipboard.forEach(ue_clip => {
 
-        ue_clipboard[0].addEventListener('click', function(e) {
-
-            var data = ue_clipboard[0].previousElementSibling.dataset.unreal
+        ue_clip.addEventListener('click', function(e) {
+            // console.log(ue_clip)
+            var data = ue_clip.previousElementSibling.dataset.unreal
             navigator.clipboard.writeText(data);
             // console.log(data);
-
         }, false);
-    }
+    });
 
 
     // mobile menu --------------------------
