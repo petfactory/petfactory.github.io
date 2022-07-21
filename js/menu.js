@@ -2,13 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // unreal snippet --------------------------
 
-    const ue_clipboard = document.querySelectorAll('.unreal-copy');
+    const ue_copy_buttons = document.querySelectorAll('.unreal-copy');
 
-    ue_clipboard.forEach(ue_clip => {
+    ue_copy_buttons.forEach(ue_copy_btn => {
 
-        ue_clip.addEventListener('click', function(e) {
-            // console.log(ue_clip)
-            var data = ue_clip.previousElementSibling.dataset.unreal
+        ue_copy_btn.addEventListener('click', function(e) {
+            var data = ue_copy_btn.dataset.unreal;
             navigator.clipboard.writeText(data);
             // console.log(data);
         }, false);
