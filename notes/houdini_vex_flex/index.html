@@ -187,8 +187,9 @@
 			<p>This is not really VEX flexing but I really liked that title :)</p>
 <h1 id="trigonometry">Trigonometry</h1>
 <h2 id="rotation">Rotation</h2>
-<p>In a Unreal shader I was building I needed to &ldquo;rotate back&rdquo; the normal map so that the normals was corrected when the uv for the texture sampling was rotated.
-The key is to use the inverted rotation to rotate back the U and V color values (per pixel) so that the map is corrected. Here is a hip file demonstarting the concept:</p>
+<p>In an Unreal shader I was building I needed to &ldquo;rotate back&rdquo; some pixels in the normal map so that the normals was corrected when the uv for the texture sampling was rotated.
+The key is to use the inverted rotation to rotate back the R(U) and G(V) color values (per pixel) so that the map is corrected. Here is a hip file demonstarting the concept:</p>
+<p>Also a big gotcha for me was that when you generate the normal map for use in unreal it needs to have the <strong>Y flipped</strong>, if not the math would not work as intended.</p>
 <div class="download-wrap">
 
 	<a href="https://www.petfactory.se/files/houdini/rotate_vector2_01.hiplc" download>
