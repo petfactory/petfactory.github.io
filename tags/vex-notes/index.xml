@@ -22,5 +22,15 @@ Point wrangle
 int npt = nearpoint(1, @P);vector p = point(1, &amp;#39;P&amp;#39;, npt);vector relbb = relbbox(0, p);if(relbb.</description>
     </item>
     
+    <item>
+      <title>Houdini - VEX Flex</title>
+      <link>https://www.petfactory.se/notes/houdini_vex_flex/</link>
+      <pubDate>Fri, 12 Apr 2019 13:45:10 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_vex_flex/</guid>
+      <description>This is not really VEX flexing but I really liked that title :)
+Trigonometry Rotation In a Unreal shader I was building I needed to &amp;ldquo;rotate back&amp;rdquo; the normal map so that the normals was corrected when the uv for the texture sampling was rotated. The key is to use the inverted rotation to rotate back the U and V color values (per pixel) so that the map is corrected. Here is a hip file demonstarting the concept:</description>
+    </item>
+    
   </channel>
 </rss>
