@@ -310,11 +310,13 @@ h3 {
 }
 
 .unreal-snippet-wrap{
-    max-width: 600px;
+    /*max-width: 600px;*/
     position: relative;
     padding-top: 10px;
     border-top: 1px solid #222;
     margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     background-color: #090909;
     padding-left: 10px; 
 }
@@ -328,7 +330,16 @@ h3 {
     font-size: .9em;
     margin-top: 10px;
 }
-.unreal-copy{
+
+.unreal-snippet-wrap .unreal-copy-btn{
+    opacity: 0.0;
+}
+
+.unreal-snippet-wrap:hover .unreal-copy-btn{
+    opacity: 1.0;
+}
+
+.unreal-copy-btn{
     width: 70px;
     background-color: #222;
     height: 23px;
@@ -340,9 +351,10 @@ h3 {
     right: 10px;
     border: 1px solid #555;
     font-size: .9em;
+    transition-duration: 0.4s;
 }
 
-.unreal-copy:hover{
+.unreal-copy-btn:hover{
     background-color: #333;
 }
 /*
