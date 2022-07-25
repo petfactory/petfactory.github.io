@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // unreal snippet --------------------------
 
-    const ue_copy_buttons = document.querySelectorAll('.unreal-copy');
+    const ue_copy_buttons = document.querySelectorAll('.unreal-copy-btn');
 
     ue_copy_buttons.forEach(ue_copy_btn => {
 
