@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.petfactory.se/notes/</loc>
-    <lastmod>2022-07-17T22:03:02+02:00</lastmod>
+    <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <lastmod>2022-08-25T15:20:58+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/</loc>
-    <lastmod>2022-07-17T22:03:02+02:00</lastmod>
+    <lastmod>2022-08-25T15:20:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/solaris/</loc>
+    <lastmod>2022-08-25T15:20:58+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/</loc>
+    <lastmod>2022-08-25T15:20:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/vellum_fluid_01/</loc>
+    <lastmod>2022-08-25T15:20:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/</loc>
+    <lastmod>2022-08-25T15:20:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/vellum_grains_01/</loc>
+    <lastmod>2022-08-01T15:20:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/</loc>
     <lastmod>2022-07-17T22:03:02+02:00</lastmod>
   </url>
   
@@ -38,12 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/houdini/</loc>
-    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/houdini_lops/</loc>
+    <loc>https://www.petfactory.se/notes/houdini_lops_usd/</loc>
     <lastmod>2022-06-12T15:09:45+01:00</lastmod>
   </url>
   
@@ -54,6 +74,16 @@
   
   <url>
     <loc>https://www.petfactory.se/tags/lops-notes/</loc>
+    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/python/</loc>
+    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/python-notes/</loc>
     <lastmod>2022-06-12T15:09:45+01:00</lastmod>
   </url>
   
@@ -73,32 +103,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/solaris/</loc>
-    <lastmod>2022-05-01T15:20:58+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/work/</loc>
-    <lastmod>2022-05-01T15:20:58+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/ocio_python/</loc>
     <lastmod>2021-09-21T11:18:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/ocio-notes/</loc>
-    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/python/</loc>
-    <lastmod>2021-09-21T11:18:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/python-notes/</loc>
     <lastmod>2021-09-21T11:18:51+02:00</lastmod>
   </url>
   

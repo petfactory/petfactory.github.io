@@ -165,10 +165,9 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#general">General</a>
+    <li><a href="#attributes">Attributes</a>
       <ul>
-        <li><a href="#partition-points">Partition points</a></li>
-        <li><a href="#array-of-unique-detail">Array of Unique (detail)</a></li>
+        <li><a href="#set-attrib-type-info">Set attrib type info</a></li>
       </ul>
     </li>
     <li><a href="#transform">Transform</a>
@@ -182,19 +181,24 @@
         <li><a href="#formatting">Formatting</a></li>
       </ul>
     </li>
-    <li><a href="#edit-primitves">Edit Primitves</a>
-      <ul>
-        <li><a href="#adjustprimlength">adjustPrimLength</a></li>
-      </ul>
-    </li>
     <li><a href="#uv">UV</a>
       <ul>
         <li><a href="#scale-uvs-around-udim-center">Scale UVs around UDIM center</a></li>
       </ul>
     </li>
-    <li><a href="#functions">Functions</a>
+    <li><a href="#points">Points</a>
       <ul>
-        <li><a href="#frac">frac()</a></li>
+        <li><a href="#partition-points">Partition points</a></li>
+      </ul>
+    </li>
+    <li><a href="#primitives">Primitives</a>
+      <ul>
+        <li><a href="#adjustprimlength">adjustPrimLength</a></li>
+      </ul>
+    </li>
+    <li><a href="#detail">Detail</a>
+      <ul>
+        <li><a href="#array-of-unique-detail">Array of Unique (detail)</a></li>
       </ul>
     </li>
   </ul>
@@ -211,28 +215,12 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini - VEX</h1>
-			<h1 id="general">General</h1>
-<h2 id="partition-points">Partition points</h2>
-<p>Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &ldquo;cluster centers&rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &ldquo;the original points&rdquo; and with the snap distance control how many centers you want.</p>
-<p><strong>Point wrangle</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> npt <span style="color:#f92672">=</span> nearpoint(<span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">@</span>P);
-vector p <span style="color:#f92672">=</span> point(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;P&#39;</span>, npt);
-vector relbb <span style="color:#f92672">=</span> relbbox(<span style="color:#ae81ff">0</span>, p);
-<span style="color:#66d9ef">if</span>(relbb.y <span style="color:#f92672">&lt;=</span> chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>threshold<span style="color:#960050;background-color:#1e0010">&#39;</span>)){
-    <span style="color:#960050;background-color:#1e0010">@</span>my_attrib <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-}
-<span style="color:#66d9ef">else</span> {
-    <span style="color:#960050;background-color:#1e0010">@</span>my_attrib <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><h2 id="array-of-unique-detail">Array of Unique (detail)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> nprim <span style="color:#f92672">=</span> nprimitives(<span style="color:#ae81ff">0</span>);
-s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names <span style="color:#f92672">=</span> {};
-
-<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> nuniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>);
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> count; i<span style="color:#f92672">++</span>) {
-    string val <span style="color:#f92672">=</span> uniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>, i);
-    push(s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names, val);
-}
+			<h1 id="attributes">Attributes</h1>
+<h2 id="set-attrib-type-info">Set attrib type info</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> pnt <span style="color:#f92672">=</span> addpoint(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
+vector4 quat <span style="color:#f92672">=</span> quaternion(<span style="color:#ae81ff">0</span>);
+setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, pnt, quat);
+setattribtypeinfo(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>point<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>quaternion<span style="color:#960050;background-color:#1e0010">&#39;</span>);
 </code></pre></div><h1 id="transform">Transform</h1>
 <p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
 <h2 id="pscale">pscale</h2>
@@ -273,7 +261,30 @@ s<span style="color:#960050;background-color:#1e0010">@</span>z_padded <span sty
 <p><strong>Round float</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">s<span style="color:#960050;background-color:#1e0010">@</span>name <span style="color:#f92672">=</span> sprintf(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">%</span><span style="color:#ae81ff">.1f</span><span style="color:#960050;background-color:#1e0010">&#39;</span>, u<span style="color:#960050;background-color:#1e0010">@</span>uv.u);
 </code></pre></div><hr>
-<h1 id="edit-primitves">Edit Primitves</h1>
+<h1 id="uv">UV</h1>
+<h2 id="scale-uvs-around-udim-center">Scale UVs around UDIM center</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> u <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(floor(v<span style="color:#960050;background-color:#1e0010">@</span>uv[<span style="color:#ae81ff">0</span>]));
+<span style="color:#66d9ef">int</span> v <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(floor(v<span style="color:#960050;background-color:#1e0010">@</span>uv[<span style="color:#ae81ff">1</span>]));
+<span style="color:#66d9ef">int</span> udim <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">+</span> u<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> v<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>;
+i<span style="color:#960050;background-color:#1e0010">@</span>udim <span style="color:#f92672">=</span> udim;
+
+vector2 center <span style="color:#f92672">=</span> set(u<span style="color:#f92672">+</span><span style="color:#ae81ff">.5</span>, v<span style="color:#f92672">+</span><span style="color:#ae81ff">.5</span>);
+vector disp <span style="color:#f92672">=</span> (<span style="color:#960050;background-color:#1e0010">@</span>uv<span style="color:#f92672">-</span>center)<span style="color:#f92672">*</span>chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>uv_mult<span style="color:#960050;background-color:#1e0010">&#39;</span>);
+<span style="color:#960050;background-color:#1e0010">@</span>uv <span style="color:#f92672">+=</span> disp;
+</code></pre></div><h1 id="points">Points</h1>
+<h2 id="partition-points">Partition points</h2>
+<p>Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &ldquo;cluster centers&rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &ldquo;the original points&rdquo; and with the snap distance control how many centers you want.</p>
+<p><strong>Point wrangle</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> npt <span style="color:#f92672">=</span> nearpoint(<span style="color:#ae81ff">1</span>, <span style="color:#960050;background-color:#1e0010">@</span>P);
+vector p <span style="color:#f92672">=</span> point(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;P&#39;</span>, npt);
+vector relbb <span style="color:#f92672">=</span> relbbox(<span style="color:#ae81ff">0</span>, p);
+<span style="color:#66d9ef">if</span>(relbb.y <span style="color:#f92672">&lt;=</span> chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>threshold<span style="color:#960050;background-color:#1e0010">&#39;</span>)){
+    <span style="color:#960050;background-color:#1e0010">@</span>my_attrib <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+}
+<span style="color:#66d9ef">else</span> {
+    <span style="color:#960050;background-color:#1e0010">@</span>my_attrib <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h1 id="primitives">Primitives</h1>
 <h2 id="adjustprimlength">adjustPrimLength</h2>
 <p>Here we can use a measure sop measure the perimeter of the prim. This is needed for the function to work. Note that if we does not clamp the length it will extend the prims to match the length of the longest prim.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;groom.h&gt;</span><span style="color:#75715e">
@@ -289,19 +300,17 @@ adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#96005
 	<span class="download-info"></span>
 
 </div>
-<h1 id="uv">UV</h1>
-<h2 id="scale-uvs-around-udim-center">Scale UVs around UDIM center</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> u <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(floor(v<span style="color:#960050;background-color:#1e0010">@</span>uv[<span style="color:#ae81ff">0</span>]));
-<span style="color:#66d9ef">int</span> v <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(floor(v<span style="color:#960050;background-color:#1e0010">@</span>uv[<span style="color:#ae81ff">1</span>]));
-<span style="color:#66d9ef">int</span> udim <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span> <span style="color:#f92672">+</span> u<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> v<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>;
-i<span style="color:#960050;background-color:#1e0010">@</span>udim <span style="color:#f92672">=</span> udim;
+<h1 id="detail">Detail</h1>
+<h2 id="array-of-unique-detail">Array of Unique (detail)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> nprim <span style="color:#f92672">=</span> nprimitives(<span style="color:#ae81ff">0</span>);
+s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names <span style="color:#f92672">=</span> {};
 
-vector2 center <span style="color:#f92672">=</span> set(u<span style="color:#f92672">+</span><span style="color:#ae81ff">.5</span>, v<span style="color:#f92672">+</span><span style="color:#ae81ff">.5</span>);
-vector disp <span style="color:#f92672">=</span> (<span style="color:#960050;background-color:#1e0010">@</span>uv<span style="color:#f92672">-</span>center)<span style="color:#f92672">*</span>chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>uv_mult<span style="color:#960050;background-color:#1e0010">&#39;</span>);
-<span style="color:#960050;background-color:#1e0010">@</span>uv <span style="color:#f92672">+=</span> disp;
-</code></pre></div><h1 id="functions">Functions</h1>
-<h2 id="frac">frac()</h2>
-		
+<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> nuniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>);
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> count; i<span style="color:#f92672">++</span>) {
+    string val <span style="color:#f92672">=</span> uniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>, i);
+    push(s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names, val);
+}
+</code></pre></div>		
 		</div>
 	</div>
 </div>

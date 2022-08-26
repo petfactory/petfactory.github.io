@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Houdini - Misc</title>
-        <meta name="description" content="Petfactory | Design and Animation | Houdini - Misc" />
+        <title>Petfactory | Houdini - LOPS &amp; USD</title>
+        <meta name="description" content="Petfactory | Design and Animation | Houdini - LOPS &amp; USD" />
 
     </head>
 
@@ -165,45 +165,23 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#pop">POP</a>
+    <li><a href="#nodes">Nodes</a>
       <ul>
-        <li><a href="#birth-rate">Birth Rate</a></li>
-        <li><a href="#rest-attribute">Rest attribute</a></li>
-        <li><a href="#pop-advect-by-volumes">POP Advect by Volumes</a></li>
-      </ul>
-    </li>
-    <li><a href="#sop">SOP</a>
-      <ul>
-        <li><a href="#wrangle">Wrangle</a></li>
-      </ul>
-    </li>
-    <li><a href="#ui">UI</a>
-      <ul>
-        <li><a href="#parameters">Parameters</a>
+        <li><a href="#rendering">Rendering</a>
           <ul>
-            <li><a href="#color">Color</a></li>
-          </ul>
-        </li>
-        <li><a href="#shelves">Shelves</a></li>
-        <li><a href="#default-desktop">Default desktop</a></li>
-        <li><a href="#flags">Flags</a>
-          <ul>
-            <li><a href="#selectable-template-flag">Selectable template flag</a></li>
+            <li><a href="#camera">Camera</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#materials">Materials</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#volume">Volume</a>
+    <li><a href="#python--usd">Python &amp; USD</a>
       <ul>
-        <li><a href="#vdb-analysis">VDB Analysis</a>
-          <ul>
-            <li><a href="#gradient">Gradient</a></li>
-          </ul>
-        </li>
-        <li><a href="#curl-field-velocity">Curl field (velocity)</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#camera-properties">Camera properties</a></li>
       </ul>
     </li>
-    <li><a href="#tips">Tips</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -217,194 +195,107 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini - Misc</h1>
-			<p>A collection of various Houdini related things that doesn´t fit anywhere else.</p>
-<h1 id="pop">POP</h1>
-<h2 id="birth-rate">Birth Rate</h2>
-<p>A good way to control the amount of particles being emitted is to keyframe the <strong>Const. Birt Rate</strong> (Birth tab) with values between 0 and 1. Then we can use the <strong>Scale Point Count by Area</strong> (Source tab) as a multiplier of points emitted.</p>
-<h2 id="rest-attribute">Rest attribute</h2>
-<p>If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source. This attr can then be used at the sop level so do various things, maybe use as Cd. All attributes are inherited by default, we might axplicitly set which attrs to inherit.</p>
-<h2 id="pop-advect-by-volumes">POP Advect by Volumes</h2>
-<p>Lets use a velocity volume to advect particles.</p>
-<ul>
-<li>In the popnet after the source append a <strong>POP Advect by Volumes</strong>.
-<ul>
-<li>Velocity source: point to the velocity volume</li>
-<li>Advection Type: <strong>Update Position</strong>
-<ul>
-<li>This will explicitly set the position (instead of update force that implicitly will affect the position). We might want to set the position if we have nice, detailed velocity noise and would like to use this. (might be worth testing the other options as well)</li>
-<li>Velocity Update: <strong>Final Velocity</strong>
-<ul>
-<li>We want to store the velocity if we want motion blur.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="sop">SOP</h1>
-<h2 id="wrangle">Wrangle</h2>
-<ul>
-<li><strong>Output Selection Group</strong><br>
-Sets a group that will be highlighted when the node is viewed.
-<ul>
-<li>
-<p>In the wrangle write some code that will create a group</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd"><span style="color:#66d9ef">if</span>(@P.y<span style="color:#960050;background-color:#1e0010"> &gt; 0){</span>
-    @group_test = 1;
-}
-</code></pre></div><pre><code></code></pre></li>
-<li>
-<p>Then on the tab <em>Bindings</em> we set the Output Selection Group to the group we want to be selected, in our case <em>&ldquo;test&rdquo;</em></p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="ui">UI</h1>
-<h2 id="parameters">Parameters</h2>
-<h3 id="color">Color</h3>
-<ul>
-<li><strong>Color Parameter</strong>
-<ul>
-<li><strong>Sample screen color</strong>
-<ul>
-<li>If you MMB press and hold on a color parameter you can sample the screen color.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Node Color</strong>
-<ul>
-<li><strong>Color palette</strong>
-<ul>
-<li>Press C in the network view to open up the color palette</li>
-</ul>
-</li>
-<li><strong>Set Node default color</strong>
-<ul>
-<li>If you hold Ctrl while drag an drop on a node you will set the node default color.</li>
-<li><strong>Note</strong> When you set the default color a JSON file called <strong>Default_Theme_theme.nodecolors</strong> will be created in the folder <em>C:\Users\username\Documents\houdini18.5</em>. A brute force way to reset all node colors is to delete this file. (I did not learn this from the docs but just tried it and it seems to work fine, so do this at your own discretion) You can also have a look at the documentation on the 
-<a href="https://www.sidefx.com/docs/houdini/commands/opdefaultcolor" target="_blank" rel="noopener">opdefaultcolor</a> HScript command which is used to change the initial color of a node when it is put down (changing colors this way will also edit/create the same JSON file as described before)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="shelves">Shelves</h2>
-<p>Recently I had an issue that the added shelves were not saved when Houdini was closed and reopened. A post in the Houdini forum mentioned that you could try to run Houdini as administrator one time to fix this issue, and it did!</p>
-<h2 id="default-desktop">Default desktop</h2>
-<ul>
-<li>Edit &gt; Preferences &gt; General User Interface
-<ul>
-<li>Startup in Desktop : Build</li>
-</ul>
-</li>
-</ul>
-<h2 id="flags">Flags</h2>
-<p>
-<a href="https://www.sidefx.com/docs/houdini/network/flags.html#setting-flags" target="_blank" rel="noopener">Flags</a> represent some state information on the node, such as which node represents the output of the network. Different network types have different flags.</p>
-<h3 id="selectable-template-flag">Selectable template flag</h3>
-<p>If you <strong>LMB ctrl</strong> click the template flag you will set the selectable template flag. This makes the geometry visible and allows you to select components from the templated geometry in the viewport, in addition to components on the geometry with the Display flag.</p>
-<h1 id="volume">Volume</h1>
-<h2 id="vdb-analysis">VDB Analysis</h2>
-<h3 id="gradient">Gradient</h3>
-<p>We can use the vdb analysis node to calculate the gradient of an SDF. The value of a SDF is 0 at the surface, negative on the inside and positive on the outside. When we calculate the gardient of an SDF we will get a vector that points in the direction of where the values of the sdf increases. Then we can for instance use this vector field to drive particles.</p>
-<ul>
-<li>Append a <strong>VDB from Polygons</strong> node to the geo.
-<ul>
-<li>Use World space for Band: <strong>Enabled</strong>
-<ul>
-<li>It might be easier to use world space to decide how large padding we want instead of voxels.</li>
-</ul>
-</li>
-<li>Exterior Band:
-<ul>
-<li>Set the desired size</li>
-</ul>
-</li>
-<li>Interior Band:
-<ul>
-<li>If we do not fill the interior we can set this</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Append a <strong>VDB Analysis</strong> node
-<ul>
-<li>Operator: <strong>Gradient</strong></li>
-<li>Custom Name: <strong>vel</strong>
-<ul>
-<li>Here we can give the filed a custom name if we want</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Now we have a vel vector filed that we can use for various things, for instance use in a popnet to advect particles using a POP Advect by Volume.</li>
-<li>We can noise up the volume using a volume vop.</li>
-</ul>
+			<h1>Houdini - LOPS &amp; USD</h1>
+			<p>
+<a href="https://www.sidefx.com/docs/houdini/solaris/index.html" target="_blank" rel="noopener">Solaris</a> is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. 
+<a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
+<h1 id="nodes">Nodes</h1>
+<h2 id="rendering">Rendering</h2>
+<h3 id="camera">Camera</h3>
+<p><strong>Latlong cubemap in Karma</strong><br>
+I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. 
+<a href="https://www.sidefx.com/tutorials/lens-shaders-for-gamedev/" target="_blank" rel="noopener">Paul Ambrosiussen</a> and 
+<a href="https://www.tokeru.com/cgwiki/?title=HoudiniOculusWip" target="_blank" rel="noopener">Matt Estela</a> has some good information on the subject.<br>
+There seems to be a bug when Karma is rendering with Hython so the lensshader using cvex errors out (will maybe be fixed in Houdini 19.5). A workaround is to use the vrlens shader that you can create in a shopnet context.</p>
 <div class="download-wrap">
 
-	<a href="https://www.petfactory.se/files/houdini/vop_vdb_gradient_to_vel_v01.hiplc" download>
+	<a href="https://www.petfactory.se/files/houdini/karma_lens_shader_01.hiplc" download>
 		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
-	  	<span class="download-text">vop_vdb_gradient_to_vel_v01.hiplc</span>
+	  	<span class="download-text">karma_lens_shader_01.hiplc</span>
 	</a>
 	<br>
-	<span class="download-info"></span>
+	<span class="download-info">Latlong / Polar CVEX Lens shader</span>
 
 </div>
-<h2 id="curl-field-velocity">Curl field (velocity)</h2>
+<hr>
+<h3 id="settings">Settings</h3>
+<p>Applies renderer-specific geometry settings to geometry in the scene graph.</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/unshaded_color_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">unshaded_color_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Using a mtlxuniform_edf and a render geometry settings node to render an unshaded color material</span>
+
+</div>
+<hr>
+<h3 id="materials">Materials</h3>
+<p>Read more about material assignment in lops 
+<a href="https://www.tokeru.com/cgwiki/index.php?title=HoudiniLops#Assign_material_Lop_with_shop_materialpath" target="_blank" rel="noopener">cgwiki</a>. Below is a hip file where I try out varius ways of editing material attributes in lops.</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/lop_assign_material_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">lop_assign_material_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">setting materials in lops using attributes from sops</span>
+
+</div>
+<hr>
+<h1 id="python--usd">Python &amp; USD</h1>
+<h2 id="docs">Docs</h2>
 <ul>
-<li>Append a <strong>bound</strong> sop to the geo that we wish to create a curl field around. Add panning if needed. The bound will be the size of our velocity volume.</li>
-<li>Append a <strong>volume</strong> sop to the bound.
-<ul>
-<li>Rank: <strong>Vector</strong></li>
-<li>Name: <strong>vel</strong></li>
-<li>Dimensions
-<ul>
-<li>Uniform Sampling Divs: <strong>100</strong>
-<ul>
-<li>Note, the more subdivs we use the more detail we can get in our curl noise.</li>
+<li>
+<a href="https://graphics.pixar.com/usd/release/tut_inspect_and_author_props.html" target="_blank" rel="noopener">Inspecting and Authoring Properties</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Append a <strong>VDB from Polygons</strong> to the input geo.
-<ul>
-<li>Use Worldspace for band</li>
-<li>Exterior Band: <strong>2</strong></li>
-<li>Interior Band: <strong>1</strong></li>
-</ul>
-</li>
-<li>Append a <strong>Volume VOP</strong> and connect the <strong>volume</strong> sop to the first input and the <strong>VDB from Polygons</strong> to the second and dive in.
-<ul>
-<li>Create a <strong>Vector to Vector4</strong> and connect <strong>P</strong> and <strong>time</strong>.</li>
-<li>Create a <strong>Curl Noise</strong> and connect the <strong>hvec</strong> from the Vector to Vector4 and connect the <strong>OpInput2</strong> (our vdb that created the sdf) to the <strong>sdf</strong> input of the curl noise.</li>
-<li>Create a <strong>Bind Export</strong> node and set the name to <strong>vel</strong> and connect the noise output to the input of the bind export.</li>
-<li>We will promote <strong>Frequency</strong>, <strong>Roughness</strong> and <strong>Surface Effect Radius</strong>
-<ul>
-<li>Note that the Surface Effect Radius will control how for the curl noise will be affected from the sdf surface. Larger value means it will reach farther out.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>We have now created a velocity volume with a curl noise. We can for instance use this inside a pop simulation to advect the particles.</li>
-</ul>
-<h1 id="tips">Tips</h1>
-<ul>
-<li><strong>Switch</strong>
-<ul>
-<li>Lets say you want to switch between two streams to visually debug/inspect a network. Use this expression in a switch to use the first input for 24 frames then the second for another 24 and so on:
-<ul>
-<li><code>$F%48&lt;24</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-		
+<h2 id="camera-properties">Camera properties</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># camera in the lop context named camera1</span>
+<span style="color:#75715e"># translation: (1, 2, 3)</span>
+<span style="color:#75715e"># rotation: (-270, 0, 0)</span>
+
+lop_cam <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/lopnet1/camera1&#39;</span>)
+stage <span style="color:#f92672">=</span> lop_cam<span style="color:#f92672">.</span>stage()
+primpath <span style="color:#f92672">=</span> lop_cam<span style="color:#f92672">.</span>evalParm(<span style="color:#e6db74">&#34;primpath&#34;</span>)
+cam <span style="color:#f92672">=</span> stage<span style="color:#f92672">.</span>GetPrimAtPath(primpath)
+
+property_names <span style="color:#f92672">=</span> cam<span style="color:#f92672">.</span>GetPropertyNames() 
+<span style="color:#75715e"># print(property_names)</span>
+<span style="color:#75715e"># [&#39;clippingPlanes&#39;, &#39;clippingRange&#39;, &#39;exposure&#39;, &#39;focalLength&#39;, ...</span>
+
+focus_dist_attr <span style="color:#f92672">=</span> cam<span style="color:#f92672">.</span>GetAttribute(<span style="color:#e6db74">&#39;focusDistance&#39;</span>)
+focus_dist <span style="color:#f92672">=</span> focus_dist_attr<span style="color:#f92672">.</span>Get()
+<span style="color:#75715e">#print(focus_dist)</span>
+<span style="color:#75715e"># 9.644547462463379</span>
+<span style="color:#75715e">#print(type(focus_dist))</span>
+<span style="color:#75715e"># &lt;class &#39;float&#39;&gt;</span>
+
+transform_attr <span style="color:#f92672">=</span> cam<span style="color:#f92672">.</span>GetAttribute(<span style="color:#e6db74">&#39;xformOp:transform&#39;</span>)
+transform <span style="color:#f92672">=</span> transform_attr<span style="color:#f92672">.</span>Get()
+<span style="color:#75715e">#print(transform)</span>
+<span style="color:#75715e"># ( (1, 0, 0, 0), (0, 0, 1, 0), (0, -1, 0, 0), (1, 2, 3, 1) )</span>
+<span style="color:#75715e">#print(type(transform))</span>
+<span style="color:#75715e"># &lt;class &#39;pxr.Gf.Matrix4d&#39;&gt;</span>
+<span style="color:#75715e">#print(&#39;\n&#39;.join(dir(transform)))</span>
+
+pos <span style="color:#f92672">=</span> transform<span style="color:#f92672">.</span>GetRow3(<span style="color:#ae81ff">3</span>)
+<span style="color:#75715e">#print(pos)</span>
+<span style="color:#75715e"># (1, 2, 3)</span>
+<span style="color:#75715e">#print(type(pos))</span>
+<span style="color:#75715e"># &lt;class &#39;pxr.Gf.Vec3d&#39;&gt;</span>
+pos_tuple <span style="color:#f92672">=</span> (pos[<span style="color:#ae81ff">0</span>], pos[<span style="color:#ae81ff">1</span>], pos[<span style="color:#ae81ff">2</span>])
+
+
+z_axis <span style="color:#f92672">=</span> transform<span style="color:#f92672">.</span>GetRow3(<span style="color:#ae81ff">2</span>)
+<span style="color:#75715e">#print(z_axis)</span>
+<span style="color:#75715e"># (0, -1, 0)</span>
+z_axis_tuple <span style="color:#f92672">=</span> (z_axis[<span style="color:#ae81ff">0</span>], z_axis[<span style="color:#ae81ff">1</span>], z_axis[<span style="color:#ae81ff">2</span>])
+
+<span style="color:#66d9ef">print</span>(pos_tuple)
+<span style="color:#66d9ef">print</span>(z_axis_tuple)
+</code></pre></div>		
 		</div>
 	</div>
 </div>

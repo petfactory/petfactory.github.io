@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Houdini - LOPS</title>
-      <link>https://www.petfactory.se/notes/houdini_lops/</link>
+      <title>Houdini - LOPS &amp; USD</title>
+      <link>https://www.petfactory.se/notes/houdini_lops_usd/</link>
       <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_lops/</guid>
+      <guid>https://www.petfactory.se/notes/houdini_lops_usd/</guid>
       <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
 Nodes Rendering Camera Latlong cubemap in Karma
 I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. Paul Ambrosiussen and Matt Estela has some good information on the subject.</description>
@@ -135,9 +135,8 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>General Partition points Here is a vex version of a techique I saw John Kunz use in Vops. Note that the points comming in on the second input will be the &amp;ldquo;cluster centers&amp;rdquo;. Theese points can be generated anyway you want, for instance by the scatter node or by fusing &amp;ldquo;the original points&amp;rdquo; and with the snap distance control how many centers you want.
-Point wrangle
-int npt = nearpoint(1, @P);vector p = point(1, &amp;#39;P&amp;#39;, npt);vector relbb = relbbox(0, p);if(relbb.</description>
+      <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.
+pscale float ps_life = chramp(&amp;#39;ps_life&amp;#39;, @nage);float ps_bias = fit01(chramp(&amp;#39;ps_bias&amp;#39;, rand(@id)), chf(&amp;#39;ps_min&amp;#39;), chf(&amp;#39;ps_max&amp;#39;));@pscale = ps_life*ps_bias*chf(&amp;#39;ps_mult&amp;#39;);String Regex Replace</description>
     </item>
     
     <item>

@@ -6,10 +6,29 @@
     <description>Recent content in Solaris on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 15:20:58 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 25 Aug 2022 15:20:58 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/solaris/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vellum fluid - 01</title>
+      <link>https://www.petfactory.se/work/vellum_fluid_01/</link>
+      <pubDate>Thu, 25 Aug 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/vellum_fluid_01/</guid>
+      <description>Animated and rendered in Houdini</description>
+    </item>
+    
+    <item>
+      <title>Vellum grains - 01</title>
+      <link>https://www.petfactory.se/work/vellum_grains_01/</link>
+      <pubDate>Mon, 01 Aug 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/vellum_grains_01/</guid>
+      <description>   Animated and rendered in Houdini
+  </description>
+    </item>
     
     <item>
       <title>Lego - Cars</title>
