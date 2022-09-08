@@ -176,6 +176,11 @@
         </li>
       </ul>
     </li>
+    <li><a href="#nodes">Nodes</a>
+      <ul>
+        <li><a href="#selection">Selection</a></li>
+      </ul>
+    </li>
     <li><a href="#parms">Parms</a>
       <ul>
         <li><a href="#parm-template">Parm template</a>
@@ -283,6 +288,29 @@
     ]
 }
 </code></pre></div><hr>
+<h1 id="nodes">Nodes</h1>
+<h2 id="selection">Selection</h2>
+<ul>
+<li><strong>Selection</strong>
+<ul>
+<li><strong>setCurrent</strong>(on, clear_all_selected=False)
+<ul>
+<li>Set or unset this node as the last selected one.</li>
+</ul>
+</li>
+<li><strong>setSelected</strong>(on, clear_all_selected=False, show_asset_if_selected=False)
+<ul>
+<li>Select or deselect this item, optionally deselecting all other selected items in this network.</li>
+</ul>
+</li>
+<li><strong>Select only the nodes in a list</strong>
+<ul>
+<li>[n.setCurrent(True, True) if i==0 else n.setCurrent(True, False) for i, n in enumerate(node_list)]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="parms">Parms</h1>
 <p>Here is a quick one liner to print all the parms of the selected node aswell as node specifed with a path.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(p<span style="color:#f92672">.</span>name() <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> hou<span style="color:#f92672">.</span>selectedNodes()[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>parms()))

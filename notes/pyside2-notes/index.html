@@ -165,7 +165,7 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#pyside2">Pyside2</a>
+    <li>
       <ul>
         <li><a href="#install-pyside2">Install PySide2</a></li>
         <li><a href="#hello-world-app">Hello World app</a></li>
@@ -182,6 +182,15 @@
         <li><a href="#qstandarditem">QStandardItem</a></li>
       </ul>
     </li>
+    <li><a href="#gotchas">Gotchas</a>
+      <ul>
+        <li><a href="#view">View</a>
+          <ul>
+            <li><a href="#icons">Icons</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 		</aside>	
@@ -196,8 +205,7 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>PySide2 - Notes</h1>
-			<h1 id="pyside2">Pyside2</h1>
-<h2 id="install-pyside2">Install PySide2</h2>
+			<h2 id="install-pyside2">Install PySide2</h2>
 <p>To install PySide2 (including Shiboken2 &amp; Qt) make sure that we first activate our 
 <a href="https://www.petfactory.se/notes/python/#venv">venv</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pip install PySide2
@@ -367,7 +375,27 @@ The image below is an example of a simplified version of the widget.</p>
 <p>To make an item checkable but not editable using flags</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">item<span style="color:#f92672">.</span>setCheckable(True)
 item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
-</code></pre></div>		
+</code></pre></div><h1 id="gotchas">Gotchas</h1>
+<h2 id="view">View</h2>
+<h3 id="icons">Icons</h3>
+<ul>
+<li><strong>Remove the blue-tinted highlight of selected icons</strong>
+<ul>
+<li>One way to get rid of the blue tint of selected icons (for instance in a QListView) is to explicitly set the icon of the selected state (as well as the normal). You can assign the same pixmap or create different sizes, colors or whatever you need.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pixmap_normal <span style="color:#f92672">=</span> create_your_pixmap(size)
+pixmap_selected <span style="color:#f92672">=</span> create_your_pixmap(size)
+
+icon <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QIcon()
+
+icon<span style="color:#f92672">.</span>addPixmap(pixmap_normal, QtGui<span style="color:#f92672">.</span>QIcon<span style="color:#f92672">.</span>Normal, QtGui<span style="color:#f92672">.</span>QIcon<span style="color:#f92672">.</span>On)
+icon<span style="color:#f92672">.</span>addPixmap(pixmap_selected, QtGui<span style="color:#f92672">.</span>QIcon<span style="color:#f92672">.</span>Selected, QtGui<span style="color:#f92672">.</span>QIcon<span style="color:#f92672">.</span>Off)
+
+my_item<span style="color:#f92672">.</span>setIcon(icon) 
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+		
 		</div>
 	</div>
 </div>
