@@ -17,9 +17,8 @@
       <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_lops_usd/</guid>
-      <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
-Nodes Rendering Camera Latlong cubemap in Karma
-I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. Paul Ambrosiussen and Matt Estela has some good information on the subject.</description>
+      <description>Tips Lighting  Automatic headlight Creation  The default behaviour when there are no lights present in the scene is to create a default headlight. To disable the default light uncheck the following checkbox
+Karma render settings (node) &amp;gt; Rendering &amp;gt; Geometry and Shading &amp;gt; Shading &amp;gt; Automatic Headlight Creation : Disable    Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework.</description>
     </item>
     
   </channel>
