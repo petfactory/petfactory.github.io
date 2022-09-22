@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Davinci Resolve - Python</title>
-        <meta name="description" content="Petfactory | Design and Animation | Davinci Resolve - Python" />
+        <title>Petfactory | DaVinci Resolve - Python</title>
+        <meta name="description" content="Petfactory | Design and Animation | DaVinci Resolve - Python" />
 
     </head>
 
@@ -182,6 +182,11 @@
     <li><a href="#animation">Animation</a>
       <ul>
         <li><a href="#modifier">Modifier</a></li>
+        <li><a href="#example">Example</a>
+          <ul>
+            <li><a href="#setting-1d-and-2d-keyframes">Setting 1D and 2D keyframes</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#attributes">Attributes</a>
@@ -210,7 +215,7 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Davinci Resolve - Python</h1>
+			<h1>DaVinci Resolve - Python</h1>
 			<p>An old scripting guide can be found 
 <a href="https://documents.blackmagicdesign.com/UserManuals/Fusion8_Scripting_Guide.pdf" target="_blank" rel="noopener">here</a></p>
 <h1 id="python--lua">Python &amp; Lua</h1>
@@ -413,6 +418,93 @@ tool[<span style="color:#e6db74">&#39;Size&#39;</span>][<span style="color:#ae81
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
 	tool[<span style="color:#e6db74">&#39;Size&#39;</span>][i] <span style="color:#f92672">=</span> i
 
+</code></pre></div><h2 id="example">Example</h2>
+<h3 id="setting-1d-and-2d-keyframes">Setting 1D and 2D keyframes</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pprint
+<span style="color:#f92672">import</span> DaVinciResolveScript <span style="color:#f92672">as</span> dvr_script
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_parm_dict</span>(active_tool):
+	
+	<span style="color:#66d9ef">if</span> active_tool:
+		<span style="color:#66d9ef">return</span> { v<span style="color:#f92672">.</span>Name:v <span style="color:#66d9ef">for</span> k,v <span style="color:#f92672">in</span> active_tool<span style="color:#f92672">.</span>GetInputList()<span style="color:#f92672">.</span>items()}
+	<span style="color:#66d9ef">else</span>:
+		<span style="color:#66d9ef">return</span> {}
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_keyframes</span>(parm, data_list, current_comp):
+
+	keyframes <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>GetKeyFrames() 
+
+	<span style="color:#66d9ef">if</span> keyframes:
+		old_path <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>GetConnectedOutput()<span style="color:#f92672">.</span>GetTool()
+		old_path<span style="color:#f92672">.</span>Delete()
+
+	is_1D <span style="color:#f92672">=</span> False <span style="color:#66d9ef">if</span> len(data_list[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">else</span> True
+
+	current_time <span style="color:#f92672">=</span> current_comp<span style="color:#f92672">.</span>CurrentTime 
+	current_comp<span style="color:#f92672">.</span>_SetCurrentTime(data_list[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>])
+
+	<span style="color:#66d9ef">if</span> is_1D:
+		path <span style="color:#f92672">=</span> current_comp<span style="color:#f92672">.</span>BezierSpline()
+	<span style="color:#66d9ef">else</span>:
+		path <span style="color:#f92672">=</span> current_comp<span style="color:#f92672">.</span>PolyPath()
+		<span style="color:#75715e"># path = current_comp.Path() # The same?</span>
+
+	parm<span style="color:#f92672">.</span>ConnectTo(path)
+
+	<span style="color:#66d9ef">for</span> i, data <span style="color:#f92672">in</span> enumerate(data_list):
+		value <span style="color:#f92672">=</span> data[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">if</span> is_1D <span style="color:#66d9ef">else</span> data[<span style="color:#ae81ff">1</span>]
+		parm[data[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">=</span> value
+
+	current_comp<span style="color:#f92672">.</span>_SetCurrentTime(current_time)
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+
+	data_list_1D <span style="color:#f92672">=</span> [
+		[<span style="color:#ae81ff">10</span>,[<span style="color:#ae81ff">0.05</span>]],
+		[<span style="color:#ae81ff">20</span>,[<span style="color:#ae81ff">0.2</span>]],
+		[<span style="color:#ae81ff">30</span>,[<span style="color:#ae81ff">0.5</span>]],
+		[<span style="color:#ae81ff">40</span>,[<span style="color:#ae81ff">0.2</span>]],
+		[<span style="color:#ae81ff">50</span>,[<span style="color:#ae81ff">0.1</span>]]
+	]
+
+	data_list_2D <span style="color:#f92672">=</span> [
+		[<span style="color:#ae81ff">10</span>,[<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.2</span>]],
+		[<span style="color:#ae81ff">20</span>,[<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>]],
+		[<span style="color:#ae81ff">30</span>,[<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.8</span>]],
+		[<span style="color:#ae81ff">40</span>,[<span style="color:#ae81ff">0.4</span>, <span style="color:#ae81ff">0.0</span>]],
+		[<span style="color:#ae81ff">50</span>,[<span style="color:#ae81ff">0.2</span>, <span style="color:#ae81ff">1</span>]]
+	]
+
+	data_list_1D_scaled <span style="color:#f92672">=</span> [[d[<span style="color:#ae81ff">0</span>], [d[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*.</span><span style="color:#ae81ff">1</span>]] <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> data_list_1D]
+
+	resolve <span style="color:#f92672">=</span> dvr_script<span style="color:#f92672">.</span>scriptapp(<span style="color:#e6db74">&#34;Resolve&#34;</span>)
+	fusion <span style="color:#f92672">=</span> resolve<span style="color:#f92672">.</span>Fusion()
+	current_comp <span style="color:#f92672">=</span> fusion<span style="color:#f92672">.</span>GetCurrentComp()
+	active_tool <span style="color:#f92672">=</span> current_comp<span style="color:#f92672">.</span>ActiveTool
+
+	parm_dict <span style="color:#f92672">=</span> get_parm_dict(active_tool)
+
+	<span style="color:#66d9ef">if</span> parm_dict:
+		
+		parm_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Width&#39;</span>		
+		parm <span style="color:#f92672">=</span> parm_dict[parm_name] <span style="color:#66d9ef">if</span> parm_name <span style="color:#f92672">in</span> parm_dict <span style="color:#66d9ef">else</span> None
+		<span style="color:#66d9ef">if</span> parm:
+			set_keyframes(parm, data_list_1D, current_comp)
+
+		parm_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Soft Edge&#39;</span>		
+		parm <span style="color:#f92672">=</span> parm_dict[parm_name] <span style="color:#66d9ef">if</span> parm_name <span style="color:#f92672">in</span> parm_dict <span style="color:#66d9ef">else</span> None
+		<span style="color:#66d9ef">if</span> parm:
+			set_keyframes(parm, data_list_1D_scaled, current_comp)
+
+		parm_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Center&#39;</span>		
+		parm <span style="color:#f92672">=</span> parm_dict[parm_name] <span style="color:#66d9ef">if</span> parm_name <span style="color:#f92672">in</span> parm_dict <span style="color:#66d9ef">else</span> None
+		<span style="color:#66d9ef">if</span> parm:
+			set_keyframes(parm, data_list_2D, current_comp)
+
+	<span style="color:#66d9ef">else</span>:
+		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Nothing is selected!&#39;</span>)
 </code></pre></div><h1 id="attributes">Attributes</h1>
 <p>Attributes store information about the capabilities of a certain type, as well as some common flags
 that contribute to the object’s state.
