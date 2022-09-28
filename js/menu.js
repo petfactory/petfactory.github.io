@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // unreal snippet --------------------------
 
-    const ue_copy_buttons = document.querySelectorAll('.unreal-copy-btn');
+    const clipboard_snippet_buttons = document.querySelectorAll('.clipboard-snippet-copy-btn');
 
-    ue_copy_buttons.forEach(ue_copy_btn => {
+    clipboard_snippet_buttons.forEach(clipboard_btn => {
 
-        ue_copy_btn.addEventListener('click', function(e) {
-            var data = ue_copy_btn.dataset.unreal;
+        clipboard_btn.addEventListener('click', function(e) {
+            var data = clipboard_btn.dataset.clipboard_snippet;
             navigator.clipboard.writeText(data);
             // console.log(data);
         }, false);

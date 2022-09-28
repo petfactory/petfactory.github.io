@@ -169,47 +169,31 @@
 		<aside class="toc-aside">
 			<nav id="TableOfContents">
   <ul>
-    <li><a href="#create-a-fusion-comp">Create a fusion comp</a>
-      <ul>
-        <li><a href="#timeline-to-fusion">Timeline to fusion</a></li>
-        <li><a href="#new-composition">New Composition</a></li>
-      </ul>
-    </li>
+    <li><a href="#quick-tips">Quick tips</a></li>
     <li><a href="#viewers">Viewers</a>
       <ul>
         <li><a href="#shortcuts">Shortcuts</a></li>
-        <li><a href="#menubar">Menubar</a></li>
+        <li><a href="#3d">3D</a></li>
+        <li><a href="#misc">Misc</a></li>
       </ul>
     </li>
-    <li><a href="#ui">UI</a>
-      <ul>
-        <li><a href="#tips">Tips</a>
-          <ul>
-            <li><a href="#inspector--parameters">Inspector &amp; parameters</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#nodes">Nodes</a>
+    <li><a href="#nodegraph">Nodegraph</a>
       <ul>
         <li><a href="#shortcuts-1">Shortcuts</a></li>
-        <li><a href="#tips-1">Tips</a>
+        <li><a href="#tips">Tips</a>
           <ul>
-            <li><a href="#flowgraph">Flowgraph</a></li>
-            <li><a href="#display">Display</a></li>
+            <li><a href="#misc-1">Misc</a></li>
+            <li><a href="#mask-to-color-page">Mask to Color page</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#proxy">Proxy</a></li>
-    <li><a href="#3d">3D</a>
+    <li><a href="#color-space">Color space</a></li>
+    <li><a href="#misc-2">Misc</a>
       <ul>
-        <li><a href="#navigation">Navigation</a></li>
-      </ul>
-    </li>
-    <li><a href="#clip">Clip</a>
-      <ul>
-        <li><a href="#new-composition-1">New composition</a></li>
+        <li><a href="#inspector--parameters">Inspector &amp; parameters</a></li>
+        <li><a href="#proxy">Proxy</a></li>
+        <li><a href="#variations">Variations</a></li>
       </ul>
     </li>
   </ul>
@@ -226,11 +210,37 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>DaVinci Resolve - Fusion</h1>
-			<h1 id="create-a-fusion-comp">Create a fusion comp</h1>
-<h2 id="timeline-to-fusion">Timeline to fusion</h2>
-<p>To &ldquo;send&rdquo; a clip from the edit page to the fusion page we set the playhead on the clip and switch over to the fusion page, This will give use 2 nodes the <strong>media in</strong> and <strong>media out</strong></p>
-<h2 id="new-composition">New Composition</h2>
-<p>We can also create a new Fusion composition. Open up the media pool, RMB click in the content section of a bin and choose &ldquo;New Fusion Composition&rdquo;.</p>
+			<h1 id="quick-tips">Quick tips</h1>
+<ul>
+<li>Auto Save
+<ul>
+<li>Auto save (live save) is on by default and you might want to turn it off.</li>
+<li>DaVinci Resolve &gt; Preferences &gt; Project Save and Load &gt; Save Settings &gt; Live save</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edit</td>
+<td>Shift + 4</td>
+</tr>
+<tr>
+<td>Fusion</td>
+<td>Shift + 5</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Shift + 6</td>
+</tr>
+</tbody>
+</table>
 <h1 id="viewers">Viewers</h1>
 <p>There are two viewers. To send a node to the viewer select the clip and press 1 to send it to the first viwer or press 2 to send it to the other. Theese two viewers are two separate viewers (not source &amp; timeline like in the edit page).</p>
 <h2 id="shortcuts">Shortcuts</h2>
@@ -238,21 +248,21 @@
 <thead>
 <tr>
 <th>Function</th>
-<th>Key</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Toggle Controls</td>
-<td>Cmd K</td>
+<td>Ctrl + K</td>
 </tr>
 <tr>
 <td>Toggle Guides</td>
-<td>Cmd G</td>
+<td>Ctrl + G</td>
 </tr>
 <tr>
 <td>Scale to Fit</td>
-<td>Cmd F</td>
+<td>Ctrl + F</td>
 </tr>
 <tr>
 <td>Pan</td>
@@ -260,16 +270,52 @@
 </tr>
 <tr>
 <td>Zoom</td>
-<td>Cmd MMB scroll</td>
+<td>Alt + MMB scroll</td>
 </tr>
 <tr>
-<td>Lock</td>
-<td>Cmd L</td>
+<td>Play Forward</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Play Back</td>
+<td>J</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>K</td>
+</tr>
+<tr>
+<td>Solo Channel</td>
+<td>R, G, B, C and A</td>
 </tr>
 </tbody>
 </table>
-<h2 id="menubar">Menubar</h2>
-<p>Top left</p>
+<h2 id="3d">3D</h2>
+<p>As far as I know there is still not possible to configure the 3D navigation controls which would be nice. So for the moment I guess i will use this</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pan</td>
+<td>MMB</td>
+</tr>
+<tr>
+<td>Tumble</td>
+<td>Alt + MMB</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Alt + MMB Scroll</td>
+</tr>
+</tbody>
+</table>
+<h2 id="misc">Misc</h2>
+<p>Menu (Top left)</p>
 <ul>
 <li>Zoom</li>
 <li>Wipe view
@@ -277,24 +323,635 @@
 <li>wipe between two node</li>
 </ul>
 </li>
-<li>Subview</li>
+<li>Subview
+<ul>
+<li>Metadata</li>
+<li>Color inspector</li>
+<li>&hellip;</li>
 </ul>
-<p>Top right</p>
+</li>
+</ul>
+<p>Menu (Top right)</p>
 <ul>
 <li>ROI (Region of interest)</li>
-<li>Color (view channels)</li>
+<li>Color (solo channel)</li>
 <li>LUT</li>
 <li>Single Viewer</li>
 <li>Menu
 <ul>
 <li><strong>Show controls</strong> show hide viewer node handles (Cmd K)</li>
 <li><strong>Checker underlay</strong> show alpha or solid bg</li>
+<li>&hellip;</li>
 </ul>
 </li>
 </ul>
-<h1 id="ui">UI</h1>
+<h1 id="nodegraph">Nodegraph</h1>
+<h2 id="shortcuts-1">Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Swap Input</td>
+<td>Ctrl + T</td>
+</tr>
+<tr>
+<td>Insert/Remove node</td>
+<td>Shift LMB drag</td>
+</tr>
+<tr>
+<td>Pass Through (disable)</td>
+<td>Ctrl + P</td>
+</tr>
+<tr>
+<td>Tool library</td>
+<td>Shift + Spacebar</td>
+</tr>
+<tr>
+<td>Default scale</td>
+<td>Ctrl + 1</td>
+</tr>
+</tbody>
+</table>
 <h2 id="tips">Tips</h2>
-<h3 id="inspector--parameters">Inspector &amp; parameters</h3>
+<ul>
+<li>Composite
+<ul>
+<li>You can use a <em>Merge</em> or <em>Channel Booleans</em> node to do composites.
+<ul>
+<li>In a merge node, if you use the <em>Normal</em> apply mode and set the <em>Alpha Gain</em> to 0 you get an <em>Add</em> operation.</li>
+<li>You can also use a <em>Channel Booleans</em> node to do an <em>Add</em> operation</li>
+<li>With a channel boolean you can copy the alpha channel of one node to the alpha of another node.</li>
+<li><div class="clipboard-snippet-wrap">
+
+	
+	
+	
+	
+
+	
+
+		
+
+	
+
+	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/channel_boolean_merge_01.txt">channel_boolean_merge_01</a>
+	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="{
+	Tools = ordered() {
+		Text1_1 = TextPlus {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Alpha = Input { Value = 1, },
+				Red1 = Input { Value = 0.309803921568627, },
+				Green1 = Input { Value = 0.309803921568627, },
+				Blue1 = Input { Value = 0.309803921568627, },
+				StyledText = Input { Value = &#34;A&#34;, },
+				Font = Input { Value = &#34;Open Sans&#34;, },
+				Style = Input { Value = &#34;Bold&#34;, },
+				Size = Input { Value = 0.5, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
+			},
+			ViewInfo = OperatorInfo { Pos = { -367.42, -208.63 } },
+		},
+		Note_this_text_has_no_alpha = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { -373.74, -243.051 },
+				Size = { 174.007, 130.797 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		PipeRouter1 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = &#34;Text1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { -160.99, -208.63 } },
+		},
+		MediaOut1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -5.81076, 126.773 } },
+		},
+		Background1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
+				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -5.81076, -61.846 } },
+		},
+		Merge1 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { -5.81076, 35.0061 } },
+		},
+		Background1_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
+				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2.00068, 309.296 } },
+		},
+		PipeRouter3 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = &#34;PipeRouter1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { 156.344, -208.63 } },
+		},
+		Merge_normal = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { -77.5239, -110.258 },
+				Size = { 311.791, 335.414 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Merge1_1 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Gain = Input { Value = 0, },
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2.00068, 401.862 } },
+		},
+		ChannelBooleans1 = ChannelBoolean {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background1_1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter3&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 373.508, 26.2018 } },
+		},
+		Background1_1_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
+				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 373.508, -77.5072 } },
+		},
+		Background1_1_1_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
+				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 364.45, 305.186 } },
+		},
+		ChannelBooleans1_1 = ChannelBoolean {
+			Inputs = {
+				Operation = Input { Value = 1, },
+				Background = Input {
+					SourceOp = &#34;Background1_1_1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter3&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 364.45, 408.895 } },
+		},
+		MediaOut1_1_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;ChannelBooleans1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 373.508, 118.446 } },
+		},
+		MediaOut1_1_1_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;ChannelBooleans1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 364.45, 501.14 } },
+		},
+		MediaOut1_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2.00068, 493.629 } },
+		},
+		Channel_booleans_copy = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 299.717, -110.76 },
+				Size = { 334.418, 332.842 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Channel_booleans_add = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 290.659, 271.933 },
+				Size = { 334.418, 326.842 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Merge_add_by_setting_alpha_gain_to_0 = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { -81.6894, 274.328 },
+				Size = { 316.505, 317.415 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Text1_1_1_1_2 = TextPlus {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.GammaSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Red1 = Input { Value = 0.698039215686274, },
+				Blue1 = Input { Value = 0.207843137254902, },
+				StyledText = Input { Value = &#34;A&#34;, },
+				Font = Input { Value = &#34;Open Sans&#34;, },
+				Style = Input { Value = &#34;Bold&#34;, },
+				Size = Input { Value = 0.5, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1050.22, 43.9461 } },
+		},
+		Background2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				TopLeftRed = Input { Value = 0.231372549019608, },
+				TopLeftGreen = Input { Value = 0.603921568627451, },
+				TopLeftBlue = Input { Value = 0.854901960784314, },
+				TopLeftAlpha = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1174.48, -53.7632 } },
+		},
+		ChannelBooleans2 = ChannelBoolean {
+			Inputs = {
+				ToRed = Input { Value = 4, },
+				ToGreen = Input { Value = 4, },
+				ToBlue = Input { Value = 4, },
+				Background = Input {
+					SourceOp = &#34;Background2&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;Text1_1_1_1_2&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1174.48, 43.9461 } },
+		},
+		AlphaMultiply1 = AlphaMultiply {
+			Inputs = {
+				Input = Input {
+					SourceOp = &#34;ChannelBooleans2&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1174.48, 140.798 } },
+		},
+		Copy_the_alpha_from_the_text_to_the_background = Underlay {
+			CtrlWZoom = false,
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 1113.67, -99.1895 },
+				Size = { 312.733, 360.269 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Background1_1_1_2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
+				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1438.72, 54.9143 } },
+		},
+		Merge2 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background1_1_1_2&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;AlphaMultiply1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1438.72, 140.798 } },
+		},
+		MediaOut1_1_1_2 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge2&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1438.72, 255.226 } },
+		},
+		merge_over = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 1509.66, 20.1616 },
+				Size = { 312.733, 360.269 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		}
+	}
+}">Ctrl-C</div>
+	<div class="clipboard-snippet-info">
+		Examples of how you can use merge and channel boolean to do an over and add comp. Also how you can use channel boolean to copy the alpha of one node to another.
+		
+		
+	</div>
+
+</div></li>
+</ul>
+</li>
+<li>Merge nodes quickly
+<ul>
+<li>One quick way to merge a node over another is to drag the <em>Output</em> (square) connector and release it over the Output connector of the node you wish to merge over.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="misc-1">Misc</h3>
+<ul>
+<li><strong>Graph Build Direction</strong>
+<ul>
+<li>You can choose in which direction to build the graph. Default is horizontal, but you can set it to Houdini/Nuke vertical style. RMB click the nodegraph &gt; Options &gt; Build Flow Vertically</li>
+</ul>
+</li>
+<li><strong>Insert node</strong>
+<ul>
+<li>To insert a node between to connected nodes, hold <strong>Shift</strong> and drag the node ontop of the connection.</li>
+</ul>
+</li>
+<li><strong>Remove node</strong>
+<ul>
+<li>To Remove a node and from the flow hold <strong>Shift</strong> and click or drag the node away.</li>
+</ul>
+</li>
+<li><strong>List of inputs</strong>
+<ul>
+<li>To get a list of the inputs of a node LMB click the &ldquo;output square&rdquo; of a node and hold <strong>Alt</strong> when releasing on the destination node. This will popup a list of the available inputs.</li>
+</ul>
+</li>
+<li><strong>Node Thumbnails</strong>
+<ul>
+<li>RMB click in the nodegraph &gt; Force All Tile Pictures</li>
+<li>RMB click in the nodegraph &gt; Show Thumbnails</li>
+<li>If the thumbnails are still not showing up:
+<ul>
+<li>Make sure that you are viewing the last node in the chain</li>
+<li>select all nodes press Ctrl + P two times to bypass/enable the nodes to force the thumbnail to update.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>RAM Preview Range</strong>
+<ul>
+<li>Ctrl + LMB click and drag in the timeslider to set</li>
+<li>timeslider RMB click &gt; Aute Render Ranger to reset</li>
+</ul>
+</li>
+</ul>
+<h3 id="mask-to-color-page">Mask to Color page</h3>
+<p>You might want to output a mask from a fusion comp and use that in the color page. Here is how you do that.</p>
+<ul>
+<li>Add an additional <em>Media Out</em> node.
+<ul>
+<li>By default a fusion comp has a media out node. This is the node that ouputs the image data to the other pages in resolve.</li>
+<li>If we want to output masks (or color data for that matter) we can do this by adding more media out nodes.</li>
+<li><em>Note!</em> if we copy/paste existing media out nodes we need to manually set the index of the media node so that all our out nodes have a unique sequential index</li>
+</ul>
+</li>
+<li>Create a mask (and ellipse node or whatever that we can use to output an alpha channel)
+<ul>
+<li>Connect the alpha channel to the output</li>
+<li><em>Note!</em> you can also connect rgb values to this outputm, so that we can feed RGBA data to the color page using this modei out.</li>
+</ul>
+</li>
+<li>Switch to the color page
+<ul>
+<li>RMB click the nodegraph &gt; Add Source</li>
+<li>Add a corrector to the nodegraph.</li>
+<li>From the newly added source node drag and connect to the mask (blue) input of the corrector node.</li>
+<li>Since we only output a mask (through our second media out) we will use the rgb data from the original source.
+<ul>
+<li>Drag from the first source and connect to the rgb (green) input of the corrector node.</li>
+<li>As mentioned before if we had RGBA data comming from our second source we could use that aswell</li>
+</ul>
+</li>
+<li>To Mix the 2 data streams add a Layer Mixer
+<ul>
+<li>RMB click &gt; Add Node &gt; Layer Mixer.</li>
+</ul>
+</li>
+<li>Drag from the first corrector and release on the layer mixers first input</li>
+<li>Drag frokm the second corrector and release on the layer mixers second input
+<ul>
+<li><em>Note!</em> if we had more streams we would like to add we can add more media outs and sources and drag and release on the layer mixer node (more input pins will apear)</li>
+</ul>
+</li>
+<li><em>Note!</em> we can add an <em>Alpha Output</em> and connect a mask to this. This mask will then be used in the timeline.</li>
+</ul>
+</li>
+</ul>
+<h1 id="color-space">Color space</h1>
+<ul>
+<li>Render software
+<ul>
+<li>Make sure you have ACES setup in Houdini or the package you render from
+<ul>
+<li>Your OCIO environment variable is pointing to a config.ocio file</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Resolve
+<ul>
+<li>Open DaVince Resolve project settings
+<ul>
+<li>file &gt; Project settings</li>
+<li>or the cog icon bottom left corner</li>
+</ul>
+</li>
+<li>Color Management &gt; Color Sapce and Transforms &gt;
+<ul>
+<li>Color Science : ACEScc</li>
+<li>ACES version : ACES 1.0.3</li>
+<li>Aces Input Transform : ACEScg - CSC</li>
+<li>Aces Output Transform : Rec.709</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fusion
+<ul>
+<li>The steps above will setup ACES for the Resolve cut, edit, color &amp; deliver page but if we jump into Fusion the default <em>Fusion View LUT</em> is not showing the correct image. If Have not yet found any info on how to set his up so that i works by default.</li>
+<li>The image looks a little washed out, but it might be ok to work with. When we go back to the edit page the iamge will look correct. Obviusly the bset would be to have the correct view lut by default in fusion without haveing to mess to much with lut settings etc.</li>
+<li>One thing that you camn du is to disable the view lut and add an <em>ACES Transfrom</em> node and set the version and transfrom as we did on the project settings.</li>
+</ul>
+</li>
+</ul>
+<h1 id="misc-2">Misc</h1>
+<h2 id="inspector--parameters">Inspector &amp; parameters</h2>
 <ul>
 <li><strong>Size Presets</strong>
 <ul>
@@ -312,62 +969,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="nodes">Nodes</h1>
-<h2 id="shortcuts-1">Shortcuts</h2>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Key</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Swap Input</td>
-<td><strong>Cmd T</strong></td>
-</tr>
-<tr>
-<td>Insert/Remove node</td>
-<td><strong>Shift LMB drag</strong></td>
-</tr>
-<tr>
-<td>Pass Through (disable)</td>
-<td><strong>Cmd P</strong></td>
-</tr>
-<tr>
-<td>Tool library</td>
-<td><strong>Shift spacebar</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="tips-1">Tips</h2>
-<h3 id="flowgraph">Flowgraph</h3>
-<ul>
-<li><strong>Insert node</strong>
-<ul>
-<li>To insert a node between to connected nodes, hold <strong>Shift</strong> and drag the node ontop of the connection.</li>
-</ul>
-</li>
-<li><strong>Remove node</strong>
-<ul>
-<li>To Remove a node and from the flow hold <strong>Shift</strong> and click or drag the node away.</li>
-</ul>
-</li>
-<li><strong>List of inputs</strong>
-<ul>
-<li>To get a list of the inputs of a node LMB click the &ldquo;output square&rdquo; of a node and hold <strong>Alt</strong> when releasing on the destination node. This will popup a list of the available inputs.</li>
-</ul>
-</li>
-</ul>
-<h3 id="display">Display</h3>
-<ul>
-<li><strong>Tile Picture aka Thumbnail</strong>
-<ul>
-<li>To display a thumbnail of a node we first need to enable it in the Fusion settings. <strong>Fusion &gt; Fusion Settings &gt; Flow &gt; Force</strong> In the area labeled Force you can choose which tile pictures to use. Then we need to RMB click the node (works with multiple selected nodes as well) and go <strong>Show &gt; Show Tile Picture</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="proxy">Proxy</h1>
+<h2 id="proxy">Proxy</h2>
 <p>We can set the proxy resolution from the main menu. We can also disable the proxy mode by RMB clicking the playback controils and toggle the Proxymode from the menu.</p>
 <ul>
 <li>
@@ -381,40 +983,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="3d">3D</h1>
-<h2 id="navigation">Navigation</h2>
-<p>As far as I know there is still not possible to configure the 3D navigation controls which would be nice. So for the moment I guess i will use this</p>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Key</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Pan</td>
-<td>MMB</td>
-</tr>
-<tr>
-<td>Tumble</td>
-<td>Alt MMB</td>
-</tr>
-<tr>
-<td>Zoom</td>
-<td>Cmd MMB Scroll</td>
-</tr>
-</tbody>
-</table>
-<h1 id="clip">Clip</h1>
-<h2 id="new-composition-1">New composition</h2>
+<h2 id="variations">Variations</h2>
 <p>You can create multiple versions of a clip to try out different ideas. Click the <strong>Clips</strong> tab in the main menu bar. RMB click on the clip and choose <strong>Create New Composition</strong> from the popup menu.</p>
-<!-- # Keying
-
-## Bitmap
-
-The **bitmap** node can be used to pull a key. --><blockquote>
-</blockquote>
 		
 		</div>
 	</div>

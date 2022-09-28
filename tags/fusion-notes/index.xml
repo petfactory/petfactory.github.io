@@ -17,8 +17,7 @@
       <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/davinci_resolve_fusion/</guid>
-      <description>Create a fusion comp Timeline to fusion To &amp;ldquo;send&amp;rdquo; a clip from the edit page to the fusion page we set the playhead on the clip and switch over to the fusion page, This will give use 2 nodes the media in and media out
-New Composition We can also create a new Fusion composition. Open up the media pool, RMB click in the content section of a bin and choose &amp;ldquo;New Fusion Composition&amp;rdquo;.</description>
+      <description>Quick tips  Auto Save  Auto save (live save) is on by default and you might want to turn it off. DaVinci Resolve &amp;gt; Preferences &amp;gt; Project Save and Load &amp;gt; Save Settings &amp;gt; Live save       Page      Edit Shift + 4   Fusion Shift + 5   Color Shift + 6    Viewers There are two viewers.</description>
     </item>
     
   </channel>

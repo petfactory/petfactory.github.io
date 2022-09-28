@@ -309,7 +309,7 @@ h3 {
   padding-right: 10px;
 }
 
-.unreal-snippet-wrap{
+.clipboard-snippet-wrap{
     /*max-width: 600px;*/
     position: relative;
     padding-top: 10px;
@@ -321,25 +321,25 @@ h3 {
     padding-left: 10px; 
 }
 
-.unreal-snippet-title {
+.clipboard-snippet-title {
     font-size: 1.1em;
 }
-.unreal-snippet-info {
+.clipboard-snippet-info {
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: .9em;
     margin-top: 10px;
 }
 
-.unreal-snippet-wrap .unreal-copy-btn{
+.clipboard-snippet-wrap .clipboard-copy-btn{
     opacity: 0.0;
 }
 
-.unreal-snippet-wrap:hover .unreal-copy-btn{
+.clipboard-snippet-wrap:hover .clipboard-copy-btn{
     opacity: 1.0;
 }
 
-.unreal-copy-btn{
+.clipboard-snippet-copy-btn{
     width: 70px;
     background-color: #222;
     height: 23px;
@@ -349,14 +349,17 @@ h3 {
     position: absolute;
     top: 15px;
     right: 10px;
-    border: 1px solid #555;
+    border: 1px solid #222;
     font-size: .9em;
     transition-duration: 0.4s;
+    color: #e83e8c;
 }
 
-.unreal-copy-btn:hover{
+.clipboard-snippet-copy-btn:hover{
     background-color: #333;
+    border: 1px solid #e83e8c;
 }
+
 /*
 ---------------
  carousel
