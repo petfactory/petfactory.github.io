@@ -754,7 +754,6 @@ ret <span style="color:#f92672">=</span> composition<span style="color:#f92672">
 <span style="color:#f92672">import</span> pprint
 <span style="color:#f92672">import</span> DaVinciResolveScript <span style="color:#f92672">as</span> dvr_script
 
-
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
 
 	resolve <span style="color:#f92672">=</span> dvr_script<span style="color:#f92672">.</span>scriptapp(<span style="color:#e6db74">&#34;Resolve&#34;</span>)
@@ -772,8 +771,7 @@ ret <span style="color:#f92672">=</span> composition<span style="color:#f92672">
 	<span style="color:#66d9ef">for</span> i, aov_name <span style="color:#f92672">in</span> enumerate(aov_name_list):
 
 		active_tool<span style="color:#f92672">.</span>Clip1<span style="color:#f92672">.</span>OpenEXRFormat<span style="color:#f92672">.</span>Part <span style="color:#f92672">=</span> aov_name
-		channelList <span style="color:#f92672">=</span> active_tool<span style="color:#f92672">.</span>Clip1<span style="color:#f92672">.</span>OpenEXRFormat<span style="color:#f92672">.</span>RedName<span style="color:#f92672">.</span>GetAttrs(<span style="color:#e6db74">&#39;INPIDT_ComboControl_ID&#39;</span>)
-		
+		<span style="color:#75715e"># channelList = active_tool.Clip1.OpenEXRFormat.RedName.GetAttrs(&#39;INPIDT_ComboControl_ID&#39;)</span>
 		<span style="color:#75715e"># print(aov_name)</span>
 		<span style="color:#75715e"># pprint.pprint(channelList)</span>
 
@@ -782,7 +780,6 @@ ret <span style="color:#f92672">=</span> composition<span style="color:#f92672">
 		loader_node <span style="color:#f92672">=</span> current_comp<span style="color:#f92672">.</span>AddTool(<span style="color:#e6db74">&#39;Loader&#39;</span>, x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>, ty)
 		loader_node<span style="color:#f92672">.</span>Clip <span style="color:#f92672">=</span> exr_file_name
 		loader_node<span style="color:#f92672">.</span>Clip1<span style="color:#f92672">.</span>OpenEXRFormat<span style="color:#f92672">.</span>Part <span style="color:#f92672">=</span> aov_name
-		loader_node<span style="color:#f92672">.</span>Name <span style="color:#f92672">=</span> aov_name
 		loader_node<span style="color:#f92672">.</span>SetAttrs({<span style="color:#e6db74">&#39;TOOLS_Name&#39;</span>:aov_name, <span style="color:#e6db74">&#39;TOOLB_NameSet&#39;</span>:True})
 
 	current_comp<span style="color:#f92672">.</span>Unlock()
