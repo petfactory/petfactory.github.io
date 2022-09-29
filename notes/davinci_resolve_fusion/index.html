@@ -177,13 +177,21 @@
         <li><a href="#misc">Misc</a></li>
       </ul>
     </li>
-    <li><a href="#nodegraph">Nodegraph</a>
+    <li><a href="#timeline">Timeline</a>
       <ul>
         <li><a href="#shortcuts-1">Shortcuts</a></li>
-        <li><a href="#tips">Tips</a>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#nodegraph">Nodegraph</a>
+      <ul>
+        <li><a href="#shortcuts-2">Shortcuts</a></li>
+        <li><a href="#nodes">Nodes</a></li>
+        <li><a href="#tips-1">Tips</a>
           <ul>
+            <li><a href="#composite">Composite</a></li>
+            <li><a href="#alpha">Alpha</a></li>
             <li><a href="#misc-1">Misc</a></li>
-            <li><a href="#mask-to-color-page">Mask to Color page</a></li>
           </ul>
         </li>
       </ul>
@@ -273,18 +281,6 @@
 <td>Alt + MMB scroll</td>
 </tr>
 <tr>
-<td>Play Forward</td>
-<td>L</td>
-</tr>
-<tr>
-<td>Play Back</td>
-<td>J</td>
-</tr>
-<tr>
-<td>Stop</td>
-<td>K</td>
-</tr>
-<tr>
 <td>Solo Channel</td>
 <td>R, G, B, C and A</td>
 </tr>
@@ -345,8 +341,65 @@
 </ul>
 </li>
 </ul>
-<h1 id="nodegraph">Nodegraph</h1>
+<h1 id="timeline">Timeline</h1>
 <h2 id="shortcuts-1">Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start of Timeline</td>
+<td>Ctrl + Left Arrow</td>
+</tr>
+<tr>
+<td>End of Timeline</td>
+<td>Ctrl + Right Arrow</td>
+</tr>
+<tr>
+<td>Prev Keyframe</td>
+<td>Alt + Left Arrow</td>
+</tr>
+<tr>
+<td>Next Keyframe</td>
+<td>Alt + Right Arrow</td>
+</tr>
+<tr>
+<td>One frame Forward</td>
+<td>Right Arrow</td>
+</tr>
+<tr>
+<td>One frame Back</td>
+<td>Left Arrow</td>
+</tr>
+<tr>
+<td>Play Forward</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Play Back</td>
+<td>J</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>K</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong>RAM Preview Range</strong>
+<ul>
+<li>Ctrl + LMB click and drag in the timeslider to set</li>
+<li>timeslider RMB click &gt; Aute Render Ranger to reset</li>
+</ul>
+</li>
+</ul>
+<h1 id="nodegraph">Nodegraph</h1>
+<h2 id="shortcuts-2">Shortcuts</h2>
 <table>
 <thead>
 <tr>
@@ -377,15 +430,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="tips">Tips</h2>
+<h2 id="nodes">Nodes</h2>
 <ul>
-<li>Composite
+<li><strong>Text+</strong>
 <ul>
-<li>You can use a <em>Merge</em> or <em>Channel Booleans</em> node to do composites.
+<li>To add shading elements, like outline, dropshadow etc
 <ul>
+<li>Add a Text+ node</li>
+<li>In the text field, add some text</li>
+<li>Switch to the <em>Shading</em> tab</li>
+<li>In the shading elements menu, select 2</li>
+<li>Click the enable checkbox</li>
+<li>Edit the properties to what you need</li>
+<li>Give it a decriptive name, so that you know what it does when you revisit the node.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips-1">Tips</h2>
+<h3 id="composite">Composite</h3>
+<ul>
+<li><strong>Over &amp; Add</strong>
+<ul>
+<li>You can use a <em>Merge</em> or <em>Channel Booleans</em> node to do composites.</li>
 <li>In a merge node, if you use the <em>Normal</em> apply mode and set the <em>Alpha Gain</em> to 0 you get an <em>Add</em> operation.</li>
 <li>You can also use a <em>Channel Booleans</em> node to do an <em>Add</em> operation</li>
-<li>With a channel boolean you can copy the alpha channel of one node to the alpha of another node.</li>
 <li><div class="clipboard-snippet-wrap">
 
 	
@@ -399,7 +469,7 @@
 
 	
 
-	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/channel_boolean_merge_01.txt">channel_boolean_merge_01</a>
+	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/over_add_comp.txt">over_add_comp</a>
 	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="{
 	Tools = ordered() {
 		Text1_1 = TextPlus {
@@ -438,16 +508,6 @@
 				},
 			},
 			ViewInfo = PipeRouterInfo { Pos = { -160.99, -208.63 } },
-		},
-		MediaOut1 = MediaOut {
-			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
-				Input = Input {
-					SourceOp = &#34;Merge1&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { -5.81076, 126.773 } },
 		},
 		Background1 = Background {
 			Inputs = {
@@ -490,6 +550,16 @@
 			},
 			ViewInfo = OperatorInfo { Pos = { -5.81076, 35.0061 } },
 		},
+		MediaOut1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { -5.81076, 126.773 } },
+		},
 		Background1_1 = Background {
 			Inputs = {
 				GlobalOut = Input { Value = 119, },
@@ -517,15 +587,6 @@
 			},
 			ViewInfo = OperatorInfo { Pos = { 2.00068, 309.296 } },
 		},
-		PipeRouter3 = PipeRouter {
-			Inputs = {
-				Input = Input {
-					SourceOp = &#34;PipeRouter1&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = PipeRouterInfo { Pos = { 156.344, -208.63 } },
-		},
 		Merge_normal = Underlay {
 			NameSet = true,
 			ViewInfo = UnderlayInfo {
@@ -549,18 +610,24 @@
 			},
 			ViewInfo = OperatorInfo { Pos = { 2.00068, 401.862 } },
 		},
-		ChannelBooleans1 = ChannelBoolean {
+		PipeRouter3 = PipeRouter {
 			Inputs = {
-				Background = Input {
-					SourceOp = &#34;Background1_1_1&#34;,
-					Source = &#34;Output&#34;,
-				},
-				Foreground = Input {
-					SourceOp = &#34;PipeRouter3&#34;,
+				Input = Input {
+					SourceOp = &#34;PipeRouter1&#34;,
 					Source = &#34;Output&#34;,
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 373.508, 26.2018 } },
+			ViewInfo = PipeRouterInfo { Pos = { 156.344, -208.63 } },
+		},
+		MediaOut1_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2.00068, 493.629 } },
 		},
 		Background1_1_1 = Background {
 			Inputs = {
@@ -589,6 +656,53 @@
 			},
 			ViewInfo = OperatorInfo { Pos = { 373.508, -77.5072 } },
 		},
+		MediaOut1_1_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;ChannelBooleans1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 373.508, 118.446 } },
+		},
+		MediaOut1_1_1_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;ChannelBooleans1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 364.45, 501.14 } },
+		},
+		ChannelBooleans1 = ChannelBoolean {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background1_1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter3&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 373.508, 26.2018 } },
+		},
+		ChannelBooleans1_1 = ChannelBoolean {
+			Inputs = {
+				Operation = Input { Value = 1, },
+				Background = Input {
+					SourceOp = &#34;Background1_1_1_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter3&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 364.45, 408.895 } },
+		},
 		Background1_1_1_1 = Background {
 			Inputs = {
 				GlobalOut = Input { Value = 119, },
@@ -616,63 +730,11 @@
 			},
 			ViewInfo = OperatorInfo { Pos = { 364.45, 305.186 } },
 		},
-		ChannelBooleans1_1 = ChannelBoolean {
-			Inputs = {
-				Operation = Input { Value = 1, },
-				Background = Input {
-					SourceOp = &#34;Background1_1_1_1&#34;,
-					Source = &#34;Output&#34;,
-				},
-				Foreground = Input {
-					SourceOp = &#34;PipeRouter3&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 364.45, 408.895 } },
-		},
-		MediaOut1_1_1 = MediaOut {
-			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
-				Input = Input {
-					SourceOp = &#34;ChannelBooleans1&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 373.508, 118.446 } },
-		},
-		MediaOut1_1_1_1 = MediaOut {
-			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
-				Input = Input {
-					SourceOp = &#34;ChannelBooleans1_1&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 364.45, 501.14 } },
-		},
-		MediaOut1_1 = MediaOut {
-			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
-				Input = Input {
-					SourceOp = &#34;Merge1_1&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 2.00068, 493.629 } },
-		},
 		Channel_booleans_copy = Underlay {
 			NameSet = true,
 			ViewInfo = UnderlayInfo {
 				Pos = { 299.717, -110.76 },
 				Size = { 334.418, 332.842 }
-			},
-			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
-		},
-		Channel_booleans_add = Underlay {
-			NameSet = true,
-			ViewInfo = UnderlayInfo {
-				Pos = { 290.659, 271.933 },
-				Size = { 334.418, 326.842 }
 			},
 			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
 		},
@@ -683,6 +745,178 @@
 				Size = { 316.505, 317.415 }
 			},
 			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Channel_booleans_add = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 290.659, 271.933 },
+				Size = { 334.418, 326.842 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		}
+	}
+}">Ctrl-C</div>
+	<div class="clipboard-snippet-info">
+		Examples of how you can use merge and channel boolean to do an over and add comp. Also how you can use channel boolean to copy the alpha of one node to another.
+		
+		
+	</div>
+
+</div></li>
+</ul>
+</li>
+<li><strong>Combine Alpha with RGB</strong>
+<ul>
+<li>You can use a <em>Matte Control</em> to combine the alpha of one node with the RGB of another</li>
+<li>You can also do this with a channel boolean, but it requires a little more setup</li>
+<li><div class="clipboard-snippet-wrap">
+
+	
+	
+	
+	
+
+	
+
+		
+
+	
+
+	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/combine_alpha_with_rgb.txt">combine_alpha_with_rgb</a>
+	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="{
+	Tools = ordered() {
+		Note1 = Note {
+			Inputs = {
+				Comments = Input { Value = &#34;Matte Control&#34;, }
+			},
+			ViewInfo = StickyNoteInfo {
+				Pos = { 1003.6, -63.1937 },
+				Flags = {
+					Expanded = true
+				},
+				Size = { 322.667, 52.8788 }
+			},
+		},
+		Background2_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				TopLeftRed = Input { Value = 0.231372549019608, },
+				TopLeftGreen = Input { Value = 0.603921568627451, },
+				TopLeftBlue = Input { Value = 0.854901960784314, },
+				TopLeftAlpha = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1154.31, 56.9459 } },
+		},
+		MatteControl1 = MatteControl {
+			Inputs = {
+				MatteCombine = Input { Value = 4, },
+				Filter = Input { Value = FuID { &#34;Fast Gaussian&#34; }, },
+				PostMultiplyImage = Input { Value = 1, },
+				Background = Input {
+					SourceOp = &#34;Background2_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;Text1_1_1_1_2_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1154.31, 177.797 } },
+		},
+		Text1_1_1_1_2_1 = TextPlus {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.GammaSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Green1 = Input { Value = 0.498039215686275, },
+				Blue1 = Input { Value = 0.250980392156863, },
+				StyledText = Input { Value = &#34;A&#34;, },
+				Font = Input { Value = &#34;Open Sans&#34;, },
+				Style = Input { Value = &#34;Bold&#34;, },
+				Size = Input { Value = 0.5, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1030.05, 177.797 } },
+		},
+		Merge2_1 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background1_1_1_2_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;MatteControl1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1458.07, 175.578 } },
+		},
+		Background1_1_1_2_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
+				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
+				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1458.07, 89.6948 } },
+		},
+		MATTE_CONTROL_copy_the_alpha_from_the_text_to_the_bg = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 1122.37, 11.8747 },
+				Size = { 333.475, 263.417 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		MediaOut1_1_1_2_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge2_1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1458.07, 290.006 } },
+		},
+		Note1_1 = Note {
+			Inputs = {
+				Comments = Input { Value = &#34;Channel Booleans&#34;, }
+			},
+			ViewInfo = StickyNoteInfo {
+				Pos = { 1958.27, -75.3149 },
+				Flags = {
+					Expanded = true
+				},
+				Size = { 322.667, 52.8788 }
+			},
 		},
 		Text1_1_1_1_2 = TextPlus {
 			Inputs = {
@@ -702,21 +936,15 @@
 				VerticalJustificationNew = Input { Value = 3, },
 				HorizontalJustificationNew = Input { Value = 3, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 1050.22, 43.9461 } },
+			ViewInfo = OperatorInfo { Pos = { 2010, 146.798 } },
 		},
-		Background2 = Background {
-			Inputs = {
-				GlobalOut = Input { Value = 119, },
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				TopLeftRed = Input { Value = 0.231372549019608, },
-				TopLeftGreen = Input { Value = 0.603921568627451, },
-				TopLeftBlue = Input { Value = 0.854901960784314, },
-				TopLeftAlpha = Input { Value = 0, },
+		merge_over_1 = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 1529.01, 54.9421 },
+				Size = { 312.733, 360.269 }
 			},
-			ViewInfo = OperatorInfo { Pos = { 1174.48, -53.7632 } },
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
 		},
 		ChannelBooleans2 = ChannelBoolean {
 			Inputs = {
@@ -732,7 +960,21 @@
 					Source = &#34;Output&#34;,
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 1174.48, 43.9461 } },
+			ViewInfo = OperatorInfo { Pos = { 2134.26, 146.798 } },
+		},
+		Background2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				TopLeftRed = Input { Value = 0.231372549019608, },
+				TopLeftGreen = Input { Value = 0.603921568627451, },
+				TopLeftBlue = Input { Value = 0.854901960784314, },
+				TopLeftAlpha = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2134.26, 49.0887 } },
 		},
 		AlphaMultiply1 = AlphaMultiply {
 			Inputs = {
@@ -741,13 +983,12 @@
 					Source = &#34;Output&#34;,
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 1174.48, 140.798 } },
+			ViewInfo = OperatorInfo { Pos = { 2134.26, 243.65 } },
 		},
-		Copy_the_alpha_from_the_text_to_the_background = Underlay {
-			CtrlWZoom = false,
+		CHANNEL_BOOLEANS_copy_the_alpha_from_the_text_to_the_bg = Underlay {
 			NameSet = true,
 			ViewInfo = UnderlayInfo {
-				Pos = { 1113.67, -99.1895 },
+				Pos = { 2074.12, 3.6624 },
 				Size = { 312.733, 360.269 }
 			},
 			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
@@ -777,7 +1018,17 @@
 					},
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 1438.72, 54.9143 } },
+			ViewInfo = OperatorInfo { Pos = { 2437.52, 155.048 } },
+		},
+		MediaOut1_1_1_2 = MediaOut {
+			Inputs = {
+				Index = Input { Value = &#34;0&#34;, },
+				Input = Input {
+					SourceOp = &#34;Merge2&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2437.52, 355.36 } },
 		},
 		Merge2 = Merge {
 			Inputs = {
@@ -791,30 +1042,20 @@
 				},
 				PerformDepthMerge = Input { Value = 0, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 1438.72, 140.798 } },
-		},
-		MediaOut1_1_1_2 = MediaOut {
-			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
-				Input = Input {
-					SourceOp = &#34;Merge2&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 1438.72, 255.226 } },
+			ViewInfo = OperatorInfo { Pos = { 2437.52, 240.932 } },
 		},
 		merge_over = Underlay {
 			NameSet = true,
 			ViewInfo = UnderlayInfo {
-				Pos = { 1509.66, 20.1616 },
-				Size = { 312.733, 360.269 }
+				Pos = { 2508.46, 98.477 },
+				Size = { 312.733, 382.087 }
 			},
 			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
 		}
 	}
 }">Ctrl-C</div>
 	<div class="clipboard-snippet-info">
-		Examples of how you can use merge and channel boolean to do an over and add comp. Also how you can use channel boolean to copy the alpha of one node to another.
+		Example of how you can use a Matte Control and a channel boolean to copy the alpha to an rgb stream
 		
 		
 	</div>
@@ -822,9 +1063,48 @@
 </div></li>
 </ul>
 </li>
-<li>Merge nodes quickly
+</ul>
+<h3 id="alpha">Alpha</h3>
 <ul>
-<li>One quick way to merge a node over another is to drag the <em>Output</em> (square) connector and release it over the Output connector of the node you wish to merge over.</li>
+<li><strong>Mask to color page</strong><br>
+You might want to output a mask from a fusion comp and use that in the color page. Here is how you do that.
+<ul>
+<li>Add an additional <em>Media Out</em> node.
+<ul>
+<li>By default a fusion comp has a media out node. This is the node that ouputs the image data to the other pages in resolve.</li>
+<li>If we want to output masks (or color data for that matter) we can do this by adding more media out nodes.</li>
+<li><em>Note!</em> if we copy/paste existing media out nodes we need to manually set the index of the media node so that all our out nodes have a unique sequential index</li>
+</ul>
+</li>
+<li>Create a mask (and ellipse node or whatever that we can use to output an alpha channel)
+<ul>
+<li>Connect the alpha channel to the output</li>
+<li><em>Note!</em> you can also connect rgb values to this outputm, so that we can feed RGBA data to the color page using this modei out.</li>
+</ul>
+</li>
+<li>Switch to the color page
+<ul>
+<li>RMB click the nodegraph &gt; Add Source</li>
+<li>Add a corrector to the nodegraph.</li>
+<li>From the newly added source node drag and connect to the mask (blue) input of the corrector node.</li>
+<li>Since we only output a mask (through our second media out) we will use the rgb data from the original source.
+<ul>
+<li>Drag from the first source and connect to the rgb (green) input of the corrector node.</li>
+<li>As mentioned before if we had RGBA data comming from our second source we could use that aswell</li>
+</ul>
+</li>
+<li>To Mix the 2 data streams add a Layer Mixer
+<ul>
+<li>RMB click &gt; Add Node &gt; Layer Mixer.</li>
+</ul>
+</li>
+<li>Drag from the first corrector and release on the layer mixers first input</li>
+<li>Drag frokm the second corrector and release on the layer mixers second input
+<ul>
+<li><em>Note!</em> if we had more streams we would like to add we can add more media outs and sources and drag and release on the layer mixer node (more input pins will apear)</li>
+</ul>
+</li>
+<li><em>Note!</em> we can add an <em>Alpha Output</em> and connect a mask to this. This mask will then be used in the timeline.</li>
 </ul>
 </li>
 </ul>
@@ -864,52 +1144,9 @@
 </li>
 </ul>
 </li>
-<li><strong>RAM Preview Range</strong>
+<li><strong>Merge nodes quickly</strong>
 <ul>
-<li>Ctrl + LMB click and drag in the timeslider to set</li>
-<li>timeslider RMB click &gt; Aute Render Ranger to reset</li>
-</ul>
-</li>
-</ul>
-<h3 id="mask-to-color-page">Mask to Color page</h3>
-<p>You might want to output a mask from a fusion comp and use that in the color page. Here is how you do that.</p>
-<ul>
-<li>Add an additional <em>Media Out</em> node.
-<ul>
-<li>By default a fusion comp has a media out node. This is the node that ouputs the image data to the other pages in resolve.</li>
-<li>If we want to output masks (or color data for that matter) we can do this by adding more media out nodes.</li>
-<li><em>Note!</em> if we copy/paste existing media out nodes we need to manually set the index of the media node so that all our out nodes have a unique sequential index</li>
-</ul>
-</li>
-<li>Create a mask (and ellipse node or whatever that we can use to output an alpha channel)
-<ul>
-<li>Connect the alpha channel to the output</li>
-<li><em>Note!</em> you can also connect rgb values to this outputm, so that we can feed RGBA data to the color page using this modei out.</li>
-</ul>
-</li>
-<li>Switch to the color page
-<ul>
-<li>RMB click the nodegraph &gt; Add Source</li>
-<li>Add a corrector to the nodegraph.</li>
-<li>From the newly added source node drag and connect to the mask (blue) input of the corrector node.</li>
-<li>Since we only output a mask (through our second media out) we will use the rgb data from the original source.
-<ul>
-<li>Drag from the first source and connect to the rgb (green) input of the corrector node.</li>
-<li>As mentioned before if we had RGBA data comming from our second source we could use that aswell</li>
-</ul>
-</li>
-<li>To Mix the 2 data streams add a Layer Mixer
-<ul>
-<li>RMB click &gt; Add Node &gt; Layer Mixer.</li>
-</ul>
-</li>
-<li>Drag from the first corrector and release on the layer mixers first input</li>
-<li>Drag frokm the second corrector and release on the layer mixers second input
-<ul>
-<li><em>Note!</em> if we had more streams we would like to add we can add more media outs and sources and drag and release on the layer mixer node (more input pins will apear)</li>
-</ul>
-</li>
-<li><em>Note!</em> we can add an <em>Alpha Output</em> and connect a mask to this. This mask will then be used in the timeline.</li>
+<li>One quick way to merge a node over another is to drag the <em>Output</em> (square) connector and release it over the Output connector of the node you wish to merge over.</li>
 </ul>
 </li>
 </ul>

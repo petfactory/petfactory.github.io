@@ -1,0 +1,271 @@
+{
+	Tools = ordered() {
+		Note1 = Note {
+			Inputs = {
+				Comments = Input { Value = "Matte Control", }
+			},
+			ViewInfo = StickyNoteInfo {
+				Pos = { 1003.6, -63.1937 },
+				Flags = {
+					Expanded = true
+				},
+				Size = { 322.667, 52.8788 }
+			},
+		},
+		Background2_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TopLeftRed = Input { Value = 0.231372549019608, },
+				TopLeftGreen = Input { Value = 0.603921568627451, },
+				TopLeftBlue = Input { Value = 0.854901960784314, },
+				TopLeftAlpha = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1154.31, 56.9459 } },
+		},
+		MatteControl1 = MatteControl {
+			Inputs = {
+				MatteCombine = Input { Value = 4, },
+				Filter = Input { Value = FuID { "Fast Gaussian" }, },
+				PostMultiplyImage = Input { Value = 1, },
+				Background = Input {
+					SourceOp = "Background2_1",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Text1_1_1_1_2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1154.31, 177.797 } },
+		},
+		Text1_1_1_1_2_1 = TextPlus {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.ColorSpaceNest"] = Input { Value = 1, },
+				["Gamut.GammaSpaceNest"] = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Green1 = Input { Value = 0.498039215686275, },
+				Blue1 = Input { Value = 0.250980392156863, },
+				StyledText = Input { Value = "A", },
+				Font = Input { Value = "Open Sans", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.5, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1030.05, 177.797 } },
+		},
+		Merge2_1 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background1_1_1_2_1",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "MatteControl1",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1458.07, 175.578 } },
+		},
+		Background1_1_1_2_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.ColorSpaceNest"] = Input { Value = 1, },
+				["Gamut.ColorType"] = Input { Value = FuID { "Space" }, },
+				["Gamut.ColorSpace"] = Input { Value = FuID { "ACEScg" }, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Type = Input { Value = FuID { "Horizontal" }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1458.07, 89.6948 } },
+		},
+		MATTE_CONTROL_copy_the_alpha_from_the_text_to_the_bg = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 1122.37, 11.8747 },
+				Size = { 333.475, 263.417 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		MediaOut1_1_1_2_1 = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Merge2_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1458.07, 290.006 } },
+		},
+		Note1_1 = Note {
+			Inputs = {
+				Comments = Input { Value = "Channel Booleans", }
+			},
+			ViewInfo = StickyNoteInfo {
+				Pos = { 1958.27, -75.3149 },
+				Flags = {
+					Expanded = true
+				},
+				Size = { 322.667, 52.8788 }
+			},
+		},
+		Text1_1_1_1_2 = TextPlus {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.ColorSpaceNest"] = Input { Value = 1, },
+				["Gamut.GammaSpaceNest"] = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Red1 = Input { Value = 0.698039215686274, },
+				Blue1 = Input { Value = 0.207843137254902, },
+				StyledText = Input { Value = "A", },
+				Font = Input { Value = "Open Sans", },
+				Style = Input { Value = "Bold", },
+				Size = Input { Value = 0.5, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2010, 146.798 } },
+		},
+		merge_over_1 = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 1529.01, 54.9421 },
+				Size = { 312.733, 360.269 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		ChannelBooleans2 = ChannelBoolean {
+			Inputs = {
+				ToRed = Input { Value = 4, },
+				ToGreen = Input { Value = 4, },
+				ToBlue = Input { Value = 4, },
+				Background = Input {
+					SourceOp = "Background2",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Text1_1_1_1_2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2134.26, 146.798 } },
+		},
+		Background2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TopLeftRed = Input { Value = 0.231372549019608, },
+				TopLeftGreen = Input { Value = 0.603921568627451, },
+				TopLeftBlue = Input { Value = 0.854901960784314, },
+				TopLeftAlpha = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2134.26, 49.0887 } },
+		},
+		AlphaMultiply1 = AlphaMultiply {
+			Inputs = {
+				Input = Input {
+					SourceOp = "ChannelBooleans2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2134.26, 243.65 } },
+		},
+		CHANNEL_BOOLEANS_copy_the_alpha_from_the_text_to_the_bg = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 2074.12, 3.6624 },
+				Size = { 312.733, 360.269 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		},
+		Background1_1_1_2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.ColorSpaceNest"] = Input { Value = 1, },
+				["Gamut.ColorType"] = Input { Value = FuID { "Space" }, },
+				["Gamut.ColorSpace"] = Input { Value = FuID { "ACEScg" }, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Type = Input { Value = FuID { "Horizontal" }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.227450980392157, },
+				TopLeftBlue = Input { Value = 0.227450980392157, },
+				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
+				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0.039, 0.039, 0.039, 1 },
+							[1] = { 1, 1, 1, 1 }
+						}
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2437.52, 155.048 } },
+		},
+		MediaOut1_1_1_2 = MediaOut {
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "Merge2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 2437.52, 355.36 } },
+		},
+		Merge2 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background1_1_1_2",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "AlphaMultiply1",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2437.52, 240.932 } },
+		},
+		merge_over = Underlay {
+			NameSet = true,
+			ViewInfo = UnderlayInfo {
+				Pos = { 2508.46, 98.477 },
+				Size = { 312.733, 382.087 }
+			},
+			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
+		}
+	}
+}
