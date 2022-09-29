@@ -196,6 +196,12 @@
         </li>
       </ul>
     </li>
+    <li><a href="#graph-editor-spline">Graph Editor (Spline)</a>
+      <ul>
+        <li><a href="#shortcuts-3">Shortcuts</a></li>
+        <li><a href="#tips-2">Tips</a></li>
+      </ul>
+    </li>
     <li><a href="#color-space">Color space</a></li>
     <li><a href="#misc-2">Misc</a>
       <ul>
@@ -204,6 +210,7 @@
         <li><a href="#variations">Variations</a></li>
       </ul>
     </li>
+    <li><a href="#gotchas">Gotchas</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -220,10 +227,17 @@
 			<h1>DaVinci Resolve - Fusion</h1>
 			<h1 id="quick-tips">Quick tips</h1>
 <ul>
-<li>Auto Save
+<li><strong>Auto Save</strong>
 <ul>
 <li>Auto save (live save) is on by default and you might want to turn it off.</li>
 <li>DaVinci Resolve &gt; Preferences &gt; Project Save and Load &gt; Save Settings &gt; Live save</li>
+</ul>
+</li>
+<li><strong>Bookmarks</strong>
+<ul>
+<li>You can add bookmarks with Ctrl + D</li>
+<li>Underlays can also function as bookmarks</li>
+<li>Also in 3 dot menu</li>
 </ul>
 </li>
 </ul>
@@ -428,6 +442,14 @@
 <td>Default scale</td>
 <td>Ctrl + 1</td>
 </tr>
+<tr>
+<td>Add Bookmark (also in 3 dot menu)</td>
+<td>Ctrl + D</td>
+</tr>
+<tr>
+<td>Go to Bookamrk (also in 3 dot menu)</td>
+<td>Ctrl + Shift + D</td>
+</tr>
 </tbody>
 </table>
 <h2 id="nodes">Nodes</h2>
@@ -445,6 +467,12 @@
 <li>Give it a decriptive name, so that you know what it does when you revisit the node.</li>
 </ul>
 </li>
+</ul>
+</li>
+<li><strong>Underlay</strong>
+<ul>
+<li>A named group box used to organize the graph</li>
+<li>The underlay will also appear in the <em>bookmarks</em> menu</li>
 </ul>
 </li>
 </ul>
@@ -1150,6 +1178,107 @@ You might want to output a mask from a fusion comp and use that in the color pag
 </ul>
 </li>
 </ul>
+<h1 id="graph-editor-spline">Graph Editor (Spline)</h1>
+<p>If you press the <em>Spline</em> button in the top right menu bar you can view the graph editor.</p>
+<h2 id="shortcuts-3">Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Navigation</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pan</td>
+<td>MMB</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Ctrl + Scroll (will scroll around mouse pos)</td>
+</tr>
+<tr>
+<td>Left/Right</td>
+<td>Shift + Scroll</td>
+</tr>
+<tr>
+<td>Up/Down</td>
+<td>Scroll</td>
+</tr>
+<tr>
+<td>Fit All</td>
+<td>Ctrl + F</td>
+</tr>
+<tr>
+<td>Fit to Rectangle</td>
+<td>Ctrl + R (drag rectangle)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Edit</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear Interpolation</td>
+<td>Shift + L</td>
+</tr>
+<tr>
+<td>Smooth Interpolation</td>
+<td>Shift + S</td>
+</tr>
+<tr>
+<td>Flat Interpolation</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Step In</td>
+<td>I</td>
+</tr>
+<tr>
+<td>Step Out</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Lattice (Shape Box)</td>
+<td>Shift + B</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips-2">Tips</h2>
+<ul>
+<li><strong>Set Loop</strong>
+<ul>
+<li>Set some keyframes, select them, RMB &gt; Set Loop &gt; Loop</li>
+</ul>
+</li>
+<li><strong>Auto fit keyframes</strong>
+<ul>
+<li>If you RMB click in the spline editor &gt; Scale you find some options on how the keyframes is framed in the view.
+<ul>
+<li>Auto-fit will move the keyframes alomng when the timeline is played</li>
+<li>Manual will not move the spleine view when played</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Scale X and Y axis</strong>
+<ul>
+<li>By dragging in the top and left margin of the spline editor you can scale the axis</li>
+</ul>
+</li>
+<li><strong>Ease In/Ease Out</strong>
+<ul>
+<li>Press T</li>
+<li>Select some keyframes</li>
+<li>LMB press and drag in tge Ease In/Ease Out input fields.</li>
+</ul>
+</li>
+</ul>
 <h1 id="color-space">Color space</h1>
 <ul>
 <li>Render software
@@ -1222,6 +1351,16 @@ You might want to output a mask from a fusion comp and use that in the color pag
 </ul>
 <h2 id="variations">Variations</h2>
 <p>You can create multiple versions of a clip to try out different ideas. Click the <strong>Clips</strong> tab in the main menu bar. RMB click on the clip and choose <strong>Create New Composition</strong> from the popup menu.</p>
+<h1 id="gotchas">Gotchas</h1>
+<ul>
+<li>Rename
+<ul>
+<li>You can press F2 to rename.</li>
+<li>If you have multiple nodes seleted, a rename popup will appeare for all selected nodes.</li>
+<li>If you select and underlay, press F2 to rename the popup will appear for all nodes inside the underlay, and you can not escape out. a little weird.</li>
+</ul>
+</li>
+</ul>
 		
 		</div>
 	</div>
