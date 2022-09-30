@@ -1,0 +1,148 @@
+{
+	Tools = ordered() {
+		Background2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Type = Input { Value = FuID { "Horizontal" }, },
+				TopRightRed = Input { Value = 1, },
+				TopRightGreen = Input { Value = 1, },
+				TopRightBlue = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3111.34, -111.69 } },
+		},
+		Transform1 = Transform {
+			Inputs = {
+				Center = Input {
+					SourceOp = "Path1",
+					Source = "Position",
+				},
+				Input = Input {
+					SourceOp = "Background2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 3240.51, -111.69 } },
+		},
+		Path1 = PolyPath {
+			DrawMode = "InsertAndModify",
+			CtrlWZoom = false,
+			Inputs = {
+				Displacement = Input {
+					SourceOp = "Path1Displacement",
+					Source = "Value",
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 0, Y = 0, RX = 0.166666666666667, RY = 0 },
+							{ Linear = true, LockY = true, X = 0.5, Y = 0, LX = -0.166666666666667, LY = -0 }
+						}
+					},
+				},
+			},
+		},
+		Path1Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 8, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+				[24] = { 1, LH = { 16, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } }
+			}
+		},
+		Transform2 = Transform {
+			CtrlWZoom = false,
+			Inputs = {
+				Size = Input {
+					SourceOp = "Probe1",
+					Source = "Result",
+				},
+				Input = Input {
+					SourceOp = "Background4",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 3239.56, -11.9717 } },
+		},
+		Probe1 = Probe {
+			CtrlWZoom = false,
+			Inputs = {
+				ImageToProbe = Input {
+					SourceOp = "node_to_probe",
+					Source = "Output",
+				},
+				MinimumValue = Input { Value = 0.5, },
+				MaximumValue = Input { Value = 3, },
+			},
+		},
+		Background4 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 256, },
+				Height = Input { Value = 256, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.690196078431373, },
+				TopLeftBlue = Input { Value = 1, },
+				EffectMask = Input {
+					SourceOp = "Ellipse1",
+					Source = "Mask",
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 3113.23, -11.9717 } },
+		},
+		Ellipse1 = EllipseMask {
+			Inputs = {
+				Filter = Input { Value = FuID { "Fast Gaussian" }, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1 }, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				ClippingMode = Input { Value = FuID { "None" }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2999.45, -11.9717 } },
+		},
+		Background3 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3368.73, -199.767 } },
+		},
+		node_to_probe = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background3",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Transform1",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3368.73, -111.69 } },
+		},
+		Merge2 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "node_to_probe",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Transform2",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3368.73, -11.9717 } },
+		}
+	}
+}

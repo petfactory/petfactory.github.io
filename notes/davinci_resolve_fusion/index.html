@@ -196,6 +196,7 @@
         </li>
       </ul>
     </li>
+    <li><a href="#modifier">Modifier</a></li>
     <li><a href="#graph-editor-spline">Graph Editor (Spline)</a>
       <ul>
         <li><a href="#shortcuts-3">Shortcuts</a></li>
@@ -211,6 +212,7 @@
       </ul>
     </li>
     <li><a href="#gotchas">Gotchas</a></li>
+    <li><a href="#misc-3">Misc</a></li>
   </ul>
 </nav>
 		</aside>	
@@ -793,10 +795,31 @@
 </div></li>
 </ul>
 </li>
+</ul>
+<h3 id="alpha">Alpha</h3>
+<ul>
 <li><strong>Combine Alpha with RGB</strong>
 <ul>
-<li>You can use a <em>Matte Control</em> to combine the alpha of one node with the RGB of another</li>
+<li><em>Matte Control</em>
+<ul>
+<li>Create a Matte Control node</li>
+<li>Connect the node with the RGB data to the Background (orange)</li>
+<li>Connect the node with the Alpha data to the Foreground (green)</li>
+<li>Set Matte Control &gt; Matte &gt; Combine : Combine Alpha</li>
+<li>Set Post Multiply Image : Enabled (At the bottom of the Matte Control node)</li>
+</ul>
+</li>
+<li><em>Channel Booleans</em>
+<ul>
 <li>You can also do this with a channel boolean, but it requires a little more setup</li>
+<li>Create a Channel Booleans node</li>
+<li>Connect the node with the RGB data to the Background (orange)</li>
+<li>Connect the node with the Alpha data to the Foreground (green)</li>
+<li>Set the To Red, To Green, To Blue to Do Nothing</li>
+<li>Make sure To Alpha is set to Alpha FG</li>
+<li>Create an Alpha Multiply node and connect the output of the Channel Booleans to the Input (orange)</li>
+</ul>
+</li>
 <li><div class="clipboard-snippet-wrap">
 
 	
@@ -813,31 +836,19 @@
 	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/combine_alpha_with_rgb.txt">combine_alpha_with_rgb</a>
 	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="{
 	Tools = ordered() {
-		Note1 = Note {
-			Inputs = {
-				Comments = Input { Value = &#34;Matte Control&#34;, }
-			},
-			ViewInfo = StickyNoteInfo {
-				Pos = { 1003.6, -63.1937 },
-				Flags = {
-					Expanded = true
-				},
-				Size = { 322.667, 52.8788 }
-			},
-		},
-		Background2_1 = Background {
+		Background1 = Background {
 			Inputs = {
 				GlobalOut = Input { Value = 119, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
 				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				TopLeftRed = Input { Value = 0.231372549019608, },
-				TopLeftGreen = Input { Value = 0.603921568627451, },
-				TopLeftBlue = Input { Value = 0.854901960784314, },
+				TopLeftRed = Input { Value = 0.850980392156863, },
+				TopLeftGreen = Input { Value = 0.92156862745098, },
+				TopLeftBlue = Input { Value = 0.0941176470588235, },
 				TopLeftAlpha = Input { Value = 0, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 1154.31, 56.9459 } },
+			ViewInfo = OperatorInfo { Pos = { 440.585, -26.251 } },
 		},
 		MatteControl1 = MatteControl {
 			Inputs = {
@@ -845,240 +856,104 @@
 				Filter = Input { Value = FuID { &#34;Fast Gaussian&#34; }, },
 				PostMultiplyImage = Input { Value = 1, },
 				Background = Input {
-					SourceOp = &#34;Background2_1&#34;,
+					SourceOp = &#34;Background1&#34;,
 					Source = &#34;Output&#34;,
 				},
 				Foreground = Input {
-					SourceOp = &#34;Text1_1_1_1_2_1&#34;,
+					SourceOp = &#34;Text1&#34;,
 					Source = &#34;Output&#34;,
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 1154.31, 177.797 } },
+			ViewInfo = OperatorInfo { Pos = { 440.585, 81.1095 } },
 		},
-		Text1_1_1_1_2_1 = TextPlus {
+		Text1 = TextPlus {
 			Inputs = {
 				GlobalOut = Input { Value = 119, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
-				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
-				[&#34;Gamut.GammaSpaceNest&#34;] = Input { Value = 1, },
 				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				Green1 = Input { Value = 0.498039215686275, },
-				Blue1 = Input { Value = 0.250980392156863, },
-				StyledText = Input { Value = &#34;A&#34;, },
+				Red1 = Input { Value = 0.203921568627451, },
+				Green1 = Input { Value = 0.815686274509804, },
+				StyledText = Input { Value = &#34;&#43;&#34;, },
 				Font = Input { Value = &#34;Open Sans&#34;, },
 				Style = Input { Value = &#34;Bold&#34;, },
 				Size = Input { Value = 0.5, },
 				VerticalJustificationNew = Input { Value = 3, },
 				HorizontalJustificationNew = Input { Value = 3, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 1030.05, 177.797 } },
+			ViewInfo = OperatorInfo { Pos = { 314.436, 81.1095 } },
 		},
-		Merge2_1 = Merge {
-			Inputs = {
-				Background = Input {
-					SourceOp = &#34;Background1_1_1_2_1&#34;,
-					Source = &#34;Output&#34;,
-				},
-				Foreground = Input {
-					SourceOp = &#34;MatteControl1&#34;,
-					Source = &#34;Output&#34;,
-				},
-				PerformDepthMerge = Input { Value = 0, },
-			},
-			ViewInfo = OperatorInfo { Pos = { 1458.07, 175.578 } },
-		},
-		Background1_1_1_2_1 = Background {
+		Text1_1 = TextPlus {
 			Inputs = {
 				GlobalOut = Input { Value = 119, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
-				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
-				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
-				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
 				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
-				TopLeftRed = Input { Value = 0.227450980392157, },
-				TopLeftGreen = Input { Value = 0.227450980392157, },
-				TopLeftBlue = Input { Value = 0.227450980392157, },
-				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
-				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
-				Gradient = Input {
-					Value = Gradient {
-						Colors = {
-							[0] = { 0.039, 0.039, 0.039, 1 },
-							[1] = { 1, 1, 1, 1 }
-						}
-					},
-				},
+				Red1 = Input { Value = 0.203921568627451, },
+				Green1 = Input { Value = 0.815686274509804, },
+				StyledText = Input { Value = &#34;&#43;&#34;, },
+				Font = Input { Value = &#34;Open Sans&#34;, },
+				Style = Input { Value = &#34;Bold&#34;, },
+				Size = Input { Value = 0.5, },
+				VerticalJustificationNew = Input { Value = 3, },
+				HorizontalJustificationNew = Input { Value = 3, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 1458.07, 89.6948 } },
+			ViewInfo = OperatorInfo { Pos = { 820.28, -10.6793 } },
 		},
-		MATTE_CONTROL_copy_the_alpha_from_the_text_to_the_bg = Underlay {
+		Matte_Control = Underlay {
 			NameSet = true,
 			ViewInfo = UnderlayInfo {
-				Pos = { 1122.37, 11.8747 },
-				Size = { 333.475, 263.417 }
+				Pos = { 386.467, -66.5347 },
+				Size = { 317.948, 266.766 }
 			},
-			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
 		},
-		MediaOut1_1_1_2_1 = MediaOut {
+		AlphaMultiply1 = AlphaMultiply {
 			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
 				Input = Input {
-					SourceOp = &#34;Merge2_1&#34;,
+					SourceOp = &#34;ChannelBooleans1&#34;,
 					Source = &#34;Output&#34;,
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 1458.07, 290.006 } },
+			ViewInfo = OperatorInfo { Pos = { 945.762, 87.5025 } },
 		},
-		Note1_1 = Note {
-			Inputs = {
-				Comments = Input { Value = &#34;Channel Booleans&#34;, }
-			},
-			ViewInfo = StickyNoteInfo {
-				Pos = { 1958.27, -75.3149 },
-				Flags = {
-					Expanded = true
-				},
-				Size = { 322.667, 52.8788 }
-			},
-		},
-		Text1_1_1_1_2 = TextPlus {
+		Background1_1 = Background {
 			Inputs = {
 				GlobalOut = Input { Value = 119, },
 				Width = Input { Value = 1920, },
 				Height = Input { Value = 1080, },
 				UseFrameFormatSettings = Input { Value = 1, },
-				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
-				[&#34;Gamut.GammaSpaceNest&#34;] = Input { Value = 1, },
 				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				Red1 = Input { Value = 0.698039215686274, },
-				Blue1 = Input { Value = 0.207843137254902, },
-				StyledText = Input { Value = &#34;A&#34;, },
-				Font = Input { Value = &#34;Open Sans&#34;, },
-				Style = Input { Value = &#34;Bold&#34;, },
-				Size = Input { Value = 0.5, },
-				VerticalJustificationNew = Input { Value = 3, },
-				HorizontalJustificationNew = Input { Value = 3, },
+				TopLeftRed = Input { Value = 0.850980392156863, },
+				TopLeftGreen = Input { Value = 0.92156862745098, },
+				TopLeftBlue = Input { Value = 0.0941176470588235, },
+				TopLeftAlpha = Input { Value = 0, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 2010, 146.798 } },
+			ViewInfo = OperatorInfo { Pos = { 945.762, -118.04 } },
 		},
-		merge_over_1 = Underlay {
-			NameSet = true,
-			ViewInfo = UnderlayInfo {
-				Pos = { 1529.01, 54.9421 },
-				Size = { 312.733, 360.269 }
-			},
-			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
-		},
-		ChannelBooleans2 = ChannelBoolean {
+		ChannelBooleans1 = ChannelBoolean {
 			Inputs = {
 				ToRed = Input { Value = 4, },
 				ToGreen = Input { Value = 4, },
 				ToBlue = Input { Value = 4, },
 				Background = Input {
-					SourceOp = &#34;Background2&#34;,
+					SourceOp = &#34;Background1_1&#34;,
 					Source = &#34;Output&#34;,
 				},
 				Foreground = Input {
-					SourceOp = &#34;Text1_1_1_1_2&#34;,
+					SourceOp = &#34;Text1_1&#34;,
 					Source = &#34;Output&#34;,
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 2134.26, 146.798 } },
+			ViewInfo = OperatorInfo { Pos = { 945.762, -10.6793 } },
 		},
-		Background2 = Background {
-			Inputs = {
-				GlobalOut = Input { Value = 119, },
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				TopLeftRed = Input { Value = 0.231372549019608, },
-				TopLeftGreen = Input { Value = 0.603921568627451, },
-				TopLeftBlue = Input { Value = 0.854901960784314, },
-				TopLeftAlpha = Input { Value = 0, },
-			},
-			ViewInfo = OperatorInfo { Pos = { 2134.26, 49.0887 } },
-		},
-		AlphaMultiply1 = AlphaMultiply {
-			Inputs = {
-				Input = Input {
-					SourceOp = &#34;ChannelBooleans2&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 2134.26, 243.65 } },
-		},
-		CHANNEL_BOOLEANS_copy_the_alpha_from_the_text_to_the_bg = Underlay {
+		Channel_Booleans = Underlay {
 			NameSet = true,
 			ViewInfo = UnderlayInfo {
-				Pos = { 2074.12, 3.6624 },
-				Size = { 312.733, 360.269 }
+				Pos = { 890.092, -148.895 },
+				Size = { 347.45, 350.377 }
 			},
-			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
-		},
-		Background1_1_1_2 = Background {
-			Inputs = {
-				GlobalOut = Input { Value = 119, },
-				Width = Input { Value = 1920, },
-				Height = Input { Value = 1080, },
-				UseFrameFormatSettings = Input { Value = 1, },
-				[&#34;Gamut.ColorSpaceNest&#34;] = Input { Value = 1, },
-				[&#34;Gamut.ColorType&#34;] = Input { Value = FuID { &#34;Space&#34; }, },
-				[&#34;Gamut.ColorSpace&#34;] = Input { Value = FuID { &#34;ACEScg&#34; }, },
-				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
-				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
-				TopLeftRed = Input { Value = 0.227450980392157, },
-				TopLeftGreen = Input { Value = 0.227450980392157, },
-				TopLeftBlue = Input { Value = 0.227450980392157, },
-				Start = Input { Value = { 0.373673036093418, 0.890151515151515 }, },
-				End = Input { Value = { 0.976645435244161, 0.0340909090909091 }, },
-				Gradient = Input {
-					Value = Gradient {
-						Colors = {
-							[0] = { 0.039, 0.039, 0.039, 1 },
-							[1] = { 1, 1, 1, 1 }
-						}
-					},
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 2437.52, 155.048 } },
-		},
-		MediaOut1_1_1_2 = MediaOut {
-			Inputs = {
-				Index = Input { Value = &#34;0&#34;, },
-				Input = Input {
-					SourceOp = &#34;Merge2&#34;,
-					Source = &#34;Output&#34;,
-				},
-			},
-			ViewInfo = OperatorInfo { Pos = { 2437.52, 355.36 } },
-		},
-		Merge2 = Merge {
-			Inputs = {
-				Background = Input {
-					SourceOp = &#34;Background1_1_1_2&#34;,
-					Source = &#34;Output&#34;,
-				},
-				Foreground = Input {
-					SourceOp = &#34;AlphaMultiply1&#34;,
-					Source = &#34;Output&#34;,
-				},
-				PerformDepthMerge = Input { Value = 0, },
-			},
-			ViewInfo = OperatorInfo { Pos = { 2437.52, 240.932 } },
-		},
-		merge_over = Underlay {
-			NameSet = true,
-			ViewInfo = UnderlayInfo {
-				Pos = { 2508.46, 98.477 },
-				Size = { 312.733, 382.087 }
-			},
-			Colors = { TileColor = { R = 0.725490196078431, G = 0.690196078431373, B = 0.592156862745098 }, }
 		}
 	}
 }">Ctrl-C</div>
@@ -1091,9 +966,6 @@
 </div></li>
 </ul>
 </li>
-</ul>
-<h3 id="alpha">Alpha</h3>
-<ul>
 <li><strong>Mask to color page</strong><br>
 You might want to output a mask from a fusion comp and use that in the color page. Here is how you do that.
 <ul>
@@ -1175,6 +1047,193 @@ You might want to output a mask from a fusion comp and use that in the color pag
 <li><strong>Merge nodes quickly</strong>
 <ul>
 <li>One quick way to merge a node over another is to drag the <em>Output</em> (square) connector and release it over the Output connector of the node you wish to merge over.</li>
+</ul>
+</li>
+</ul>
+<h1 id="modifier">Modifier</h1>
+<p>With a modifier you can dynamically drive animation. There are various modifier types.</p>
+<ul>
+<li><strong>Probe</strong>
+<ul>
+<li>A Probe modifier lets us &ldquo;probe&rdquo; a node´s pixel data at a specific 2d position. We can then use this data to drive another parameter of a nother node.</li>
+<li>Example:
+<ul>
+<li>In the inspector RMB click the parameter you want to drive &gt; Modify With &gt; Probe</li>
+<li>Switch to the modifier tab</li>
+<li>From the nodegraph, drag the mnode that you wiish to sample and release it in the <em>Image To Probe</em> text field.</li>
+<li>Select which channel to prove and the position</li>
+<li>In the value tab (on the maofifer tab) we can adjust input/output ranges of the probe operation</li>
+</ul>
+</li>
+<li><div class="clipboard-snippet-wrap">
+
+	
+	
+	
+	
+
+	
+
+		
+
+	
+
+	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/modifier_probe.txt">modifier_probe</a>
+	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="{
+	Tools = ordered() {
+		Background2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Type = Input { Value = FuID { &#34;Horizontal&#34; }, },
+				TopRightRed = Input { Value = 1, },
+				TopRightGreen = Input { Value = 1, },
+				TopRightBlue = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3111.34, -111.69 } },
+		},
+		Transform1 = Transform {
+			Inputs = {
+				Center = Input {
+					SourceOp = &#34;Path1&#34;,
+					Source = &#34;Position&#34;,
+				},
+				Input = Input {
+					SourceOp = &#34;Background2&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 3240.51, -111.69 } },
+		},
+		Path1 = PolyPath {
+			DrawMode = &#34;InsertAndModify&#34;,
+			CtrlWZoom = false,
+			Inputs = {
+				Displacement = Input {
+					SourceOp = &#34;Path1Displacement&#34;,
+					Source = &#34;Value&#34;,
+				},
+				PolyLine = Input {
+					Value = Polyline {
+						Points = {
+							{ Linear = true, LockY = true, X = 0, Y = 0, RX = 0.166666666666667, RY = 0 },
+							{ Linear = true, LockY = true, X = 0.5, Y = 0, LX = -0.166666666666667, LY = -0 }
+						}
+					},
+				},
+			},
+		},
+		Path1Displacement = BezierSpline {
+			SplineColor = { Red = 255, Green = 0, Blue = 255 },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, RH = { 8, 0.333333333333333 }, Flags = { Linear = true, LockedY = true } },
+				[24] = { 1, LH = { 16, 0.666666666666667 }, Flags = { Linear = true, LockedY = true } }
+			}
+		},
+		Transform2 = Transform {
+			CtrlWZoom = false,
+			Inputs = {
+				Size = Input {
+					SourceOp = &#34;Probe1&#34;,
+					Source = &#34;Result&#34;,
+				},
+				Input = Input {
+					SourceOp = &#34;Background4&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 3239.56, -11.9717 } },
+		},
+		Probe1 = Probe {
+			CtrlWZoom = false,
+			Inputs = {
+				ImageToProbe = Input {
+					SourceOp = &#34;node_to_probe&#34;,
+					Source = &#34;Output&#34;,
+				},
+				MinimumValue = Input { Value = 0.5, },
+				MaximumValue = Input { Value = 3, },
+			},
+		},
+		Background4 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 256, },
+				Height = Input { Value = 256, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				TopLeftRed = Input { Value = 0.227450980392157, },
+				TopLeftGreen = Input { Value = 0.690196078431373, },
+				TopLeftBlue = Input { Value = 1, },
+				EffectMask = Input {
+					SourceOp = &#34;Ellipse1&#34;,
+					Source = &#34;Mask&#34;,
+				}
+			},
+			ViewInfo = OperatorInfo { Pos = { 3113.23, -11.9717 } },
+		},
+		Ellipse1 = EllipseMask {
+			Inputs = {
+				Filter = Input { Value = FuID { &#34;Fast Gaussian&#34; }, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1 }, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				ClippingMode = Input { Value = FuID { &#34;None&#34; }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 2999.45, -11.9717 } },
+		},
+		Background3 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3368.73, -199.767 } },
+		},
+		node_to_probe = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;Background3&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;Transform1&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3368.73, -111.69 } },
+		},
+		Merge2 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;node_to_probe&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;Transform2&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 3368.73, -11.9717 } },
+		}
+	}
+}">Ctrl-C</div>
+	<div class="clipboard-snippet-info">
+		Example of how you can use a probe modifier to drive a parameter
+		
+		
+	</div>
+
+</div></li>
 </ul>
 </li>
 </ul>
@@ -1281,7 +1340,7 @@ You might want to output a mask from a fusion comp and use that in the color pag
 </ul>
 <h1 id="color-space">Color space</h1>
 <ul>
-<li>Render software
+<li><strong>Render software</strong>
 <ul>
 <li>Make sure you have ACES setup in Houdini or the package you render from
 <ul>
@@ -1290,7 +1349,7 @@ You might want to output a mask from a fusion comp and use that in the color pag
 </li>
 </ul>
 </li>
-<li>Resolve
+<li><strong>Resolve</strong>
 <ul>
 <li>Open DaVince Resolve project settings
 <ul>
@@ -1308,7 +1367,7 @@ You might want to output a mask from a fusion comp and use that in the color pag
 </li>
 </ul>
 </li>
-<li>Fusion
+<li><strong>Fusion</strong>
 <ul>
 <li>The steps above will setup ACES for the Resolve cut, edit, color &amp; deliver page but if we jump into Fusion the default <em>Fusion View LUT</em> is not showing the correct image. If Have not yet found any info on how to set his up so that i works by default.</li>
 <li>The image looks a little washed out, but it might be ok to work with. When we go back to the edit page the iamge will look correct. Obviusly the bset would be to have the correct view lut by default in fusion without haveing to mess to much with lut settings etc.</li>
@@ -1353,11 +1412,31 @@ You might want to output a mask from a fusion comp and use that in the color pag
 <p>You can create multiple versions of a clip to try out different ideas. Click the <strong>Clips</strong> tab in the main menu bar. RMB click on the clip and choose <strong>Create New Composition</strong> from the popup menu.</p>
 <h1 id="gotchas">Gotchas</h1>
 <ul>
-<li>Rename
+<li><strong>Rename</strong>
 <ul>
-<li>You can press F2 to rename.</li>
+<li>You can press F2 to rename.
+<ul>
 <li>If you have multiple nodes seleted, a rename popup will appeare for all selected nodes.</li>
 <li>If you select and underlay, press F2 to rename the popup will appear for all nodes inside the underlay, and you can not escape out. a little weird.</li>
+</ul>
+</li>
+<li>Rename underlay
+<ul>
+<li>If you click and underlay and then rename, you will get promted for all node inside the underlay</li>
+<li>This is simåly because when you click an underlay all nodes gets selected</li>
+<li>To avoid this hold <em>Alt</em> when LMB clicking the underlay to select it. Only the underlay will be selected.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="misc-3">Misc</h1>
+<ul>
+<li><strong>Selection</strong>
+<ul>
+<li>If you LMB click a node it will be set as the active tool</li>
+<li>If you Ctrl + LMB click a node if will just be selected (and not set as active tool)</li>
+<li>If you want to select an underlay (and not its contained nodes) and not make it the active tool press Ctrl + Alt + LMB click</li>
 </ul>
 </li>
 </ul>
