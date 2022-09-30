@@ -721,11 +721,15 @@ margin:-90px 0 0; /* negative fixed header height */
 .toc-aside{
     font-size: .9em;
     font-weight: 500;
-    position: absolute;
-    left: 1010px;
-    width: 450px;
+    position: fixed;
+    right: 0px;
+    width: 310px;
     border-left: 1px dashed #222;
+    overflow-y: auto;
+    top: 100px;
+    bottom: 0px;
     /*background-color: #246;*/
+
 }
 .toc-aside a{
     /*color: #444;*/
