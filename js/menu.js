@@ -1,5 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // TOC
+
+    const toc_btn = document.getElementsByClassName('toc-btn')[0];
+
+    if(toc_btn){
+        toc_btn.addEventListener('click', function(e) {
+
+
+            const toc_aside = document.getElementsByClassName('toc-aside')[0];
+            // console.log(toc_aside.style.right)
+            // console.log(window.getComputedStyle(toc_aside).right)
+            // console.log(toc_aside.style.right=='0px')
+
+            if (window.getComputedStyle(toc_aside).right == "0px") {
+                toc_aside.style.right = "-310px";
+                // console.log('open');
+             }
+             else {
+                toc_aside.style.right = "0px";
+                // console.log('close');
+             }
+
+
+
+            // if (toc_btn.classList.contains('visible')) {
+            //     toc_btn.classList.remove('visible');
+            //     toc_aside.style.right = "0px";
+            //     // console.log('open');
+            //  }
+            //  else {
+            //     toc_btn.classList.add('visible');
+            //     toc_aside.style.right = "-310px";
+            //     // console.log('close');
+            //  }
+
+        }, false);
+    }
+
+
     // unreal snippet --------------------------
 
     const clipboard_snippet_buttons = document.querySelectorAll('.clipboard-snippet-copy-btn');
