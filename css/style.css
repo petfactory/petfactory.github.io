@@ -716,8 +716,8 @@ margin:-90px 0 0; /* negative fixed header height */
 
 .toc-wrap{
     position: fixed;
-    /*display: none;*/
-    display: block;
+    display: none;
+    /*display: block;*/
     z-index: 1;
 }
 .toc-aside{
@@ -938,9 +938,9 @@ margin:-90px 0 0; /* negative fixed header height */
         display: none;
     }
 
-    /*.toc-wrap{
+    .toc-wrap{
         display: block;
-    }*/
+    }
 }
 
 
