@@ -5,13 +5,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const toc_btn = document.getElementsByClassName('toc-btn')[0];
 
     if(toc_btn){
+
+        const toc_content = document.getElementsByClassName('toc-content')[0];
+
         toc_btn.addEventListener('click', function(e) {
 
+             if (toc_content.classList.contains('visible')) {
+                    // console.log('remove');
+                    toc_content.classList.remove('visible');
+             }
+             else {
+                // console.log('add')
+                toc_content.classList.add('disp-block');
+                // seems like we need this for a smooth fade up...
+                // maybe to force some calculation...
+                toc_content.clientWidth;
+                toc_content.classList.add('visible');
+             }
+             
+        }, false);
+    }
+    /*
+    if(toc_btn){
+        toc_btn.addEventListener('click', function(e) {
 
             const toc_aside = document.getElementsByClassName('toc-aside')[0];
-            // console.log(toc_aside.style.right)
-            // console.log(window.getComputedStyle(toc_aside).right)
-            // console.log(toc_aside.style.right=='0px')
 
             if (window.getComputedStyle(toc_aside).right == "0px") {
                 toc_aside.style.right = "-310px";
@@ -21,23 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 toc_aside.style.right = "0px";
                 // console.log('close');
              }
-
-
-
-            // if (toc_btn.classList.contains('visible')) {
-            //     toc_btn.classList.remove('visible');
-            //     toc_aside.style.right = "0px";
-            //     // console.log('open');
-            //  }
-            //  else {
-            //     toc_btn.classList.add('visible');
-            //     toc_aside.style.right = "-310px";
-            //     // console.log('close');
-            //  }
-
         }, false);
     }
-
+    */
 
     // unreal snippet --------------------------
 
@@ -67,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
          else {
             // console.log('add')
             menu_wrap.classList.add('disp-block');
+            // seems like we need this for a smooth fade up...
+            // maybe to force some calculation...
             menu_wrap.clientWidth;
             menu_wrap.classList.add('visible');
          }
