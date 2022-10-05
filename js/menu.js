@@ -24,24 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
              }
              
         }, false);
-    }
-    /*
-    if(toc_btn){
-        toc_btn.addEventListener('click', function(e) {
 
-            const toc_aside = document.getElementsByClassName('toc-aside')[0];
+        toc_content.addEventListener('click', function(e) {
 
-            if (window.getComputedStyle(toc_aside).right == "0px") {
-                toc_aside.style.right = "-310px";
-                // console.log('open');
-             }
-             else {
-                toc_aside.style.right = "0px";
-                // console.log('close');
-             }
+            var inner_width = window.innerWidth;
+            if (inner_width < 800) {
+                // console.log('Less than 800 -> ' + inner_width);
+                toc_content.classList.remove('visible');
+            }
+            
         }, false);
     }
-    */
+
 
     // unreal snippet --------------------------
 
