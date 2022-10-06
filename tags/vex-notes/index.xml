@@ -17,8 +17,7 @@
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.
-pscale float ps_life = chramp(&amp;#39;ps_life&amp;#39;, @nage);float ps_bias = fit01(chramp(&amp;#39;ps_bias&amp;#39;, rand(@id)), chf(&amp;#39;ps_min&amp;#39;), chf(&amp;#39;ps_max&amp;#39;));@pscale = ps_life*ps_bias*chf(&amp;#39;ps_mult&amp;#39;);String Regex Replace</description>
+      <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Matrix  Get matrix vector components  You can use getcomp function&amp;hellip; getcomp(&amp;lt;matrix&amp;gt;m, int row, int column) &amp;hellip;but you can also access components using m.xx, m.xy, m.xz etc&amp;hellip; matrix3 rm = qconvert(p@orient);vector v = set(rm.zx, rm.zy, rm.zz);    pscale We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.</description>
     </item>
     
     <item>

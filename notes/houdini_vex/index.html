@@ -176,6 +176,7 @@
     </li>
     <li><a href="#transform">Transform</a>
       <ul>
+        <li><a href="#matrix">Matrix</a></li>
         <li><a href="#pscale">pscale</a></li>
       </ul>
     </li>
@@ -230,8 +231,22 @@ vector4 quat <span style="color:#f92672">=</span> quaternion(<span style="color:
 setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, pnt, quat);
 setattribtypeinfo(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>point<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>quaternion<span style="color:#960050;background-color:#1e0010">&#39;</span>);
 </code></pre></div><h1 id="transform">Transform</h1>
-<p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
+<h2 id="matrix">Matrix</h2>
+<ul>
+<li>Get matrix vector components
+<ul>
+<li>You can use getcomp function&hellip;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">getcomp(<span style="color:#f92672">&lt;</span>matrix<span style="color:#f92672">&gt;</span>m, <span style="color:#66d9ef">int</span> row, <span style="color:#66d9ef">int</span> column)
+</code></pre></div></li>
+<li>&hellip;but you can also access components using m.xx, m.xy, m.xz etc&hellip;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">matrix3 rm <span style="color:#f92672">=</span> qconvert(p<span style="color:#960050;background-color:#1e0010">@</span>orient);
+vector v <span style="color:#f92672">=</span> set(rm.zx, rm.zy, rm.zz);
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 <h2 id="pscale">pscale</h2>
+<p>We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.e. normalized age an attr that comes by default when we do a popsim), min and max scale as well as an overall multiplier.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">float</span> ps_life <span style="color:#f92672">=</span> chramp(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_life<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">@</span>nage);
 <span style="color:#66d9ef">float</span> ps_bias <span style="color:#f92672">=</span> fit01(chramp(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_bias<span style="color:#960050;background-color:#1e0010">&#39;</span>, rand(<span style="color:#960050;background-color:#1e0010">@</span>id)), chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_min<span style="color:#960050;background-color:#1e0010">&#39;</span>), chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_max<span style="color:#960050;background-color:#1e0010">&#39;</span>));
 <span style="color:#960050;background-color:#1e0010">@</span>pscale <span style="color:#f92672">=</span> ps_life<span style="color:#f92672">*</span>ps_bias<span style="color:#f92672">*</span>chf(<span style="color:#960050;background-color:#1e0010">&#39;</span>ps_mult<span style="color:#960050;background-color:#1e0010">&#39;</span>);

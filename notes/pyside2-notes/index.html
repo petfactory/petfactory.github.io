@@ -169,15 +169,20 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#general">General</a>
       <ul>
         <li><a href="#install-pyside2">Install PySide2</a></li>
         <li><a href="#hello-world-app">Hello World app</a></li>
       </ul>
     </li>
+    <li><a href="#data">Data</a></li>
     <li><a href="#custom-painting">Custom Painting</a>
       <ul>
-        <li><a href="#style-sheets">Style Sheets</a></li>
+        <li><a href="#style-sheets">Style Sheets</a>
+          <ul>
+            <li><a href="#colored-border">Colored Border</a></li>
+          </ul>
+        </li>
         <li><a href="#empty-model">Empty Model</a></li>
       </ul>
     </li>
@@ -213,7 +218,8 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>PySide2 - Notes</h1>
-			<h2 id="install-pyside2">Install PySide2</h2>
+			<h1 id="general">General</h1>
+<h2 id="install-pyside2">Install PySide2</h2>
 <p>To install PySide2 (including Shiboken2 &amp; Qt) make sure that we first activate our 
 <a href="https://www.petfactory.se/notes/python/#venv">venv</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">pip install PySide2
@@ -249,9 +255,33 @@
     w <span style="color:#f92672">=</span> HelloWidget()
     w<span style="color:#f92672">.</span>show()
     app<span style="color:#f92672">.</span>exec_()
-</code></pre></div><h1 id="custom-painting">Custom Painting</h1>
+</code></pre></div><h1 id="data">Data</h1>
+<ul>
+<li><strong>Clipboard</strong>
+<ul>
+<li>Data to clipboard
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtWidgets
+clipboard <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QApplication<span style="color:#f92672">.</span>clipboard()
+clipboard<span style="color:#f92672">.</span>setText(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h1 id="custom-painting">Custom Painting</h1>
 <h2 id="style-sheets">Style Sheets</h2>
-<p>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc. But I also wanted to be able to set the color of the arrow.
+<h3 id="colored-border">Colored Border</h3>
+<p>Here is a way to draw a colored bottom border to your line edits. Can be handy if you want to color code them rgb / xyz (like in Houdini). <em>Note!</em> you need to apply the style sheet with different hex value of the third component of the <em>border-color</em> property.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ss <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">QLineEdit {
+</span><span style="color:#e6db74">    border-width: 2px;
+</span><span style="color:#e6db74">    border-style: solid;
+</span><span style="color:#e6db74">    border-color: #2C2C2C #2C2C2C #B33921 #000000;
+</span><span style="color:#e6db74">    /*border-right-style:none*/;
+</span><span style="color:#e6db74">};&#39;&#39;&#39;</span>
+line_edit <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QLineEdit()
+line_edit<span style="color:#f92672">.</span>setStyleSheet(ss)
+
+</code></pre></div><p>I am working on a custom widget to create a collapsable frame, like the one used in the Maya attribute editor. In this widget I have a label and an arrow to indicate the expanded/collapsed state of the widget. I wanted to learn how to implement a stylesheet to be able to set a few visual properties of the widget. Some of the properties comes for free like the background-color, border-radius, font-size and color etc. But I also wanted to be able to set the color of the arrow.
 The image below is an example of a simplified version of the widget.</p>
 <p><img src="https://www.petfactory.se/images/custom_stylesheet.png" alt="stylesheet and custom drawing"></p>
 <p>In the article &ldquo;Qt Style Sheets and Custom Painting Example&rdquo; from the 
