@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heightfield-notes on Petfactory</title>
+    <link>https://www.petfactory.se/tags/heightfield-notes/</link>
+    <description>Recent content in Heightfield-notes on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Oct 2022 14:24:14 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/heightfield-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini - Heightfield</title>
+      <link>https://www.petfactory.se/notes/houdini_heightfield/</link>
+      <pubDate>Tue, 11 Oct 2022 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_heightfield/</guid>
+      <description>hf_tests_01.hiplcSome sample setups using hf wrangle </description>
+    </item>
+    
+  </channel>
+</rss>

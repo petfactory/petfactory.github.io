@@ -1,0 +1,11 @@
+int num = chi('num');
+float inc = 1.0/(num-1);
+vector center = chi('use_center') ? chv('center') : {0,0,0};
+vector rot_offset = chi('use_rot') ? chv('rot_offset') : {0,0,0};
+vector4 orient = eulertoquaternion(radians(rot_offset), XFORM_XYZ);
+for(int i=0; i<num; i++){
+    float pscale = fit01(chramp('scale', i*inc), chf('scale_min'), chf('scale_max'))*chf('scale_mult');
+    int pnt = addpoint(0, center);
+    setpointattrib(0, 'pscale', pnt, pscale);
+    setpointattrib(0, 'orient', pnt, orient);
+}

@@ -1,0 +1,8 @@
+int pnts[] = primpoints(0, @primnum);
+int num = len(pnts);
+int i;
+float inc = 1.0/(num-1);
+for(i=0; i<num; i++){
+    float pscale = fit01(chramp('pscale', inc*i), chf('pscale_min'), chf('pscale_max'))*chf('pscale_mult');
+    setpointattrib(0, 'pscale', pnts[i], pscale);
+}

@@ -1,0 +1,31 @@
+int num_prims = nprimitives(0);
+int i, j, pnt_0, pnt_1, pnt_2, pnt_3, prim_id;
+vector p0, p1, p2, p3;
+for(i=0; i<num_prims-1; i++){
+    
+    int pnts[] = primpoints(0, i);
+    int pnts_next[] = primpoints(0, i+1);
+    int num_pnts = len(pnts);
+    int num_pnts_next = len(pnts_next);
+    
+    for(j=0; j<num_pnts-1; j++){
+        
+        p0 = point(0, 'P', pnts[j]);
+        p1 = point(0, 'P', pnts[j+1]);
+        p2 = point(0, 'P', pnts_next[j+1]);
+        p3 = point(0, 'P', pnts_next[j]);
+        
+        pnt_0 = addpoint(0, p0);
+        pnt_1 = addpoint(0, p1);
+        pnt_2 = addpoint(0, p2);
+        pnt_3 = addpoint(0, p3);
+        
+        setpointattrib(0, 'prim_id', pnt_0, i);
+        setpointattrib(0, 'prim_id', pnt_1, i);
+        setpointattrib(0, 'prim_id', pnt_2, i+1);
+        setpointattrib(0, 'prim_id', pnt_3, i+1);
+        
+        int prim = addprim(0, 'poly', pnt_0, pnt_1, pnt_2, pnt_3);
+        setprimgroup(0, 'new_quads', prim, 1);
+    }
+}

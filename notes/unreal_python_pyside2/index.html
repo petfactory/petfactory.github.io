@@ -169,10 +169,15 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
-    <li><a href="#enable-python">Enable Python</a>
+    <li><a href="#python-plugin">Python plugin</a>
       <ul>
-        <li><a href="#python-version">Python Version</a></li>
-        <li><a href="#pyside2">PySide2</a>
+        <li><a href="#developer-mode">Developer Mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#python-version">Python Version</a></li>
+    <li><a href="#pyside2">PySide2</a>
+      <ul>
+        <li>
           <ul>
             <li><a href="#example">Example</a></li>
           </ul>
@@ -180,6 +185,11 @@
       </ul>
     </li>
     <li><a href="#init-script">Init Script</a></li>
+    <li><a href="#snippets">Snippets</a>
+      <ul>
+        <li><a href="#assets">Assets</a></li>
+      </ul>
+    </li>
     <li><a href="#docs">Docs</a></li>
   </ul>
 </nav>	
@@ -199,16 +209,27 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE4 - Python / PySide2</h1>
-			<h1 id="enable-python">Enable Python</h1>
+			<h1 id="python-plugin">Python plugin</h1>
 <p>Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.</p>
 <ul>
 <li>Edit &gt; Plugins &gt; Scripting &gt;
 <ul>
-<li>Python Editor Script Plugin : <strong>Enable</strong></li>
+<li>Python Editor Script Plugin</li>
+<li>Sequencer Scripting</li>
+<li>etc &hellip;</li>
 </ul>
 </li>
 </ul>
-<p>Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs. The stub file will be found here: <strong>Your Project &gt; Intermediate &gt; PythonStub &gt; unreal.py</strong>. The stub file is generated every time the editor starts and is generated with your exact set of available code, plugins etc. Note that the file is quite large, about 10 mb, so your might have to increase the parsing limit of your external IDE to get the auto-complete working.</p>
+<h2 id="developer-mode">Developer Mode</h2>
+<p>The <em>developer mode</em> will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs. The stub file will be found here: <strong>Your Project &gt; Intermediate &gt; PythonStub &gt; unreal.py</strong>. The stub file is generated every time the editor starts and is generated with your exact set of available code, plugins etc. Note that the file is quite large, about 10 mb, so your might have to increase the parsing limit of your external IDE to get the auto-complete working.</p>
+<ul>
+<li>Edit &gt; Editor Preferences &gt; Plugins &gt; Python
+<ul>
+<li>Developer Mode : <strong>Enable</strong></li>
+</ul>
+</li>
+</ul>
+<p>You can also enable it on a project basis. <strong>Note!</strong> The tooltip of this setting informs us that &ldquo;Most of the time you want to enable <em>bDeveloperMode</em> in the Editor Preferences instead&rdquo;.</p>
 <ul>
 <li>Edit &gt; Project Settings &gt; Plugins &gt; Python
 <ul>
@@ -218,7 +239,7 @@
 </ul>
 <p>We can find the output log here:</p>
 <ul>
-<li>Windows &gt; Developer Tools &gt; Output Log
+<li>Windows &gt; Output Log
 <ul>
 <li>With the bottom-left dropdown you can switch between:
 <ul>
@@ -230,14 +251,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="python-version">Python Version</h2>
-<p>I am using Unreal 4.26 and it uses Python 3.7 by default. The path to the Python location is:</p>
+<h1 id="python-version">Python Version</h1>
+<p>I am using Unreal 5.0 and it uses Python 3.9.7 by default. The path to the Python location is:</p>
 <ul>
-<li>C:\Program Files\Epic Games\UE_4.26\Engine\Binaries\ThirdParty\Python3\Win64</li>
+<li>C:\Program Files\Epic Games\UE_5.0\Engine\Binaries\ThirdParty\Python3\Win64</li>
 </ul>
-<p>You can not change the version of Python in a binary build (a build from the launcher). This is because the Python plugin needs to be recompiled. If you are using a source build, the simplest way of replacing the Pyhon version is to setr an environment variable called &ldquo;UE_PYTHON_DIR&rdquo; and point that to the Python installation you wish to use. The downside to this is that it is not very portable since it ends up baking a path into your build to a local Python SDK. This means that if it were run on another system the user must have the same version of python in the same place. A better way to replace the Python version is to replace the Python version that are shipped with the engine. Theese are stored inside the Third Party directory and then rebuild. Because the location is inside the engine path it will be portable.</p>
-<h2 id="pyside2">PySide2</h2>
-<p>If you look inside the python install dir you can se pip there. I read somewhere that you can just use pip to install PySide in the python dir that comes with unreal. I have not tried that yet. Instead I just created a virtual env elsewhere, installed Pyside2 in that env and pointed unreal to the site-packages of that install. See this post to 
+<p>You can not change the version of Python in a binary build (a build from the launcher). This is because the Python plugin needs to be recompiled. If you are using a source build, the simplest way of replacing the Pyhon version is to set an environment variable called &ldquo;UE_PYTHON_DIR&rdquo; and point that to the Python installation you wish to use. The downside to this is that it is not very portable since it ends up baking a path into your build to a local Python SDK. This means that if it were run on another system the user must have the same version of python in the same place. A better way to replace the Python version is to replace the Python version that are shipped with the engine. Theese are stored inside the Third Party directory and then rebuild. Because the location is inside the engine path it will be portable.</p>
+<h1 id="pyside2">PySide2</h1>
+<p>If you look inside the python install dir you can se pip there. I read somewhere that you can just use pip to install PySide2 in the python dir that comes with unreal. I have not tried that yet. Instead I just created a virtual env elsewhere, installed Pyside2 in that env and pointed unreal to the site-packages of that install. See this post to 
 <a href="https://www.petfactory.se/notes/pyside2/"> setup a virtual environment</a></p>
 <p>Then we need to point to the site-pacakges dir.</p>
 <ul>
@@ -285,13 +306,21 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
 os<span style="color:#f92672">.</span>startfile(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
 <span style="color:#75715e"># LogPython: Error: FileNotFoundError: [WinError 2] The system cannot find the file specified: &#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>
-</code></pre></div><p>Create the dirctory manually or run the following snippet in the console:</p>
+</code></pre></div><p>Create the directory manually or run the following snippet in the console:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">os<span style="color:#f92672">.</span>makedirs(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
 os<span style="color:#f92672">.</span>startfile(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
 <span style="color:#75715e"># the dir should pop open</span>
 </code></pre></div><p>Unreal will execute all files named <strong>init_unreal.py</strong> that are found on the sys.path. So lets createa file called that and add the followinf to that file.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unreal
 unreal<span style="color:#f92672">.</span>log_warning(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</code></pre></div><h1 id="snippets">Snippets</h1>
+<h2 id="assets">Assets</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">package_path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>package_path_le<span style="color:#f92672">.</span>text()
+sequence_name <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>sequence_name_le<span style="color:#f92672">.</span>text()
+asset_path <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{package_path}/{sequence_name}&#39;</span>
+
+asset_data <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>EditorAssetLibrary<span style="color:#f92672">.</span>find_asset_data(asset_path)
+
 </code></pre></div><h1 id="docs">Docs</h1>
 <ul>
 <li>

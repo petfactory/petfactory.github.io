@@ -88,8 +88,8 @@ Install First we click the plus icon and select the version. When we click the i
       <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
-      <description>Enable Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
- Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code.</description>
+      <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
     </item>
     
   </channel>

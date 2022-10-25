@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Houdini - KineFX</title>
-        <meta name="description" content="Petfactory | Design and Animation | Houdini - KineFX" />
+        <title>Petfactory | Houdini - Heightfield</title>
+        <meta name="description" content="Petfactory | Design and Animation | Houdini - Heightfield" />
 
     </head>
 
@@ -167,15 +167,7 @@
 	<div class="toc-wrap">
 		<aside class="toc-aside">
 			<div class="toc-content visible">
-				<nav id="TableOfContents">
-  <ul>
-    <li><a href="#capture">Capture</a>
-      <ul>
-        <li><a href="#biharmonic-capture">Biharmonic Capture</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>	
+				<nav id="TableOfContents"></nav>	
 			</div>
 			<div class="toc-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
   <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -191,36 +183,17 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Houdini - KineFX</h1>
-			<h1 id="capture">Capture</h1>
-<h2 id="biharmonic-capture">Biharmonic Capture</h2>
-<ul>
-<li>Create Geometry node and step in</li>
-<li>Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture)</li>
-<li>Add a <strong>Skeleton</strong> node and add joints.</li>
-<li>Append a <strong>Bone Capture Lines</strong> node to the skeleton node.</li>
-<li>Then we need to create a &ldquo;Tet-mesh&rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a <strong>Tet Embed</strong> node or use a <strong>Remesh</strong> node to remesh and use a <strong>Tet Conform</strong> node to create a Tet-mesh based on the triangles created by the remesh node.
-<ul>
-<li><strong>Tet Embed</strong> (Alt 1)
-<ul>
-<li>Create a Tet Embed node and connect the mesh (that we want to capture) to the first input and connect the output of the Bone Captue Lines to the second input</li>
-</ul>
-</li>
-<li><strong>Remesh / Tet Conform</strong> (Alt 2)
-<ul>
-<li>Append a remesh node to the mesh (that we want to capture) and adjust the target size to get the triangle size you want.</li>
-<li>Create a Tet Conform node and connect the Remesh node to the first input and connect the output of the Bone Captue Lines to the second input</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Create a <strong>Bone Capture Biharmonic</strong> node. Connect the mesh (that we want to capture) to the first input and connect the output of the Tet Conform or Tet Embed node (depending on which you used) to the second input.</li>
-<li>Create a <strong>Bone Deform</strong> Node and connect the output from the Bone Capture Biharmonic node to the first input, the <strong>Skeleton</strong> (the rest pose) to the second input.</li>
-<li>Create a <strong>Rig Pose</strong> node and connect the skeleton to the input, then we will connect the output of the Rig Pose to the <em>third</em> input of the Bode Deform node.</li>
-<li>Now the mesh will be deformed if we transform the skeleton thorugh the Rig Pose node.</li>
-</ul>
-<p>
-<a href="https://www.youtube.com/watch?v=miwEX8vR_2c" target="_blank" rel="noopener">Biharmonic Capture | KineFX Quickstart</a></p>
+			<h1>Houdini - Heightfield</h1>
+			<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/hf_tests_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">hf_tests_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Some sample setups using hf wrangle</span>
+
+</div>
 		
 		</div>
 	</div>

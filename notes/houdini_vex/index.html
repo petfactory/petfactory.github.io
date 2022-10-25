@@ -176,6 +176,7 @@
     </li>
     <li><a href="#transform">Transform</a>
       <ul>
+        <li><a href="#quaternion">Quaternion</a></li>
         <li><a href="#matrix">Matrix</a></li>
         <li><a href="#pscale">pscale</a></li>
       </ul>
@@ -231,9 +232,20 @@ vector4 quat <span style="color:#f92672">=</span> quaternion(<span style="color:
 setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, pnt, quat);
 setattribtypeinfo(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>point<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>quaternion<span style="color:#960050;background-color:#1e0010">&#39;</span>);
 </code></pre></div><h1 id="transform">Transform</h1>
+<h2 id="quaternion">Quaternion</h2>
+<ul>
+<li><strong>Quaternion to Euler</strong>
+<ul>
+<li>Specify the rotation order with the order integer. Use the constants defined in $HH/vex/include/math.h (for example, XFORM_XYZ)</li>
+<li><em>Note!</em> You do not need to include math.h in a wrangle (like this: #include &lt;math.h&gt;) it is included by default.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">vector euler <span style="color:#f92672">=</span> degrees(quaterniontoeuler(p<span style="color:#960050;background-color:#1e0010">@</span>orient, XFORM_XYZ));
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 <h2 id="matrix">Matrix</h2>
 <ul>
-<li>Get matrix vector components
+<li><strong>Get matrix components</strong>
 <ul>
 <li>You can use getcomp function&hellip;
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">getcomp(<span style="color:#f92672">&lt;</span>matrix<span style="color:#f92672">&gt;</span>m, <span style="color:#66d9ef">int</span> row, <span style="color:#66d9ef">int</span> column)

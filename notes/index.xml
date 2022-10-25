@@ -6,10 +6,19 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2022 22:03:02 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 11 Oct 2022 14:24:14 +0200</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini - Heightfield</title>
+      <link>https://www.petfactory.se/notes/houdini_heightfield/</link>
+      <pubDate>Tue, 11 Oct 2022 14:24:14 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini_heightfield/</guid>
+      <description>hf_tests_01.hiplcSome sample setups using hf wrangle </description>
+    </item>
     
     <item>
       <title>UE5 - Materials</title>
@@ -117,8 +126,8 @@ Install First we click the plus icon and select the version. When we click the i
       <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
-      <description>Enable Python Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
- Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin : Enable    Optionally we can also enable developer mode (on a per project basis). This will wnable extra warnings eg for deprecated code.</description>
+      <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
     </item>
     
     <item>
@@ -329,8 +338,7 @@ Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that r
       <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/davinci_resolve_edit/</guid>
-      <description>Quick tips  Auto Save  Auto save (live save) is on by default and you might want to turn it off. DaVinci Resolve &amp;gt; Preferences &amp;gt; Project Save and Load &amp;gt; Save Settings &amp;gt; Live save   Keyboard Customization    DaVinci Resolve &amp;gt; Keyboard Customization
-    Project settings  Shift 9 click the home icon in the lower right corner of the main ui   File &amp;gt; Project Settings</description>
+      <description>Quick tips  Import png &amp;amp; jpeg as a sequence  By default it seems like exr will import as a sequence but jpeg and png as stills. If you want to import png &amp;amp; jpeg as sequences  On the media page, click on the &amp;ldquo;3 dot menu&amp;rdquo; in the Media Storage section (top left) Frame Display Mode &amp;gt; Sequence     Auto Save  Auto save (live save) is on by default and you might want to turn it off.</description>
     </item>
     
     <item>
@@ -358,7 +366,7 @@ Below are some lines form the docs The Pyro Source SOP converts its input geomet
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
-      <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Matrix  Get matrix vector components  You can use getcomp function&amp;hellip; getcomp(&amp;lt;matrix&amp;gt;m, int row, int column) &amp;hellip;but you can also access components using m.xx, m.xy, m.xz etc&amp;hellip; matrix3 rm = qconvert(p@orient);vector v = set(rm.zx, rm.zy, rm.zz);    pscale We have control over the distribution of various sizes (bias), the size over life (note that we use the internal @nage i.</description>
+      <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Quaternion  Quaternion to Euler  Specify the rotation order with the order integer. Use the constants defined in $HH/vex/include/math.h (for example, XFORM_XYZ) Note! You do not need to include math.h in a wrangle (like this: #include &amp;lt;math.h&amp;gt;) it is included by default. vector euler = degrees(quaterniontoeuler(p@orient, XFORM_XYZ));    Matrix  Get matrix components  You can use getcomp function&amp;hellip; getcomp(&amp;lt;matrix&amp;gt;m, int row, int column) &amp;hellip;but you can also access components using m.</description>
     </item>
     
     <item>
