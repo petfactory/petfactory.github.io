@@ -348,7 +348,7 @@ h3 {
     text-align: center;
     position: absolute;
     top: 15px;
-    right: 10px;
+    right: 60px;
     border: 1px solid #222;
     font-size: .9em;
     transition-duration: 0.4s;
@@ -359,6 +359,28 @@ h3 {
     background-color: #333;
     border: 1px solid #e83e8c;
 }
+
+.clipboard-snippet-expand-btn{
+    width: 40px;
+    background-color: #222;
+    height: 23px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border: 1px solid #222;
+    font-size: .9em;
+    transition-duration: 0.4s;
+    color: #e83e8c;
+}
+
+.clipboard-snippet-expand-btn:hover{
+    background-color: #333;
+    border: 1px solid #e83e8c;
+}
+
 
 /*
 ---------------
@@ -701,7 +723,8 @@ the code hightlight divs on ios*/
 
 
 .vex-snippet {
-    font-size: 0.7em;
+    font-size: 0.8em;
+    display: none;
 }
 
 /*

@@ -21,6 +21,25 @@
     </item>
     
     <item>
+      <title>UE5 - Sequencer &amp; Movie Render Queue</title>
+      <link>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</link>
+      <pubDate>Sat, 01 Oct 2022 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</guid>
+      <description>Resources Epic  Rendering High Quality Frames with Movie Render Queue  </description>
+    </item>
+    
+    <item>
+      <title>UE5 - Python &amp; PySide2</title>
+      <link>https://www.petfactory.se/notes/ue5_python_pyside2/</link>
+      <pubDate>Thu, 01 Sep 2022 15:03:19 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_python_pyside2/</guid>
+      <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
+    </item>
+    
+    <item>
       <title>Still Life - 01</title>
       <link>https://www.petfactory.se/work/still_life_01/</link>
       <pubDate>Thu, 25 Aug 2022 15:20:58 +0100</pubDate>
@@ -104,8 +123,7 @@ Mocap from: Mixamo</description>
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5_cinematics/</guid>
-      <description>Sequencer Tips This is a good lecture on sequencer.
- Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.</description>
+      <description>Sequencer Tips  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.  A master sequence will contain sub-sequences and level sequences A master sequence is a cointainer of shots   A clean Master sequence  The idea is to keep a master sequence quite clean (and have the complexity such as keyframes, effects etc in sub-sequences) to make it possible for a quick edit at the top level.</description>
     </item>
     
     <item>
@@ -167,16 +185,6 @@ Install First we click the plus icon and select the version. When we click the i
       
       <guid>https://www.petfactory.se/notes/houdini_kinefx/</guid>
       <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
-    </item>
-    
-    <item>
-      <title>UE4 - Python / PySide2</title>
-      <link>https://www.petfactory.se/notes/unreal_python_pyside2/</link>
-      <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
-      <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
- Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
     </item>
     
     <item>

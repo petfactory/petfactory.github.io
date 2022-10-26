@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | UE5 - Cinematics</title>
-        <meta name="description" content="Petfactory | Design and Animation | UE5 - Cinematics" />
+        <title>Petfactory | UE5 - Sequencer &amp; Movie Render Queue</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 - Sequencer &amp; Movie Render Queue" />
 
     </head>
 
@@ -169,24 +169,9 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
-    <li><a href="#sequencer">Sequencer</a>
+    <li><a href="#resources">Resources</a>
       <ul>
-        <li><a href="#tips">Tips</a></li>
-        <li><a href="#manual-setup">Manual setup</a></li>
-        <li><a href="#add-actors">Add actors</a>
-          <ul>
-            <li><a href="#static-mesh">Static Mesh</a></li>
-            <li><a href="#camera">Camera</a></li>
-          </ul>
-        </li>
-        <li><a href="#general">General</a>
-          <ul>
-            <li><a href="#takes">Takes</a></li>
-            <li><a href="#camera-1">Camera</a></li>
-            <li><a href="#curve-editor">Curve Editor</a></li>
-          </ul>
-        </li>
-        <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#epic">Epic</a></li>
       </ul>
     </li>
   </ul>
@@ -206,218 +191,12 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>UE5 - Cinematics</h1>
-			<h1 id="sequencer">Sequencer</h1>
-<h2 id="tips">Tips</h2>
+			<h1>UE5 - Sequencer &amp; Movie Render Queue</h1>
+			<h1 id="resources">Resources</h1>
+<h2 id="epic">Epic</h2>
 <ul>
-<li>Tips
-<ul>
-<li>Organize the project using <strong>Levels</strong> so that multiple people can work on different parts of the project without bottlenecks.</li>
-<li>Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render)</li>
-<li>A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.
-<ul>
-<li>A master sequence will contain sub-sequences and level sequences</li>
-<li>A master sequence is a cointainer of shots</li>
-</ul>
-</li>
-<li>A <strong>clean Master</strong> sequence
-<ul>
-<li>The idea is to keep a master sequence quite clean (and have the complexity such as keyframes, effects etc in sub-sequences) to make it possible for a quick edit at the top level.</li>
-</ul>
-</li>
-<li>Keyframe interpolation types (Keyboard shortcuts)
-<ul>
-<li>1 - Cubic (Auto)</li>
-<li>2 - Cubic (User)</li>
-<li>3 - Cubic (break)</li>
-<li>4 - Linear</li>
-<li>5 - Constant</li>
-</ul>
-</li>
-<li>Mocap clips can be blended, and trimmed</li>
-<li>You can select the <strong>Cinematic Vieport</strong> through the vieport dropdown at the top left of the 3d viewport</li>
-<li>Go to Frame - <strong>Ctrl G</strong></li>
-<li>Move Clip - <strong>Ctrl M</strong>
-<ul>
-<li>This will bring up a menu where you can specify number of frames to mopve etc</li>
-<li>This can also be used to move a group of things</li>
-</ul>
-</li>
-<li>Move forward 1 frame - <strong>Right Arrow</strong></li>
-<li>Move back 1 frame - <strong>Left Arrow</strong></li>
-<li>Move to start <strong>Up arrow</strong></li>
-<li>Play/Pause - <strong>Spacebar</strong></li>
-<li>NLE shuttle - <strong>J K L</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="manual-setup">Manual setup</h2>
-<p>Lets do a manual setup of a master sequence and a level sequences from the &ldquo;bottom up&rdquo;</p>
-<ul>
-<li>In the content browser create a folder that will house the sequences
-<ul>
-<li>You could for instance create a folder called &ldquo;Cinematics&rdquo;</li>
-<li>In that folder we will create a folder called &ldquo;Sequences&rdquo;</li>
-<li>And in this folder we will create folder for our project called &ldquo;Demo&rdquo;</li>
-</ul>
-</li>
-<li>In the desired folder (in our case &ldquo;Demo&rdquo;) RMB click in the content browser Animation &gt; Level Sequence and call it &ldquo;Master&rdquo;. This will be our master sequence.</li>
-<li>Double click the &ldquo;Master&rdquo; sequence to open it up in sequencer</li>
-<li>In the top left corner of the sequencer window LMB click the <strong>+TRACK</strong> button to open a menu that will allow us to add stuff. Or alternatively <strong>RMB click</strong> the left part of the sequence window.
-<ul>
-<li>Select the <strong>Shot Track</strong> from the menu.</li>
-<li>On the right hand side of the shot we just added you will se a <strong>+</strong> button (that when hoovered will turn into +Shot) click this button.</li>
-<li>From the top of the list select <strong>Insert Shot</strong>
-<ul>
-<li>This will pop up a window that propts us to save the assets. The save location that unreal suggests is usually a quite good. Verify that the save location is what you want and select save. <strong>Note</strong> that the &ldquo;_01&rdquo; at the end is used for the take number.</li>
-</ul>
-</li>
-<li>Now a shot will be added to the sequencer, and you can jump into the shot sequence by double clicking the shot in the timeline (left hand side) of the sequencer window.
-<ul>
-<li>Also note that you get a breadcrumb navigation style in the top right part of the sequencer window when tou step into the shot.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Add another shot
-<ul>
-<li>Duplicate
-<ul>
-<li>We could also duplicate the first shot to create a second shot. This can be good is we want to reuse some of the stuff we set up in the first shot, but change some of the things.</li>
-<li>Make sure that you are in the master sequence RMB click the shot you want to duplicatye &gt; Duplicate Shot
-<ul>
-<li>This will promt yopu with a new save location, make sure it is fine and hit save</li>
-<li>It seems like this will not add a new shot folder but instead add the shot in the same folder as the one we duplicated.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>New
-<ul>
-<li>To add a second shot we do not add a second shot track (it will be greyed out in the top left menu)</li>
-<li>Instead we use the <strong>+</strong> button on the right hand side of the shot track.</li>
-<li>This will create a new shot folder for the shot.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="add-actors">Add actors</h2>
-<h3 id="static-mesh">Static Mesh</h3>
-<ul>
-<li>To add an actor to the level sequence (the shot we just created) select the actor in the vieport and in the selectr the <strong>+TRAC</strong> in the top left side of the sequencer.
-<ul>
-<li>This will open up a menu and since the actor was selected in the vieport it will be listed at the top. <strong>Note</strong> that if nothing was selected we can still use the input field to filter out the asset that we want and add it that way.</li>
-<li><strong>13:00</strong> TODO add static mesh + anim + clip blending</li>
-</ul>
-</li>
-</ul>
-<h3 id="camera">Camera</h3>
-<ul>
-<li><strong>Add a Camera</strong>
-<ul>
-<li>Existing
-<ul>
-<li>If we want to use a camera already existing in the scene we can drag from the world outliner and drop it into pur shot track</li>
-<li>Or we can select the camera and use the <strong>+TRACK</strong> button and select the camera that will be in the top of the list (because selected)</li>
-</ul>
-</li>
-<li>&ldquo;Spawnable&rdquo;
-<ul>
-<li>If we want to create a new camera and set it as the current camera cut we can use the camera botton found at the top of the left side of the sequencer window</li>
-<li>This is a &ldquo;spawnable&rdquo; camera, which means they will only appear in the world outliner when the sequence is played. You will se a little lightning bolt on the side of it in the world outliner or in the sequencer window.</li>
-<li>They can be used as test cameras / scout cameras to find certain framings, so that the main camera is not changed.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>When we add a camera (which ever way) we will get a <strong>camera cuts</strong> track (that lets us choose which camera to use) and the camera actor.</li>
-<li><strong>Animate the camera</strong>
-<ul>
-<li>It can be nice to lock the viewport to the cinema camera actor when framing the shot.
-<ul>
-<li>click the camera icon on the right hand side of the cine camera actor track.</li>
-</ul>
-</li>
-<li>When the camera is positioned we can add a keyframe.
-<ul>
-<li>Click the circle on the Transform section of the cine camera actor. This will set a key for all transforms (we can expand the transform to set for location, rotation and scale individually).</li>
-<li>If we enable the auto key (found in the top bar of the sequencer) we will automatically get a keyframe when a property is changed.</li>
-<li>We can also set a keyframe using the key <strong>S</strong> note that the property also need to be selected.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Focus settings</strong>
-<ul>
-<li>Current Camera Settings &gt; Focus settings</li>
-</ul>
-</li>
-<li><strong>Camera Cuts</strong><br>
-Lets try out the camera cuts
-<ul>
-<li>Lets say we have added 2 cameras (real ones or spawnable) and we have animated or framed the shots (so that we can see a diffrence when we swith between them)</li>
-<li>Click on the camera icon (right hand side) on the camera cuts. This will view the sequence with the camera the camera cuts specifies.</li>
-<li>Note that we can RMB click on the camera cuts track (In the timeline) &gt; Properties &gt; Camera Binding ID &gt; Select the camera to use. This will set the camera but not create cut.</li>
-<li>To create a cut move the time slider to a point you want to change the camera and click on the <strong>+</strong> icon of the camera cuts track, and from the pop up menu select the camera to use.</li>
-</ul>
-</li>
-</ul>
-<h2 id="general">General</h2>
-<h3 id="takes">Takes</h3>
-<p>Takes can be a good way to try things and quickly switch between them</p>
-<ul>
-<li>Add a take
-<ul>
-<li>RMB clcik the shot &gt; New Take</li>
-<li>Double click the take go inside it, cjange some stuff</li>
-<li>Then we can view it in the amster sequence</li>
-<li>If we do not like it RMB click  Takes &gt; Select the old one</li>
-</ul>
-</li>
-</ul>
-<h3 id="camera-1">Camera</h3>
-<ul>
-<li>Import camera
-<ul>
-<li>Lets say we have saved out a camera as a FBX file
-<ul>
-<li>Look up the docs on how we do this</li>
-</ul>
-</li>
-<li>Select the cine camera actor</li>
-<li>RMB click it &gt; Import and select the fbx file</li>
-<li>On the ui that pops up disable <strong>camera</strong> since we already have one and click import</li>
-</ul>
-</li>
-<li>Camera Shake/noise
-<ul>
-<li><strong>36:30</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="curve-editor">Curve Editor</h3>
-<ul>
-<li>Uniform zoom - <strong>Alt LMB</strong> or <strong>Scroll wheel</strong></li>
-<li>Free Zoom - <strong>Shift Alt LMB</strong></li>
-<li>Move constrained Axis - <strong>Shift LMB</strong></li>
-<li>Frame selected - <strong>F</strong></li>
-</ul>
-<h2 id="tracks">Tracks</h2>
-<ul>
-<li><strong>Fade</strong> Track<br>
-A fade track can be added to a sequence to fade in and out
-<ul>
-<li>LMB click the <strong>+TRACK</strong>  &gt; Fade Track</li>
-<li>Set two keframes</li>
-<li>set the value to 1 where you want it to be faded to black</li>
-</ul>
-</li>
-<li><strong>Event</strong> track
-<ul>
-<li>Adds an event that can be read in blueprints.</li>
-</ul>
-</li>
+<li>
+<a href="https://docs.unrealengine.com/5.0/en-US/rendering-high-quality-frames-with-movie-render-queue-in-unreal-engine/" target="_blank" rel="noopener">Rendering High Quality Frames with Movie Render Queue</a></li>
 </ul>
 		
 		</div>

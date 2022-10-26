@@ -6,10 +6,20 @@
     <description>Recent content in Python-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jun 2022 15:09:45 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 01 Sep 2022 15:03:19 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/python-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Python &amp; PySide2</title>
+      <link>https://www.petfactory.se/notes/ue5_python_pyside2/</link>
+      <pubDate>Thu, 01 Sep 2022 15:03:19 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5_python_pyside2/</guid>
+      <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
+ Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
+    </item>
     
     <item>
       <title>Houdini - LOPS &amp; USD</title>
@@ -29,16 +39,6 @@ Karma render settings (node) &amp;gt; Rendering &amp;gt; Geometry and Shading &a
       <guid>https://www.petfactory.se/notes/ocio_python/</guid>
       <description>I am writing a tool for Houdini that can create, save and apply color themes to color ramp parameters. In this project I needed to convert between color spaces. There are many ways to do this, but this led me to start exploring OCIO using Python. Below is a snippet that changes the color space of a list of rgb values from srgb to linear srgb.
  First I activate the venv into which I want to install OCIO Then I run pip install opencolorio With the package installed make sure that your IDE can access the package We also need to download a OCIO configuration file from here  import osimport PyOpenColorIO as OCIOdef apply_rgb(rgb, src_space, dst_space):try:config = OCIO.</description>
-    </item>
-    
-    <item>
-      <title>UE4 - Python / PySide2</title>
-      <link>https://www.petfactory.se/notes/unreal_python_pyside2/</link>
-      <pubDate>Wed, 06 Jan 2021 15:03:19 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/unreal_python_pyside2/</guid>
-      <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
- Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
     </item>
     
     <item>

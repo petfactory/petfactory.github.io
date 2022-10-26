@@ -38,6 +38,36 @@
   </url>
   
   <url>
+    <loc>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</loc>
+    <lastmod>2022-10-01T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/ue5-notes/</loc>
+    <lastmod>2022-10-01T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/unreal-engine-notes/</loc>
+    <lastmod>2022-10-01T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/python/</loc>
+    <lastmod>2022-09-01T15:03:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/python-notes/</loc>
+    <lastmod>2022-09-01T15:03:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/ue5_python_pyside2/</loc>
+    <lastmod>2022-09-01T15:03:19+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/tags/solaris/</loc>
     <lastmod>2022-08-25T15:20:58+01:00</lastmod>
   </url>
@@ -73,32 +103,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/ue5-notes/</loc>
-    <lastmod>2022-07-17T22:03:02+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/unreal-engine-notes/</loc>
-    <lastmod>2022-07-17T22:03:02+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/houdini_lops_usd/</loc>
     <lastmod>2022-06-12T15:09:45+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/lops-notes/</loc>
-    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/python/</loc>
-    <lastmod>2022-06-12T15:09:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/python-notes/</loc>
     <lastmod>2022-06-12T15:09:45+01:00</lastmod>
   </url>
   
@@ -165,11 +175,6 @@
   <url>
     <loc>https://www.petfactory.se/tags/kinefx-notes/</loc>
     <lastmod>2021-01-30T16:40:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/unreal_python_pyside2/</loc>
-    <lastmod>2021-01-06T15:03:19+01:00</lastmod>
   </url>
   
   <url>
