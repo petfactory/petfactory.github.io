@@ -13,10 +13,10 @@
     
     <item>
       <title>Houdini - UV</title>
-      <link>https://www.petfactory.se/notes/houdini_uv/</link>
+      <link>https://www.petfactory.se/notes/houdini-uv/</link>
       <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_uv/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-uv/</guid>
       <description>Vieport display options Open the vieport display option dialog (press D over the viewport)
  Markers tab &amp;gt; Vertices &amp;gt; UV Overlap  Displays the overlap in red (in the UV view)    UV Layout Target Assignment (UDIM) To force specific primitives to a specific UDIM we can use a primitive attr to specify which one.
  Create a poly tube with end caps. Create groups for the top, btm and the &amp;ldquo;mid&amp;rdquo;  One way to do this is to use the group by normal for the top and btm and for the mid a group combine with &amp;ldquo;equals all but&amp;rdquo; the top and btm.</description>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Flask SQLite dev</title>
-      <link>https://www.petfactory.se/notes/flask_sqlite_dev/</link>
+      <link>https://www.petfactory.se/notes/flask-sqlite-dev/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/flask_sqlite_dev/</guid>
+      <guid>https://www.petfactory.se/notes/flask-sqlite-dev/</guid>
       <description>The database will contain materials, material types and surface properties.
   Material
  id name material type surface properties    Material type

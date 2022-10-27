@@ -13,19 +13,19 @@
     
     <item>
       <title>Houdini - VEX</title>
-      <link>https://www.petfactory.se/notes/houdini_vex/</link>
+      <link>https://www.petfactory.se/notes/houdini-vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-vex/</guid>
       <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Quaternion  Quaternion to Euler  Specify the rotation order with the order integer. Use the constants defined in $HH/vex/include/math.h (for example, XFORM_XYZ) Note! You do not need to include math.h in a wrangle (like this: #include &amp;lt;math.h&amp;gt;) it is included by default. vector euler = degrees(quaterniontoeuler(p@orient, XFORM_XYZ));    Matrix  Get matrix components  You can use getcomp function&amp;hellip; getcomp(&amp;lt;matrix&amp;gt;m, int row, int column) &amp;hellip;but you can also access components using m.</description>
     </item>
     
     <item>
       <title>Houdini - VEX Flex</title>
-      <link>https://www.petfactory.se/notes/houdini_vex_flex/</link>
+      <link>https://www.petfactory.se/notes/houdini-vex-flex/</link>
       <pubDate>Fri, 12 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_vex_flex/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-vex-flex/</guid>
       <description>This is not really VEX flexing but I really liked that title :)
 Trigonometry Rotation In an Unreal shader I was building I needed to &amp;ldquo;rotate back&amp;rdquo; some pixels in the normal map so that the normals was corrected when the uv for the texture sampling was rotated. The key is to use the inverted rotation to rotate back the R(U) and G(V) color values (per pixel) so that the map is corrected.</description>
     </item>

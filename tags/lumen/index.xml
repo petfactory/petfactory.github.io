@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lumen on Petfactory</title>
+    <link>https://www.petfactory.se/tags/lumen/</link>
+    <description>Recent content in Lumen on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Oct 2022 22:03:02 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/lumen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UE5 - Lumen</title>
+      <link>https://www.petfactory.se/notes/ue5-lumen/</link>
+      <pubDate>Sat, 01 Oct 2022 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-lumen/</guid>
+      <description>Lumen General Info  Surface Cache  Lumen generates an automatic parameterization of the nearby scene surfaces called the Surface Cache It is used to quickly look up lighting at ray hit points in the scene Lumen the captures the material properties for each mesh from multiple angles. These capture positions called cards are generated offline for each mesh   Screen Tracing  Lumen features trace rays against the screen first Before moving on to a more reliable method, if no hit is found or the ray passes behind a surface.</description>
+    </item>
+    
+  </channel>
+</rss>

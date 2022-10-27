@@ -13,29 +13,29 @@
     
     <item>
       <title>DaVinci Resolve - Python</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_python/</link>
+      <link>https://www.petfactory.se/notes/davinci-resolve-python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_python/</guid>
+      <guid>https://www.petfactory.se/notes/davinci-resolve-python/</guid>
       <description>An old scripting guide can be found here
 Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
     </item>
     
     <item>
       <title>DaVinci Resolve - Fusion</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_fusion/</link>
+      <link>https://www.petfactory.se/notes/davinci-resolve-fusion/</link>
       <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_fusion/</guid>
+      <guid>https://www.petfactory.se/notes/davinci-resolve-fusion/</guid>
       <description>Quick tips  Auto Save  Auto save (live save) is on by default and you might want to turn it off. DaVinci Resolve &amp;gt; Preferences &amp;gt; Project Save and Load &amp;gt; Save Settings &amp;gt; Live save   Bookmarks  You can add bookmarks with Ctrl + D Underlays can also function as bookmarks Also in 3 dot menu       Page      Edit Shift + 4   Fusion Shift + 5   Color Shift + 6    Viewers There are two viewers.</description>
     </item>
     
     <item>
       <title>DaVinci Resolve - Edit</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_edit/</link>
+      <link>https://www.petfactory.se/notes/davinci-resolve-edit/</link>
       <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_edit/</guid>
+      <guid>https://www.petfactory.se/notes/davinci-resolve-edit/</guid>
       <description>Quick tips  Import png &amp;amp; jpeg as a sequence  By default it seems like exr will import as a sequence but jpeg and png as stills. If you want to import png &amp;amp; jpeg as sequences  On the media page, click on the &amp;ldquo;3 dot menu&amp;rdquo; in the Media Storage section (top left) Frame Display Mode &amp;gt; Sequence     Auto Save  Auto save (live save) is on by default and you might want to turn it off.</description>
     </item>
     

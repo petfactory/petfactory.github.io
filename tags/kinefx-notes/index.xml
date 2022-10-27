@@ -13,10 +13,10 @@
     
     <item>
       <title>Houdini - KineFX</title>
-      <link>https://www.petfactory.se/notes/houdini_kinefx/</link>
+      <link>https://www.petfactory.se/notes/houdini-kinefx/</link>
       <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_kinefx/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-kinefx/</guid>
       <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
     </item>
     

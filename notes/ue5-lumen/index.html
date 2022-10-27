@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Proc city 02</title>
-        <meta name="description" content="Petfactory | Design and Animation | Proc city 02" />
+        <title>Petfactory | UE5 - Lumen</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 - Lumen" />
 
     </head>
 
@@ -164,421 +164,416 @@
 <div class="top-spacer"></div>
 
 <div class="container">
-
-	<div class="work-single-out-wrap">
-
-		<div class="work-single-out-info">
-
-			<h2>Proc city 02</h2>
-
-			<div>
-				
-		    		<span><a class="tag-link" href="https://www.petfactory.se/tags/houdini">Houdini</a></span>
-		  		
-		    		<span><a class="tag-link" href="https://www.petfactory.se/tags/redshift">Redshift</a></span>
-		  		
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<div class="toc-content visible">
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#lumen">Lumen</a>
+      <ul>
+        <li><a href="#general-info">General Info</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#note">Note!</a></li>
+        <li><a href="#common-problems">Common Problems</a></li>
+        <li><a href="#visualizing-lumen">Visualizing Lumen</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>	
 			</div>
-			
-			<br>
-
-			<span class="work-single-desc">
-				This is a project in development. It is focused on building a Python tool for creating procedural buildings inside Houdini. The tool generates points which geometry is instanced to. The buildings will be rendered with Redshift inside Houdini.
-			</span>
-
-		</div>
-
+			<div class="toc-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg></div>
+		</aside>	
 	</div>
-	
-</div>
-
-<div class="container-fluid work-single-fluid">
-	
-	<div class="work-single-wrap">
-
-			<div class="work-single-in-info">
-				<h2>Proc city 02</h2>
-				<h6 class="work-single-tags">Houdini, Redshift</h6>
-				<br>
-				<span class="work-single-desc">
-				This is a project in development. It is focused on building a Python tool for creating procedural buildings inside Houdini. The tool generates points which geometry is instanced to. The buildings will be rendered with Redshift inside Houdini.
-				</span>
-			</div>
-
-		
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://player.vimeo.com/video/320604243" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
- </div>
-
-<p><img src="https://www.petfactory.se/images/proc_city_02_960.png" alt="Procedural City - Houdini">
-<img src="https://www.petfactory.se/images/proc_city_01_960.jpg" alt="Procedural City - Houdini"></p>
-
-				
-	</div>	
 
 </div>
 
-<div class="mid-spacer"></div>
 
-<div class="container-fluid">
+<div class="container notes-wrap">
 
 	<div class="row">
-
 		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/still_life_01/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Still Life - 01
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/still_life_01_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
+		<div class="col-md-10 mx-auto">
+			<h1>UE5 - Lumen</h1>
+			<h1 id="lumen">Lumen</h1>
+<h2 id="general-info">General Info</h2>
+<ul>
+<li><strong>Surface Cache</strong>
+<ul>
+<li>Lumen generates an automatic parameterization of the nearby scene surfaces called the Surface Cache</li>
+<li>It is used to quickly look up lighting at ray hit points in the scene</li>
+<li>Lumen the captures the material properties for each mesh from multiple angles.</li>
+<li>These capture positions called cards are generated offline for each mesh</li>
+</ul>
+</li>
+<li><strong>Screen Tracing</strong>
+<ul>
+<li>Lumen features trace rays against the screen first</li>
+<li>Before moving on to a more reliable method, if no hit is found or the ray passes behind a surface.</li>
+<li>Supports any geometry type and is useful for covering up mismatches between the lumen scene and the triangle scene.</li>
+</ul>
+</li>
+<li><strong>Ray Tracing</strong>
+<ul>
+<li><em>Software</em>
+<ul>
+<li>Operates on the widest range of hardware and platforms</li>
+<li>Works against signed distance fields, by default</li>
+<li>This tracing representation is supported on any hardware supporting shader model 5</li>
+<li>And only requires <em>Generate Mesh Distance Fields</em> to be enabled in the project settings</li>
+</ul>
+</li>
+<li><em>Hardware</em>
+<ul>
+<li>Requires supported video cards and system to operate.</li>
+<li>Supports a larger range of geometry types than software raytracing</li>
+<li>In particular, it supports tracing against skinned meshes</li>
+<li>Scales up better to higher qualities, because it intersects against the actual triangles and has the option to evaluate the lighting at the ray hit instead of the lower quality surface cache</li>
+<li>Is the only way to achieve high-quality mirror reflections</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>Requirements</strong></p>
+<ul>
+<li>Requirements
+<ul>
+<li>General lumen &amp; software raytracing
+<ul>
+<li>Support Shader Model 5</li>
+<li>Direct3D 11 or higher</li>
+<li>Does not supporyt mobile, no plan to support it</li>
+</ul>
+</li>
+<li>Hardware raytracing
+<ul>
+<li>DirectX 12 or later</li>
+<li>Nvidia RTX 2000 or higher</li>
+<li>AMD RX 6000 or higher</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p>Lumen is enabled by default on all new projects in UE 5.<br>
+If you need to enable lumen on manually this is how you would do it:</p>
+<ul>
+<li><strong>Project Settings &gt; Engine &gt; Rendering &gt;</strong>
+<ul>
+<li><strong>Global Illumination &gt;</strong>
+<ul>
+<li><strong>Dynamic Global Illumination Method :</strong>
+<ul>
+<li><em>Lumen</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Reflections &gt;</strong>
+<ul>
+<li><strong>Reflection Method :</strong>
+<ul>
+<li><em>Lumen</em></li>
+</ul>
+</li>
+<li><strong>Reflection Capture Resolution :</strong>
+<ul>
+<li><em>128</em> (default)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Lumen &gt;</strong>
+<ul>
+<li><strong>Use Hardware Ray Tracing when available</strong> :<br>
+Will use HW raytracing (against..?) rather then SW against the surface cache.<br>
+Note! Hardware ray tracing has significant scene update cost for scenes with more than 100k instances
+<ul>
+<li><em>Enable</em></li>
+</ul>
+</li>
+<li><strong>Ray Lighting Mode :</strong><br>
+Controls how lumen reflection rays are lit when using HW ray tracing. By default lumen uses the surface cache for best performance, but can be set to &ldquo;Hit Lighting&rdquo; for higher quality.
+<ul>
+<li><em>Surface Cache</em> (faster)</li>
+<li><em>Hit Lighting for Reflections</em> (higher quality)</li>
+</ul>
+</li>
+<li><strong>Software Ray Tracing Mode :</strong><br>
+When SW ray tarcing is used will it use:
+<ul>
+<li><em>Detail Tracing</em> (higher guality)</li>
+<li><em>Global Tracing</em> (faster)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hardware Ray Tracing</strong>
+<ul>
+<li><strong>Support Hardware Ray Tracing :</strong><br>
+Note! This needs to be enabled for the option to use HW raytracing when available to be used
+<ul>
+<li><em>Enable</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li><em>Lumen &amp; Static lighting</em>
+<ul>
+<li>Lumen GI can not be used togehter with static Lighting<br>
+In fact it is better to disable the static lighting (se below in notes section)</li>
+</ul>
+</li>
+<li><em>Foliage</em>
+<ul>
+<li>Is not very well supported at this time due to the heavy reliance on downsampled rendering and temporal filters.</li>
+<li>Foliage must be enabled with the <em>affect distance field lighting</em> from the foliage tool settings.</li>
+<li>Transparent objects are ignored by distance fields</li>
+<li>Masked material will be treated as opaque, which can cause significant over shadowing on folaige, which leaves large areas of leaves masked out.</li>
+</ul>
+</li>
+<li><em>Moving Objetcs</em>
+<ul>
+<li>Lumens final gather have significant noise around moving objects nad is under development</li>
+</ul>
+</li>
+<li><em>Translucency</em>
+<ul>
+<li>Reflections are not yet supported</li>
+<li>Will not have high quality GI</li>
+</ul>
+</li>
+<li><em>Software Ray tracing</em>
+<ul>
+<li>Only static meshes, instanced static meshes, hierarchical instanced SM and landscape are represented in a lumen scene.</li>
+</ul>
+</li>
+<li><em>Materials</em>
+<ul>
+<li>World position is not supported</li>
+</ul>
+</li>
+<li><em>Hardware Ray Tracing</em>
+<ul>
+<li>Significant scene setup cost in large scenes</li>
+<li>Tracing becomes very expensive with many overlapping meshes</li>
+<li>Dynamically deforming meshes, like skinned meshes also incur a large cost to update the ray tracing acceleration structures each frame, proportional to the number of skinned triangles.</li>
+</ul>
+</li>
+</ul>
+<h2 id="note">Note!</h2>
+<ul>
+<li><strong>Disable Pre Computed lighting</strong>
+<ul>
+<li>When Lumen is used pre computed lighting from static lighting is removed.</li>
+<li>You can disable static lighting entirely from the project by:
+<ul>
+<li>Project Settings &gt; XXX &gt; Misc Lighting &gt; Allow Static Lighting : Disable</li>
+<li>By doing so it saves us from some static lighting overhead with shader permutations&hellip;</li>
+<li>It will also allow for shader Ambient Occlusion input</li>
+<li>And allow material bent normals to work with lumen global illumination</li>
+<li>No more light map build times</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Post Process Volume</strong>
+<ul>
+<li>Can override the Global illumination and Reflection method.</li>
+</ul>
+</li>
+<li><strong>Software Ray tracing</strong>
+<ul>
+<li>Requires levels to be made of modular pieces i.e. walls, floors, ceilings etc should be sepatare meshes</li>
+<li>Large meshes like mountains will have poor representation and may cause sel-occlusion artifacts</li>
+<li>Walls should be no thinner than 10 cm</li>
+</ul>
+</li>
+<li><strong>Distance Field</strong>
+<ul>
+<li>Mesh distance field resolution is based on the imported scale of the static mesh.
+<ul>
+<li>A mesh taht is imported very small and scaled up, will not have sufficient resolution</li>
+<li>In the static mesh editor you can see the Transform &gt; Import Unform Scale</li>
+<li>In the static mesh editor you can use the Mesh &gt; Distance Field Resolution Scale to compensate for a small scale import tthat has been scaled up (maybe better to import at the right size I guess&hellip;)</li>
+</ul>
+</li>
+<li>Distance field can not represent extremely thin features&hellip;</li>
+<li>Or one sided meshes seen from behind. Make sure the viewer never sees the back side.</li>
+</ul>
+</li>
+<li><strong>Nanite &amp; Hardware raytracing</strong>
+<ul>
+<li><em>Fallback Triangle Percent</em>
+<ul>
+<li>Can only operate on the proxy mesh</li>
+<li>So if you have mismatches, you might have to increase the Nanite Settings &gt; <em>Fallback Triangle Percent</em> of the SM. You do this in the Static mesh editor. Remember to click the Apply Changes button!</li>
+<li>To view the nanite fallback mesh, in the static mesh editor under <em>Show &gt; Nanite Fallback</em> you can choose to view it</li>
+</ul>
+</li>
+<li><em>Fallback Relative Error</em>
+<ul>
+<li>Screen traces are used to cover the missmatch between the full triangle mesh rendered by nanite and the fallback mesh being ray traced by lumen.</li>
+<li>In some cases the mismatch is to large to be hidden</li>
+<li>In theese cases raising the fallback relative error can reduce incorect self-intersection artifacts</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="common-problems">Common Problems</h2>
+<ul>
+<li><strong>Indirect Lighting problem</strong>
+<ul>
+<li>If we have a problem with a mesh it can often be fixed by tweaking the detials of the mesh
+<ul>
+<li>Select the mesh</li>
+<li>if we use <em>Software</em> ray tracing
+<ul>
+<li>Details &gt; Lighting &gt;
+<ul>
+<li><em>Affect Distance Field Lighting</em> : off  <br>
+The mesh will no longer be a part of the software ray tracing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>if we use <em>Hardware</em> ray tracing
+<ul>
+<li>Details &gt; Rendering &gt;
+<ul>
+<li><em>Visible in Raytracing</em> : off <br>
+The mesh will no longer be a part of the software ray tracing</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Small meshes are black in reflections</strong>
+<ul>
+<li>Post Process Volume &gt; Global Illumination &gt; Lumen Global Illumination
+<ul>
+<li><em>Lumen Scene Detail</em> : increase to higher value</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Include small objects in the surface cache</strong>
+<ul>
+<li>If objects are to small it will not contribute to the lumen surface cach</li>
+<li>to fix this we can enable Details &gt; Lighting &gt;
+<ul>
+<li><em>Emissive Light Source</em> : on
+<ul>
+<li>This means the mesh will be part of the surface cache no matter of the size</li>
+<li>The inteded use for this is if we have a smaller emissive light source this will force it to show up, but it also works for non emissive objects</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="visualizing-lumen">Visualizing Lumen</h2>
+<ul>
+<li><strong>Mesh Distance Field</strong>
+<ul>
+<li>Show &gt; Visualize &gt; <em>Mesh Distance Fields</em> <br>
+This shows what the software ray tracer is tracing against
+<ul>
+<li>Gives a visual representation so that you can determine the accuracy / quality you wiull get from Lumen software ray tracer</li>
+<li>If an item does not have the quality / fidelity you need</li>
+<li>Open the mesh in the static mesh editor</li>
+<li>Build Settings &gt; <em>Distance Field Resolution Scale</em><br>
+In crease it and press apply changes. Note higher value obviously means more process time, so try to keep it at the minimum that you need to achieve the visual result required.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Lumen Overview</strong>
+<ul>
+<li>Lit &gt; Lumen &gt; <em>Overview</em><br>
+Displayes
+<ul>
+<li>Lumen Scene
+<ul>
+<li>Depending on if we use the software or hardware raytracer</li>
+</ul>
+</li>
+<li>Reflection View
+<ul>
+<li>The scene as the lumen reflection sees it</li>
+</ul>
+</li>
+<li>Surface Cache</li>
+<li>The result</li>
+</ul>
+</li>
+<li>Lit &gt; Lumen &gt; <em>Surface Cache</em>
+<ul>
+<li><em>Pink</em><br>
+Means the items have an issue, do not have enough surface cards or non at all.
+are to small to contribute to the Lumen surface cache</li>
+<li><em>Yellow</em><br>
+Means the items are not being used</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Surface Cards</strong>
+<ul>
+<li>You can display the surface cards with this cvar:
+<ul>
+<li><em>r.Lumen.Visualize.CardPlacement = 1</em></li>
+</ul>
+</li>
+<li>if you need more cards on a mesh uou can open up the static mesh editor
+<ul>
+<li>Build Settings &gt; Max Lumen Mesh Cards<br>
+and set it higher (default is 12 and maximum is 32)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>Epic resources
+<ul>
+<li>Learning
+<ul>
+<li>
+<a href="https://dev.epicgames.com/community/learning/courses/2Wo/unreal-engine-lumen-essentials/bL7n/visualize-lumen" target="_blank" rel="noopener">Lumen Esentials</a></li>
+</ul>
+</li>
+<li>Docs
+<ul>
+<li>
+<a href="https://docs.unrealengine.com/5.0/en-US/lumen-global-illumination-and-reflections-in-unreal-engine/" target="_blank" rel="noopener">Lumen Global Illumination and Reflections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/vellum_fluid_01/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Vellum fluid - 01
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/vellum_fluid_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/vellum_grains_01/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Vellum grains - 01
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/vellum_grain_02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/lego_cars/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Lego - Cars
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/lego_cars_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/lego_chappie/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Lego - Chappie
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/chappie_02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/equilateral/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Equilateral
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/still_panel_960_v01.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/glambot/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Glambot
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/glambot_v02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/petbot/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Petbot
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/petbot_02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/the_bot_20/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									The Bot 20
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/thebot_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/hoodie/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Hoodie
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/hoodie_particles_v01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/mocap_dance/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Mocap Dance
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/mocap_dance_v04_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/fluorescent/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Fluorescent
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/fluorescent_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/guided/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Guided
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/guided_v01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/dodecahedron/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Dodecahedron
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/dodecahedron_v05_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/raku/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Raku
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/raku_04_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/ceramics/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Ceramics
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/bowl_v04_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/domino/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Domino
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/domino_v01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/tunnel/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Tunnel
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/tunnel_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/proc_city_02/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Proc city 02
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/proc_city_02_960.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/the_bot/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									The Bot
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/the_bot_retro_960.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/ray/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Ray
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/ray_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/genuine_parts/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Atlas Copco - Genuine parts
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/atlas_genuine_parts_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/jetsetpets/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Jet Set Pets
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/jet_set_pets_01_960.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
+		</div>
 	</div>
+</div>
 	
-</div>
-
-
-<div class="embed-responsive embed-responsive-16by9">
-	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ts1tu29e5Ks?rel=0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 
 
         </main>

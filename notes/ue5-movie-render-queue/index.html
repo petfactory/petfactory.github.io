@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Vellum fluid - 01</title>
-        <meta name="description" content="Petfactory | Design and Animation | Vellum fluid - 01" />
+        <title>Petfactory | UE5 - Movie Render Queue</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 - Movie Render Queue" />
 
     </head>
 
@@ -164,422 +164,133 @@
 <div class="top-spacer"></div>
 
 <div class="container">
-
-	<div class="work-single-out-wrap">
-
-		<div class="work-single-out-info">
-
-			<h2>Vellum fluid - 01</h2>
-
-			<div>
-				
-		    		<span><a class="tag-link" href="https://www.petfactory.se/tags/houdini">Houdini</a></span>
-		  		
-		    		<span><a class="tag-link" href="https://www.petfactory.se/tags/solaris">Solaris</a></span>
-		  		
+	<div class="toc-wrap">
+		<aside class="toc-aside">
+			<div class="toc-content visible">
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#movie-render-queue">Movie Render Queue</a>
+      <ul>
+        <li><a href="#config">Config</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>	
 			</div>
-			
-			<br>
-
-			<span class="work-single-desc">
-				Playing with rigid body dynamics and Solaris (scene building, layout, lighting, and rendering tools based on the USD framework) in Houdini
-			</span>
-
-		</div>
-
+			<div class="toc-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg></div>
+		</aside>	
 	</div>
-	
-</div>
-
-<div class="container-fluid work-single-fluid">
-	
-	<div class="work-single-wrap">
-
-			<div class="work-single-in-info">
-				<h2>Vellum fluid - 01</h2>
-				<h6 class="work-single-tags">Houdini, USD, Karma</h6>
-				<br>
-				<span class="work-single-desc">
-				Playing with rigid body dynamics and Solaris (scene building, layout, lighting, and rendering tools based on the USD framework) in Houdini
-				</span>
-			</div>
-
-		
-<div class="media-youtube">
-  <iframe src="https://www.youtube.com/embed/W-82ElP4P2A" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p>Animated and rendered in 
-<a href="https://www.sidefx.com/" target="_blank" rel="noopener">Houdini</a></p>
-<p><img src="https://www.petfactory.se/images/vellum_fluid_01_960.jpg" alt="Vellum fluid - Houdini"></p>
-
-				
-	</div>	
 
 </div>
 
-<div class="mid-spacer"></div>
 
-<div class="container-fluid">
+<div class="container notes-wrap">
 
 	<div class="row">
-
 		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/still_life_01/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Still Life - 01
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/still_life_01_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
+		<div class="col-md-10 mx-auto">
+			<h1>UE5 - Movie Render Queue</h1>
+			<h1 id="movie-render-queue">Movie Render Queue</h1>
+<h2 id="config">Config</h2>
+<p>Before rendering any sequences loaded in the queue, you will need to configure the settings you want to use. There are a wide variety of settings that can be adjusted, such as output format, filename, and anti-aliasing settings.</p>
+<ul>
+<li><strong>Settings</strong><br>
+With the Settings options, you can specify additional configurable items to use when rendering the final output image.
+<ul>
+<li><em>Anti-aliasing</em>
+<ul>
+<li>Controls the number of samples and sample types used when rendering out the final images.</li>
+</ul>
+</li>
+<li><em>Burn In</em>
+<ul>
+<li>An overlay with information such as the name of the scene or shot, or the date, time, or frame information. These overlays are referred to as Burn Ins as they are burned into the movie when it is rendered out. Can be replaced with a custom widget if needed.</li>
+</ul>
+</li>
+<li><em>Camera</em>
+<ul>
+<li>Can be used to control shutter settings, which affects effects like motion blur and exposure.</li>
+</ul>
+</li>
+<li><em>Console Variables</em>
+<ul>
+<li>Calls console variables to execute specifically when rendering from the Movie Render Queue.</li>
+</ul>
+</li>
+<li><em>Game Overrides</em>
+<ul>
+<li>Overrides several common game-related settings, such as Game Mode and Cinematic Quality settings. This is useful if the normal mode of the game displays UI elements or loading screens that you do not want to capture.</li>
+</ul>
+</li>
+<li><em>High Resolution</em>
+<ul>
+<li>Provides a way to use tiled renders to produce larger images than would normally be possible because of maximum texture sizes or memory limits on GPUs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Output</strong><br>
+There are several image types that you can use for output. Each has its own pros and cons, so you&rsquo;ll need to find what fits best with your own project workflow.
+<ul>
+<li>.exr Sequence [16bit]</li>
+<li>.png Sequence [8bit]</li>
+<li>etc&hellip;</li>
+</ul>
+</li>
+<li><strong>Rendering</strong><br>
+You have two possible settings for rendering.
+<ul>
+<li><em>Deferred Rendering</em>
+<ul>
+<li>The default option. Toggling Deferred Rendering off disables the final frame render but does not stop the queue from processing the other steps in the configuration settings.</li>
+</ul>
+</li>
+<li><em>UI Renderer (Non-Composited)</em>
+<ul>
+<li>Provides flexibility by rendering UMG widgets into a separate .png or .exr file that can be composited with the frame render in a separate compositing application, such as Adobe Premiere or Final Cut Pro—useful when compositing interface-related graphics.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong>Alpha Channel</strong>
+<ul>
+<li>Both .png and .exr image formats offer the ability to output the alpha channel with the image, but first you will need to enable this support.
+<ul>
+<li>Editor menubar &gt; Edit &gt; Project Settings &gt; Engine &gt; Rendering &gt; Postprocessing &gt; Enable alpha channel support in post processing (experimental) &gt; Linear color space only.</li>
+<li>Once this change is applied, you will be prompted to restart the engine.</li>
+<li>To create a transparent background, you will need to hide opaque objects in your scene such as Sky and Atmospheric Fog.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>Epic resources
+<ul>
+<li>Docs
+<ul>
+<li>
+<a href="https://docs.unrealengine.com/5.0/en-US/rendering-high-quality-frames-with-movie-render-queue-in-unreal-engine/" target="_blank" rel="noopener">Rendering High Quality Frames with Movie Render Queue</a></li>
+<li>
+<a href="https://docs.unrealengine.com/5.0/en-US/rendering-high-quality-frames-with-movie-render-queue-in-unreal-engine/" target="_blank" rel="noopener">Movie Render Queue Export Formats Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/vellum_fluid_01/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Vellum fluid - 01
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/vellum_fluid_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/vellum_grains_01/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Vellum grains - 01
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/vellum_grain_02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/lego_cars/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Lego - Cars
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/lego_cars_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/lego_chappie/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Lego - Chappie
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/chappie_02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/equilateral/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Equilateral
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/still_panel_960_v01.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/glambot/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Glambot
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/glambot_v02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/petbot/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Petbot
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/petbot_02_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/the_bot_20/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									The Bot 20
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/thebot_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/hoodie/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Hoodie
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/hoodie_particles_v01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/mocap_dance/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Mocap Dance
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/mocap_dance_v04_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/fluorescent/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Fluorescent
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/fluorescent_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/guided/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Guided
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/guided_v01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/dodecahedron/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Dodecahedron
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/dodecahedron_v05_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/raku/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Raku
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/raku_04_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/ceramics/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Ceramics
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/bowl_v04_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/domino/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Domino
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/domino_v01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/tunnel/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Tunnel
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/tunnel_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/proc_city_02/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Proc city 02
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/proc_city_02_960.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/the_bot/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									The Bot
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/the_bot_retro_960.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/ray/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Ray
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/ray_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/genuine_parts/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Atlas Copco - Genuine parts
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/atlas_genuine_parts_01_960.jpg" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
-				<div class="col-md-6 col-lg-4 work-grid">
-					<div class="">
-						<a href="https://www.petfactory.se/work/jetsetpets/">
-							<div class="work-hover-info">
-								<div class="work-hover-text">
-									Jet Set Pets
-								</div>
-							</div>							
-							<img src="https://www.petfactory.se/images/jet_set_pets_01_960.png" class="work-img">
-						</a>
-					</div>
-				</div>
-
-		
-
+		</div>
 	</div>
+</div>
 	
-</div>
-
-
-<div class="embed-responsive embed-responsive-16by9">
-	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ts1tu29e5Ks?rel=0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
 
 
         </main>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Workflow - Tips</title>
-      <link>https://www.petfactory.se/notes/workflow_tips/</link>
+      <link>https://www.petfactory.se/notes/workflow-tips/</link>
       <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/workflow_tips/</guid>
+      <guid>https://www.petfactory.se/notes/workflow-tips/</guid>
       <description>Here I will post (mildly) useful things that falls outside more specfic topics.
 Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
 Resize In-place resizing

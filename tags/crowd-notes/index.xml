@@ -13,10 +13,10 @@
     
     <item>
       <title>Houdini - Crowd</title>
-      <link>https://www.petfactory.se/notes/houdini_crowd/</link>
+      <link>https://www.petfactory.se/notes/houdini-crowd/</link>
       <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_crowd/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-crowd/</guid>
       <description>Houdini 18 crowd docs
 Theese notes are based on the excellent tutorial by Mikael Pettersen, a little bit of CGWiki and random bits of information I stumble up on.
 Minimal Setup Lets setup a minimal but &amp;ldquo;working&amp;rdquo; crowd.

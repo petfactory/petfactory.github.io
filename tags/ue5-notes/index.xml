@@ -12,12 +12,23 @@
     
     
     <item>
-      <title>UE5 - Sequencer &amp; Movie Render Queue</title>
-      <link>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</link>
+      <title>UE5 - Lumen</title>
+      <link>https://www.petfactory.se/notes/ue5-lumen/</link>
       <pubDate>Sat, 01 Oct 2022 22:03:02 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</guid>
-      <description>Resources Epic  Rendering High Quality Frames with Movie Render Queue  </description>
+      <guid>https://www.petfactory.se/notes/ue5-lumen/</guid>
+      <description>Lumen General Info  Surface Cache  Lumen generates an automatic parameterization of the nearby scene surfaces called the Surface Cache It is used to quickly look up lighting at ray hit points in the scene Lumen the captures the material properties for each mesh from multiple angles. These capture positions called cards are generated offline for each mesh   Screen Tracing  Lumen features trace rays against the screen first Before moving on to a more reliable method, if no hit is found or the ray passes behind a surface.</description>
+    </item>
+    
+    <item>
+      <title>UE5 - Movie Render Queue</title>
+      <link>https://www.petfactory.se/notes/ue5-movie-render-queue/</link>
+      <pubDate>Sat, 01 Oct 2022 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-movie-render-queue/</guid>
+      <description>Movie Render Queue Config Before rendering any sequences loaded in the queue, you will need to configure the settings you want to use. There are a wide variety of settings that can be adjusted, such as output format, filename, and anti-aliasing settings.
+ Settings
+With the Settings options, you can specify additional configurable items to use when rendering the final output image.  Anti-aliasing  Controls the number of samples and sample types used when rendering out the final images.</description>
     </item>
     
     <item>
@@ -31,10 +42,10 @@
     
     <item>
       <title>UE5 - Cinematics</title>
-      <link>https://www.petfactory.se/notes/ue5_cinematics/</link>
+      <link>https://www.petfactory.se/notes/ue5-cinematics/</link>
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5_cinematics/</guid>
+      <guid>https://www.petfactory.se/notes/ue5-cinematics/</guid>
       <description>Sequencer Tips  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.  A master sequence will contain sub-sequences and level sequences A master sequence is a cointainer of shots   A clean Master sequence  The idea is to keep a master sequence quite clean (and have the complexity such as keyframes, effects etc in sub-sequences) to make it possible for a quick edit at the top level.</description>
     </item>
     

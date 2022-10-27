@@ -13,7 +13,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_heightfield/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-heightfield/</loc>
     <lastmod>2022-10-11T14:24:14+02:00</lastmod>
   </url>
   
@@ -38,7 +38,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</loc>
+    <loc>https://www.petfactory.se/tags/lumen/</loc>
+    <lastmod>2022-10-01T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/ue5-lumen/</loc>
+    <lastmod>2022-10-01T22:03:02+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/ue5-movie-render-queue/</loc>
     <lastmod>2022-10-01T22:03:02+02:00</lastmod>
   </url>
   
@@ -63,7 +73,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue5_python_pyside2/</loc>
+    <loc>https://www.petfactory.se/notes/ue5-python-pyside2/</loc>
     <lastmod>2022-09-01T15:03:19+01:00</lastmod>
   </url>
   
@@ -73,12 +83,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/still_life_01/</loc>
+    <loc>https://www.petfactory.se/work/still-life-01/</loc>
     <lastmod>2022-08-25T15:20:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/vellum_fluid_01/</loc>
+    <loc>https://www.petfactory.se/work/vellum-fluid-01/</loc>
     <lastmod>2022-08-25T15:20:58+01:00</lastmod>
   </url>
   
@@ -88,7 +98,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/vellum_grains_01/</loc>
+    <loc>https://www.petfactory.se/work/vellum-grains-01/</loc>
     <lastmod>2022-08-01T15:20:58+01:00</lastmod>
   </url>
   
@@ -103,7 +113,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_lops_usd/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-lops-usd/</loc>
     <lastmod>2022-06-12T15:09:45+01:00</lastmod>
   </url>
   
@@ -118,17 +128,17 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/lego_cars/</loc>
+    <loc>https://www.petfactory.se/work/lego-cars/</loc>
     <lastmod>2022-05-01T15:20:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/lego_chappie/</loc>
+    <loc>https://www.petfactory.se/work/lego-chappie/</loc>
     <lastmod>2022-05-01T15:20:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ocio_python/</loc>
+    <loc>https://www.petfactory.se/notes/ocio-python/</loc>
     <lastmod>2021-09-21T11:18:51+02:00</lastmod>
   </url>
   
@@ -138,7 +148,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue5_cinematics/</loc>
+    <loc>https://www.petfactory.se/notes/ue5-cinematics/</loc>
     <lastmod>2021-08-18T22:47:22+02:00</lastmod>
   </url>
   
@@ -148,12 +158,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue4_blueprint_snippets/</loc>
+    <loc>https://www.petfactory.se/notes/ue4-blueprint-snippets/</loc>
     <lastmod>2021-07-15T16:24:36+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue4_blueprint_communication/</loc>
+    <loc>https://www.petfactory.se/notes/ue4-blueprint-communication/</loc>
     <lastmod>2021-07-14T18:37:41+02:00</lastmod>
   </url>
   
@@ -163,12 +173,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/ue4_getting_started/</loc>
+    <loc>https://www.petfactory.se/notes/ue4-getting-started/</loc>
     <lastmod>2021-07-10T18:37:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_kinefx/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-kinefx/</loc>
     <lastmod>2021-01-30T16:40:32+01:00</lastmod>
   </url>
   
@@ -238,12 +248,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_animation/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-animation/</loc>
     <lastmod>2020-09-18T14:24:14+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_crowd/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-crowd/</loc>
     <lastmod>2020-09-18T14:24:14+02:00</lastmod>
   </url>
   
@@ -253,12 +263,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/blender_boxcutter/</loc>
+    <loc>https://www.petfactory.se/notes/blender-boxcutter/</loc>
     <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/blender_hardops/</loc>
+    <loc>https://www.petfactory.se/notes/blender-hardops/</loc>
     <lastmod>2020-07-29T14:53:41+02:00</lastmod>
   </url>
   
@@ -278,7 +288,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/blender_modifiers/</loc>
+    <loc>https://www.petfactory.se/notes/blender-modifiers/</loc>
     <lastmod>2020-07-04T16:24:47+02:00</lastmod>
   </url>
   
@@ -288,12 +298,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/blender_modeling/</loc>
+    <loc>https://www.petfactory.se/notes/blender-modeling/</loc>
     <lastmod>2020-06-23T16:27:47+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/blender_intro/</loc>
+    <loc>https://www.petfactory.se/notes/blender-intro/</loc>
     <lastmod>2020-06-22T16:27:47+02:00</lastmod>
   </url>
   
@@ -303,7 +313,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/the_bot_20/</loc>
+    <loc>https://www.petfactory.se/work/the-bot-20/</loc>
     <lastmod>2020-05-27T15:10:51+01:00</lastmod>
   </url>
   
@@ -323,12 +333,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/mocap_dance/</loc>
+    <loc>https://www.petfactory.se/work/mocap-dance/</loc>
     <lastmod>2020-04-20T13:45:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-18-sparse-pyro/</loc>
     <lastmod>2020-04-07T21:17:10+02:00</lastmod>
   </url>
   
@@ -338,7 +348,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/substance_painter_notes/</loc>
+    <loc>https://www.petfactory.se/notes/substanc-painter-notes/</loc>
     <lastmod>2020-02-07T20:26:30+01:00</lastmod>
   </url>
   
@@ -348,7 +358,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/substance_designer_notes/</loc>
+    <loc>https://www.petfactory.se/notes/substance-designer-notes/</loc>
     <lastmod>2020-02-06T20:26:30+01:00</lastmod>
   </url>
   
@@ -358,7 +368,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/marvelous_designer/</loc>
+    <loc>https://www.petfactory.se/notes/marvelous-designer/</loc>
     <lastmod>2020-01-28T11:23:08+01:00</lastmod>
   </url>
   
@@ -378,7 +388,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/workflow_tips/</loc>
+    <loc>https://www.petfactory.se/notes/workflow-tips/</loc>
     <lastmod>2020-01-01T14:53:41+02:00</lastmod>
   </url>
   
@@ -413,7 +423,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_uv/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-uv/</loc>
     <lastmod>2019-12-19T11:33:41+01:00</lastmod>
   </url>
   
@@ -428,12 +438,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_cops/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-cops/</loc>
     <lastmod>2019-12-16T12:27:59+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_tops/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-tops/</loc>
     <lastmod>2019-12-12T15:09:45+01:00</lastmod>
   </url>
   
@@ -443,7 +453,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_python/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-python/</loc>
     <lastmod>2019-12-01T13:56:54+01:00</lastmod>
   </url>
   
@@ -458,7 +468,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/davinci_resolve_python/</loc>
+    <loc>https://www.petfactory.se/notes/davinci-resolve-python/</loc>
     <lastmod>2019-11-20T14:11:00+01:00</lastmod>
   </url>
   
@@ -468,7 +478,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/davinci_resolve_fusion/</loc>
+    <loc>https://www.petfactory.se/notes/davinci-resolve-fusion/</loc>
     <lastmod>2019-11-12T21:58:27+01:00</lastmod>
   </url>
   
@@ -478,12 +488,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/davinci_resolve_edit/</loc>
+    <loc>https://www.petfactory.se/notes/davinci-resolve-edit/</loc>
     <lastmod>2019-11-07T15:12:17+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/hugo_notes/</loc>
+    <loc>https://www.petfactory.se/notes/hugo-notes/</loc>
     <lastmod>2019-10-30T11:16:20+02:00</lastmod>
   </url>
   
@@ -493,7 +503,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_17_pyro/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-17-pyro/</loc>
     <lastmod>2019-10-29T11:16:20+02:00</lastmod>
   </url>
   
@@ -513,12 +523,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/proc_city_02/</loc>
+    <loc>https://www.petfactory.se/work/proc-city-02/</loc>
     <lastmod>2019-09-01T15:10:51+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/the_bot/</loc>
+    <loc>https://www.petfactory.se/work/the-bot/</loc>
     <lastmod>2019-08-01T15:10:51+01:00</lastmod>
   </url>
   
@@ -528,7 +538,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/genuine_parts/</loc>
+    <loc>https://www.petfactory.se/work/genuine-parts/</loc>
     <lastmod>2019-06-01T15:10:51+01:00</lastmod>
   </url>
   
@@ -543,7 +553,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_vex/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-vex/</loc>
     <lastmod>2019-04-14T13:45:10+01:00</lastmod>
   </url>
   
@@ -553,7 +563,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_vex_flex/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-vex-flex/</loc>
     <lastmod>2019-04-12T13:45:10+01:00</lastmod>
   </url>
   
@@ -563,12 +573,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/flask_sqlite_dev/</loc>
+    <loc>https://www.petfactory.se/notes/flask-sqlite-dev/</loc>
     <lastmod>2019-01-02T11:16:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/houdini_misc/</loc>
+    <loc>https://www.petfactory.se/notes/houdini-misc/</loc>
     <lastmod>2019-01-01T20:32:44+01:00</lastmod>
   </url>
   
@@ -588,7 +598,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/sublime_text/</loc>
+    <loc>https://www.petfactory.se/notes/sublime-text/</loc>
     <lastmod>2017-10-14T11:16:20+02:00</lastmod>
   </url>
   

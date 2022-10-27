@@ -13,28 +13,39 @@
     
     <item>
       <title>Houdini - Heightfield</title>
-      <link>https://www.petfactory.se/notes/houdini_heightfield/</link>
+      <link>https://www.petfactory.se/notes/houdini-heightfield/</link>
       <pubDate>Tue, 11 Oct 2022 14:24:14 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_heightfield/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-heightfield/</guid>
       <description>hf_tests_01.hiplcSome sample setups using hf wrangle </description>
     </item>
     
     <item>
-      <title>UE5 - Sequencer &amp; Movie Render Queue</title>
-      <link>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</link>
+      <title>UE5 - Lumen</title>
+      <link>https://www.petfactory.se/notes/ue5-lumen/</link>
       <pubDate>Sat, 01 Oct 2022 22:03:02 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5-sequencer_and_mrq/</guid>
-      <description>Resources Epic  Rendering High Quality Frames with Movie Render Queue  </description>
+      <guid>https://www.petfactory.se/notes/ue5-lumen/</guid>
+      <description>Lumen General Info  Surface Cache  Lumen generates an automatic parameterization of the nearby scene surfaces called the Surface Cache It is used to quickly look up lighting at ray hit points in the scene Lumen the captures the material properties for each mesh from multiple angles. These capture positions called cards are generated offline for each mesh   Screen Tracing  Lumen features trace rays against the screen first Before moving on to a more reliable method, if no hit is found or the ray passes behind a surface.</description>
+    </item>
+    
+    <item>
+      <title>UE5 - Movie Render Queue</title>
+      <link>https://www.petfactory.se/notes/ue5-movie-render-queue/</link>
+      <pubDate>Sat, 01 Oct 2022 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-movie-render-queue/</guid>
+      <description>Movie Render Queue Config Before rendering any sequences loaded in the queue, you will need to configure the settings you want to use. There are a wide variety of settings that can be adjusted, such as output format, filename, and anti-aliasing settings.
+ Settings
+With the Settings options, you can specify additional configurable items to use when rendering the final output image.  Anti-aliasing  Controls the number of samples and sample types used when rendering out the final images.</description>
     </item>
     
     <item>
       <title>UE5 - Python &amp; PySide2</title>
-      <link>https://www.petfactory.se/notes/ue5_python_pyside2/</link>
+      <link>https://www.petfactory.se/notes/ue5-python-pyside2/</link>
       <pubDate>Thu, 01 Sep 2022 15:03:19 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5_python_pyside2/</guid>
+      <guid>https://www.petfactory.se/notes/ue5-python-pyside2/</guid>
       <description>Python plugin Enable the plugins you wish to use. There might be more scripting modules under the scripting tab depending on what you have installed and what you wish to be able to modify with python.
  Edit &amp;gt; Plugins &amp;gt; Scripting &amp;gt;  Python Editor Script Plugin Sequencer Scripting etc &amp;hellip;    Developer Mode The developer mode will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs.</description>
     </item>
@@ -50,30 +61,30 @@
     
     <item>
       <title>Houdini - LOPS &amp; USD</title>
-      <link>https://www.petfactory.se/notes/houdini_lops_usd/</link>
+      <link>https://www.petfactory.se/notes/houdini-lops-usd/</link>
       <pubDate>Sun, 12 Jun 2022 15:09:45 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_lops_usd/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-lops-usd/</guid>
       <description>Tips Lighting  Automatic headlight Creation  The default behaviour when there are no lights present in the scene is to create a default headlight. To disable the default light uncheck the following checkbox
 Karma render settings (node) &amp;gt; Rendering &amp;gt; Geometry and Shading &amp;gt; Shading &amp;gt; Automatic Headlight Creation : Disable    Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework.</description>
     </item>
     
     <item>
       <title>OCIO - Python</title>
-      <link>https://www.petfactory.se/notes/ocio_python/</link>
+      <link>https://www.petfactory.se/notes/ocio-python/</link>
       <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ocio_python/</guid>
+      <guid>https://www.petfactory.se/notes/ocio-python/</guid>
       <description>I am writing a tool for Houdini that can create, save and apply color themes to color ramp parameters. In this project I needed to convert between color spaces. There are many ways to do this, but this led me to start exploring OCIO using Python. Below is a snippet that changes the color space of a list of rgb values from srgb to linear srgb.
  First I activate the venv into which I want to install OCIO Then I run pip install opencolorio With the package installed make sure that your IDE can access the package We also need to download a OCIO configuration file from here  import osimport PyOpenColorIO as OCIOdef apply_rgb(rgb, src_space, dst_space):try:config = OCIO.</description>
     </item>
     
     <item>
       <title>UE5 - Cinematics</title>
-      <link>https://www.petfactory.se/notes/ue5_cinematics/</link>
+      <link>https://www.petfactory.se/notes/ue5-cinematics/</link>
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5_cinematics/</guid>
+      <guid>https://www.petfactory.se/notes/ue5-cinematics/</guid>
       <description>Sequencer Tips  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.  A master sequence will contain sub-sequences and level sequences A master sequence is a cointainer of shots   A clean Master sequence  The idea is to keep a master sequence quite clean (and have the complexity such as keyframes, effects etc in sub-sequences) to make it possible for a quick edit at the top level.</description>
     </item>
     
@@ -92,19 +103,19 @@ Note this will only be set for the project   To invert the middle mouse pan on a
     
     <item>
       <title>UE4 - Blueprint Snippets</title>
-      <link>https://www.petfactory.se/notes/ue4_blueprint_snippets/</link>
+      <link>https://www.petfactory.se/notes/ue4-blueprint-snippets/</link>
       <pubDate>Thu, 15 Jul 2021 16:24:36 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue4_blueprint_snippets/</guid>
+      <guid>https://www.petfactory.se/notes/ue4-blueprint-snippets/</guid>
       <description>Misc  Enable Input  By default the key input is disabled in the standard template.  This is why we need to enable Input in the BeginPlay event   In a level blueprint we do not need to do this   Consume Keyboard event  By default a keyboard event has the property &amp;ldquo;Consume&amp;rdquo; enabled  if it is enabled it will prevent actors with a lower priority to handle the input     Logic Sequence (Flow Control)  If you want to call n number of functions from one input you can use the &amp;ldquo;Sequence&amp;rdquo; (Flow Control) node.</description>
     </item>
     
     <item>
       <title>UE4 - Blueprint Communication</title>
-      <link>https://www.petfactory.se/notes/ue4_blueprint_communication/</link>
+      <link>https://www.petfactory.se/notes/ue4-blueprint-communication/</link>
       <pubDate>Wed, 14 Jul 2021 18:37:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue4_blueprint_communication/</guid>
+      <guid>https://www.petfactory.se/notes/ue4-blueprint-communication/</guid>
       <description>Below are som notes from a really good video on blueprint communication by Zak Parrish
 Blueprint Communications | Live Training | Unreal Engine
 Intro  A way for separate individual obejcts to talk to each other Useful for:  Broadcasting an event to a number of listeners Telling a specfic object to do something Quering another object   UE4 has no way to just &amp;ldquo;send a broad signal to everyone&amp;rdquo;  Trivia: had it in UE2, but it wasn’t very efficient   Communication will always involve the following:  A Sending Blueprint At least one Receiving Blueprint   Communication will always require a reference at some point  The Sender or Receiver has to become aware of the other   All Blueprint communication is 1-way  Blueprints can send data back and forth, but it requires both Blueprints to set up their own individual paths of communication Queries are possible, but are initiated by the Sender (still 1-way)    Types of communication  3 primary Blueprint communication Methods  Direct Communication Blueprint Interface message calls Event Dispatchers    When to use  Flow of communication  Is the sender pushing the data to the reciever?</description>
@@ -121,39 +132,39 @@ Intro  A way for separate individual obejcts to talk to each other Useful for:  
     
     <item>
       <title>UE4 - Getting started</title>
-      <link>https://www.petfactory.se/notes/ue4_getting_started/</link>
+      <link>https://www.petfactory.se/notes/ue4-getting-started/</link>
       <pubDate>Sat, 10 Jul 2021 18:37:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue4_getting_started/</guid>
+      <guid>https://www.petfactory.se/notes/ue4-getting-started/</guid>
       <description>Below are some notes from Getting Started in Unreal Engine
 Install First we click the plus icon and select the version. When we click the install button we get a promt to choose instasll location. Here we can click the options button to choose we we want to include. If we know we are not interested in some of the target platforms we can uncheck them to avoid to have to download and install that data.</description>
     </item>
     
     <item>
       <title>Houdini - KineFX</title>
-      <link>https://www.petfactory.se/notes/houdini_kinefx/</link>
+      <link>https://www.petfactory.se/notes/houdini-kinefx/</link>
       <pubDate>Sat, 30 Jan 2021 16:40:32 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_kinefx/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-kinefx/</guid>
       <description>Capture Biharmonic Capture  Create Geometry node and step in Add Geo with sufficient resolution to allow for nice deformation (this is the geo we will capture) Add a Skeleton node and add joints. Append a Bone Capture Lines node to the skeleton node. Then we need to create a &amp;ldquo;Tet-mesh&amp;rdquo; of the geo we want to capture. This can be done in two different wways. We can either use a Tet Embed node or use a Remesh node to remesh and use a Tet Conform node to create a Tet-mesh based on the triangles created by the remesh node.</description>
     </item>
     
     <item>
       <title>Houdini - Animation</title>
-      <link>https://www.petfactory.se/notes/houdini_animation/</link>
+      <link>https://www.petfactory.se/notes/houdini-animation/</link>
       <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_animation/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-animation/</guid>
       <description>Animation Editor Or graph editor in Maya speek.
  Set Keyframe : Alt LMB (click the parm) Delete Keyframe : Ctrl LMB (click the parm)  It will leave the current value (of the animation curve as) a static value   Reset to Default : Ctrl MMB (click the parm) Open Animation Editor : Shift LMB (click the parm) Edit Channel Properties : Select the channel, with the mouse pointer over the animation editor press Alt E  Or RMB click the channel &amp;gt; Channels &amp;gt; Channels Properties It is in this widget you can set how the curve will extrapolate before &amp;amp; after the keyframes    Copy/Paste Keyframes  Shift LMB click the parm to open the animation editor Select the keyframes and Ctrl C to copy Shift LMB click the parm that you want to paste to  This will open up the animation editor, with the channel selected in the channel list   Ctrl V paste the keyframes.</description>
     </item>
     
     <item>
       <title>Houdini - Crowd</title>
-      <link>https://www.petfactory.se/notes/houdini_crowd/</link>
+      <link>https://www.petfactory.se/notes/houdini-crowd/</link>
       <pubDate>Fri, 18 Sep 2020 14:24:14 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_crowd/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-crowd/</guid>
       <description>Houdini 18 crowd docs
 Theese notes are based on the excellent tutorial by Mikael Pettersen, a little bit of CGWiki and random bits of information I stumble up on.
 Minimal Setup Lets setup a minimal but &amp;ldquo;working&amp;rdquo; crowd.
@@ -162,10 +173,10 @@ Minimal Setup Lets setup a minimal but &amp;ldquo;working&amp;rdquo; crowd.
     
     <item>
       <title>Blender - Boxcutter</title>
-      <link>https://www.petfactory.se/notes/blender_boxcutter/</link>
+      <link>https://www.petfactory.se/notes/blender-boxcutter/</link>
       <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/blender_boxcutter/</guid>
+      <guid>https://www.petfactory.se/notes/blender-boxcutter/</guid>
       <description>Boxcutter official docs
 Shortcuts  Enable box cutter : Alt W (Will cycle hardpos if available) BoxCutter pie menu : D BoxCutter popup menu : Ctrl D  Tips Navigation When you have Maya style navigation set up this there is an option to preserve Alt and RMB keys.
  Edit &amp;gt; Preferences &amp;gt; Add-ons &amp;gt; BoxCutter &amp;gt; Keymap &amp;gt;  Preserve Alt Preserve RMB    Cutters Linebox When you use the box shape there is an option called linebox that allows you to easily create Wedge shaped cuts.</description>
@@ -173,39 +184,39 @@ Shortcuts  Enable box cutter : Alt W (Will cycle hardpos if available) BoxCutter
     
     <item>
       <title>Blender - Hard Ops</title>
-      <link>https://www.petfactory.se/notes/blender_hardops/</link>
+      <link>https://www.petfactory.se/notes/blender-hardops/</link>
       <pubDate>Wed, 29 Jul 2020 14:53:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/blender_hardops/</guid>
+      <guid>https://www.petfactory.se/notes/blender-hardops/</guid>
       <description>Hard Ops official docs
 Shortcuts  Hops Menu : Q Bevel Helper : Ctrl Shift B  Object Mode Operations  Operations  Smart Apply  LMB : Smart apply modifiers (kkeps last bevel and weighted normal) Shift LMB Smart apply duplicate (With clear last bevel and weighted normal)      Edit Mode Curve/Extract  Curve/Extract  LMB : Converts edge to curve. Shift LMB : Converts selection to plate.</description>
     </item>
     
     <item>
       <title>Blender - Modifiers</title>
-      <link>https://www.petfactory.se/notes/blender_modifiers/</link>
+      <link>https://www.petfactory.se/notes/blender-modifiers/</link>
       <pubDate>Sat, 04 Jul 2020 16:24:47 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/blender_modifiers/</guid>
+      <guid>https://www.petfactory.se/notes/blender-modifiers/</guid>
       <description>Blender Intro Modelling Modifiers General  Here is the Blender modifier docs Apply all modifiers  Object &amp;gt; Convert to &amp;gt; Mesh from Curve/Meta/Surf/Text   Copy Modifiers  Note that we need the Copy Attributes Menu (Interface) add-on installed Select all the objects to copy the modifier to Lastly select the object with the modifiers to copy Ctrl C &amp;gt; Copy Modifiers    Vertex groups  How to create a vertex group  Go into edit mode of the mesh you want to add the group to Click the Object Data Properties Expand the Vertex Groups area Click the + button, and optionally name the group Use the Weights slider (or enter numerically) to specify the weight to be added.</description>
     </item>
     
     <item>
       <title>Blender - Modeling</title>
-      <link>https://www.petfactory.se/notes/blender_modeling/</link>
+      <link>https://www.petfactory.se/notes/blender-modeling/</link>
       <pubDate>Tue, 23 Jun 2020 16:27:47 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/blender_modeling/</guid>
+      <guid>https://www.petfactory.se/notes/blender-modeling/</guid>
       <description>Blender Intro Modelling Modifiers General Gotchas Non-uniform object scale
 If an object has non-uniform scale you can run into errors when doing operation on the mesh (edit mode). This is because the object scale is taken into account when the mesh is edited. For instance, we have a cube object with an x-scale of .1 (in object mode) and the verts (in edit mode) are scaled to compensate for this (x-scale 10) resulting in a cube that looks uniform.</description>
     </item>
     
     <item>
       <title>Blender - Intro</title>
-      <link>https://www.petfactory.se/notes/blender_intro/</link>
+      <link>https://www.petfactory.se/notes/blender-intro/</link>
       <pubDate>Mon, 22 Jun 2020 16:27:47 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/blender_intro/</guid>
+      <guid>https://www.petfactory.se/notes/blender-intro/</guid>
       <description>Blender Intro Modelling Modifiers It is finally time to start exploring Blender. I have had this on my todo list for a long time but there were alot of other things to focus on first.
 Here is a nice Blender Fundamentals 2.8 playlist
 Config The blender config is located here:
@@ -216,10 +227,10 @@ Regions Every Editor in Blender is divided into Regions (docs).</description>
     
     <item>
       <title>Houdini 18 - Sparse pyro</title>
-      <link>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</link>
+      <link>https://www.petfactory.se/notes/houdini-18-sparse-pyro/</link>
       <pubDate>Tue, 07 Apr 2020 21:17:10 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_18_sparse_pyro/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-18-sparse-pyro/</guid>
       <description>Some notes on using the sparse pyro solver taken while watching Steven Knippings excellent Volumes III v2.0
 Source points Popnet Setup a particle sim that we will use as source for our smoke sim.
 Point Wrangle Lets append a point wrangle to the particles. We will use the normailzed age to drive the density of the particles. We will use a ramp parameter and use the normalized age to drive the ramp.</description>
@@ -227,38 +238,38 @@ Point Wrangle Lets append a point wrangle to the particles. We will use the norm
     
     <item>
       <title>Substance Painter - notes</title>
-      <link>https://www.petfactory.se/notes/substance_painter_notes/</link>
+      <link>https://www.petfactory.se/notes/substanc-painter-notes/</link>
       <pubDate>Fri, 07 Feb 2020 20:26:30 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/substance_painter_notes/</guid>
+      <guid>https://www.petfactory.se/notes/substanc-painter-notes/</guid>
       <description>Material sets &amp;amp; ID Maps Material set (Maya) or shop_materialpath (Houdini). To make it easier to paint it can be good to organize the model using 2 separate models (of the same model) but where the materials are named and assigned differently. Lets say that we wish to separate a model into 3 different texture sets. &amp;ldquo;base&amp;rdquo;, &amp;ldquo;mid&amp;rdquo; and &amp;ldquo;top&amp;rdquo;. We create material called this and assigns them to the geo that we want to separate i.</description>
     </item>
     
     <item>
       <title>Substance Designer - notes</title>
-      <link>https://www.petfactory.se/notes/substance_designer_notes/</link>
+      <link>https://www.petfactory.se/notes/substance-designer-notes/</link>
       <pubDate>Thu, 06 Feb 2020 20:26:30 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/substance_designer_notes/</guid>
+      <guid>https://www.petfactory.se/notes/substance-designer-notes/</guid>
       <description>Parameters Conditional Visibility  Boolean  input[&amp;ldquo;MyInput&amp;rdquo;] input[&amp;ldquo;MyInput&amp;rdquo;] == true !input[&amp;ldquo;MyInput&amp;rdquo;] input[&amp;ldquo;MyInput&amp;rdquo;] == false input[&amp;ldquo;MyInput&amp;rdquo;] != true   Float  input[&amp;ldquo;MyInput&amp;rdquo;] &amp;lt; 3 input[&amp;ldquo;param1&amp;rdquo;] == 2 input[&amp;ldquo;MyInput&amp;rdquo;].y &amp;lt; 3 input[&amp;ldquo;param1&amp;rdquo;] || input[&amp;ldquo;param2&amp;rdquo;] input[&amp;ldquo;param1&amp;rdquo;] &amp;gt; 0 &amp;amp;&amp;amp; input[&amp;ldquo;param2&amp;rdquo;] &amp;gt; 1    Tips UV  To view the UVs in the 2D view  3D view Scene &amp;gt; Display UVs in 2D view    UDIM If you import a mesh that only have one uv tile but this tile is not the 1001 udim.</description>
     </item>
     
     <item>
       <title>Marvelous Designer</title>
-      <link>https://www.petfactory.se/notes/marvelous_designer/</link>
+      <link>https://www.petfactory.se/notes/marvelous-designer/</link>
       <pubDate>Tue, 28 Jan 2020 11:23:08 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/marvelous_designer/</guid>
+      <guid>https://www.petfactory.se/notes/marvelous-designer/</guid>
       <description>Tips Right Click There are a lot of useful RMB contextual menus:
  Copy/paste multiple  If you select a pattern and press Cmd C and then Cmd V and RMB click you can use number of instances and the spacing. (The direction is decided by the direction you had when RMB clicked) This also works for Internal lines   Precise numerical movement  If you want to move a point, line pattern you can first start to drag and while holding LMB click RMB to get a popup menu where you can set a numerical value.</description>
     </item>
     
     <item>
       <title>Workflow - Tips</title>
-      <link>https://www.petfactory.se/notes/workflow_tips/</link>
+      <link>https://www.petfactory.se/notes/workflow-tips/</link>
       <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/workflow_tips/</guid>
+      <guid>https://www.petfactory.se/notes/workflow-tips/</guid>
       <description>Here I will post (mildly) useful things that falls outside more specfic topics.
 Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
 Resize In-place resizing
@@ -268,10 +279,10 @@ magick mogrify -resize 50% -path ./DST *.</description>
     
     <item>
       <title>Houdini - UV</title>
-      <link>https://www.petfactory.se/notes/houdini_uv/</link>
+      <link>https://www.petfactory.se/notes/houdini-uv/</link>
       <pubDate>Thu, 19 Dec 2019 11:33:41 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_uv/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-uv/</guid>
       <description>Vieport display options Open the vieport display option dialog (press D over the viewport)
  Markers tab &amp;gt; Vertices &amp;gt; UV Overlap  Displays the overlap in red (in the UV view)    UV Layout Target Assignment (UDIM) To force specific primitives to a specific UDIM we can use a primitive attr to specify which one.
  Create a poly tube with end caps. Create groups for the top, btm and the &amp;ldquo;mid&amp;rdquo;  One way to do this is to use the group by normal for the top and btm and for the mid a group combine with &amp;ldquo;equals all but&amp;rdquo; the top and btm.</description>
@@ -279,20 +290,20 @@ magick mogrify -resize 50% -path ./DST *.</description>
     
     <item>
       <title>Houdini - COPS</title>
-      <link>https://www.petfactory.se/notes/houdini_cops/</link>
+      <link>https://www.petfactory.se/notes/houdini-cops/</link>
       <pubDate>Mon, 16 Dec 2019 12:27:59 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_cops/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-cops/</guid>
       <description>Preferences In the Edit &amp;gt; Preferences &amp;gt; Compositing we can set how many threads we want to use for the cooking and the Tile Size of each chunk of the tiles that will be processed. We can also set the Resolution Limit. If we do a mosaic of 1 K images we can exceed this limit and that can lead to issues.
 The turn of the thumbnails of each cop node we can disable view &amp;gt; Show Node Previews in the menubar of the cop network view.</description>
     </item>
     
     <item>
       <title>Houdini - TOPS</title>
-      <link>https://www.petfactory.se/notes/houdini_tops/</link>
+      <link>https://www.petfactory.se/notes/houdini-tops/</link>
       <pubDate>Thu, 12 Dec 2019 15:09:45 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_tops/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-tops/</guid>
       <description>TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
 Wedge geo variations Lets setup a TOP network to write out geo variations to disc. We will do this using a Wedge node.
 Pull vs Push For each wedged attribute, you can use it to set a parameter on the render node in one of two ways:</description>
@@ -300,10 +311,10 @@ Pull vs Push For each wedged attribute, you can use it to set a parameter on the
     
     <item>
       <title>Houdini - Python</title>
-      <link>https://www.petfactory.se/notes/houdini_python/</link>
+      <link>https://www.petfactory.se/notes/houdini-python/</link>
       <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_python/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-python/</guid>
       <description>Here I will gather information that I find useful.
 Environment variables Houdini uses environment variables for various purposes, such as defining paths (sets of directories in which Houdini looks for certain types of files), commonly used directories (such as $HFS, the install location of Houdini) and for obscure or highly technical settings.
 See the list of environment variables in Houdini.
@@ -323,76 +334,76 @@ Preferences Before you create an HDA it is a good idea to configure the preferen
     
     <item>
       <title>DaVinci Resolve - Python</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_python/</link>
+      <link>https://www.petfactory.se/notes/davinci-resolve-python/</link>
       <pubDate>Wed, 20 Nov 2019 14:11:00 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_python/</guid>
+      <guid>https://www.petfactory.se/notes/davinci-resolve-python/</guid>
       <description>An old scripting guide can be found here
 Python &amp;amp; Lua Historically FusionScript was Lua only, some methods that return multiple statements have a special Table() suffix variant to return the proper table for use in Python. As the Lua collection is a tuple, you will need to pass a dictionary to the API in many cases, even when it seems to be treated like a list. So each Value needs to have a key in the order of the entry.</description>
     </item>
     
     <item>
       <title>DaVinci Resolve - Fusion</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_fusion/</link>
+      <link>https://www.petfactory.se/notes/davinci-resolve-fusion/</link>
       <pubDate>Tue, 12 Nov 2019 21:58:27 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_fusion/</guid>
+      <guid>https://www.petfactory.se/notes/davinci-resolve-fusion/</guid>
       <description>Quick tips  Auto Save  Auto save (live save) is on by default and you might want to turn it off. DaVinci Resolve &amp;gt; Preferences &amp;gt; Project Save and Load &amp;gt; Save Settings &amp;gt; Live save   Bookmarks  You can add bookmarks with Ctrl + D Underlays can also function as bookmarks Also in 3 dot menu       Page      Edit Shift + 4   Fusion Shift + 5   Color Shift + 6    Viewers There are two viewers.</description>
     </item>
     
     <item>
       <title>DaVinci Resolve - Edit</title>
-      <link>https://www.petfactory.se/notes/davinci_resolve_edit/</link>
+      <link>https://www.petfactory.se/notes/davinci-resolve-edit/</link>
       <pubDate>Thu, 07 Nov 2019 15:12:17 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/davinci_resolve_edit/</guid>
+      <guid>https://www.petfactory.se/notes/davinci-resolve-edit/</guid>
       <description>Quick tips  Import png &amp;amp; jpeg as a sequence  By default it seems like exr will import as a sequence but jpeg and png as stills. If you want to import png &amp;amp; jpeg as sequences  On the media page, click on the &amp;ldquo;3 dot menu&amp;rdquo; in the Media Storage section (top left) Frame Display Mode &amp;gt; Sequence     Auto Save  Auto save (live save) is on by default and you might want to turn it off.</description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://www.petfactory.se/notes/hugo_notes/</link>
+      <link>https://www.petfactory.se/notes/hugo-notes/</link>
       <pubDate>Wed, 30 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/hugo_notes/</guid>
+      <guid>https://www.petfactory.se/notes/hugo-notes/</guid>
       <description>Creating/coding for the web is not my primarily focus but i think it is an important skill to have and will be increasingly so. As part of a 1 year program in business and marketing I did almost 20 years ago we had a short course in web development. The instructor insisted that we should use Dreamweaver (Macromedia at the time). I did not like it, I thought it hid the internal mechanics and I wanted to get closer to the actual language so I ended up writing everything in notepad.</description>
     </item>
     
     <item>
       <title>Houdini 17 - Pyro</title>
-      <link>https://www.petfactory.se/notes/houdini_17_pyro/</link>
+      <link>https://www.petfactory.se/notes/houdini-17-pyro/</link>
       <pubDate>Tue, 29 Oct 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_17_pyro/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-17-pyro/</guid>
       <description>Add a geo to use as source and append a Pyro Source node to it. This node does not make the volume, it creates points.
 Below are some lines form the docs The Pyro Source SOP converts its input geometry into points suitable for sourcing pyro and smoke simulations. This SOP adds specified attributes to the generated points, which can be rasterized and imported into desired DOP fields by the Volume Source node.</description>
     </item>
     
     <item>
       <title>Houdini - VEX</title>
-      <link>https://www.petfactory.se/notes/houdini_vex/</link>
+      <link>https://www.petfactory.se/notes/houdini-vex/</link>
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_vex/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-vex/</guid>
       <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Quaternion  Quaternion to Euler  Specify the rotation order with the order integer. Use the constants defined in $HH/vex/include/math.h (for example, XFORM_XYZ) Note! You do not need to include math.h in a wrangle (like this: #include &amp;lt;math.h&amp;gt;) it is included by default. vector euler = degrees(quaterniontoeuler(p@orient, XFORM_XYZ));    Matrix  Get matrix components  You can use getcomp function&amp;hellip; getcomp(&amp;lt;matrix&amp;gt;m, int row, int column) &amp;hellip;but you can also access components using m.</description>
     </item>
     
     <item>
       <title>Houdini - VEX Flex</title>
-      <link>https://www.petfactory.se/notes/houdini_vex_flex/</link>
+      <link>https://www.petfactory.se/notes/houdini-vex-flex/</link>
       <pubDate>Fri, 12 Apr 2019 13:45:10 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_vex_flex/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-vex-flex/</guid>
       <description>This is not really VEX flexing but I really liked that title :)
 Trigonometry Rotation In an Unreal shader I was building I needed to &amp;ldquo;rotate back&amp;rdquo; some pixels in the normal map so that the normals was corrected when the uv for the texture sampling was rotated. The key is to use the inverted rotation to rotate back the R(U) and G(V) color values (per pixel) so that the map is corrected.</description>
     </item>
     
     <item>
       <title>Flask SQLite dev</title>
-      <link>https://www.petfactory.se/notes/flask_sqlite_dev/</link>
+      <link>https://www.petfactory.se/notes/flask-sqlite-dev/</link>
       <pubDate>Wed, 02 Jan 2019 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/flask_sqlite_dev/</guid>
+      <guid>https://www.petfactory.se/notes/flask-sqlite-dev/</guid>
       <description>The database will contain materials, material types and surface properties.
   Material
  id name material type surface properties    Material type
@@ -406,10 +417,10 @@ pip install FlaskThere is a regular SQLAlchemy package but flask-sqlalchemy is 
     
     <item>
       <title>Houdini - Misc</title>
-      <link>https://www.petfactory.se/notes/houdini_misc/</link>
+      <link>https://www.petfactory.se/notes/houdini-misc/</link>
       <pubDate>Tue, 01 Jan 2019 20:32:44 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/houdini_misc/</guid>
+      <guid>https://www.petfactory.se/notes/houdini-misc/</guid>
       <description>A collection of various Houdini related things that doesn´t fit anywhere else.
 POP Birth Rate A good way to control the amount of particles being emitted is to keyframe the Const. Birt Rate (Birth tab) with values between 0 and 1. Then we can use the Scale Point Count by Area (Source tab) as a multiplier of points emitted.
 Rest attribute If we want to store the position where the particle was spawned we can create a rest attribute to the geo that we use as source.</description>
@@ -438,10 +449,10 @@ Venv Setup a virtual environment It is a good idea to install packages in virtua
     
     <item>
       <title>SublimeText</title>
-      <link>https://www.petfactory.se/notes/sublime_text/</link>
+      <link>https://www.petfactory.se/notes/sublime-text/</link>
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/sublime_text/</guid>
+      <guid>https://www.petfactory.se/notes/sublime-text/</guid>
       <description>Misc Diff files  Diff two files  Make sure the files are in the &amp;ldquo;Folders&amp;rdquo; section  You can add folders to the project by dragging and dropping   Selct the first file, then Ctrl select the second RMB click &amp;gt; Diff Files&amp;hellip;   Only works with UTF-8 files  If you can not diff to files that should be &amp;ldquo;diffable&amp;rdquo; then you probably have some non-ascii characters A quick way to inspect teh file is to press &amp;ldquo;Ctrl F&amp;rdquo; then press &amp;ldquo;Alt R&amp;rdquo; to enable Regex mode  You can also click the regex button on the left most edge of the search input field   Then paste the regex [^\x00-\x7F] in the searc input field Press find    Search and replace # I wanted to change a H3 header (###) in a markdown file.</description>
     </item>
     

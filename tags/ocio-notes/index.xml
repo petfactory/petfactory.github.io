@@ -13,10 +13,10 @@
     
     <item>
       <title>OCIO - Python</title>
-      <link>https://www.petfactory.se/notes/ocio_python/</link>
+      <link>https://www.petfactory.se/notes/ocio-python/</link>
       <pubDate>Tue, 21 Sep 2021 11:18:51 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ocio_python/</guid>
+      <guid>https://www.petfactory.se/notes/ocio-python/</guid>
       <description>I am writing a tool for Houdini that can create, save and apply color themes to color ramp parameters. In this project I needed to convert between color spaces. There are many ways to do this, but this led me to start exploring OCIO using Python. Below is a snippet that changes the color space of a list of rgb values from srgb to linear srgb.
  First I activate the venv into which I want to install OCIO Then I run pip install opencolorio With the package installed make sure that your IDE can access the package We also need to download a OCIO configuration file from here  import osimport PyOpenColorIO as OCIOdef apply_rgb(rgb, src_space, dst_space):try:config = OCIO.</description>
     </item>
