@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lighting on Petfactory</title>
+    <link>https://www.petfactory.se/tags/lighting/</link>
+    <description>Recent content in Lighting on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Oct 2022 22:03:02 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/lighting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UE5 - Raytraced Lighting</title>
+      <link>https://www.petfactory.se/notes/ue5-raytraced-lighting/</link>
+      <pubDate>Mon, 10 Oct 2022 22:03:02 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-raytraced-lighting/</guid>
+      <description>Settings  Project Settings  Engine &amp;gt; Rendering &amp;gt;  Global Illumination &amp;gt;  Dynamic Global Illumination Method : Lumen   Reflections &amp;gt;  Reflection Method : Lumen Reflection Capture Resolution : 2048   Lumen &amp;gt;  Use Hardware Raytracing when available : On   Hardware Raytracing &amp;gt;  Support Hardware Raytracing : On  Note! Hardware Ray Tracing requires enabling skin cache. You will be promted to enable skin cache.</description>
+    </item>
+    
+  </channel>
+</rss>

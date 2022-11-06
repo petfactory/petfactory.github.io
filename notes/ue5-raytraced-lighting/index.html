@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | UE5 - Lumen</title>
-        <meta name="description" content="Petfactory | Design and Animation | UE5 - Lumen" />
+        <title>Petfactory | UE5 - Raytraced Lighting</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 - Raytraced Lighting" />
 
     </head>
 
@@ -169,17 +169,28 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
-    <li><a href="#lumen">Lumen</a>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#calibrating-the-scene">Calibrating the scene</a></li>
+    <li><a href="#core-light-actors">Core Light Actors</a>
       <ul>
-        <li><a href="#general-info">General Info</a></li>
-        <li><a href="#settings">Settings</a></li>
-        <li><a href="#limitations">Limitations</a></li>
-        <li><a href="#note">Note!</a></li>
-        <li><a href="#common-problems">Common Problems</a></li>
-        <li><a href="#visualizing-lumen">Visualizing Lumen</a></li>
-        <li><a href="#resources">Resources</a></li>
+        <li><a href="#ppv---neutral">PPV - Neutral</a></li>
+        <li><a href="#setup-atmosphere">Setup Atmosphere</a></li>
+        <li><a href="#ppv---artistic">PPV - Artistic</a></li>
       </ul>
     </li>
+    <li><a href="#workflow">Workflow</a>
+      <ul>
+        <li><a href="#levels">Levels</a></li>
+        <li><a href="#light-theory">Light Theory</a></li>
+        <li><a href="#light-types">Light Types</a></li>
+      </ul>
+    </li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#artifacts">Artifacts</a></li>
+      </ul>
+    </li>
+    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>	
 			</div>
@@ -197,189 +208,89 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>UE5 - Lumen</h1>
-			<h1 id="lumen">Lumen</h1>
-<h2 id="general-info">General Info</h2>
+			<h1>UE5 - Raytraced Lighting</h1>
+			<h1 id="settings">Settings</h1>
 <ul>
-<li><strong>Surface Cache</strong>
+<li><strong>Project Settings</strong>
 <ul>
-<li>Lumen generates an automatic parameterization of the nearby scene surfaces called the Surface Cache</li>
-<li>It is used to quickly look up lighting at ray hit points in the scene</li>
-<li>Lumen the captures the material properties for each mesh from multiple angles.</li>
-<li>These capture positions called cards are generated offline for each mesh</li>
+<li>Engine &gt; Rendering &gt;
+<ul>
+<li>Global Illumination &gt;
+<ul>
+<li><em>Dynamic Global Illumination Method</em> : Lumen</li>
 </ul>
 </li>
-<li><strong>Screen Tracing</strong>
+<li>Reflections &gt;
 <ul>
-<li>Lumen features trace rays against the screen first</li>
-<li>Before moving on to a more reliable method, if no hit is found or the ray passes behind a surface.</li>
-<li>Supports any geometry type and is useful for covering up mismatches between the lumen scene and the triangle scene.</li>
+<li><em>Reflection Method</em> : Lumen</li>
+<li><em>Reflection Capture Resolution</em> : 2048</li>
 </ul>
 </li>
-<li><strong>Ray Tracing</strong>
+<li>Lumen &gt;
 <ul>
-<li><em>Software</em>
-<ul>
-<li>Operates on the widest range of hardware and platforms</li>
-<li>Works against signed distance fields, by default</li>
-<li>This tracing representation is supported on any hardware supporting shader model 5</li>
-<li>And only requires <em>Generate Mesh Distance Fields</em> to be enabled in the project settings</li>
+<li><em>Use Hardware Raytracing when available</em> : On</li>
 </ul>
 </li>
-<li><em>Hardware</em>
+<li>Hardware Raytracing &gt;
 <ul>
-<li>Requires supported video cards and system to operate.</li>
-<li>Supports a larger range of geometry types than software raytracing</li>
-<li>In particular, it supports tracing against skinned meshes</li>
-<li>Scales up better to higher qualities, because it intersects against the actual triangles and has the option to evaluate the lighting at the ray hit instead of the lower quality surface cache</li>
-<li>Is the only way to achieve high-quality mirror reflections</li>
+<li><em>Support Hardware Raytracing</em> : On
+<ul>
+<li>Note! Hardware Ray Tracing requires enabling skin cache. You will be promted to enable skin cache.<br>
+Engine &gt; Rendering &gt; Optimizations &gt; Support Compute Skin Cache</li>
 </ul>
 </li>
+<li><em>Raytraced Shadow</em> : Off / Optional
+<ul>
+<li>You can override on a per light basis</li>
 </ul>
 </li>
-</ul>
-<hr>
-<p><strong>Requirements</strong></p>
+<li><em>Ray Traced Skyl Light</em> : Off / Optional
 <ul>
-<li>Requirements
-<ul>
-<li>General lumen &amp; software raytracing
-<ul>
-<li>Support Shader Model 5</li>
-<li>Direct3D 11 or higher</li>
-<li>Does not supporyt mobile, no plan to support it</li>
-</ul>
-</li>
-<li>Hardware raytracing
-<ul>
-<li>DirectX 12 or later</li>
-<li>Nvidia RTX 2000 or higher</li>
-<li>AMD RX 6000 or higher</li>
+<li>You can override on a per light basis</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>Software Raytracing &gt;
+<ul>
+<li><em>Generate Mesh Distance Fields</em></li>
 </ul>
-<h2 id="settings">Settings</h2>
-<p>Lumen is enabled by default on all new projects in UE 5.<br>
-If you need to enable lumen on manually this is how you would do it:</p>
+</li>
+<li>Default Settings &gt;
 <ul>
-<li><strong>Project Settings &gt; Engine &gt; Rendering &gt;</strong>
+<li><em>Auto Exposure</em> : Auto Exposure Histogram</li>
+<li><em>Extend default luminance range in Auto Exposure settings</em> : On
 <ul>
-<li><strong>Global Illumination &gt;</strong>
-<ul>
-<li><strong>Dynamic Global Illumination Method :</strong>
-<ul>
-<li><em>Lumen</em></li>
+<li>Allows use to use a more film based range value in the post process volume</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>Reflections &gt;</strong>
+<li>Optimizations &gt;
 <ul>
-<li><strong>Reflection Method :</strong>
+<li><em>GBuffer Format</em> : High Precision Normals
 <ul>
-<li><em>Lumen</em></li>
-</ul>
-</li>
-<li><strong>Reflection Capture Resolution :</strong>
-<ul>
-<li><em>128</em> (default)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Lumen &gt;</strong>
-<ul>
-<li><strong>Use Hardware Ray Tracing when available</strong> :<br>
-Will use HW raytracing (against..?) rather then SW against the surface cache.<br>
-Note! Hardware ray tracing has significant scene update cost for scenes with more than 100k instances
-<ul>
-<li><em>Enable</em></li>
-</ul>
-</li>
-<li><strong>Ray Lighting Mode :</strong><br>
-Controls how lumen reflection rays are lit when using HW ray tracing. By default lumen uses the surface cache for best performance, but can be set to &ldquo;Hit Lighting&rdquo; for higher quality.
-<ul>
-<li><em>Surface Cache</em> (faster)</li>
-<li><em>Hit Lighting for Reflections</em> (higher quality)</li>
-</ul>
-</li>
-<li><strong>Software Ray Tracing Mode :</strong><br>
-When SW ray tarcing is used will it use:
-<ul>
-<li><em>Detail Tracing</em> (higher guality)</li>
-<li><em>Global Tracing</em> (faster)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Hardware Ray Tracing</strong>
-<ul>
-<li><strong>Support Hardware Ray Tracing :</strong><br>
-Note! This needs to be enabled for the option to use HW raytracing when available to be used
-<ul>
-<li><em>Enable</em></li>
+<li>Same as default except normal are encoded at 16 bits per channel</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<h2 id="limitations">Limitations</h2>
+<li>Platforms &gt; Windows &gt;
 <ul>
-<li><em>Lumen &amp; Static lighting</em>
+<li>Targeted HRIs &gt;
 <ul>
-<li>Lumen GI can not be used togehter with static Lighting<br>
-In fact it is better to disable the static lighting (se below in notes section)</li>
-</ul>
-</li>
-<li><em>Foliage</em>
-<ul>
-<li>Is not very well supported at this time due to the heavy reliance on downsampled rendering and temporal filters.</li>
-<li>Foliage must be enabled with the <em>affect distance field lighting</em> from the foliage tool settings.</li>
-<li>Transparent objects are ignored by distance fields</li>
-<li>Masked material will be treated as opaque, which can cause significant over shadowing on folaige, which leaves large areas of leaves masked out.</li>
-</ul>
-</li>
-<li><em>Moving Objetcs</em>
-<ul>
-<li>Lumens final gather have significant noise around moving objects nad is under development</li>
-</ul>
-</li>
-<li><em>Translucency</em>
-<ul>
-<li>Reflections are not yet supported</li>
-<li>Will not have high quality GI</li>
-</ul>
-</li>
-<li><em>Software Ray tracing</em>
-<ul>
-<li>Only static meshes, instanced static meshes, hierarchical instanced SM and landscape are represented in a lumen scene.</li>
-</ul>
-</li>
-<li><em>Materials</em>
-<ul>
-<li>World position is not supported</li>
-</ul>
-</li>
-<li><em>Hardware Ray Tracing</em>
-<ul>
-<li>Significant scene setup cost in large scenes</li>
-<li>Tracing becomes very expensive with many overlapping meshes</li>
-<li>Dynamically deforming meshes, like skinned meshes also incur a large cost to update the ray tracing acceleration structures each frame, proportional to the number of skinned triangles.</li>
+<li><em>Default RHI</em> : DirectX 12</li>
 </ul>
 </li>
 </ul>
-<h2 id="note">Note!</h2>
+</li>
+<li>Misc Lighting &gt;
 <ul>
-<li><strong>Disable Pre Computed lighting</strong>
+<li><em>Allow Static Lighting</em> : Off (maybe)
 <ul>
-<li>When Lumen is used pre computed lighting from static lighting is removed.</li>
-<li>You can disable static lighting entirely from the project by:
-<ul>
-<li>Project Settings &gt; Engine &gt; Rendering &gt; Misc Lighting &gt; Allow Static Lighting : Disable</li>
+<li><em>Note!</em> We might want to turn this off.</li>
 <li>By doing so it saves us from some static lighting overhead with shader permutations&hellip;</li>
 <li>It will also allow for shader Ambient Occlusion input</li>
 <li>And allow material bent normals to work with lumen global illumination</li>
@@ -388,187 +299,543 @@ In fact it is better to disable the static lighting (se below in notes section)<
 </li>
 </ul>
 </li>
-<li><strong>Post Process Volume</strong>
-<ul>
-<li>Can override the Global illumination and Reflection method.</li>
-</ul>
-</li>
-<li><strong>Software Ray tracing</strong>
-<ul>
-<li>Requires levels to be made of modular pieces i.e. walls, floors, ceilings etc should be sepatare meshes</li>
-<li>Large meshes like mountains will have poor representation and may cause sel-occlusion artifacts</li>
-<li>Walls should be no thinner than 10 cm</li>
-</ul>
-</li>
-<li><strong>Distance Field</strong>
-<ul>
-<li>Mesh distance field resolution is based on the imported scale of the static mesh.
-<ul>
-<li>A mesh taht is imported very small and scaled up, will not have sufficient resolution</li>
-<li>In the static mesh editor you can see the Transform &gt; Import Unform Scale</li>
-<li>In the static mesh editor you can use the Mesh &gt; Distance Field Resolution Scale to compensate for a small scale import tthat has been scaled up (maybe better to import at the right size I guess&hellip;)</li>
-</ul>
-</li>
-<li>Distance field can not represent extremely thin features&hellip;</li>
-<li>Or one sided meshes seen from behind. Make sure the viewer never sees the back side.</li>
-</ul>
-</li>
-<li><strong>Nanite &amp; Hardware raytracing</strong>
-<ul>
-<li><em>Fallback Triangle Percent</em>
-<ul>
-<li>Can only operate on the proxy mesh</li>
-<li>So if you have mismatches, you might have to increase the Nanite Settings &gt; <em>Fallback Triangle Percent</em> of the SM. You do this in the Static mesh editor. Remember to click the Apply Changes button!</li>
-<li>To view the nanite fallback mesh, in the static mesh editor under <em>Show &gt; Nanite Fallback</em> you can choose to view it</li>
-</ul>
-</li>
-<li><em>Fallback Relative Error</em>
-<ul>
-<li>Screen traces are used to cover the missmatch between the full triangle mesh rendered by nanite and the fallback mesh being ray traced by lumen.</li>
-<li>In some cases the mismatch is to large to be hidden</li>
-<li>In theese cases raising the fallback relative error can reduce incorect self-intersection artifacts</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="common-problems">Common Problems</h2>
+<h1 id="calibrating-the-scene">Calibrating the scene</h1>
+<p>It can be nice to use a color calibrator mesh when setting up the lighting. Here is how you add the one that ships with UE5.</p>
 <ul>
-<li><strong>Indirect Lighting problem</strong>
+<li><strong>Add color calibrator asset</strong>
 <ul>
-<li>If we have a problem with a mesh it can often be fixed by tweaking the detials of the mesh
-<ul>
-<li>Select the mesh</li>
-<li>if we use <em>Software</em> ray tracing
-<ul>
-<li>Details &gt; Lighting &gt;
-<ul>
-<li><em>Affect Distance Field Lighting</em> : off  <br>
-The mesh will no longer be a part of the software ray tracing</li>
+<li>In the content browser click the settings button (top right side) and enable content &gt; Show Engine Content</li>
+<li>Select the Engine &gt; Content folder</li>
+<li>Start typing &ldquo;sm_color&rdquo; in the search field</li>
+<li>Select the &ldquo;SM_ColorCalibrator&rdquo; and drag it into the scene</li>
 </ul>
 </li>
+<li><strong>Add a neutaral Post Process Volume</strong>
+<ul>
+<li>It can also be nice to add a PPV to create a neutral base, which we then can do artistic overrides to. In thg section PPV - Neutral we add one of these.</li>
 </ul>
 </li>
-<li>if we use <em>Hardware</em> ray tracing
+</ul>
+<h1 id="core-light-actors">Core Light Actors</h1>
 <ul>
-<li>Details &gt; Rendering &gt;
+<li><em>Light actors to add</em>
 <ul>
-<li><em>Visible in Raytracing</em> : off <br>
-The mesh will no longer be a part of the software ray tracing</li>
+<li>Directional Light</li>
+<li>Sky Light</li>
+<li>Sky Atmosphere</li>
+<li>Volumetric Cloud</li>
+<li>Exponential Height Fog</li>
+</ul>
+</li>
+<li><em>Post Process Volumes</em> (2)
+<ul>
+<li><em>Note!</em> we will add 2 post process volumes in total, one for creating a &ldquo;neutral&rdquo; base line and one for &ldquo;artistic&rdquo; purposes that will override the neutral PPV.*</li>
+</ul>
+</li>
+</ul>
+<h2 id="ppv---neutral">PPV - Neutral</h2>
+<p>The idea here is to create a &ldquo;neutralizing&rdquo; baseline post process volume and then do &ldquo;artistic&rdquo; post process adjustment on top of that. The neutralizing PPV could also be part of the main level and the &ldquo;artistisc&rdquo; PPV could be inside each &ldquo;look dev lighting&rdquo; level.</p>
+<ul>
+<li><strong>Post process volume</strong>
+<ul>
+<li>Post Process Volume Settings &gt;
+<ul>
+<li><em>Priority</em> : 0.0
+<ul>
+<li>This will have the lowest priority and will be overridden by the artistic PPV, in cases where attributs are clashing.</li>
+</ul>
+</li>
+<li><em>Infinite Extend (unbounded)</em> : On</li>
+</ul>
+</li>
+<li>Lens &gt; Exposure &gt;
+<ul>
+<li><em>Exposure Compensation</em> : 1.0</li>
+<li><em>Min EV100</em> : 0.0</li>
+<li><em>Max EV100</em> : 0.0
+<ul>
+<li>Note! if you did not set the &ldquo;Extend default luminance range in Auto Exposure settings&rdquo; the min and max will be called min / max brightness instead</li>
 </ul>
 </li>
 </ul>
 </li>
+<li><em>Optional</em> (may vary depending on scene)<br>
+Here we could disable/enable settings that we want to do at the &ldquo;neutralization&rdquo; PPV.<br>
+That could fro example be:
+<ul>
+<li>Disable bloom
+<ul>
+<li>Bloom &gt;
+<ul>
+<li><em>intensity</em> : 0</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>Small meshes are black in reflections</strong>
+<li>Disable Lens flare
 <ul>
-<li>Post Process Volume &gt; Global Illumination &gt; Lumen Global Illumination
+<li>Lendfalre &gt;
 <ul>
-<li><em>Lumen Scene Detail</em> : increase to higher value</li>
+<li><em>Intensity</em> : 0.0</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>Include small objects in the surface cache</strong>
-<ul>
-<li>If objects are to small it will not contribute to the lumen surface cach</li>
-<li>to fix this we can enable Details &gt; Lighting &gt;
-<ul>
-<li><em>Emissive Light Source</em> : on
-<ul>
-<li>This means the mesh will be part of the surface cache no matter of the size</li>
-<li>The inteded use for this is if we have a smaller emissive light source this will force it to show up, but it also works for non emissive objects</li>
+<li>Etc..</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="visualizing-lumen">Visualizing Lumen</h2>
+<h2 id="setup-atmosphere">Setup Atmosphere</h2>
 <ul>
-<li><strong>Mesh Distance Field</strong>
+<li><strong>Directional Light</strong>
 <ul>
-<li>Show &gt; Visualize &gt; <em>Mesh Distance Fields</em> <br>
-This shows what the software ray tracer is tracing against
+<li>Transform &gt;
 <ul>
-<li>Gives a visual representation so that you can determine the accuracy / quality you wiull get from Lumen software ray tracer</li>
-<li>If an item does not have the quality / fidelity you need</li>
-<li>Open the mesh in the static mesh editor</li>
-<li>Build Settings &gt; <em>Distance Field Resolution Scale</em><br>
-In crease it and press apply changes. Note higher value obviously means more process time, so try to keep it at the minimum that you need to achieve the visual result required.</li>
+<li><em>Mobility</em> : Movable</li>
 </ul>
 </li>
+<li>Light &gt;
+<ul>
+<li><em>Indirect Lighting Intensity</em> : 1.0 (default)
+<ul>
+<li>With this setting you can scale the indirect lighting. Do not use to high values as it might induce flickering and artifacts. A value in the range 1-10 should be ok.</li>
 </ul>
 </li>
-<li><strong>Lumen Overview</strong>
+<li><em>Volumetric Scattering Intensity</em> : 1.0 (default)
 <ul>
-<li>Lit &gt; Lumen &gt; <em>Overview</em><br>
-Displayes
-<ul>
-<li>Lumen Scene
-<ul>
-<li>Depending on if we use the software or hardware raytracer</li>
+<li>Can be used to control the volumetric scattering from this light.</li>
 </ul>
 </li>
-<li>Reflection View
+<li>Advanced &gt;
 <ul>
-<li>The scene as the lumen reflection sees it</li>
-</ul>
-</li>
-<li>Surface Cache</li>
-<li>The result</li>
-</ul>
-</li>
-<li>Lit &gt; Lumen &gt; <em>Surface Cache</em>
+<li><em>Cast Ray Traced Shadows</em> : Enabled
 <ul>
-<li><em>Pink</em><br>
-Means the items have an issue, do not have enough surface cards or non at all.
-are to small to contribute to the Lumen surface cache</li>
-<li><em>Yellow</em><br>
-Means the items are not being used</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Surface Cards</strong>
-<ul>
-<li>You can display the surface cards with this cvar:
-<ul>
-<li><em>r.Lumen.Visualize.CardPlacement = 1</em></li>
-</ul>
-</li>
-<li>if you need more cards on a mesh uou can open up the static mesh editor
-<ul>
-<li>Build Settings &gt; Max Lumen Mesh Cards<br>
-and set it higher (default is 12 and maximum is 32)</li>
+<li>This has some artifacts occociated with it. Decide on a level basis is this is somethoing that is acceptable or not</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="resources">Resources</h2>
+</li>
+<li>Light Shafts &gt;
 <ul>
-<li>Epic resources
+<li><em>Light Shaft Occlusion</em> : On</li>
+<li><em>Light Shaft Bloom</em> : On</li>
+<li><em>Bloom Scale</em> : 0.2 (default)
 <ul>
-<li>Learning
-<ul>
-<li>
-<a href="https://dev.epicgames.com/community/learning/courses/2Wo/unreal-engine-lumen-essentials/bL7n/visualize-lumen" target="_blank" rel="noopener">Lumen Esentials</a></li>
+<li>Scales the additive color</li>
 </ul>
 </li>
-<li>Docs
+<li><em>Bloom Threshold</em> : 0.0 (default)
 <ul>
-<li>
-<a href="https://docs.unrealengine.com/5.0/en-US/lumen-global-illumination-and-reflections-in-unreal-engine/" target="_blank" rel="noopener">Lumen Global Illumination and Reflections</a></li>
+<li>Can be useful to control where the light shaft bloom occur. Scene color must be larger than this to create bloom in the light shafts.</li>
+</ul>
+</li>
+<li><em>Bloom Max Brightness</em> : 100.0 (default)
+<ul>
+<li>After exposure is applied, scene color brightness higher than this value will be scaled to this max value.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Distance Field Shadows &gt;
+<ul>
+<li><em>Distance Field Shadows</em> : On
+<ul>
+<li>Note! to use distance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Atmosphere and Clouds &gt;
+<ul>
+<li><em>Atmosphere Sun Light</em> : On</li>
+<li><em>Cast Shadows on Clouds</em> : On</li>
+<li><em>Cast Shadow on Atmosphere</em> : On</li>
+</ul>
+</li>
+<li>Advanced &gt;
+<ul>
+<li>Atmosphere Sun Light Index : 0
+<ul>
+<li><strong>Note!</strong> if should be set to 0 if this is our sunlight if this is our moon we should set it to 1</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+</li>
+<li><strong>Exponential Height Fog</strong>
+<ul>
+<li>Exponential Height Fog Component &gt;
+<ul>
+<li><em>Fog Density</em> : set to a value that looks good in the scene
+<ul>
+<li><em>Note!</em> as the names implies controls the density</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Directional Inscattering &gt;
+<ul>
+<li><em>Directional Inscattering Exponent</em> : 4.0 (default)
+<ul>
+<li>Controls the size of the directional inscattering cone, which is used to approximate the inscattering from a directional light. Note: there must be a directional light with bUsedAsAtmosphereSunLight enabled for DirectionalInscattering to be used.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Volumetric Fog &gt;
+<ul>
+<li><em>Volumetric Fog</em> : On</li>
+<li><em>Extinction Scale</em> : 1.0 (default)
+<ul>
+<li>Scales the extinction amount used by volumetric fog. Values larger than 1 cause fog particles everywhere to absorb more light. Could also be used to tone down the fog with lower values</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sky Light</strong>
+<ul>
+<li>Transform &gt;
+<ul>
+<li><em>Mobility</em> : Movable</li>
+</ul>
+</li>
+<li>Light &gt;
+<ul>
+<li><em>Real Time Capture</em> : On</li>
+<li><em>Cube Map Resolution</em>: 512
+<ul>
+<li>We could also use higher values, valus above 4096 my slow down the system</li>
+</ul>
+</li>
+<li><em>Intensity Scale</em> : 1.0 (default)
+<ul>
+<li>Can be used to boost the intensity but use small values (like 1.5 or so). If real time capture is on a value of 1.0 shoul be fine. We could also control thsi with a PPV</li>
+</ul>
+</li>
+<li><em>Cast Ray Traced Shadows</em> :
+<ul>
+<li>In my experience enabling this has a very limited effect. Might be a bug or missing something?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Distance Field Ambient Occlusion &gt;
+<ul>
+<li><em>Occlusion Max Distance</em> : 1000 (default)
+<ul>
+<li>Max distance the the occlusion of one point will affect another. Higher values increase the cost of Distance Field AO exponentially.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Atmosphere and Cloud &gt;
+<ul>
+<li><em>Cloud Ambient Occlusion</em> : On</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sky Atmosphere</strong>
+<ul>
+<li>Atmosphere - Rayleigh
+<ul>
+<li><em>Rayleigh Scattering Scale</em> : 0.0331 (default)
+<ul>
+<li>Slightly higher values will give a more &ldquo;sun-setty&rdquo; tint to it. Note increase by really small amount.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Volumetric Cloud</strong></li>
+</ul>
+<h2 id="ppv---artistic">PPV - Artistic</h2>
+<p>With this PPV we will do more of a look dev, artistic tweaks.</p>
+<ul>
+<li><strong>Post process volume</strong>
+<ul>
+<li>Post Process Volume Settings &gt;
+<ul>
+<li><em>Priority</em> : 1.0
+<ul>
+<li>This will have the lowest priority and will be overridden by the artistic PPV, in cases where attributs are clashing.</li>
+</ul>
+</li>
+<li><em>Infinite Extend (unbounded)</em> : On</li>
+</ul>
+</li>
+<li>Film &gt;
+<ul>
+<li><em>Toe</em>
+<ul>
+<li>Sets dark colors of the tonemapper. Can be used to give the image more or less contrast.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Global Illumination &gt;
+<ul>
+<li>Lumen Global Illumination &gt;
+<ul>
+<li><em>Final Gather Quality</em> : 2.0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reflections &gt;
+<ul>
+<li>Lumen Reflections &gt;
+<ul>
+<li><em>Quality</em> : 3.0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Render Features &gt;
+<ul>
+<li>Translucency &gt;
+<ul>
+<li><em>Type</em> : Ray Tracing
+<ul>
+<li>Set to this if needed and the result is nice</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="workflow">Workflow</h1>
+<h2 id="levels">Levels</h2>
+<p>It can be a good idea to organize the project using levels. It allows multiple people to work on the same project. It can also be used to organize the work, for instance we can have different light setups in a separate levels and add that to the main level to quickly replace the lighting.</p>
+<ul>
+<li><strong>Create levels</strong>
+<ul>
+<li><em>Main level</em>
+<ul>
+<li>Create a Level, lets call it &ldquo;MainLevel&rdquo;</li>
+<li>This will be the level that has all the sub levels that we will create</li>
+</ul>
+</li>
+<li><em>Geo level</em>
+<ul>
+<li>Then we can create a new level that will contain only the geo</li>
+</ul>
+</li>
+<li><em>Lighting / Look dev level</em>
+<ul>
+<li>Create a level that will contain s specfic lighting look</li>
+</ul>
+</li>
+<li><em>Additional levels</em>
+<ul>
+<li>Add the levels that you need in the project</li>
+<li>There is no right or wrong here, organize as you need</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup Sub Levels</strong>
+<ul>
+<li>Open the &ldquo;MainLevel&rdquo;</li>
+<li>Open the <em>Levels</em> window
+<ul>
+<li>Windows &gt; Levels</li>
+</ul>
+</li>
+<li>Then we can drag in the levels that we created earlier</li>
+</ul>
+</li>
+<li><strong>Set Current</strong><br>
+When items are added the level that are the current one will get them. To select the current level you can do the following
+<ul>
+<li><em>Level drop down</em>
+<ul>
+<li>In the bottom left corner of the viewport you can use the level drop down to set a current level</li>
+</ul>
+</li>
+<li><em>Double click</em>
+<ul>
+<li>In the Levels window you can double click to set current level</li>
+</ul>
+</li>
+<li><em>Press Enter</em>
+<ul>
+<li>With a level selected in the Levels window press Enter to make it current</li>
+</ul>
+</li>
+<li><em>RMB context menu</em>
+<ul>
+<li>In the Levels window, RMB &gt; Make Current</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="light-theory">Light Theory</h2>
+<ul>
+<li><em>Environmental</em>
+<ul>
+<li>Natural Light - comes from the world itself</li>
+<li>Sunlight, moonlight or sky ambiance</li>
+</ul>
+</li>
+<li><em>Practicals</em>
+<ul>
+<li>Real light source emitters from the real world that can be seen in frame</li>
+<li>Lamp, streetlight, car headlights etc&hellip;</li>
+</ul>
+</li>
+<li><em>Emulated</em>
+<ul>
+<li>Lights that are placed to accentuate/emulate Environmental or practical lights</li>
+</ul>
+</li>
+<li><em>Cheated</em>
+<ul>
+<li>Lights for added effect / better look</li>
+<li>Rim lights</li>
+<li>Fill lights</li>
+<li>etc</li>
+</ul>
+</li>
+</ul>
+<h2 id="light-types">Light Types</h2>
+<p>Note! when using raytraced lighting always set the mobility of the lights to <strong>Movable</strong></p>
+<ul>
+<li><strong>Directional Light</strong>
+<ul>
+<li>Light &gt;
+<ul>
+<li><em>Source Angle</em>
+<ul>
+<li>The size of the light</li>
+<li>Larger values means softer shadows</li>
+</ul>
+</li>
+<li>Advanced &gt;
+<ul>
+<li><em>Cast Ray Traced Shadows</em> : On</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Atmosphere and Cloud &gt;
+<ul>
+<li><em>Atmosphere Sun Light</em> : on
+<ul>
+<li>Wheter the directional light can interact with the atmosphere, cloud and generate a visual disc. All of which compose the visual sky.</li>
+<li>If enabled the shortcut <em>Ctrl + L</em> move mouse will control rotation of the light</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sky Light</strong>
+<ul>
+<li>Light &gt; Advanced &gt;
+<ul>
+<li><em>Cast Ray Traced Shadows</em> : on</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Point Light</strong>
+<ul>
+<li>Light &gt;
+<ul>
+<li><em>Source Radius</em>
+<ul>
+<li>Affects the radius of the light, larger means softer shadows</li>
+</ul>
+</li>
+<li><em>Soft Source Radius</em>
+<ul>
+<li>affect the soft edge of the specular highlight (does not affect shadows)</li>
+</ul>
+</li>
+<li><em>Source Length</em>
+<ul>
+<li>With this we can create &ldquo;longer&rdquo; lights like a flourecent tube</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Spot Light</strong>
+<ul>
+<li>Pilot
+<ul>
+<li>RMB click the light &gt; Pilot Light</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Rect Light</strong></li>
+</ul>
+<h1 id="tips">Tips</h1>
+<h2 id="artifacts">Artifacts</h2>
+<ul>
+<li><strong>Nanite &amp; raytraced shadows artifact</strong>
+<ul>
+<li>cvar
+<ul>
+<li>r.RayTracing.NormalBias 5</li>
+<li>r.Raytracing.Shadows.EnableTwoSidedGeometry 0</li>
+</ul>
+</li>
+<li>Directional Light
+<ul>
+<li>Raytracing &gt;
+<ul>
+<li>Shadow Source Angle Factor
+<ul>
+<li>increase this for softer shadow</li>
+</ul>
+</li>
+<li>Samples Per Pixel
+<ul>
+<li>increase this</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Force No Precomputed Lighting</strong>
+<ul>
+<li>World Settings &gt; Lightmass &gt; Advanced &gt;
+<ul>
+<li><em>Force No Precomputed Lighting</em> : might test to turn this on
+<ul>
+<li>Wheter to force lightmaps and other precomputed lighting to not be created even when the engine thinks they are needed. Thi sis useful for improving iteration in levels with fully dynamic lighting and shadowing. Note that any lighting and shadowing interactions that are usually precomputed will be lost if this is enabled.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="reference">Reference</h1>
+<p>
+<a href="https://shotdeck.com/" target="_blank" rel="noopener">Shot Deck</a></p>
 		
 		</div>
 	</div>

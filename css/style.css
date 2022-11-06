@@ -768,6 +768,7 @@ margin:-90px 0 0; /* negative fixed header height */
     transition: opacity .5s ease;
     padding-top: 20px;
     background-color: #000;
+    /*display: none;*/
 }
 
 .toc-btn {

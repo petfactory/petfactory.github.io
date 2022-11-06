@@ -176,6 +176,11 @@
         <li><a href="#pip">Pip</a></li>
       </ul>
     </li>
+    <li><a href="#dictionary">Dictionary</a>
+      <ul>
+        <li><a href="#sorting">Sorting</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>	
 			</div>
@@ -221,6 +226,24 @@ The next step is to activate the environment, we do this by runnung:</p>
 ---------- -------
 pip        20.2.1
 setuptools 49.2.1
+</code></pre></div><h1 id="dictionary">Dictionary</h1>
+<h2 id="sorting">Sorting</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#39;</span>:(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), <span style="color:#e6db74">&#39;C&#39;</span>:(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), <span style="color:#e6db74">&#39;A&#39;</span>:(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>)}
+<span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items())))
+<span style="color:#75715e"># {&#39;A&#39;: (1, 0), &#39;B&#39;: (2, 1), &#39;C&#39;: (0, 2)}</span>
+<span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>])))
+<span style="color:#75715e"># {&#39;C&#39;: (0, 2), &#39;A&#39;: (1, 0), &#39;B&#39;: (2, 1)}</span>
+<span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>])))
+{<span style="color:#e6db74">&#39;A&#39;</span>: (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>), <span style="color:#e6db74">&#39;B&#39;</span>: (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), <span style="color:#e6db74">&#39;C&#39;</span>: (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>)}
+
+data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#39;</span>:{<span style="color:#e6db74">&#39;width&#39;</span>:<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;height&#39;</span>:<span style="color:#ae81ff">1</span>}, <span style="color:#e6db74">&#39;C&#39;</span>:{<span style="color:#e6db74">&#39;width&#39;</span>:<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;height&#39;</span>:<span style="color:#ae81ff">2</span>}, <span style="color:#e6db74">&#39;A&#39;</span>:{<span style="color:#e6db74">&#39;width&#39;</span>:<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;height&#39;</span>:<span style="color:#ae81ff">0</span>}}
+<span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items())))
+<span style="color:#75715e"># {&#39;A&#39;: {&#39;width&#39;: 1, &#39;height&#39;: 0}, &#39;B&#39;: {&#39;width&#39;: 2, &#39;height&#39;: 1}, &#39;C&#39;: {&#39;width&#39;: 0, &#39;height&#39;: 2}}</span>
+<span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;width&#39;</span>])))
+<span style="color:#75715e"># {&#39;C&#39;: {&#39;width&#39;: 0, &#39;height&#39;: 2}, &#39;A&#39;: {&#39;width&#39;: 1, &#39;height&#39;: 0}, &#39;B&#39;: {&#39;width&#39;: 2, &#39;height&#39;: 1}}</span>
+<span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;height&#39;</span>])))
+<span style="color:#75715e"># {&#39;A&#39;: {&#39;width&#39;: 1, &#39;height&#39;: 0}, &#39;B&#39;: {&#39;width&#39;: 2, &#39;height&#39;: 1}, &#39;C&#39;: {&#39;width&#39;: 0, &#39;height&#39;: 2}}</span>
+
 </code></pre></div>		
 		</div>
 	</div>

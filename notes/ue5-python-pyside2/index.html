@@ -172,25 +172,23 @@
     <li><a href="#python-plugin">Python plugin</a>
       <ul>
         <li><a href="#developer-mode">Developer Mode</a></li>
-      </ul>
-    </li>
-    <li><a href="#python-version">Python Version</a></li>
-    <li><a href="#pyside2">PySide2</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#example">Example</a></li>
-          </ul>
-        </li>
+        <li><a href="#python-version">Python Version</a></li>
+        <li><a href="#output-log">Output Log</a></li>
       </ul>
     </li>
     <li><a href="#init-script">Init Script</a></li>
-    <li><a href="#snippets">Snippets</a>
+    <li><a href="#gotcha">Gotcha</a>
       <ul>
-        <li><a href="#assets">Assets</a></li>
+        <li><a href="#editoractorsubsystem">EditorActorSubsystem</a></li>
       </ul>
     </li>
-    <li><a href="#docs">Docs</a></li>
+    <li><a href="#snippets">Snippets</a></li>
+    <li><a href="#pyside2">PySide2</a>
+      <ul>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources--docs">Resources &amp; Docs</a></li>
   </ul>
 </nav>	
 			</div>
@@ -214,6 +212,7 @@
 <ul>
 <li>Edit &gt; Plugins &gt; Scripting &gt;
 <ul>
+<li>Editor Scripting Utilities</li>
 <li>Python Editor Script Plugin</li>
 <li>Sequencer Scripting</li>
 <li>etc &hellip;</li>
@@ -221,7 +220,7 @@
 </li>
 </ul>
 <h2 id="developer-mode">Developer Mode</h2>
-<p>The <em>developer mode</em> will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs. The stub file will be found here: <strong>Your Project &gt; Intermediate &gt; PythonStub &gt; unreal.py</strong>. The stub file is generated every time the editor starts and is generated with your exact set of available code, plugins etc. Note that the file is quite large, about 10 mb, so your might have to increase the parsing limit of your external IDE to get the auto-complete working.</p>
+<p>The <em>developer mode</em> will enable extra warnings eg for deprecated code. It will also generate stub code for use to get auto completion for external IDEs. The stub file will be found here: <em>Your Project &gt; Intermediate &gt; PythonStub &gt; unreal.py</em>. The stub file is generated every time the editor starts and is generated with your exact set of available code, plugins etc. Note that the file is quite large, about 10 mb, so your might have to increase the parsing limit of your external IDE to get the auto-complete working.</p>
 <ul>
 <li>Edit &gt; Editor Preferences &gt; Plugins &gt; Python
 <ul>
@@ -229,18 +228,26 @@
 </ul>
 </li>
 </ul>
-<p>You can also enable it on a project basis. <strong>Note!</strong> The tooltip of this setting informs us that &ldquo;Most of the time you want to enable <em>bDeveloperMode</em> in the Editor Preferences instead&rdquo;.</p>
+<p>You can also enable it on a project basis. <strong>Note!</strong> The tooltip of this setting informs us that &ldquo;Most of the time you want to enable <em>bDeveloperMode</em> in the Editor Preferences instead&rdquo;. But if you would like to enabled it on a project basis:</p>
 <ul>
 <li>Edit &gt; Project Settings &gt; Plugins &gt; Python
 <ul>
 <li>Developer Mode : <strong>Enable</strong></li>
+<li><strong>Note!</strong> as stated above you probably want to enabled it with the editor prefes instead</li>
 </ul>
 </li>
 </ul>
-<p>We can find the output log here:</p>
+<h2 id="python-version">Python Version</h2>
+<p>I am using Unreal 5.0 and it uses Python 3.9.7 by default. The path to the Python location is:</p>
 <ul>
-<li>Windows &gt; Output Log
+<li>C:\Program Files\Epic Games\UE_5.0\Engine\Binaries\ThirdParty\Python3\Win64</li>
+</ul>
+<p>You can not change the version of Python in a binary build (a build from the launcher). This is because the Python plugin needs to be recompiled. If you are using a source build, the simplest way of replacing the Pyhon version is to set an environment variable called &ldquo;UE_PYTHON_DIR&rdquo; and point that to the Python installation you wish to use. The downside to this is that it is not very portable since it ends up baking a path into your build to a local Python SDK. This means that if it were run on another system the user must have the same version of python in the same place. A better way to replace the Python version is to replace the Python version that are shipped with the engine. Theese are stored inside the Third Party directory and then rebuild. Because the location is inside the engine path it will be portable.</p>
+<h2 id="output-log">Output Log</h2>
 <ul>
+<li><strong>Output Log</strong>
+<ul>
+<li><em>Window &gt; Output Log</em></li>
 <li>With the bottom-left dropdown you can switch between:
 <ul>
 <li>CMD</li>
@@ -248,23 +255,193 @@
 <li>Python (REPL)</li>
 </ul>
 </li>
+<li><em>Clear Log</em>
+<ul>
+<li>RMB click &gt; Clear Log</li>
+</ul>
+</li>
+<li><em>Filters</em>
+<ul>
+<li>You can use the Filters dropdown on the top of the Output Log to disable warnings if you find them annoying. (Could be useful to have them on, but in certain situations it might improve the readability of the log)</li>
+<li><em>Categories</em>
+<ul>
+<li>If you only want to log Python print statements
+<ul>
+<li>Filters &gt; Categories &gt; Show All<br>
+To disable all</li>
+<li>Then enable LogPython (that you find in the lower middle of the list)</li>
 </ul>
 </li>
 </ul>
-<h1 id="python-version">Python Version</h1>
-<p>I am using Unreal 5.0 and it uses Python 3.9.7 by default. The path to the Python location is:</p>
-<ul>
-<li>C:\Program Files\Epic Games\UE_5.0\Engine\Binaries\ThirdParty\Python3\Win64</li>
+</li>
 </ul>
-<p>You can not change the version of Python in a binary build (a build from the launcher). This is because the Python plugin needs to be recompiled. If you are using a source build, the simplest way of replacing the Pyhon version is to set an environment variable called &ldquo;UE_PYTHON_DIR&rdquo; and point that to the Python installation you wish to use. The downside to this is that it is not very portable since it ends up baking a path into your build to a local Python SDK. This means that if it were run on another system the user must have the same version of python in the same place. A better way to replace the Python version is to replace the Python version that are shipped with the engine. Theese are stored inside the Third Party directory and then rebuild. Because the location is inside the engine path it will be portable.</p>
-<h1 id="pyside2">PySide2</h1>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="init-script">Init Script</h1>
+<p>If the Editor detects a script file called init_unreal.py in any of the paths it is configured to use, it automatically runs that script immediately.</p>
+<p>This is a good approach for situations where you are working on a Project or a Plugin and you know that everyone working with that content needs to run the same initialization code every time the Editor starts up. You could put your initialization code inside a script with this name, and put it into the Content/Python folder within that Project or Plugin.</p>
+<p>When you use a relative path to run a Python script, or to import another script module using the import command in one of your scripts, the script that you run or import can be in any path that is listed in the sys.path variable of your Python environment.</p>
+<p>To list the paths that unreal looks for python scripts we can run the following in the output log:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(sys<span style="color:#f92672">.</span>path))
+</code></pre></div><ul>
+<li><strong>init_unreal.py</strong>
+<ul>
+<li>If the Editor detects a script file called <em>init_unreal.py</em> in any of the paths it is configured to use it automatically runs that script immediately.</li>
+</ul>
+</li>
+<li><strong>Add init file</strong>
+<ul>
+<li>Lets use <strong>C:/Users/user_name/Documents/UnrealEngine/Python</strong> as the directory where we will keep our init_unreal.py file.</li>
+<li>If this dir does not exist, create it.</li>
+<li>In this script we can add additional paths that we want to have in our sys.path, for instance site.packages for PySide2 etc</li>
+<li>We can also create a menu on the main menu for our tools</li>
+<li>it might look something like:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unreal
+<span style="color:#f92672">import</span> sys
+
+sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;C:/path/to/pyside2/Lib/site-packages&#39;</span>)
+sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;C:/your/custom/location/dev/unreal&#39;</span>)
+
+<span style="color:#f92672">import</span> petfactory.menu
+petfactory<span style="color:#f92672">.</span>menu<span style="color:#f92672">.</span>add_menu()
+
+</code></pre></div><ul>
+<li><strong>Project Settings</strong>
+<ul>
+<li>You can also specify <em>Startup Scripts</em> and <em>Additional Paths</em> that the engine will add to sys.path on a per project basis Project Settings &gt; Python &gt; Startup Scrpts etc</li>
+</ul>
+</li>
+</ul>
+<h1 id="gotcha">Gotcha</h1>
+<h2 id="editoractorsubsystem">EditorActorSubsystem</h2>
+<ul>
+<li><strong>EditorActorSubsystem</strong>
+<ul>
+<li>When using the &ldquo;EditorActorSubsystem&rdquo; class we need to call methods on an instance of the class</li>
+<li>There are <em>2 ways</em> of creating an instance that of the subsystem that we can call our methods on
+<ul>
+<li>actor_subsystem = <em>unreal.get_editor_subsystem(unreal.EditorActorSubsystem)</em></li>
+<li>actor_subsystem = <em>unreal.EditorActorSubsystem()</em>
+<ul>
+<li>Note the parenthesis meaning that we call it to get an instance</li>
+</ul>
+</li>
+<li>actors = actor_subsystem.get_all_level_actors()</li>
+</ul>
+</li>
+<li>I guess this is similar to the other subsystems&hellip;</li>
+</ul>
+</li>
+<li><strong>EditorUtilityLibrary</strong>
+<ul>
+<li>unreal.EditorUtilityLibrary.get_selected_assets()<br>
+<em>Note!</em> that get_selected_assets can be called as a static method of the unreal.EditorUtilityLibrary, but it can also be called on the instance of it like actor subsystem. Why it is designed like this is I do not know.</li>
+</ul>
+</li>
+<li><strong>EditorAssetLibrary</strong>
+<ul>
+<li>unreal.EditorAssetLibrary.list_assets(directory_path)<br>
+<em>Note!</em> that list_assets is also called as a static method, but can also be called as an instance method</li>
+</ul>
+</li>
+</ul>
+<h1 id="snippets">Snippets</h1>
+<!-- ## Outliner -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_static_mesh_lod_data</span>():
+
+	<span style="color:#75715e"># note to have generate lods for an asset we can open it up in the static mesh editor</span>
+	<span style="color:#75715e"># and under LOD Settings set the LOD Group combobox to for instance &#34;Large Prop&#34;</span>
+	<span style="color:#75715e"># to regenerate LODs based on the lod group &#34;preset&#34;</span>
+	static_mesh_list <span style="color:#f92672">=</span> get_content_browser_asset_of_class(asset_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Game/Pet&#39;</span>, class_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;StaticMesh&#39;</span>)
+	<span style="color:#66d9ef">for</span> static_mesh <span style="color:#f92672">in</span> static_mesh_list:
+
+		static_mesh_name <span style="color:#f92672">=</span> static_mesh<span style="color:#f92672">.</span>get_name()
+		static_mesh_tri_count_list <span style="color:#f92672">=</span> []
+		num_lods <span style="color:#f92672">=</span> static_mesh<span style="color:#f92672">.</span>get_num_lods()
+
+		<span style="color:#66d9ef">for</span> lod_index <span style="color:#f92672">in</span> range(num_lods):
+			<span style="color:#75715e"># a section is if we have multiple unweleded elements in a mesh</span>
+			num_sections <span style="color:#f92672">=</span> static_mesh<span style="color:#f92672">.</span>get_num_sections(lod_index)
+			lod_tri_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+			<span style="color:#66d9ef">for</span> section_index <span style="color:#f92672">in</span> range(num_sections):
+				section_data <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>ProceduralMeshLibrary<span style="color:#f92672">.</span>get_section_from_static_mesh(static_mesh, lod_index, section_index)
+				<span style="color:#75715e"># the second element of array is triangles, that we then divide by 3 sine the verts are shared by the triangles</span>
+				section_tri_count <span style="color:#f92672">=</span> len(section_data[<span style="color:#ae81ff">1</span>])<span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>
+				lod_tri_count <span style="color:#f92672">+=</span> section_tri_count
+
+			static_mesh_tri_count_list<span style="color:#f92672">.</span>append(lod_tri_count)
+
+		mesh_reduction_percent_list <span style="color:#f92672">=</span> [int((tri_count<span style="color:#f92672">/</span>static_mesh_tri_count_list[<span style="color:#ae81ff">0</span>])<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>) <span style="color:#66d9ef">for</span> tri_count <span style="color:#f92672">in</span> static_mesh_tri_count_list]
+		<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39; </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{static_mesh_name} has:</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">{static_mesh_tri_count_list} triangles which is a reduction of</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">{mesh_reduction_percent_list} percent</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_static_mesh_data</span>():
+	
+	static_mesh_list <span style="color:#f92672">=</span> get_content_browser_asset_of_class(asset_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/Game/Pet&#39;</span>, class_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;StaticMesh&#39;</span>)
+	<span style="color:#66d9ef">for</span> static_mesh <span style="color:#f92672">in</span> static_mesh_list:
+		asset_import_data <span style="color:#f92672">=</span> static_mesh<span style="color:#f92672">.</span>get_editor_property(<span style="color:#e6db74">&#39;asset_import_data&#39;</span>)
+
+		<span style="color:#75715e"># below is a list of the base classes of &#34;FbxStaticMeshImportData&#34;</span>
+		<span style="color:#75715e"># unreal.FbxStaticMeshImportData</span>
+		<span style="color:#75715e"># unreal.FbxMeshImportData</span>
+		<span style="color:#75715e"># unreal.FbxAssetImportData</span>
+		<span style="color:#75715e"># unreal.AssetImportData</span>
+		<span style="color:#75715e"># unreal.Object</span>
+		<span style="color:#75715e"># unreal._ObjectBase</span>
+		<span style="color:#75715e"># unreal._WrapperBase</span>
+		<span style="color:#75715e"># object (the python object class)</span>
+
+		<span style="color:#75715e"># we will call the method &#34;extract_filenames&#34; of the base class unreal.AssetImportData</span>
+		file_path <span style="color:#f92672">=</span> asset_import_data<span style="color:#f92672">.</span>extract_filenames()
+		<span style="color:#66d9ef">print</span>(file_path)
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_content_browser_asset_of_class</span>(asset_path, class_name):
+
+	asset_path_list <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>EditorAssetLibrary<span style="color:#f92672">.</span>list_assets(asset_path)
+	asset_list <span style="color:#f92672">=</span> []
+	<span style="color:#66d9ef">for</span> asset_path <span style="color:#f92672">in</span> asset_path_list:
+		asset_data <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>EditorAssetLibrary<span style="color:#f92672">.</span>find_asset_data(asset_path)
+		<span style="color:#75715e"># asset_name = asset_data.asset_name</span>
+		asset_class_name <span style="color:#f92672">=</span> asset_data<span style="color:#f92672">.</span>asset_class
+		asset <span style="color:#f92672">=</span> asset_data<span style="color:#f92672">.</span>get_asset()
+		<span style="color:#66d9ef">if</span> asset_class_name <span style="color:#f92672">==</span> class_name:
+			asset_list<span style="color:#f92672">.</span>append(asset)
+
+	<span style="color:#66d9ef">return</span> asset_list
+		
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_all_actors</span>():
+	actor_subsystem <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>get_editor_subsystem(unreal<span style="color:#f92672">.</span>EditorActorSubsystem)
+	<span style="color:#66d9ef">return</span> actor_subsystem<span style="color:#f92672">.</span>get_all_level_actors()
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_content_browser_selection</span>():
+	<span style="color:#e6db74">&#39;&#39;&#39;Note! does not include folders&#39;&#39;&#39;</span>
+	<span style="color:#66d9ef">return</span> unreal<span style="color:#f92672">.</span>EditorUtilityLibrary<span style="color:#f92672">.</span>get_selected_assets()
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">package_path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>package_path_le<span style="color:#f92672">.</span>text()
+sequence_name <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>sequence_name_le<span style="color:#f92672">.</span>text()
+asset_path <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{package_path}/{sequence_name}&#39;</span>
+
+asset_data <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>EditorAssetLibrary<span style="color:#f92672">.</span>find_asset_data(asset_path)
+
+</code></pre></div><h1 id="pyside2">PySide2</h1>
 <p>If you look inside the python install dir you can se pip there. I read somewhere that you can just use pip to install PySide2 in the python dir that comes with unreal. I have not tried that yet. Instead I just created a virtual env elsewhere, installed Pyside2 in that env and pointed unreal to the site-packages of that install. See this post to 
 <a href="https://www.petfactory.se/notes/pyside2/"> setup a virtual environment</a></p>
-<p>Then we need to point to the site-pacakges dir.</p>
+<ul>
+<li>Add site-pacakges dir
 <ul>
 <li>Project Settings &gt; Plugins &gt; Python &gt; Additional Paths: ../path/to/venv/Lib/site-packages</li>
+<li>or use the init_unreal.py script to add it to sys</li>
 </ul>
-<h3 id="example">Example</h3>
+</li>
+</ul>
+<h2 id="example">Example</h2>
 <p>Here is a small snippet of how to creater a widget that is parented to the main window.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
 
@@ -297,40 +474,29 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
 
 </code></pre></div><p>Then we can execute the script:</p>
 <ul>
-<li>File &gt; Execute Python Script : Browse to the script location</li>
+<li>Tools &gt; Execute Python Script : Browse to the script location</li>
 </ul>
-<h1 id="init-script">Init Script</h1>
-<p>To list the paths that unreal looks for python scripts we can run the following in the output log:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(sys<span style="color:#f92672">.</span>path))
-</code></pre></div><p>I had a look through that list and decided to place the init script in the <strong>C:/Users/user_name/Documents/UnrealEngine/Python</strong> dir. By default this dir does not exist. To verify this we can run the following or simply use the explorer.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
-os<span style="color:#f92672">.</span>startfile(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
-<span style="color:#75715e"># LogPython: Error: FileNotFoundError: [WinError 2] The system cannot find the file specified: &#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>
-</code></pre></div><p>Create the directory manually or run the following snippet in the console:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">os<span style="color:#f92672">.</span>makedirs(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
-os<span style="color:#f92672">.</span>startfile(<span style="color:#e6db74">&#39;C:/Users/Johan/Documents/UnrealEngine/Python&#39;</span>)
-<span style="color:#75715e"># the dir should pop open</span>
-</code></pre></div><p>Unreal will execute all files named <strong>init_unreal.py</strong> that are found on the sys.path. So lets createa file called that and add the followinf to that file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unreal
-unreal<span style="color:#f92672">.</span>log_warning(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
-</code></pre></div><h1 id="snippets">Snippets</h1>
-<h2 id="assets">Assets</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">package_path <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>package_path_le<span style="color:#f92672">.</span>text()
-sequence_name <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>sequence_name_le<span style="color:#f92672">.</span>text()
-asset_path <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;{package_path}/{sequence_name}&#39;</span>
-
-asset_data <span style="color:#f92672">=</span> unreal<span style="color:#f92672">.</span>EditorAssetLibrary<span style="color:#f92672">.</span>find_asset_data(asset_path)
-
-</code></pre></div><h1 id="docs">Docs</h1>
+<h1 id="resources--docs">Resources &amp; Docs</h1>
+<ul>
+<li><strong>Epic</strong>
+<ul>
+<li><em>Docs</em>
 <ul>
 <li>
-<a href="https://docs.unrealengine.com/en-US/PythonAPI/index.html" target="_blank" rel="noopener">Unreal Python API Documentation</a></li>
+<a href="https://docs.unrealengine.com/en-US/PythonAPI/index.html" target="_blank" rel="noopener">Unreal 5.0 Python API Documentation</a></li>
 <li>
 <a href="https://docs.unrealengine.com/en-US/ProductionPipelines/ScriptingAndAutomation/Python/index.html" target="_blank" rel="noopener">Scripting the Editor using Python</a></li>
+</ul>
+</li>
+<li><em>Video</em>
+<ul>
 <li>
 <a href="https://www.youtube.com/watch?v=0guOMTiwmhk&amp;t=601s" target="_blank" rel="noopener">Python in Unreal Engine | Inside Unreal</a></li>
 </ul>
-<p>1:26:22</p>
+</li>
+</ul>
+</li>
+</ul>
 		
 		</div>
 	</div>

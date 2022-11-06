@@ -1,2 +1,3 @@
-location.hash = "#data-transfer";
+// location.hash = "#data-transfer";
+
 
