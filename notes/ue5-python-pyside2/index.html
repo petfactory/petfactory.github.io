@@ -179,6 +179,7 @@
     <li><a href="#init-script">Init Script</a></li>
     <li><a href="#gotcha">Gotcha</a>
       <ul>
+        <li><a href="#properties">Properties</a></li>
         <li><a href="#editoractorsubsystem">EditorActorSubsystem</a></li>
       </ul>
     </li>
@@ -319,6 +320,29 @@ petfactory<span style="color:#f92672">.</span>menu<span style="color:#f92672">.<
 </li>
 </ul>
 <h1 id="gotcha">Gotcha</h1>
+<h2 id="properties">Properties</h2>
+<ul>
+<li><strong>Get/Set</strong>
+<ul>
+<li>You can read/write properties with get_editor_property/set_editor_property</li>
+<li>In the python api docs under the section <em>Editor Properties</em> you can see available properties for the class</li>
+</ul>
+</li>
+<li><strong>Which class has the property?</strong>
+<ul>
+<li>The properties that you see in the details panel (in the UI of the editor) is not always on the actor itself, but on a component of the actor, so you might have to look up the api docs on the component itself to find the proprties you want to get/set.</li>
+</ul>
+</li>
+<li><strong>Find the &ldquo;API name&rdquo; of the UI Property</strong>
+<ul>
+<li>To find the property in the api docs that matches the property that you see in the UI, hover the mouse over the property and the first row will be the name of the propery in the docs.
+<ul>
+<li><em>Note</em> it will be snake cased and lower cased</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="editoractorsubsystem">EditorActorSubsystem</h2>
 <ul>
 <li><strong>EditorActorSubsystem</strong>
