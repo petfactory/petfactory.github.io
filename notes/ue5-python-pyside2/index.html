@@ -179,6 +179,7 @@
     <li><a href="#init-script">Init Script</a></li>
     <li><a href="#gotcha">Gotcha</a>
       <ul>
+        <li><a href="#console-variables">Console Variables</a></li>
         <li><a href="#properties">Properties</a></li>
         <li><a href="#editoractorsubsystem">EditorActorSubsystem</a></li>
       </ul>
@@ -320,6 +321,29 @@ petfactory<span style="color:#f92672">.</span>menu<span style="color:#f92672">.<
 </li>
 </ul>
 <h1 id="gotcha">Gotcha</h1>
+<h2 id="console-variables">Console Variables</h2>
+<ul>
+<li><strong>Note!</strong>
+<ul>
+<li>To be able to use the function below the <em>Console Variables Editor</em> plugin needs to be loaded.</li>
+<li>Console Variables Editor 
+<a href="https://docs.unrealengine.com/5.0/en-US/PythonAPI/class/ConsoleVariablesEditorFunctionLibrary.html?highlight=consolevar#unreal.ConsoleVariablesEditorFunctionLibrary" target="_blank" rel="noopener">Docs</a></li>
+</ul>
+</li>
+<li><strong>Set CVar</strong>
+<ul>
+<li>unreal.ConsoleVariablesEditorFunctionLibrary.set_console_variable_by_name_int(&lsquo;r.RayTracing.Reflections.MaxBounces&rsquo;, 3)</li>
+<li>unreal.ConsoleVariablesEditorFunctionLibrary.set_console_variable_by_name_float(&lsquo;r.RayTracing.Reflections.MaxRoughness&rsquo;, .5)</li>
+<li>etc &hellip;</li>
+</ul>
+</li>
+<li><strong>Get CVar</strong>
+<ul>
+<li>unreal.ConsoleVariablesEditorFunctionLibrary.get_console_variable_string_value(&lsquo;r.RayTracing.Reflections.MaxBounces&rsquo;)</li>
+<li>etc &hellip;</li>
+</ul>
+</li>
+</ul>
 <h2 id="properties">Properties</h2>
 <ul>
 <li><strong>Get/Set</strong>

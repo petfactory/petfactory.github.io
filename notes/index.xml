@@ -6,10 +6,19 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 14:24:14 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Misc</title>
+      <link>https://www.petfactory.se/notes/ue5-misc/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-misc/</guid>
+      <description>Houdini Engine  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27       Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory   Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
+    </item>
     
     <item>
       <title>Houdini - Heightfield</title>
