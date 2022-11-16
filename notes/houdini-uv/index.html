@@ -170,6 +170,7 @@
 				<nav id="TableOfContents">
   <ul>
     <li><a href="#vieport-display-options">Vieport display options</a></li>
+    <li><a href="#uv-flatten">UV Flatten</a></li>
     <li><a href="#uv-layout">UV Layout</a>
       <ul>
         <li><a href="#target-assignment-udim">Target Assignment (UDIM)</a></li>
@@ -177,6 +178,7 @@
     </li>
     <li><a href="#tips">Tips</a>
       <ul>
+        <li><a href="#selection">Selection</a></li>
         <li><a href="#trim-sheet">Trim Sheet</a></li>
       </ul>
     </li>
@@ -207,6 +209,19 @@
 </ul>
 </li>
 </ul>
+<h1 id="uv-flatten">UV Flatten</h1>
+<ul>
+<li><strong>Rectify</strong>
+<ul>
+<li>Add a uv flatten node</li>
+<li>Under the section Flattening Constraints &gt; Rectify Group
+<ul>
+<li>type *</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="uv-layout">UV Layout</h1>
 <h2 id="target-assignment-udim">Target Assignment (UDIM)</h2>
 <p>To force specific primitives to a <strong>specific UDIM</strong> we can use a primitive attr to specify which one.</p>
@@ -231,6 +246,14 @@
 <p><strong>Note</strong> by default the <strong>UV Layout</strong> node defines islands by connectivity of UV attribute values across polygon edges. If they do they will not be distributed to the UDIM tiles that we would expect. To fix this we could offset the uv texture so the edges do not align before going into the uv layout node or by using separator edges and or the island attribute. Read more in the 
 <a href="https://www.sidefx.com/docs/houdini/nodes/sop/uvlayout.html#udim" target="_blank" rel="noopener">docs</a>.</p>
 <h1 id="tips">Tips</h1>
+<h2 id="selection">Selection</h2>
+<ul>
+<li><strong>Select edge loop</strong>
+<ul>
+<li>Hold A + MMB click the edge</li>
+</ul>
+</li>
+</ul>
 <h2 id="trim-sheet">Trim Sheet</h2>
 		
 		</div>

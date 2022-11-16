@@ -6,10 +6,19 @@
     <description>Recent content in Misc on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/misc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Houdini Engine</title>
+      <link>https://www.petfactory.se/notes/ue5-houdini-engine/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-houdini-engine/</guid>
+      <description>Install  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27       Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory   Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
+    </item>
     
     <item>
       <title>UE5 - Misc</title>
@@ -17,7 +26,7 @@
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-misc/</guid>
-      <description>Houdini Engine  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27       Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory   Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
+      <description>Tips Material Graph  Reroute  You can add a reroute node by double clicking the connection line   Debug nodes  You can use the debug nodes under Debug to visually debug values. Lets say that you want to view the object bounds you can connect the output of an Object Bounds node to an Debug Float 3 node. Debug &amp;gt;  Debug Scalar Values Debug Float 2 Values Etc &amp;hellip;     Material Attributes  If you want the result node of a material to be a material attribute:  Details &amp;gt; Material &amp;gt;  Use Material Attribute : On        Landscape Quick Setup  Create a Level  Add lighting actors   Create a Landscape  Switch to Landscape Editing Mode  Shift + 2 (or use the mode dropdown)   Create new Landscape  In the landscape pane, make sure the Manage mode is selected and click the create button in the bottom left.</description>
     </item>
     
   </channel>
