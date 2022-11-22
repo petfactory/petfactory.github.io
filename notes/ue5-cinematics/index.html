@@ -169,9 +169,10 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
+    <li><a href="#tips">Tips</a></li>
     <li><a href="#sequencer">Sequencer</a>
       <ul>
-        <li><a href="#tips">Tips</a></li>
+        <li><a href="#tips-1">Tips</a></li>
         <li><a href="#manual-setup">Manual setup</a></li>
         <li><a href="#add-actors">Add actors</a>
           <ul>
@@ -187,6 +188,13 @@
           </ul>
         </li>
         <li><a href="#tracks">Tracks</a></li>
+      </ul>
+    </li>
+    <li><a href="#camera-rig">Camera Rig</a>
+      <ul>
+        <li><a href="#rail">Rail</a></li>
+        <li><a href="#camera-shake">Camera Shake</a></li>
+        <li><a href="#bake--export">Bake &amp; Export</a></li>
       </ul>
     </li>
   </ul>
@@ -207,8 +215,27 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE5 - Cinematics</h1>
-			<h1 id="sequencer">Sequencer</h1>
-<h2 id="tips">Tips</h2>
+			<h1 id="tips">Tips</h1>
+<ul>
+<li><strong>Perspective &amp; Camera</strong>
+<ul>
+<li>When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup.</li>
+<li><em>Pane setup</em>
+<ul>
+<li>3dview (top left corner) &gt; layouts &gt; Two Panes (side by side)</li>
+<li>Set the left one to perspective, and the right to a cine camera</li>
+<li>Set the cine camera view to use Cinematic Viewport
+<ul>
+<li>When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="sequencer">Sequencer</h1>
+<h2 id="tips-1">Tips</h2>
 <ul>
 <li>Tips
 <ul>
@@ -416,6 +443,228 @@ A fade track can be added to a sequence to fade in and out
 <li><strong>Event</strong> track
 <ul>
 <li>Adds an event that can be read in blueprints.</li>
+</ul>
+</li>
+</ul>
+<h1 id="camera-rig">Camera Rig</h1>
+<h2 id="rail">Rail</h2>
+<p>Lets add a rail rig to a cine camera</p>
+<ul>
+<li><strong>Add a level sequence</strong>
+<ul>
+<li>Navigate to a folder where you want your sequences to be RMB &gt; Cinematics &gt; Level Sequence</li>
+<li>Lets call it &ldquo;my_sequence&rdquo;</li>
+</ul>
+</li>
+<li><strong>Add Components</strong>
+<ul>
+<li><strong>Camera</strong>
+<ul>
+<li>Add a <em>Cine Camera Actor</em></li>
+<li>Lets call it &ldquo;my_camera&rdquo;</li>
+</ul>
+</li>
+<li><strong>Rig</strong>
+<ul>
+<li>Add a <em>Camera Rig Rail</em></li>
+<li>Lets call it &ldquo;my_cam_rig_rail&rdquo;</li>
+<li>
+<a href="https://docs.unrealengine.com/4.27/en-US/AnimatingObjects/Sequencer/Cameras/CameraRigRail/" target="_blank" rel="noopener">Docs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup Rig</strong>
+<ul>
+<li><em>Edit shape</em>
+<ul>
+<li>Click on the edit points on the rig an adjust position</li>
+<li>You can use the spline tangent handles to add curvature</li>
+<li>Note! You can also add additional points to the path RMB click the spline &gt; Add Spline Points Here</li>
+</ul>
+</li>
+<li><em>Add Camera</em>
+<ul>
+<li>In the Outliner, drag and drop the camera on to the rig to make it a child of the rig</li>
+<li>Zero out the transforms of the camera
+<ul>
+<li>Select the camera and click the reset button on the right-most side of the Transform &gt; Location input field</li>
+<li>This will zero out the transform in relation to its parent</li>
+<li>Note that you can still offset the camera on the local space of its parent</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup Sequence</strong>
+<ul>
+<li><em>Open the sequence</em>
+<ul>
+<li>Double click the &ldquo;my_sequence&rdquo; Level Sequence we created earlier to open it up in sequencer</li>
+</ul>
+</li>
+<li><em>Add camera and rig</em>
+<ul>
+<li>From the outliner drag and drop the camera and the camera rig to the sequencer</li>
+</ul>
+</li>
+<li><em>Add camera transform key</em>
+<ul>
+<li>Add a key on the first frame of the <em>Transform</em> propery on the CineCameraActor.
+<ul>
+<li>If we accidentally move the camera this key will ensure that we keep our location and rotation</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Animate rig rail position</em>
+<ul>
+<li>Add <em>Current position on Rail</em> track
+<ul>
+<li>In sequencer, on the camera rig rail track click the + button on the righ-hand side of the track to add &ldquo;Current position on Rail&rdquo; track</li>
+<li>Set the property to 0 on the first frame and set a key</li>
+<li>Move to the last frame and set trhe property to 1 (a key should be set automatically, if not set one)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Look at</strong>
+<ul>
+<li>We might want to add a look at object</li>
+<li><strong>Add look at object</strong>
+<ul>
+<li>Add a an <em>Actor</em>
+<ul>
+<li>We will just add a simple &ldquo;Actor&rdquo; but you can use varioous objects as look at object</li>
+</ul>
+</li>
+<li>Lets call it &ldquo;my_look_at&rdquo;</li>
+</ul>
+</li>
+<li><strong>Setup look at</strong>
+<ul>
+<li>Select the camera</li>
+<li>Details panel &gt; Current Camera Settings &gt; Lookat Tracking Settings
+<ul>
+<li><em>Enable Look at Tracking</em> : On</li>
+<li><em>Actor to Track</em> : &ldquo;my_look_at&rdquo; (the actor we created earlier as our look at)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="camera-shake">Camera Shake</h2>
+<ul>
+<li><strong>Camera Shake</strong>
+<ul>
+<li><em>Create blueprint</em>
+<ul>
+<li>Navigate to a folder where you want to save your blueprint</li>
+<li>RMB &gt; Create Blueprint Class</li>
+<li>In the Pick Parent Class dialog start typing &ldquo;shake&rdquo; in the All Classes text input
+<ul>
+<li>Select <em>Camera Shake Base</em> and click select</li>
+</ul>
+</li>
+<li>Call it &ldquo;BP_camera_shake_01&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Camera Shake Pattern</strong>
+<ul>
+<li>There are various pattern you can use, lets explore some of them</li>
+<li>Double click the blueprint to open it up</li>
+<li>Select which pattern to use: Camere Shake Pattern &gt; Root Shake Pattern</li>
+<li><em>Perlin Noise Camera Shake Pattern</em>
+<ul>
+<li><em>Note!</em>
+<ul>
+<li>One weird thing with the perlin noise shake pattern is that it seems to have a truly random seed for the noise, which means that an identical camera with the same noise applied will get a unique shake, which is a bad thing, since we usually want to be able to rely on that the resulting position is the same with the same input. (makes it tricky to align things etc)</li>
+</ul>
+</li>
+<li>Timing &gt;
+<ul>
+<li><em>Duration</em> : 0
+<ul>
+<li>This will make it last indefinately (the default of 1 will use the shake for 1 second)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rotation &gt;
+<ul>
+<li><em>Rotation Amplitude Multiplier</em> : 5 (or whatever)</li>
+</ul>
+</li>
+<li>etc&hellip;</li>
+<li>Press Compile &amp; Save</li>
+</ul>
+</li>
+<li><em>Sequence Camera Shake Pattern</em>
+<ul>
+<li>With this pattern we can setup an animation in a <em>Camera Animation Sequence</em> and use that as an offset for the cam position.</li>
+<li>What you can do is to generate shake anim in for instance houdini and use this data to set the keyframe data in the camera animation sequence</li>
+<li>Here is a manual way to get started with using the sequence camera shake pattern
+<ul>
+<li>In the content browser RMB click &gt; Cinematics &gt; Camera Animation Sequence</li>
+<li>Go inside the created sequence</li>
+<li>On the Cine Camera Actor click the add track button and add a Transform track</li>
+<li>Set some keyframes</li>
+</ul>
+</li>
+<li>In the &ldquo;BP_camera_shake_01&rdquo; blueprint we created earlier, on the sequence dropdown we select the camera animation sequence we just created.</li>
+<li>We could do some optional tweaks using the other parameters of the camera shake</li>
+<li>Press Compile &amp; Save</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add to Camera</strong>
+<ul>
+<li>In the sequencer, on the camera actor click the + to add a track &gt; Camera Shake &gt; Select the blueprint we just did</li>
+</ul>
+</li>
+</ul>
+<h2 id="bake--export">Bake &amp; Export</h2>
+<p>To be able to export the motion from the camera rig &amp; camera shake we need to bake the animation.</p>
+<ul>
+<li><em>Duplicate objects</em>
+<ul>
+<li>Note
+<ul>
+<li>It can be nice to keep the original setup if you want to tweak it later.</li>
+<li>I have also noticed that the cinecamera actor gets unparented from the camera rig on a bake, the camera shake also gets disabled</li>
+<li>One <em>weird</em> thing is that it seems like the noise of the camera shake gets a different seed if you have to exact copies of the same setup. I would prefer that they were exactly the same.</li>
+</ul>
+</li>
+<li>Select the objects you want to export
+<ul>
+<li>Ctrl + D</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Bake</em>
+<ul>
+<li>Select the duplicated objects</li>
+<li>In the sequencer toolbar click the actions menu (&ldquo;the wrench&rdquo;) &gt; <em>Bake Transform</em></li>
+</ul>
+</li>
+<li><em>Gotcha!</em>
+<ul>
+<li>One big gotcha here is if you use <em>look at</em> it does not automatically gets disabled on bake. So you need to do that on the camera yourself. If you do not do this the camera shake will not be applied correctly</li>
+</ul>
+</li>
+<li><em>Export</em>
+<ul>
+<li>With the baked objects selected</li>
+<li>RMB &gt; Export</li>
 </ul>
 </li>
 </ul>

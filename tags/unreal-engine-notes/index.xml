@@ -83,7 +83,7 @@ With the Settings options, you can specify additional configurable items to use 
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-cinematics/</guid>
-      <description>Sequencer Tips  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks. Check the streaming state of the levels. Make sure that the levels are streaming (if not you will get a black render) A master sequence, sub-sequence and level sequence is basically the same thing, the difference is how they are used and how they are structured.  A master sequence will contain sub-sequences and level sequences A master sequence is a cointainer of shots   A clean Master sequence  The idea is to keep a master sequence quite clean (and have the complexity such as keyframes, effects etc in sub-sequences) to make it possible for a quick edit at the top level.</description>
+      <description>Tips  Perspective &amp;amp; Camera  When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup. Pane setup  3dview (top left corner) &amp;gt; layouts &amp;gt; Two Panes (side by side) Set the left one to perspective, and the right to a cine camera Set the cine camera view to use Cinematic Viewport  When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)        Sequencer Tips  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks.</description>
     </item>
     
     <item>
