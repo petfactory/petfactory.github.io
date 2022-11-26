@@ -181,6 +181,11 @@
         <li><a href="#sorting">Sorting</a></li>
       </ul>
     </li>
+    <li><a href="#misc">Misc</a>
+      <ul>
+        <li><a href="#environ">Environ</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>	
 			</div>
@@ -244,6 +249,17 @@ data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#3
 <span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;height&#39;</span>])))
 <span style="color:#75715e"># {&#39;A&#39;: {&#39;width&#39;: 1, &#39;height&#39;: 0}, &#39;B&#39;: {&#39;width&#39;: 2, &#39;height&#39;: 1}, &#39;C&#39;: {&#39;width&#39;: 0, &#39;height&#39;: 2}}</span>
 
+</code></pre></div><h1 id="misc">Misc</h1>
+<h2 id="environ">Environ</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>items():
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{k}={v}&#39;</span>)
+
+<span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;OCIO&#39;</span>])
+<span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;OCIO&#39;</span>))
+    
 </code></pre></div>		
 		</div>
 	</div>

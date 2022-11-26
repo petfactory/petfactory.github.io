@@ -197,6 +197,16 @@
         <li><a href="#bake--export">Bake &amp; Export</a></li>
       </ul>
     </li>
+    <li><a href="#output">Output</a>
+      <ul>
+        <li><a href="#ocio">OCIO</a></li>
+      </ul>
+    </li>
+    <li><a href="#misc">Misc</a>
+      <ul>
+        <li><a href="#blueprint">Blueprint</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>	
 			</div>
@@ -661,6 +671,151 @@ A fade track can be added to a sequence to fade in and out
 <ul>
 <li>With the baked objects selected</li>
 <li>RMB &gt; Export</li>
+</ul>
+</li>
+</ul>
+<h1 id="output">Output</h1>
+<h2 id="ocio">OCIO</h2>
+<p>OCIO in unreal engine 
+<a href="https://docs.unrealengine.com/5.1/en-US/color-management-with-opencolorio-in-unreal-engine/" target="_blank" rel="noopener">docs</a></p>
+<ul>
+<li><strong>Enable plugin</strong>
+<ul>
+<li>Enable the plugin <em>OpenColorIO (OCIO)</em></li>
+</ul>
+</li>
+<li><strong>OCIO Configs</strong>
+<ul>
+<li>Download OCIO profile
+<ul>
+<li>
+<a href="https://github.com/colour-science/OpenColorIO-Configs" target="_blank" rel="noopener">OpenColorIO-Configs</a></li>
+<li>Download, unzip and save it somewhere.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create OCIO Configuration Asset</strong>
+<ul>
+<li>In the Content directory create a folder named &ldquo;ocio&rdquo; where we will save our ocio configs</li>
+<li>In the &ldquo;ocio&rdquo; folder, RMB Miscellaneous &gt; OpenColorIO Configuration</li>
+<li>Call it &ldquo;ocio_01&rdquo;</li>
+</ul>
+</li>
+<li><strong>Edit the config asset</strong>
+<ul>
+<li>Double click the configuration asset to open it up</li>
+<li>Config &gt; Configuration File:
+<ul>
+<li>Browse to the config.ocio you just downloaded</li>
+<li><em>Note!</em> the docs says that you place a copy of the config.ocio in the content folder of the project:
+<ul>
+<li>I guess this is to make the project less dependent of external assets</li>
+<li>Use your computers file explorer to copy the config.ocio (that we downloaded) in the &ldquo;ocio&rdquo; folder (we just created)</li>
+<li>If the &ldquo;ocio&rdquo; folder is a direct child of the &ldquo;Content&rdquo; folder the path in the &ldquo;Configuration File&rdquo; should be:
+<ul>
+<li><em>Content/ocio/config.ocio</em></li>
+</ul>
+</li>
+<li>There is also a simple config file that comes with the plugin
+<ul>
+<li>C:/Program Files/Epic Games/UE_5.1/Engine/Plugins/Compositing/OpenColorIO/Content/OCIO/simple.config.ocio</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Add Color Spaces</em>
+<ul>
+<li>Desired Color Spaces &gt; add 2 elements by clicking the + button</li>
+<li>Set the color spaces to (by clicking on the first down arrow, it can be quite slow, guess it builds the menu dynamically?)
+<ul>
+<li>Utility &gt; <em>Utility - Linear - sRGB</em></li>
+<li>ACES &gt; <em>ACEScg</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Add Display Views</em>
+<ul>
+<li>Desired Display Views &gt; add 3 element by clicking the + button
+<ul>
+<li>ACES &gt; <em>sRGB</em></li>
+<li>ACES &gt; <em>Rec.709</em></li>
+<li>ACES &gt; <em>Rec.2020</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Set the View Lut</strong>
+<ul>
+<li>View Mode (Lit by default) &gt; Color Management &gt; OCIO Display &gt;
+<ul>
+<li><em>Enable Display</em> : On</li>
+<li><em>Select an ICIO Asset</em> &gt; Select the config asset (we created earlier)</li>
+<li>Set Profiles
+<ul>
+<li>Color Space
+<ul>
+<li><em>Utility - Linear - sRGB</em></li>
+</ul>
+</li>
+<li>Display View
+<ul>
+<li><em>ACES - Rec.2020</em> (or what you need)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Rendering</strong>
+<ul>
+<li>Use OCIO in Movie Render Queue
+<ul>
+<li>In the config add a Settings &gt; Color Output
+<ul>
+<li>OCIO Configuration &gt;
+<ul>
+<li><em>Is Enabled</em> : On</li>
+<li>Color Configuration &gt;
+<ul>
+<li>Configuration Source : select the ocio config asset we created earlier</li>
+<li>Source Color Space : <em>Utility - Linear - sRGB</em></li>
+<li>Destination Color Space : <em>ACES &gt; ACEScg</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="misc">Misc</h1>
+<h2 id="blueprint">Blueprint</h2>
+<ul>
+<li><strong>Animate BP variable in sequencer</strong>
+<ul>
+<li>Create a blueprint</li>
+<li>Add some variable
+<ul>
+<li>Make it public (click the eye icon)</li>
+<li>With the variable selected, Details &gt; Variable &gt; Expose to Cinematics</li>
+</ul>
+</li>
+<li>Click Class Settings (top of the menubar in the blueprint editor)
+<ul>
+<li>Blueprint Options &gt; Run Construction Script in Sequencer</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
