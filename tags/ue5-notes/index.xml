@@ -73,7 +73,7 @@ With the Settings options, you can specify additional configurable items to use 
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-cinematics/</guid>
-      <description>Tips  Perspective &amp;amp; Camera  When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup. Pane setup  3dview (top left corner) &amp;gt; layouts &amp;gt; Two Panes (side by side) Set the left one to perspective, and the right to a cine camera Set the cine camera view to use Cinematic Viewport  When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)        Sequencer Tips  Tips  Organize the project using Levels so that multiple people can work on different parts of the project without bottlenecks.</description>
+      <description>General Tips Camera  Perspective &amp;amp; Camera views  When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup. Pane setup  3dview (top left corner) &amp;gt; layouts &amp;gt; Two Panes (side by side) Set the cine camera view to use Cinematic Viewport  When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)     Cinematic Control  On the pane that you will use as a perspective camera, disable allow cinematic control.</description>
     </item>
     
     <item>

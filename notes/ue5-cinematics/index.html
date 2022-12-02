@@ -169,21 +169,25 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
-    <li><a href="#tips">Tips</a></li>
+    <li><a href="#general-tips">General Tips</a>
+      <ul>
+        <li><a href="#camera">Camera</a></li>
+      </ul>
+    </li>
     <li><a href="#sequencer">Sequencer</a>
       <ul>
-        <li><a href="#tips-1">Tips</a></li>
+        <li><a href="#tips">Tips</a></li>
         <li><a href="#manual-setup">Manual setup</a></li>
         <li><a href="#add-actors">Add actors</a>
           <ul>
             <li><a href="#static-mesh">Static Mesh</a></li>
-            <li><a href="#camera">Camera</a></li>
+            <li><a href="#camera-1">Camera</a></li>
           </ul>
         </li>
         <li><a href="#general">General</a>
           <ul>
             <li><a href="#takes">Takes</a></li>
-            <li><a href="#camera-1">Camera</a></li>
+            <li><a href="#camera-2">Camera</a></li>
             <li><a href="#curve-editor">Curve Editor</a></li>
           </ul>
         </li>
@@ -225,18 +229,27 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE5 - Cinematics</h1>
-			<h1 id="tips">Tips</h1>
+			<h1 id="general-tips">General Tips</h1>
+<h2 id="camera">Camera</h2>
 <ul>
-<li><strong>Perspective &amp; Camera</strong>
+<li><strong>Perspective &amp; Camera views</strong>
 <ul>
 <li>When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup.</li>
 <li><em>Pane setup</em>
 <ul>
 <li>3dview (top left corner) &gt; layouts &gt; Two Panes (side by side)</li>
-<li>Set the left one to perspective, and the right to a cine camera</li>
 <li>Set the cine camera view to use Cinematic Viewport
 <ul>
 <li>When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Cinematic Control</em>
+<ul>
+<li>On the pane that you will use as a <em>perspective camera</em>, disable allow cinematic control. If we do not do this, when we look throufh camera from the sequencer it will use both views as a cine camera view.
+<ul>
+<li>3dview (top left corner) &gt; <em>Allow Cinematic Control</em>: Off</li>
 </ul>
 </li>
 </ul>
@@ -245,7 +258,7 @@
 </li>
 </ul>
 <h1 id="sequencer">Sequencer</h1>
-<h2 id="tips-1">Tips</h2>
+<h2 id="tips">Tips</h2>
 <ul>
 <li>Tips
 <ul>
@@ -349,7 +362,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="camera">Camera</h3>
+<h3 id="camera-1">Camera</h3>
 <ul>
 <li><strong>Add a Camera</strong>
 <ul>
@@ -413,7 +426,7 @@ Lets try out the camera cuts
 </ul>
 </li>
 </ul>
-<h3 id="camera-1">Camera</h3>
+<h3 id="camera-2">Camera</h3>
 <ul>
 <li>Import camera
 <ul>
