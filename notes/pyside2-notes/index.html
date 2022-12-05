@@ -186,18 +186,17 @@
         <li><a href="#empty-model">Empty Model</a></li>
       </ul>
     </li>
-    <li><a href="#qtreeview">QTreeView</a>
+    <li><a href="#layout">Layout</a>
       <ul>
-        <li><a href="#qstandarditem">QStandardItem</a></li>
+        <li><a href="#qformlayout">QFormLayout</a></li>
       </ul>
     </li>
-    <li><a href="#gotchas">Gotchas</a>
+    <li><a href="#view">View</a>
       <ul>
-        <li><a href="#view">View</a>
-          <ul>
-            <li><a href="#icons">Icons</a></li>
-          </ul>
-        </li>
+        <li><a href="#drag--drop">Drag &amp; Drop</a></li>
+        <li><a href="#icons">Icons</a></li>
+        <li><a href="#size">Size</a></li>
+        <li><a href="#qstandarditem">QStandardItem</a></li>
       </ul>
     </li>
   </ul>
@@ -408,18 +407,75 @@ The image below is an example of a simplified version of the widget.</p>
             rect <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>QRect(qp<span style="color:#f92672">.</span>fontMetrics()<span style="color:#f92672">.</span>boundingRect(self<span style="color:#f92672">.</span>_text))
             rect<span style="color:#f92672">.</span>moveCenter(self<span style="color:#f92672">.</span>viewport()<span style="color:#f92672">.</span>rect()<span style="color:#f92672">.</span>center())
             qp<span style="color:#f92672">.</span>drawText(rect, QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>AlignCenter, self<span style="color:#f92672">.</span>_text)
-</code></pre></div><h1 id="qtreeview">QTreeView</h1>
-<h2 id="qstandarditem">QStandardItem</h2>
-<p>To make an item checkable but not editable using flags</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">item<span style="color:#f92672">.</span>setCheckable(True)
-item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
-</code></pre></div><h1 id="gotchas">Gotchas</h1>
-<h2 id="view">View</h2>
-<h3 id="icons">Icons</h3>
+</code></pre></div><h1 id="layout">Layout</h1>
+<h2 id="qformlayout">QFormLayout</h2>
+<p>Get the label of a form layout</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">label <span style="color:#f92672">=</span> form_layout<span style="color:#f92672">.</span>itemAt(<span style="color:#ae81ff">0</span>, QtWidgets<span style="color:#f92672">.</span>QFormLayout<span style="color:#f92672">.</span>LabelRole)<span style="color:#f92672">.</span>widget()
+label<span style="color:#f92672">.</span>setToolTip(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</code></pre></div><h1 id="view">View</h1>
+<h2 id="drag--drop">Drag &amp; Drop</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtGui
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtCore
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtWidgets
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaterialTableView</span>(QtWidgets<span style="color:#f92672">.</span>QTableView):
+
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super(MaterialTableView, self)<span style="color:#f92672">.</span>__init__(parent)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mousePressEvent</span>(self, event):
+        
+        q_index <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>indexAt(event<span style="color:#f92672">.</span>pos())
+        self<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> None
+        <span style="color:#66d9ef">if</span> q_index<span style="color:#f92672">.</span>isValid():
+            self<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>model()<span style="color:#f92672">.</span>index(q_index<span style="color:#f92672">.</span>row(), <span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>data()
+
+        super()<span style="color:#f92672">.</span>mousePressEvent(event)
+
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mouseMoveEvent</span>(self, event):
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> self<span style="color:#f92672">.</span>data:
+            <span style="color:#66d9ef">return</span>
+
+        mimeData <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>QMimeData()
+        mimeData<span style="color:#f92672">.</span>setText(self<span style="color:#f92672">.</span>data)
+        drag <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QDrag(self)
+        drag<span style="color:#f92672">.</span>setMimeData(mimeData)
+        drag<span style="color:#f92672">.</span>exec_(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>CopyAction <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>MoveAction, QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>CopyAction)
+
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeshTreeView</span>(QtWidgets<span style="color:#f92672">.</span>QTreeView):
+
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super(MeshTreeView, self)<span style="color:#f92672">.</span>__init__(parent)
+        self<span style="color:#f92672">.</span>setAcceptDrops(True)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dragEnterEvent</span>(self, event):
+        event<span style="color:#f92672">.</span>accept()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dragMoveEvent</span>(self, event):
+        event<span style="color:#f92672">.</span>accept()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dropEvent</span>(self, event):
+
+        q_index <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>indexAt(event<span style="color:#f92672">.</span>pos())
+        <span style="color:#66d9ef">if</span> q_index<span style="color:#f92672">.</span>isValid():
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;valid&#39;</span>)
+
+        mime_data <span style="color:#f92672">=</span> event<span style="color:#f92672">.</span>mimeData()
+        <span style="color:#66d9ef">if</span> mime_data<span style="color:#f92672">.</span>hasText():
+            <span style="color:#66d9ef">print</span>(mime_data<span style="color:#f92672">.</span>text())
+
+</code></pre></div><h2 id="icons">Icons</h2>
 <ul>
 <li><strong>Remove the blue-tinted highlight of selected icons</strong>
 <ul>
-<li>One way to get rid of the blue tint of selected icons (for instance in a QListView) is to explicitly set the icon of the selected state (as well as the normal). You can assign the same pixmap or create different sizes, colors or whatever you need.
+<li>One way to get rid of the blue tint of selected icons (for instance in a QListView) is to explicitly set the icon of the selected state (as well as the normal). You can assign the same pixmap or create different sizes, colors or whatever you need.</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pixmap_normal <span style="color:#f92672">=</span> create_your_pixmap(size)
 pixmap_selected <span style="color:#f92672">=</span> create_your_pixmap(size)
 
@@ -429,11 +485,17 @@ icon<span style="color:#f92672">.</span>addPixmap(pixmap_normal, QtGui<span styl
 icon<span style="color:#f92672">.</span>addPixmap(pixmap_selected, QtGui<span style="color:#f92672">.</span>QIcon<span style="color:#f92672">.</span>Selected, QtGui<span style="color:#f92672">.</span>QIcon<span style="color:#f92672">.</span>Off)
 
 my_item<span style="color:#f92672">.</span>setIcon(icon) 
-</code></pre></div></li>
-</ul>
-</li>
-</ul>
-		
+</code></pre></div><h2 id="size">Size</h2>
+<p>Set the view to resize to fill space</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>splitter <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QSplitter()
+self<span style="color:#f92672">.</span>splitter<span style="color:#f92672">.</span>setOrientation(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>Horizontal)
+self<span style="color:#f92672">.</span>splitter<span style="color:#f92672">.</span>setSizePolicy(QtWidgets<span style="color:#f92672">.</span>QSizePolicy<span style="color:#f92672">.</span>Minimum, QtWidgets<span style="color:#f92672">.</span>QSizePolicy<span style="color:#f92672">.</span>Expanding)
+vbox<span style="color:#f92672">.</span>addWidget(self<span style="color:#f92672">.</span>splitter)
+</code></pre></div><h2 id="qstandarditem">QStandardItem</h2>
+<p>To make an item checkable but not editable using flags</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">item<span style="color:#f92672">.</span>setCheckable(True)
+item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
+</code></pre></div>		
 		</div>
 	</div>
 </div>

@@ -1,0 +1,9 @@
+string names[];
+
+int count = nuniqueval(0, 'prim', 'shop_materialpath');
+for (int i = 0; i < count; i++) {
+    string name = uniqueval(0, 'prim', 'shop_materialpath', i);
+    push(names, name);
+}
+
+s[]@names = names;

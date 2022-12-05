@@ -26,7 +26,7 @@
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-misc/</guid>
-      <description>Tips Material Graph  Reroute  You can add a reroute node by double clicking the connection line   Debug nodes  You can use the debug nodes under Debug to visually debug values. Lets say that you want to view the object bounds you can connect the output of an Object Bounds node to an Debug Float 3 node. Debug &amp;gt;  Debug Scalar Values Debug Float 2 Values Etc &amp;hellip;     Material Attributes  If you want the result node of a material to be a material attribute:  Details &amp;gt; Material &amp;gt;  Use Material Attribute : On       Asset Editor Open Location  This controls where an asset editor will open (including plugins, editor settings, etc) Edit &amp;gt; Editor Preferences &amp;gt; General &amp;gt; Appearance &amp;gt; User Interface &amp;gt;  Asset Editor Open Location:  Default New Window Main Window etc        Landscape Quick Setup  Create a Level  Add lighting actors   Create a Landscape  Switch to Landscape Editing Mode  Shift + 2 (or use the mode dropdown)   Create new Landscape  In the landscape pane, make sure the Manage mode is selected and click the create button in the bottom left.</description>
+      <description>Tips UI  Selection  Box Select  Hold Ctrl + Alt + LMB clcik and drag      Material Graph  Reroute  You can add a reroute node by double clicking the connection line   Debug nodes  You can use the debug nodes under Debug to visually debug values. Lets say that you want to view the object bounds you can connect the output of an Object Bounds node to an Debug Float 3 node.</description>
     </item>
     
     <item>
