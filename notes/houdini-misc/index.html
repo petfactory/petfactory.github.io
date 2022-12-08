@@ -207,7 +207,11 @@
         <li><a href="#curl-field-velocity">Curl field (velocity)</a></li>
       </ul>
     </li>
-    <li><a href="#tips">Tips</a></li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#hscript">HScript</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>	
 			</div>
@@ -401,12 +405,27 @@ Sets a group that will be highlighted when the node is viewed.
 <li>We have now created a velocity volume with a curl noise. We can for instance use this inside a pop simulation to advect the particles.</li>
 </ul>
 <h1 id="tips">Tips</h1>
+<h2 id="hscript">HScript</h2>
 <ul>
 <li><strong>Switch</strong>
 <ul>
 <li>Lets say you want to switch between two streams to visually debug/inspect a network. Use this expression in a switch to use the first input for 24 frames then the second for another 24 and so on:
 <ul>
 <li><code>$F%48&lt;24</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Remap HScript Sin</strong>
+<ul>
+<li>The sin function (using hscript expression) expects the value to be in degrees!</li>
+<li>Also the time value at frame 0 is -1.0/$FPS (one time step negative)</li>
+<li>So to remap a parameter using a sin function you could do this
+<ul>
+<li><code>fit(sin((($T+1.0/$FPS)*360-90)), -1, 1, 10, 15)</code></li>
+<li>This assumes that you want to start at frame 0</li>
+<li>also that you want the sine value to be -1 at frame 0</li>
+<li>Themn we just remap between 10 - 15 in this case</li>
 </ul>
 </li>
 </ul>
