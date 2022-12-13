@@ -419,13 +419,23 @@ Sets a group that will be highlighted when the node is viewed.
 <li><strong>Remap HScript Sin</strong>
 <ul>
 <li>The sin function (using hscript expression) expects the value to be in degrees!</li>
-<li>Also the time value at frame 0 is -1.0/$FPS (one time step negative)</li>
+<li><em>Time based</em>
+<ul>
+<li>The time value at frame 0 is -1.0/$FPS (one time step negative)</li>
 <li>So to remap a parameter using a sin function you could do this
 <ul>
 <li><code>fit(sin((($T+1.0/$FPS)*360-90)), -1, 1, 10, 15)</code></li>
 <li>This assumes that you want to start at frame 0</li>
 <li>also that you want the sine value to be -1 at frame 0</li>
 <li>Themn we just remap between 10 - 15 in this case</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Frame based</em>
+<ul>
+<li><code>fit(sin(((fit($F, 0, 47, 0, 4))*360-90)), -1, 1, 10, 15)</code></li>
+<li>The value will oscillate between 10 and 15 4 times over the frame range 0-47</li>
 </ul>
 </li>
 </ul>
