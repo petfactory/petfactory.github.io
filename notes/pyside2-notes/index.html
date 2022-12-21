@@ -199,6 +199,11 @@
         <li><a href="#qstandarditem">QStandardItem</a></li>
       </ul>
     </li>
+    <li><a href="#stylesheets--resources">Stylesheets &amp; Resources</a>
+      <ul>
+        <li><a href="#compile-qrc">Compile .qrc</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>	
 			</div>
@@ -495,7 +500,22 @@ vbox<span style="color:#f92672">.</span>addWidget(self<span style="color:#f92672
 <p>To make an item checkable but not editable using flags</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">item<span style="color:#f92672">.</span>setCheckable(True)
 item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
-</code></pre></div>		
+</code></pre></div><h1 id="stylesheets--resources">Stylesheets &amp; Resources</h1>
+<h2 id="compile-qrc">Compile .qrc</h2>
+<ul>
+<li>To compile a qrc file
+<ul>
+<li>Activate the venv that has PySide2 installed</li>
+<li>Then cd to the project dir where you have your resources</li>
+<li>Compile the icons.qrc:
+<ul>
+<li>pyside2-rcc icons.qrc -o icons.py</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+		
 		</div>
 	</div>
 </div>
