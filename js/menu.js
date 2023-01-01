@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
          if (menu_wrap.classList.contains('visible')) {
                 // console.log('remove');
                 menu_wrap.classList.remove('visible');
+                document.body.style.overflowY = 'scroll';
          }
          else {
             // console.log('add')
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // maybe to force some calculation...
             menu_wrap.clientWidth;
             menu_wrap.classList.add('visible');
+            document.body.style.overflow = 'hidden';
          }
          
     }, false);
@@ -108,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!menu_wrap.classList.contains('visible')) {
                 // console.log('transition done');
                 menu_wrap.classList.remove('disp-block');
+                document.body.style.overflowY = 'scroll';
         }
     }, false);
 

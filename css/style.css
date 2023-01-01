@@ -73,6 +73,10 @@ h3 {
     background: #000;
 }
 
+/*::-webkit-scrollbar-corner {
+    background-color: #0F0;
+}
+*/
 ::-webkit-scrollbar-thumb {
     /*background: #151515;*/
     /*background: #222;*/
