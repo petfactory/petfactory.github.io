@@ -10,6 +10,14 @@ body {
     overflow-y: scroll;
 }
 
+body.menu-modal {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
 em {
     color: #999;
 }

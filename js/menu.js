@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    var scroll_y = 0
+
     // TOC
 
     const toc_btn = document.getElementsByClassName('toc-btn')[0];
@@ -83,18 +85,23 @@ document.addEventListener('DOMContentLoaded', function() {
     trigger.addEventListener('click', function(e) {
 
          if (menu_wrap.classList.contains('visible')) {
-                // console.log('remove');
-                menu_wrap.classList.remove('visible');
-                document.body.style.overflowY = 'scroll';
+            // console.log('remove');
+            menu_wrap.classList.remove('visible');
+            document.body.classList.remove('menu-modal');
+            window.scrollTo(0, scroll_y);
+            document.body.style.top = '';
          }
          else {
             // console.log('add')
+            scroll_y = window.scrollY;
+            document.body.style.top = scroll_y*-1+'px';
+
             menu_wrap.classList.add('disp-block');
             // seems like we need this for a smooth fade up...
             // maybe to force some calculation...
             menu_wrap.clientWidth;
             menu_wrap.classList.add('visible');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('menu-modal');
          }
          
     }, false);
@@ -102,15 +109,17 @@ document.addEventListener('DOMContentLoaded', function() {
     menu_wrap.addEventListener('click', function(e) {
         // console.log('remove by menu-wrap');
         menu_wrap.classList.remove('visible');
+        document.body.classList.remove('menu-modal');
+        window.scrollTo(0, scroll_y);
+        document.body.style.top = '';
     }, false);
 
     // when transition is done, remove
     menu_wrap.addEventListener('transitionend', function() {
 
         if (!menu_wrap.classList.contains('visible')) {
-                // console.log('transition done');
-                menu_wrap.classList.remove('disp-block');
-                document.body.style.overflowY = 'scroll';
+            // console.log('transition done');
+            menu_wrap.classList.remove('disp-block');
         }
     }, false);
 
