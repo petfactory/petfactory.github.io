@@ -188,6 +188,7 @@
     <li><a href="#pyside2">PySide2</a>
       <ul>
         <li><a href="#example">Example</a></li>
+        <li><a href="#qapplication-singleton">QApplication singleton</a></li>
       </ul>
     </li>
     <li><a href="#resources--docs">Resources &amp; Docs</a></li>
@@ -524,7 +525,12 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
 <ul>
 <li>Tools &gt; Execute Python Script : Browse to the script location</li>
 </ul>
-<h1 id="resources--docs">Resources &amp; Docs</h1>
+<h2 id="qapplication-singleton">QApplication singleton</h2>
+<p>As you see in the example above we use an if statement to see if an instance of the QApplication exists. If we try to create a qApp without this check we will get the following error:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">RuntimeError</span>: Please destroy the QApplication singleton before creating a new QApplication instance<span style="color:#f92672">.</span>
+</code></pre></div><p>So this means we create a qApp if it does not exists else we use the &ldquo;current one&rdquo;. If we for some reason wants to shutdown the qApp we can use this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">qApp<span style="color:#f92672">.</span>shutdown()
+</code></pre></div><h1 id="resources--docs">Resources &amp; Docs</h1>
 <ul>
 <li><strong>Epic</strong>
 <ul>

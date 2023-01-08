@@ -195,7 +195,12 @@
         <li><a href="#set-attrs">Set attrs</a></li>
       </ul>
     </li>
-    <li><a href="#dev">Dev</a></li>
+    <li><a href="#dev">Dev</a>
+      <ul>
+        <li><a href="#run-externally">Run externally</a></li>
+        <li><a href="#run-external-script-from-resolve">Run external script (from Resolve)</a></li>
+      </ul>
+    </li>
     <li><a href="#ui">UI</a>
       <ul>
         <li><a href="#workflow-integration">Workflow Integration</a></li>
@@ -573,6 +578,36 @@ pprint<span style="color:#f92672">.</span>pprint(size_attrs)
 </span><span style="color:#e6db74">}
 </span><span style="color:#e6db74">&#39;&#39;&#39;</span>
 </code></pre></div><h1 id="dev">Dev</h1>
+<h2 id="run-externally">Run externally</h2>
+<p>To run a python script externally that interacts with Resolve here are some notes from the README found in the &ldquo;Scripting folder&rdquo; which is located at: <em>C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting</em></p>
+<ul>
+<li><strong>Using a script</strong>
+<ul>
+<li>DaVinci Resolve needs to be running for a script to be invoked.</li>
+<li>For a Resolve script to be executed from an external folder, the script needs to know of the API location.</li>
+<li>You may need to set the these environment variables to allow for your Python installation to pick up the appropriate dependencies as shown below:</li>
+<li><em>Windows</em>:
+<ul>
+<li>RESOLVE_SCRIPT_API=&rdquo;%PROGRAMDATA%\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting&rdquo;</li>
+<li>RESOLVE_SCRIPT_LIB=&quot;C:\Program Files\Blackmagic Design\DaVinci Resolve\fusionscript.dll&rdquo;</li>
+<li>PYTHONPATH=&rdquo;%PYTHONPATH%;%RESOLVE_SCRIPT_API%\Modules&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run from <em>Houdini</em>
+<ul>
+<li>I wanted to run a scipt that interacts with Resolve from within houdini. The Environ variables were set but I needed to add the modules directory to the path like so:</li>
+<li>With that done i could import the DaVinciResolveScript module</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+sys<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#39;C:/ProgramData/Blackmagic Design/DaVinci Resolve/Support/Developer/Scripting/Modules&#39;</span>)
+
+<span style="color:#f92672">import</span> DaVinciResolveScript <span style="color:#f92672">as</span> dvr_script
+
+</code></pre></div><h2 id="run-external-script-from-resolve">Run external script (from Resolve)</h2>
 <p>Here is a quick way of running an external script from the console. Can be useful if you just want to try out someting quick. Since the module is executed within the fusion environment it has access to comp etc.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">execfile(path<span style="color:#f92672">/</span>to<span style="color:#f92672">/</span>file<span style="color:#f92672">.</span>py)
 </code></pre></div><hr>
