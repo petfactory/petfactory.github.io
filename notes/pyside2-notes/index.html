@@ -199,6 +199,11 @@
         <li><a href="#qstandarditem">QStandardItem</a></li>
       </ul>
     </li>
+    <li><a href="#signal--slot">Signal &amp; Slot</a>
+      <ul>
+        <li><a href="#chaining-signals">Chaining signals</a></li>
+      </ul>
+    </li>
     <li><a href="#stylesheets--resources">Stylesheets &amp; Resources</a>
       <ul>
         <li><a href="#compile-qrc">Compile .qrc</a></li>
@@ -500,6 +505,64 @@ vbox<span style="color:#f92672">.</span>addWidget(self<span style="color:#f92672
 <p>To make an item checkable but not editable using flags</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">item<span style="color:#f92672">.</span>setCheckable(True)
 item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
+</code></pre></div><h1 id="signal--slot">Signal &amp; Slot</h1>
+<h2 id="chaining-signals">Chaining signals</h2>
+<p>Or mayabe signal forwarding? Lets say we have a widget (the &ldquo;parent&rdquo;) that has a widget (the &ldquo;child&rdquo;) which in turn have a widget (the &ldquo;grandchild&rdquo;). If we interact with this &ldquo;grandchild&rdquo; widget and emit a signal we might want the signal to reach the top &ldquo;parent&rdquo; widget. What I have done before is to emit a signal from the &ldquo;grandchild&rdquo; connect it to a slot in the &ldquo;child&rdquo; and there emit a new signal and connect it to a slot in the parent. This works but you can also connect a signal to a signal creating a chain of signals. Below is a snippet from the qt docs on 
+<a href="https://doc.qt.io/qt-6/signalsandslots.html" target="_blank" rel="noopener">Signal &amp; Slots</a></p>
+<blockquote>
+<p>It is even possible to connect a signal directly to another signal. (This will emit the second signal immediately whenever the first is emitted.)</p>
+</blockquote>
+<p>Below is a simple example of how this works:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> partial
+
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtWidgets
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtCore
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtGui
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GrandChildWidget</span>(QtWidgets<span style="color:#f92672">.</span>QWidget):
+
+    notify <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>Signal(str, int)
+
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super(GrandChildWidget, self)<span style="color:#f92672">.</span>__init__(parent)
+
+        vbox <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QVBoxLayout(self)
+        btn <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QPushButton(<span style="color:#e6db74">&#39;Test&#39;</span>)
+        btn<span style="color:#f92672">.</span>clicked<span style="color:#f92672">.</span>connect(partial(self<span style="color:#f92672">.</span>notify<span style="color:#f92672">.</span>emit, <span style="color:#e6db74">&#39;Hello World!&#39;</span>, <span style="color:#ae81ff">42</span>))
+        vbox<span style="color:#f92672">.</span>addWidget(btn)
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildWidget</span>(QtWidgets<span style="color:#f92672">.</span>QWidget):
+
+    notify <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>Signal(str, int)
+
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super(ChildWidget, self)<span style="color:#f92672">.</span>__init__(parent)
+
+        vbox <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QVBoxLayout(self)
+        grand_child_widget <span style="color:#f92672">=</span> GrandChildWidget()
+        grand_child_widget<span style="color:#f92672">.</span>notify<span style="color:#f92672">.</span>connect(self<span style="color:#f92672">.</span>notify)
+        vbox<span style="color:#f92672">.</span>addWidget(grand_child_widget)
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ParentWidget</span>(QtWidgets<span style="color:#f92672">.</span>QWidget):
+
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super(ParentWidget, self)<span style="color:#f92672">.</span>__init__(parent)
+
+        vbox <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QVBoxLayout(self)
+        child_widget <span style="color:#f92672">=</span> ChildWidget()
+        child_widget<span style="color:#f92672">.</span>notify<span style="color:#f92672">.</span>connect(self<span style="color:#f92672">.</span>notify_slot)
+        vbox<span style="color:#f92672">.</span>addWidget(child_widget)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">notify_slot</span>(self, message, value):
+        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{message=}, {value=}&#39;</span>)
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+
+    app <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QApplication(sys<span style="color:#f92672">.</span>argv)
+    w <span style="color:#f92672">=</span> ParentWidget()
+    w<span style="color:#f92672">.</span>show()
+    app<span style="color:#f92672">.</span>exec_()
 </code></pre></div><h1 id="stylesheets--resources">Stylesheets &amp; Resources</h1>
 <h2 id="compile-qrc">Compile .qrc</h2>
 <ul>
