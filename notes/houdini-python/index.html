@@ -199,6 +199,11 @@
         <li><a href="#parms-in-folder">Parms in Folder</a></li>
       </ul>
     </li>
+    <li><a href="#ui">UI</a>
+      <ul>
+        <li><a href="#houui">hou.ui</a></li>
+      </ul>
+    </li>
     <li><a href="#snippets">Snippets</a>
       <ul>
         <li><a href="#misc">Misc</a></li>
@@ -400,6 +405,33 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
 <a href="https://www.sidefx.com/docs/houdini/hom/hou/Node.html#parmsInFolder" target="_blank" rel="noopener">parmsInFolder</a> function.</p>
 <p>Lets say that you want all the parms in the PostFX folder (that are inside the Redshift Camera folder of the camera node) note that we need to specify the entire &ldquo;hierarchy&rdquo; to the destination folder.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
+</code></pre></div><h1 id="ui">UI</h1>
+<h2 id="houui">hou.ui</h2>
+<p>The 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/ui.html" target="_blank" rel="noopener">hou.ui module</a> contains some nice user interface related functions. For instance:</p>
+<ul>
+<li><strong>Copy to clipboard</strong>
+<ul>
+<li>Instead of using Pyside to do this we can do:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>copyTextToClipboard(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</code></pre></div><ul>
+<li><strong>Select Node Dialog</strong>
+<ul>
+<li>To spawn a select node dialog with a node type filter and custom node filter we can do this:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_material_library</span>(node):
+    <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>name() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;materiallibrary&#39;</span>:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">return</span> False
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">select_lop_material_library_node</span>():
+    node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>selectNode(node_type_filter<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>nodeTypeFilter<span style="color:#f92672">.</span>Lop, custom_node_filter_callback<span style="color:#f92672">=</span>is_material_library)
+    <span style="color:#66d9ef">return</span> node
 </code></pre></div><h1 id="snippets">Snippets</h1>
 <h2 id="misc">Misc</h2>
 <p><strong>Undo</strong></p>

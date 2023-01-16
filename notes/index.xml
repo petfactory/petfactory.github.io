@@ -330,9 +330,8 @@ The turn of the thumbnails of each cop node we can disable view &amp;gt; Show No
       <pubDate>Thu, 12 Dec 2019 15:09:45 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini-tops/</guid>
-      <description>TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
-Wedge geo variations Lets setup a TOP network to write out geo variations to disc. We will do this using a Wedge node.
-Pull vs Push For each wedged attribute, you can use it to set a parameter on the render node in one of two ways:</description>
+      <description>General TOP nodes define a workflow where data is fed into the network, turned into &amp;ldquo;work items&amp;rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.
+File paths Most TOP nodes that do work let you specify input and/or output file paths. In TOPs, each scheduler node can specify a working directory. This is because different render farm software may use different shared network filesystems.</description>
     </item>
     
     <item>

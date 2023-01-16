@@ -169,6 +169,11 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
+    <li><a href="#general">General</a>
+      <ul>
+        <li><a href="#file-paths">File paths</a></li>
+      </ul>
+    </li>
     <li><a href="#wedge-geo-variations">Wedge geo variations</a>
       <ul>
         <li>
@@ -205,8 +210,29 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini - TOPS</h1>
-			<p>
+			<h1 id="general">General</h1>
+<p>
 <a href="https://www.sidefx.com/docs/houdini/tops/index.html" target="_blank" rel="noopener">TOP</a> nodes define a workflow where data is fed into the network, turned into &ldquo;work items&rdquo; and manipulated by different nodes. Many nodes represent external processes that can be run on the local machine or a server farm.</p>
+<h2 id="file-paths">File paths</h2>
+<p>Most TOP nodes that do work let you specify input and/or output file paths. In TOPs, each scheduler node can specify a working directory. This is because different render farm software may use different shared network filesystems. In the case you are using a farm scheduler, you should make sure that all files you output are reachable by the farm machines relative to this PDG_DIR directory.</p>
+<ul>
+<li>Set the <strong>PDG_DIR</strong> (base working dir)
+<ul>
+<li>You can set the <em>PDG_DIR</em> (base working directory) on the scheduler node. This directory is available to jobs as the PDG_DIR environment variable.
+<ul>
+<li>localscheduler (Node)
+<ul>
+<li>Scheduler &gt; Paths &gt; Working Directiry : $HIP (the default)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>This will later be used in outputs like <strong>$PDG_DIR</strong>/your/file/path.bgeo.sc</li>
+<li>Read 
+<a href="https://www.sidefx.com/docs/houdini/tops/paths.html" target="_blank" rel="noopener">paths docs</a></li>
+</ul>
+</li>
+</ul>
 <h1 id="wedge-geo-variations">Wedge geo variations</h1>
 <p>Lets setup a TOP network to write out geo variations to disc. We will do this using a 
 <a href="https://www.sidefx.com/docs/houdini/nodes/top/wedge.html" target="_blank" rel="noopener">Wedge</a> node.</p>

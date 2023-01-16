@@ -184,6 +184,11 @@
     <li><a href="#misc">Misc</a>
       <ul>
         <li><a href="#environ">Environ</a></li>
+        <li><a href="#inspect">Inspect</a>
+          <ul>
+            <li><a href="#mro">MRO</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -260,6 +265,14 @@ data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#3
 <span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;OCIO&#39;</span>])
 <span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;OCIO&#39;</span>))
     
+</code></pre></div><h2 id="inspect">Inspect</h2>
+<h3 id="mro">MRO</h3>
+<p>Method Resolution Order</p>
+<p>MRO is a concept used in inheritance. It is the order in which a method is searched for in a classes hierarchy and is especially useful in Python because Python supports multiple inheritance.</p>
+<p>In Python, the MRO is from bottom to top and left to right. This means that, first, the method is searched in the class of the object. If it’s not found, it is searched in the immediate super class. In the case of multiple super classes, it is searched left to right, in the order by which was declared by the developer. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/null1&#39;</span>)
+node<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__
+<span style="color:#75715e"># (&lt;class &#39;hou.SopNode&#39;&gt;, &lt;class &#39;hou.Node&#39;&gt;, &lt;class &#39;hou.NetworkMovableItem&#39;&gt;, &lt;class &#39;hou.NetworkItem&#39;&gt;, &lt;class &#39;object&#39;&gt;)</span>
 </code></pre></div>		
 		</div>
 	</div>
