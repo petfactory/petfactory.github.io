@@ -174,13 +174,19 @@
         <li><a href="#lighting">Lighting</a></li>
       </ul>
     </li>
+    <li><a href="#vex">Vex</a>
+      <ul>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#misc">misc</a></li>
+      </ul>
+    </li>
     <li><a href="#nodes">Nodes</a>
       <ul>
         <li><a href="#rendering">Rendering</a>
           <ul>
             <li><a href="#camera">Camera</a></li>
             <li><a href="#settings">Settings</a></li>
-            <li><a href="#materials">Materials</a></li>
+            <li><a href="#materials-1">Materials</a></li>
           </ul>
         </li>
       </ul>
@@ -222,7 +228,25 @@
 <p>
 <a href="https://www.sidefx.com/docs/houdini/solaris/index.html" target="_blank" rel="noopener">Solaris</a> is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. 
 <a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
-<h1 id="nodes">Nodes</h1>
+<h1 id="vex">Vex</h1>
+<h2 id="materials">Materials</h2>
+<p>I am using an <em>Assign material</em> node with the <em>primpattern</em> parm set to <em>All Mesh Primitives</em> (%type:Mesh) and using Vex to specify the material (see snippet below). I am checking if a shop_materialpath attr exists, and if it is using that to construct the material name.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">string shop <span style="color:#f92672">=</span> usd_attrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;shop_materialpath&#39;</span>);
+<span style="color:#66d9ef">if</span>(shop<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;&#39;</span>){
+    shop <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;default&#39;</span>;
+}
+<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;/materials/&#39;</span> <span style="color:#f92672">+</span> shop;
+</code></pre></div><p>I would like to set a specific material name to use if the material node is not found in the material library. I have not looked into this that much, so for now I am using another assign material node after the first one using the snippet below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> (usd_boundmaterialpath(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>){
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;/materials/default&#39;</span>;
+}
+</code></pre></div><h2 id="misc">misc</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">//</span> material binding
+string mat <span style="color:#f92672">=</span> usd_boundmaterialpath(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>);
+
+<span style="color:#f92672">//</span> set attrib
+usd_setattrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;yolo&#39;</span>, <span style="color:#ae81ff">42</span>);
+</code></pre></div><h1 id="nodes">Nodes</h1>
 <h2 id="rendering">Rendering</h2>
 <h3 id="camera">Camera</h3>
 <p><strong>Latlong cubemap in Karma</strong><br>
@@ -254,7 +278,7 @@ There seems to be a bug when Karma is rendering with Hython so the lensshader us
 
 </div>
 <hr>
-<h3 id="materials">Materials</h3>
+<h3 id="materials-1">Materials</h3>
 <p>Read more about material assignment in lops 
 <a href="https://www.tokeru.com/cgwiki/index.php?title=HoudiniLops#Assign_material_Lop_with_shop_materialpath" target="_blank" rel="noopener">cgwiki</a>. Below is a hip file where I try out varius ways of editing material attributes in lops.</p>
 <div class="download-wrap">
