@@ -174,6 +174,14 @@
         <li><a href="#lighting">Lighting</a></li>
       </ul>
     </li>
+    <li><a href="#python">Python</a>
+      <ul>
+        <li><a href="#scene-graph-tree">Scene Graph Tree</a></li>
+        <li><a href="#get-prim">Get prim</a></li>
+        <li><a href="#camera">Camera</a></li>
+        <li><a href="#docs">Docs</a></li>
+      </ul>
+    </li>
     <li><a href="#vex">Vex</a>
       <ul>
         <li><a href="#materials">Materials</a></li>
@@ -184,17 +192,11 @@
       <ul>
         <li><a href="#rendering">Rendering</a>
           <ul>
-            <li><a href="#camera">Camera</a></li>
+            <li><a href="#camera-1">Camera</a></li>
             <li><a href="#settings">Settings</a></li>
             <li><a href="#materials-1">Materials</a></li>
           </ul>
         </li>
-      </ul>
-    </li>
-    <li><a href="#python--usd">Python &amp; USD</a>
-      <ul>
-        <li><a href="#docs">Docs</a></li>
-        <li><a href="#camera-properties">Camera properties</a></li>
       </ul>
     </li>
   </ul>
@@ -228,77 +230,56 @@
 <p>
 <a href="https://www.sidefx.com/docs/houdini/solaris/index.html" target="_blank" rel="noopener">Solaris</a> is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. 
 <a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
-<h1 id="vex">Vex</h1>
-<h2 id="materials">Materials</h2>
-<p>I am using an <em>Assign material</em> node with the <em>primpattern</em> parm set to <em>All Mesh Primitives</em> (%type:Mesh) and using Vex to specify the material (see snippet below). I am checking if a shop_materialpath attr exists, and if it is using that to construct the material name.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">string shop <span style="color:#f92672">=</span> usd_attrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;shop_materialpath&#39;</span>);
-<span style="color:#66d9ef">if</span>(shop<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;&#39;</span>){
-    shop <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;default&#39;</span>;
-}
-<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;/materials/&#39;</span> <span style="color:#f92672">+</span> shop;
-</code></pre></div><p>I would like to set a specific material name to use if the material node is not found in the material library. I have not looked into this that much, so for now I am using another assign material node after the first one using the snippet below.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> (usd_boundmaterialpath(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>){
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;/materials/default&#39;</span>;
-}
-</code></pre></div><h2 id="misc">misc</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">//</span> material binding
-string mat <span style="color:#f92672">=</span> usd_boundmaterialpath(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>);
+<h1 id="python">Python</h1>
+<h2 id="scene-graph-tree">Scene Graph Tree</h2>
+<p>Lets select some prims in the Scene Graph Tree using Python. <strong>Note</strong> that the selection is stored on the <em>LOP Network</em>. In this example below the lop network is inside the &ldquo;geo1&rdquo; sop network. If it we are using the lop &ldquo;Stage&rdquo; context the path would be &ldquo;/stage&rdquo;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># get the selection of a lopnetwork inside a geo sop network</span>
+hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/lopnet1&#39;</span>)<span style="color:#f92672">.</span>selection()
 
-<span style="color:#f92672">//</span> set attrib
-usd_setattrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;yolo&#39;</span>, <span style="color:#ae81ff">42</span>);
-</code></pre></div><h1 id="nodes">Nodes</h1>
-<h2 id="rendering">Rendering</h2>
-<h3 id="camera">Camera</h3>
-<p><strong>Latlong cubemap in Karma</strong><br>
-I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. 
-<a href="https://www.sidefx.com/tutorials/lens-shaders-for-gamedev/" target="_blank" rel="noopener">Paul Ambrosiussen</a> and 
-<a href="https://www.tokeru.com/cgwiki/?title=HoudiniOculusWip" target="_blank" rel="noopener">Matt Estela</a> has some good information on the subject.<br>
-There seems to be a bug when Karma is rendering with Hython so the lensshader using cvex errors out (will maybe be fixed in Houdini 19.5). A workaround is to use the vrlens shader that you can create in a shopnet context.</p>
-<div class="download-wrap">
+<span style="color:#75715e"># get the selection of the &#34;root&#34; stage context</span>
+hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/stage&#39;</span>)<span style="color:#f92672">.</span>selection()
 
-	<a href="https://www.petfactory.se/files/houdini/karma_lens_shader_01.hiplc" download>
-		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
-	  	<span class="download-text">karma_lens_shader_01.hiplc</span>
-	</a>
-	<br>
-	<span class="download-info">Latlong / Polar CVEX Lens shader</span>
+<span style="color:#75715e"># set selection</span>
+paths <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;/scene/geo/sub/sphere&#39;</span>, <span style="color:#e6db74">&#39;/scene/geo/sub/box&#39;</span>]
+hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/stage&#39;</span>)<span style="color:#f92672">.</span>setSelection(paths)
 
-</div>
-<hr>
-<h3 id="settings">Settings</h3>
-<p>Applies renderer-specific geometry settings to geometry in the scene graph.</p>
-<div class="download-wrap">
-
-	<a href="https://www.petfactory.se/files/houdini/unshaded_color_01.hiplc" download>
-		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
-	  	<span class="download-text">unshaded_color_01.hiplc</span>
-	</a>
-	<br>
-	<span class="download-info">Using a mtlxuniform_edf and a render geometry settings node to render an unshaded color material</span>
-
-</div>
-<hr>
-<h3 id="materials-1">Materials</h3>
-<p>Read more about material assignment in lops 
-<a href="https://www.tokeru.com/cgwiki/index.php?title=HoudiniLops#Assign_material_Lop_with_shop_materialpath" target="_blank" rel="noopener">cgwiki</a>. Below is a hip file where I try out varius ways of editing material attributes in lops.</p>
-<div class="download-wrap">
-
-	<a href="https://www.petfactory.se/files/houdini/lop_assign_material_01.hiplc" download>
-		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
-	  	<span class="download-text">lop_assign_material_01.hiplc</span>
-	</a>
-	<br>
-	<span class="download-info">setting materials in lops using attributes from sops</span>
-
-</div>
-<hr>
-<h1 id="python--usd">Python &amp; USD</h1>
-<h2 id="docs">Docs</h2>
+</code></pre></div><h2 id="get-prim">Get prim</h2>
+<p>We are in the <em>Stage</em> context in houdini.</p>
 <ul>
-<li>
-<a href="https://graphics.pixar.com/usd/release/tut_inspect_and_author_props.html" target="_blank" rel="noopener">Inspecting and Authoring Properties</a></li>
+<li>In the LOP network we have 3 nodes.
+<ul>
+<li>First we have a null named &ldquo;null_0&rdquo;</li>
+<li>Then we have a Material Library named &ldquo;materiallibrary&rdquo; connected
+<ul>
+<li>An inside this material library we have a material called &ldquo;green&rdquo;</li>
 </ul>
-<h2 id="camera-properties">Camera properties</h2>
+</li>
+<li>Lastly we have a null named &ldquo;null_1&rdquo; connected at the end</li>
+</ul>
+</li>
+<li>Lets try to get the material prim
+<ul>
+<li>If we try to get it through the first null we are out of luck since the prim does not yet exists in &ldquo;usd&rdquo; file.</li>
+<li>But we can get it if we access it through the material library or the last null node</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Try accessing through null_0</span>
+lop_node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/stage&#39;</span>)<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;null_0&#39;</span>)
+<span style="color:#75715e"># &lt;hou.LopNode of type null at /stage/null_0&gt;</span>
+stage <span style="color:#f92672">=</span> lop_node<span style="color:#f92672">.</span>stage()
+<span style="color:#75715e"># Usd.Stage.Open(rootLayer=... ...LOP:rootlayer-session.usda&#39;))</span>
+stage<span style="color:#f92672">.</span>GetPrimAtPath(<span style="color:#e6db74">&#39;/materials/green&#39;</span>)
+<span style="color:#75715e"># invalid null prim</span>
+
+<span style="color:#75715e"># Try accessing through null_1</span>
+lop_node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/stage&#39;</span>)<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;null_1&#39;</span>)
+<span style="color:#75715e"># &lt;hou.LopNode of type null at /stage/null_1&gt;</span>
+stage <span style="color:#f92672">=</span> lop_node<span style="color:#f92672">.</span>stage()
+<span style="color:#75715e"># Usd.Stage.Open(rootLayer=... ...LOP:rootlayer-session.usda&#39;))</span>
+stage<span style="color:#f92672">.</span>GetPrimAtPath(<span style="color:#e6db74">&#39;/materials/green&#39;</span>)
+<span style="color:#75715e"># Usd.Prim(&lt;/materials/green&gt;)</span>
+</code></pre></div><h2 id="camera">Camera</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># camera in the lop context named camera1</span>
 <span style="color:#75715e"># translation: (1, 2, 3)</span>
 <span style="color:#75715e"># rotation: (-270, 0, 0)</span>
@@ -342,7 +323,94 @@ z_axis_tuple <span style="color:#f92672">=</span> (z_axis[<span style="color:#ae
 
 <span style="color:#66d9ef">print</span>(pos_tuple)
 <span style="color:#66d9ef">print</span>(z_axis_tuple)
-</code></pre></div>		
+</code></pre></div><h2 id="docs">Docs</h2>
+<ul>
+<li>
+<a href="https://graphics.pixar.com/usd/release/tut_inspect_and_author_props.html" target="_blank" rel="noopener">Inspecting and Authoring Properties</a></li>
+</ul>
+<h1 id="vex">Vex</h1>
+<h2 id="materials">Materials</h2>
+<p>I am using an <em>Assign material</em> node with the <em>primpattern</em> parm set to <em>All Mesh Primitives</em> (%type:Mesh) and using Vex to specify the material (see snippet below).<br>
+I am checking if a shop_materialpath attr exists, if it does use that to construct the material name, if it does not exist set the &ldquo;material name&rdquo; to &ldquo;no_shopmatpath&rdquo;. Then I am checking to see if the constructed path to the material exists if it does return assign the material (by returning it) if it does not return teh path to amteriual that will be used for materials missing in the lop material library. This is probably not the best way to do this, but it is a way.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">string shop <span style="color:#f92672">=</span> usd_attrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;shop_materialpath&#39;</span>);
+<span style="color:#66d9ef">if</span>(shop<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;&#39;</span>){
+    shop <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;no_shopmatpath&#39;</span>;
+}
+
+string mat_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/materials/&#39;</span> <span style="color:#f92672">+</span> shop;
+int mat_exists <span style="color:#f92672">=</span> usd_isprim(<span style="color:#ae81ff">0</span>, mat_name);
+
+<span style="color:#66d9ef">if</span> (mat_exists){
+    <span style="color:#66d9ef">return</span> mat_name;
+}
+
+<span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;/materials/missing_in_lop&#39;</span>;
+}
+</code></pre></div><div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/usd_assign_mat_with_vex_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">usd_assign_mat_with_vex_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Assign material with vex (with fallback for missing material) using sop attrib</span>
+
+</div>
+<hr>
+<h2 id="misc">misc</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">//</span> material binding
+string mat <span style="color:#f92672">=</span> usd_boundmaterialpath(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>);
+
+<span style="color:#f92672">//</span> set attrib
+usd_setattrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;yolo&#39;</span>, <span style="color:#ae81ff">42</span>);
+</code></pre></div><h1 id="nodes">Nodes</h1>
+<h2 id="rendering">Rendering</h2>
+<h3 id="camera-1">Camera</h3>
+<p><strong>Latlong cubemap in Karma</strong><br>
+I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. 
+<a href="https://www.sidefx.com/tutorials/lens-shaders-for-gamedev/" target="_blank" rel="noopener">Paul Ambrosiussen</a> and 
+<a href="https://www.tokeru.com/cgwiki/?title=HoudiniOculusWip" target="_blank" rel="noopener">Matt Estela</a> has some good information on the subject.<br>
+There seems to be a bug when Karma is rendering with Hython so the lensshader using cvex errors out (will maybe be fixed in Houdini 19.5). A workaround is to use the vrlens shader that you can create in a shopnet context.</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/karma_lens_shader_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">karma_lens_shader_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Latlong / Polar CVEX Lens shader</span>
+
+</div>
+<hr>
+<h3 id="settings">Settings</h3>
+<p>Applies renderer-specific geometry settings to geometry in the scene graph.</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/unshaded_color_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">unshaded_color_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Using a mtlxuniform_edf and a render geometry settings node to render an unshaded color material</span>
+
+</div>
+<hr>
+<h3 id="materials-1">Materials</h3>
+<p>Read more about material assignment in lops 
+<a href="https://www.tokeru.com/cgwiki/index.php?title=HoudiniLops#Assign_material_Lop_with_shop_materialpath" target="_blank" rel="noopener">cgwiki</a>. Below is a hip file where I try out varius ways of editing material attributes in lops.</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/lop_assign_material_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">lop_assign_material_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">setting materials in lops using attributes from sops</span>
+
+</div>
+<hr>
+		
 		</div>
 	</div>
 </div>
