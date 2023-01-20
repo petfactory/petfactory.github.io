@@ -206,6 +206,7 @@
     </li>
     <li><a href="#snippets">Snippets</a>
       <ul>
+        <li><a href="#selection-1">Selection</a></li>
         <li><a href="#misc">Misc</a></li>
         <li><a href="#string">String</a>
           <ul>
@@ -433,6 +434,29 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
     node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>selectNode(node_type_filter<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>nodeTypeFilter<span style="color:#f92672">.</span>Lop, custom_node_filter_callback<span style="color:#f92672">=</span>is_material_library)
     <span style="color:#66d9ef">return</span> node
 </code></pre></div><h1 id="snippets">Snippets</h1>
+<h2 id="selection-1">Selection</h2>
+<p>Select rop fbx nodes that has input geo and has prims with a path attrib with a value, with optional exclude set.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_current_if_has_geo</span>(node_set):
+    hou<span style="color:#f92672">.</span>clearAllSelected()
+    <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> node_set:
+
+        inputs <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>inputs()
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> inputs:
+            value <span style="color:#f92672">=</span> False
+        <span style="color:#66d9ef">else</span>:
+            input_geo <span style="color:#f92672">=</span> inputs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>geometry()
+            has_attrib_val <span style="color:#f92672">=</span> len(input_geo<span style="color:#f92672">.</span>findPrimAttrib(<span style="color:#e6db74">&#39;path&#39;</span>)<span style="color:#f92672">.</span>strings()) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
+            value <span style="color:#f92672">=</span> True <span style="color:#66d9ef">if</span> has_attrib_val <span style="color:#66d9ef">else</span> False
+       
+        node<span style="color:#f92672">.</span>setCurrent(value, False)
+
+exclude_set <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;rop_fbx1&#39;</span>, <span style="color:#e6db74">&#39;rop_fbx2&#39;</span>}
+parent_node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1&#39;</span>)
+node_set <span style="color:#f92672">=</span> { node <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> parent_node<span style="color:#f92672">.</span>children() <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>name() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;rop_fbx&#39;</span> <span style="color:#f92672">and</span> node<span style="color:#f92672">.</span>name() <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> exclude_set }
+set_current_if_has_geo(node_set)
+</code></pre></div><pre><code>callback += '\t\t\n'
+callback += '\t\t
+</code></pre>
 <h2 id="misc">Misc</h2>
 <p><strong>Undo</strong></p>
 <p>Returns a context manager, within which all changes to Houdini are recorded as a single action on the 

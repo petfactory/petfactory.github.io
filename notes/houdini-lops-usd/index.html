@@ -217,7 +217,10 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>Houdini - LOPS &amp; USD</h1>
-			<h1 id="tips">Tips</h1>
+			<p>
+<a href="https://www.sidefx.com/docs/houdini/solaris/index.html" target="_blank" rel="noopener">Solaris</a> is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. 
+<a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
+<h1 id="tips">Tips</h1>
 <h2 id="lighting">Lighting</h2>
 <ul>
 <li><strong>Automatic headlight Creation</strong>
@@ -227,9 +230,6 @@
 </ul>
 </li>
 </ul>
-<p>
-<a href="https://www.sidefx.com/docs/houdini/solaris/index.html" target="_blank" rel="noopener">Solaris</a> is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. 
-<a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
 <h1 id="python">Python</h1>
 <h2 id="scene-graph-tree">Scene Graph Tree</h2>
 <p>Lets select some prims in the Scene Graph Tree using Python. <strong>Note</strong> that the selection is stored on the <em>LOP Network</em>. In this example below the lop network is inside the &ldquo;geo1&rdquo; sop network. If it we are using the lop &ldquo;Stage&rdquo; context the path would be &ldquo;/stage&rdquo;</p>
@@ -330,8 +330,8 @@ z_axis_tuple <span style="color:#f92672">=</span> (z_axis[<span style="color:#ae
 </ul>
 <h1 id="vex">Vex</h1>
 <h2 id="materials">Materials</h2>
-<p>I am using an <em>Assign material</em> node with the <em>primpattern</em> parm set to <em>All Mesh Primitives</em> (%type:Mesh) and using Vex to specify the material (see snippet below).<br>
-I am checking if a shop_materialpath attr exists, if it does use that to construct the material name, if it does not exist set the &ldquo;material name&rdquo; to &ldquo;no_shopmatpath&rdquo;. Then I am checking to see if the constructed path to the material exists if it does return assign the material (by returning it) if it does not return teh path to amteriual that will be used for materials missing in the lop material library. This is probably not the best way to do this, but it is a way.</p>
+<p>I am using an <em>Assign material</em> node with the <em>primpattern</em> parm set to <em>All Mesh Primitives</em> (%type:Mesh) and using vex to specify the material (see snippet below).<br>
+I am checking if a shop_materialpath attr exists, if it does use that to construct the material name, if it does not exist set the &ldquo;material name&rdquo; to &ldquo;no_shopmatpath&rdquo;. Then I am checking to see if the constructed path to the material exists if it does, assign the material (by returning it) if it does not return the path to a material that will be used when materials are missing in the lop material library. This is probably not the best way to do this, but it is a way.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">string shop <span style="color:#f92672">=</span> usd_attrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;shop_materialpath&#39;</span>);
 <span style="color:#66d9ef">if</span>(shop<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;&#39;</span>){
     shop <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;no_shopmatpath&#39;</span>;
