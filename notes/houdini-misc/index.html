@@ -410,9 +410,23 @@ Sets a group that will be highlighted when the node is viewed.
 <ul>
 <li><strong>Switch</strong>
 <ul>
+<li><strong>Alternate two inputs</strong>
+<ul>
 <li>Lets say you want to switch between two streams to visually debug/inspect a network. Use this expression in a switch to use the first input for 24 frames then the second for another 24 and so on:
 <ul>
 <li><code>$F%48&lt;24</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Loop through inputs</strong>
+<ul>
+<li>Switch to the next input every fifth frame, loop forever.
+<ul>
+<li><code>floor($F/5)%opninputs('.')</code></li>
+<li>Tips from Christopher Rutledge</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
