@@ -201,7 +201,11 @@
     </li>
     <li><a href="#ui">UI</a>
       <ul>
-        <li><a href="#houui">hou.ui</a></li>
+        <li><a href="#houui">hou.ui</a>
+          <ul>
+            <li><a href="#input-dialogs">Input Dialogs</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#snippets">Snippets</a>
@@ -210,6 +214,7 @@
         <li><a href="#misc">Misc</a></li>
         <li><a href="#string">String</a>
           <ul>
+            <li><a href="#houtext-module">hou.text module</a></li>
             <li><a href="#regex">Regex</a></li>
           </ul>
         </li>
@@ -408,7 +413,9 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
 </code></pre></div><h1 id="ui">UI</h1>
 <h2 id="houui">hou.ui</h2>
-<p>The 
+<h3 id="input-dialogs">Input Dialogs</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ui<span style="color:#f92672">.</span>readMultiInput(<span style="color:#e6db74">&#39;mess&#39;</span>, (<span style="color:#e6db74">&#39;From&#39;</span>, <span style="color:#e6db74">&#39;To&#39;</span>), initial_contents<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;*_L&#39;</span>, <span style="color:#e6db74">&#39;*_R&#39;</span>))
+</code></pre></div><p>The 
 <a href="https://www.sidefx.com/docs/houdini/hom/hou/ui.html" target="_blank" rel="noopener">hou.ui module</a> contains some nice user interface related functions. For instance:</p>
 <ul>
 <li><strong>Copy to clipboard</strong>
@@ -491,7 +498,14 @@ c<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;apply
 
 </code></pre></div><hr>
 <h2 id="string">String</h2>
-<h3 id="regex">Regex</h3>
+<h3 id="houtext-module">hou.text module</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">input_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;yolo_42_L&#39;</span>
+pattern_find <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;*_L&#39;</span>
+pattern_replace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;*_R&#39;</span>
+
+r <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>patternRename(input_string, pattern_find, pattern_replace)
+<span style="color:#66d9ef">print</span>(r)
+</code></pre></div><h3 id="regex">Regex</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
 
 REGEX_TRAILING_DIGITS <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^([a-zA-Z_]*?)[0-9]*$&#39;</span>)

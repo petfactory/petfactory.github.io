@@ -190,6 +190,11 @@
       <ul>
         <li><a href="#pythonmodule">PythonModule</a></li>
         <li><a href="#additional-modules">Additional Modules</a></li>
+        <li><a href="#snippets">Snippets</a>
+          <ul>
+            <li><a href="#revert-to-default">Revert to Default</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#help">Help</a></li>
@@ -447,6 +452,24 @@ custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>():
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;called &#34;speak&#34; from PythonModule&#39;</span>)
     custom_module<span style="color:#f92672">.</span>speak()
+</code></pre></div><h2 id="snippets">Snippets</h2>
+<h3 id="revert-to-default">Revert to Default</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reset_all_parms_in_containing_folder</span>(kwargs):
+    <span style="color:#e6db74">&#39;&#39;&#39;This will reset all parms in the containing folder (including sub folders)
+</span><span style="color:#e6db74">    of the parm that is the sender of this callback&#39;&#39;&#39;</span>
+    
+    hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    parm <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;parm&#39;</span>]
+    folder_labels <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>containingFolders()
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> folder_labels:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;no folders found&#39;</span>)
+        <span style="color:#66d9ef">return</span>
+    
+    parm_list <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>parmsInFolder(folder_labels)
+    <span style="color:#66d9ef">for</span> parm <span style="color:#f92672">in</span> parm_list:
+        <span style="color:#75715e"># print(parm.description())</span>
+        parm<span style="color:#f92672">.</span>revertToDefaults()
+
 </code></pre></div><h1 id="help">Help</h1>
 <p>It is a really good idea to add some help notes. Both for yourself down the line and if you share the HDA. There is a help tab on the HDA where you can add some notes. Read the 
 <a href="https://www.sidefx.com/docs/houdini/help/nodes.html" target="_blank" rel="noopener">docs</a> here</p>
