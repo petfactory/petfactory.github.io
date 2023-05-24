@@ -525,9 +525,10 @@ blockquote p {
 
 #portrait {
     display: block;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    width: 310px;
 }
 .about-text-wrap{
     max-width: 600px;
@@ -1085,7 +1086,8 @@ margin:-90px 0 0; /* negative fixed header height */
     }
 
     #portrait {
-        margin-top: 50px;
-        margin-bottom: 20px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        width: 220px;
     }
 }
