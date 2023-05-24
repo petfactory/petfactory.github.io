@@ -82,11 +82,10 @@ With the Settings options, you can specify additional configurable items to use 
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Settings Configuration files The UE5 docs on configuration files
+      <description>Settings Viewports  Level Editor &amp;gt; Viewports  Controls &amp;gt;  Invert Middle Mouse Pan : On Advanced &amp;gt;  Use distance-scaled camera speed : On Orbit camera around selection : On        Configuration files The UE5 docs on configuration files
 A tips &amp;amp; tricks video of setting up configuration files
  Invert Middle Mouse Pan
-To pan the viewport I like to invert the middle mouse pan.  You can do this on a per project basis using the ui:  Edit &amp;gt; Editor Preferences &amp;gt; Level Editor &amp;gt; Viewports &amp;gt; Invert Middle Mouse Pan : On
-Note this will only be set for the project   To invert the middle mouse pan on all new projects  Open the config directory of the engine version you want to edit  The path is something like C:\Program Files\Epic Games\UE_5.</description>
+To pan the viewport I like to invert the middle mouse pan.</description>
     </item>
     
   </channel>

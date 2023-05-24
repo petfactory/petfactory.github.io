@@ -43,19 +43,6 @@ Karma render settings (node) &amp;gt; Rendering &amp;gt; Geometry and Shading &a
     </item>
     
     <item>
-      <title>Workflow - Tips</title>
-      <link>https://www.petfactory.se/notes/workflow-tips/</link>
-      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/workflow-tips/</guid>
-      <description>Here I will post (mildly) useful things that falls outside more specfic topics.
-Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
-Resize In-place resizing
-magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
-magick mogrify -resize 50% -path ./DST *.</description>
-    </item>
-    
-    <item>
       <title>Houdini - Python</title>
       <link>https://www.petfactory.se/notes/houdini-python/</link>
       <pubDate>Sun, 01 Dec 2019 13:56:54 +0100</pubDate>

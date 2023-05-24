@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Workflow-notes on Petfactory</title>
-    <link>https://www.petfactory.se/tags/workflow-notes/</link>
-    <description>Recent content in Workflow-notes on Petfactory</description>
+    <title>Miscellaneous on Petfactory</title>
+    <link>https://www.petfactory.se/tags/miscellaneous/</link>
+    <description>Recent content in Miscellaneous on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jan 2020 14:53:41 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2016 14:53:41 +0200</lastBuildDate>
     
-	<atom:link href="https://www.petfactory.se/tags/workflow-notes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/tags/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Workflow - Tips</title>
-      <link>https://www.petfactory.se/notes/workflow-tips/</link>
-      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
+      <title>Miscellaneous</title>
+      <link>https://www.petfactory.se/notes/miscellaneous/</link>
+      <pubDate>Fri, 01 Jan 2016 14:53:41 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/workflow-tips/</guid>
+      <guid>https://www.petfactory.se/notes/miscellaneous/</guid>
       <description>Here I will post (mildly) useful things that falls outside more specfic topics.
 Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
 Resize In-place resizing

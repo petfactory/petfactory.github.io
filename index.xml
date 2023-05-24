@@ -183,11 +183,10 @@ Mocap from: Mixamo</description>
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Settings Configuration files The UE5 docs on configuration files
+      <description>Settings Viewports  Level Editor &amp;gt; Viewports  Controls &amp;gt;  Invert Middle Mouse Pan : On Advanced &amp;gt;  Use distance-scaled camera speed : On Orbit camera around selection : On        Configuration files The UE5 docs on configuration files
 A tips &amp;amp; tricks video of setting up configuration files
  Invert Middle Mouse Pan
-To pan the viewport I like to invert the middle mouse pan.  You can do this on a per project basis using the ui:  Edit &amp;gt; Editor Preferences &amp;gt; Level Editor &amp;gt; Viewports &amp;gt; Invert Middle Mouse Pan : On
-Note this will only be set for the project   To invert the middle mouse pan on all new projects  Open the config directory of the engine version you want to edit  The path is something like C:\Program Files\Epic Games\UE_5.</description>
+To pan the viewport I like to invert the middle mouse pan.</description>
     </item>
     
     <item>
@@ -423,19 +422,6 @@ Point Wrangle Lets append a point wrangle to the particles. We will use the norm
       
       <guid>https://www.petfactory.se/work/guided/</guid>
       <description>  </description>
-    </item>
-    
-    <item>
-      <title>Workflow - Tips</title>
-      <link>https://www.petfactory.se/notes/workflow-tips/</link>
-      <pubDate>Wed, 01 Jan 2020 14:53:41 +0200</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/workflow-tips/</guid>
-      <description>Here I will post (mildly) useful things that falls outside more specfic topics.
-Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
-Resize In-place resizing
-magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
-magick mogrify -resize 50% -path ./DST *.</description>
     </item>
     
     <item>
@@ -703,6 +689,19 @@ Venv Setup a virtual environment It is a good idea to install packages in virtua
       
       <guid>https://www.petfactory.se/notes/sublime-text/</guid>
       <description>Misc Diff files  Diff two files  Make sure the files are in the &amp;ldquo;Folders&amp;rdquo; section  You can add folders to the project by dragging and dropping   Selct the first file, then Ctrl select the second RMB click &amp;gt; Diff Files&amp;hellip;   Only works with UTF-8 files  If you can not diff to files that should be &amp;ldquo;diffable&amp;rdquo; then you probably have some non-ascii characters A quick way to inspect teh file is to press &amp;ldquo;Ctrl F&amp;rdquo; then press &amp;ldquo;Alt R&amp;rdquo; to enable Regex mode  You can also click the regex button on the left most edge of the search input field   Then paste the regex [^\x00-\x7F] in the searc input field Press find    Search and replace # I wanted to change a H3 header (###) in a markdown file.</description>
+    </item>
+    
+    <item>
+      <title>Miscellaneous</title>
+      <link>https://www.petfactory.se/notes/miscellaneous/</link>
+      <pubDate>Fri, 01 Jan 2016 14:53:41 +0200</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/miscellaneous/</guid>
+      <description>Here I will post (mildly) useful things that falls outside more specfic topics.
+Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
+Resize In-place resizing
+magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
+magick mogrify -resize 50% -path ./DST *.</description>
     </item>
     
   </channel>

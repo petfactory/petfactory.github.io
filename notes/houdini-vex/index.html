@@ -207,6 +207,12 @@
         <li><a href="#array-of-unique-detail">Array of Unique (detail)</a></li>
       </ul>
     </li>
+    <li><a href="#for-fun">For fun</a>
+      <ul>
+        <li><a href="#position">Position</a></li>
+      </ul>
+    </li>
+    <li><a href="#docs">Docs</a></li>
   </ul>
 </nav>	
 			</div>
@@ -327,7 +333,7 @@ vector relbb <span style="color:#f92672">=</span> relbbox(<span style="color:#ae
 adjustPrimLength(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">@</span>primnum, <span style="color:#960050;background-color:#1e0010">@</span>perimeter, length);
 </code></pre></div><div class="download-wrap">
 
-	<a href="https://www.petfactory.se/files/houdini/adjust_prim_lengths_v01.hiplc" download>
+	<a href="https://www.petfactory.se/files/houdini/hips/adjust_prim_lengths_v01.hiplc" download>
 		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
 	  	<span class="download-text">adjust_prim_lengths_v01.hiplc</span>
 	</a>
@@ -345,7 +351,35 @@ s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names <span 
     string val <span style="color:#f92672">=</span> uniqueval(<span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;prim&#34;</span>, <span style="color:#e6db74">&#34;shop_materialpath&#34;</span>, i);
     push(s[]<span style="color:#960050;background-color:#1e0010">@</span>mat_names, val);
 }
-</code></pre></div>		
+</code></pre></div><h1 id="for-fun">For fun</h1>
+<h2 id="position">Position</h2>
+<p><strong>&ldquo;Manually&rdquo; calc relbbox</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> use_relbb <span style="color:#f92672">=</span> chi(<span style="color:#960050;background-color:#1e0010">&#39;</span>use_relbb<span style="color:#960050;background-color:#1e0010">&#39;</span>);
+vector relbb;
+
+<span style="color:#75715e">// use relbbox
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span>(use_relbb){
+    relbb <span style="color:#f92672">=</span> relbbox(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">@</span>P);
+} 
+<span style="color:#75715e">// for fun, calc relbb from bbox- min &amp; size
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> {
+    vector bb_min <span style="color:#f92672">=</span> getbbox_min(<span style="color:#ae81ff">0</span>);
+    vector bb_size <span style="color:#f92672">=</span> getbbox_size(<span style="color:#ae81ff">0</span>);
+    relbb <span style="color:#f92672">=</span> (v<span style="color:#960050;background-color:#1e0010">@</span>P<span style="color:#f92672">-</span>bb_min)<span style="color:#f92672">/</span>bb_size;
+}
+
+v<span style="color:#960050;background-color:#1e0010">@</span>Cd <span style="color:#f92672">=</span> relbb;
+</code></pre></div><h1 id="docs">Docs</h1>
+<ul>
+<li>
+<a href="https://www.sidefx.com/docs/houdini/vex/lang.html" target="_blank" rel="noopener">VEX language reference</a>
+<ul>
+<li>
+<a href="https://www.sidefx.com/docs/houdini/vex/lang.html#dot-operator" target="_blank" rel="noopener">Dot operator</a></li>
+</ul>
+</li>
+</ul>
+		
 		</div>
 	</div>
 </div>
