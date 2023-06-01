@@ -6,18 +6,29 @@
     <description>Recent content in Unreal Engine-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/unreal-engine-notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>UE5 - Houdini Engine</title>
-      <link>https://www.petfactory.se/notes/ue5-houdini-engine/</link>
+      <title>UE5 - Niagara</title>
+      <link>https://www.petfactory.se/notes/ue5-niagara/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-niagara/</guid>
+      <description>Sprite Smoke A prechewed run-through of the sprite smoke tutorial.
+ Sprite Smoke  Note:
+This example uses the M_smoke_subUV Material, which can be found with the Starter Content. Create the System and Emitter  Create a folder, name it &amp;ldquo;Niagara_fx&amp;rdquo; (or something else) and step into it. Create a Niagara System, RMB click &amp;gt; FX &amp;gt; Niagara System (or choose from create basic assets at the top of the popup menu) Select New system from selected emitters.</description>
+    </item>
+    
+    <item>
+      <title>UE5 &amp; Houdini</title>
+      <link>https://www.petfactory.se/notes/ue5-houdini/</link>
       <pubDate>Thu, 10 Nov 2022 00:00:00 +0100</pubDate>
       
-      <guid>https://www.petfactory.se/notes/ue5-houdini-engine/</guid>
-      <description>Install  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27     Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory     Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
+      <guid>https://www.petfactory.se/notes/ue5-houdini/</guid>
+      <description>Houdini Engine Install  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27     Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory     Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
     </item>
     
     <item>
@@ -26,7 +37,7 @@
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-misc/</guid>
-      <description>Tips UI  Selection  Box Select  Hold Ctrl + Alt + LMB clcik and drag      Material Graph  Reroute  You can add a reroute node by double clicking the connection line   Debug nodes  You can use the debug nodes under Debug to visually debug values. Lets say that you want to view the object bounds you can connect the output of an Object Bounds node to an Debug Float 3 node.</description>
+      <description>Tips UI  Selection  Box Select  Hold Ctrl + Alt + LMB clcik and drag     Tooltip  To delay the tooltip we can use:  Slate.TooltipSummonDelay to set the time until the tooltip is shown. The default is 0.15 sec. Slate.EnableTooltips whith this you can remove the tooltips.      Material Graph  Reroute  You can add a reroute node by double clicking the connection line   Debug nodes  You can use the debug nodes under Debug to visually debug values.</description>
     </item>
     
     <item>

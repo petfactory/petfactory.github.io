@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Niagara on Petfactory</title>
+    <link>https://www.petfactory.se/tags/niagara/</link>
+    <description>Recent content in Niagara on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/niagara/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UE5 - Niagara</title>
+      <link>https://www.petfactory.se/notes/ue5-niagara/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-niagara/</guid>
+      <description>Sprite Smoke A prechewed run-through of the sprite smoke tutorial.
+ Sprite Smoke  Note:
+This example uses the M_smoke_subUV Material, which can be found with the Starter Content. Create the System and Emitter  Create a folder, name it &amp;ldquo;Niagara_fx&amp;rdquo; (or something else) and step into it. Create a Niagara System, RMB click &amp;gt; FX &amp;gt; Niagara System (or choose from create basic assets at the top of the popup menu) Select New system from selected emitters.</description>
+    </item>
+    
+  </channel>
+</rss>

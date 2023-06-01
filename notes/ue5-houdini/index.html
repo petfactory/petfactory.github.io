@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | UE5 - Houdini Engine</title>
-        <meta name="description" content="Petfactory | Design and Animation | UE5 - Houdini Engine" />
+        <title>Petfactory | UE5 &amp; Houdini</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 &amp; Houdini" />
 
     </head>
 
@@ -169,15 +169,21 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
-    <li><a href="#install">Install</a></li>
-    <li><a href="#gotcha">Gotcha</a>
+    <li><a href="#houdini-engine">Houdini Engine</a>
       <ul>
-        <li><a href="#outputs">Outputs</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#gotcha">Gotcha</a>
+          <ul>
+            <li><a href="#outputs">Outputs</a></li>
+          </ul>
+        </li>
+        <li><a href="#docs">Docs</a></li>
       </ul>
     </li>
-    <li><a href="#reference">Reference</a>
+    <li><a href="#houdini-niagara">Houdini Niagara</a>
       <ul>
-        <li><a href="#docs">Docs</a></li>
+        <li><a href="#install-1">Install</a></li>
+        <li><a href="#example">Example</a></li>
       </ul>
     </li>
   </ul>
@@ -197,8 +203,9 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>UE5 - Houdini Engine</h1>
-			<h1 id="install">Install</h1>
+			<h1>UE5 &amp; Houdini</h1>
+			<h1 id="houdini-engine">Houdini Engine</h1>
+<h2 id="install">Install</h2>
 <ul>
 <li><strong>Browse to the SideFX houdini engine dir</strong>
 <ul>
@@ -248,8 +255,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="gotcha">Gotcha</h1>
-<h2 id="outputs">Outputs</h2>
+<h2 id="gotcha">Gotcha</h2>
+<h3 id="outputs">Outputs</h3>
 <ul>
 <li><strong>Proxy Static Mesh</strong>
 <ul>
@@ -291,13 +298,125 @@
 </ul>
 </li>
 </ul>
-<h1 id="reference">Reference</h1>
 <h2 id="docs">Docs</h2>
 <ul>
 <li>Docs
 <ul>
 <li>
 <a href="https://www.sidefx.com/docs/unreal/" target="_blank" rel="noopener">Houdini Engine for Unreal Documentation</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="houdini-niagara">Houdini Niagara</h1>
+<h2 id="install-1">Install</h2>
+<ul>
+<li>Download the zipped binary fron 
+<a href="https://github.com/sideeffects/HoudiniNiagara/releases" target="_blank" rel="noopener">GitHub</a></li>
+<li>Unzip &amp; copy the <em>HoudiniNiagara</em> folder to the <em>&hellip;/Epic Games/UE_5.2/Engine/Plugins/FX</em> folder in Unreal.</li>
+</ul>
+<h2 id="example">Example</h2>
+<ul>
+<li><strong>Houdini</strong>
+<ul>
+<li>Create a particle/point setup that oyu wish to use in Unreal</li>
+<li>add a <em>Labs Niagra ROP</em> node
+<ul>
+<li>Save to disc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Unreal</strong>
+<ul>
+<li><strong>Import cache</strong>
+<ul>
+<li>In the contnet browser, drag and drop the .hbjson file we saved from Houdini.</li>
+</ul>
+</li>
+<li><strong>Add a Niagara System</strong>
+<ul>
+<li>In the content browser, make sure that <em>Show Plugin Content</em> is enabled</li>
+<li>Select add <em>New system from selected emitter(s)</em></li>
+<li>In the dialog that popped up make sure that the Library filter <em>Library only</em> is unchecked.</li>
+<li>In the asset type filtering, click <em>Parent Emitters</em></li>
+<li>In the <em>Uncategorized</em> section select <em>Houdini Niagare Basic</em></li>
+<li>click the + icon and then finish.</li>
+<li>Note
+<ul>
+<li>You could also an empty system and then add the Houdini Niagare Basic emitter later.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup the system</strong>
+<ul>
+<li>Double click to enter the niagara system</li>
+<li>On the <em>HoudiniNiagaraBasic</em> overview node there are 3 places we need to reference our houdini point cache
+<ul>
+<li><em>Note</em>
+<ul>
+<li>We can hold ctrl to select multiple attr on the HoudiniNiagaraBasic node and they will populate and be editable in the selection widget on the right hand side.</li>
+</ul>
+</li>
+<li>Select
+<ul>
+<li>Emitter Update &gt; Spawn Particles from Houdini Point Cache</li>
+<li>Particle Spawn &gt; Sample Spawned Houdini Point Cache</li>
+<li>Particle Update &gt; Sample Houdini Point Cache
+In the selection widget expand the three sectins until you see <em>Houdini Niagara</em> entry. Here we will drag and drop our imported point cache</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Set <em>Loop Duration</em>
+<ul>
+<li>We can se how many seconds our cach is by double clicking the houdini point cache.</li>
+<li>The we can hold shift + RMB click on the <em>Max Sample Time</em></li>
+<li>Then we go back to our niagara system, select the <em>Emitter Update</em></li>
+<li>In the Selection tab expand <em>Emitter Update &gt; Emitter State &gt; Life Cycle</em> &gt;</li>
+<li>The paste the copied value to the <em>Loop Duration</em></li>
+</ul>
+</li>
+<li>Set <em>Lifetime</em>
+<ul>
+<li>Select <em>Particle Spawn</em> on then expand Particle Spawn &gt; Initialize Particle &gt; Point Attributes &gt;</li>
+<li>Set <em>lifetime</em> to 0.1
+<ul>
+<li>since a particle is spawned every frame we do not need this to be longer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Particle Attributes</em>
+<ul>
+<li>Select the <em>HoudiniNiagareBasic</em> node&rsquo;</li>
+<li>in the <em>parameters</em> panel expand <em>Particle Attributes</em> to see which attributes are accessible.</li>
+</ul>
+</li>
+<li><em>Lets set the color</em>
+<ul>
+<li>On the HoudiniNiagareBasic click the + icon on the right side of the <em>Partcle Update</em></li>
+<li>start typing &lsquo;col&hellip;&rsquo; select General &gt; Color &gt; color</li>
+<li>With the added color module selected we can see that we can edit the color in the selection panel.</li>
+<li>Since the color value is RGBA and the houdini color is a vec3 we need to use the <em>Scale Color</em> (a vec3) to set the color.</li>
+<li>On the right side of the scale color klick the down arrow and start typing &lsquo;hou&hellip;&rsquo; then select <em>Particles Houdini Color</em></li>
+</ul>
+</li>
+<li><em>Lets set the Size</em>
+<ul>
+<li>we are using a sprite renderer so we will set the sprite size.</li>
+<li>Click the + icon on the right side of the <em>Particle Update</em></li>
+<li>start typing &lsquo;spr&hellip;&rsquo; then select <em>Scale Sprite Size</em></li>
+<li>in the selection panel change the Scale Sprite Size &gt; <em>Scale Sprite Size Mode</em> to <em>Uniform</em></li>
+<li>Because there is a difference in units we need to multiply the houdini pscale with a large number (lets start with 100) to get the correct size</li>
+<li>Click on the arrow on the right side of <em>Uniform Scale Factor</em> and start typing &lsquo;mul&hellip;&rsquo; select <em>Multiply by Float</em>.</li>
+<li>Set the A value to 100</li>
+<li>click on the arrow on the right side of B and start typing <em>hou&hellip;</em> select <em>Particles Houdini Pscale</em></li>
+</ul>
+</li>
+<li><a href="https://youtu.be/GAn1Za1MYW4?t=710">https://youtu.be/GAn1Za1MYW4?t=710</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
