@@ -49,7 +49,7 @@ This example uses the M_smoke_subUV Material, which can be found with the Starte
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-misc/</guid>
-      <description>Tips UI  Selection  Box Select  Hold Ctrl + Alt + LMB clcik and drag     Tooltip  To delay the tooltip we can use:  Slate.TooltipSummonDelay to set the time until the tooltip is shown. The default is 0.15 sec. Slate.EnableTooltips whith this you can remove the tooltips.      Material Graph  Reroute  You can add a reroute node by double clicking the connection line   Debug nodes  You can use the debug nodes under Debug to visually debug values.</description>
+      <description>Tips Assets  Export UAssets  Select asset(s) in the Content Browser RMB click &amp;gt; Assets Actions &amp;gt; Export or Bulk Export  If we want to export a lot of assets it might be easier to do a bulk export.   Mesh  Select the destination folder The filename will by default be the name of the asset. Export options  LOD : we can choose to include the LODs (or only lod 0 if the Level of Detail is unchecked) Collision &amp;hellip;     Texture  We can export textures as .</description>
     </item>
     
     <item>
