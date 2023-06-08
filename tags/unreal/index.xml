@@ -17,10 +17,10 @@
       <pubDate>Thu, 01 Jun 2023 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/work/pet-roadeo/</guid>
-      <description>   Houdini ♥️ Unreal
-The aim with this project was to explore the workflow between Houdini and Unreal with the main focus on character &amp;amp; camera animation as well as environment building. I wanted to create an animtion with the keyword speed
+      <description>Houdini ♥️ Unreal
+The aim with this project was to explore the workflow between Houdini and Unreal with the main focus on environment building, character &amp;amp; camera animation. I wanted the animation to be shaky, rough and give the feeling of speed.
 I also had some software specific aims
- Houdini  KineFX  I wanted to explore rigging in KineFX (the procedural rigging toolset in Houdini) More specifically I wanted to learn how to create KineFX rig HDAs Explore how one rig HDA can drive another Create camera HDA for more quick camera animation   Scripting  Write a custom exporter to export a rig HDA to Unreal sequencer Write a custom exporter for camera animation to Unreal and sequencer     Unreal  General  As I am relatively new to Unreal just starting to use it to produce animation Get to know  Sequencer Movie render queue OCIO workflow     Scripting  Camera &amp;amp; object animation importer      </description>
+ Houdini  KineFX  I wanted to explore rigging in KineFX (the procedural rigging toolset in Houdini) More specifically I wanted to learn how to create KineFX rig HDAs Explore how one rig HDA can drive another Create camera HDA for more quick camera animation   Scripting  Write a custom exporter to export a rig HDA to Unreal sequencer Write a custom exporter for camera animation to Unreal and sequencer     Unreal  General  As I am relatively new to Unreal just starting to use it to produce animation Get to know  Sequencer Movie render queue OCIO workflow     Scripting  Camera &amp;amp; object animation importer      This is a part of an ongoing personal project, so the assets are evolved over time.</description>
     </item>
     
   </channel>
