@@ -175,7 +175,11 @@
         <li><a href="#hello-world-app">Hello World app</a></li>
       </ul>
     </li>
-    <li><a href="#data">Data</a></li>
+    <li><a href="#data">Data</a>
+      <ul>
+        <li><a href="#clipboard">Clipboard</a></li>
+      </ul>
+    </li>
     <li><a href="#custom-painting">Custom Painting</a>
       <ul>
         <li><a href="#style-sheets">Style Sheets</a>
@@ -266,6 +270,7 @@
     w<span style="color:#f92672">.</span>show()
     app<span style="color:#f92672">.</span>exec_()
 </code></pre></div><h1 id="data">Data</h1>
+<h2 id="clipboard">Clipboard</h2>
 <ul>
 <li><strong>Clipboard</strong>
 <ul>
@@ -273,6 +278,20 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtWidgets
 clipboard <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QApplication<span style="color:#f92672">.</span>clipboard()
 clipboard<span style="color:#f92672">.</span>setText(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+</code></pre></div></li>
+<li>Get Data from clipboard
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtWidgets
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_clipboard_data</span>():
+    clipboard <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QApplication<span style="color:#f92672">.</span>clipboard()
+    <span style="color:#66d9ef">print</span>(clipboard<span style="color:#f92672">.</span>text())
+
+<span style="color:#75715e"># You need an app to use use the clipboard, so if you want one while deving...</span>
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+
+    <span style="color:#f92672">import</span> sys
+    app <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QApplication(sys<span style="color:#f92672">.</span>argv)
+    get_clipboard_data()
+    app<span style="color:#f92672">.</span>exec_()
 </code></pre></div></li>
 </ul>
 </li>
