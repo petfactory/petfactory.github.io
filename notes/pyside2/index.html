@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | PySide2 - Notes</title>
-        <meta name="description" content="Petfactory | Design and Animation | PySide2 - Notes" />
+        <title>Petfactory | PySide2</title>
+        <meta name="description" content="Petfactory | Design and Animation | PySide2" />
 
     </head>
 
@@ -198,6 +198,7 @@
     <li><a href="#view">View</a>
       <ul>
         <li><a href="#misc">Misc</a></li>
+        <li><a href="#visual-properties">Visual properties</a></li>
         <li><a href="#drag--drop">Drag &amp; Drop</a></li>
         <li><a href="#icons">Icons</a></li>
         <li><a href="#size">Size</a></li>
@@ -231,7 +232,7 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>PySide2 - Notes</h1>
+			<h1>PySide2</h1>
 			<h1 id="general">General</h1>
 <h2 id="install-pyside2">Install PySide2</h2>
 <p>To install PySide2 (including Shiboken2 &amp; Qt) make sure that we first activate our 
@@ -449,6 +450,8 @@ label<span style="color:#f92672">.</span>setToolTip(<span style="color:#e6db74">
 screens <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QGuiApplication<span style="color:#f92672">.</span>screens()
 <span style="color:#75715e"># print the center of the first screen</span>
 screens[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>geometry()<span style="color:#f92672">.</span>center()
+</code></pre></div><h2 id="visual-properties">Visual properties</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">view<span style="color:#f92672">.</span>setColumnWidth(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">200</span>)
 </code></pre></div><h2 id="drag--drop">Drag &amp; Drop</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtGui
 <span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtCore

@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
-        <title>Petfactory | Python - General</title>
-        <meta name="description" content="Petfactory | Design and Animation | Python - General" />
+        <title>Petfactory | Python</title>
+        <meta name="description" content="Petfactory | Design and Animation | Python" />
 
     </head>
 
@@ -183,6 +183,8 @@
     </li>
     <li><a href="#misc">Misc</a>
       <ul>
+        <li><a href="#function">Function</a></li>
+        <li><a href="#module">Module</a></li>
         <li><a href="#environ">Environ</a></li>
         <li><a href="#inspect">Inspect</a>
           <ul>
@@ -208,7 +210,7 @@
 	<div class="row">
 		
 		<div class="col-md-10 mx-auto">
-			<h1>Python - General</h1>
+			<h1>Python</h1>
 			<p>This assumes you are using Python 3. (I am also using Git Bash as my shell)</p>
 <h1 id="venv">Venv</h1>
 <h2 id="setup-a-virtual-environment">Setup a virtual environment</h2>
@@ -255,7 +257,18 @@ data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#3
 <span style="color:#75715e"># {&#39;A&#39;: {&#39;width&#39;: 1, &#39;height&#39;: 0}, &#39;B&#39;: {&#39;width&#39;: 2, &#39;height&#39;: 1}, &#39;C&#39;: {&#39;width&#39;: 0, &#39;height&#39;: 2}}</span>
 
 </code></pre></div><h1 id="misc">Misc</h1>
-<h2 id="environ">Environ</h2>
+<h2 id="function">Function</h2>
+<p>You can call an instance method like class method by passing in an instance of the class&hellip;
+Weird thing to do, but I have done it sometimes when calling an instance method of a Qt widget when deving.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_class<span style="color:#f92672">.</span>cool_function(my_class())
+</code></pre></div><h2 id="module">Module</h2>
+<p>If you want to import a module without it beeing on the sys.path you can do this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> importlib.machinery <span style="color:#f92672">import</span> SourceFileLoader
+
+module_file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:/path/to/module/cool_script.py&#39;</span>
+my_module <span style="color:#f92672">=</span> SourceFileLoader(<span style="color:#e6db74">&#34;pet.external_drag_drop&#34;</span>, module_file_path)<span style="color:#f92672">.</span>load_module()
+my_module<span style="color:#f92672">.</span>call_cool_def(arg_0, arg_1, <span style="color:#f92672">...</span>)
+</code></pre></div><h2 id="environ">Environ</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 <span style="color:#f92672">import</span> os
 

@@ -12,18 +12,18 @@
     
     
     <item>
-      <title>PySide2 - Notes</title>
-      <link>https://www.petfactory.se/notes/pyside2-notes/</link>
+      <title>PySide2</title>
+      <link>https://www.petfactory.se/notes/pyside2/</link>
       <pubDate>Sat, 17 Mar 2018 11:16:20 +0200</pubDate>
       
-      <guid>https://www.petfactory.se/notes/pyside2-notes/</guid>
+      <guid>https://www.petfactory.se/notes/pyside2/</guid>
       <description>General Install PySide2 To install PySide2 (including Shiboken2 &amp;amp; Qt) make sure that we first activate our venv
 pip install PySide2Hello World app Lets build a simple ui and run with sublimeText. Select the build system we just created and build Ctrl B
 from PySide2 import QtCorefrom PySide2 import QtWidgetsfrom PySide2 import QtGuiimport sysfrom functools import partialclass HelloWidget(QtWidgets.QWidget):def __init__(self, parent=None):super(HelloWidget, self).__init__(parent)self.setGeometry(400, 400, 250, 50)self.</description>
     </item>
     
     <item>
-      <title>Python - General</title>
+      <title>Python</title>
       <link>https://www.petfactory.se/notes/python/</link>
       <pubDate>Sat, 14 Oct 2017 11:16:20 +0200</pubDate>
       
