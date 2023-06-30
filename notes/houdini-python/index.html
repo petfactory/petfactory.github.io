@@ -499,12 +499,17 @@ c<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;apply
 </code></pre></div><hr>
 <h2 id="string">String</h2>
 <h3 id="houtext-module">hou.text module</h3>
+<p>The 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/text.html" target="_blank" rel="noopener">hou.textModule</a> contains Houdini-specific string manipulation methods.</p>
+<p><strong>Pattern find &amp; replace</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">input_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;yolo_42_L&#39;</span>
 pattern_find <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;*_L&#39;</span>
 pattern_replace <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;*_R&#39;</span>
 
 r <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>patternRename(input_string, pattern_find, pattern_replace)
 <span style="color:#66d9ef">print</span>(r)
+</code></pre></div><p><strong>Sanitize names</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">asset_name <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>variableName(asset_name)
 </code></pre></div><h3 id="regex">Regex</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
 
