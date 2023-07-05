@@ -169,6 +169,11 @@
 			<div class="toc-content visible">
 				<nav id="TableOfContents">
   <ul>
+    <li><a href="#how-to">How to</a>
+      <ul>
+        <li><a href="#translucency--refraction">Translucency / refraction</a></li>
+      </ul>
+    </li>
     <li><a href="#pbr">PBR</a></li>
     <li><a href="#landscape">Landscape</a></li>
     <li><a href="#nodes">Nodes</a>
@@ -204,7 +209,31 @@
 		
 		<div class="col-md-10 mx-auto">
 			<h1>UE5 - Materials</h1>
-			<h1 id="pbr">PBR</h1>
+			<h1 id="how-to">How to</h1>
+<h2 id="translucency--refraction">Translucency / refraction</h2>
+<ul>
+<li>Create an refractive material in UE 5.2 (PBR)
+<ul>
+<li>RMB Content browser &gt; Material</li>
+<li>In details panel
+<ul>
+<li>Material &gt; Blend Mode : Translucent</li>
+<li>Translucency &gt; Lighting Mode : Surface Translucency Volume</li>
+<li>Refraction &gt; Refraction Method : Index Of Refraction</li>
+</ul>
+</li>
+<li>Then you can use the common texures or paramers to control the material</li>
+<li><strong>Note</strong>
+<ul>
+<li>One big gotcha if you want to use a mesh that you apply a emissive material behind the refractive mat (like if you create a headlight etc) is that the scale of the mesh nees to be one. If the scal is small unreal will &ldquo;cull it&rdquo; so that the emissive object will no longer be refracted.</li>
+</ul>
+</li>
+<li>
+<a href="https://docs.unrealengine.com/5.2/en-US/using-transparency-in-unreal-engine-materials/" target="_blank" rel="noopener">Epic docs</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="pbr">PBR</h1>
 <ul>
 <li><strong>Base Color</strong>
 <ul>
