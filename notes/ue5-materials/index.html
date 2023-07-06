@@ -212,7 +212,7 @@
 			<h1 id="how-to">How to</h1>
 <h2 id="translucency--refraction">Translucency / refraction</h2>
 <ul>
-<li>Create an refractive material in UE 5.2 (PBR)
+<li>Create n refractive material in UE 5.2 (PBR)
 <ul>
 <li>RMB Content browser &gt; Material</li>
 <li>In details panel
@@ -225,7 +225,7 @@
 <li>Then you can use the common texures or paramers to control the material</li>
 <li><strong>Note</strong>
 <ul>
-<li>One big gotcha if you want to use a mesh that you apply a emissive material behind the refractive mat (like if you create a headlight etc) is that the scale of the mesh nees to be one. If the scal is small unreal will &ldquo;cull it&rdquo; so that the emissive object will no longer be refracted.</li>
+<li>One big gotcha if you want to use a mesh (that you apply an emissive material to to emulate  alight source) and position that behind the refractive mat (like if you create a headlight etc) is that the scale of the mesh needs to be set to 1. If the scale is really small and the camera moves to far away from the refractive material Unreal will &ldquo;cull it&rdquo; so that the emissive object will no longer be refracted as you would expect.</li>
 </ul>
 </li>
 <li>

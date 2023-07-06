@@ -17,7 +17,7 @@
       <pubDate>Sun, 17 Jul 2022 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-materials/</guid>
-      <description>How to Translucency / refraction  Create an refractive material in UE 5.2 (PBR)  RMB Content browser &amp;gt; Material In details panel  Material &amp;gt; Blend Mode : Translucent Translucency &amp;gt; Lighting Mode : Surface Translucency Volume Refraction &amp;gt; Refraction Method : Index Of Refraction   Then you can use the common texures or paramers to control the material Note  One big gotcha if you want to use a mesh that you apply a emissive material behind the refractive mat (like if you create a headlight etc) is that the scale of the mesh nees to be one.</description>
+      <description>How to Translucency / refraction  Create n refractive material in UE 5.2 (PBR)  RMB Content browser &amp;gt; Material In details panel  Material &amp;gt; Blend Mode : Translucent Translucency &amp;gt; Lighting Mode : Surface Translucency Volume Refraction &amp;gt; Refraction Method : Index Of Refraction   Then you can use the common texures or paramers to control the material Note  One big gotcha if you want to use a mesh (that you apply an emissive material to to emulate alight source) and position that behind the refractive mat (like if you create a headlight etc) is that the scale of the mesh needs to be set to 1.</description>
     </item>
     
   </channel>
