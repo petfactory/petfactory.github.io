@@ -171,7 +171,7 @@
   <ul>
     <li><a href="#how-to">How to</a>
       <ul>
-        <li><a href="#translucency--refraction">Translucency / refraction</a></li>
+        <li><a href="#translucency--refraction-pbr">Translucency &amp; refraction (PBR)</a></li>
       </ul>
     </li>
     <li><a href="#pbr">PBR</a></li>
@@ -210,9 +210,9 @@
 		<div class="col-md-10 mx-auto">
 			<h1>UE5 - Materials</h1>
 			<h1 id="how-to">How to</h1>
-<h2 id="translucency--refraction">Translucency / refraction</h2>
+<h2 id="translucency--refraction-pbr">Translucency &amp; refraction (PBR)</h2>
 <ul>
-<li>Create n refractive material in UE 5.2 (PBR)
+<li>Create a translucent, refractive material in UE 5.2
 <ul>
 <li>RMB Content browser &gt; Material</li>
 <li>In details panel
@@ -225,7 +225,7 @@
 <li>Then you can use the common texures or paramers to control the material</li>
 <li><strong>Note</strong>
 <ul>
-<li>One big gotcha if you want to use a mesh (that you apply an emissive material to to emulate  alight source) and position that behind the refractive mat (like if you create a headlight etc) is that the scale of the mesh needs to be set to 1. If the scale is really small and the camera moves to far away from the refractive material Unreal will &ldquo;cull it&rdquo; so that the emissive object will no longer be refracted as you would expect.</li>
+<li>One big gotcha if you want to use a mesh that you apply an emissive material to to emulate a light source and position that behind the refractive material (like if you create a headlight etc) is that the scale of the mesh needs to be set to 1. If the scale is really small and the camera moves to far away from the refractive material Unreal will &ldquo;cull it&rdquo; so that the emissive object will no longer be refracted as you would expect.</li>
 </ul>
 </li>
 <li>
