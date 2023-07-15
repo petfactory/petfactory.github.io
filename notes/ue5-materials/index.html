@@ -228,6 +228,11 @@
 <li>One big gotcha if you want to use a mesh that you apply an emissive material to to emulate a light source and position that behind the refractive material (like if you create a headlight etc) is that the scale of the mesh needs to be set to 1. If the scale is really small and the camera moves to far away from the refractive material Unreal will &ldquo;cull it&rdquo; so that the emissive object will no longer be refracted as you would expect.</li>
 </ul>
 </li>
+<li><strong>Fog/lightshaft artifacts</strong>
+<ul>
+<li>I needed to set the Translucency &gt; Advanced &gt; Translucency Pass to Before DOF to get rid of some articats when the refractive material had lightshaft fog in fornt of it</li>
+</ul>
+</li>
 <li>
 <a href="https://docs.unrealengine.com/5.2/en-US/using-transparency-in-unreal-engine-materials/" target="_blank" rel="noopener">Epic docs</a></li>
 </ul>

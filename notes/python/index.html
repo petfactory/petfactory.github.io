@@ -185,12 +185,7 @@
       <ul>
         <li><a href="#function">Function</a></li>
         <li><a href="#module">Module</a></li>
-        <li><a href="#environ">Environ</a></li>
-        <li><a href="#inspect">Inspect</a>
-          <ul>
-            <li><a href="#mro">MRO</a></li>
-          </ul>
-        </li>
+        <li><a href="#inspect">Inspect</a></li>
       </ul>
     </li>
   </ul>
@@ -268,9 +263,35 @@ Weird thing to do, but I have done it sometimes when calling an instance method 
 module_file_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:/path/to/module/cool_script.py&#39;</span>
 my_module <span style="color:#f92672">=</span> SourceFileLoader(<span style="color:#e6db74">&#34;pet.external_drag_drop&#34;</span>, module_file_path)<span style="color:#f92672">.</span>load_module()
 my_module<span style="color:#f92672">.</span>call_cool_def(arg_0, arg_1, <span style="color:#f92672">...</span>)
-</code></pre></div><h2 id="environ">Environ</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
-<span style="color:#f92672">import</span> os
+</code></pre></div><h2 id="inspect">Inspect</h2>
+<p><strong>Module</strong></p>
+<p>If you want to get information of a module you can use the inspact module</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> inspect
+<span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<span style="color:#f92672">import</span> soputils
+
+<span style="color:#75715e"># Lets say we want the filepath to the soputils module</span>
+mod_path <span style="color:#f92672">=</span> inspect<span style="color:#f92672">.</span>getfile(soputils)
+<span style="color:#75715e"># you can use pathlib if you want to resolve the path to make it more readablr</span>
+<span style="color:#66d9ef">print</span>(Path(mod_path)<span style="color:#f92672">.</span>resolve())
+
+<span style="color:#75715e"># lets print the source code of the module</span>
+<span style="color:#66d9ef">print</span>(inspect<span style="color:#f92672">.</span>getsource(soputils))
+
+<span style="color:#75715e"># you can getdoc to get documentation, which is None in this case...</span>
+inspect<span style="color:#f92672">.</span>getdoc(soputils)
+
+
+</code></pre></div><p><strong>MRO</strong></p>
+<p>Method Resolution Order</p>
+<p>MRO is a concept used in inheritance. It is the order in which a method is searched for in a classes hierarchy and is especially useful in Python because Python supports multiple inheritance.</p>
+<p>In Python, the MRO is from bottom to top and left to right. This means that, first, the method is searched in the class of the object. If it’s not found, it is searched in the immediate super class. In the case of multiple super classes, it is searched left to right, in the order by which was declared by the developer. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/null1&#39;</span>)
+node<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__
+<span style="color:#75715e"># (&lt;class &#39;hou.SopNode&#39;&gt;, &lt;class &#39;hou.Node&#39;&gt;, &lt;class &#39;hou.NetworkMovableItem&#39;&gt;, &lt;class &#39;hou.NetworkItem&#39;&gt;, &lt;class &#39;object&#39;&gt;)</span>
+</code></pre></div><p><strong>Environment variables</strong></p>
+<p>You can use os.environ to &ldquo;inspect&rdquo; environment variables</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
 
 <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>items():
     <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{k}={v}&#39;</span>)
@@ -278,14 +299,6 @@ my_module<span style="color:#f92672">.</span>call_cool_def(arg_0, arg_1, <span s
 <span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;OCIO&#39;</span>])
 <span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;OCIO&#39;</span>))
     
-</code></pre></div><h2 id="inspect">Inspect</h2>
-<h3 id="mro">MRO</h3>
-<p>Method Resolution Order</p>
-<p>MRO is a concept used in inheritance. It is the order in which a method is searched for in a classes hierarchy and is especially useful in Python because Python supports multiple inheritance.</p>
-<p>In Python, the MRO is from bottom to top and left to right. This means that, first, the method is searched in the class of the object. If it’s not found, it is searched in the immediate super class. In the case of multiple super classes, it is searched left to right, in the order by which was declared by the developer. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/null1&#39;</span>)
-node<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</span>__mro__
-<span style="color:#75715e"># (&lt;class &#39;hou.SopNode&#39;&gt;, &lt;class &#39;hou.Node&#39;&gt;, &lt;class &#39;hou.NetworkMovableItem&#39;&gt;, &lt;class &#39;hou.NetworkItem&#39;&gt;, &lt;class &#39;object&#39;&gt;)</span>
 </code></pre></div>		
 		</div>
 	</div>
