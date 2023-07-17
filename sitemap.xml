@@ -4,26 +4,56 @@
   
   <url>
     <loc>https://www.petfactory.se/tags/houdini/</loc>
-    <lastmod>2023-06-01T00:00:00+01:00</lastmod>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/work/pet-roadeo/</loc>
-    <lastmod>2023-06-01T00:00:00+01:00</lastmod>
+    <loc>https://www.petfactory.se/tags/landscapes/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/</loc>
-    <lastmod>2023-06-01T00:00:00+01:00</lastmod>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/</loc>
-    <lastmod>2023-06-01T00:00:00+01:00</lastmod>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/terrain/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/ue5-landscapes/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/ue5-notes/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/tags/unreal/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/unreal-engine-notes/</loc>
+    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/pet-roadeo/</loc>
     <lastmod>2023-06-01T00:00:00+01:00</lastmod>
   </url>
   
@@ -38,22 +68,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/notes/</loc>
-    <lastmod>2023-05-30T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/notes/ue5-niagara/</loc>
-    <lastmod>2023-05-30T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/ue5-notes/</loc>
-    <lastmod>2023-05-30T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/unreal-engine-notes/</loc>
     <lastmod>2023-05-30T00:00:00+01:00</lastmod>
   </url>
   
