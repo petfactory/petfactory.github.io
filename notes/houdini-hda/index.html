@@ -179,6 +179,7 @@
     <li><a href="#parameters">Parameters</a>
       <ul>
         <li><a href="#viewport-selection">Viewport Selection</a></li>
+        <li><a href="#menus">Menus</a></li>
       </ul>
     </li>
     <li><a href="#extra-files">Extra Files</a>
@@ -375,6 +376,33 @@ I wanted to convert the	ptnum from the viewport selection and replace the ptnum 
 rigtreeutils<span style="color:#f92672">.</span>selectPointGroupParm(kwargs)
 </code></pre></div><pre><code>
 </code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="menus">Menus</h2>
+<p>If you want to create a dynamic menu, a menu based on current state or &ldquo;live&rdquo; data we can do the following</p>
+<ul>
+<li><strong>Create a String field dropdown replace menu</strong>
+<ul>
+<li>Add a <em>String</em> parameter to your HDA</li>
+<li>In the <em>Parameter Description</em> section select the <em>Menu</em> tab</li>
+<li>Enable <em>Use Menu</em> toggle</li>
+<li>From the drop down select <em>Replace (Field + Single Selection Menu)</em></li>
+<li>Select the <em>Menu Script</em> (radio button)</li>
+<li>In the text edit field we can write our python snippet that builds the menu.
+<ul>
+<li><em>Note</em> that the script should return a list with the <em>Value</em> followed by the <em>Label</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">menu_data <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;value A&#39;</span>, <span style="color:#e6db74">&#39;Label A&#39;</span>, <span style="color:#e6db74">&#39;value B&#39;</span>, <span style="color:#e6db74">&#39;Label B&#39;</span>]
+<span style="color:#66d9ef">return</span> menu_data
+</code></pre></div><pre><code></code></pre></li>
+<li><em>Note</em> that you can call a function in the python module by calling <em>hou.phm().your_nice_menu(kwargs)</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">your_nice_menu</span>(kwargs):
+    menu_data <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;value A&#39;</span>, <span style="color:#e6db74">&#39;Label A&#39;</span>, <span style="color:#e6db74">&#39;value B&#39;</span>, <span style="color:#e6db74">&#39;Label B&#39;</span>]
+    <span style="color:#66d9ef">return</span> menu_data
+</code></pre></div><pre><code>
+</code></pre></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
