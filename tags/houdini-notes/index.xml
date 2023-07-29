@@ -6,10 +6,20 @@
     <description>Recent content in Houdini-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 14:24:14 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/houdini-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini - FLIP</title>
+      <link>https://www.petfactory.se/notes/houdini-flip/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini-flip/</guid>
+      <description>FLIP in SOP Container  FLIP container Creates a domain for a SOP FLIP fluid simulation.  SideFx docs  This node creates and initializes a SOP particle fluid domain. The Particle Separation parameter controls the domain’s resolution, but also the number of particles and voxels, and the resolution of collision objects.       Boundary  FLIP boundary
+Creates a surface or density VDB for sourcing or deleting SOP FLIP fluid particles.</description>
+    </item>
     
     <item>
       <title>Houdini - Heightfield</title>

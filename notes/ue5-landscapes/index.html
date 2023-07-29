@@ -203,65 +203,28 @@
 			<h1 id="houdini">Houdini</h1>
 <p>We have created our heightfiled and layers and want to export them.</p>
 <h2 id="heightfield">Heightfield</h2>
+<!-- 
+* Overall size (verts) | Quads / section | Sections / Component |LS Component size | Total LS Components  
+--- | --- | --- | --- | --
+8129 x 8129 | 127 | 4 (2x2) | 254x254 | 1024 (32x32)
+4033 x 4033 | 63 | 4 (2x2) | 126x126 | 1024 (32x32)
+2017 x 2017 | 63 | 4 (2x2) |126x126 | 256 (16x16)
+1009 x 1009 | 63 | 4 (2x2) | 126x126 | 64 (8x8)
+1009 x 1009 | 63 | 1 | 63x63 | 256 (16x16)
+-->
 <ul>
 <li><strong>Heightfield</strong>
 <ul>
 <li><strong>Note!</strong> Since UE is pretty picky with the terrain resolution we might set the <em>Grid Samples</em> to one of the sizes (Division mode is set to By Axis)
 <ul>
-<li>
-<table>
-<thead>
-<tr>
-<th>Overall size (verts)</th>
-<th>Quads / section</th>
-<th>Sections / Component</th>
-<th>LS Component size</th>
-<th>Total LS Components</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>8129 x 8129</td>
-<td>127</td>
-<td>4 (2x2)</td>
-<td>254x254</td>
-<td>1024 (32x32)</td>
-</tr>
-<tr>
-<td>4033 x 4033</td>
-<td>63</td>
-<td>4 (2x2)</td>
-<td>126x126</td>
-<td>1024 (32x32)</td>
-</tr>
-<tr>
-<td>2017 x 2017</td>
-<td>63</td>
-<td>4 (2x2)</td>
-<td>126x126</td>
-<td>256 (16x16)</td>
-</tr>
-<tr>
-<td>1009 x 1009</td>
-<td>63</td>
-<td>4 (2x2)</td>
-<td>126x126</td>
-<td>64 (8x8)</td>
-</tr>
-<tr>
-<td>1009 x 1009</td>
-<td>63</td>
-<td>1</td>
-<td>63x63</td>
-<td>256 (16x16)</td>
-</tr>
-</tbody>
-</table>
+<li>8129</li>
+<li>4033</li>
+<li>2017</li>
+<li>1009</li>
+</ul>
 </li>
 <li>For a full list see 
 <a href="https://docs.unrealengine.com/5.0/en-US/landscape-technical-guide-in-unreal-engine/#recommendedlandscapesizes" target="_blank" rel="noopener">UE Docs</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

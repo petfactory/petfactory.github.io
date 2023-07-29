@@ -176,7 +176,11 @@
         <li><a href="#output-log">Output Log</a></li>
       </ul>
     </li>
-    <li><a href="#init-script">Init Script</a></li>
+    <li><a href="#init-script">Init Script</a>
+      <ul>
+        <li><a href="#environment-var">Environment var</a></li>
+      </ul>
+    </li>
     <li><a href="#gotcha">Gotcha</a>
       <ul>
         <li><a href="#console-variables">Console Variables</a></li>
@@ -321,6 +325,19 @@ petfactory<span style="color:#f92672">.</span>menu<span style="color:#f92672">.<
 </ul>
 </li>
 </ul>
+<h2 id="environment-var">Environment var</h2>
+<p>In a tool I am writing I wanted a reference to a project specific directory. I also wanted it present when I was developing outside of UE, so I decided to set a environment var and access the directory this way. To set the environment var in Unreal we can use the init_unreal.py script (Like said above UE will scan various places for a script with this name and run it, but in this case I created a directory called Python in my project dir and added the snippet below).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+<span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<span style="color:#f92672">import</span> unreal
+
+your_dir <span style="color:#f92672">=</span> Path(unreal<span style="color:#f92672">.</span>Paths<span style="color:#f92672">.</span>game_user_developer_dir(), <span style="color:#e6db74">&#39;Your_dir_name&#39;</span>)
+<span style="color:#66d9ef">if</span> your_dir<span style="color:#f92672">.</span>is_dir():
+	os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;YOUR_VARIABLE_NAME&#39;</span>] <span style="color:#f92672">=</span> str(your_dir<span style="color:#f92672">.</span>resolve())
+	unreal<span style="color:#f92672">.</span>log(<span style="color:#e6db74">&#39;Environ Variable &#34;YOUR_VARIABLE_NAME&#34; was set&#39;</span>)
+<span style="color:#66d9ef">else</span>:
+	unreal<span style="color:#f92672">.</span>log_warning(<span style="color:#e6db74">&#39;Environ Variable &#34;YOUR_VARIABLE_NAME&#34; not set!&#39;</span>)
+</code></pre></div><p>I used <em>unreal.Paths.game_user_developer_dir</em> to get the <em>game user developer dir</em>, used this as the dir root and then appended a directory. If the dir is found I keep a ref to it using an env var.</p>
 <h1 id="gotcha">Gotcha</h1>
 <h2 id="console-variables">Console Variables</h2>
 <ul>

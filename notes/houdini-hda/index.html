@@ -178,6 +178,7 @@
     <li><a href="#custom-hda-path">Custom HDA Path</a></li>
     <li><a href="#parameters">Parameters</a>
       <ul>
+        <li><a href="#tags">Tags</a></li>
         <li><a href="#viewport-selection">Viewport Selection</a></li>
         <li><a href="#menus">Menus</a></li>
       </ul>
@@ -303,6 +304,33 @@ Here I am using the reverse domain name notation, which in my case is:
 <li><strong>Note</strong> if you want to use inside a multiparm remember to suffix the parm name with an <strong>#</strong>
 <ul>
 <li>{ use_prefix# == 1}</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tags">Tags</h2>
+<p>
+<a href="https://www.sidefx.com/docs/houdini/ref/windows/optype.html" target="_blank" rel="noopener">Operator Type Properties</a></p>
+<p>To customize parameters tags can bu used.</p>
+<ul>
+<li><strong>Header Toggle</strong>
+<ul>
+<li>Add a <em>Toggle</em> parameter
+<ul>
+<li>give it a name, lets use &ldquo;toggle&rdquo; for now</li>
+</ul>
+</li>
+<li>Add a <em>Folder</em> parameter
+<ul>
+<li>Select the folder and click the <em>Built-in Tags</em></li>
+<li>In the tree view select <em>Standard Tags &gt; Parameter Folders &hellip;</em></li>
+<li>Select <em>Header Toggle Reference (Simple/collapsible)</em> and press accept</li>
+<li>To the Tags table view and entry with the value &ldquo;sidefx::header_parm&rdquo; will be added
+<ul>
+<li>In the <em>Tag Value</em> field enter the name of the parameter (we called it toggle)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

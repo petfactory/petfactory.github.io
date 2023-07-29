@@ -188,6 +188,11 @@
         <li><a href="#inspect">Inspect</a></li>
       </ul>
     </li>
+    <li><a href="#os">OS</a>
+      <ul>
+        <li><a href="#environ">environ</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>	
 			</div>
@@ -299,7 +304,19 @@ node<span style="color:#f92672">.</span>__class__<span style="color:#f92672">.</
 <span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;OCIO&#39;</span>])
 <span style="color:#66d9ef">print</span>(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;OCIO&#39;</span>))
     
-</code></pre></div>		
+</code></pre></div><h1 id="os">OS</h1>
+<h2 id="environ">environ</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">import</span> os
+os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;monty&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;python&#39;</span>
+
+<span style="color:#75715e"># note! On Windows, the keys are converted to uppercase.</span>
+name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;MONTY&#39;</span>]
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;MONTY {name}&#39;</span>) 
+
+<span style="color:#75715e"># Note if we access dict in f-string we use outer double quotationmarks</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;MONTY {os.environ[&#39;MONTY&#39;]}&#34;</span>)
+<span style="color:#e6db74">``</span><span style="color:#960050;background-color:#1e0010">`</span></code></pre></div>		
 		</div>
 	</div>
 </div>

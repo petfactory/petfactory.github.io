@@ -18,7 +18,7 @@
       
       <guid>https://www.petfactory.se/notes/ue5-landscapes/</guid>
       <description>Houdini We have created our heightfiled and layers and want to export them.
-Heightfield  Heightfield  Note! Since UE is pretty picky with the terrain resolution we might set the Grid Samples to one of the sizes (Division mode is set to By Axis)      Overall size (verts) Quads / section Sections / Component LS Component size Total LS Components     8129 x 8129 127 4 (2x2) 254x254 1024 (32x32)   4033 x 4033 63 4 (2x2) 126x126 1024 (32x32)   2017 x 2017 63 4 (2x2) 126x126 256 (16x16)   1009 x 1009 63 4 (2x2) 126x126 64 (8x8)   1009 x 1009 63 1 63x63 256 (16x16)     For a full list see UE Docs      Export  COP2 Network  Create a COP2 Network and jump in Create a SOP Import node and set the SOP path to the output of the HF Click  Set resolution from SOP Set planes from SOP Enable remap range   Create a ROP File Output  Set the Valid Frame Range to Current Frame Set the Output Picture Path for instance &amp;ldquo;debris.</description>
+Heightfield  Heightfield  Note! Since UE is pretty picky with the terrain resolution we might set the Grid Samples to one of the sizes (Division mode is set to By Axis)  8129 4033 2017 1009   For a full list see UE Docs    Export  COP2 Network  Create a COP2 Network and jump in Create a SOP Import node and set the SOP path to the output of the HF Click  Set resolution from SOP Set planes from SOP Enable remap range   Create a ROP File Output  Set the Valid Frame Range to Current Frame Set the Output Picture Path for instance &amp;ldquo;debris.</description>
     </item>
     
     <item>
