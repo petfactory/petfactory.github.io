@@ -17,17 +17,7 @@
       <pubDate>Fri, 04 Aug 2023 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/work/lorem-ipsum-01/</guid>
-      <description>Exploring FLIP fluids and Vellum Baloon and Grains. Rendered in Karma XPU with very few samples and denoiser.</description>
-    </item>
-    
-    <item>
-      <title>UE5 - Landscapes</title>
-      <link>https://www.petfactory.se/notes/ue5-landscapes/</link>
-      <pubDate>Mon, 17 Jul 2023 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/ue5-landscapes/</guid>
-      <description>Houdini We have created our heightfiled and layers and want to export them.
-Heightfield  Heightfield  Note! Since UE is pretty picky with the terrain resolution we might set the Grid Samples to one of the sizes (Division mode is set to By Axis)  8129 4033 2017 1009   For a full list see UE Docs    Export  COP2 Network  Create a COP2 Network and jump in Create a SOP Import node and set the SOP path to the output of the HF Click  Set resolution from SOP Set planes from SOP Enable remap range   Create a ROP File Output  Set the Valid Frame Range to Current Frame Set the Output Picture Path for instance &amp;ldquo;debris.</description>
+      <description>Exploring FLIP &amp;amp; Vellum. Rendered in Karma XPU with very few samples and denoiser.</description>
     </item>
     
     <item>
@@ -40,15 +30,6 @@ Heightfield  Heightfield  Note! Since UE is pretty picky with the terrain resolu
 The aim with this project was to explore the workflow between Houdini and Unreal with the main focus on environment building, character &amp;amp; camera animation. I wanted the animation to be shaky, rough and give the feeling of speed.
 I also had some software specific aims
  Houdini  KineFX  I wanted to explore rigging in KineFX (the procedural rigging toolset in Houdini) More specifically I wanted to learn how to create KineFX rig HDAs Explore how one rig HDA can drive another Create camera HDA for more quick camera animation   Scripting  Write a custom exporter to export a rig HDA to Unreal sequencer Write a custom exporter for camera animation to Unreal and sequencer     Unreal  General  As I am relatively new to Unreal just starting to use it to produce animation Get to know  Sequencer Movie render queue OCIO workflow     Scripting  Camera &amp;amp; object animation importer      This is a part of an ongoing personal project, so the assets are evolved over time.</description>
-    </item>
-    
-    <item>
-      <title>UE5 &amp; Houdini</title>
-      <link>https://www.petfactory.se/notes/ue5-houdini/</link>
-      <pubDate>Thu, 10 Nov 2022 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/ue5-houdini/</guid>
-      <description>Houdini Engine Install  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27     Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory     Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
     </item>
     
     <item>

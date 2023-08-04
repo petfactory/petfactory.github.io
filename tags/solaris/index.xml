@@ -6,10 +6,19 @@
     <description>Recent content in Solaris on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Aug 2022 15:20:58 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/solaris/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lorem Ipsum - 01</title>
+      <link>https://www.petfactory.se/work/lorem-ipsum-01/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/lorem-ipsum-01/</guid>
+      <description>Exploring FLIP &amp;amp; Vellum. Rendered in Karma XPU with very few samples and denoiser.</description>
+    </item>
     
     <item>
       <title>Nymphe</title>

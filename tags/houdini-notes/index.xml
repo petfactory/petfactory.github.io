@@ -22,6 +22,25 @@ Creates a surface or density VDB for sourcing or deleting SOP FLIP fluid particl
     </item>
     
     <item>
+      <title>UE5 - Landscapes</title>
+      <link>https://www.petfactory.se/notes/ue5-landscapes/</link>
+      <pubDate>Mon, 17 Jul 2023 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-landscapes/</guid>
+      <description>Houdini We have created our heightfiled and layers and want to export them.
+Heightfield  Heightfield  Note! Since UE is pretty picky with the terrain resolution we might set the Grid Samples to one of the sizes (Division mode is set to By Axis)  8129 4033 2017 1009   For a full list see UE Docs    Export  COP2 Network  Create a COP2 Network and jump in Create a SOP Import node and set the SOP path to the output of the HF Click  Set resolution from SOP Set planes from SOP Enable remap range   Create a ROP File Output  Set the Valid Frame Range to Current Frame Set the Output Picture Path for instance &amp;ldquo;debris.</description>
+    </item>
+    
+    <item>
+      <title>UE5 &amp; Houdini</title>
+      <link>https://www.petfactory.se/notes/ue5-houdini/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-houdini/</guid>
+      <description>Houdini Engine Install  Browse to the SideFX houdini engine dir  SideFX directory  C:\Program Files\Side Effects Software\Houdini Engine\Unreal Here you will find the engine for each of the houdini versions you have installed  19.5.403 19.5.303 etc&amp;hellip;   And inside each houdini version you will find a houdini engine plugin for each of the unreal engine versions.  5.0 4.27     Copy Houdini Engine dir  Find the version that matches your Houdini install and the UE engine Ctrl + C the HoudiniEngine directory     Browse to the Unreal plugin dir  Unreal engine version directory  C:\Program Files\Epic Games\UE_5.</description>
+    </item>
+    
+    <item>
       <title>Houdini - Heightfield</title>
       <link>https://www.petfactory.se/notes/houdini-heightfield/</link>
       <pubDate>Tue, 11 Oct 2022 14:24:14 +0200</pubDate>
