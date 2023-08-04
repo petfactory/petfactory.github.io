@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.petfactory.se/tags/flip/</loc>
-    <lastmod>2023-07-29T00:00:00+01:00</lastmod>
+    <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <lastmod>2023-08-04T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/houdini/</loc>
+    <loc>https://www.petfactory.se/work/lorem-ipsum-01/</loc>
+    <lastmod>2023-08-04T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/</loc>
+    <lastmod>2023-08-04T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/</loc>
+    <lastmod>2023-08-04T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/unreal/</loc>
+    <lastmod>2023-08-04T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/</loc>
+    <lastmod>2023-08-04T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/flip/</loc>
     <lastmod>2023-07-29T00:00:00+01:00</lastmod>
   </url>
   
@@ -28,17 +53,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/</loc>
-    <lastmod>2023-07-29T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/tags/simulation/</loc>
-    <lastmod>2023-07-29T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/</loc>
     <lastmod>2023-07-29T00:00:00+01:00</lastmod>
   </url>
   
@@ -63,22 +78,12 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/tags/unreal/</loc>
-    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/tags/unreal-engine-notes/</loc>
     <lastmod>2023-07-17T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.petfactory.se/work/pet-roadeo/</loc>
-    <lastmod>2023-06-01T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/work/</loc>
     <lastmod>2023-06-01T00:00:00+01:00</lastmod>
   </url>
   
