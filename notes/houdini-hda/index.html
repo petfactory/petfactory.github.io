@@ -318,19 +318,27 @@ Here I am using the reverse domain name notation, which in my case is:
 <ul>
 <li>Add a <em>Toggle</em> parameter
 <ul>
-<li>give it a name, lets use &ldquo;toggle&rdquo; for now</li>
+<li>give it a <em>name</em>, lets use &ldquo;my_toggle&rdquo; for now</li>
+<li>Note! it is the Name, not the Label</li>
 </ul>
 </li>
 <li>Add a <em>Folder</em> parameter
 <ul>
-<li>Select the folder and click the <em>Built-in Tags</em></li>
+<li>Make it collapsible</li>
+<li>Click <em>Built-in Tags</em></li>
 <li>In the tree view select <em>Standard Tags &gt; Parameter Folders &hellip;</em></li>
 <li>Select <em>Header Toggle Reference (Simple/collapsible)</em> and press accept</li>
-<li>To the Tags table view and entry with the value &ldquo;sidefx::header_parm&rdquo; will be added
+<li>In the Tags table view a <em>tag Name</em> with value &ldquo;sidefx::header_toggle&rdquo; will be added
 <ul>
-<li>In the <em>Tag Value</em> field enter the name of the parameter (we called it toggle)</li>
+<li>In the <em>Tag Value</em> field enter the name of the parameter (we called it &ldquo;my_toggle&rdquo;)</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>You can keep the Toggle parm outside of the folder</li>
+<li>In the Folder parm <em>Disable When</em> field you can enter:
+<ul>
+<li>{ my_toggle == 0 }</li>
 </ul>
 </li>
 </ul>
