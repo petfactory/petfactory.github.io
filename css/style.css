@@ -251,7 +251,6 @@ blockquote p {
 }
 
 .menu-wrap {
-    font-size: 2em;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -286,6 +285,7 @@ blockquote p {
 
 .menu-wrap > ul {
     list-style: none;
+    font-size: 1.5em;
     /*margin: 0px;*/
     /*text-align: center;*/
     /*padding-left: 0px;*/
@@ -298,10 +298,10 @@ blockquote p {
 
 .menu-wrap > ul > li {
     /*background-color: #956;*/
+    /*margin: 1px;*/
     text-align: center;
-    padding-top: 30px;
-    height: 100px;
-    margin: 1px;
+    padding-top: 23px;
+    height: 80px;
     /*width: 100%;*/
     
 } 
