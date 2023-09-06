@@ -251,15 +251,17 @@ blockquote p {
 }
 
 .menu-wrap {
-    font-size: 1.2em;
+    font-size: 2em;
     position: fixed;
     top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.75);
     opacity: 0;
     display: none;
     transition: opacity .5s ease;
+    /*margin-right: -5px;*/
 }
 
 /*.visible {
@@ -272,10 +274,10 @@ blockquote p {
 }
 */
 .menu-wrap-a{
-    margin-left: 0px; 
+    /*margin-left: 0px; */
     display: block;
     color: #fff;
-    height: 50px;
+    /*height: 50px;*/
 }
 
 .menu-wrap-a:hover{
@@ -284,11 +286,25 @@ blockquote p {
 
 .menu-wrap > ul {
     list-style: none;
-    margin: 0px;
-    padding-left: 10px;
-    padding-bottom: 7px;
+    /*margin: 0px;*/
+    /*text-align: center;*/
+    /*padding-left: 0px;*/
+    /*padding-right: 5px;*/
+    /*padding-bottom: 7px;*/
     padding-top: 80px;
+    padding-left: 10px;
+    /*margin: auto;*/
 }   
+
+.menu-wrap > ul > li {
+    /*background-color: #956;*/
+    text-align: center;
+    padding-top: 30px;
+    height: 100px;
+    margin: 1px;
+    /*width: 100%;*/
+    
+} 
 
 
 /*
@@ -979,7 +995,7 @@ margin:-90px 0 0; /* negative fixed header height */
 
 #social-list-modal > li {
    list-style: none;
-   width: calc(100% / 4);
+   width: calc(100% / 3);
    /*width: 25%;*/
    display: inline-block;
    text-align: center;
