@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500&display=swap" rel="stylesheet">
+        
         <title>Petfactory | Houdini - Python</title>
         <meta name="description" content="Petfactory | Design and Animation | Houdini - Python" />
 
@@ -312,7 +313,19 @@
 <h1 id="nodes">Nodes</h1>
 <h2 id="selection">Selection</h2>
 <ul>
-<li><strong>Selection</strong>
+<li>
+<p><strong>Clear All</strong></p>
+<ul>
+<li><em>hou.clearAllSelected()</em>
+<ul>
+<li>Clears the selected state for all nodes, network boxes, and other subclasses of hou.NetworkMovableItem in the Houdini session.</li>
+<li>This function is equivalent to traversing the node hierarchy and calling setSelected(False) on every hou.NetworkMovableItem in the scene, but operates much much faster.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Selection</strong></p>
 <ul>
 <li><strong>setCurrent</strong>(on, clear_all_selected=False)
 <ul>
