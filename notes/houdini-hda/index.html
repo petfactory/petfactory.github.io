@@ -499,23 +499,61 @@ Note if you add an icon to the asset, you can also use it in the help card.</p>
 <ul>
 <li>RMB click the HDA &gt; Type Properties and select the <strong>Scripts</strong> tab</li>
 <li>In the <strong>Event Handler</strong> combobox select <strong>Custom Script</strong></li>
-<li>Select the python script to include (with the filebrowser labeled &ldquo;filename&rdquo;)</li>
-<li>This will autopopulate the section name with the file name (which is fine i guess, you can remove the .py extension if you want)</li>
-<li>Click <strong>Add File</strong> to add the custom script to the HDA.</li>
-<li>Now we need to import the custom module in our main python module (we also have a speak method in out custom module, which we also call)</li>
-<li><strong>NOTE</strong>
+<li><strong>Empty</strong> vs <strong>Existing</strong>
 <ul>
-<li>New to Houdini 18.0, the createModuleFromSection function expects the code in the HDA section to have Python 3 style <strong>print statements</strong>.</li>
+<li><em>Empty Section</em>
+<ul>
+<li>You can add an empty section</li>
+<li>In the <em>Section Name</em> enter the name of the module you want to create
+<ul>
+<li>Lets call it custom</li>
+</ul>
+</li>
+<li>Then press <em>Add Empty Section</em></li>
+<li>Now you can select the script in the &ldquo;scripts&rdquo; chooser and start writing</li>
+<li>Or, as I prefer, RMB click the HDA &gt; Edit Extra Sections Source Code and edit in an external editor.</li>
+</ul>
+</li>
+<li><em>Existing</em>
+<ul>
+<li>You can add an existing python script to the HDA this way</li>
+<li>Select the python script to include (with the filebrowser labeled &ldquo;filename&rdquo;)</li>
+<li>This will auto populate the section name with the file name (which is fine i guess, you can remove the .py extension if you want)</li>
+<li>Click <strong>Add File</strong> to add the custom script to the HDA.</li>
+<li>Note that the <em>filename</em> line edit has been populated with a file path to the script
+<ul>
+<li>You can press reload all files to reload if you have edited the sript on disc (I usually do not do this)</li>
+<li><em>Warning</em> if you have edited the custom script on the hda and then reload you will loose the edits you made.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create Module From Section</strong>
+<ul>
+<li>To be able to use the custom module we need to createModuleFromSection in the main <em>PythonModule</em></li>
+<li>To add a custom module add the following lines of code to the &ldquo;main&rdquo; Python module
+<ul>
+<li>change the <em>custom</em> placeholder text to whatever your module name is called</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Note</strong>
+<ul>
+<li>Seems like you need to import hou in the custom module if you use that.</li>
 </ul>
 </li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># toolutils.createModuleFromSection(module_name, node_type, section_name)</span>
 <span style="color:#f92672">import</span> toolutils
-custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#f92672">.</span>createModuleFromSection(<span style="color:#e6db74">&#34;custom_module&#34;</span>, kwargs[<span style="color:#e6db74">&#34;type&#34;</span>], <span style="color:#e6db74">&#34;custom_module.py&#34;</span>)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>():
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;called &#34;speak&#34; from PythonModule&#39;</span>)
-    custom_module<span style="color:#f92672">.</span>speak()
+custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#f92672">.</span>createModuleFromSection(<span style="color:#e6db74">&#34;custom&#34;</span>, kwargs[<span style="color:#e6db74">&#34;type&#34;</span>], <span style="color:#e6db74">&#34;custom&#34;</span>)
+</code></pre></div><p>Then we can call the function from the main PythonModule or from a parameter of the hda</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># from Python Module</span>
+custom<span style="color:#f92672">.</span>your_func(kwargs)
+<span style="color:#75715e"># from button parameter</span>
+hou<span style="color:#f92672">.</span>phm()<span style="color:#f92672">.</span>custom<span style="color:#f92672">.</span>your_func(kwargs)
 </code></pre></div><h2 id="snippets">Snippets</h2>
 <h3 id="revert-to-default">Revert to Default</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reset_all_parms_in_containing_folder</span>(kwargs):
