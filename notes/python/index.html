@@ -240,6 +240,16 @@ pip        20.2.1
 setuptools 49.2.1
 </code></pre></div><h1 id="dictionary">Dictionary</h1>
 <h2 id="sorting">Sorting</h2>
+<p><strong>Sort a list of dicts based on dict value</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list_of_dicts <span style="color:#f92672">=</span> [
+    {<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;package_path&#39;</span>: <span style="color:#e6db74">&#39;/Game/Mesh/barrier/wall_end_0&#39;</span>},
+    {<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;package_path&#39;</span>: <span style="color:#e6db74">&#39;/Game/Mesh/barrier/wall_mid_0&#39;</span>},
+    {<span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;package_path&#39;</span>: <span style="color:#e6db74">&#39;/Game/Mesh/barrier/wall_start_0&#39;</span>}
+]
+
+<span style="color:#66d9ef">for</span> info_dict <span style="color:#f92672">in</span> sorted(list_of_dicts, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> d: d[<span style="color:#e6db74">&#39;name&#39;</span>]) :
+    <span style="color:#66d9ef">print</span>(info_dict)
+</code></pre></div><p><strong>Sorting dicts</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#39;</span>:(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), <span style="color:#e6db74">&#39;C&#39;</span>:(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>), <span style="color:#e6db74">&#39;A&#39;</span>:(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>)}
 <span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items())))
 <span style="color:#75715e"># {&#39;A&#39;: (1, 0), &#39;B&#39;: (2, 1), &#39;C&#39;: (0, 2)}</span>
