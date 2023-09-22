@@ -201,6 +201,7 @@
     </li>
     <li><a href="#ui">UI</a>
       <ul>
+        <li><a href="#custom-tool">Custom Tool</a></li>
         <li><a href="#houui">hou.ui</a>
           <ul>
             <li><a href="#input-dialogs">Input Dialogs</a></li>
@@ -424,6 +425,89 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
 <p>Lets say that you want all the parms in the PostFX folder (that are inside the Redshift Camera folder of the camera node) note that we need to specify the entire &ldquo;hierarchy&rdquo; to the destination folder.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
 </code></pre></div><h1 id="ui">UI</h1>
+<h2 id="custom-tool">Custom Tool</h2>
+<ul>
+<li>Add new shelf tool
+<ul>
+<li>RMB click the shelf &gt; New Tool</li>
+</ul>
+</li>
+<li><strong>Options</strong> Tab
+<ul>
+<li>In the <em>Name</em> field type &ldquo;my_tool&rdquo;</li>
+<li>In he <em>Label</em> filed type &ldquo;My Tool&rdquo; (This name will be used in the tab menu)</li>
+<li>For a better UX
+<ul>
+<li>Add Icon, Keywords</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Context</strong> tab
+<ul>
+<li><em>Network Pane</em> tab
+<ul>
+<li>Enable the <em>SOP</em> checkbox (the context we want to create the tool in)</li>
+</ul>
+</li>
+<li><em>Viewer Pane</em> tab
+<ul>
+<li>Enable the <em>SOP</em> checkbox (the context we want to create the tool in)</li>
+</ul>
+</li>
+<li><em>TAB Submenu Path</em>
+<ul>
+<li>Type &ldquo;My Tools&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Scrips</strong> tab
+<ul>
+<li>Add the following script
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> toolutils
+<span style="color:#f92672">import</span> hou
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_setup</span>(parent, position):
+          
+    node <span style="color:#f92672">=</span> parent<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;null&#39;</span>, <span style="color:#e6db74">&#39;Hello&#39;</span>)
+    node<span style="color:#f92672">.</span>setPosition(position)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doit</span>():
+
+    pane <span style="color:#f92672">=</span> kwargs<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;pane&#39;</span>)
+          
+    <span style="color:#66d9ef">if</span> pane <span style="color:#f92672">==</span> None: <span style="color:#75715e"># triggered form the shelf</span>
+        parent <span style="color:#f92672">=</span> toolutils<span style="color:#f92672">.</span>networkEditor()<span style="color:#f92672">.</span>pwd()
+
+    <span style="color:#66d9ef">else</span>:
+        parent <span style="color:#f92672">=</span> pane<span style="color:#f92672">.</span>pwd()
+
+    <span style="color:#66d9ef">if</span> isinstance(pane, hou<span style="color:#f92672">.</span>NetworkEditor):
+        <span style="color:#75715e"># only get the cursor pos if the tool was requested from the</span>
+        <span style="color:#75715e"># network editor, if not the cursor pos will be quite useless</span>
+        position <span style="color:#f92672">=</span> pane<span style="color:#f92672">.</span>cursorPosition()
+        <span style="color:#75715e"># print(f&#39;{pane=}, {parent=}, {position=}&#39;)</span>
+              
+    <span style="color:#66d9ef">else</span>:
+        position <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>Vector2(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+        <span style="color:#75715e"># maybe use move to good location or what it is called?</span>
+
+    create_setup(parent, position)
+
+doit()
+</code></pre></div></li>
+</ul>
+</li>
+<li><strong>To Do</strong>
+<ul>
+<li>Look into the help tab</li>
+<li>Look into add icon</li>
+<li>Look into add keywords</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h2 id="houui">hou.ui</h2>
 <h3 id="input-dialogs">Input Dialogs</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ui<span style="color:#f92672">.</span>readMultiInput(<span style="color:#e6db74">&#39;mess&#39;</span>, (<span style="color:#e6db74">&#39;From&#39;</span>, <span style="color:#e6db74">&#39;To&#39;</span>), initial_contents<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;*_L&#39;</span>, <span style="color:#e6db74">&#39;*_R&#39;</span>))
