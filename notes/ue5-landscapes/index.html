@@ -182,7 +182,6 @@
         <li><a href="#import-layers">Import Layers</a></li>
       </ul>
     </li>
-    <li><a href="#material-layers">Material Layers</a></li>
     <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>	
@@ -429,127 +428,74 @@ Click the <strong>+</strong> icon on the right hand side and select <em>Weight-b
 </ul>
 </li>
 </ul>
-<h1 id="material-layers">Material Layers</h1>
-<ul>
-<li><strong>Create master material</strong>
-<ul>
-<li><em>Create a &ldquo;root&rdquo; material folder</em>
-<ul>
-<li>First lets create a folder for our material assets. Call it <em>Landsacpe_material</em></li>
-</ul>
-</li>
-<li><em>Create Master Material</em>
-<ul>
-<li>In the root folder RMB &gt; Material. call it <em>M_landscape</em> and double click it to open it up.</li>
-<li>Enable Material &gt; <em>Use Material Attributes</em></li>
-<li><em>Create Material Attribute Layers</em>
-<ul>
-<li>Add a <em>Material Attribute Layers</em> node</li>
-<li>Press tab start typing &ldquo;layers&hellip;&rdquo; select <em>Material Attribute Layers</em></li>
-<li>Connect the output of the Material Attribute Layers node to the input of the <em>Result</em> node of the material</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><strong>Create Material Layer</strong>
-<ul>
-<li>In the root folder RMB &gt; Material &gt; Material Layer</li>
-<li>Call it <em>ML_landscape_basic</em> and open it up</li>
-<li><em>Create Attribute set elements</em>
-<ul>
-<li>Select the <em>SetMaterialAttributes</em> node and in the <em>Details</em> panel click the <em>+</em> button 5 times
-<ul>
-<li>Material Attributes &gt; Attribute Set Types &gt; +</li>
-</ul>
-</li>
-<li>Lets rename and reorder the elements so that we have:
-<ul>
-<li>BaseColor</li>
-<li>Specular</li>
-<li>Roughness</li>
-<li>Normal</li>
-<li>Ambient Occlusion</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><em>Create Texture Sample Parameters</em>
-<ul>
-<li>Create a <em>Texture Sample Parameters</em>
-<ul>
-<li>Press tab and start typing &ldquo;text&hellip;&rdquo; select <em>TextureSampleParameter2D</em></li>
-<li>Duplicate it so that we hace 4 samplers, and name them to:
-<ul>
-<li>BaseColor</li>
-<li>Roughness</li>
-<li>Normal</li>
-<li>Ambient Occlusion</li>
-</ul>
-</li>
-<li><em>Note</em> To increase the number of samplers we can use inside a material (and avoid the error if this is not set) select all the samplers and then set the Material Expression Texture Sample &gt; <em>Sampler Source</em> to <em>Shared: Wrap</em></li>
-<li>Set the Sampler type. If we set the defualt texure we also set the sampler type.
-<ul>
-<li><em>BaseColor</em>
-<ul>
-<li>DefaultTexture (keep as is)</li>
-</ul>
-</li>
-<li><em>Normal</em>
-<ul>
-<li>Select the normal sampler and in the Material Expression Texture Base &gt; Click the dropdown that says DefaultTexture and strat typing <em>basef&hellip;</em> select <em>BaseFlattenNormalMap</em>.</li>
-<li>Note this will also set the Sampler Type to Normal</li>
-</ul>
-</li>
-<li><em>Roughness</em></li>
-<li><em>Ambient Occlusion</em>
-<ul>
-<li>Select both nodes (roughness &amp; AO)</li>
-<li>Click the dropdown and start typing &ldquo;whitesq&hellip;&rdquo; select <em>WhiteSquareTexture</em></li>
-<li>here we might want to set the sampler to Masks?? or??</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Connect the samplers to the SetMaterialAttributes node
-<ul>
-<li>BaseColor &amp; Normal
-<ul>
-<li>RGB output</li>
-</ul>
-</li>
-<li>Roughness &amp; AO
-<ul>
-<li>R (since we only use one channel)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>We will control the <em>Specular</em> with a scalar parameter
-<ul>
-<li>Hold <em>S</em> and LMB click</li>
-<li>Name it <em>Specular</em></li>
-<li>Default value : 0.5</li>
-<li>Min : 0</li>
-<li>max : 1</li>
-<li>Connect the parameter to the specular input of the SetMaterialAttributes node</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>
-<a href="https://youtu.be/bNCZHlmKfE4?si=mhDHgjSuY9jv87TI&amp;t=503" target="_blank" rel="noopener">YOUTUBE</a></p>
-<hr>
+<!--  
+# Material Layers
+
+* **Create master material**
+	* *Create a "root" material folder*
+		* First lets create a folder for our material assets. Call it *Landsacpe_material*
+	* *Create Master Material*
+		* In the root folder RMB > Material. call it *M_landscape* and double click it to open it up.
+		* Enable Material > *Use Material Attributes*
+		* *Create Material Attribute Layers* 
+			* Add a *Material Attribute Layers* node
+			* Press tab start typing "layers..." select *Material Attribute Layers*
+			* Connect the output of the Material Attribute Layers node to the input of the *Result* node of the material
+
+---	
+
+* **Create Material Layer**
+	* In the root folder RMB > Material > Material Layer
+	* Call it *ML_landscape_basic* and open it up
+	* *Create Attribute set elements*
+		* Select the *SetMaterialAttributes* node and in the *Details* panel click the *+* button 5 times
+			* Material Attributes > Attribute Set Types > +
+		* Lets rename and reorder the elements so that we have:
+			* BaseColor
+			* Specular
+			* Roughness
+			* Normal
+			* Ambient Occlusion
+	* *Create Texture Sample Parameters*
+		* Create a *Texture Sample Parameters*
+			* Press tab and start typing "text..." select *TextureSampleParameter2D*
+			* Duplicate it so that we hace 4 samplers, and name them to:
+				* BaseColor
+				* Roughness
+				* Normal
+				* Ambient Occlusion
+			* *Note* To increase the number of samplers we can use inside a material (and avoid the error if this is not set) select all the samplers and then set the Material Expression Texture Sample > *Sampler Source* to *Shared: Wrap*
+			* Set the Sampler type. If we set the defualt texure we also set the sampler type.
+				* *BaseColor*
+					* DefaultTexture (keep as is)
+				* *Normal*
+					* Select the normal sampler and in the Material Expression Texture Base > Click the dropdown that says DefaultTexture and strat typing *basef...* select *BaseFlattenNormalMap*.
+					* Note this will also set the Sampler Type to Normal
+				* *Roughness*
+				* *Ambient Occlusion*
+					* Select both nodes (roughness & AO)
+					* Click the dropdown and start typing "whitesq..." select *WhiteSquareTexture*
+					* here we might want to set the sampler to Masks?? or??
+			* Connect the samplers to the SetMaterialAttributes node
+				* BaseColor & Normal
+					* RGB output 
+				* Roughness & AO
+					* R (since we only use one channel)
+		* We will control the *Specular* with a scalar parameter
+			* Hold *S* and LMB click
+			* Name it *Specular*
+			* Default value : 0.5
+			* Min : 0
+			* max : 1
+			* Connect the parameter to the specular input of the SetMaterialAttributes node
+
+---
+
+[YOUTUBE](https://youtu.be/bNCZHlmKfE4?si=mhDHgjSuY9jv87TI&t=503)
+
+---
+
+-->
 <h1 id="resources">Resources</h1>
 <ul>
 <li><strong>Documentation</strong>
