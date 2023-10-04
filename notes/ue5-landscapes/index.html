@@ -250,11 +250,12 @@
 </li>
 <li>Create a <strong>Convert</strong> node
 <ul>
-<li>Unreal expects the data to bi in 16 bit so lets convert the data</li>
+<li>Unreal expects the data to be in 16 bit so lets convert the data</li>
 <li>Create a <strong>Convert</strong> node
 <ul>
 <li>Set the <em>Raster Depth</em> to <em>16 Bit Interger</em></li>
 <li>Set the scope to which planes you want to affect or leave at <em>*</em> to convert all</li>
+<li>If we do not do this you will see some &ldquo;stepping&rdquo; artifacts in the hf in unreal</li>
 </ul>
 </li>
 </ul>
@@ -264,20 +265,13 @@
 <li>Set the <em>Valid Frame Range</em> to Current Frame</li>
 <li>Set the <em>Color Plane</em> to the layer you wish to export (for instance <em>height</em>)</li>
 <li>Set <em>Alpha Plane</em> to (None)</li>
-<li>Set the <em>Output Picture Path</em></li>
-<li><strong>Note!</strong> (Raster Depth)
+<li>Disable <em>Convert to Image Format&rsquo;s Colorspace</em>
 <ul>
-<li>Since we want as much info as possible in the height layer we need to convert the data to 16 bit Integers</li>
-<li>Create a <em>Convert</em> node and set the <em>Raster Depth</em> to 16 Bit Integer</li>
-<li>If we do not do this you will see some &ldquo;stepping&rdquo; artifacts in the hf in unreal</li>
-</ul>
-</li>
-<li><strong>Note!</strong> (Gamma)
-<ul>
-<li>Since we do not want gamma curve applied to the height data turn off <em>Convert to Image Format&rsquo;s Colorspace</em></li>
+<li>We do not want a gamma curve applied to the height data so lets turn off Convert to Image Format&rsquo;s Colorspace</li>
 <li>If we do not turn this off the gamma curve will be baked into the heightfield, meaning the height data will be &ldquo;transformed&rdquo; by the gamma.</li>
 </ul>
 </li>
+<li>Set the <em>Output Picture Path</em></li>
 <li>Render</li>
 </ul>
 </li>
