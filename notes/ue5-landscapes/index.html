@@ -182,6 +182,8 @@
         <li><a href="#import-layers">Import Layers</a></li>
       </ul>
     </li>
+    <li><a href="#material-layers">Material Layers</a></li>
+    <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>	
 			</div>
@@ -203,15 +205,6 @@
 			<h1 id="houdini">Houdini</h1>
 <p>We have created our heightfiled and layers and want to export them.</p>
 <h2 id="heightfield">Heightfield</h2>
-<!-- 
-* Overall size (verts) | Quads / section | Sections / Component |LS Component size | Total LS Components  
---- | --- | --- | --- | --
-8129 x 8129 | 127 | 4 (2x2) | 254x254 | 1024 (32x32)
-4033 x 4033 | 63 | 4 (2x2) | 126x126 | 1024 (32x32)
-2017 x 2017 | 63 | 4 (2x2) |126x126 | 256 (16x16)
-1009 x 1009 | 63 | 4 (2x2) | 126x126 | 64 (8x8)
-1009 x 1009 | 63 | 1 | 63x63 | 256 (16x16)
--->
 <ul>
 <li><strong>Heightfield</strong>
 <ul>
@@ -224,16 +217,17 @@
 </ul>
 </li>
 <li>For a full list see 
-<a href="https://docs.unrealengine.com/5.0/en-US/landscape-technical-guide-in-unreal-engine/#recommendedlandscapesizes" target="_blank" rel="noopener">UE Docs</a></li>
+<a href="https://docs.unrealengine.com/5.3/en-US/landscape-technical-guide-in-unreal-engine/#recommendedlandscapesizes" target="_blank" rel="noopener">UE Docs</a></li>
 </ul>
 </li>
 </ul>
 <h2 id="export">Export</h2>
 <ul>
-<li><strong>COP2 Network</strong>
+<li><strong>Export Heightfiled from Houdini to Unreal</strong>
 <ul>
-<li>Create a <em>COP2 Network</em> and jump in</li>
-<li>Create a <em>SOP Import node</em> and set the SOP path to the output of the HF</li>
+<li>Create a <strong>COP2 Network</strong> and jump in</li>
+<li>Create a <strong>SOP Import node</strong> and set the SOP path to the output of the HF
+<ul>
 <li>Click
 <ul>
 <li>Set resolution from SOP</li>
@@ -241,19 +235,50 @@
 <li>Enable remap range</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>Create a <strong>Flip</strong> node
+<ul>
+<li>Since UE uses a different coordinate system we need to change the data</li>
+<li>Create a flip node
+<ul>
+<li>In the flip tab enable <em>Flop 90 Degrees</em></li>
+</ul>
+</li>
+<li>Connect the output of the sop import node to the input of the flip node</li>
+</ul>
+</li>
+<li>Create a <strong>Convert</strong> node
+<ul>
+<li>Unreal expects the data to bi in 16 bit so lets convert the data</li>
+<li>Create a <strong>Convert</strong> node
+<ul>
+<li>Set the <em>Raster Depth</em> to <em>16 Bit Interger</em></li>
+<li>Set the scope to which planes you want to affect or leave at <em>*</em> to convert all</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><strong>Create a ROP File Output</strong>
 <ul>
 <li>Set the <em>Valid Frame Range</em> to Current Frame</li>
-<li>Set the <em>Output Picture Path</em> for instance &ldquo;<em>debris.png</em>&rdquo; (use the layer name so we know what it is)</li>
-<li>Set the <em>Color Plane</em> to the layer yoy wish to export</li>
+<li>Set the <em>Color Plane</em> to the layer you wish to export (for instance <em>height</em>)</li>
 <li>Set <em>Alpha Plane</em> to (None)</li>
-<li><strong>Note!</strong>
+<li>Set the <em>Output Picture Path</em></li>
+<li><strong>Note!</strong> (Raster Depth)
 <ul>
 <li>Since we want as much info as possible in the height layer we need to convert the data to 16 bit Integers</li>
 <li>Create a <em>Convert</em> node and set the <em>Raster Depth</em> to 16 Bit Integer</li>
+<li>If we do not do this you will see some &ldquo;stepping&rdquo; artifacts in the hf in unreal</li>
 </ul>
 </li>
-<li>Render all images</li>
+<li><strong>Note!</strong> (Gamma)
+<ul>
+<li>Since we do not want gamma curve applied to the height data turn off <em>Convert to Image Format&rsquo;s Colorspace</em></li>
+<li>If we do not turn this off the gamma curve will be baked into the heightfield, meaning the height data will be &ldquo;transformed&rdquo; by the gamma.</li>
+</ul>
+</li>
+<li>Render</li>
 </ul>
 </li>
 </ul>
@@ -267,36 +292,46 @@
 <li>Create or open up the Level you want to add the landscape to</li>
 <li>Press <em>Shift + 2</em> or select  <em>Landscape</em> in the top left dropdown of the menu bar.</li>
 <li>Make sure the <em>Import from file</em> tab is selected and browse to the heightfield file we just exported.</li>
-<li>Match Unreal HF to Houdini HF size &amp; position
+<li>The preview will look a bit off. To fix this we need to set the <em>Location</em> and the <em>Scale</em> before we import the data.</li>
+<li><strong>Match Unreal HF to Houdini HF size &amp; position</strong>
 <ul>
-<li>Get the <strong>height</strong> of the heightfield (hf max  - hf min)
+<li>To calculate this we need some info about our Houdini Heightfield, we need
 <ul>
-<li>You can get the min and max by adding a <em>Heightfield Remap</em> node and pressing <em>Compute Range</em>, the you get the data from <em>input min</em> &amp; <em>input max</em></li>
-<li>In my case the height was was (100.019) - (-0.000186826) = 100.019186826</li>
-</ul>
-</li>
-<li>You can get the size by looking at the Size parameter of the &ldquo;root&rdquo; Heightfield node</li>
-<li>In Unreal 1 pixel is equal to one meter.</li>
-<li><strong>Size</strong>
+<li>HF height min</li>
+<li>HF Height</li>
+<li>HF size</li>
+<li>HF resolution (the grid samples)</li>
+<li><em>Note</em> You can get this data from the heightfield primitive
 <ul>
-<li>To get the size correct we multiply the <em>Scale X</em> with the size and divide with the height nap resolution
-<ul>
-<li><strong>Size X</strong> = 100 <strong>×</strong> HF size in Houdini <strong>∕</strong> HF texture resolution</li>
-<li><strong>Size Y</strong> = 100 <strong>×</strong> HF size in Houdini <strong>∕</strong> HF texture resolution</li>
-<li><strong>Size Z</strong> = 100 <strong>×</strong> HF <em>height</em> in houdini <strong>∕</strong> 512</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Location</strong>
-<ul>
-<li>To get the correct Z Location we take the HF height in houdini divide it by 2 and multiply with 100
-<ul>
-<li><strong>Location Z</strong> = HF <em>height</em> in houdini <strong>∕</strong> 2 <strong>×</strong> 100</li>
+<li>resolution = prim.resolution()</li>
+<li>bounds = prim.intrinsicValue(&lsquo;bounds&rsquo;)</li>
+<li>height_max = prim.volumeMax()</li>
+<li>height_min = prim.volumeMin()</li>
 </ul>
 </li>
 </ul>
 </li>
+<li><strong>Calculating Heightmap Z Scale</strong>
+<ul>
+<li>Unreal Engine calculates your heightmap&rsquo;s height by using values between -256 and 255.992, stored with 16-bit precision. The calculated height is then multiplied by the Z scale value that you input when you import the heightmap data. For example, a Z scale value of 1 results in a maximum height of roughly 256 cm and a maximum depth of -256 cm. Therefore, at the default Z scale value of 100, your height values will be between 256 m and -256 m.</li>
+</ul>
+</li>
+<li><strong>UE Scale</strong>
+<ul>
+<li>ratio = 1.0/512</li>
+<li>ue_scale_x = size * 100 / resolution</li>
+<li>ue_scale_y = size * 100 / resolution</li>
+<li>ue_scale_z = (height*100)*ratio</li>
+</ul>
+</li>
+<li><strong>UE Location</strong>
+<ul>
+<li>ue_location_x = (min_x + size*.5)*100</li>
+<li>ue_location_y = (min_z + size*.5)*100</li>
+<li>ue_location_z = (height_min + height*.5)*100</li>
+</ul>
+</li>
+<li>Enter Theese values in the <em>Location</em> and <em>Scale</em> parameters</li>
 </ul>
 </li>
 <li>Click import</li>
@@ -348,6 +383,7 @@
 <li><em>Name the layers</em>
 <ul>
 <li>Expand the layers and rename the first <em>Layer Name</em> to &ldquo;base&rdquo; and the second to &ldquo;debris&rdquo;</li>
+<li><strong>Gotcha</strong> The layer names can not contain underscores (&quot;_&quot;). If it does the layers is not displayed correctly (tested in UE 5.3)</li>
 </ul>
 </li>
 </ul>
@@ -396,6 +432,150 @@ Click the <strong>+</strong> icon on the right hand side and select <em>Weight-b
 </ul>
 </li>
 <li>We can now switch back to selection mode and see our landscape in all its glory!</li>
+</ul>
+</li>
+</ul>
+<h1 id="material-layers">Material Layers</h1>
+<ul>
+<li><strong>Create master material</strong>
+<ul>
+<li><em>Create a &ldquo;root&rdquo; material folder</em>
+<ul>
+<li>First lets create a folder for our material assets. Call it <em>Landsacpe_material</em></li>
+</ul>
+</li>
+<li><em>Create Master Material</em>
+<ul>
+<li>In the root folder RMB &gt; Material. call it <em>M_landscape</em> and double click it to open it up.</li>
+<li>Enable Material &gt; <em>Use Material Attributes</em></li>
+<li><em>Create Material Attribute Layers</em>
+<ul>
+<li>Add a <em>Material Attribute Layers</em> node</li>
+<li>Press tab start typing &ldquo;layers&hellip;&rdquo; select <em>Material Attribute Layers</em></li>
+<li>Connect the output of the Material Attribute Layers node to the input of the <em>Result</em> node of the material</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Create Material Layer</strong>
+<ul>
+<li>In the root folder RMB &gt; Material &gt; Material Layer</li>
+<li>Call it <em>ML_landscape_basic</em> and open it up</li>
+<li><em>Create Attribute set elements</em>
+<ul>
+<li>Select the <em>SetMaterialAttributes</em> node and in the <em>Details</em> panel click the <em>+</em> button 5 times
+<ul>
+<li>Material Attributes &gt; Attribute Set Types &gt; +</li>
+</ul>
+</li>
+<li>Lets rename and reorder the elements so that we have:
+<ul>
+<li>BaseColor</li>
+<li>Specular</li>
+<li>Roughness</li>
+<li>Normal</li>
+<li>Ambient Occlusion</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Create Texture Sample Parameters</em>
+<ul>
+<li>Create a <em>Texture Sample Parameters</em>
+<ul>
+<li>Press tab and start typing &ldquo;text&hellip;&rdquo; select <em>TextureSampleParameter2D</em></li>
+<li>Duplicate it so that we hace 4 samplers, and name them to:
+<ul>
+<li>BaseColor</li>
+<li>Roughness</li>
+<li>Normal</li>
+<li>Ambient Occlusion</li>
+</ul>
+</li>
+<li><em>Note</em> To increase the number of samplers we can use inside a material (and avoid the error if this is not set) select all the samplers and then set the Material Expression Texture Sample &gt; <em>Sampler Source</em> to <em>Shared: Wrap</em></li>
+<li>Set the Sampler type. If we set the defualt texure we also set the sampler type.
+<ul>
+<li><em>BaseColor</em>
+<ul>
+<li>DefaultTexture (keep as is)</li>
+</ul>
+</li>
+<li><em>Normal</em>
+<ul>
+<li>Select the normal sampler and in the Material Expression Texture Base &gt; Click the dropdown that says DefaultTexture and strat typing <em>basef&hellip;</em> select <em>BaseFlattenNormalMap</em>.</li>
+<li>Note this will also set the Sampler Type to Normal</li>
+</ul>
+</li>
+<li><em>Roughness</em></li>
+<li><em>Ambient Occlusion</em>
+<ul>
+<li>Select both nodes (roughness &amp; AO)</li>
+<li>Click the dropdown and start typing &ldquo;whitesq&hellip;&rdquo; select <em>WhiteSquareTexture</em></li>
+<li>here we might want to set the sampler to Masks?? or??</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Connect the samplers to the SetMaterialAttributes node
+<ul>
+<li>BaseColor &amp; Normal
+<ul>
+<li>RGB output</li>
+</ul>
+</li>
+<li>Roughness &amp; AO
+<ul>
+<li>R (since we only use one channel)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We will control the <em>Specular</em> with a scalar parameter
+<ul>
+<li>Hold <em>S</em> and LMB click</li>
+<li>Name it <em>Specular</em></li>
+<li>Default value : 0.5</li>
+<li>Min : 0</li>
+<li>max : 1</li>
+<li>Connect the parameter to the specular input of the SetMaterialAttributes node</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>
+<a href="https://youtu.be/bNCZHlmKfE4?si=mhDHgjSuY9jv87TI&amp;t=503" target="_blank" rel="noopener">YOUTUBE</a></p>
+<hr>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><strong>Documentation</strong>
+<ul>
+<li><strong>Epic</strong>
+<ul>
+<li>
+<a href="https://docs.unrealengine.com/5.3/en-US/landscape-technical-guide-in-unreal-engine" target="_blank" rel="noopener">Landscape Technical Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Tutorials</strong>
+<ul>
+<li><strong>Video</strong>
+<ul>
+<li>
+<a href="https://youtu.be/9v_7OmgNzIA?si=Iom1ogGda0nwCCHq" target="_blank" rel="noopener">Lidar &gt; Houdini &gt; Unreal</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
