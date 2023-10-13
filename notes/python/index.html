@@ -188,6 +188,7 @@
     </li>
     <li><a href="#misc">Misc</a>
       <ul>
+        <li><a href="#super">Super</a></li>
         <li><a href="#function">Function</a></li>
         <li><a href="#module">Module</a></li>
         <li><a href="#inspect">Inspect</a></li>
@@ -285,7 +286,14 @@ name_list <span style="color:#f92672">=</span> [
 <span style="color:#75715e"># /Game/car/wheel/last/</span>
 <span style="color:#75715e"># /Game/one two three/box/</span>
 </code></pre></div><h1 id="misc">Misc</h1>
-<h2 id="function">Function</h2>
+<h2 id="super">Super</h2>
+<p>I stumbeled on an error when using <em>QtWidgets.QStyledItemDelegate</em> in PySide and realized it was caused by how I called the super class.</p>
+<p>The old usage of super required an explicit passing of both the class and instance it must operate from, requiring a breaking of the DRY (Don’t Repeat Yourself) rule. This hinders any change in class name, and is often considered a wart by many.</p>
+<p>The premise of the new super usage suggested is as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">super()<span style="color:#f92672">.</span>foo(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</code></pre></div><p>to replace the old:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">super(Foo, self)<span style="color:#f92672">.</span>foo(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</code></pre></div><h2 id="function">Function</h2>
 <p>You can call an instance method like class method by passing in an instance of the class&hellip;
 Weird thing to do, but I have done it sometimes when calling an instance method of a Qt widget when deving.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_class<span style="color:#f92672">.</span>cool_function(my_class())
