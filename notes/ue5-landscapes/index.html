@@ -182,6 +182,7 @@
         <li><a href="#import-layers">Import Layers</a></li>
       </ul>
     </li>
+    <li><a href="#rvt">RVT</a></li>
     <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>	
@@ -496,6 +497,28 @@ Click the <strong>+</strong> icon on the right hand side and select <em>Weight-b
 ---
 
 -->
+<h1 id="rvt">RVT</h1>
+<p>A 
+<a href="https://docs.unrealengine.com/5.3/en-US/runtime-virtual-texturing-in-unreal-engine/" target="_blank" rel="noopener">Runtime Virtual Texture (RVT)</a> creates its texel data on demand using the GPU at runtime, and works similarly to traditional texture mapping. The RVT caches shading data over large areas, making them a good fit for Landscape shading that uses decal-like materials and splines that are well suited to conform to the terrain.</p>
+<ul>
+<li>Materials are compiled in one of two contexts for use with RVT:
+<ul>
+<li>To render to the RVT</li>
+<li>To render to other passes</li>
+</ul>
+</li>
+</ul>
+<p>The <em>Runtime Virtual Texture Replace</em> expression is ideal when wanting part of your material logic to render to the RVT.</p>
+<ul>
+<li><strong>Select how the material is rendered to the RVT</strong>
+<ul>
+<li>Lets say that you have set up a material based on the distance to the camera. When the material is rendering to the RVT there is no concept of a camera, it is just &ldquo;rendering top down&rdquo;.</li>
+<li>If we want to be able to be explicit in how we want to render to the RVT we can use a Runtime Virtual Texture Replace.</li>
+<li>The <em>Default</em> pin will be used when it is rendering the default material&hellip;</li>
+<li>&hellip;and the VirtualTextureOutput will be used when it is renering to the RVT.</li>
+</ul>
+</li>
+</ul>
 <h1 id="resources">Resources</h1>
 <ul>
 <li><strong>Documentation</strong>
