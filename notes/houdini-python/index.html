@@ -352,8 +352,20 @@
         <span style="color:#66d9ef">print</span>(type(node))
         <span style="color:#66d9ef">print</span>(isinstance(node, hou<span style="color:#f92672">.</span>ObjNode)) 
 </code></pre></div><h2 id="flag">Flag</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">scale_xform_node<span style="color:#f92672">.</span>setGenericFlag(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>Bypass, True)
-</code></pre></div><h1 id="parms">Parms</h1>
+<ul>
+<li><strong>Set Flag</strong>
+<ul>
+<li><em>Bypass</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>setGenericFlag(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>Bypass, True)
+</code></pre></div></li>
+<li><em>Comment</em>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node<span style="color:#f92672">.</span>setComment(<span style="color:#e6db74">&#39;Hello World&#39;</span>)
+node<span style="color:#f92672">.</span>setGenericFlag(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>DisplayComment, True)
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h1 id="parms">Parms</h1>
 <p>Here is a quick one liner to print all the parms of the selected node aswell as node specifed with a path.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(p<span style="color:#f92672">.</span>name() <span style="color:#66d9ef">for</span> p <span style="color:#f92672">in</span> hou<span style="color:#f92672">.</span>selectedNodes()[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>parms()))
 
@@ -364,6 +376,15 @@ node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># string parm</span>
 string_parm <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>StringParmTemplate(<span style="color:#e6db74">&#39;prefix&#39;</span>, <span style="color:#e6db74">&#39;Prefix&#39;</span>, <span style="color:#ae81ff">1</span>)
 wrangle_node<span style="color:#f92672">.</span>addSpareParmTuple(string_parm)
+
+toggle_parm <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>ToggleParmTemplate(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;toggle&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Toggle&#39;</span>, default_value<span style="color:#f92672">=</span>True)
+wrangle_node<span style="color:#f92672">.</span>addSpareParmTuple(toggle_parm)
+
+float_parm <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>FloatParmTemplate(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;float&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Float&#39;</span>, num_components<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, default_value<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span>,), min<span style="color:#f92672">=-</span><span style="color:#ae81ff">10</span>, max<span style="color:#f92672">=</span><span style="color:#ae81ff">10.0</span>)
+wrangle_node<span style="color:#f92672">.</span>addSpareParmTuple(float_parm)
+
+ramp_parm <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>RampParmTemplate(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ramp&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ramp&#39;</span>, ramp_parm_type<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>rampParmType<span style="color:#f92672">.</span>Float)
+wrangle_node<span style="color:#f92672">.</span>addSpareParmTuple(ramp_parm)
 </code></pre></div><p>A 
 <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html" target="_blank" rel="noopener">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
 <p>For example, the &ldquo;t&rdquo; parm tuple on geometry objects can be described by a hou.FloatParmTemplate – it has a label of &ldquo;Transform&rdquo;, a data type of hou.parmData.Float, 3 components, a naming scheme of hou.parmNamingScheme.XYZW, etc.</p>
