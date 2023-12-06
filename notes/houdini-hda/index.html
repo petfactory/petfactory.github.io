@@ -180,7 +180,11 @@
       <ul>
         <li><a href="#tags">Tags</a></li>
         <li><a href="#viewport-selection">Viewport Selection</a></li>
-        <li><a href="#menus">Menus</a></li>
+        <li><a href="#menus">Menus</a>
+          <ul>
+            <li><a href="#dropdown">Dropdown</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#extra-files">Extra Files</a>
@@ -435,7 +439,72 @@ rigtreeutils<span style="color:#f92672">.</span>selectPointGroupParm(kwargs)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">your_nice_menu</span>(kwargs):
     menu_data <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;value A&#39;</span>, <span style="color:#e6db74">&#39;Label A&#39;</span>, <span style="color:#e6db74">&#39;value B&#39;</span>, <span style="color:#e6db74">&#39;Label B&#39;</span>]
     <span style="color:#66d9ef">return</span> menu_data
+</code></pre></div><pre><code></code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dropdown">Dropdown</h3>
+<p>If you want to add a dropdown menu to for instance set preset on some parms you can use the following workflow. I borrowed the setup from the <em>Heightfield layer properties</em> node.</p>
+<ul>
+<li>Create an HDA
+<ul>
+<li><strong>Add an Ordered Menu parm</strong>
+<ul>
+<li>On the <em>Parameter</em> tab
+<ul>
+<li>Give the menu parm the name <em>&ldquo;preset&rdquo;</em> and label <em>&ldquo;Preset&rdquo;</em></li>
+<li>In the <em>Callback script</em> add <em>hou.phm().set_preset(kwargs)</em></li>
+</ul>
+</li>
+<li>On the <em>Menu</em> tab
+<ul>
+<li>Add Menu Items:<br>
+Note that we can choose to leave the token section empty on the first menu entry, since we will not use it
+<ul>
+<li><em>Token:</em> leave empty <em>Label</em> Set Preset     ↓</li>
+<li><em>Token:</em> low  <em>Label:</em> Low</li>
+<li><em>Token:</em> mid <em>Label:</em> Mid</li>
+<li><em>Token:</em> high <em>Label:</em> High</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add Callback Script</strong>
+<ul>
+<li>Add python Module on the scripts section and add following snippet:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_preset</span>(kwargs):
+
+    node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]  
+    selected <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#34;script_value&#34;</span>]   
+              
+    dict_low <span style="color:#f92672">=</span>  {   
+        <span style="color:#e6db74">&#39;value&#39;</span>: <span style="color:#ae81ff">0.0</span>,
+        <span style="color:#e6db74">&#39;num&#39;</span>:<span style="color:#ae81ff">0</span>
+    }
+    dict_mid <span style="color:#f92672">=</span>  {   
+        <span style="color:#e6db74">&#39;value&#39;</span>: <span style="color:#ae81ff">0.5</span>,
+        <span style="color:#e6db74">&#39;num&#39;</span>:<span style="color:#ae81ff">12</span>
+    }
+    dict_high <span style="color:#f92672">=</span>  {   
+        <span style="color:#e6db74">&#39;value&#39;</span>: <span style="color:#ae81ff">1.0</span>,
+        <span style="color:#e6db74">&#39;num&#39;</span>:<span style="color:#ae81ff">42</span>
+    }
+
+    <span style="color:#66d9ef">if</span> selected <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;low&#39;</span>:
+        node<span style="color:#f92672">.</span>setParms(dict_low)
+    <span style="color:#66d9ef">elif</span> selected <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;mid&#39;</span>:
+        node<span style="color:#f92672">.</span>setParms(dict_mid)
+    <span style="color:#66d9ef">elif</span> selected <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;high&#39;</span>:
+        node<span style="color:#f92672">.</span>setParms(dict_high)
+
+    kwargs[<span style="color:#e6db74">&#39;parm&#39;</span>]<span style="color:#f92672">.</span>set(<span style="color:#ae81ff">0</span>)         
 </code></pre></div><pre><code>
+
+
 </code></pre></li>
 </ul>
 </li>
