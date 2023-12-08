@@ -198,6 +198,7 @@
     </li>
     <li><a href="#view">View</a>
       <ul>
+        <li><a href="#qtreeview">QTreeView</a></li>
         <li><a href="#misc">Misc</a></li>
         <li><a href="#visual-properties">Visual properties</a></li>
         <li><a href="#drag--drop">Drag &amp; Drop</a></li>
@@ -471,6 +472,23 @@ form_layout<span style="color:#f92672">.</span>addRow(<span style="color:#e6db74
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">label <span style="color:#f92672">=</span> form_layout<span style="color:#f92672">.</span>itemAt(<span style="color:#ae81ff">0</span>, QtWidgets<span style="color:#f92672">.</span>QFormLayout<span style="color:#f92672">.</span>LabelRole)<span style="color:#f92672">.</span>widget()
 label<span style="color:#f92672">.</span>setToolTip(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
 </code></pre></div><h1 id="view">View</h1>
+<h2 id="qtreeview">QTreeView</h2>
+<ul>
+<li><strong>Set Selection</strong>
+<ul>
+<li><strong>Select a row</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>tree_view<span style="color:#f92672">.</span>clearSelection()
+bottom_right_index <span style="color:#f92672">=</span> top_left_index<span style="color:#f92672">.</span>sibling(top_left_index<span style="color:#f92672">.</span>row(), last_col)
+selection <span style="color:#f92672">=</span> QtCore<span style="color:#f92672">.</span>QItemSelection(top_left_index, bottom_right_index)
+self<span style="color:#f92672">.</span>tree_view<span style="color:#f92672">.</span>selectionModel()<span style="color:#f92672">.</span>select(selection, QtCore<span style="color:#f92672">.</span>QItemSelectionModel<span style="color:#f92672">.</span>Select)
+</code></pre></div></li>
+<li><strong>Select index</strong>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>tree_view<span style="color:#f92672">.</span>clearSelection()
+self<span style="color:#f92672">.</span>tree_view<span style="color:#f92672">.</span>selectionModel()<span style="color:#f92672">.</span>setCurrentIndex(index, QtCore<span style="color:#f92672">.</span>QItemSelectionModel<span style="color:#f92672">.</span>Select)
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 <h2 id="misc">Misc</h2>
 <p><strong>Get the center of the display</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># get the available screens</span>
