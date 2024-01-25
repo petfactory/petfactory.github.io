@@ -179,11 +179,12 @@
     <li><a href="#dictionary">Dictionary</a>
       <ul>
         <li><a href="#sorting">Sorting</a></li>
-        <li><a href="#string">String</a>
-          <ul>
-            <li><a href="#regex">regex</a></li>
-          </ul>
-        </li>
+      </ul>
+    </li>
+    <li><a href="#string">String</a>
+      <ul>
+        <li><a href="#f-string">f-string</a></li>
+        <li><a href="#regex">regex</a></li>
       </ul>
     </li>
     <li><a href="#misc">Misc</a>
@@ -272,8 +273,38 @@ data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;B&#3
 <span style="color:#66d9ef">print</span>(dict(sorted(data<span style="color:#f92672">.</span>items(), key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> item: item[<span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;height&#39;</span>])))
 <span style="color:#75715e"># {&#39;A&#39;: {&#39;width&#39;: 1, &#39;height&#39;: 0}, &#39;B&#39;: {&#39;width&#39;: 2, &#39;height&#39;: 1}, &#39;C&#39;: {&#39;width&#39;: 0, &#39;height&#39;: 2}}</span>
 
-</code></pre></div><h2 id="string">String</h2>
-<h3 id="regex">regex</h3>
+</code></pre></div><h1 id="string">String</h1>
+<h2 id="f-string">f-string</h2>
+<p><strong>Padding</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;- {&#39;left&#39;:&lt;10}-&#34;</span>)
+<span style="color:#75715e"># - left      -</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;- {&#39;right&#39;:&gt;10}-&#34;</span>)
+<span style="color:#75715e"># -      right-</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;- {&#39;center&#39;:^10}-&#34;</span>)
+<span style="color:#75715e"># -   center  -</span>
+num <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{num:04}&#39;</span>)
+<span style="color:#75715e"># 0001</span>
+</code></pre></div><p><strong>Type Formating</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">number <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span>
+padding <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{&#39;decimal&#39;:&lt;{padding}}{number:d}&#34;</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{&#39;octal&#39;:&lt;{padding}}{number:o}&#34;</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{&#39;hex&#39;:&lt;{padding}}{number:X}&#34;</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{&#39;binary&#39;:&lt;{padding}}{number:b}&#34;</span>)
+</code></pre></div><p>(Format Specification)[https://docs.python.org/3/library/string.html#format-specification-mini-language]</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>
+fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;-&#39;</span>
+align <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;^&#39;</span>
+width <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{msg:{fill}{align}{width}}&#39;</span>)
+<span style="color:#75715e"># ---------hello----------</span>
+
+fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;.&#39;</span>
+align <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;&#39;</span>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{msg:{fill}{align}{width}}&#39;</span>)
+<span style="color:#75715e"># hello...................</span>
+</code></pre></div><h2 id="regex">regex</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
 RE_MULTI_SLASH_AND_SPACE <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;[/ ]{2,}&#39;</span>)
 name_list <span style="color:#f92672">=</span> [
@@ -387,7 +418,7 @@ name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>
                     <a class="py-2 home-icon" href="https://www.petfactory.se/">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
                     </a>
-                    <span class="footer-logo-lext">petfactory &copy; 2023</span>
+                    <span class="footer-logo-lext">petfactory &copy; 2024</span>
                 </div>
 
                 <div class="col-md-6 social-list">

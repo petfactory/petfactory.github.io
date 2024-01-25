@@ -104,7 +104,7 @@ With the Settings options, you can specify additional configurable items to use 
       <pubDate>Wed, 18 Aug 2021 22:47:22 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-cinematics/</guid>
-      <description>General Tips Camera  Perspective &amp;amp; Camera views  When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup. Pane setup  3dview (top left corner) &amp;gt; layouts &amp;gt; Two Panes (side by side) Set the cine camera view to use Cinematic Viewport  When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)     Cinematic Control  On the pane that you will use as a perspective camera, disable allow cinematic control.</description>
+      <description>General Tips Shortcuts  Camera  Toggle Camera / Perspective  Shift C      Camera  Perspective &amp;amp; Camera views  When you are animating a camera it can be nice to use a 2 pane view (cam and persp) setup. Pane setup  3dview (top left corner) &amp;gt; layouts &amp;gt; Two Panes (side by side) Set the cine camera view to use Cinematic Viewport  When a view is set to use the cinematic viewport you get a menu on the top right to set a number of overlays (grid, crosshair, action safe etc)     Cinematic Control  On the pane that you will use as a perspective camera, disable allow cinematic control.</description>
     </item>
     
     <item>
@@ -113,10 +113,7 @@ With the Settings options, you can specify additional configurable items to use 
       <pubDate>Tue, 10 Aug 2021 22:03:02 +0200</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-notes/</guid>
-      <description>Settings Viewports  Level Editor &amp;gt; Viewports  Controls &amp;gt;  Invert Middle Mouse Pan : On Advanced &amp;gt;  Use distance-scaled camera speed : On Orbit camera around selection : On        Configuration files The UE5 docs on configuration files
-A tips &amp;amp; tricks video of setting up configuration files
- Invert Middle Mouse Pan
-To pan the viewport I like to invert the middle mouse pan.</description>
+      <description>Settings Viewports  Level Editor &amp;gt; Viewports  Controls &amp;gt;  Invert Middle Mouse Pan : On Advanced &amp;gt;  Use distance-scaled camera speed : On Orbit camera around selection : On     Look and Feel &amp;gt;  Enable Arcball Rotate : On Enable Screen Rotate : On     Content Editor &amp;gt; Level Sequence Editor  General &amp;gt;  Left Mouse Drag does Marquee : On      Configuration files The UE5 docs on configuration files</description>
     </item>
     
     <item>

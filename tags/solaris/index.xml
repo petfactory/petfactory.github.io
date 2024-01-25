@@ -88,8 +88,8 @@ Modeled in Bricklink Studio</description>
       <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
       
       <guid>https://www.petfactory.se/work/lego-chappie/</guid>
-      <description>Lego model from: Mecabricks
-Mocap from: Mixamo</description>
+      <description>The model was animated using mocap retargeting with KineFX in Houdini. The animation (both the character and cameras) was then exported to a custom format and imported to Unreal Engine 5.3 using pipeline tools that I am developing. The sequence was rendered using the Path Tracer in UE and comped and graded in DaVinci Resolve.
+  Houdini project. Exploring KineFX (procedural rigging and animation framework), rigid body dynamics and Solaris (scene building, layout, lighting, and rendering tools based on the USD framework)</description>
     </item>
     
   </channel>

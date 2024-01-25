@@ -385,6 +385,9 @@ wrangle_node<span style="color:#f92672">.</span>addSpareParmTuple(float_parm)
 
 ramp_parm <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>RampParmTemplate(name<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ramp&#39;</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ramp&#39;</span>, ramp_parm_type<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>rampParmType<span style="color:#f92672">.</span>Float)
 wrangle_node<span style="color:#f92672">.</span>addSpareParmTuple(ramp_parm)
+
+<span style="color:#75715e"># add conditional</span>
+your_parm<span style="color:#f92672">.</span>setConditional(hou<span style="color:#f92672">.</span>parmCondType<span style="color:#f92672">.</span>DisableWhen, <span style="color:#e6db74">&#34;{ other_parm == 0 }&#34;</span>)
 </code></pre></div><p>A 
 <a href="https://www.sidefx.com/docs/houdini/hom/hou/ParmTemplate.html" target="_blank" rel="noopener">ParmTemplates</a> describes a parameter and the type of data it holds, but it does not store the current value of a parameter. only hou.Parm objects inside hou.ParmTuple objects actually store parameter values. You can think of a hou.ParmTuple as an instance of a ParmTemplate.</p>
 <p>For example, the &ldquo;t&rdquo; parm tuple on geometry objects can be described by a hou.FloatParmTemplate – it has a label of &ldquo;Transform&rdquo;, a data type of hou.parmData.Float, 3 components, a naming scheme of hou.parmNamingScheme.XYZW, etc.</p>
@@ -674,7 +677,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
                     <a class="py-2 home-icon" href="https://www.petfactory.se/">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
                     </a>
-                    <span class="footer-logo-lext">petfactory &copy; 2023</span>
+                    <span class="footer-logo-lext">petfactory &copy; 2024</span>
                 </div>
 
                 <div class="col-md-6 social-list">

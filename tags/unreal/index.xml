@@ -23,5 +23,15 @@ I also had some software specific aims
  Houdini  KineFX  I wanted to explore rigging in KineFX (the procedural rigging toolset in Houdini) More specifically I wanted to learn how to create KineFX rig HDAs Explore how one rig HDA can drive another Create camera HDA for more quick camera animation   Scripting  Write a custom exporter to export a rig HDA to Unreal sequencer Write a custom exporter for camera animation to Unreal and sequencer     Unreal  General  As I am relatively new to Unreal just starting to use it to produce animation Get to know  Sequencer Movie render queue OCIO workflow     Scripting  Camera &amp;amp; object animation importer      This is a part of an ongoing personal project, so the assets are evolved over time.</description>
     </item>
     
+    <item>
+      <title>Lego - Chappie</title>
+      <link>https://www.petfactory.se/work/lego-chappie/</link>
+      <pubDate>Sun, 01 May 2022 15:20:58 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/lego-chappie/</guid>
+      <description>The model was animated using mocap retargeting with KineFX in Houdini. The animation (both the character and cameras) was then exported to a custom format and imported to Unreal Engine 5.3 using pipeline tools that I am developing. The sequence was rendered using the Path Tracer in UE and comped and graded in DaVinci Resolve.
+  Houdini project. Exploring KineFX (procedural rigging and animation framework), rigid body dynamics and Solaris (scene building, layout, lighting, and rendering tools based on the USD framework)</description>
+    </item>
+    
   </channel>
 </rss>
