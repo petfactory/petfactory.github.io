@@ -178,6 +178,7 @@
     <li><a href="#custom-hda-path">Custom HDA Path</a></li>
     <li><a href="#parameters">Parameters</a>
       <ul>
+        <li><a href="#button-strip">Button Strip</a></li>
         <li><a href="#tags">Tags</a></li>
         <li><a href="#viewport-selection">Viewport Selection</a></li>
         <li><a href="#menus">Menus</a>
@@ -313,6 +314,104 @@ Here I am using the reverse domain name notation, which in my case is:
 </ul>
 </li>
 </ul>
+<h2 id="button-strip">Button Strip</h2>
+<ul>
+<li>Add a button strip to HDA
+<ul>
+<li>Open the Edit Type Propreties dialog
+<ul>
+<li>RMB &gt; Type propertias</li>
+</ul>
+</li>
+<li>In the Parametrs section darg and drop a Buttos Strip Parameter to you HDA</li>
+<li>With the parameter added and selected make sure trhe Menu tab is selected in the Parameter Description window</li>
+<li>In the Menu Items section add items to your button strip by filling in the Token and Labels.</li>
+<li>Toggle &amp; Normal
+<ul>
+<li>If you want a button strip that allows for multiple choices to be set choose the <em>Toggle</em></li>
+<li>If you want Radiao button style (only one choice at a time) select <em>Normal</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Get the parametar value from the button strip. To read more about botton strips the docs are 
+<a href="https://www.sidefx.com/docs/houdini/hom/locations.html#button_strip_scripts" target="_blank" rel="noopener">here</a></p>
+<ul>
+<li>Get data from a <strong>Toggle</strong> button strip
+<ul>
+<li>Not that the value you get when quering the value of a button strip set ti Toggle is a bitfield</li>
+<li>To easily process the data you can use the functions below</li>
+<li>The snippet below are run an a button strip with 3 menu items.
+<ul>
+<li>The token on the itemas are 0, 1, 2</li>
+<li>Theese can be whatever you want, as can the label be.</li>
+<li>In this example the first and third menu was enabled</li>
+</ul>
+</li>
+<li>As you can se in the <em>strip_to_tokens</em> def the selected enabled tokens are returned in a list</li>
+<li>In the <em>bitfield_to_list</em> the &ldquo;value&rdquo; is returned in a list with the length of the size parameter</li>
+<li>The values are [1, 2, 4] in this  case since we have 3 items (the velaue 0 is all turned off)</li>
+<li>As you can see we use powers of to</li>
+<li>To set The value of a button strip in Toggle mode you need to add the values together.
+<ul>
+<li>To select the first and third item of the button strip we set the parm value to 5
+<ul>
+<li>Add 1 (the first item) + 4 (the third) = 5</li>
+</ul>
+</li>
+<li>To select the first, second and third item of the button strip we set the parm value to 7
+<ul>
+<li>Add 1 + 2 + 4 = 7</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">strip_to_tokens</span>(parm):
+    bitfield <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>eval()
+    tokens <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>parmTemplate()<span style="color:#f92672">.</span>menuItems()
+    <span style="color:#66d9ef">return</span> [token <span style="color:#66d9ef">for</span> n, token <span style="color:#f92672">in</span> enumerate(tokens) <span style="color:#66d9ef">if</span> bitfield <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> n)]
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">is_n_selected</span>(bitfield, n):
+    <span style="color:#66d9ef">return</span> bitfield <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> n)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bitfield_to_list</span>(bitfield, size<span style="color:#f92672">=</span><span style="color:#ae81ff">32</span>):
+    <span style="color:#66d9ef">return</span> [bitfield <span style="color:#f92672">&amp;</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&lt;</span> n) <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(size)]
+
+node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/btn_strip_toggle&#39;</span>)
+button_strip_parm <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;strip&#39;</span>)
+bitfield <span style="color:#f92672">=</span> button_strip_parm<span style="color:#f92672">.</span>eval()
+
+strip_to_tokens_val <span style="color:#f92672">=</span> strip_to_tokens(button_strip_parm)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{&#34;-&#34;*20}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">strip_to_token</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">{strip_to_tokens_val}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#75715e"># [&#39;0&#39;, &#39;2&#39;]</span>
+
+bitfield_to_list_val <span style="color:#f92672">=</span> bitfield_to_list(bitfield, <span style="color:#ae81ff">8</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{&#34;-&#34;*20}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">bitfield_to_list</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">{bitfield_to_list_val}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#75715e"># [1, 0, 4, 0, 0, 0, 0, 0]</span>
+
+is_n_selected_val <span style="color:#f92672">=</span> is_n_selected(bitfield, <span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{&#34;-&#34;*20}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">is_n_selected</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">{is_n_selected_val}&#39;</span>)
+<span style="color:#75715e"># 1</span>
+</code></pre></div><p>Get the values from a button strip in Normal mode</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_selected_token</span>(parm):
+    selected <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>eval()
+    tokens <span style="color:#f92672">=</span> parm<span style="color:#f92672">.</span>parmTemplate()<span style="color:#f92672">.</span>menuItems()
+    <span style="color:#66d9ef">return</span> tokens[selected]
+</code></pre></div><p>Here is a Hip file with some examples</p>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/hips/button_strip_bitmask.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">button_strip_bitmask.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Example of a button strip, in Normal and Toggle mode</span>
+
+</div>
 <h2 id="tags">Tags</h2>
 <p>
 <a href="https://www.sidefx.com/docs/houdini/ref/windows/optype.html" target="_blank" rel="noopener">Operator Type Properties</a></p>
