@@ -185,7 +185,12 @@
         <li><a href="#light-types">Light Types</a></li>
       </ul>
     </li>
-    <li><a href="#tips">Tips</a>
+    <li><a href="#path-tracing">Path Tracing</a>
+      <ul>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </li>
+    <li><a href="#tips-1">Tips</a>
       <ul>
         <li><a href="#artifacts">Artifacts</a></li>
       </ul>
@@ -788,7 +793,21 @@ When items are added the level that are the current one will get them. To select
 </li>
 <li><strong>Rect Light</strong></li>
 </ul>
-<h1 id="tips">Tips</h1>
+<h1 id="path-tracing">Path Tracing</h1>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Translucency &amp; DOF
+<ul>
+<li>By default (in UE 5.3) if you use Depth of Field with a translucent object, the resulting DOF blur of the translucent object will be the pixels behind the translucent object. As I understand, it this is because the translucent object does not render to the depth buffer, so it uses the pixales that are rendered to the depth buffer to determine how far away the pixels are. A simple fix for this is the following:</li>
+<li>Add a <em>Post Process Volume</em>
+<ul>
+<li>Path Tracing &gt; Reference Depth Of Field: Enable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="tips-1">Tips</h1>
 <h2 id="artifacts">Artifacts</h2>
 <ul>
 <li><strong>Toggle Raytracing on/off</strong>
