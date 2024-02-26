@@ -193,10 +193,15 @@
         <li><a href="#icon">Icon</a></li>
       </ul>
     </li>
-    <li><a href="#hda-python-scripts">HDA Python Scripts</a>
+    <li><a href="#hda-python">HDA Python</a>
       <ul>
         <li><a href="#pythonmodule">PythonModule</a></li>
         <li><a href="#additional-modules">Additional Modules</a></li>
+        <li><a href="#userdata">UserData</a>
+          <ul>
+            <li><a href="#custom-qtwidget">Custom QtWidget</a></li>
+          </ul>
+        </li>
         <li><a href="#snippets">Snippets</a>
           <ul>
             <li><a href="#revert-to-default">Revert to Default</a></li>
@@ -641,7 +646,7 @@ Note that we can choose to leave the token section empty on the first menu entry
 <h2 id="icon">Icon</h2>
 <p>It can be fun to add your own icon to the HDA. It is a good idea to use a .svg. To add an icon follow the steps outlined above (extra files).
 Note if you add an icon to the asset, you can also use it in the help card.</p>
-<h1 id="hda-python-scripts">HDA Python Scripts</h1>
+<h1 id="hda-python">HDA Python</h1>
 <h2 id="pythonmodule">PythonModule</h2>
 <p>
 <a href="https://www.sidefx.com/docs/houdini/hom/hou/HDAModule.html" target="_blank" rel="noopener">HDAModule</a> User-defined Python module containing functions, classes, and constants that are stored with and accessed from a digital asset.</p>
@@ -733,6 +738,73 @@ custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#
 custom<span style="color:#f92672">.</span>your_func(kwargs)
 <span style="color:#75715e"># from button parameter</span>
 hou<span style="color:#f92672">.</span>phm()<span style="color:#f92672">.</span>custom<span style="color:#f92672">.</span>your_func(kwargs)
+</code></pre></div><h2 id="userdata">UserData</h2>
+<h3 id="custom-qtwidget">Custom QtWidget</h3>
+<p>Here is a way to create a custom Qt ui that can intercat with the HDA node. The Qt Widget instance is saved to the cachedUserDict (which is not persistant) if it exists open it if not create it.<br>
+Also testing the <em>userDict</em> which is persistant and the <em>cachedUserDict</em> which is not. Crteate 3 buttons and connect them to the functions in the script.</p>
+<p>Read more about userData in the SideFX 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#userData" target="_blank" rel="noopener">docs</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtCore
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtWidgets
+<span style="color:#f92672">from</span> PySide2 <span style="color:#f92672">import</span> QtGui
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_widget</span>(kwargs):
+    
+    hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    main_window <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>qt<span style="color:#f92672">.</span>mainWindow()
+    
+    w <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>cachedUserData(<span style="color:#e6db74">&#39;widget&#39;</span>)
+    <span style="color:#66d9ef">if</span> w <span style="color:#f92672">is</span> None:
+        w <span style="color:#f92672">=</span> HelloWidget(main_window)
+        w<span style="color:#f92672">.</span>set_hda(hda_node)
+        hda_node<span style="color:#f92672">.</span>setCachedUserData(<span style="color:#e6db74">&#39;widget&#39;</span>, w)
+        
+    pos <span style="color:#f92672">=</span> QtGui<span style="color:#f92672">.</span>QCursor<span style="color:#f92672">.</span>pos()<span style="color:#f92672">-</span>QtCore<span style="color:#f92672">.</span>QPoint(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">20</span>)
+    w<span style="color:#f92672">.</span>close()
+    w<span style="color:#f92672">.</span>move(pos)
+    w<span style="color:#f92672">.</span>show()
+    
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_persistent</span>(kwargs):
+    hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    <span style="color:#66d9ef">print</span>(hda_node<span style="color:#f92672">.</span>userData(<span style="color:#e6db74">&#39;persistent_data&#39;</span>))
+    pprint(hda_node<span style="color:#f92672">.</span>userDataDict())
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">read_cached</span>(kwargs):
+    hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    <span style="color:#66d9ef">print</span>(hda_node<span style="color:#f92672">.</span>cachedUserData(<span style="color:#e6db74">&#39;cached_data&#39;</span>))
+    pprint(hda_node<span style="color:#f92672">.</span>cachedUserDataDict())
+    
+    
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWidget</span>(QtWidgets<span style="color:#f92672">.</span>QWidget):
+
+    <span style="color:#66d9ef">def</span> __init__(self, parent<span style="color:#f92672">=</span>None):
+        super()<span style="color:#f92672">.</span>__init__(parent)
+
+        self<span style="color:#f92672">.</span>setGeometry(<span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">400</span>, <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">200</span>)
+        self<span style="color:#f92672">.</span>setWindowTitle(<span style="color:#e6db74">&#39;Hello&#39;</span>)
+        self<span style="color:#f92672">.</span>setWindowFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>Tool)
+        vbox <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QVBoxLayout(self)
+        
+        self<span style="color:#f92672">.</span>line_edit <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QLineEdit()
+        vbox<span style="color:#f92672">.</span>addWidget(self<span style="color:#f92672">.</span>line_edit)
+        button <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QPushButton(<span style="color:#e6db74">&#39;Hello&#39;</span>)
+        button<span style="color:#f92672">.</span>clicked<span style="color:#f92672">.</span>connect(self<span style="color:#f92672">.</span>speak)
+        vbox<span style="color:#f92672">.</span>addStretch()
+        vbox<span style="color:#f92672">.</span>addWidget(button)
+        
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_hda</span>(self, hda_node):
+        self<span style="color:#f92672">.</span>hda_node <span style="color:#f92672">=</span> hda_node
+        
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">speak</span>(self):
+ 
+        text <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>line_edit<span style="color:#f92672">.</span>text()
+        persistent_text <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;Persistent {text}&#39;</span>
+        cached_text <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;Cached {text}&#39;</span>
+         
+        self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setUserData(<span style="color:#e6db74">&#39;persistent_data&#39;</span>, persistent_text)
+        self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setCachedUserData(<span style="color:#e6db74">&#39;cached_data&#39;</span>, cached_text)
 </code></pre></div><h2 id="snippets">Snippets</h2>
 <h3 id="revert-to-default">Revert to Default</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reset_all_parms_in_containing_folder</span>(kwargs):
