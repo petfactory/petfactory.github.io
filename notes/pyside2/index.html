@@ -180,6 +180,11 @@
         <li><a href="#flags">Flags</a></li>
       </ul>
     </li>
+    <li><a href="#menu">Menu</a>
+      <ul>
+        <li><a href="#action">Action</a></li>
+      </ul>
+    </li>
     <li><a href="#data">Data</a>
       <ul>
         <li><a href="#clipboard">Clipboard</a></li>
@@ -297,7 +302,7 @@ my_widget<span style="color:#f92672">.</span>show()
 </li>
 <li><strong>QtCore.Qt.WindowStaysOnTopHint</strong>
 <ul>
-<li>If the widget does not have a parent we can use QtCore.Qt.WindowStaysOnTopHint to force the widget top allways be on top.</li>
+<li>If the widget does not have a parent we can use QtCore.Qt.WindowStaysOnTopHint to force the widget top always be on top.</li>
 </ul>
 </li>
 </ul>
@@ -308,6 +313,18 @@ widget<span style="color:#f92672">.</span>setWindowFlags(widget<span style="colo
 widget<span style="color:#f92672">.</span>setWindowFlags(widget<span style="color:#f92672">.</span>windowFlags() <span style="color:#f92672">&amp;</span> <span style="color:#f92672">~</span>QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>WindowStaysOnTopHint)
 <span style="color:#66d9ef">print</span>(int(w<span style="color:#f92672">.</span>windowFlags()))
 <span style="color:#66d9ef">print</span>(bin(int(w<span style="color:#f92672">.</span>windowFlags())))
+</code></pre></div><h1 id="menu">Menu</h1>
+<h2 id="action">Action</h2>
+<p>If you want a quick way to add an action you do this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># addAction(text, function)</span>
+menu<span style="color:#f92672">.</span>addAction(<span style="color:#e6db74">&#39;Doit&#39;</span>, partial(self<span style="color:#f92672">.</span>doit, <span style="color:#e6db74">&#39;now&#39;</span>))
+</code></pre></div><p>You could also provide a shortcut to the action. I have not been able to use the shortcut to actually call the function, seems to have someting to do with focus, but I have not digged to deep into this. I guess you could have it there for discoverability and then add the shortcut to the widget instead as shown below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># addAction(text, function, QKeySequence)</span>
+menu<span style="color:#f92672">.</span>addAction(<span style="color:#e6db74">&#39;Doit&#39;</span>, partial(self<span style="color:#f92672">.</span>doit, <span style="color:#e6db74">&#39;now&#39;</span>), QtGui<span style="color:#f92672">.</span>QKeySequence(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>CTRL <span style="color:#f92672">+</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>Key_Space))
+</code></pre></div><p>Here we set the shortcut Ctrl + Space to do something</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># QShortcut(QKeySequence, parent)</span>
+shortcut <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QShortcut(QtGui<span style="color:#f92672">.</span>QKeySequence(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>CTRL <span style="color:#f92672">+</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>Key_Space), self)
+shortcut<span style="color:#f92672">.</span>activated<span style="color:#f92672">.</span>connect(partial(self<span style="color:#f92672">.</span>doit, <span style="color:#e6db74">&#39;now&#39;</span>))
 </code></pre></div><h1 id="data">Data</h1>
 <h2 id="clipboard">Clipboard</h2>
 <ul>
