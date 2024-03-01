@@ -175,7 +175,11 @@
         <li><a href="#hello-world-app">Hello World app</a></li>
       </ul>
     </li>
-    <li><a href="#window">Window</a></li>
+    <li><a href="#window">Window</a>
+      <ul>
+        <li><a href="#flags">Flags</a></li>
+      </ul>
+    </li>
     <li><a href="#data">Data</a>
       <ul>
         <li><a href="#clipboard">Clipboard</a></li>
@@ -282,6 +286,28 @@ pos <span style="color:#f92672">=</span> main_window<span style="color:#f92672">
 my_widget<span style="color:#f92672">.</span>move(main_window<span style="color:#f92672">.</span>mapToGlobal(pos))
 
 my_widget<span style="color:#f92672">.</span>show()
+</code></pre></div><h2 id="flags">Flags</h2>
+<p>By setting window flags you can control how the widget is handeled. Read more on the <em>QtCore.Qt.WindowType</em></p>
+<ul>
+<li><strong>QtCore.Qt.Tool</strong>
+<ul>
+<li>Indicates that the widget is a tool window. A tool window is often a small window with a smaller than usual title bar and decoration, typically used for collections of tool buttons. If there is a parent, the tool window will always be kept on top of it. If the window system supports it, a tool window can be decorated with a somewhat lighter frame. It can also be combined with Qt.FramelessWindowHint.<br>
+<em>Note</em> If there isn’t a parent, you may consider using Qt.WindowStaysOnTopHint as well.</li>
+</ul>
+</li>
+<li><strong>QtCore.Qt.WindowStaysOnTopHint</strong>
+<ul>
+<li>If the widget does not have a parent we can use QtCore.Qt.WindowStaysOnTopHint to force the widget top allways be on top.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># to set multiple window flags you &#34;OR&#34; them together. To add a flag to the existing ones:</span>
+widget<span style="color:#f92672">.</span>setWindowFlags(widget<span style="color:#f92672">.</span>windowFlags() <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>WindowStaysOnTopHint)
+
+<span style="color:#75715e"># to remove a flag &#34;AND&#34; it out using the flags negation:</span>
+widget<span style="color:#f92672">.</span>setWindowFlags(widget<span style="color:#f92672">.</span>windowFlags() <span style="color:#f92672">&amp;</span> <span style="color:#f92672">~</span>QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>WindowStaysOnTopHint)
+<span style="color:#66d9ef">print</span>(int(w<span style="color:#f92672">.</span>windowFlags()))
+<span style="color:#66d9ef">print</span>(bin(int(w<span style="color:#f92672">.</span>windowFlags())))
 </code></pre></div><h1 id="data">Data</h1>
 <h2 id="clipboard">Clipboard</h2>
 <ul>
