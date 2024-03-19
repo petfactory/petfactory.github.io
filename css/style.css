@@ -122,7 +122,7 @@ blockquote p {
 
 .main-menu-wrap {
     max-width: 1024px;
-
+    /*font-size: 1.2em;*/
 }
 
 
@@ -543,7 +543,26 @@ margin:-90px 0 0; /* negative fixed header height */
 
 .mobile-toc-wrap{
     position: relative;
+    font-size: 1.2em;
+    color: #444;
 }
+
+.offcanvas-body div > nav > ul > li > a{
+    color: #FFF;
+    /*font-size: 1em;*/
+    /*font-weight: 500;*/
+}
+
+.mobile-toc-wrap ul{
+    list-style: none;
+    /*padding-left: 0px;*/
+}
+.mobile-toc-wrap li{
+    /*background-color: #D1E717;*/
+    /*padding-left: 0px;*/
+    /*margin-left: 0px;*/
+}
+
 .mobile-toc-btn{
     display: none;
     position: fixed;
@@ -791,20 +810,12 @@ margin:-90px 0 0; /* negative fixed header height */
 
 @media (max-width: 767px) {
 
+    .main-menu-wrap a{
+        font-size: 1.2em;
+    }
+
     .mobile-toc-btn{
         display: block;
-    }
-
-    .header-logo-wrap{
-        top: 5px;
-    }
-
-    .site-header-mobile {
-        display: block;
-    }
-
-    .site-header {
-        display: none;
     }
 
     #banner-wrap{
@@ -814,10 +825,6 @@ margin:-90px 0 0; /* negative fixed header height */
     #content-main-wrap{
         margin-top: 0px;
 
-    }
-
-    .mobile-menu-trigger {
-        display: block;
     }
 
     .social-list li a{
