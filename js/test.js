@@ -2,15 +2,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // const clipboard_snippet_buttons = document.querySelectorAll('.offcanvas-body');
-    const myElement = document.getElementById("toc-modal-wrap");
-    // console.log(clipboard_snippet_buttons);
+    const navbar_btn = document.getElementById("navbar-btn");
+    const dropdown_menu_pet = document.getElementById("dropdown-menu-pet");
+    // const navbar_btn = document.getElementById("navbar-btn");
 
-    // for (const li of document.querySelectorAll('#toc-modal-wrap>nav>ul>li>a')) {
-    for (const li of document.querySelectorAll('#toc-modal-wrap li')) {
-        
-        li.addEventListener('click', function(e) {
+    // const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+    // const dropdown = new bootstrap.Dropdown(dropdownElementList[0]);
 
-            console.log(li);
+    // let test_dropdown = document.getElementById("test-dropdown");
+    // new bootstrap.Dropdown(test_dropdown, {}).show()
+
+    // const dropdown = new bootstrap.Dropdown(dropdownElementList[0], {
+    //   popperConfig(defaultBsPopperConfig) {
+    //     // const newPopperConfig = {...}
+    //     // use defaultBsPopperConfig if needed...
+    //     // return newPopperConfig
+    //   }
+    // });
+
+
+    // console.log(dropdown);
+    // dropdown.hide();
+
+
+     navbar_btn.addEventListener('click', function(e) {
+
+            dropdown_menu_pet.classList.add("show");
+
+            // console.log(navbar_btn);
+
+            // console.log(dropdown);
+            // dropdown.hide();
+            // const dd = bootstrap.Dropdown.getOrCreateInstance(test_dropdown);
+            // console.log(dd);
+
+            // dd.hide();
 
             // const myModal = document.getElementById('offcanvasRight')
             // console.log(myModal);
@@ -24,7 +50,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }, false);
 
-    }
+
+    // // console.log(clipboard_snippet_buttons);
+
+    // // for (const li of document.querySelectorAll('#toc-modal-wrap>nav>ul>li>a')) {
+    // for (const li of document.querySelectorAll('#toc-modal-wrap li')) {
+        
+    //     li.addEventListener('click', function(e) {
+
+    //         console.log(li);
+
+    //         // const myModal = document.getElementById('offcanvasRight')
+    //         // console.log(myModal);
+    //         // myModal.dispose();
+
+    //         // const href = li.getAttribute("href");
+    //         // a = document.querySelectorAll(href)[0];
+    //         // // a.focus();
+    //         // a.focus({ preventScroll: false });
+    //         // console.log(a)
+
+    //     }, false);
+
+    // }
 
 
 
