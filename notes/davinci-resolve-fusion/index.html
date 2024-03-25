@@ -40,8 +40,8 @@
 
 
           <button class="navbar-toggler" id="navbar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
             
+            <svg fill="#888" width="26" height="26" viewBox="0 0 18 15"><path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/><path d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/><path d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/></svg>
           </button>
 
 
@@ -1135,6 +1135,88 @@ You might want to output a mask from a fusion comp and use that in the color pag
 </ul>
 </li>
 </ul>
+<h1 id="macro">Macro</h1>
+<ul>
+<li>Create a Fusion Macro from selected Nodes
+<ul>
+<li><strong>Select nodes</strong>
+<ul>
+<li>Select the nodes that you wish to include in the macro</li>
+<li><strong>Note!</strong> The order that you select the nodes will be the order they appear in the Macro Editor, and in the resulting macro.</li>
+<li>Note!
+<ul>
+<li>A macro needs an output, it looks like resole vill use the &ldquo;last&rdquo; merge node as the default output (this can be changed in the Macro Editor). The nodes that are used as output will have a red color in the macro editor.</li>
+<li>To change which output to use click the output checkbox.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create Macro</strong>
+<ul>
+<li>RMB Click &gt; Macro &gt; Create Macro</li>
+</ul>
+</li>
+<li><strong>Macro name</strong>
+<ul>
+<li>Give the macro a name</li>
+</ul>
+</li>
+<li><strong>Output(s)</strong>
+<ul>
+<li>Make sure that the macro uses the output that you want. The text on the node with an output will be marked red.</li>
+</ul>
+</li>
+<li><strong>Input(s)</strong>
+<ul>
+<li>The macro can optionally have inputs. If you need to use a mask in the Macro you can enable the <em>EffectMask</em> checkbox. You can do the same for other inputs.</li>
+</ul>
+</li>
+<li><strong>Expose Parameters</strong>
+<ul>
+<li>Choose whoch parameters to expose by clicking the checkbox on the left side.</li>
+<li>Defaults (the defaults will be set to the value the parameter had when the macro was created)
+<ul>
+<li>Note that you can set the default</li>
+<li>You can slso set min/max</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Save</strong>
+<ul>
+<li>In the top menu of the macro editor &gt; File &gt; Save
+<ul>
+<li>This will open up the save directory for the fusion macros</li>
+<li>give the macro a name and click save (It eill use the Macro Name as the defaukt file name)</li>
+</ul>
+</li>
+<li>You will not give a confirmation message when the macro is saved, but you can close the Macro Editor.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>When you create a macro (by RMB Click &gt; Macro &gt; Create Macro) the default save directory will be: <em>C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusion\Macros</em><br>
+The macro will only be accessible with the RMB Click menu in Fusion. If you want to access the macro from the Effects panel you can do this:</p>
+<ul>
+<li>Macro/Template Folder
+<ul>
+<li><strong>Fusion Page</strong>
+<ul>
+<li>Open the following folder:
+C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\Fusion</li>
+<li>Here you can crate a new folder and give it a name that you want</li>
+<li>copy / paste the macro and restart fusion. You will find the macro in the effetcs tab.</li>
+</ul>
+</li>
+<li><strong>Edit Page</strong>
+<ul>
+<li>follow the same steps as for the fusion page but use folder C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusion\Templates\Edit instead.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="graph-editor-spline">Graph Editor (Spline)</h1>
 <p>If you press the <em>Spline</em> button in the top right menu bar you can view the graph editor.</p>
 <h2 id="shortcuts-3">Shortcuts</h2>
@@ -1375,6 +1457,7 @@ You might want to output a mask from a fusion comp and use that in the color pag
       </ul>
     </li>
     <li><a href="#modifier">Modifier</a></li>
+    <li><a href="#macro">Macro</a></li>
     <li><a href="#graph-editor-spline">Graph Editor (Spline)</a>
       <ul>
         <li><a href="#shortcuts-3">Shortcuts</a></li>
@@ -1459,6 +1542,7 @@ You might want to output a mask from a fusion comp and use that in the color pag
       </ul>
     </li>
     <li><a href="#modifier">Modifier</a></li>
+    <li><a href="#macro">Macro</a></li>
     <li><a href="#graph-editor-spline">Graph Editor (Spline)</a>
       <ul>
         <li><a href="#shortcuts-3">Shortcuts</a></li>

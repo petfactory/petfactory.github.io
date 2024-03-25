@@ -105,6 +105,9 @@ blockquote p {
     box-shadow: none;
 }
 
+#navbar-btn {
+    margin-right: -8px;
+}
 
 /*
 ---------------
