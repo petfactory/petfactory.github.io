@@ -1,0 +1,586 @@
+<!doctype html>
+
+<html lang="en" data-bs-theme="dark">
+
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://www.petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://www.petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+        <link rel="stylesheet" href="https://www.petfactory.se/css/bootstrap.min.css">
+        <script defer src="https://www.petfactory.se/js/bootstrap.bundle.min.js"></script>
+        <script defer src="https://www.petfactory.se/js/test.js"></script>
+
+        <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
+
+        
+        <title>Petfactory | Houdini - Axiom</title>
+        <meta name="description" content="Petfactory | Design and Animation | Houdini - Axiom" />
+
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+        <div class="container-fluid main-menu-wrap">
+
+          <a class="home-icon" href="https://www.petfactory.se/">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+          </a>
+
+
+          <button class="navbar-toggler" id="navbar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            
+          </button>
+
+
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbar2Labe">
+            <div class="offcanvas-header">
+              
+              
+              <a class="home-icon" href="https://www.petfactory.se/">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+              </a>
+
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+            </div>
+
+            <div class="offcanvas-body">
+
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                <li class="nav-item">
+                  
+                  <a class="nav-link" aria-current="page" href="https://www.petfactory.se/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="https://www.petfactory.se/work">Work</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.petfactory.se/cv">CV</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Notes
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" id="dropdown-menu-pet">
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/python-notes">Python</a></li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/houdini-notes">Houdini</a></li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/unreal-engine-notes">Unreal Engine</a></li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/davinci-resolve-notes">DaVinci Resolve</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se/notes">All Notes</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <div id="social-list-modal-wrap">
+                <ul id="social-list-modal">
+                  <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#555" width="30" height="30" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+                  <li><a target="_blank" class="" href="https://www.youtube.com/channel/UCB-6-mQgbIn2dUa70D1noTQ"><svg fill="#555" width="30" height="30" viewBox="0 0 64 64"><path d="M54.15,10.031l-20.9-0.019l-21.718,0.019c-5.433,0-11.534,3.626-11.534,8.944v26.474c0,5.316,6.101,8.559,11.534,8.559 H54.15c5.432,0,9.834-3.242,9.834-8.559V18.976C63.984,13.657,59.582,10.031,54.15,10.031z M27.856,42.205L27.73,22.044 l14.03,10.168L27.856,42.205z"/></svg>
+
+
+
+
+</a></li>
+                  <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#555" width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      
+      
+
+      <main id="content-main-wrap">
+
+          
+
+<div class="top-spacer"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 notes-wrap">
+    	<p>s 28.42</p>
+<h1 id="axiom-solver">Axiom Solver</h1>
+<ul>
+<li><strong>Axiom &gt; Main &gt; Solver</strong>
+<ul>
+<li><strong>Mode</strong>
+<ul>
+<li>Traditional
+<ul>
+<li>Traditional follows the exact steps of used by most fluid solvers</li>
+</ul>
+</li>
+<li>Reflection
+<ul>
+<li>Reflection is good at conserving energy in the sim, swirling motion will last longer.</li>
+</ul>
+</li>
+<li>Reflection Single Step
+<ul>
+<li>Less accurate but faster version of reflection (<em>Default</em>)</li>
+<li>Really no need to change from this</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Division Size</strong>
+<ul>
+<li>Voxel div size, lower value means higher resolution</li>
+</ul>
+</li>
+<li><strong>Voxels</strong>
+<ul>
+<li>Starting number of voxels. By default, if the solver reaches this limit it will increase the limit by 20% and keep going. If it can not allocate more memory, it will try to find a new device to run on.<br>
+Under Setting &gt; solver &gt; Voxel Limit Behaviour you can set how it behaves if it reaches the limit.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Axiom will allocate the GPU memory it needs to be able to sim the voxels specified in the Main &gt; Solvber &gt; Voxels parameter. On the Main &gt; Info tab you can see this info. It is faster and less artifact prone to allocate enough memory from the beginning.</p>
+<ul>
+<li><strong>Tip</strong>
+<ul>
+<li>You can bring up the performance monitor with <em>Window key + G</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="axiom-source">Axiom source</h1>
+<h2 id="basic">Basic</h2>
+<ul>
+<li><strong>Basic setup</strong>
+<ul>
+<li>Add axiom solver</li>
+<li>Add axiom source shape</li>
+<li>Connect the source shape to the <em>second</em> input of the solver</li>
+</ul>
+</li>
+</ul>
+<p>Lets add a pressure influence field</p>
+<h2 id="sink">Sink</h2>
+<ul>
+<li>
+<p><strong>Sink</strong></p>
+<ul>
+<li>Create an axiom source node</li>
+<li>Set the Main &gt; Type : <em>Sink</em></li>
+<li>Transform the node into position</li>
+<li>The sink will remove all density it comes into contact with</li>
+</ul>
+</li>
+<li>
+<p><strong>Camera frustum</strong></p>
+<ul>
+<li>Create an axiom source node</li>
+<li>Set the Main &gt; Type : <em>Camera Frustum</em></li>
+<li>Select the camera you want to use</li>
+<li>All density that falls outide of the camera frustum (witjh some padding) will be removed</li>
+</ul>
+</li>
+</ul>
+<h2 id="influence">Influence</h2>
+<ul>
+<li><strong>Pressure influence</strong>
+<ul>
+<li><strong>Add axiom source shape</strong>
+<ul>
+<li>Change the Main &gt; type to <em>Influence</em></li>
+<li>Set the Sourcing &gt; Pressure to 5
+<ul>
+<li>We can also set it to 1 here and scale the pressure on the solver instead.</li>
+</ul>
+</li>
+<li>Move the influnece source up Transform &gt; Translayt Y : 4</li>
+</ul>
+</li>
+<li><strong>Merge fields</strong>
+<ul>
+<li>Merge the influence source with the density source (the one we created in the basic setup above)</li>
+</ul>
+</li>
+<li><strong>Input to solver</strong>
+<ul>
+<li>Connect the merged sources to the second input of the axiom solver.</li>
+<li>We can see that when the smoke hits the influence field it balloons out.</li>
+<li><strong>Note!</strong>
+<ul>
+<li>On the solver Sourcing &gt; Influnence you will find multipliers of the incomming influence fields.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>We can also add a temperature influnce to heat up or cool down the sim. If a negative temperature is used the smoke will loose bouancy and &ldquo;fall down&rdquo;</p>
+<ul>
+<li><strong>Velocity Influence</strong>
+<ul>
+<li><strong>Add axiom source shape</strong>
+<ul>
+<li>Set Type
+<ul>
+<li>Main &gt; Type to <em>Influence</em></li>
+<li>Main &gt; Shape to <em>Cylinder</em></li>
+</ul>
+</li>
+<li>Transform the source shape
+<ul>
+<li>Transform &gt; Translate Y : 1</li>
+<li>Transform &gt; Uniform Scale : 2</li>
+</ul>
+</li>
+<li>Set the influence to a <em>Spin</em> force
+<ul>
+<li>Force &gt; Type : Spin</li>
+<li>Force &gt; Magnitude : 3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Merge fields</strong>
+<ul>
+<li>Merge the influence source with the density source.</li>
+</ul>
+</li>
+<li><strong>Input to solver</strong>
+<ul>
+<li>Connect the merged sources to the second input of the axiom solver.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>We can animate the properties of the sources to effact the sim in various ways.</p>
+<h1 id="custom-source">Custom source</h1>
+<ul>
+<li><strong>Custom emitter</strong> (density &amp; temperature)
+<ul>
+<li>Create a polygon sphere</li>
+<li>VDB from Polygons
+<ul>
+<li>Fog VDB : <em>density</em></li>
+</ul>
+</li>
+<li>Add temperature
+<ul>
+<li>Add a name sop
+<ul>
+<li>group : @name=density</li>
+<li>name : <em>temperature</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Merge with density vdb</li>
+<li>Feed into the <em>first input</em> of the <em>axiom solver</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="custom-influence">Custom influence</h2>
+<h3 id="pressure">Pressure</h3>
+<ul>
+<li><strong>Custom influence pressure</strong>
+<ul>
+<li>Create a polygon sphere
+<ul>
+<li>Transform the sphere
+<ul>
+<li>Set the radius to 1 on all axis
+<ul>
+<li>This is just done in this example to mimic the size of the default axim source. You can obviously set it to whatever you want.</li>
+</ul>
+</li>
+<li>Move the sphere up Center Y : 2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add influence field</strong>
+<ul>
+<li>VDB from Polygons
+<ul>
+<li>Fog VDB : <em>influence</em></li>
+<li>This field is used as a mask / activator of where to add influence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add pressure field</strong>
+<ul>
+<li>To add a pressure influence we also need to add a specific influencePressure field.</li>
+<li>Add a name SOP
+<ul>
+<li>Group : <em>@name=influence</em></li>
+<li>Name : <em>influencePressure</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Invert the pressure</strong>
+<ul>
+<li>Unlike the pressure influence we added with the axiom source we need to invert the custom influencePressure field.</li>
+<li>Add a <em>Volume Wrangle</em>
+<ul>
+<li>f@influencePressure *= -1;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Merge fields</strong>
+<ul>
+<li>Merge the influence source with the density source.</li>
+</ul>
+</li>
+<li><strong>Input to solver</strong>
+<ul>
+<li>Connect the merged sources to the <em>first</em> input of the axiom solver.</li>
+<li><strong>Note!</strong>
+<ul>
+<li>On the solver Sourcing &gt; Influnence you will find multipliers of the incomming influence fields.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="velocity">Velocity</h3>
+<ul>
+<li><strong>Custom influence velocity</strong>
+<ul>
+<li>Create a mesh
+<ul>
+<li><strong>Velocity attributes</strong>
+<ul>
+<li>If we have an animated geo we can use the <em>Point Velocity</em> SOP to generate v attrib.</li>
+<li>Or we can use a wrangle to add a velocity (<em>v</em>) attribute to the points of the mesh.</li>
+<li>We will use these point atribs to generate the velocity field.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add influence field</strong>
+<ul>
+<li>VDB from Polygons
+<ul>
+<li>Fog VDB : <em>influence</em></li>
+<li>This field is used as a mask / activator of where to add influence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add velocity field</strong>
+<ul>
+<li>Click the + in the multiparm called <em>Surface Attributes</em> in bottom of the VDB from Polygons node.</li>
+<li>Click the dropdown in the right side of the Attribute parameter and select <em>point.v</em></li>
+<li>In the <em>VDB Name</em> parameter enter <em>influenceVel</em></li>
+<li>You can set the <em>Vector Type</em> to Displacement/Velocity/Acceleration (altough I do not think that is needed)</li>
+</ul>
+</li>
+<li><strong>Merge fields</strong>
+<ul>
+<li>Merge the influence source with the density source.</li>
+</ul>
+</li>
+<li><strong>Input to solver</strong>
+<ul>
+<li>Connect the merged sources to the <em>first</em> input of the axiom solver.</li>
+<li><strong>Note!</strong>
+<ul>
+<li>On the solver Sourcing &gt; Influnence you will find multipliers of the incomming influence fields.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="collision">Collision</h3>
+<ul>
+<li><strong>Custom collision</strong>
+<ul>
+<li>To add custom collision we can use the workflow above (to create influence velocity)</li>
+<li>But instaead we use <em>collision</em> as the fog VDB name and <em>collisionVel</em> as the surface attribute (point.v)</li>
+</ul>
+</li>
+</ul>
+<h1 id="example">Example</h1>
+<div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/hips/axiom_setup.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">axiom_setup.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Setup example hip</span>
+
+</div>
+
+    </div>
+    <div class="col-md-2 toc-wrap">
+    	
+    	<aside class="toc-aside">
+    	
+    	<div class="toc-content">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#axiom-solver">Axiom Solver</a></li>
+    <li><a href="#axiom-source">Axiom source</a>
+      <ul>
+        <li><a href="#basic">Basic</a></li>
+        <li><a href="#sink">Sink</a></li>
+        <li><a href="#influence">Influence</a></li>
+      </ul>
+    </li>
+    <li><a href="#custom-source">Custom source</a>
+      <ul>
+        <li><a href="#custom-influence">Custom influence</a>
+          <ul>
+            <li><a href="#pressure">Pressure</a></li>
+            <li><a href="#velocity">Velocity</a></li>
+            <li><a href="#collision">Collision</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#example">Example</a></li>
+  </ul>
+</nav>	
+		</div>
+		</aside>	
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-toc-wrap">
+
+	<div class="mobile-toc-btn">
+		<button class="btn" hret="unreal" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+			<svg fill="#888" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/></svg>
+
+
+
+
+
+
+
+
+		</button>
+	</div>
+	
+	<div class="offcanvas offcanvas-end" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+	  <div class="offcanvas-header">
+	    
+	    <a class="home-icon" href="https://www.petfactory.se/">
+    	  <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+      </a>
+
+	    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	  </div>
+	  
+	  <div class="offcanvas-body" id="toc-modal-wrap">
+	  	<div data-bs-dismiss="offcanvas">
+	    	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#axiom-solver">Axiom Solver</a></li>
+    <li><a href="#axiom-source">Axiom source</a>
+      <ul>
+        <li><a href="#basic">Basic</a></li>
+        <li><a href="#sink">Sink</a></li>
+        <li><a href="#influence">Influence</a></li>
+      </ul>
+    </li>
+    <li><a href="#custom-source">Custom source</a>
+      <ul>
+        <li><a href="#custom-influence">Custom influence</a>
+          <ul>
+            <li><a href="#pressure">Pressure</a></li>
+            <li><a href="#velocity">Velocity</a></li>
+            <li><a href="#collision">Collision</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#example">Example</a></li>
+  </ul>
+</nav>
+	    </div>	
+	  </div>
+	</div>
+
+</div>
+
+
+
+      </main>
+
+      
+      
+
+
+      
+
+      <footer class="container py-5">
+
+          <div class="row">
+
+              <div class="col-md-6 footer-logo-wrap">
+
+                  <a class="home-icon" href="https://www.petfactory.se/">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                  </a>
+                  <span class="footer-logo-lext">petfactory &copy; 2024</span>
+
+              </div>
+
+              <div class="col-md-6 social-list">
+                  <ul>
+                      <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+                      <li><a target="_blank" class="" href="https://www.youtube.com/channel/UCB-6-mQgbIn2dUa70D1noTQ"><svg fill="#444" width="20" height="20" viewBox="0 0 64 64"><path d="M54.15,10.031l-20.9-0.019l-21.718,0.019c-5.433,0-11.534,3.626-11.534,8.944v26.474c0,5.316,6.101,8.559,11.534,8.559 H54.15c5.432,0,9.834-3.242,9.834-8.559V18.976C63.984,13.657,59.582,10.031,54.15,10.031z M27.856,42.205L27.73,22.044 l14.03,10.168L27.856,42.205z"/></svg>
+
+
+
+
+</a></li>
+                      
+                      <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+                  </ul>
+              </div>
+          </div>
+          
+      </footer>
+
+    </body>
+
+</html>

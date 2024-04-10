@@ -463,7 +463,11 @@ pprint<span style="color:#f92672">.</span>pprint(size_attrs)
 </span><span style="color:#e6db74"> ...
 </span><span style="color:#e6db74">}
 </span><span style="color:#e6db74">&#39;&#39;&#39;</span>
-</code></pre></div><h1 id="dev">Dev</h1>
+</code></pre></div><h1 id="macro">Macro</h1>
+<p>To create a macro node using python:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp<span style="color:#f92672">.</span>DoAction(<span style="color:#e6db74">&#39;AddSetting&#39;</span>, {<span style="color:#e6db74">&#39;filename&#39;</span>:<span style="color:#e6db74">&#39;Macros:/My Macro.setting&#39;</span>})
+</code></pre></div><p>You can then set keyframes (using python) on the parmeters as you would on a &ldquo;standard&rdquo; tool.</p>
+<h1 id="dev">Dev</h1>
 <h2 id="run-externally">Run externally</h2>
 <p>To run a python script externally that interacts with Resolve here are some notes from the README found in the &ldquo;Scripting folder&rdquo; which is located at: <em>C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting</em></p>
 <ul>
@@ -744,6 +748,7 @@ ret <span style="color:#f92672">=</span> composition<span style="color:#f92672">
         <li><a href="#set-attrs">Set attrs</a></li>
       </ul>
     </li>
+    <li><a href="#macro">Macro</a></li>
     <li><a href="#dev">Dev</a>
       <ul>
         <li><a href="#run-externally">Run externally</a></li>
@@ -836,6 +841,7 @@ ret <span style="color:#f92672">=</span> composition<span style="color:#f92672">
         <li><a href="#set-attrs">Set attrs</a></li>
       </ul>
     </li>
+    <li><a href="#macro">Macro</a></li>
     <li><a href="#dev">Dev</a>
       <ul>
         <li><a href="#run-externally">Run externally</a></li>

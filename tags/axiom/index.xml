@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Simulation on Petfactory</title>
-    <link>https://www.petfactory.se/tags/simulation/</link>
-    <description>Recent content in Simulation on Petfactory</description>
+    <title>Axiom on Petfactory</title>
+    <link>https://www.petfactory.se/tags/axiom/</link>
+    <description>Recent content in Axiom on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0100</lastBuildDate>
     
-	<atom:link href="https://www.petfactory.se/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.petfactory.se/tags/axiom/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>https://www.petfactory.se/notes/houdini-axiom/</guid>
       <description>s 28.42
 Axiom Solver  Axiom &amp;gt; Main &amp;gt; Solver  Mode  Traditional  Traditional follows the exact steps of used by most fluid solvers   Reflection  Reflection is good at conserving energy in the sim, swirling motion will last longer.   Reflection Single Step  Less accurate but faster version of reflection (Default) Really no need to change from this     Division Size  Voxel div size, lower value means higher resolution   Voxels  Starting number of voxels.</description>
-    </item>
-    
-    <item>
-      <title>Houdini - FLIP</title>
-      <link>https://www.petfactory.se/notes/houdini-flip/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/notes/houdini-flip/</guid>
-      <description>FLIP in SOP Container  FLIP container Creates a domain for a SOP FLIP fluid simulation.  SideFx docs  This node creates and initializes a SOP particle fluid domain. The Particle Separation parameter controls the domain’s resolution, but also the number of particles and voxels, and the resolution of collision objects.       Boundary  FLIP boundary
-Creates a surface or density VDB for sourcing or deleting SOP FLIP fluid particles.</description>
     </item>
     
   </channel>

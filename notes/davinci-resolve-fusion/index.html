@@ -1217,7 +1217,10 @@ C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusi
 </ul>
 </li>
 </ul>
-<h1 id="graph-editor-spline">Graph Editor (Spline)</h1>
+<h2 id="python">Python</h2>
+<p>To create a macro node using python:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp<span style="color:#f92672">.</span>DoAction(<span style="color:#e6db74">&#39;AddSetting&#39;</span>, {<span style="color:#e6db74">&#39;filename&#39;</span>:<span style="color:#e6db74">&#39;Macros:/My Macro.setting&#39;</span>})
+</code></pre></div><h1 id="graph-editor-spline">Graph Editor (Spline)</h1>
 <p>If you press the <em>Spline</em> button in the top right menu bar you can view the graph editor.</p>
 <h2 id="shortcuts-3">Shortcuts</h2>
 <table>
@@ -1420,6 +1423,267 @@ C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusi
 </ul>
 </li>
 </ul>
+<h1 id="setups">Setups</h1>
+<div class="clipboard-snippet-wrap">
+
+	
+	
+	
+	
+
+	
+
+		
+
+	
+
+	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/fusion_snippets/light_shaft.txt">light_shaft</a>
+	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="{
+	Tools = ordered() {
+		light_src_mask = EllipseMask {
+			NameSet = true,
+			Inputs = {
+				Filter = Input { Value = FuID { &#34;Fast Gaussian&#34; }, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1 }, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				ClippingMode = Input { Value = FuID { &#34;None&#34; }, },
+				Height = Input { Expression = &#34;Width&#34;, },
+				Angle = Input { Value = 3.53671498763799, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, -544.5 } },
+		},
+		light_src_noise = FastNoise {
+			NameSet = true,
+			Inputs = {
+				EffectMask = Input {
+					SourceOp = &#34;light_src_mask&#34;,
+					Source = &#34;Mask&#34;,
+				},
+				GlobalOut = Input { Value = 71, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Detail = Input { Value = 6.42, },
+				Contrast = Input { Value = 2.98, },
+				Brightness = Input { Value = 0.18, },
+				XScale = Input { Value = 6.1, },
+				Angle = Input { Value = 110.9, },
+				Seethe = Input { Value = 0.177, },
+				SeetheRate = Input { Value = 0.064, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, -478.5 } },
+		},
+		light_src_xform = Transform {
+			NameSet = true,
+			Inputs = {
+				Size = Input { Value = 0.39, },
+				Input = Input {
+					SourceOp = &#34;light_src_noise&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, -412.5 } },
+		},
+		PipeRouter1 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = &#34;light_src_xform&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { 825, -346.5 } },
+		},
+		LightRays = ofx.com.blackmagicdesign.resolvefx.Lightray {
+			NameSet = true,
+			Inputs = {
+				Source = Input {
+					SourceOp = &#34;light_src_xform&#34;,
+					Source = &#34;Output&#34;,
+				},
+				outputSelection = Input { Value = FuID { &#34;OUTPUT_SELECTION_RAYS_ALONE&#34; }, },
+				raysSource = Input { Value = FuID { &#34;RAYS_SOURCE_BRIGHTREGIONS&#34; }, },
+				threshold = Input { Value = 0.802, },
+				isAlphaMasking = Input { Value = 1, },
+				isAlphaComping = Input {
+					Value = 0,
+					Disabled = true,
+				},
+				position = Input { Value = 1, },
+				raysDirection = Input { Value = FuID { &#34;RAYS_BEARING_RADIAL&#34; }, },
+				xPosition = Input {
+					Value = 0.5,
+					Disabled = true,
+				},
+				yPosition = Input {
+					Value = 1.20000004768372,
+					Disabled = true,
+				},
+				xyPosition = Input { Value = { 0, 0.5 }, },
+				angle = Input { Value = -84, },
+				appearance = Input { Value = 1, },
+				rayDropoff = Input { Value = FuID { &#34;RAY_DROPOFF_SOFT_WINDOW&#34; }, },
+				length = Input { Value = 0.615, },
+				soften = Input { Value = 0.353, },
+				brightness = Input { Value = 0.182, },
+				colorRed = Input { Value = 1, },
+				colorGreen = Input { Value = 1, },
+				colorBlue = Input { Value = 1, },
+				CompositeType = Input {
+					Value = FuID { &#34;COMPOSITE_ADD&#34; },
+					Disabled = true,
+				},
+				recovery = Input { Value = 0, },
+				isUseLegacyPosition = Input { Value = 0, },
+				blendGroup = Input { Value = 0, },
+				blendIn = Input { Value = 1, },
+				blend = Input { Value = 0, },
+				ignoreContentShape = Input { Value = 0, },
+				legacyIsProcessRGBOnly = Input { Value = 0, },
+				IsNoTemporalFramesReqd = Input { Value = 0, },
+				refreshTrigger = Input { Value = 1, },
+				resolvefxVersion = Input { Value = &#34;1.5&#34;, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, -280.5 } },
+		},
+		Merge_debug_src = Merge {
+			NameSet = true,
+			Inputs = {
+				Blend = Input { Value = 0.063, },
+				Background = Input {
+					SourceOp = &#34;LightRays&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;PipeRouter2&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, -214.5 } },
+		},
+		PipeRouter2 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = &#34;PipeRouter1&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { 825, -214.5 } },
+		},
+		env_fog_noise = FastNoise {
+			NameSet = true,
+			Inputs = {
+				GlobalOut = Input { Value = 71, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				Detail = Input { Value = 5.78, },
+				Contrast = Input { Value = 5, },
+				Brightness = Input { Value = 0.41, },
+				XScale = Input { Value = 1.39, },
+				Angle = Input { Value = 110.9, },
+				Seethe = Input { Value = 0.177, },
+				SeetheRate = Input { Value = 0.064, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 825, -148.5 } },
+		},
+		merge_env_fog_noise = Merge {
+			NameSet = true,
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;env_fog_noise&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;Merge_debug_src&#34;,
+					Source = &#34;Output&#34;,
+				},
+				ApplyMode = Input { Value = FuID { &#34;Multiply&#34; }, },
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, -148.5 } },
+		},
+		Ellipse3 = EllipseMask {
+			Inputs = {
+				Filter = Input { Value = FuID { &#34;Fast Gaussian&#34; }, },
+				SoftEdge = Input { Value = 0.0299, },
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1 }, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				ClippingMode = Input { Value = FuID { &#34;None&#34; }, },
+				Width = Input { Value = 0.118, },
+				Height = Input {
+					Value = 0.118,
+					Expression = &#34;Width&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 825.943, -51.6377 } },
+		},
+		Background3 = Background {
+			Inputs = {
+				EffectMask = Input {
+					SourceOp = &#34;Ellipse3&#34;,
+					Source = &#34;Mask&#34;,
+				},
+				GlobalOut = Input { Value = 71, },
+				Width = Input { Value = 1920, },
+				Height = Input { Value = 1080, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				[&#34;Gamut.SLogVersion&#34;] = Input { Value = FuID { &#34;SLog2&#34; }, },
+				TopLeftRed = Input { Value = 0.901960784313726, },
+				TopLeftGreen = Input { Value = 0.858823529411765, },
+				TopLeftBlue = Input { Value = 0.682352941176471, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 825.943, 14.3623 } },
+		},
+		Transform2 = Transform {
+			Inputs = {
+				Center = Input { Expression = &#34;light_src_xform.Center&#34;, },
+				Size = Input { Value = 0.41, },
+				Input = Input {
+					SourceOp = &#34;Background3&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 825.943, 80.3623 } },
+		},
+		Merge4 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = &#34;merge_env_fog_noise&#34;,
+					Source = &#34;Output&#34;,
+				},
+				Foreground = Input {
+					SourceOp = &#34;Transform2&#34;,
+					Source = &#34;Output&#34;,
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660.943, 80.3623 } },
+		},
+		PipeRouter3 = PipeRouter {
+			Inputs = {
+				Input = Input {
+					SourceOp = &#34;Merge4&#34;,
+					Source = &#34;Output&#34;,
+				},
+			},
+			ViewInfo = PipeRouterInfo { Pos = { 660, 181.5 } },
+		}
+	}
+}">Ctrl-C</div>
+	<div class="clipboard-snippet-info">
+		WIP setup of a light shaft. Will create a macro
+		
+		
+	</div>
+
+</div>
 
     </div>
     <div class="col-md-2 toc-wrap">
@@ -1457,7 +1721,11 @@ C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusi
       </ul>
     </li>
     <li><a href="#modifier">Modifier</a></li>
-    <li><a href="#macro">Macro</a></li>
+    <li><a href="#macro">Macro</a>
+      <ul>
+        <li><a href="#python">Python</a></li>
+      </ul>
+    </li>
     <li><a href="#graph-editor-spline">Graph Editor (Spline)</a>
       <ul>
         <li><a href="#shortcuts-3">Shortcuts</a></li>
@@ -1474,6 +1742,7 @@ C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusi
     </li>
     <li><a href="#gotchas">Gotchas</a></li>
     <li><a href="#misc-3">Misc</a></li>
+    <li><a href="#setups">Setups</a></li>
   </ul>
 </nav>	
 		</div>
@@ -1542,7 +1811,11 @@ C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusi
       </ul>
     </li>
     <li><a href="#modifier">Modifier</a></li>
-    <li><a href="#macro">Macro</a></li>
+    <li><a href="#macro">Macro</a>
+      <ul>
+        <li><a href="#python">Python</a></li>
+      </ul>
+    </li>
     <li><a href="#graph-editor-spline">Graph Editor (Spline)</a>
       <ul>
         <li><a href="#shortcuts-3">Shortcuts</a></li>
@@ -1559,6 +1832,7 @@ C:\Users\UserName\AppData\Roaming\Blackmagic Design\DaVinci Resolve\Support\Fusi
     </li>
     <li><a href="#gotchas">Gotchas</a></li>
     <li><a href="#misc-3">Misc</a></li>
+    <li><a href="#setups">Setups</a></li>
   </ul>
 </nav>
 	    </div>	

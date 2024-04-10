@@ -3,8 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.petfactory.se/work/mustang/</loc>
+    <lastmod>2024-04-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.petfactory.se/tags/houdini/</loc>
-    <lastmod>2023-08-22T00:00:00+01:00</lastmod>
+    <lastmod>2024-04-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/</loc>
+    <lastmod>2024-04-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/</loc>
+    <lastmod>2024-04-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/unreal/</loc>
+    <lastmod>2024-04-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/work/</loc>
+    <lastmod>2024-04-10T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/axiom/</loc>
+    <lastmod>2024-04-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/houdini-axiom/</loc>
+    <lastmod>2024-04-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/houdini-notes/</loc>
+    <lastmod>2024-04-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/notes/</loc>
+    <lastmod>2024-04-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.petfactory.se/tags/simulation/</loc>
+    <lastmod>2024-04-08T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -13,22 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.petfactory.se/</loc>
-    <lastmod>2023-08-22T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.petfactory.se/tags/solaris/</loc>
-    <lastmod>2023-08-22T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/</loc>
-    <lastmod>2023-08-22T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/work/</loc>
     <lastmod>2023-08-22T00:00:00+01:00</lastmod>
   </url>
   
@@ -44,21 +79,6 @@
   
   <url>
     <loc>https://www.petfactory.se/notes/houdini-flip/</loc>
-    <lastmod>2023-07-29T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/houdini-notes/</loc>
-    <lastmod>2023-07-29T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/notes/</loc>
-    <lastmod>2023-07-29T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/simulation/</loc>
     <lastmod>2023-07-29T00:00:00+01:00</lastmod>
   </url>
   
@@ -79,11 +99,6 @@
   
   <url>
     <loc>https://www.petfactory.se/tags/ue5-notes/</loc>
-    <lastmod>2023-07-17T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.petfactory.se/tags/unreal/</loc>
     <lastmod>2023-07-17T00:00:00+01:00</lastmod>
   </url>
   

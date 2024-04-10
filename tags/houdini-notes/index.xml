@@ -6,10 +6,20 @@
     <description>Recent content in Houdini-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 08 Apr 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/houdini-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini - Axiom</title>
+      <link>https://www.petfactory.se/notes/houdini-axiom/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini-axiom/</guid>
+      <description>s 28.42
+Axiom Solver  Axiom &amp;gt; Main &amp;gt; Solver  Mode  Traditional  Traditional follows the exact steps of used by most fluid solvers   Reflection  Reflection is good at conserving energy in the sim, swirling motion will last longer.   Reflection Single Step  Less accurate but faster version of reflection (Default) Really no need to change from this     Division Size  Voxel div size, lower value means higher resolution   Voxels  Starting number of voxels.</description>
+    </item>
     
     <item>
       <title>Houdini - FLIP</title>

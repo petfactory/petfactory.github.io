@@ -754,6 +754,21 @@ The version can only contain numbers and periods (.). For example, myasset::2, m
 <p>Some scripting commands require the node category and node name together (for example Object/geo, Sop/copy, Dop/popsolver). To use namespaced names with these commands, use the form 
 [namespace::]<strong>node_category</strong>/<strong>node_name</strong>[::version]
 For example, com.sundae::<strong>Sop</strong>/<strong>copy</strong>::2.0</p>
+<h1 id="gotcha">Gotcha!</h1>
+<ul>
+<li><strong>Outside References</strong>
+<ul>
+<li>Make all refernces relative to the HDA</li>
+<li>CHOP net
+<ul>
+<li>I got a warning that some nodes inside a CHOP net were referencing objects outside the HDA</li>
+<li>It was the <em>Export Prefix</em> parameter set to &ldquo;../../..&rdquo;</li>
+<li>To fix this <em>CTRL + MMB</em> click the parameter to reset it to &ldquo;../../&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <!--
 ## 2 types of versioning
 
@@ -851,6 +866,7 @@ Houdini supports two different but compatible systems for versioning assets, sup
         </li>
       </ul>
     </li>
+    <li><a href="#gotcha">Gotcha!</a></li>
   </ul>
 </nav>	
 		</div>
@@ -948,6 +964,7 @@ Houdini supports two different but compatible systems for versioning assets, sup
         </li>
       </ul>
     </li>
+    <li><a href="#gotcha">Gotcha!</a></li>
   </ul>
 </nav>
 	    </div>	

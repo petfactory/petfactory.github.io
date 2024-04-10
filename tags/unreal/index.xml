@@ -6,10 +6,19 @@
     <description>Recent content in Unreal on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jul 2023 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/unreal/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>65 Mustang Fastback - 01</title>
+      <link>https://www.petfactory.se/work/mustang/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/mustang/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The vehicle and cameras were animated in Houdini. The Dust sim was also done in Houdini using Axiom. The scene is lit by a quite lowrez HDRI, that was also used as a cheap environment. The ground is basically a plane with a Megascans texture. I did not want to do to much with the environment since the focus was on the animation workflow between Houdini and Unreral.</description>
+    </item>
     
     <item>
       <title>Pet Roadeo</title>
