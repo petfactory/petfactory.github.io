@@ -27,9 +27,7 @@ Heightfield  Heightfield  Note! Since UE is pretty picky with the terrain resolu
       <pubDate>Tue, 30 May 2023 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-niagara/</guid>
-      <description>Sprite Smoke A prechewed run-through of the sprite smoke tutorial.
- Sprite Smoke  Note:
-This example uses the M_smoke_subUV Material, which can be found with the Starter Content. Create the System and Emitter  Create a folder, name it &amp;ldquo;Niagara_fx&amp;rdquo; (or something else) and step into it. Create a Niagara System, RMB click &amp;gt; FX &amp;gt; Niagara System (or choose from create basic assets at the top of the popup menu) Select New system from selected emitters.</description>
+      <description>Basic Setup Empty Emitter  Create empty emitter  RMB &amp;gt; FX &amp;gt; Niagara Emitter  Select New emitter &amp;gt; Next Templates &amp;gt; Empty  This is a mostly blank emitter template, with some minimal initial setup   Give a name NE_emitter Double click to open the editor     Spawn some particles  Click the Emitter update + &amp;gt; Spawn Rate  This will continously spaw particles   Set the spawn rate to 10  This will spawn 10 particles / second By default the will have a life of 5 second, as set by Particle Spawn &amp;gt; Initialize Particle &amp;gt; Point Attributes &amp;gt; Lifetime : 5 they will not move, since they have no velocity     Add Velocity  Click Particle Spawn + &amp;gt; Add Velocity  Note that you will get a warning that we have som unmet dependencies  We need to add:  Solve Forces and Velocity in the Particle Update section Apply Initial Forces in the Particle Spawn section     Click on the Fix this on the right hand side of Solve Forces and Velocity.</description>
     </item>
     
     <item>

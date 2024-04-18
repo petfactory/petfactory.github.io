@@ -125,7 +125,101 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 notes-wrap">
-    	<h1 id="sprite-smoke">Sprite Smoke</h1>
+    	<h1 id="basic-setup">Basic Setup</h1>
+<h2 id="empty-emitter">Empty Emitter</h2>
+<ul>
+<li><strong>Create empty emitter</strong>
+<ul>
+<li>RMB &gt; FX &gt; Niagara Emitter
+<ul>
+<li>Select <em>New emitter</em> &gt; Next</li>
+<li>Templates &gt; Empty
+<ul>
+<li>This is a mostly blank emitter template, with some minimal initial setup</li>
+</ul>
+</li>
+<li>Give a name NE_emitter</li>
+<li>Double click to open the editor</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Spawn some particles</strong>
+<ul>
+<li>Click the <em>Emitter update +</em> &gt; Spawn Rate
+<ul>
+<li>This will continously spaw particles</li>
+</ul>
+</li>
+<li>Set the spawn rate to 10
+<ul>
+<li>This will spawn 10 particles / second</li>
+<li>By default the will have a life of 5 second, as set by Particle Spawn &gt; Initialize Particle &gt; Point Attributes &gt; Lifetime : 5</li>
+<li>they will not move, since they have no velocity</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Add Velocity</strong>
+<ul>
+<li>Click <em>Particle Spawn +</em> &gt; Add Velocity
+<ul>
+<li>Note that you will get a warning that we have som unmet dependencies
+<ul>
+<li>We need to add:
+<ul>
+<li><em>Solve Forces and Velocity</em> in the <em>Particle Update</em> section</li>
+<li><em>Apply Initial Forces</em> in the <em>Particle Spawn</em> section</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Click on the <em>Fix</em> this on the right hand side of Solve Forces and Velocity.</li>
+<li>Altough the missing dependencies warning will go away when we click the first error, maybe it is a good idea to add the secong dependency aswell?
+<ul>
+<li>On the <em>Particle Spawn +</em> click and add <em>Apply Initial Forces</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now (if the timeline is playing) we will se the particles rise straight up. So lets introduce som variation to the velocity.</li>
+<li>Add random velocity
+<ul>
+<li>Click the Add velocity Module (Particle Spawn &gt; AddVelocity)</li>
+<li>In the Details panel click the down arrow on the right side of <em>Add Velocity &gt; Velocity</em> parameter.</li>
+<li>In the search field start typing &ldquo;ran&hellip;&rdquo; select <em>Random Vector</em></li>
+<li>Click on the right hand side arrow of <em>Vector Scale</em> and start typing &ldquo;ran&hellip;&rdquo; select <em>Random Range Float</em>.
+<ul>
+<li>Set the Maximum to 100</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Set Particle Size</strong>
+<ul>
+<li><em>Initial Size</em>
+<ul>
+<li>Select the <em>Particle Spawn &gt; Initialize Particle</em> then in the details panel click <em>Sprite Attributes &gt; Sprite Size Mode</em> select uniform.</li>
+<li>The we can click the arrow on the right hand side and start typinf &ldquo;ran&hellip;&rdquo; and select <em>Random Range Float</em> we can enter min 10 and max 20.
+<ul>
+<li>I guess we can use the <em>Random Uniorm</em> choice of the Sprite Size Mode to get the same result?</li>
+<li>Note we need this to be set in order to set the size of the particle based on the age in a later stage.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Particle Update size</em>
+<ul>
+<li>Then we can scale the particle based on the normalized age</li>
+<li>On the <em>Particle Update</em> click the + and start typing &ldquo;scale&hellip;&rdquo; select</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="sprite-smoke">Sprite Smoke</h1>
 <p>A prechewed run-through of the sprite smoke tutorial.</p>
 <ul>
 <li><strong>Sprite Smoke</strong>
@@ -312,6 +406,21 @@ This example uses the M_smoke_subUV Material, which can be found with the Starte
 </li>
 </ul>
 <h1 id="sequencer">Sequencer</h1>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong>Add Niagare System (NS) to sequencer</strong>
+<ul>
+<li>First drag and drop the NS to the outliner</li>
+<li>From the outliner, drag and drop the NS to the sequencer</li>
+<li>Click on the + and add <em>Niagara Component</em>
+<ul>
+<li>Click on the + and add <em>Niagara System Life Cycle Track</em></li>
+<li>Change the system life cyclke to <em>Desired Age No Seek</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="custom-parameter">Custom Parameter</h2>
 <p>Here is a way to add a user parameter that you can animate in sequencer</p>
 <ul>
@@ -653,9 +762,15 @@ End Object
     	<div class="toc-content">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#basic-setup">Basic Setup</a>
+      <ul>
+        <li><a href="#empty-emitter">Empty Emitter</a></li>
+      </ul>
+    </li>
     <li><a href="#sprite-smoke">Sprite Smoke</a></li>
     <li><a href="#sequencer">Sequencer</a>
       <ul>
+        <li><a href="#tips">Tips</a></li>
         <li><a href="#custom-parameter">Custom Parameter</a></li>
       </ul>
     </li>
@@ -700,9 +815,15 @@ End Object
 	  	<div data-bs-dismiss="offcanvas">
 	    	<nav id="TableOfContents">
   <ul>
+    <li><a href="#basic-setup">Basic Setup</a>
+      <ul>
+        <li><a href="#empty-emitter">Empty Emitter</a></li>
+      </ul>
+    </li>
     <li><a href="#sprite-smoke">Sprite Smoke</a></li>
     <li><a href="#sequencer">Sequencer</a>
       <ul>
+        <li><a href="#tips">Tips</a></li>
         <li><a href="#custom-parameter">Custom Parameter</a></li>
       </ul>
     </li>
