@@ -6,10 +6,19 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Apr 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 30 Apr 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lego 65 Mustang - 01</title>
+      <link>https://www.petfactory.se/work/lego_mustang_01/</link>
+      <pubDate>Tue, 30 Apr 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/lego_mustang_01/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The vehicle and cameras were animated in Houdini as were the smoke and RBD sim. I used Unreal for the edit and rendering. The scene is lit by a lowrez HDRI, that was also used as a cheap environment. The ground is basically a plane with a Megascans texture and some decals. Rendered with the path tracer in unreal 5.</description>
+    </item>
     
     <item>
       <title>65 Mustang Fastback - 02</title>

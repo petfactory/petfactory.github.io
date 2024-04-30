@@ -561,6 +561,18 @@ item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f9267
     w <span style="color:#f92672">=</span> ParentWidget()
     w<span style="color:#f92672">.</span>show()
     app<span style="color:#f92672">.</span>exec_()
+</code></pre></div><h2 id="additional-arguments">Additional arguments</h2>
+<p>Lets say that you are emitting a signal from a custom QMenu. You are recieving the signal in a QTreeView, and here you want to add some additional arguments and emit another signal that can be recieved in a parent widget. One thing that tripped me up was in which order the arguments gets processed in the slot in the QTreeView.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># we emit a signal from the QMenu</span>
+self<span style="color:#f92672">.</span>something<span style="color:#f92672">.</span>emit(A_arg, B_arg)
+
+<span style="color:#75715e"># we handle it in the QTreeView</span>
+menu<span style="color:#f92672">.</span>something<span style="color:#f92672">.</span>connect(partial(self<span style="color:#f92672">.</span>something_handler, C_arg))
+
+<span style="color:#75715e"># note that the C arg gets sent to the handler as the first arg</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">something_handler</span>(self, C_arg, A_arg, B_arg):
+
+
 </code></pre></div><h1 id="stylesheets--resources">Stylesheets &amp; Resources</h1>
 <h2 id="compile-qrc">Compile .qrc</h2>
 <ul>
@@ -635,6 +647,7 @@ item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f9267
     <li><a href="#signal--slot">Signal &amp; Slot</a>
       <ul>
         <li><a href="#chaining-signals">Chaining signals</a></li>
+        <li><a href="#additional-arguments">Additional arguments</a></li>
       </ul>
     </li>
     <li><a href="#stylesheets--resources">Stylesheets &amp; Resources</a>
@@ -732,6 +745,7 @@ item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f9267
     <li><a href="#signal--slot">Signal &amp; Slot</a>
       <ul>
         <li><a href="#chaining-signals">Chaining signals</a></li>
+        <li><a href="#additional-arguments">Additional arguments</a></li>
       </ul>
     </li>
     <li><a href="#stylesheets--resources">Stylesheets &amp; Resources</a>
