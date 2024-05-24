@@ -6,10 +6,19 @@
     <description>Recent content on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Apr 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 &amp; Houdini - VAT</title>
+      <link>https://www.petfactory.se/notes/ue5-vat/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-vat/</guid>
+      <description>Installation  Installation  The VAT Vertex Animation Texures is a part of the SideFX Labs toolset  Make sure that the SideFX Labs shelf is loaded You can press the Update Toolset button on far left on the shelf to update   In the Out context add a Labs Vertax Animatiin Textures node On the node, click the &amp;ldquo;Real-Time Shaders&amp;rdquo; section.  Click the Unreal Engine Content Plugin &amp;amp; Guides button to open up the dir.</description>
+    </item>
     
     <item>
       <title>Lego 65 Mustang - 01</title>
@@ -604,8 +613,7 @@ Inspect variables To print the value of an environment variable you can use the 
       
       <guid>https://www.petfactory.se/notes/houdini-hda/</guid>
       <description>The notes below are based on info found in the Houdini docs as well as other sources.
-Digital Asset For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.
-Preferences Before you create an HDA it is a good idea to configure the preferences. Below is the way I have setup my prefs, but that is depending on your workflow etc.</description>
+Digital Asset Tips  Asset Definition Toolbar  The asset definition toolbar shows the name space and version info of the HDA and can be useful to enable: Assets &amp;gt; Asset Definition Toolbar &amp;gt; Show Menu Always    Creation For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.</description>
     </item>
     
     <item>

@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Apr 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,18 +14,54 @@
     <item>
       <title>Houdini</title>
       <link>https://www.petfactory.se/tags/houdini/</link>
-      <pubDate>Tue, 30 Apr 2024 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/houdini/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Houdini-notes</title>
+      <link>https://www.petfactory.se/tags/houdini-notes/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/houdini-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UE5-notes</title>
+      <link>https://www.petfactory.se/tags/ue5-notes/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/ue5-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Unreal</title>
       <link>https://www.petfactory.se/tags/unreal/</link>
-      <pubDate>Tue, 30 Apr 2024 00:00:00 +0100</pubDate>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/unreal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unreal Engine-notes</title>
+      <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/unreal-engine-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VAT</title>
+      <link>https://www.petfactory.se/tags/vat/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/vat/</guid>
       <description></description>
     </item>
     
@@ -35,15 +71,6 @@
       <pubDate>Mon, 08 Apr 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/axiom/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Houdini-notes</title>
-      <link>https://www.petfactory.se/tags/houdini-notes/</link>
-      <pubDate>Mon, 08 Apr 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/houdini-notes/</guid>
       <description></description>
     </item>
     
@@ -89,24 +116,6 @@
       <pubDate>Mon, 17 Jul 2023 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/terrain/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UE5-notes</title>
-      <link>https://www.petfactory.se/tags/ue5-notes/</link>
-      <pubDate>Mon, 17 Jul 2023 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/ue5-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unreal Engine-notes</title>
-      <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
-      <pubDate>Mon, 17 Jul 2023 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/unreal-engine-notes/</guid>
       <description></description>
     </item>
     

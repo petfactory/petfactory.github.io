@@ -232,6 +232,28 @@
         <span style="color:#66d9ef">print</span>(node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>name() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;geo&#39;</span>) 
         <span style="color:#66d9ef">print</span>(type(node))
         <span style="color:#66d9ef">print</span>(isinstance(node, hou<span style="color:#f92672">.</span>ObjNode)) 
+</code></pre></div><h2 id="type">Type</h2>
+<p>All the node types in Houdini are organized into categories, and a node type is uniquely identified by its category and node type name. For example, objects, SOPs, POPs, etc. are node type categories. You can also access a 
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/NodeType.html" target="_blank" rel="noopener">NodeType</a> object from a category with hou.NodeTypeCategory.nodeTypes. Similarly, you can call hou.nodeType() with the category and node type name.</p>
+<ul>
+<li><strong>nameComponents()</strong> → tuple of str
+<ul>
+<li>Returns a tuple of node type name components that constitute the full node type name. The components in the tuple appear in the following order:
+<ul>
+<li><strong>Network</strong> scope network type</li>
+<li><strong>Namespace</strong> node type namespace</li>
+<li><strong>Name</strong> node type core name</li>
+<li><strong>Version</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/copytopoints1&#39;</span>)
+<span style="color:#66d9ef">print</span>(node<span style="color:#f92672">.</span>type())
+<span style="color:#75715e"># &lt;hou.SopNodeType for Sop copytopoints::2.0&gt;</span>
+<span style="color:#66d9ef">print</span>(node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>nameComponents())
+<span style="color:#75715e"># (&#39;&#39;, &#39;&#39;, &#39;copytopoints&#39;, &#39;2.0&#39;)</span>
 </code></pre></div><h2 id="flag">Flag</h2>
 <ul>
 <li><strong>Set Flag</strong>
@@ -563,6 +585,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
       <ul>
         <li><a href="#selection">Selection</a></li>
         <li><a href="#class">Class</a></li>
+        <li><a href="#type">Type</a></li>
         <li><a href="#flag">Flag</a></li>
       </ul>
     </li>
@@ -660,6 +683,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
       <ul>
         <li><a href="#selection">Selection</a></li>
         <li><a href="#class">Class</a></li>
+        <li><a href="#type">Type</a></li>
         <li><a href="#flag">Flag</a></li>
       </ul>
     </li>

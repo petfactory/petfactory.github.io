@@ -393,8 +393,11 @@ form_layout<span style="color:#f92672">.</span>setItem(form_layout<span style="c
 
 form_layout<span style="color:#f92672">.</span>addRow(<span style="color:#e6db74">&#39;Label 2&#39;</span>, QtWidgets<span style="color:#f92672">.</span>QLabel(<span style="color:#e6db74">&#39;Two&#39;</span>))
 </code></pre></div><p>Get the label of a form layout</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">label <span style="color:#f92672">=</span> form_layout<span style="color:#f92672">.</span>itemAt(<span style="color:#ae81ff">0</span>, QtWidgets<span style="color:#f92672">.</span>QFormLayout<span style="color:#f92672">.</span>LabelRole)<span style="color:#f92672">.</span>widget()
-label<span style="color:#f92672">.</span>setToolTip(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">label_0 <span style="color:#f92672">=</span> form_layout<span style="color:#f92672">.</span>itemAt(<span style="color:#ae81ff">0</span>, QtWidgets<span style="color:#f92672">.</span>QFormLayout<span style="color:#f92672">.</span>LabelRole)<span style="color:#f92672">.</span>widget()
+label_0<span style="color:#f92672">.</span>setToolTip(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+
+label_1 <span style="color:#f92672">=</span> form_layout<span style="color:#f92672">.</span>itemAt(form_layout<span style="color:#f92672">.</span>rowCount(), QtWidgets<span style="color:#f92672">.</span>QFormLayout<span style="color:#f92672">.</span>LabelRole)<span style="color:#f92672">.</span>widget()
+label_1<span style="color:#f92672">.</span>setToolTip(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
 </code></pre></div><h1 id="view">View</h1>
 <h2 id="qtreeview">QTreeView</h2>
 <ul>

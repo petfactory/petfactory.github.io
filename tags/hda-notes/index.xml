@@ -18,8 +18,7 @@
       
       <guid>https://www.petfactory.se/notes/houdini-hda/</guid>
       <description>The notes below are based on info found in the Houdini docs as well as other sources.
-Digital Asset For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.
-Preferences Before you create an HDA it is a good idea to configure the preferences. Below is the way I have setup my prefs, but that is depending on your workflow etc.</description>
+Digital Asset Tips  Asset Definition Toolbar  The asset definition toolbar shows the name space and version info of the HDA and can be useful to enable: Assets &amp;gt; Asset Definition Toolbar &amp;gt; Show Menu Always    Creation For a really nice and streamlined workflow of creating HDA you can use the SideFx Labs Digital Asset RMB menu.</description>
     </item>
     
   </channel>

@@ -6,10 +6,19 @@
     <description>Recent content in UE5-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jul 2023 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/ue5-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 &amp; Houdini - VAT</title>
+      <link>https://www.petfactory.se/notes/ue5-vat/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-vat/</guid>
+      <description>Installation  Installation  The VAT Vertex Animation Texures is a part of the SideFX Labs toolset  Make sure that the SideFX Labs shelf is loaded You can press the Update Toolset button on far left on the shelf to update   In the Out context add a Labs Vertax Animatiin Textures node On the node, click the &amp;ldquo;Real-Time Shaders&amp;rdquo; section.  Click the Unreal Engine Content Plugin &amp;amp; Guides button to open up the dir.</description>
+    </item>
     
     <item>
       <title>UE5 - Landscapes</title>
