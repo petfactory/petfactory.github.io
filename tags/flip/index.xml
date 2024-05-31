@@ -17,7 +17,7 @@
       <pubDate>Thu, 30 May 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/work/flip-essence-01/</guid>
-      <description>In this project I wanted to dig a bit deeper into Flip simulations in Houdini. I am using the SOP Flip workflow and I must say that I really like it, quite quick and intuitive to setup. The glass is modeled in Houdini based on the Essence tumbler by Iittala. The fruit and woodboard are megascans.</description>
+      <description>In this project I wanted to learn more about Flip simulations in Houdini. I am using the SOP Flip workflow and I must say that I really like it, quite quick and intuitive to setup. The glass is modeled in Houdini based on the Essence tumbler by Iittala. The fruit and woodboard are Megascans. Rendered in Houdini using Karma XPU. Next steps are exploring ways to add art directable bubbles at intersection of the fluid and glass and improving the shape of the fluid.</description>
     </item>
     
     <item>
