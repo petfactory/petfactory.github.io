@@ -152,6 +152,16 @@ The next step is to activate the environment, we do this by runnung:</p>
 ---------- -------
 pip        20.2.1
 setuptools 49.2.1
+</code></pre></div><h1 id="path">Path</h1>
+<h2 id="relative">Relative</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rel_dir_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../B&#39;</span>
+root_path_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C:/Path/To/Dir/A&#39;</span>
+rel_path <span style="color:#f92672">=</span> Path(root_path_str)<span style="color:#f92672">.</span>joinpath(rel_dir_str)
+<span style="color:#66d9ef">print</span>(rel_path) <span style="color:#75715e"># C:\Path\To\Dir\A\..\B</span>
+abs_path <span style="color:#f92672">=</span> rel_path<span style="color:#f92672">.</span>resolve()    
+<span style="color:#66d9ef">print</span>(abs_path) <span style="color:#75715e"># C:\Path\To\Dir\B</span>
+abs_path_str <span style="color:#f92672">=</span> str(abs_path)<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>)
+<span style="color:#66d9ef">print</span>(abs_path_str) <span style="color:#75715e"># C:/Path/To/Dir/B   </span>
 </code></pre></div><h1 id="dictionary">Dictionary</h1>
 <h2 id="sorting">Sorting</h2>
 <p><strong>Sort a list of dicts based on dict value</strong></p>
@@ -365,6 +375,11 @@ name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>
         <li><a href="#pip">Pip</a></li>
       </ul>
     </li>
+    <li><a href="#path">Path</a>
+      <ul>
+        <li><a href="#relative">Relative</a></li>
+      </ul>
+    </li>
     <li><a href="#dictionary">Dictionary</a>
       <ul>
         <li><a href="#sorting">Sorting</a></li>
@@ -435,6 +450,11 @@ name <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>
         <li><a href="#setup-a-virtual-environment">Setup a virtual environment</a></li>
         <li><a href="#use-the-venv-in-sublimetext">Use the venv in SublimeText</a></li>
         <li><a href="#pip">Pip</a></li>
+      </ul>
+    </li>
+    <li><a href="#path">Path</a>
+      <ul>
+        <li><a href="#relative">Relative</a></li>
       </ul>
     </li>
     <li><a href="#dictionary">Dictionary</a>

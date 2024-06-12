@@ -6,10 +6,19 @@
     <description>Recent content in Flip on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/flip/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flip - Skuggslem 01 </title>
+      <link>https://www.petfactory.se/work/flip-skuggslem-01/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/flip-skuggslem-01/</guid>
+      <description>Exploring FLIP simulation in Houdini. This time with a more viscous fluid, aka &amp;ldquo;Skuggslem&amp;rdquo;. Rendered with Karma XPU with quite low samples.</description>
+    </item>
     
     <item>
       <title>Flip - Essence 01 </title>
