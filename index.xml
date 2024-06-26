@@ -21,6 +21,16 @@
     </item>
     
     <item>
+      <title>Houdini - Vellum</title>
+      <link>https://www.petfactory.se/notes/houdini-vellum/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini-vellum/</guid>
+      <description>General Vellum is a simulation framework that uses an extended Position Based Dynamics approach. It can be used to create many different things including cloth, hair, softbodies, balloons, and grains. The main advantage of a Position Based Approach is its controllability, stability, and ability to produce believable results quickly.
+Graph Coloring  Graph Coloring  Graph coloring is a process where the primitives are segmented into non overlapping sets, where no set shares points.</description>
+    </item>
+    
+    <item>
       <title>Flip - Essence 01 </title>
       <link>https://www.petfactory.se/work/flip-essence-01/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0100</pubDate>
@@ -258,8 +268,7 @@ licensed under a Attribution-NonCommercial-ShareAlike 4.0 International License
       
       <guid>https://www.petfactory.se/notes/houdini-lops-usd/</guid>
       <description>Solaris is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. LOP (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.
-Tips Lighting  Automatic headlight Creation  The default behaviour when there are no lights present in the scene is to create a default headlight. To disable the default light uncheck the following checkbox
-Karma render settings (node) &amp;gt; Rendering &amp;gt; Geometry and Shading &amp;gt; Shading &amp;gt; Automatic Headlight Creation : Disable    Python Scene Graph Tree Lets select some prims in the Scene Graph Tree using Python.</description>
+Tips Instancer  Instancer  The hip file below ( karma_instancer_motionblur.hiplc ) contains a simple instancer setup SOP level  Prototype meshes  Create some meshes to use as prototypes Give each mesh a unique primitve name attrib, for instance &amp;ldquo;sphere&amp;rdquo; Create a path attrib to place them where you want them in the scene graph  we can do this with vex and base it on the name attrib: s@path = &amp;lsquo;/geo/meshes/&amp;lsquo;+s@name;     Target Points  Create some points Give them names (point attrib) that matches the name we gave to meshes  The point attrib name will be used to instance the &amp;ldquo;correct&amp;rdquo; geo       LOP level  SOP Create  Create an SOP Create node Dive in, and create an Object Merge and point to the SOP geo Solaris will use the path attrib to place the prims in the scene tree   Collection  Create a Collection node Give it a Collection Name: &amp;ldquo;my_collection&amp;rdquo; Remove the all text inside the Primitives textbox Write /geo/meshes/* in the Primitives textbox  what this means is that it will add all primitives below this primitive to the collection   Note: from the scene graph tree you can also drag and drop the &amp;ldquo;geo/meshes&amp;rdquo; that we brought in with the sop create.</description>
     </item>
     
     <item>

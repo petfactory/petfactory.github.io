@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vellum on Petfactory</title>
+    <link>https://www.petfactory.se/tags/vellum/</link>
+    <description>Recent content in Vellum on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/vellum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Houdini - Vellum</title>
+      <link>https://www.petfactory.se/notes/houdini-vellum/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/houdini-vellum/</guid>
+      <description>General Vellum is a simulation framework that uses an extended Position Based Dynamics approach. It can be used to create many different things including cloth, hair, softbodies, balloons, and grains. The main advantage of a Position Based Approach is its controllability, stability, and ability to produce believable results quickly.
+Graph Coloring  Graph Coloring  Graph coloring is a process where the primitives are segmented into non overlapping sets, where no set shares points.</description>
+    </item>
+    
+  </channel>
+</rss>

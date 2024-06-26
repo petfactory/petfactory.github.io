@@ -129,6 +129,132 @@
 <a href="https://www.sidefx.com/docs/houdini/solaris/index.html" target="_blank" rel="noopener">Solaris</a> is the umbrella name for Houdini’s scene building, layout, lighting, and rendering tools based on the Universal Scene Description (USD) framework. 
 <a href="https://www.sidefx.com/docs/houdini/nodes/lop/index.html" target="_blank" rel="noopener">LOP</a> (lighting operator) nodes generate USD describing characters, props, lighting, and rendering.</p>
 <h1 id="tips">Tips</h1>
+<h2 id="instancer">Instancer</h2>
+<ul>
+<li><strong>Instancer</strong>
+<ul>
+<li>The hip file below ( karma_instancer_motionblur.hiplc ) contains a simple instancer setup</li>
+<li><strong>SOP level</strong>
+<ul>
+<li><em>Prototype meshes</em>
+<ul>
+<li>Create some meshes to use as prototypes</li>
+<li>Give each mesh a unique primitve name attrib, for instance &ldquo;sphere&rdquo;</li>
+<li>Create a <em>path</em> attrib to place them where you want them in the scene graph
+<ul>
+<li>we can do this with vex and base it on the name attrib:</li>
+<li>s@path = &lsquo;/geo/meshes/&lsquo;+s@name;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Target Points</em>
+<ul>
+<li>Create some points</li>
+<li>Give them names (point attrib) that matches the name we gave to meshes
+<ul>
+<li>The point attrib name will be used to instance the &ldquo;correct&rdquo; geo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>LOP level</strong>
+<ul>
+<li><strong>SOP Create</strong>
+<ul>
+<li>Create an <em>SOP Create</em> node</li>
+<li>Dive in, and create an <em>Object Merge</em> and point to the SOP geo</li>
+<li>Solaris will use the path attrib to place the prims in the scene tree</li>
+</ul>
+</li>
+<li><strong>Collection</strong>
+<ul>
+<li>Create a <em>Collection</em> node</li>
+<li>Give it a <em>Collection Name</em>: &ldquo;my_collection&rdquo;</li>
+<li>Remove the all text inside the <em>Primitives</em> textbox</li>
+<li>Write <em>/geo/meshes/*</em> in the Primitives textbox
+<ul>
+<li>what this means is that it will add all primitives below this primitive to the collection</li>
+</ul>
+</li>
+<li>Note: from the scene graph tree you can also drag and drop the &ldquo;geo/meshes&rdquo; that we brought in with the sop create. Just make sure to add &ldquo;/*&rdquo; at the end</li>
+</ul>
+</li>
+<li><strong>Instancer</strong>
+<ul>
+<li><em>Target points &gt; Location Source : External SOP</em>
+<ul>
+<li>Set the <em>SOP Path</em> to point to the SOP level points we created</li>
+</ul>
+</li>
+<li><em>Prototype Primitives</em>
+<ul>
+<li>On the Prototypes &gt; Prototype Primitives we need to set the collection we created.</li>
+<li>Enter &ldquo;%my_collection&rdquo; (percentage sign followed by he collection name we set earlier)</li>
+<li><em>Note:</em> you can also use the drop down on the right hand side and at the bottom of the list you should find the collection</li>
+<li>We also set the Primitive Path (of the instancer) to organize the scene graph tree</li>
+</ul>
+</li>
+<li><em>Prototype Index</em>
+In the <em>Options &gt; Prototype Index</em> we set <em>Name Attribute</em> and set the <em>Name Attribute</em> to &ldquo;name&rdquo;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="rendering">Rendering</h2>
+<ul>
+<li><strong>Motion Blur</strong>
+<ul>
+<li><em>Instancer</em>
+<ul>
+<li><em>Curved instance motion blur</em>
+<ul>
+<li>Create a <em>Trail SOP</em>
+<ul>
+<li>To be able to generate acceleration blur on the instances we use a trail sop to generate <em>v</em> and <em>accel</em> attrib</li>
+<li>Result Type : <em>Compute Velocity</em></li>
+<li>Velocity Approximation: <em>Central Difference</em></li>
+<li>Compute Acceleration: <em>On</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/hips/karma_instancer_motionblur.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">karma_instancer_motionblur.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">Setup acceleration motion blur on instancer in Karma</span>
+
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Cryptomatte</strong>
+<ul>
+<li><em>Houdini &gt; Resolve</em>
+<ul>
+<li>To be able to render a cryptomatte exr for use in Fusion we need to render in <em>Legacy Mode</em></li>
+<li>To do this either:
+<ul>
+<li>USD Render ROP &gt; Husk &gt; Rendering &gt; <em>Enable Legacy EXR Mode: On</em></li>
+<li>USD Render ROP &gt; Output &gt; Render Command : <em>husk &ndash;exrmode 0</em></li>
+</ul>
+</li>
+<li>Also if you use fusion in Resolve you can not use the <em>Media in</em>, you need to use a <em>Loader</em> to bring in the exr</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="lighting">Lighting</h2>
 <ul>
 <li><strong>Automatic headlight Creation</strong>
@@ -273,7 +399,7 @@ string mat <span style="color:#f92672">=</span> usd_boundmaterialpath(<span styl
 <span style="color:#f92672">//</span> set attrib
 usd_setattrib(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">@primpath</span>, <span style="color:#e6db74">&#39;yolo&#39;</span>, <span style="color:#ae81ff">42</span>);
 </code></pre></div><h1 id="nodes">Nodes</h1>
-<h2 id="rendering">Rendering</h2>
+<h2 id="rendering-1">Rendering</h2>
 <h3 id="camera-1">Camera</h3>
 <p><strong>Latlong cubemap in Karma</strong><br>
 I needed to render out a cube map using Karma so this led me to dig deeper into lens shaders. 
@@ -329,6 +455,8 @@ There seems to be a bug when Karma is rendering with Hython so the lensshader us
   <ul>
     <li><a href="#tips">Tips</a>
       <ul>
+        <li><a href="#instancer">Instancer</a></li>
+        <li><a href="#rendering">Rendering</a></li>
         <li><a href="#lighting">Lighting</a></li>
       </ul>
     </li>
@@ -348,7 +476,7 @@ There seems to be a bug when Karma is rendering with Hython so the lensshader us
     </li>
     <li><a href="#nodes">Nodes</a>
       <ul>
-        <li><a href="#rendering">Rendering</a>
+        <li><a href="#rendering-1">Rendering</a>
           <ul>
             <li><a href="#camera-1">Camera</a></li>
             <li><a href="#settings">Settings</a></li>
@@ -399,6 +527,8 @@ There seems to be a bug when Karma is rendering with Hython so the lensshader us
   <ul>
     <li><a href="#tips">Tips</a>
       <ul>
+        <li><a href="#instancer">Instancer</a></li>
+        <li><a href="#rendering">Rendering</a></li>
         <li><a href="#lighting">Lighting</a></li>
       </ul>
     </li>
@@ -418,7 +548,7 @@ There seems to be a bug when Karma is rendering with Hython so the lensshader us
     </li>
     <li><a href="#nodes">Nodes</a>
       <ul>
-        <li><a href="#rendering">Rendering</a>
+        <li><a href="#rendering-1">Rendering</a>
           <ul>
             <li><a href="#camera-1">Camera</a></li>
             <li><a href="#settings">Settings</a></li>
