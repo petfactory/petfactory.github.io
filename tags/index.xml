@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Control Rig</title>
+      <link>https://www.petfactory.se/tags/control-rig/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/control-rig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UE5-notes</title>
+      <link>https://www.petfactory.se/tags/ue5-notes/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/ue5-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unreal</title>
+      <link>https://www.petfactory.se/tags/unreal/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/unreal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unreal Engine-notes</title>
+      <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/unreal-engine-notes/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Flip</title>
@@ -53,33 +89,6 @@
       <pubDate>Wed, 12 Jun 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/vellum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UE5-notes</title>
-      <link>https://www.petfactory.se/tags/ue5-notes/</link>
-      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/ue5-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unreal</title>
-      <link>https://www.petfactory.se/tags/unreal/</link>
-      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/unreal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unreal Engine-notes</title>
-      <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
-      <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/unreal-engine-notes/</guid>
       <description></description>
     </item>
     

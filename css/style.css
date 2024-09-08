@@ -192,6 +192,18 @@ blockquote p {
   padding-right: 10px;
 }
 
+.download-file {
+    color: #555;
+}
+
+.download-file:hover{
+    color: #777;
+}
+
+.download-file-span {
+    margin-right: 10px;
+    
+}
 .clipboard-snippet-wrap{
     /*max-width: 600px;*/
     position: relative;

@@ -23,8 +23,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
 
         
-        <title>Petfactory | Unreal Engine-notes</title>
-        <meta name="description" content="Petfactory | Design and Animation | Unreal Engine-notes" />
+        <title>Petfactory | UE 5 - Control Rig</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE 5 - Control Rig" />
 
     </head>
 
@@ -122,349 +122,169 @@
 
 <div class="top-spacer"></div>
 
-<div class="container-fluid">
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 notes-wrap">
+    	<h1 id="basic-control-rig">Basic Control Rig</h1>
+<p>Some notes on how to setup a basic <em>Control Rig</em> in UE 5. Below are some basic assets to use while testing.</p>
+<h2 id="assets">Assets</h2>
+<p><div class="download-wrap">
 
+	<a href="https://www.petfactory.se/files/houdini/hips/4_cubes_rig_01.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">4_cubes_rig_01.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">A basic rig for testing</span>
+
+</div>
+<div class="download-wrap">
+
+	<a class="download-file" href="https://www.petfactory.se/files/fbx/4_cubes_rig_01.fbx" download>
+
+			<span class=download-file-span>
+            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0"/>
+</svg>
+			</span>
+
+	  		<span class="download-text">4_cubes_rig_01.fbx</span>
+	</a>
+	<br>
+	<span class="download-info">A basic rig for testing</span>
+
+</div></p>
+<h2 id="setup">Setup</h2>
+<ul>
+<li><strong>Import a skeleton</strong>
+<ul>
+<li>Lets use the &ldquo;<em>4_cubes_rig_01.fbx</em>&rdquo; as example file</li>
+<li>Import the fbx in Unreal
+<ul>
+<li>I just used the default settings, and ignored the warnings :)&hellip;<br>
+will look into this at a later time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Control Rig</strong>
+<ul>
+<li>On the <em>Skeletal Mesh</em>  RMB &gt; Create <em>Control Rig</em>
+<ul>
+<li>Double click to open up the graph</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Controller</strong>
+<ul>
+<li>In the <em>Rig Hierarchy</em> On the <em>Root</em> joint RMB &gt; <em>New &gt; New Control</em> (Ctrl + N)</li>
+<li>With the new control <em>root_ctrl</em> selected, unparent by pressing (Shift + P) or by click and dragging the ctrl to an empty space of the Rig Hierarchy.</li>
+<li>Click and drag the <em>root_ctrl</em> from the Rig Hierarchy and release on the Rig VM grap from the popup <em>&gt; Get Control</em></li>
+<li>Lets change the size of the controller
+<ul>
+<li>Make sure that the control is selected in the Rig Hierarchy</li>
+<li>In the Details panel under Shape &gt; Shape Transform Click the padlock to enable uniform scale and click and drag the scale of either scale component to a size that matcjhes the rig geo.</li>
+<li><strong>Note!</strong> if you can not see the Control make sure:
+<ul>
+<li>That the control is Shape &gt; Visible is enabled (in the detailks panel with the control selected)</li>
+<li>That the <em>Hide the Control Shape</em> is not active. You can do this by pressing the keyboard shortcut <em>T</em> to toggle this state.</li>
+<li>I have not found a UI button to toggle this inside the Control Rig asset</li>
+<li>But if you have the Animation mode active in the main viewport and the animation tab open you can see that the <em>Hide Control Shapes</em> is beeing toggled by the <em>T</em> shortcut. You can also use the UI in the animation tab to set the visibility.</li>
+</ul>
+</li>
+<li>Select a control shape you like in the details panel &gt; Shape &gt; Shape Properties &gt; Shape</li>
+<li>Set the Shape &gt; Shape Transform &gt; Rotator to what you need</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Drive Joint with Controller</strong>
+<ul>
+<li>Click and drag the <em>root</em> bone to the graph <em>&gt; Set Bone</em></li>
+<li>Drag the Execute pin from the <em>Forwards Solve</em> node and connect to the <em>Execute Context</em> input pin of the <em>Set Transform - Bone</em></li>
+<li>Click the arrow of the <em>Transform</em> output pin of the <em>Get Transform - Control</em> node to expose the individual transform outputs.</li>
+<li>Expand the <em>Value</em> input pin of the <em>Set Transform - Bone</em> to expose the individual transform inputs.</li>
+<li>Drag the <em>Translation</em> output pin (control node) and connect to the <em>Translation</em> input pin (Bone node)</li>
+<li>Drag the <em>Rotation</em> output pin (control node) and connect to the <em>Rotation</em> input pin (Bone node)</li>
+<li>We could use the <em>Transform</em>&hellip;
+<ul>
+<li>&hellip;but if we do it this way we can insert a <em>Verlet</em> node to jiggle the translation&hellip;</li>
+<li>&hellip;or use a <em>Spring Imterpolate (Quaternion)</em> to add a spring rotation offset.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="constraints">Constraints</h1>
+
+    </div>
+    <div class="col-md-2 toc-wrap">
+    	
+    	<aside class="toc-aside">
+    	
+    	<div class="toc-content">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-control-rig">Basic Control Rig</a>
+      <ul>
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="#setup">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#constraints">Constraints</a></li>
+  </ul>
+</nav>	
+		</div>
+		</aside>	
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-toc-wrap">
+
+	<div class="mobile-toc-btn">
+		<button class="btn" hret="unreal" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+			<svg fill="#888" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/></svg>
+
+
+
+
+
+
+
+
+		</button>
+	</div>
 	
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2024
-				</div>
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-control-rig/"><span>UE 5 - Control Rig</span></a>
-        				<br>
-        				<span class="list-small">UE 5 - Control Rig </span>
-        			
-	            </div>
-	        </div>
-	    </div>
+	<div class="offcanvas offcanvas-end" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+	  <div class="offcanvas-header">
 	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-vat/"><span>UE5 &amp; Houdini - VAT</span></a>
-        				<br>
-        				<span class="list-small">Notes on Houdini VAT &amp; UE 5 </span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2023
-				</div>
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-landscapes/"><span>UE5 - Landscapes</span></a>
-        				<br>
-        				<span class="list-small">Notes on Unreal Engine 5 &amp; landscapes</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-niagara/"><span>UE5 - Niagara</span></a>
-        				<br>
-        				<span class="list-small">Notes on Niagara - Unreal Engine 5</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2022
-				</div>
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-houdini/"><span>UE5 &amp; Houdini</span></a>
-        				<br>
-        				<span class="list-small">Notes on Houdini &amp; Unreal Engine 5</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-misc/"><span>UE5 - Misc</span></a>
-        				<br>
-        				<span class="list-small">Miscellaneous notes on Unreal Engine 5</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-raytraced-lighting/"><span>UE5 - Raytraced Lighting</span></a>
-        				<br>
-        				<span class="list-small">Notes on Raytraced Lighting</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-lumen/"><span>UE5 - Lumen</span></a>
-        				<br>
-        				<span class="list-small">Notes on Lumen</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-movie-render-queue/"><span>UE5 - Movie Render Queue</span></a>
-        				<br>
-        				<span class="list-small">Notes on Movie Render Queue</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-python-pyside2/"><span>UE5 - Python &amp; PySide2</span></a>
-        				<br>
-        				<span class="list-small">Python in Unreal Engine</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-materials/"><span>UE5 - Materials</span></a>
-        				<br>
-        				<span class="list-small">UE5 material notes</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-				<div class="list-date-wrap">
-					2021
-				</div>
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-cinematics/"><span>UE5 - Cinematics</span></a>
-        				<br>
-        				<span class="list-small">notes on cinematics in UE5</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue5-notes/"><span>UE5 - Notes</span></a>
-        				<br>
-        				<span class="list-small">UE5 notes</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue4-blueprint-snippets/"><span>UE4 - Blueprint Snippets</span></a>
-        				<br>
-        				<span class="list-small">Blueprint in UE4</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue4-blueprint-communication/"><span>UE4 - Blueprint Communication</span></a>
-        				<br>
-        				<span class="list-small">Blueprint in UE4</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue4-pipeline/"><span>UE4 - Pipeline</span></a>
-        				<br>
-        				<span class="list-small">Some random pipeline notes on UE4</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
-		
-		
-	    <div class="row">
-	        <div class="col-md-6">
-				
-	        </div>
-	        
-	        <div class="col-md-6">
-	        	<div class="list-card-wrap">
-        			
-    					<a class="list-title list-title-link" href="https://www.petfactory.se/notes/ue4-getting-started/"><span>UE4 - Getting started</span></a>
-        				<br>
-        				<span class="list-small">Intro to UE4</span>
-        			
-	            </div>
-	        </div>
-	    </div>
-	    
-    
+	    <a class="home-icon" href="https://www.petfactory.se/">
+    	  <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+      </a>
+
+	    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	  </div>
+	  
+	  <div class="offcanvas-body" id="toc-modal-wrap">
+	  	<div data-bs-dismiss="offcanvas">
+	    	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-control-rig">Basic Control Rig</a>
+      <ul>
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="#setup">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#constraints">Constraints</a></li>
+  </ul>
+</nav>
+	    </div>	
+	  </div>
+	</div>
 
 </div>
 

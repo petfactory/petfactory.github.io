@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Control Rig on Petfactory</title>
+    <link>https://www.petfactory.se/tags/control-rig/</link>
+    <description>Recent content in Control Rig on Petfactory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://www.petfactory.se/tags/control-rig/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UE 5 - Control Rig</title>
+      <link>https://www.petfactory.se/notes/ue5-control-rig/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-control-rig/</guid>
+      <description>Basic Control Rig Some notes on how to setup a basic Control Rig in UE 5. Below are some basic assets to use while testing.
+Assets 4_cubes_rig_01.hiplcA basic rig for testing 4_cubes_rig_01.fbxA basic rig for testing
+Setup  Import a skeleton  Lets use the &amp;ldquo;4_cubes_rig_01.fbx&amp;rdquo; as example file Import the fbx in Unreal  I just used the default settings, and ignored the warnings :)&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

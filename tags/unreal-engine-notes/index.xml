@@ -6,10 +6,21 @@
     <description>Recent content in Unreal Engine-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/unreal-engine-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE 5 - Control Rig</title>
+      <link>https://www.petfactory.se/notes/ue5-control-rig/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-control-rig/</guid>
+      <description>Basic Control Rig Some notes on how to setup a basic Control Rig in UE 5. Below are some basic assets to use while testing.
+Assets 4_cubes_rig_01.hiplcA basic rig for testing 4_cubes_rig_01.fbxA basic rig for testing
+Setup  Import a skeleton  Lets use the &amp;ldquo;4_cubes_rig_01.fbx&amp;rdquo; as example file Import the fbx in Unreal  I just used the default settings, and ignored the warnings :)&amp;hellip;</description>
+    </item>
     
     <item>
       <title>UE5 &amp; Houdini - VAT</title>
