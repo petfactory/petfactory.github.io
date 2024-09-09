@@ -352,6 +352,22 @@ node<span style="color:#f92672">.</span>parmTuple(<span style="color:#e6db74">&#
 <p>Lets say that you want all the parms in the PostFX folder (that are inside the Redshift Camera folder of the camera node) note that we need to specify the entire &ldquo;hierarchy&rdquo; to the destination folder.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">src_node<span style="color:#f92672">.</span>parmsInFolder((<span style="color:#e6db74">&#34;Redshift Camera&#34;</span>, <span style="color:#e6db74">&#34;PostFX&#34;</span>))
 </code></pre></div><h1 id="ui">UI</h1>
+<h2 id="icons">Icons</h2>
+<p>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/qt/Icon.html" target="_blank" rel="noopener">hou.qt.Icon</a>
+An icon generated from a Houdini icon name.</p>
+<ul>
+<li><strong>init</strong>(icon_name, width=None, height=None)
+<ul>
+<li>Create and return a new icon for the specified Houdini icon name.</li>
+<li>You can discover Houdini icons using the Houdini file chooser dialog and diving into the “hicon://” path. The name of the icon file without the .svg extension is the icon’s name. For example, the icon name for “hicon://SVGIcons.index/BUTTONS_help.svg” is “BUTTONS_help”.</li>
+<li>Example</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/merge1&#39;</span>)
+icon <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>qt<span style="color:#f92672">.</span>Icon(node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>icon())
+icon <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>qt<span style="color:#f92672">.</span>Icon(node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>icon(), width<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>)
+</code></pre></div></li>
+</ul>
 <h2 id="custom-tool">Custom Tool</h2>
 <ul>
 <li>Add new shelf tool
@@ -615,6 +631,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
     </li>
     <li><a href="#ui">UI</a>
       <ul>
+        <li><a href="#icons">Icons</a></li>
         <li><a href="#custom-tool">Custom Tool</a></li>
         <li><a href="#houui">hou.ui</a>
           <ul>
@@ -713,6 +730,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
     </li>
     <li><a href="#ui">UI</a>
       <ul>
+        <li><a href="#icons">Icons</a></li>
         <li><a href="#custom-tool">Custom Tool</a></li>
         <li><a href="#houui">hou.ui</a>
           <ul>

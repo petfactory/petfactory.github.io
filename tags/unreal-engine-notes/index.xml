@@ -12,14 +12,12 @@
     
     
     <item>
-      <title>UE 5 - Control Rig</title>
+      <title>UE5 - Control Rig</title>
       <link>https://www.petfactory.se/notes/ue5-control-rig/</link>
       <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-control-rig/</guid>
-      <description>Basic Control Rig Some notes on how to setup a basic Control Rig in UE 5. Below are some basic assets to use while testing.
-Assets 4_cubes_rig_01.hiplcA basic rig for testing 4_cubes_rig_01.fbxA basic rig for testing
-Setup  Import a skeleton  Lets use the &amp;ldquo;4_cubes_rig_01.fbx&amp;rdquo; as example file Import the fbx in Unreal  I just used the default settings, and ignored the warnings :)&amp;hellip;</description>
+      <description>How to  How To:  Show the Controller (if you cant see it)  Make sure that the control Shape &amp;gt; Visible is enabled (in the details panel with the control selected) That the Hide the Control Shape is not active. You can do this by pressing the keyboard shortcut T to toggle this state.  I have not found a UI button to toggle this inside the Control Rig asset But if you have the Animation mode active in the main viewport and the animation tab open you can see that the Hide Control Shapes is beeing toggled by the T shortcut.</description>
     </item>
     
     <item>

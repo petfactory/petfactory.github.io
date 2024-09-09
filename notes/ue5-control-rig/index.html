@@ -23,8 +23,8 @@
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
 
         
-        <title>Petfactory | UE 5 - Control Rig</title>
-        <meta name="description" content="Petfactory | Design and Animation | UE 5 - Control Rig" />
+        <title>Petfactory | UE5 - Control Rig</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 - Control Rig" />
 
     </head>
 
@@ -125,8 +125,42 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 notes-wrap">
-    	<h1 id="basic-control-rig">Basic Control Rig</h1>
-<p>Some notes on how to setup a basic <em>Control Rig</em> in UE 5. Below are some basic assets to use while testing.</p>
+    	<h1 id="how-to">How to</h1>
+<ul>
+<li><strong>How To:</strong>
+<ul>
+<li><strong>Show the Controller</strong> (if you cant see it)
+<ul>
+<li>Make sure that the control <em>Shape &gt; Visible</em> is enabled (in the details panel with the control selected)</li>
+<li>That the <em>Hide the Control Shape</em> is not active. You can do this by pressing the keyboard shortcut <em>T</em> to toggle this state.
+<ul>
+<li>I have not found a UI button to toggle this inside the Control Rig asset</li>
+<li>But if you have the Animation mode active in the main viewport and the animation tab open you can see that the <em>Hide Control Shapes</em> is beeing toggled by the <em>T</em> shortcut. You can also use the UI in the animation tab to set the visibility.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Change the size of a control</strong>
+<ul>
+<li>Make sure that the control is selected in the <em>Rig Hierarchy</em></li>
+<li>In the Details panel under Shape &gt; Shape Transform Click the padlock to enable uniform scale and click and drag the scale of either scale component to a size that matches the rig geo.</li>
+</ul>
+</li>
+<li><strong>Change the rotation of a control</strong>
+<ul>
+<li>Set the Shape &gt; Shape Transform &gt; Rotator to what you need</li>
+</ul>
+</li>
+<li><strong>Change the Shape</strong>
+<ul>
+<li>Select a control shape you like in the details panel &gt; Shape &gt; Shape Properties &gt; Shape</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="basic-control-rig">Basic Control Rig</h1>
+<p>Some notes on how to setup a basic <em>Control Rig</em> in UE5. Below are some basic assets to use while testing.</p>
 <h2 id="assets">Assets</h2>
 <p><div class="download-wrap">
 
@@ -135,7 +169,7 @@
 	  	<span class="download-text">4_cubes_rig_01.hiplc</span>
 	</a>
 	<br>
-	<span class="download-info">A basic rig for testing</span>
+	<span class="download-info">A basic Houdini skeleton for testing</span>
 
 </div>
 <div class="download-wrap">
@@ -151,7 +185,7 @@
 	  		<span class="download-text">4_cubes_rig_01.fbx</span>
 	</a>
 	<br>
-	<span class="download-info">A basic rig for testing</span>
+	<span class="download-info">A basic skeleton for testing</span>
 
 </div></p>
 <h2 id="setup">Setup</h2>
@@ -161,6 +195,11 @@
 <li>Lets use the &ldquo;<em>4_cubes_rig_01.fbx</em>&rdquo; as example file</li>
 <li>Import the fbx in Unreal
 <ul>
+<li>Make sure that <em>Convert Scene</em> is enabled
+<ul>
+<li>This converts the fbx coorsibate system to unreak coordinate system</li>
+</ul>
+</li>
 <li>I just used the default settings, and ignored the warnings :)&hellip;<br>
 will look into this at a later time.</li>
 </ul>
@@ -178,25 +217,10 @@ will look into this at a later time.</li>
 </li>
 <li><strong>Create a Controller</strong>
 <ul>
-<li>In the <em>Rig Hierarchy</em> On the <em>Root</em> joint RMB &gt; <em>New &gt; New Control</em> (Ctrl + N)</li>
+<li>In the <em>Rig Hierarchy</em> On the <em>root</em> joint RMB &gt; <em>New &gt; New Control</em> (Ctrl + N)</li>
 <li>With the new control <em>root_ctrl</em> selected, unparent by pressing (Shift + P) or by click and dragging the ctrl to an empty space of the Rig Hierarchy.</li>
+<li>Set the size, rotation and shape as described in the <em>How To</em> section above</li>
 <li>Click and drag the <em>root_ctrl</em> from the Rig Hierarchy and release on the Rig VM grap from the popup <em>&gt; Get Control</em></li>
-<li>Lets change the size of the controller
-<ul>
-<li>Make sure that the control is selected in the Rig Hierarchy</li>
-<li>In the Details panel under Shape &gt; Shape Transform Click the padlock to enable uniform scale and click and drag the scale of either scale component to a size that matcjhes the rig geo.</li>
-<li><strong>Note!</strong> if you can not see the Control make sure:
-<ul>
-<li>That the control is Shape &gt; Visible is enabled (in the detailks panel with the control selected)</li>
-<li>That the <em>Hide the Control Shape</em> is not active. You can do this by pressing the keyboard shortcut <em>T</em> to toggle this state.</li>
-<li>I have not found a UI button to toggle this inside the Control Rig asset</li>
-<li>But if you have the Animation mode active in the main viewport and the animation tab open you can see that the <em>Hide Control Shapes</em> is beeing toggled by the <em>T</em> shortcut. You can also use the UI in the animation tab to set the visibility.</li>
-</ul>
-</li>
-<li>Select a control shape you like in the details panel &gt; Shape &gt; Shape Properties &gt; Shape</li>
-<li>Set the Shape &gt; Shape Transform &gt; Rotator to what you need</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><strong>Drive Joint with Controller</strong>
@@ -216,7 +240,137 @@ will look into this at a later time.</li>
 </ul>
 </li>
 </ul>
+<h1 id="basic-ik-rig">Basic IK Rig</h1>
+<p>Some notes on how to setup a basic Ik Rig in UE5. Below are some basic assets to use while testing.</p>
+<h2 id="assets-1">Assets</h2>
+<p><div class="download-wrap">
+
+	<a href="https://www.petfactory.se/files/houdini/hips/ik_chain_rig.hiplc" download>
+		<img height="16" width="16" class="download-icon-16" src="https://www.petfactory.se/icons/houdini_16.png" />
+	  	<span class="download-text">ik_chain_rig.hiplc</span>
+	</a>
+	<br>
+	<span class="download-info">A basic Houdini skeleton setup for IK</span>
+
+</div>
+<div class="download-wrap">
+
+	<a class="download-file" href="https://www.petfactory.se/files/fbx/simple_ik_rig.fbx" download>
+
+			<span class=download-file-span>
+            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0"/>
+</svg>
+			</span>
+
+	  		<span class="download-text">simple_ik_rig.fbx</span>
+	</a>
+	<br>
+	<span class="download-info">A basic IK Skeleton</span>
+
+</div>
+<div class="download-wrap">
+
+	<a class="download-file" href="https://www.petfactory.se/files/fbx/simple_ik_anim.fbx" download>
+
+			<span class=download-file-span>
+            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0"/>
+</svg>
+			</span>
+
+	  		<span class="download-text">simple_ik_anim.fbx</span>
+	</a>
+	<br>
+	<span class="download-info">A basic anim for the IK skeleton</span>
+
+</div></p>
+<h2 id="setup-1">Setup</h2>
+<ul>
+<li><strong>Import a skeleton</strong>
+<ul>
+<li>Lets use the &ldquo;<em>simple_ik_rig.fbx</em>&rdquo; as example file</li>
+<li>Import the fbx in Unreal
+<ul>
+<li>Make sure that <em>Convert Scene</em> is enabled
+<ul>
+<li>This converts the fbx coorsibate system to unreak coordinate system</li>
+</ul>
+</li>
+<li>I just used the default settings, and ignored the warnings :)&hellip;<br>
+will look into this at a later time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Control Rig</strong>
+<ul>
+<li>On the <em>Skeletal Mesh</em>  RMB &gt; Create <em>Control Rig</em>
+<ul>
+<li>Double click to open up the graph</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Hand Controller</strong>
+<ul>
+<li>In the <em>Rig Hierarchy</em> On the &ldquo;<em>hand_L</em>&rdquo; joint RMB &gt; <em>New &gt; New Control</em> (Ctrl + N)</li>
+<li>Unparent the controller (drag to empty rig hierarchy space or Ctrl + P)</li>
+<li>Set the size, rotation and shape as described in the <em>How To</em> section above</li>
+<li>Since we wanted the transform of the control to be aligned with the hand, we created it by clicking on the hand joint.</li>
+<li>But we want it to be positioned at the location of the wrist.</li>
+<li>In the 3D vieport (of the control rig editor) drag the hand control so that it is close to the wrist joint. Then RMB the viewport &gt; <strong>Set Offset Transform from Closest Bone</strong></li>
+</ul>
+</li>
+<li><strong>Create a Pole Vector Controller</strong>
+<ul>
+<li>In the <em>Rig Hierarchy</em> On the &ldquo;<em>elbow_L</em>&rdquo; joint RMB &gt; <em>New &gt; New Control</em> (Ctrl + N)</li>
+<li>Unparent the controller (drag to empty rig hierarchy space or Ctrl + P)</li>
+<li>Set the size, rotation and shape as described in the <em>How To</em> section above</li>
+<li>Give it the name &ldquo;PV_ctrl&rdquo;</li>
+<li>In the 3D vieport (of the control rig editor) drag the pv control so that it is outside the elbow bone. Then RMB the viewport &gt; <strong>Set Offset Transform from Current</strong></li>
+</ul>
+</li>
+<li><strong>Create a Basic IK Setup</strong>
+<ul>
+<li><em>Basic IK node</em>
+<ul>
+<li>In the rig graph Tab &gt; start typing &ldquo;ik&hellip;&rdquo; select Hierarchy &gt; <em>Basic IK</em></li>
+<li>On the Basic IK node
+<ul>
+<li>set Item &gt; Name &gt; <em>shoulder_L</em></li>
+<li>set Item &gt; Name &gt; <em>elbow_L</em></li>
+<li>set Item &gt; Name &gt; <em>wrist_L</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Set the IK Control</em>
+<ul>
+<li>Drag the <em>hand_L_ctrl</em> (from the rig hierarchy) and drop in the graph &gt; Get control</li>
+<li>Connect the <em>Transform</em> output pin from the controller and connect to the <em>Effector</em> input pin of the Basic IK node</li>
+</ul>
+</li>
+<li><em>Set the Pole Vector Control</em>
+<ul>
+<li>Drag the <em>pv_ctrl</em> (from the rig hierarchy) and drop in the graph &gt; Get control</li>
+<li>Expand the <em>Transform</em> output pin of the pv control to expose the <em>Translation</em> vector pin</li>
+<li>Connect it to the <em>Pole Vector</em> input of the Basic IK node</li>
+</ul>
+</li>
+<li><em>Solve the IK</em>
+<ul>
+<li>From the <em>Execute</em> output pin of the <em>Forwards Solve</em> node, connect it to the <em>Execute</em> input pin of the Basic IK node</li>
+</ul>
+</li>
+<li>Press Compile &amp; save</li>
+</ul>
+</li>
+</ul>
 <h1 id="constraints">Constraints</h1>
+<ul>
+<li>Todo</li>
+</ul>
 
     </div>
     <div class="col-md-2 toc-wrap">
@@ -226,10 +380,17 @@ will look into this at a later time.</li>
     	<div class="toc-content">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#how-to">How to</a></li>
     <li><a href="#basic-control-rig">Basic Control Rig</a>
       <ul>
         <li><a href="#assets">Assets</a></li>
         <li><a href="#setup">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-ik-rig">Basic IK Rig</a>
+      <ul>
+        <li><a href="#assets-1">Assets</a></li>
+        <li><a href="#setup-1">Setup</a></li>
       </ul>
     </li>
     <li><a href="#constraints">Constraints</a></li>
@@ -273,10 +434,17 @@ will look into this at a later time.</li>
 	  	<div data-bs-dismiss="offcanvas">
 	    	<nav id="TableOfContents">
   <ul>
+    <li><a href="#how-to">How to</a></li>
     <li><a href="#basic-control-rig">Basic Control Rig</a>
       <ul>
         <li><a href="#assets">Assets</a></li>
         <li><a href="#setup">Setup</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-ik-rig">Basic IK Rig</a>
+      <ul>
+        <li><a href="#assets-1">Assets</a></li>
+        <li><a href="#setup-1">Setup</a></li>
       </ul>
     </li>
     <li><a href="#constraints">Constraints</a></li>
