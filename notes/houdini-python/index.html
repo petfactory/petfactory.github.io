@@ -491,7 +491,93 @@ doit()
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">select_lop_material_library_node</span>():
     node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>selectNode(node_type_filter<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>nodeTypeFilter<span style="color:#f92672">.</span>Lop, custom_node_filter_callback<span style="color:#f92672">=</span>is_material_library)
     <span style="color:#66d9ef">return</span> node
-</code></pre></div><h1 id="snippets">Snippets</h1>
+</code></pre></div><h2 id="camera-viewport">Camera Viewport</h2>
+<p>If you want to add comments to the camera viewport you can do this by the steps below. Thank to 
+<a href="https://youtu.be/4930UF-AzvE?si=DeaasdOz6Lh_Yvh2" target="_blank" rel="noopener">TyHoudinifx</a> for the tip.</p>
+<ul>
+<li><strong>Viewport Comments</strong>
+<ul>
+<li><strong>Add Viewport Comment parameter</strong>
+<ul>
+<li>On the camera click the <em>Edit Parameter Interface</em></li>
+<li><strong>1 - regular String parm</strong>
+<ul>
+<li>You can use a regular <em>string</em> parameter as long as you give it the name <em>vcomment</em></li>
+</ul>
+</li>
+<li><strong>2 - from Render Properties</strong>
+<ul>
+<li>But you can also add it from the render properties tab that has the name already setup</li>
+<li>Swicth to the <em>Render Properies tab</em></li>
+<li>Type &ldquo;comment&rdquo; in the filter and hit enter</li>
+<li>Drag the <em>Viewport Display</em> and drop it onb the <em>Existing Parameters</em></li>
+</ul>
+</li>
+<li><strong>Edit parm properties</strong>
+<ul>
+<li>Select the added parm in the <em>Existing Parameters</em> treeview</li>
+<li>On the <em>Parameter</em> tab enable the <em>Multiline String</em></li>
+<li>Switch to the <em>Channels</em> tab
+<ul>
+<li>On the first row you will click on the third icon and set it from <em>Literal</em> to <em>Python</em></li>
+</ul>
+</li>
+<li>Click accept on the edit parameter interface</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Set Comments with Python</strong>
+<ul>
+<li>With the camera selected, navigate to the parm we just added</li>
+<li>Click once on the <em>Viewport Comment</em> parameter. The background color will turn to a lighter grey. This means we can start writing Python</li>
+<li>Click in the line edit and press enter one time. For some reason the script fials if code is enetred on the first line.</li>
+<li>So on line 2 write return &lsquo;Hello World!&rsquo;</li>
+</ul>
+</li>
+<li><strong>Display Custom node Info</strong>
+<ul>
+<li>If we want to display custom info from a node in the network we could add a <em>Operator Path</em> parameter to the OpenGL View section.</li>
+<li>Open the cameras <em>Edit Parameter Interface</em> and drag in a <em>Operator Path</em> parameter. Give it a good name and label.</li>
+<li>Then we can acces the data found on the node we specify with the operator path parm.</li>
+</ul>
+</li>
+<li><strong>Python Example</strong>
+<ul>
+<li>Here is an example script that will output some data to the viewport</li>
+<li>Note that the example below expects a detail dict attribute called &ldquo;metadata&rdquo; to be present on the node (that we specified with the operator path)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hou
+
+cam_node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>pwd()
+s <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;hip : {hou.expandString(&#34;$HIPFILE&#34;)}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+s <span style="color:#f92672">+=</span> f<span style="color:#e6db74">&#39;cam : {cam_node.name()}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+
+<span style="color:#75715e"># if the parm or node is not specified</span>
+<span style="color:#66d9ef">try</span>: 
+    node_path <span style="color:#f92672">=</span> cam_node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;node&#39;</span>)<span style="color:#f92672">.</span>evalAsString()
+    node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(node_path)
+    geo <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>geometry()
+         
+    <span style="color:#75715e"># if the dict attrib does not exist</span>
+    <span style="color:#66d9ef">try</span>:
+        meta_dict <span style="color:#f92672">=</span> geo<span style="color:#f92672">.</span>dictAttribValue(<span style="color:#e6db74">&#39;metadata&#39;</span>)
+              
+        <span style="color:#66d9ef">for</span> key, value <span style="color:#f92672">in</span> meta_dict<span style="color:#f92672">.</span>items():
+            s <span style="color:#f92672">+=</span> f<span style="color:#e6db74">&#39;{key} : {value}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">pass</span>
+
+<span style="color:#66d9ef">except</span>:
+    <span style="color:#66d9ef">pass</span>
+
+
+<span style="color:#66d9ef">return</span> s
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h1 id="snippets">Snippets</h1>
 <h2 id="selection-1">Selection</h2>
 <p>Select rop fbx nodes that has input geo and has prims with a path attrib with a value, with optional exclude set.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_current_if_has_geo</span>(node_set):
@@ -638,6 +724,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
             <li><a href="#input-dialogs">Input Dialogs</a></li>
           </ul>
         </li>
+        <li><a href="#camera-viewport">Camera Viewport</a></li>
       </ul>
     </li>
     <li><a href="#snippets">Snippets</a>
@@ -737,6 +824,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
             <li><a href="#input-dialogs">Input Dialogs</a></li>
           </ul>
         </li>
+        <li><a href="#camera-viewport">Camera Viewport</a></li>
       </ul>
     </li>
     <li><a href="#snippets">Snippets</a>

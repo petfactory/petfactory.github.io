@@ -537,6 +537,58 @@ Note that we can choose to leave the token section empty on the first menu entry
 <h2 id="icon">Icon</h2>
 <p>It can be fun to add your own icon to the HDA. It is a good idea to use a .svg. To add an icon follow the steps outlined above (extra files).
 Note if you add an icon to the asset, you can also use it in the help card.</p>
+<h1 id="interactive">Interactive</h1>
+<h2 id="shelf-tools">Shelf tools</h2>
+<p>You might want to add a tab menu script to your HDA that can speed up creating a certain setup, possibly containing more nodes then just your HDA.</p>
+<ul>
+<li><strong>Tab Menu Script</strong>
+<ul>
+<li>Open the Edit Type Operator Properties window of your HDA.
+<ul>
+<li>RMB click on the HDA &gt; Type Properties</li>
+</ul>
+</li>
+<li>Switch to the <em>Interactive</em> tab and on that tab switch to <em>Shelf Tools</em></li>
+<li>Click on the <em>Create New</em> dropdown and select <em>Default Tool</em></li>
+<li>Select the new default tool in the list</li>
+<li><em>Name</em>
+<ul>
+<li>By default the name of the HDA will be $HDA_DEFAULT_TOOL</li>
+<li>On the tool we adeed I kept the first part and just added a suffix that makes sense</li>
+<li>for instance <em>$HDA_DEFAULT_TOOL_setup</em> (the $HDA_DE&hellip; will be expanded to whatever the name of the HDA is)</li>
+</ul>
+</li>
+<li><em>Label</em>
+<ul>
+<li>Add Label that makes sense, for instance</li>
+<li><em>$HDA_LABEL Setup</em></li>
+</ul>
+</li>
+<li>Switch to the <em>Scripts</em> tab of the Shelf Tools tab
+<ul>
+<li>Lets add this snippet or something more useful&hellip;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> soptoolutils
+hda_node <span style="color:#f92672">=</span> soptoolutils<span style="color:#f92672">.</span>genericTool(kwargs, <span style="color:#e6db74">&#39;$HDA_NAME&#39;</span>)
+parent <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>parent()
+hda_pos <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>position()
+
+null_node <span style="color:#f92672">=</span> parent<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;null&#39;</span>)
+null_node<span style="color:#f92672">.</span>setPosition(hda_pos<span style="color:#f92672">+</span>hou<span style="color:#f92672">.</span>Vector2(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+null_node<span style="color:#f92672">.</span>setInput(<span style="color:#ae81ff">0</span>, hda_node)
+null_node<span style="color:#f92672">.</span>setSelected(True)
+
+<span style="color:#66d9ef">print</span>(kwargs[<span style="color:#e6db74">&#39;toolname&#39;</span>])
+</code></pre></div><pre><code></code></pre></li>
+<li>Swicth to the <em>Context</em> tab and click which context the tab menu script is to be used in</li>
+<li>Here we can also add a <em>Tab SubMenu path</em>
+<ul>
+<li>Note that you can use slashes to create sub directories!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="hda-python">HDA Python</h1>
 <h2 id="pythonmodule">PythonModule</h2>
 <p>
@@ -848,6 +900,11 @@ Houdini supports two different but compatible systems for versioning assets, sup
         <li><a href="#icon">Icon</a></li>
       </ul>
     </li>
+    <li><a href="#interactive">Interactive</a>
+      <ul>
+        <li><a href="#shelf-tools">Shelf tools</a></li>
+      </ul>
+    </li>
     <li><a href="#hda-python">HDA Python</a>
       <ul>
         <li><a href="#pythonmodule">PythonModule</a></li>
@@ -949,6 +1006,11 @@ Houdini supports two different but compatible systems for versioning assets, sup
     <li><a href="#extra-files">Extra Files</a>
       <ul>
         <li><a href="#icon">Icon</a></li>
+      </ul>
+    </li>
+    <li><a href="#interactive">Interactive</a>
+      <ul>
+        <li><a href="#shelf-tools">Shelf tools</a></li>
       </ul>
     </li>
     <li><a href="#hda-python">HDA Python</a>
