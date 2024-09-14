@@ -6,10 +6,19 @@
     <description>Recent content in Unreal on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/unreal/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jeep Wrangler 1987 - 01</title>
+      <link>https://www.petfactory.se/work/jeep-wrangler-01/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/jeep-wrangler-01/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The vehicle and cameras were animated in Houdini. The Dust sim was done in Houdini using the Sparse Pyro Solver and exported as VDBs to Unreal. The scene is lit by a quite lowrez HDRI, that was also used as a cheap environment. The ground is created with a Heightfield in Houdini and exported as Polygons to Unreal. The material is a Megascan material, and additional details were added using Decals.</description>
+    </item>
     
     <item>
       <title>Lego 65 Mustang - 01</title>

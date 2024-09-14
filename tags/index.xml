@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini</title>
+      <link>https://www.petfactory.se/tags/houdini/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/houdini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unreal</title>
+      <link>https://www.petfactory.se/tags/unreal/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/unreal/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Control Rig</title>
@@ -30,15 +48,6 @@
     </item>
     
     <item>
-      <title>Unreal</title>
-      <link>https://www.petfactory.se/tags/unreal/</link>
-      <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/unreal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Unreal Engine-notes</title>
       <link>https://www.petfactory.se/tags/unreal-engine-notes/</link>
       <pubDate>Sun, 08 Sep 2024 00:00:00 +0100</pubDate>
@@ -53,15 +62,6 @@
       <pubDate>Wed, 12 Jun 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/flip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Houdini</title>
-      <link>https://www.petfactory.se/tags/houdini/</link>
-      <pubDate>Wed, 12 Jun 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/houdini/</guid>
       <description></description>
     </item>
     
