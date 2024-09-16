@@ -188,7 +188,7 @@ Here I am using the reverse domain name notation, which in my case is:
 </ul>
 <h1 id="custom-hda-path">Custom HDA Path</h1>
 <p>
-<a href="https://www.petfactory.se/notes/houdini_python/#houdini-packages">Set custom path to HDA</a></p>
+<a href="https://www.petfactory.se/notes/houdini-python/#houdini-packages">Set custom path to HDA</a></p>
 <h1 id="parameters">Parameters</h1>
 <ul>
 <li><strong>Add Parms to HDA</strong>
@@ -535,8 +535,27 @@ Note that we can choose to leave the token section empty on the first menu entry
 </li>
 </ul>
 <h2 id="icon">Icon</h2>
-<p>It can be fun to add your own icon to the HDA. It is a good idea to use a .svg. To add an icon follow the steps outlined above (extra files).
-Note if you add an icon to the asset, you can also use it in the help card.</p>
+<p>When you embed icons it is a good idea to use <em>.svg</em><br>
+You can embed an icon in the HDA using the method described above (Extra files) but there is an easier way.</p>
+<ul>
+<li><strong>Add icon</strong> (without adding it to the HDA)
+<ul>
+<li><em>Add icon to directory</em>
+<ul>
+<li>Lets say that you have added a package that points to a directory on disc.</li>
+<li>In the directory (that is on the HOUDINI_PATH) we create two nested folders. Like this: <em>config/Icons</em> (note the capital I in icons)</li>
+<li>In the icons we can add our .svg icons</li>
+</ul>
+</li>
+<li><em>Add icon to HDA</em>
+<ul>
+<li>Now we can use the icons by only giving the name of the file (we can skip the extension)</li>
+<li>We can do this both for the <em>HDA icon</em> and the <em>Interactive &gt; Shelf Tool &gt; Options: icon</em> that appears in the tab menu.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="interactive">Interactive</h1>
 <h2 id="shelf-tools">Shelf tools</h2>
 <p>You might want to add a tab menu script to your HDA that can speed up creating a certain setup, possibly containing more nodes then just your HDA.</p>

@@ -126,6 +126,36 @@
   <div class="row">
     <div class="col-md-10 notes-wrap">
     	<p>A collection of various Houdini related things that doesn´t fit anywhere else.</p>
+<h1 id="vops">VOPS</h1>
+<h2 id="snippet">Snippet</h2>
+<p>If you want to make some small tweaks using vex inside a VOP network you can use a snippet</p>
+<ul>
+<li><strong>Use a Snippet</strong>
+<ul>
+<li>Create a plane</li>
+<li>Add an attribute noise float (not needed but will show additional tip)
+<ul>
+<li>Set the attribute name to noise</li>
+</ul>
+</li>
+<li>Add a Point VOP, step in the network</li>
+<li>Add a <em>Snippet</em></li>
+<li>Connect the output <em>P</em> (from geometryvopglobal) to input <em>next</em> of the snippet</li>
+<li>Connect the output of the snippet to the input of geometryvopoutput
+<ul>
+<li>When the snippet gets connected the input name will switch from next to the name of the incomming variable</li>
+<li>Note that you can rename the variable in the snippet with the <em>Variable Name 1</em> input field</li>
+</ul>
+</li>
+<li>Add the following lines to the <em>Code Snippet</em></li>
+<li>This will adjust the y position based on the ptnum and the noise attrib that exists on the incomming points
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">float</span> y <span style="color:#f92672">=</span> <span style="color:#960050;background-color:#1e0010">@</span>ptnum<span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">@</span>noise<span style="color:#f92672">*</span><span style="color:#ae81ff">.4</span>;
+P <span style="color:#f92672">=</span> set(P.x, y, P.z);
+</code></pre></div><p>``</p>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="pop">POP</h1>
 <h2 id="birth-rate">Birth Rate</h2>
 <p>A good way to control the amount of particles being emitted is to keyframe the <strong>Const. Birt Rate</strong> (Birth tab) with values between 0 and 1. Then we can use the <strong>Scale Point Count by Area</strong> (Source tab) as a multiplier of points emitted.</p>
@@ -777,6 +807,11 @@ Sets a group that will be highlighted when the node is viewed.
     	<div class="toc-content">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#vops">VOPS</a>
+      <ul>
+        <li><a href="#snippet">Snippet</a></li>
+      </ul>
+    </li>
     <li><a href="#pop">POP</a>
       <ul>
         <li><a href="#birth-rate">Birth Rate</a></li>
@@ -862,6 +897,11 @@ Sets a group that will be highlighted when the node is viewed.
 	  	<div data-bs-dismiss="offcanvas">
 	    	<nav id="TableOfContents">
   <ul>
+    <li><a href="#vops">VOPS</a>
+      <ul>
+        <li><a href="#snippet">Snippet</a></li>
+      </ul>
+    </li>
     <li><a href="#pop">POP</a>
       <ul>
         <li><a href="#birth-rate">Birth Rate</a></li>
