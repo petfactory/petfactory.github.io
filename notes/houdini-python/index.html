@@ -578,7 +578,26 @@ s <span style="color:#f92672">+=</span> f<span style="color:#e6db74">&#39;cam : 
 </li>
 </ul>
 <h1 id="snippets">Snippets</h1>
-<h2 id="selection-1">Selection</h2>
+<h2 id="lops">Lops</h2>
+<p>Create a Karma Material Builder</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> voptoolutils
+
+dst_node <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/lopnet1/matnet1&#39;</span>)
+
+subnet_node <span style="color:#f92672">=</span> None
+name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;karmamaterial&#39;</span>
+mask <span style="color:#f92672">=</span> voptoolutils<span style="color:#f92672">.</span>KARMAMTLX_TAB_MASK
+folder_label<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Karma Material Builder&#39;</span>
+render_context <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;kma&#34;</span>
+
+mat_builder <span style="color:#f92672">=</span> voptoolutils<span style="color:#f92672">.</span>_setupMtlXBuilderSubnet(
+        subnet_node<span style="color:#f92672">=</span>subnet_node,
+        destination_node<span style="color:#f92672">=</span>dst_node,
+        name<span style="color:#f92672">=</span>name,
+        mask<span style="color:#f92672">=</span>mask,
+        folder_label<span style="color:#f92672">=</span>folder_label,
+        render_context<span style="color:#f92672">=</span>render_context)
+</code></pre></div><h2 id="selection-1">Selection</h2>
 <p>Select rop fbx nodes that has input geo and has prims with a path attrib with a value, with optional exclude set.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_current_if_has_geo</span>(node_set):
     hou<span style="color:#f92672">.</span>clearAllSelected()
@@ -729,6 +748,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
     </li>
     <li><a href="#snippets">Snippets</a>
       <ul>
+        <li><a href="#lops">Lops</a></li>
         <li><a href="#selection-1">Selection</a></li>
         <li><a href="#misc">Misc</a></li>
         <li><a href="#string">String</a>
@@ -829,6 +849,7 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
     </li>
     <li><a href="#snippets">Snippets</a>
       <ul>
+        <li><a href="#lops">Lops</a></li>
         <li><a href="#selection-1">Selection</a></li>
         <li><a href="#misc">Misc</a></li>
         <li><a href="#string">String</a>

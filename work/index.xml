@@ -6,10 +6,19 @@
     <description>Recent content in Works on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Sep 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/work/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jeep Wrangler 1987 - 02</title>
+      <link>https://www.petfactory.se/work/jeep-wrangler-02/</link>
+      <pubDate>Thu, 19 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/jeep-wrangler-02/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The vehicle and floor were animated in Houdini. I used Megascans for some of the props and materials. The floor were modeled in Houdini. The scene is lit by an HDRI and a directional light. Rendered with the path tracer in unreal 5.4 with 512 samples. The edit was done in sequencer in Unreal. The final color grade was done in DaVinci Resolve.</description>
+    </item>
     
     <item>
       <title>Jeep Wrangler 1987 - 01</title>
