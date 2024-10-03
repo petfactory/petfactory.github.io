@@ -6,10 +6,19 @@
     <description>Recent content in UE5-notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/ue5-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UE5 - Substrate intro</title>
+      <link>https://www.petfactory.se/notes/ue5-substrate-intro/</link>
+      <pubDate>Fri, 27 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-substrate-intro/</guid>
+      <description>Setup  New Project  Preset &amp;gt; Film  Enable raytracing     Editor preferences &amp;gt;  Level Editor &amp;gt;  Viewports &amp;gt; Controls &amp;gt;  Invert middle mouse pan : on Advanced &amp;gt;  Use distance-based camera speed : on Orbit camera around selection : on       General &amp;gt;  New TRS Gizmo &amp;gt;  Enable new Gizmos : on       Project settings &amp;gt;  Engine &amp;gt;  Rendering &amp;gt; Substrate &amp;gt;  Substrate materials (experimental) : on Substrate opaque material rough refraction : on       Setup look dev scene  Lookdev level  Add Level, lets call it material_lookdev   Add HDRI Backdrop  on sky light set specified cube mat to an hdri  HDRI Backdrop &amp;gt; skylight (in the details hierarchy) &amp;gt; Light &amp;gt; Source type &amp;gt; SLS Specified cubemap  Set to the same as the top level one     Optinally  Lighting distance Factor &amp;gt;  Set this to 0 if you do not want the ground area to recieve lighting/shadows   use camera projection  Enable this to not get the hdri projected to the ground       Add look dev meshes</description>
+    </item>
     
     <item>
       <title>UE5 - Control Rig</title>

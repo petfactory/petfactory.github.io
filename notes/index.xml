@@ -6,10 +6,29 @@
     <description>Recent content in Notes on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 03 Oct 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DaVinci Resolve - Color</title>
+      <link>https://www.petfactory.se/notes/davinci-resolve-color/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/davinci-resolve-color/</guid>
+      <description>Groups The color page allows you to group clips and grade the clips based on which group it belongs to. This is super handy!
+ Grade car lights  Background  In this example we have a rendered sequence of a car and want to add a small glow to the lights. We have the rendered car as a layer On top of this we add a black/white mask of the lights (lets call the light masks)  Note if we want to edit the strength of the glow easily it is a good idea to have each light mask trimmed to the specific shot Meaning they are individual clips on the timeline that we can set blend mode and opacity per clip     Import media  Import the car sequence and add to a timeline (in the edit page) Import the light masks, add to the car timeline (on top of the car render) Make sure the align with the underlaying sequence (in time and shape)   Grade the lights  Create Groups  Switch to the color page In the topbar, make sure Clips is enabled (top left) and that Timeline is eanbled (top right) Underneath the monitor and nodegraph you can se the clips and underneath thjat the timeline.</description>
+    </item>
+    
+    <item>
+      <title>UE5 - Substrate intro</title>
+      <link>https://www.petfactory.se/notes/ue5-substrate-intro/</link>
+      <pubDate>Fri, 27 Sep 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/notes/ue5-substrate-intro/</guid>
+      <description>Setup  New Project  Preset &amp;gt; Film  Enable raytracing     Editor preferences &amp;gt;  Level Editor &amp;gt;  Viewports &amp;gt; Controls &amp;gt;  Invert middle mouse pan : on Advanced &amp;gt;  Use distance-based camera speed : on Orbit camera around selection : on       General &amp;gt;  New TRS Gizmo &amp;gt;  Enable new Gizmos : on       Project settings &amp;gt;  Engine &amp;gt;  Rendering &amp;gt; Substrate &amp;gt;  Substrate materials (experimental) : on Substrate opaque material rough refraction : on       Setup look dev scene  Lookdev level  Add Level, lets call it material_lookdev   Add HDRI Backdrop  on sky light set specified cube mat to an hdri  HDRI Backdrop &amp;gt; skylight (in the details hierarchy) &amp;gt; Light &amp;gt; Source type &amp;gt; SLS Specified cubemap  Set to the same as the top level one     Optinally  Lighting distance Factor &amp;gt;  Set this to 0 if you do not want the ground area to recieve lighting/shadows   use camera projection  Enable this to not get the hdri projected to the ground       Add look dev meshes</description>
+    </item>
     
     <item>
       <title>UE5 - Control Rig</title>

@@ -17,7 +17,8 @@
 
         <link rel="stylesheet" href="https://www.petfactory.se/css/bootstrap.min.css">
         <script defer src="https://www.petfactory.se/js/bootstrap.bundle.min.js"></script>
-        <script defer src="https://www.petfactory.se/js/test.js"></script>
+        
+        <script defer src="https://www.petfactory.se/js/util.js"></script>
 
         <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
         <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
@@ -541,6 +542,16 @@ item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f9267
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name, ok <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QInputDialog<span style="color:#f92672">.</span>getText(self, <span style="color:#e6db74">&#39;Name&#39;</span>, <span style="color:#e6db74">&#39;label&#39;</span>) 
 <span style="color:#66d9ef">if</span> ok <span style="color:#f92672">and</span> name:
     <span style="color:#66d9ef">print</span>(name)
+</code></pre></div><p>Promt to continue</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">continue_dialog</span>(parent, text, info):
+
+    msg_box <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QMessageBox(parent)
+    msg_box<span style="color:#f92672">.</span>setText(text)
+    msg_box<span style="color:#f92672">.</span>setInformativeText(info)
+    msg_box<span style="color:#f92672">.</span>setStandardButtons(QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Ok <span style="color:#f92672">|</span> QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Cancel)
+    msg_box<span style="color:#f92672">.</span>setDefaultButton(QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Ok)
+
+    <span style="color:#66d9ef">return</span> msg_box<span style="color:#f92672">.</span>exec_() <span style="color:#f92672">==</span> QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Ok
 </code></pre></div><h1 id="signal--slot">Signal &amp; Slot</h1>
 <h2 id="chaining-signals">Chaining signals</h2>
 <p>Or mayabe signal forwarding? Lets say we have a widget (the &ldquo;parent&rdquo;) that has a widget (the &ldquo;child&rdquo;) which in turn have a widget (the &ldquo;grandchild&rdquo;). If we interact with this &ldquo;grandchild&rdquo; widget and emit a signal we might want the signal to reach the top &ldquo;parent&rdquo; widget. What I have done before is to emit a signal from the &ldquo;grandchild&rdquo; connect it to a slot in the &ldquo;child&rdquo; and there emit a new signal and connect it to a slot in the parent. This works but you can also connect a signal to a signal creating a chain of signals. Below is a snippet from the qt docs on 
@@ -613,10 +624,20 @@ menu<span style="color:#f92672">.</span>something<span style="color:#f92672">.</
 
 </code></pre></div><h1 id="stylesheets--resources">Stylesheets &amp; Resources</h1>
 <h2 id="compile-qrc">Compile .qrc</h2>
-<ul>
+<p>icons.qrc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;RCC</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;qresource&gt;</span>
+    <span style="color:#f92672">&lt;file&gt;</span>petfactory_bookmark.svg<span style="color:#f92672">&lt;/file&gt;</span>
+<span style="color:#f92672">&lt;/qresource&gt;</span>
+<span style="color:#f92672">&lt;/RCC&gt;</span>
+</code></pre></div><ul>
 <li>To compile a qrc file
 <ul>
-<li>Activate the venv that has PySide2 installed</li>
+<li>Activate the venv that has PySide2 installed
+<ul>
+<li>You can RMB click on the venv dir &gt; Open Git Bash here</li>
+</ul>
+</li>
 <li>Then cd to the project dir where you have your resources</li>
 <li>Compile the icons.qrc:
 <ul>

@@ -1,0 +1,1299 @@
+<!doctype html>
+
+<html lang="en" data-bs-theme="dark">
+
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <link rel="icon" href="https://www.petfactory.se/favicons/favicon-32.png" sizes="32x32">
+
+        
+        
+        
+        <link rel="apple-touch-icon" href="https://www.petfactory.se/favicons/favicon-180.png" sizes="180x180">
+
+        <link rel="stylesheet" href="https://www.petfactory.se/css/bootstrap.min.css">
+        <script defer src="https://www.petfactory.se/js/bootstrap.bundle.min.js"></script>
+        
+        <script defer src="https://www.petfactory.se/js/util.js"></script>
+
+        <link rel="stylesheet" href="https://www.petfactory.se/css/style.css">
+        <link rel="stylesheet" href="https://www.petfactory.se/css/syntax.css">
+
+        
+        <title>Petfactory | UE5 - Substrate intro</title>
+        <meta name="description" content="Petfactory | Design and Animation | UE5 - Substrate intro" />
+
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+        <div class="container-fluid main-menu-wrap">
+
+          <a class="home-icon" href="https://www.petfactory.se/">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+          </a>
+
+
+          <button class="navbar-toggler" id="navbar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            
+          </button>
+
+
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbar2Labe">
+            <div class="offcanvas-header">
+              
+              
+              <a class="home-icon" href="https://www.petfactory.se/">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+              </a>
+
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+            </div>
+
+            <div class="offcanvas-body">
+
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                <li class="nav-item">
+                  
+                  <a class="nav-link" aria-current="page" href="https://www.petfactory.se/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="https://www.petfactory.se/work">Work</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="https://www.petfactory.se/cv">CV</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Notes
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" id="dropdown-menu-pet">
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/python-notes">Python</a></li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/houdini-notes">Houdini</a></li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/unreal-engine-notes">Unreal Engine</a></li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se//tags/davinci-resolve-notes">DaVinci Resolve</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="https://www.petfactory.se/notes">All Notes</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <div id="social-list-modal-wrap">
+                <ul id="social-list-modal">
+                  <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#555" width="30" height="30" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+                  <li><a target="_blank" class="" href="https://www.youtube.com/channel/UCB-6-mQgbIn2dUa70D1noTQ"><svg fill="#555" width="30" height="30" viewBox="0 0 64 64"><path d="M54.15,10.031l-20.9-0.019l-21.718,0.019c-5.433,0-11.534,3.626-11.534,8.944v26.474c0,5.316,6.101,8.559,11.534,8.559 H54.15c5.432,0,9.834-3.242,9.834-8.559V18.976C63.984,13.657,59.582,10.031,54.15,10.031z M27.856,42.205L27.73,22.044 l14.03,10.168L27.856,42.205z"/></svg>
+
+
+
+
+</a></li>
+                  <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#555" width="30" height="30" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+      
+      
+
+      <main id="content-main-wrap">
+
+          
+
+<div class="top-spacer"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 notes-wrap">
+    	<h1 id="setup">Setup</h1>
+<ul>
+<li><strong>New Project</strong>
+<ul>
+<li>Preset &gt; Film
+<ul>
+<li>Enable raytracing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Editor preferences &gt;</strong>
+<ul>
+<li><em>Level Editor</em> &gt;
+<ul>
+<li>Viewports &gt; Controls &gt;
+<ul>
+<li>Invert middle mouse pan : on</li>
+<li>Advanced &gt;
+<ul>
+<li>Use distance-based camera speed : on</li>
+<li>Orbit camera around selection : on</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>General &gt;</em>
+<ul>
+<li>New TRS Gizmo &gt;
+<ul>
+<li>Enable new Gizmos : on</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Project settings &gt;</strong>
+<ul>
+<li><em>Engine</em> &gt;
+<ul>
+<li>Rendering &gt; Substrate &gt;
+<ul>
+<li>Substrate materials (experimental) : on</li>
+<li>Substrate opaque material rough refraction : on</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Setup look dev scene</strong>
+<ul>
+<li><em>Lookdev level</em>
+<ul>
+<li>Add Level, lets call it material_lookdev</li>
+</ul>
+</li>
+<li><em>Add HDRI Backdrop</em>
+<ul>
+<li>on sky light set specified cube mat to an hdri
+<ul>
+<li>HDRI Backdrop &gt; skylight (in the details hierarchy) &gt; Light &gt; Source type &gt; SLS Specified cubemap
+<ul>
+<li>Set to the same as the top level one</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Optinally</em>
+<ul>
+<li>Lighting distance Factor &gt;
+<ul>
+<li>Set this to 0 if you do not want the ground area to recieve lighting/shadows</li>
+</ul>
+</li>
+<li>use camera projection
+<ul>
+<li>Enable this to not get the hdri projected to the ground</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Add look dev meshes</em><br>
+Note that you can filter on static meshes to find the geo faster
+<ul>
+<li><em>Shader Ball</em>
+<ul>
+<li>Engine &gt; SM_MatPreviewMesh_01</li>
+<li><em>Tip!</em>
+<ul>
+<li>Open the mesh in the sm editor (Ctrl + E)</li>
+<li>In the Material Slots section, you can click the isolate checkbox to visualize the parts that are assosiated with the slot</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Color calibrator</em>
+<ul>
+<li>Engine &gt; SM_ColorCalibrator</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Post Process Volume</em>
+<ul>
+<li>Unbound</li>
+<li>Exposure
+<ul>
+<li>Metering Mode : Manual</li>
+<li>Exposure Compensation : 10 (ish)</li>
+</ul>
+</li>
+<li>pathtracing options</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="materials">Materials</h1>
+<h2 id="basic-plastic--metal">Basic Plastic / Metal</h2>
+<ul>
+<li><strong>Create Material</strong>
+<ul>
+<li>Content Browser &gt; RMB &gt; Material</li>
+<li>Call it <em>M_basic</em></li>
+<li>Open the material</li>
+<li>Delete the Substrate UE4 Default Shading</li>
+</ul>
+</li>
+<li><strong>Add Substrate Slab</strong>
+<ul>
+<li>Add Substrate Slab
+<ul>
+<li>Tab &gt; &lsquo;slab..&rsquo; &gt; Substrate Slab</li>
+<li>Connect the output of the slab to the <em>Front Material</em> input of the material output node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>BaseColor</strong>
+<ul>
+<li><em>Add Vector 3 parameter</em>
+<ul>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>BaseColor</em></li>
+</ul>
+</li>
+<li>Connect to <em>Diffuse Albedo</em> of slab</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 01 - BaseColor</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>F0</strong>
+<ul>
+<li><em>Add Vector 3 parameter</em>
+<ul>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>F0</em></li>
+</ul>
+</li>
+<li>Connect to <em>F0</em> of slab</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 02 - F0</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Roughness</strong>
+<ul>
+<li><em>Add Scalar parameter</em>
+<ul>
+<li>Add constant 1 vec : 1 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>BaseColor</em></li>
+</ul>
+</li>
+<li><em>Tip!</em>
+<ul>
+<li>Hold S + LMB click to create a scalar parm directly</li>
+</ul>
+</li>
+<li>Connect to <em>Roughness</em> of slab</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 03 - Roughness</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Normal</strong>
+<ul>
+<li>*Add <em>Texture Sample</em> node
+<ul>
+<li>This will be used when no normal texture is specified</li>
+<li>Note <em>Not</em> a Texture Sample Parameter.</li>
+<li>tab &gt; &lsquo;texture&hellip;&rsquo; &gt; TextureSample</li>
+<li>In the details panel (of tex sample node) Set the default texture to a <em>Flat Normal</em> texture</li>
+</ul>
+</li>
+<li>*Add <em>Texture Sample Parameter</em> node
+<ul>
+<li>Copy and paste the texture sample node</li>
+<li>RMB Click &gt; Convert to Parameter</li>
+<li>Give it the name <em>Normal Texture</em></li>
+</ul>
+</li>
+<li><em>Add a Static Switch Parameter</em>
+<ul>
+<li>tab &gt; &lsquo;static&hellip;&rsquo; &gt; StaticSwitchParameter</li>
+<li>Call it &ldquo;Use Normal Texture&rdquo;</li>
+<li>Connecty the Texture Sanple Parameter to the <em>True</em> input</li>
+<li>Connecty the Texture Sanple to the <em>False</em> input</li>
+<li>Connct the output of he switch to the <em>Normal</em> input of the slab node</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 03 - Roughness</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Add a Normal map UV transform</em>
+<ul>
+<li>See below in the <em>Material Functions</em> setction how to do this</li>
+<li>tab &gt; &lsquo;uv xfo&hellip;&rsquo; &gt; &lsquo;UV Xform Normal&rsquo;</li>
+<li>Connect to the input of the Uvs of the Normal Texture Sample Parametr node</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="glass">Glass</h2>
+<ul>
+<li><strong>Create Material</strong>
+<ul>
+<li>Content Browser &gt; RMB &gt; Material</li>
+<li>Call it <em>M_glass</em></li>
+<li>Open the material</li>
+<li>Delete the Substrate UE4 Default Shading</li>
+</ul>
+</li>
+<li><strong>Add Substrate Slab</strong>
+<ul>
+<li>Add Substrate Slab
+<ul>
+<li>Tab &gt; &lsquo;slab..&rsquo; &gt; Substrate Slab</li>
+<li>Connect the output of the slab to the <em>Front Material</em> input of the material output node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Material Detail Setup</strong>
+<ul>
+<li>Select the material output node (or just click on empty graph space)</li>
+<li>Material &gt; Bleand Mode : <em>TranslucentColoredTransmittence</em></li>
+<li>Translucency &gt; Lighting Mode : <em>SurfaceForwardShading</em></li>
+<li>Refraction &gt; Refraction Method : <em>Index of Refraction</em></li>
+</ul>
+</li>
+<li><strong>BaseColor</strong>
+<ul>
+<li><em>Add Vector 3</em>
+<ul>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>Set value to 0 (of all components)
+<ul>
+<li>You can use the value V input (of the HSV inputs) to set all components at once</li>
+</ul>
+</li>
+<li>Connect to <em>Diffuse Albedo</em> of slab</li>
+<li><em>Note</em> I willnot promote to parameter since so far I know I will not need to change this</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>SSS MFP</strong>
+<ul>
+<li>This is the way we will conytrol the color of the glass</li>
+<li><em>Add a Substrate Transmittance-To-MeanFreePath</em> node
+<ul>
+<li>tab &gt; &lsquo;free&hellip;&rsquo; &gt; Substarte Helpers &gt; Substrate Transmittance-To-MeanFreePath</li>
+<li>Connect to <em>MFP</em> output to the <em>SSS MFP</em> input of the Slab node</li>
+</ul>
+</li>
+<li><em>Glass Color</em>*
+<ul>
+<li><em>Add Vector 3 parameter</em>
+<ul>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>Glass Color</em></li>
+</ul>
+</li>
+<li>Connect the output to the <em>Transmittance Color</em> of the Substrate Transmittance-To-MeanFreePath node.</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 01 - BaseColor</li>
+<li>Sort Priority : 1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>F0</strong>
+<ul>
+<li><em>Add Vector 3 parameter</em>
+<ul>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>F0</em></li>
+</ul>
+</li>
+<li>Set the default value to <em>0.04</em>
+<ul>
+<li>this is the default value of the F0 input of the slab node</li>
+<li>you can see this by hovering the mouse pointer over the F= input of the slab</li>
+</ul>
+</li>
+<li>Connect to <em>F0</em> of slab</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 02 - F0 / F90</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>F90</strong>
+<ul>
+<li><em>Add Vector 3 parameter</em>
+<ul>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>F90</em></li>
+</ul>
+</li>
+<li>Set the default value to <em>1.0</em></li>
+<li>Connect to <em>F90</em> of slab</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 02 - F0 / F90</li>
+<li>Sort Priority : 1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Roughness</strong>
+<ul>
+<li><em>Add Scalar parameter</em>
+<ul>
+<li>Hold S + LMB click
+<ul>
+<li>Call the parm <em>Roughness</em></li>
+</ul>
+</li>
+<li>Connect to <em>Roughness</em> of slab</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 03 - Roughness</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>IOR</strong>
+<ul>
+<li><em>Add Scalar parameter</em>
+<ul>
+<li>Hold S + LMB click
+<ul>
+<li>Call the parm <em>IOR</em></li>
+</ul>
+</li>
+<li>Connect to <em>Refraction (Index of Refraction)</em> of <em>Material output</em> node</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 06 - IOR</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Normal</strong>
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+</ul>
+<h2 id="car-paint">Car Paint</h2>
+<ul>
+<li><strong>Create Material</strong>
+<ul>
+<li>Content Browser &gt; RMB &gt; Material</li>
+<li>Call it <em>M_carpaint</em></li>
+<li>Open the material</li>
+<li>Delete the Substrate UE4 Default Shading</li>
+</ul>
+</li>
+<li><strong>Add Substrate Slab</strong>
+<ul>
+<li>Add Substrate Slab
+<ul>
+<li>Tab &gt; &lsquo;slab..&rsquo; &gt; Substrate Slab</li>
+<li>Connect the output of the slab to the <em>Front Material</em> input of the material output node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Base Color</strong>
+<ul>
+<li>We will add a Flip / Flop options to our material</li>
+<li><strong>Base Flip Colr</strong>
+<ul>
+<li><em>Color</em>
+<ul>
+<li><em>Add Vector 3 parameter</em></li>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>Base Flip Color</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>Group : 01 - Base</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>BaseColor Flop</strong>
+<ul>
+<li><em>Color</em>
+<ul>
+<li><em>Add Vector 3 parameter</em></li>
+<li>Add constant 3 vec : 3 + LMB click</li>
+<li>RMB click constant &gt; Convert to Parameter
+<ul>
+<li>Call the parm <em>Base Flop Color</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>Group : 01 - Base</li>
+<li>Sort Priority : 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Control Blend</strong>
+<ul>
+<li><em>Lerp</em>
+<ul>
+<li>we will use a lerp node to blend between the colors</li>
+<li>L + LMB click</li>
+<li>connect the Flip Color to A and Flop to B</li>
+</ul>
+</li>
+<li><em>Fresnell</em>
+<ul>
+<li>We willuse a frasnell node to control the Alpha ampunt of the lerp</li>
+<li>tab &gt; &lsquo;fre&hellip;&rsquo; &gt; Utility &gt; Fresnell</li>
+<li>Connect to the Alpha of the lerp node</li>
+</ul>
+</li>
+<li><em>Flip/Flop Amount</em>
+<ul>
+<li>Create scalar parm and (S + LMB)</li>
+<li>call it <em>Flip/Flop Amount</em></li>
+<li>Set default to 1.0</li>
+<li><em>Organize</em>
+<ul>
+<li>Group : 01 - Base</li>
+<li>Sort Priority : 2</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Connect Diffuse Albedo</strong>
+<ul>
+<li>Connect the output of the lerp to the <em>Diffuse Albedo</em> input of the slab</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Flake Color</strong>
+<ul>
+<li>Copy and paste the setup we did for the Base Flip / Flop colors</li>
+<li>Rename the Parameter names from <em>Base</em> to <em>Flake</em>
+<ul>
+<li>Renamber to rename the Groups as well</li>
+</ul>
+</li>
+<li>Connect to the <em>F0</em> inpuit of slab</li>
+</ul>
+</li>
+<li><strong>Flake Roughness</strong>
+<ul>
+<li><em>Add Scalar parameter</em>
+<ul>
+<li>Hold S + LMB click
+<ul>
+<li>Call the parm <em>Flake Roughness</em></li>
+</ul>
+</li>
+<li>Set default to 0.5</li>
+<li>Connect to <em>Roughness</em> of slab node</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 02 - Flake</li>
+<li>Sort Priority : 4</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Flake Density</strong>
+<ul>
+<li><em>Add Scalar parameter</em>
+<ul>
+<li>Hold S + LMB click
+<ul>
+<li>Call the parm <em>Flake Density</em></li>
+</ul>
+</li>
+<li>Set default to 15</li>
+<li>Connect to <em>Glint Density</em> of slab node</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 02 - Flake</li>
+<li>Sort Priority : 5</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Flake Scale</strong>
+<ul>
+<li>To render the flakes we need uvs
+<ul>
+<li>Add a <em>Texure Coordiantes</em> node</li>
+</ul>
+</li>
+<li><em>Add Scalar parameter</em>
+<ul>
+<li>Hold S + LMB click
+<ul>
+<li>Call the parm <em>Flake Scale</em></li>
+</ul>
+</li>
+<li>Set default to 10</li>
+</ul>
+</li>
+<li><em>Organize</em>
+<ul>
+<li>With the parm selected, details &gt; Material Expression &gt;
+<ul>
+<li>Group : 02 - Flake</li>
+<li>Sort Priority : 6</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Multiply</em>
+<ul>
+<li>To scale the flakes uvs we multiply the uv coords with the flake scale aprm</li>
+<li>Connect to <em>Glint UVs</em> of slab</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Clear Coat</strong>
+<ul>
+<li>Creat a Substrate Slab for the clear coat
+<ul>
+<li>Tab &gt; &lsquo;slab..&rsquo; &gt; Substrate Slab</li>
+</ul>
+</li>
+<li><em>Diffuse Albedo</em>
+<ul>
+<li>Create a vector, set the value to (0,0,0) and connect to Diffuse Albedo of the clear coat slab</li>
+<li>We will not make a parameter of this</li>
+</ul>
+</li>
+<li><em>F0</em>
+<ul>
+<li>Create a constant 1, set the value to 0.05 and connect to <em>F0</em> o9f the clear coat slab</li>
+<li>We will not make a parameter of this</li>
+</ul>
+</li>
+<li><em>Clear Coat Roughness</em>
+<ul>
+<li>Create a scalar parm, call it Clear Coat Roughness and connect to The rouhgness of the clear coat slab</li>
+<li>Set the default to 0.01, min to 0, max 1.0</li>
+<li><em>Organize</em>
+<ul>
+<li>Group : 10 - Clear Coat</li>
+<li>Sort Priority : 0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>To make the clear coat transparent</em>
+<ul>
+<li>We ass a <em>Substrate Transmittance-To-MeanFreePath</em> node</li>
+<li>tab &gt; &lsquo;free&hellip;&rsquo; &gt; Substarte Helpers &gt; Substrate Transmittance-To-MeanFreePath</li>
+<li>Connect to <em>MFP</em> output to the <em>SSS MFP</em> input of the clear coat slab node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Blend the Base &amp; Clear Coat slabs</strong>
+<ul>
+<li>Add a <em>Substrate Vertical Layer</em>
+<ul>
+<li>tab &lsquo;verti&hellip;&rsquo; &gt; Substrate Vertical Layer</li>
+</ul>
+</li>
+<li>Connect the Clear Coat slab to the top input</li>
+<li>Connect the Base slab to the bottom input</li>
+<li>Create a scalar parm, call it <em>Clear Coat Thickness</em>
+<ul>
+<li>Set the default to 0.003</li>
+</ul>
+</li>
+<li>Connect the Clear Coat Thickness parm to the <em>Top Thickness</em> of the <em>Substrate Verticale Layer</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="material-functions">Material Functions</h1>
+<div class="clipboard-snippet-wrap">
+
+	
+	
+	
+	
+
+	
+
+		
+
+	
+
+	<a class="clipboard-snippet-title" target="_blank" href="https://www.petfactory.se//files/unreal_snippets/MF_uv_xform_normal.txt">MF_uv_xform_normal</a>
+	<div class="clipboard-snippet-copy-btn" data-clipboard_snippet="Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_0&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionFunctionOutput Name=&#34;MaterialExpressionFunctionOutput_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionFunctionOutput&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionFunctionOutput_0&#39;&#34;
+      Begin Object Class=/Script/Engine.MaterialExpressionSubstrateUnlitBSDF Name=&#34;MaterialExpressionSubstrateUnlitBSDF_1&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionSubstrateUnlitBSDF&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionFunctionOutput_0.MaterialExpressionSubstrateUnlitBSDF_1&#39;&#34;
+      End Object
+      Begin Object Class=/Script/Engine.MaterialExpressionSubstrateUnlitBSDF Name=&#34;MaterialExpressionSubstrateUnlitBSDF_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionSubstrateUnlitBSDF&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionFunctionOutput_0.MaterialExpressionSubstrateUnlitBSDF_0&#39;&#34;
+      End Object
+   End Object
+   Begin Object Name=&#34;MaterialExpressionFunctionOutput_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionFunctionOutput&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionFunctionOutput_0&#39;&#34;
+      Begin Object Name=&#34;MaterialExpressionSubstrateUnlitBSDF_1&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionSubstrateUnlitBSDF&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionFunctionOutput_0.MaterialExpressionSubstrateUnlitBSDF_1&#39;&#34;
+         EmissiveColor=(Expression=&#34;/Script/Engine.MaterialExpressionFunctionOutput&#39;MaterialGraphNode_0.MaterialExpressionFunctionOutput_0&#39;&#34;)
+         MaterialExpressionGuid=8F1E443F45D2C45C26A90DAC598CD2B7
+      End Object
+      Begin Object Name=&#34;MaterialExpressionSubstrateUnlitBSDF_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionSubstrateUnlitBSDF&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_0.MaterialExpressionFunctionOutput_0.MaterialExpressionSubstrateUnlitBSDF_0&#39;&#34;
+         EmissiveColor=(Expression=&#34;/Script/Engine.MaterialExpressionFunctionOutput&#39;MaterialGraphNode_0.MaterialExpressionFunctionOutput_0&#39;&#34;)
+         MaterialExpressionGuid=B938805B48D0C5BB4C33AEB5C7375C09
+      End Object
+      A=(Expression=&#34;/Script/Engine.MaterialExpressionMaterialFunctionCall&#39;MaterialGraphNode_6.MaterialExpressionMaterialFunctionCall_3&#39;&#34;)
+      bLastPreviewed=True
+      Id=04E2286C42D8BDE95F556AAB14E55F22
+      MaterialExpressionEditorX=160
+      MaterialExpressionEditorY=160
+      MaterialExpressionGuid=A558F7304B1D4F32FB519D9DF5D594D9
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionFunctionOutput&#39;MaterialExpressionFunctionOutput_0&#39;&#34;
+   NodePosX=160
+   NodePosY=160
+   NodeGuid=E23C6E2443CD7DA2B12D509DF5CE4EA8
+   CustomProperties Pin (PinId=239EBF254F6959B95B199FAC910A5987,PinName=&#34;Input&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),PinType.PinCategory=&#34;required&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_6 AC16167A4AA7E35C2EE79788859F0007,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=AF446E424538A9FB4641F08FCDC885DF,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_1&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_1&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureCoordinate Name=&#34;MaterialExpressionTextureCoordinate_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionTextureCoordinate&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_1.MaterialExpressionTextureCoordinate_0&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionTextureCoordinate_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionTextureCoordinate&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_1.MaterialExpressionTextureCoordinate_0&#39;&#34;
+      MaterialExpressionEditorX=-704
+      MaterialExpressionEditorY=192
+      MaterialExpressionGuid=471F539241BFA8AB7ADFFB885BA32432
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionTextureCoordinate&#39;MaterialExpressionTextureCoordinate_0&#39;&#34;
+   NodePosX=-704
+   NodePosY=192
+   AdvancedPinDisplay=Hidden
+   NodeGuid=BD0F52A641180475079602A5050DF4CD
+   CustomProperties Pin (PinId=4CE0AAC14071A8DEB9BD5AA61E7E87C7,PinName=&#34;Coordinate Index&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;int&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;0&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=28219A824C0CD5E8F44E27B754B6CDFB,PinName=&#34;UTiling&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;1.0&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=B095627342C3D8D398599C852BA0FF75,PinName=&#34;VTiling&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;1.0&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=E39CCBBE43BB57613647B8BF7116D770,PinName=&#34;Un Mirror U&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;bool&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;false&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=5417E3A34ADB3432DFB4B4A3F86623AE,PinName=&#34;Un Mirror V&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;bool&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;false&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=True,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=4D8510E047938F1CC9B5A1ADEFC95DE9,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_2 DB585AA94AB7EAC8218E329636B4ED2E,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_2&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_2&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name=&#34;MaterialExpressionMultiply_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionMultiply&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_2.MaterialExpressionMultiply_0&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionMultiply_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionMultiply&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_2.MaterialExpressionMultiply_0&#39;&#34;
+      A=(Expression=&#34;/Script/Engine.MaterialExpressionTextureCoordinate&#39;MaterialGraphNode_1.MaterialExpressionTextureCoordinate_0&#39;&#34;)
+      B=(Expression=&#34;/Script/Engine.MaterialExpressionAppendVector&#39;MaterialGraphNode_5.MaterialExpressionAppendVector_0&#39;&#34;)
+      MaterialExpressionEditorX=-352
+      MaterialExpressionEditorY=192
+      MaterialExpressionGuid=414293734DC10661A54BB8A987A1C467
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionMultiply&#39;MaterialExpressionMultiply_0&#39;&#34;
+   NodePosX=-352
+   NodePosY=192
+   NodeGuid=163E84974A4BF6DC3EDA96B99C3B6CEE
+   CustomProperties Pin (PinId=DB585AA94AB7EAC8218E329636B4ED2E,PinName=&#34;A&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;0.0&#34;,LinkedTo=(MaterialGraphNode_1 4D8510E047938F1CC9B5A1ADEFC95DE9,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=CE12C28A40FF427027822BA9F50890CD,PinName=&#34;B&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;1.0&#34;,LinkedTo=(MaterialGraphNode_5 85BCA9D94AF2C7C09C62B9AAEE6DA058,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=FF4E8BE54107CBD2F1EA00AFADF637DF,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_6 5E279BF749D9B437C76EAE8565C4ED3C,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_3&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_3&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name=&#34;MaterialExpressionScalarParameter_5&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_3.MaterialExpressionScalarParameter_5&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionScalarParameter_5&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_3.MaterialExpressionScalarParameter_5&#39;&#34;
+      DefaultValue=1.000000
+      ParameterName=&#34;Normal U Tiling&#34;
+      ExpressionGUID=4AA35DDB45D97038DB3E3B835CA402C3
+      Group=&#34;04 - Normal&#34;
+      SortPriority=20
+      MaterialExpressionEditorX=-704
+      MaterialExpressionEditorY=320
+      MaterialExpressionGuid=B304769343CE1334332AAEB24B3EE5E2
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;MaterialExpressionScalarParameter_5&#39;&#34;
+   NodePosX=-704
+   NodePosY=320
+   bCanRenameNode=True
+   NodeGuid=D44F27D3482F85AA0B6F57B654F737C3
+   CustomProperties Pin (PinId=74EB6F4C443BC5EC51A9669D6DB93B35,PinName=&#34;Default Value&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;1.0&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=C102C14C470ACD714E197586D55CEE91,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_5 01FA4D2241386B853B65AD83DFC70547,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_4&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_4&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name=&#34;MaterialExpressionScalarParameter_6&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_4.MaterialExpressionScalarParameter_6&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionScalarParameter_6&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_4.MaterialExpressionScalarParameter_6&#39;&#34;
+      DefaultValue=1.000000
+      ParameterName=&#34;Normal V Tiling&#34;
+      ExpressionGUID=C88674084DAF799AC669FF9F60D05F08
+      Group=&#34;04 - Normal&#34;
+      SortPriority=21
+      MaterialExpressionEditorX=-704
+      MaterialExpressionEditorY=432
+      MaterialExpressionGuid=1D4F81D940BDF924D09C4EA59E02A839
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;MaterialExpressionScalarParameter_6&#39;&#34;
+   NodePosX=-704
+   NodePosY=432
+   bCanRenameNode=True
+   NodeGuid=DC72455048CECCBC9EA08D88C951DB7B
+   CustomProperties Pin (PinId=319C27DD4593943F22049CBF58F3E0FC,PinName=&#34;Default Value&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;1.0&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=1951C72A4759DDD4E1ACA6B81C56B991,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_5 F7D5AC2C4DE45BAF117E3B8FDEBCC132,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_5&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_5&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionAppendVector Name=&#34;MaterialExpressionAppendVector_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionAppendVector&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_5.MaterialExpressionAppendVector_0&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionAppendVector_0&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionAppendVector&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_5.MaterialExpressionAppendVector_0&#39;&#34;
+      A=(Expression=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;MaterialGraphNode_3.MaterialExpressionScalarParameter_5&#39;&#34;)
+      B=(Expression=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;MaterialGraphNode_4.MaterialExpressionScalarParameter_6&#39;&#34;)
+      MaterialExpressionEditorX=-480
+      MaterialExpressionEditorY=352
+      MaterialExpressionGuid=6CA034294A445B78C6465194B4C4145C
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionAppendVector&#39;MaterialExpressionAppendVector_0&#39;&#34;
+   NodePosX=-480
+   NodePosY=352
+   NodeGuid=0B919D9E4804AF804EEE9D9D0B2B871F
+   CustomProperties Pin (PinId=01FA4D2241386B853B65AD83DFC70547,PinName=&#34;A&#34;,PinType.PinCategory=&#34;required&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_3 C102C14C470ACD714E197586D55CEE91,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=F7D5AC2C4DE45BAF117E3B8FDEBCC132,PinName=&#34;B&#34;,PinType.PinCategory=&#34;required&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_4 1951C72A4759DDD4E1ACA6B81C56B991,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=85BCA9D94AF2C7C09C62B9AAEE6DA058,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_2 CE12C28A40FF427027822BA9F50890CD,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_6&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_6&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionMaterialFunctionCall Name=&#34;MaterialExpressionMaterialFunctionCall_3&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionMaterialFunctionCall&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_6.MaterialExpressionMaterialFunctionCall_3&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionMaterialFunctionCall_3&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionMaterialFunctionCall&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_6.MaterialExpressionMaterialFunctionCall_3&#39;&#34;
+      MaterialFunction=&#34;/Script/Engine.MaterialFunction&#39;/Engine/Functions/Engine_MaterialFunctions02/Texturing/CustomRotator.CustomRotator&#39;&#34;
+      FunctionInputs(0)=(ExpressionInputId=45DE7CC04BCC975C664A2AA5DA134FEF,Input=(Expression=&#34;/Script/Engine.MaterialExpressionMultiply&#39;MaterialGraphNode_2.MaterialExpressionMultiply_0&#39;&#34;,InputName=&#34;UVs&#34;))
+      FunctionInputs(1)=(ExpressionInputId=9B6953874136DCE4D8E4E8878152CCCE,Input=(OutputIndex=-1,InputName=&#34;Rotation Center&#34;))
+      FunctionInputs(2)=(ExpressionInputId=D58F67D84CFD4C9D289810AEE4A3EBC8,Input=(Expression=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;MaterialGraphNode_7.MaterialExpressionScalarParameter_7&#39;&#34;,InputName=&#34;Rotation Angle (0-1)&#34;))
+      FunctionOutputs(0)=(ExpressionOutputId=35E8F8F94CC8CE3D65F114A234D0BD5E,Output=(OutputName=&#34;Rotated Values&#34;))
+      MaterialExpressionEditorX=-176
+      MaterialExpressionEditorY=192
+      MaterialExpressionGuid=F0EA807847A8E811FD241B864FF6EF25
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+      Outputs(0)=(OutputName=&#34;Rotated Values&#34;)
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionMaterialFunctionCall&#39;MaterialExpressionMaterialFunctionCall_3&#39;&#34;
+   NodePosX=-176
+   NodePosY=192
+   NodeGuid=561D73FA42FBC05E9D61B0A41C2F58AF
+   CustomProperties Pin (PinId=5E279BF749D9B437C76EAE8565C4ED3C,PinName=&#34;UVs (V2)&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_2 FF4E8BE54107CBD2F1EA00AFADF637DF,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=2DA97C254590D01743DE86A50CF79D08,PinName=&#34;Rotation Center (V2)&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=8166930E4578B2AB1FC63C9ABC9F8D79,PinName=&#34;Rotation Angle (0-1) (S)&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_7 57128B82405727778A76A68FEB934252,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=AC16167A4AA7E35C2EE79788859F0007,PinName=&#34;Rotated Values&#34;,Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_0 239EBF254F6959B95B199FAC910A5987,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+Begin Object Class=/Script/UnrealEd.MaterialGraphNode Name=&#34;MaterialGraphNode_7&#34; ExportPath=&#34;/Script/UnrealEd.MaterialGraphNode&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_7&#39;&#34;
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name=&#34;MaterialExpressionScalarParameter_7&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_7.MaterialExpressionScalarParameter_7&#39;&#34;
+   End Object
+   Begin Object Name=&#34;MaterialExpressionScalarParameter_7&#34; ExportPath=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;/Engine/Transient.Material_4:MaterialGraph_0.MaterialGraphNode_7.MaterialExpressionScalarParameter_7&#39;&#34;
+      SliderMax=1.000000
+      ParameterName=&#34;Normal UV Rotation Amount&#34;
+      ExpressionGUID=0A0D8FA5413E8591D4D263A9F1E60714
+      Group=&#34;04 - Normal&#34;
+      SortPriority=22
+      MaterialExpressionEditorX=-176
+      MaterialExpressionEditorY=352
+      MaterialExpressionGuid=6D4006E944DE30D11B21DE84616A4F6C
+      Material=&#34;/Script/Engine.Material&#39;/Engine/Transient.Material_4&#39;&#34;
+   End Object
+   MaterialExpression=&#34;/Script/Engine.MaterialExpressionScalarParameter&#39;MaterialExpressionScalarParameter_7&#39;&#34;
+   NodePosX=-176
+   NodePosY=352
+   bCanRenameNode=True
+   NodeGuid=D4216F5948D8DAF77653808FE715FFBD
+   CustomProperties Pin (PinId=2647EE554D827806861140A0ECC66EF9,PinName=&#34;Default Value&#34;,PinType.PinCategory=&#34;optional&#34;,PinType.PinSubCategory=&#34;red&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,DefaultValue=&#34;0.0&#34;,PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=True,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+   CustomProperties Pin (PinId=57128B82405727778A76A68FEB934252,PinName=&#34;Output&#34;,PinFriendlyName=NSLOCTEXT(&#34;MaterialGraphNode&#34;, &#34;Space&#34;, &#34; &#34;),Direction=&#34;EGPD_Output&#34;,PinType.PinCategory=&#34;&#34;,PinType.PinSubCategory=&#34;&#34;,PinType.PinSubCategoryObject=None,PinType.PinSubCategoryMemberReference=(),PinType.PinValueType=(),PinType.ContainerType=None,PinType.bIsReference=False,PinType.bIsConst=False,PinType.bIsWeakPointer=False,PinType.bIsUObjectWrapper=False,PinType.bSerializeAsSinglePrecisionFloat=False,LinkedTo=(MaterialGraphNode_6 8166930E4578B2AB1FC63C9ABC9F8D79,),PersistentGuid=00000000000000000000000000000000,bHidden=False,bNotConnectable=False,bDefaultValueIsReadOnly=False,bDefaultValueIsIgnored=False,bAdvancedView=False,bOrphanedPin=False,)
+End Object
+">Ctrl-C</div>
+	<div class="clipboard-snippet-info">
+		Tiles and rotates tex coords. The groups are named to fit in the normal section of a material
+		
+		
+	</div>
+
+</div>
+<ul>
+<li><strong>UV Xform Normal</strong>
+<ul>
+<li>Create a folder called <em>functions</em> and step inside</li>
+<li>RMB &gt; Matrials &gt; Material Functon
+<ul>
+<li>call it UV_xform_normal</li>
+</ul>
+</li>
+<li>Add a <em>Texture Coordinate</em> node
+<ul>
+<li>tab &gt; &lsquo;coo&hellip;&rsquo; &gt; TextureCoordinate</li>
+</ul>
+</li>
+<li><em>Add a U Tiling parm</em>
+<ul>
+<li>S + LMB click
+<ul>
+<li>Parm name : <em>Normal U Tiling</em></li>
+<li>Material Expression &gt;
+<ul>
+<li>Group : <em>04 - Normal</em></li>
+<li>Sort Priority : 20</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Add a V Tiling parm</em>
+<ul>
+<li>S + LMB click
+<ul>
+<li>Parm name : <em>Normal V Tiling</em></li>
+<li>Material Expression &gt;
+<ul>
+<li>Group : <em>04 - Normal</em></li>
+<li>Sort Priority : 21</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Append the 2 scalars</em>
+<ul>
+<li>Append Vector</li>
+</ul>
+</li>
+<li><em>Multiply the TexCoord</em>
+<ul>
+<li>with the resulting UV Vector</li>
+</ul>
+</li>
+<li><em>Add a Custom Rotator</em>
+<ul>
+<li>tab &gt; &lsquo;rot&hellip;&rsquo; &gt; &lsquo;Custom Rotator&rsquo;</li>
+<li>Add a scalar Parm &gt; callit it <em>Normal UV Rotation Amount</em>
+<ul>
+<li>Material Expression &gt;
+<ul>
+<li>Group : <em>04 - Normal</em></li>
+<li>Sort Priority : 22</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Connectr the rotator</em>:
+<ul>
+<li>Connect the multiplied tex coords to the <em>UVs</em> input of the rotator</li>
+<li>Connect the &lsquo;Normal UV Rotation Amount&rsquo; parm to the <em>Rotation Angle</em> of the rotator</li>
+<li>Connect the output of the rotator to the <em>Output</em> result node</li>
+</ul>
+</li>
+<li><em>Expose to Library</em>
+<ul>
+<li>Click on an empty section of the Material Function graph</li>
+<li>Enable the Material Function &gt; Expose to Library checkbox</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="tips">Tips</h1>
+<ul>
+<li><strong>Nested Instances</strong>
+<ul>
+<li>Note that you can create a Material Instance of another Material Instance
+<ul>
+<li>This can be handy if you want to create material that should inherit properties, but do some minor tweaks to lets say normal map or roughness</li>
+<li>If we need to tweak the BaseColor of the parent MI it will adjsut all child instances aswell.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Chrome</strong>
+<ul>
+<li>If we want to create a Chrome material set the <em>FO</em> to white and the <em>Roughness</em> to 0</li>
+<li>Set the <em>BaseColor</em> to black
+<ul>
+<li>If the F0 is set to (1,1,1) white the BaseColor has no effect</li>
+</ul>
+</li>
+<li><em>Darker chrome</em>
+<ul>
+<li>Set the <em>F0</em> to a darker color (0.5, 0,5, 0.5)</li>
+<li>Make sure that the <em>BaseColor</em> is at (0,0,0) (black)&hellip;
+<ul>
+<li>&hellip;since when we lower the FO it will start to have an effect</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Gold</em>
+<ul>
+<li>introduce some saturaton in the <em>F0</em></li>
+<li>Can also play with the <em>Roughness</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Exagerate Glas Reflections</strong>
+<ul>
+<li>The <em>FO</em> of a glass material should probably be at 0.04 but you can &ldquo;increase&rdquo; the reflaction by increasing the F0 value. You can even tint it to give a colored refelction.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="col-md-2 toc-wrap">
+    	
+    	<aside class="toc-aside">
+    	
+    	<div class="toc-content">
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#materials">Materials</a>
+      <ul>
+        <li><a href="#basic-plastic--metal">Basic Plastic / Metal</a></li>
+        <li><a href="#glass">Glass</a></li>
+        <li><a href="#car-paint">Car Paint</a></li>
+      </ul>
+    </li>
+    <li><a href="#material-functions">Material Functions</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+</nav>	
+		</div>
+		</aside>	
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-toc-wrap">
+
+	<div class="mobile-toc-btn">
+		<button class="btn" hret="unreal" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+			<svg fill="#888" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+  <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/></svg>
+
+
+
+
+
+
+
+
+		</button>
+	</div>
+	
+	<div class="offcanvas offcanvas-end" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+	  <div class="offcanvas-header">
+	    
+	    <a class="home-icon" href="https://www.petfactory.se/">
+    	  <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+      </a>
+
+	    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	  </div>
+	  
+	  <div class="offcanvas-body" id="toc-modal-wrap">
+	  	<div data-bs-dismiss="offcanvas">
+	    	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#materials">Materials</a>
+      <ul>
+        <li><a href="#basic-plastic--metal">Basic Plastic / Metal</a></li>
+        <li><a href="#glass">Glass</a></li>
+        <li><a href="#car-paint">Car Paint</a></li>
+      </ul>
+    </li>
+    <li><a href="#material-functions">Material Functions</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+</nav>
+	    </div>	
+	  </div>
+	</div>
+
+</div>
+
+
+
+      </main>
+
+      
+      
+
+
+      
+
+      <footer class="container py-5">
+
+          <div class="row">
+
+              <div class="col-md-6 footer-logo-wrap">
+
+                  <a class="home-icon" href="https://www.petfactory.se/">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
+                  </a>
+                  <span class="footer-logo-lext">petfactory &copy; 2024</span>
+
+              </div>
+
+              <div class="col-md-6 social-list">
+                  <ul>
+                      <li><a target="_blank" class="" href="https://twitter.com/johanBorgstrom"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</a></li>
+                      <li><a target="_blank" class="" href="https://www.youtube.com/channel/UCB-6-mQgbIn2dUa70D1noTQ"><svg fill="#444" width="20" height="20" viewBox="0 0 64 64"><path d="M54.15,10.031l-20.9-0.019l-21.718,0.019c-5.433,0-11.534,3.626-11.534,8.944v26.474c0,5.316,6.101,8.559,11.534,8.559 H54.15c5.432,0,9.834-3.242,9.834-8.559V18.976C63.984,13.657,59.582,10.031,54.15,10.031z M27.856,42.205L27.73,22.044 l14.03,10.168L27.856,42.205z"/></svg>
+
+
+
+
+</a></li>
+                      
+                      <li><a target="_blank" class="" href="https://linkedin.com/in/johan-borgstr%c3%b6m-8b06875"><svg fill="#444" width="20" height="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M13.632 13.635h-2.37V9.922c0-.886-.018-2.025-1.234-2.025-1.235 0-1.424.964-1.424 1.96v3.778h-2.37V6H8.51V7.04h.03c.318-.6 1.092-1.233 2.247-1.233 2.4 0 2.845 1.58 2.845 3.637v4.188zM3.558 4.955c-.762 0-1.376-.617-1.376-1.377 0-.758.614-1.375 1.376-1.375.76 0 1.376.617 1.376 1.375 0 .76-.617 1.377-1.376 1.377zm1.188 8.68H2.37V6h2.376v7.635zM14.816 0H1.18C.528 0 0 .516 0 1.153v13.694C0 15.484.528 16 1.18 16h13.635c.652 0 1.185-.516 1.185-1.153V1.153C16 .516 15.467 0 14.815 0z" fill-rule="nonzero"/></svg></a></li>
+                  </ul>
+              </div>
+          </div>
+          
+      </footer>
+
+    </body>
+
+</html>
