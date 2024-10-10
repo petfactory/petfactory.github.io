@@ -543,13 +543,15 @@ item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f9267
 <span style="color:#66d9ef">if</span> ok <span style="color:#f92672">and</span> name:
     <span style="color:#66d9ef">print</span>(name)
 </code></pre></div><p>Promt to continue</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">continue_dialog</span>(parent, text, info):
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">continue_dialog</span>(parent, text, info, min_width<span style="color:#f92672">=</span><span style="color:#ae81ff">400</span>):
 
     msg_box <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QMessageBox(parent)
     msg_box<span style="color:#f92672">.</span>setText(text)
     msg_box<span style="color:#f92672">.</span>setInformativeText(info)
     msg_box<span style="color:#f92672">.</span>setStandardButtons(QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Ok <span style="color:#f92672">|</span> QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Cancel)
+
     msg_box<span style="color:#f92672">.</span>setDefaultButton(QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Ok)
+    msg_box<span style="color:#f92672">.</span>setStyleSheet(f<span style="color:#e6db74">&#39;QLabel{{min-width: {min_width}px;}}&#39;</span>)
 
     <span style="color:#66d9ef">return</span> msg_box<span style="color:#f92672">.</span>exec_() <span style="color:#f92672">==</span> QtWidgets<span style="color:#f92672">.</span>QMessageBox<span style="color:#f92672">.</span>Ok
 </code></pre></div><h1 id="signal--slot">Signal &amp; Slot</h1>

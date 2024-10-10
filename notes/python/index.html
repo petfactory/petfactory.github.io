@@ -234,6 +234,19 @@ name_list <span style="color:#f92672">=</span> [
     
 <span style="color:#75715e"># /Game/car/wheel/last/</span>
 <span style="color:#75715e"># /Game/one two three/box/</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    REPLACE_LAST_DIGITS <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^(.*)_\d{2}$&#39;</span>)
+    cam_name_list <span style="color:#f92672">=</span> [
+        <span style="color:#e6db74">&#39;cam_A__adsdasdas_01&#39;</span>,
+        <span style="color:#e6db74">&#39;cam_A__adsdasdas_01_A&#39;</span>,
+        <span style="color:#e6db74">&#39;cam_B_02&#39;</span>
+    ]
+    <span style="color:#66d9ef">for</span> name <span style="color:#f92672">in</span> cam_name_list:
+        m <span style="color:#f92672">=</span> REPLACE_LAST_DIGITS<span style="color:#f92672">.</span>match(name)
+        <span style="color:#66d9ef">if</span> m:
+            replaced_name <span style="color:#f92672">=</span> REPLACE_LAST_DIGITS<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;\1&#39;</span>, name)
+            <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;Match</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">{name} matched</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">-&gt; {replaced_name}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;No Match</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">{name}</span><span style="color:#ae81ff">\n\t</span><span style="color:#e6db74">x</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
 </code></pre></div><h1 id="misc">Misc</h1>
 <h2 id="context-manager">Context Manager</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thing</span>(object):

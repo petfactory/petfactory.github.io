@@ -364,6 +364,50 @@ cmd_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#
 result <span style="color:#f92672">=</span> executeCommand(cmd_str)    
 pprint<span style="color:#f92672">.</span>pprint(result)
 </code></pre></div><h1 id="snippets">Snippets</h1>
+<h2 id="selection">Selection</h2>
+<h3 id="folders">Folders</h3>
+<br>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unreal<span style="color:#f92672">.</span>EditorUtilityLibrary<span style="color:#f92672">.</span>get_current_content_browser_path()
+</code></pre></div><ul>
+<li><strong>get_current_content_browser_path</strong>
+<ul>
+<li>/Game/HDRI</li>
+<li>Gets the selected folder in the content browser &ldquo;tree view&rdquo;.</li>
+<li>Does not return folders selected in the &ldquo;content area&rdquo; of the browser only the &ldquo;treeview&rdquo;</li>
+<li>Only gets folder in the &ldquo;/Game/&rdquo; directory folder, folders selected in the &ldquo;Engine&rdquo; folders will result in None</li>
+<li>The path is relative to the Content folder i.e. &ldquo;/Game/sud_dir/&hellip;&rdquo;</li>
+<li>It will output the <em>first</em> folder that were selected, omitting the rest</li>
+</ul>
+</li>
+</ul>
+<br>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unreal<span style="color:#f92672">.</span>EditorUtilityLibrary<span style="color:#f92672">.</span>get_selected_path_view_folder_paths()
+</code></pre></div><ul>
+<li><strong>get_selected_path_view_folder_paths</strong>
+<ul>
+<li>[&quot;/All/Game/HDRI&rdquo;, &ldquo;/All/EngineData/Engine&rdquo;]</li>
+<li>Gets a list of the selected folders in the content browser &ldquo;tree view&rdquo;.</li>
+<li>Does not return folders selected in the &ldquo;content area&rdquo; of the browser only the &ldquo;treeview&rdquo;</li>
+<li>It is relative to the &ldquo;All&rdquo; root folder</li>
+</ul>
+</li>
+</ul>
+<br>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unreal<span style="color:#f92672">.</span>EditorUtilityLibrary<span style="color:#f92672">.</span>get_selected_folder_paths()
+</code></pre></div><ul>
+<li><strong>get_selected_folder_paths</strong>
+<ul>
+<li>[&quot;/All/EngineData/Plugins&rdquo;, &ldquo;/All/Game/Test&rdquo;]</li>
+<li>Gets a list of the folders selected in the &ldquo;content area&rdquo; of the content browser</li>
+<li>Dose not get the folder in the &ldquo;treeview&rdquo;</li>
+<li>It is relative to the &ldquo;All&rdquo; root folder</li>
+</ul>
+</li>
+</ul>
+<br>
+<hr>
 <h2 id="blueprint">Blueprint</h2>
 <p><strong>Edit a variable or call function of CDO</strong></p>
 <p>
@@ -566,6 +610,11 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
     <li><a href="#remote-execution">Remote Execution</a></li>
     <li><a href="#snippets">Snippets</a>
       <ul>
+        <li><a href="#selection">Selection</a>
+          <ul>
+            <li><a href="#folders">Folders</a></li>
+          </ul>
+        </li>
         <li><a href="#blueprint">Blueprint</a></li>
       </ul>
     </li>
@@ -642,6 +691,11 @@ unreal<span style="color:#f92672">.</span>parent_external_window_to_slate(widget
     <li><a href="#remote-execution">Remote Execution</a></li>
     <li><a href="#snippets">Snippets</a>
       <ul>
+        <li><a href="#selection">Selection</a>
+          <ul>
+            <li><a href="#folders">Folders</a></li>
+          </ul>
+        </li>
         <li><a href="#blueprint">Blueprint</a></li>
       </ul>
     </li>
