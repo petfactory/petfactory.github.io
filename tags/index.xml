@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Oct 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Houdini</title>
+      <link>https://www.petfactory.se/tags/houdini/</link>
+      <pubDate>Tue, 15 Oct 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/houdini/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unreal</title>
+      <link>https://www.petfactory.se/tags/unreal/</link>
+      <pubDate>Tue, 15 Oct 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/tags/unreal/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DaVinci Resolve</title>
@@ -26,24 +44,6 @@
       <pubDate>Thu, 03 Oct 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/tags/davinci-resolve-notes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Houdini</title>
-      <link>https://www.petfactory.se/tags/houdini/</link>
-      <pubDate>Thu, 03 Oct 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/houdini/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unreal</title>
-      <link>https://www.petfactory.se/tags/unreal/</link>
-      <pubDate>Thu, 03 Oct 2024 00:00:00 +0100</pubDate>
-      
-      <guid>https://www.petfactory.se/tags/unreal/</guid>
       <description></description>
     </item>
     
