@@ -17,7 +17,8 @@
       <pubDate>Tue, 15 Oct 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/work/polestar3-02/</guid>
-      <description>This project is a mix of Houdini &amp;amp; Unreal. The aim with the project was to refine my Houdini/Unreal workflow and also to test Substrate materials. The road and parts of the environment were modeled in Houdini. The vehicle and cameras were also animated in Houdini. The scene is lit by an HDRI. I used Megascans for the cliffs and some of the textures. Rendered with the path tracer in unreal 5.</description>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The road and parts of the environment were modeled in Houdini. The vehicle and cameras were also animated in Houdini. In Unreal I used Megascans for the cliffs, decals to the road and textures for the environment materials. I did the edit in sequencer. The scene is lit by an HDRI Backdrop.
+One thing I did in this project was to set the rotation of the HDRI Actor and skylight component per camera angle.</description>
     </item>
     
     <item>
