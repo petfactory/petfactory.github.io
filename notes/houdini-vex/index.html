@@ -128,6 +128,9 @@
     <div class="col-md-10 notes-wrap">
     	<h1 id="attributes">Attributes</h1>
 <h2 id="set-attrib-type-info">Set attrib type info</h2>
+<p>Houdini&rsquo;s geometry attributes have a bit of metadata specifying whether the data in the attribute represents some kind of transformation (for example, a position or rotation), and if so, whether/how it should be modified when the geometry itself is transformed. 
+<a href="https://www.sidefx.com/docs/houdini/vex/attribtypeinfo_suite.html" target="_blank" rel="noopener">Attribute type metadata</a></p>
+<p><strong>transform orient attrib</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> pnt <span style="color:#f92672">=</span> addpoint(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
 vector4 quat <span style="color:#f92672">=</span> quaternion(<span style="color:#ae81ff">0</span>);
 setpointattrib(<span style="color:#ae81ff">0</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span>orient<span style="color:#960050;background-color:#1e0010">&#39;</span>, pnt, quat);

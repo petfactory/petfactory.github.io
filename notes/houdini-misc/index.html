@@ -182,6 +182,53 @@ P <span style="color:#f92672">=</span> set(P.x, y, P.z);
 </li>
 </ul>
 <h1 id="sop">SOP</h1>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong>Invoke a compiled block</strong>
+<ul>
+<li><strong>Add a Compiled block pair</strong>
+<ul>
+<li>It will add a compile <em>Begin</em> and <em>End</em></li>
+</ul>
+</li>
+<li><strong>Set Compile Begin Input Name</strong>
+<ul>
+<li>On the <em>Input Name</em> parm of the <em>Compile Begin</em> node, lets give it the name &ldquo;test&rdquo;</li>
+<li>Each of the inputs of a compiled block may be assigned a name to allow external users of the compiled block to replace the wired input with their own data. This is used by the Invoke and the SOP Solver.</li>
+</ul>
+</li>
+<li><strong>Add nodes to invoke</strong>
+<ul>
+<li>Add nodes that you want to invoke between the <em>Compile Begin</em> and <em>Compile end</em></li>
+<li>Note that only nodes that are compilable can be used.</li>
+</ul>
+</li>
+<li><strong>Add a Invoke SOP</strong>
+<ul>
+<li>Append an <em>Invoke</em> SOP to the stream you want to process</li>
+</ul>
+</li>
+<li><strong>Set Compile Block SOP node</strong>
+<ul>
+<li>Drag and drop the <em>Compile End</em> node to the <em>Compile Block</em> parm of the Invoke SOP</li>
+</ul>
+</li>
+<li><strong>Set Input Name</strong>
+<ul>
+<li>Set the number of Inputs to what you need, in our case we set it to 1</li>
+<li>Then on the <em>Input Name</em> parm of the Invoke node we enter &ldquo;test&rdquo; as we called it on the compile begin node.</li>
+</ul>
+</li>
+<li><strong>Profit!</strong>
+<ul>
+<li>The comipled nodes are now processed</li>
+<li>It you want a video, Paul Ambrosiussen explains it 
+<a href="https://www.youtube.com/watch?v=2eZZ_nSuSwk&amp;t=17s" target="_blank" rel="noopener">here</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="wrangle">Wrangle</h2>
 <ul>
 <li><strong>Output Selection Group</strong><br>
@@ -330,7 +377,7 @@ Sets a group that will be highlighted when the node is viewed.
 </li>
 <li>We have now created a velocity volume with a curl noise. We can for instance use this inside a pop simulation to advect the particles.</li>
 </ul>
-<h1 id="tips">Tips</h1>
+<h1 id="tips-1">Tips</h1>
 <h2 id="ui-1">UI</h2>
 <ul>
 <li><strong>Quick relative channel Reference</strong>
@@ -822,6 +869,7 @@ Sets a group that will be highlighted when the node is viewed.
     </li>
     <li><a href="#sop">SOP</a>
       <ul>
+        <li><a href="#tips">Tips</a></li>
         <li><a href="#wrangle">Wrangle</a></li>
       </ul>
     </li>
@@ -851,7 +899,7 @@ Sets a group that will be highlighted when the node is viewed.
         <li><a href="#curl-field-velocity">Curl field (velocity)</a></li>
       </ul>
     </li>
-    <li><a href="#tips">Tips</a>
+    <li><a href="#tips-1">Tips</a>
       <ul>
         <li><a href="#ui-1">UI</a></li>
         <li><a href="#hscript">HScript</a></li>
@@ -912,6 +960,7 @@ Sets a group that will be highlighted when the node is viewed.
     </li>
     <li><a href="#sop">SOP</a>
       <ul>
+        <li><a href="#tips">Tips</a></li>
         <li><a href="#wrangle">Wrangle</a></li>
       </ul>
     </li>
@@ -941,7 +990,7 @@ Sets a group that will be highlighted when the node is viewed.
         <li><a href="#curl-field-velocity">Curl field (velocity)</a></li>
       </ul>
     </li>
-    <li><a href="#tips">Tips</a>
+    <li><a href="#tips-1">Tips</a>
       <ul>
         <li><a href="#ui-1">UI</a></li>
         <li><a href="#hscript">HScript</a></li>

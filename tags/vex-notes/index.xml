@@ -17,7 +17,9 @@
       <pubDate>Sun, 14 Apr 2019 13:45:10 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/houdini-vex/</guid>
-      <description>Attributes Set attrib type info int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Quaternion  Quaternion to Euler  Specify the rotation order with the order integer. Use the constants defined in $HH/vex/include/math.h (for example, XFORM_XYZ) Note! You do not need to include math.h in a wrangle (like this: #include &amp;lt;math.h&amp;gt;) it is included by default. vector euler = degrees(quaterniontoeuler(p@orient, XFORM_XYZ));    Matrix  Get matrix components  You can use getcomp function&amp;hellip; getcomp(&amp;lt;matrix&amp;gt;m, int row, int column) &amp;hellip;but you can also access components using m.</description>
+      <description>Attributes Set attrib type info Houdini&amp;rsquo;s geometry attributes have a bit of metadata specifying whether the data in the attribute represents some kind of transformation (for example, a position or rotation), and if so, whether/how it should be modified when the geometry itself is transformed. Attribute type metadata
+transform orient attrib
+int pnt = addpoint(0,0);vector4 quat = quaternion(0);setpointattrib(0, &amp;#39;orient&amp;#39;, pnt, quat);setattribtypeinfo(0, &amp;#39;point&amp;#39;, &amp;#39;orient&amp;#39;, &amp;#39;quaternion&amp;#39;);Transform Quaternion  Quaternion to Euler  Specify the rotation order with the order integer.</description>
     </item>
     
     <item>
