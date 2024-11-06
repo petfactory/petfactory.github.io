@@ -6,10 +6,20 @@
     <description>Recent content in Houdini on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Oct 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/houdini/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Polestar 3 - 03</title>
+      <link>https://www.petfactory.se/work/polestar3-03/</link>
+      <pubDate>Wed, 06 Nov 2024 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/polestar3-03/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The road and parts of the environment were modeled in Houdini. The vehicle and cameras were also animated in Houdini. In Unreal I used Megascans for the cliffs, decals for the road and textures for the environment materials. I did the edit in sequencer. The scene is lit by an HDRI Backdrop.
+It was rendered with the path tracer in unreal 5.</description>
+    </item>
     
     <item>
       <title>Polestar 3 - 02</title>

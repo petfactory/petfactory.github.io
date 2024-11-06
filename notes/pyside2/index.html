@@ -537,6 +537,19 @@ vbox<span style="color:#f92672">.</span>addWidget(self<span style="color:#f92672
 item<span style="color:#f92672">.</span>setFlags(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsEnabled <span style="color:#f92672">|</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ItemIsUserCheckable)
 </code></pre></div><p>Check the model if an index is checked</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">checked <span style="color:#f92672">=</span> True <span style="color:#66d9ef">if</span> index<span style="color:#f92672">.</span>data(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>CheckStateRole) <span style="color:#f92672">==</span> QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>Checked <span style="color:#66d9ef">else</span> False
+</code></pre></div><h1 id="events">Events</h1>
+<h2 id="focus">Focus</h2>
+<p>If you want to do something when the widget gets/loses focus you can implement the focusIn/out event.<br>
+<em>Note</em> that the widget needs to setFocusPolicy() to something other than Qt.NoFocus in order to receive focus events.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">self<span style="color:#f92672">.</span>setFocusPolicy(QtCore<span style="color:#f92672">.</span>Qt<span style="color:#f92672">.</span>ClickFocus)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">focusOutEvent</span>(self, event):
+    super()<span style="color:#f92672">.</span>focusOutEvent(event)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;focus out&#39;</span>)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">focusInEvent</span>(self, event):
+    super()<span style="color:#f92672">.</span>focusInEvent(event)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;focus in&#39;</span>)
 </code></pre></div><h1 id="widgets">Widgets</h1>
 <h2 id="qinputdialog">QInputDialog</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name, ok <span style="color:#f92672">=</span> QtWidgets<span style="color:#f92672">.</span>QInputDialog<span style="color:#f92672">.</span>getText(self, <span style="color:#e6db74">&#39;Name&#39;</span>, <span style="color:#e6db74">&#39;label&#39;</span>) 
@@ -707,6 +720,11 @@ menu<span style="color:#f92672">.</span>something<span style="color:#f92672">.</
         <li><a href="#qstandarditem">QStandardItem</a></li>
       </ul>
     </li>
+    <li><a href="#events">Events</a>
+      <ul>
+        <li><a href="#focus">Focus</a></li>
+      </ul>
+    </li>
     <li><a href="#widgets">Widgets</a>
       <ul>
         <li><a href="#qinputdialog">QInputDialog</a></li>
@@ -810,6 +828,11 @@ menu<span style="color:#f92672">.</span>something<span style="color:#f92672">.</
         <li><a href="#icons">Icons</a></li>
         <li><a href="#size">Size</a></li>
         <li><a href="#qstandarditem">QStandardItem</a></li>
+      </ul>
+    </li>
+    <li><a href="#events">Events</a>
+      <ul>
+        <li><a href="#focus">Focus</a></li>
       </ul>
     </li>
     <li><a href="#widgets">Widgets</a>
