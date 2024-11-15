@@ -176,10 +176,15 @@ blockquote p {
 .download-wrap{
     margin-bottom: 15px;
     padding-left: 20px;
+    color: #555;
 }
 
 .download-text{
     color: #E5703A;
+}
+
+.download-text-external{
+    color: #e83e8c;
 }
 
 .download-info{
@@ -197,11 +202,20 @@ blockquote p {
 }
 
 .download-file:hover{
-    color: #777;
+    color: #E5703A;
+}
+
+.download-file-external{
+    color: #555;
+}
+
+.download-file-external:hover{
+    color: #e83e8c;
 }
 
 .download-file-span {
     margin-right: 10px;
+    /*color: #555;*/
     
 }
 .clipboard-snippet-wrap{
