@@ -18,10 +18,7 @@
       
       <guid>https://www.petfactory.se/notes/miscellaneous/</guid>
       <description>Here I will post (mildly) useful things that falls outside more specfic topics.
-Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
-Resize In-place resizing
-magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
-magick mogrify -resize 50% -path ./DST *.</description>
+Web Downloadable Link  Downloadable Goggle Drive Link  Upload the file to google drive On the file, navigate to the Share menu:  Under General Access set the share option to Anyone with the link You probably want to keep the default value of the Role as Viewer Copy the link (click the copy link button)   Copy the section of the file URL between file/d/ and / and add it to</description>
     </item>
     
   </channel>

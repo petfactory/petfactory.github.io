@@ -374,6 +374,26 @@ soputils<span style="color:#f92672">.</span>selectGroupParm(kwargs)
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nodepath <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]<span style="color:#f92672">.</span>path()
 kwargs[<span style="color:#e6db74">&#39;nodepath&#39;</span>] <span style="color:#f92672">=</span> nodepath
 </code></pre></div><pre><code></code></pre></li>
+<li><strong>Select Prims in an HDA</strong>
+<ul>
+<li><strong>Note!</strong> This only works if the HDA is unlocked, so no bueno</li>
+<li>You will get permission errors when locked.</li>
+<li>Assume it does not like internal things in the HDA to have the selection flags set</li>
+<li>A workaround is to set the desired selection target to be output 0 of the HDA</li>
+<li>And use the HDA node itself as &ldquo;target&rdquo;</li>
+<li>But it would be nice to be able to choose any node inside the hda as target</li>
+<li>Maybe need to write a custom selection script based on the soputils version?
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> soputils 
+kwargs[<span style="color:#e6db74">&#39;geometrytype&#39;</span>] <span style="color:#f92672">=</span> (hou<span style="color:#f92672">.</span>geometryType<span style="color:#f92672">.</span>Primitives,) 
+kwargs[<span style="color:#e6db74">&#39;inputindex&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+kwargs[<span style="color:#e6db74">&#39;ordered&#39;</span>] <span style="color:#f92672">=</span> True
+hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+nodepath <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;OUT_ctp&#39;</span>)<span style="color:#f92672">.</span>path()
+kwargs[<span style="color:#e6db74">&#39;nodepath&#39;</span>] <span style="color:#f92672">=</span> nodepath
+soputils<span style="color:#f92672">.</span>selectGroupParm(kwargs)
+</code></pre></div><pre><code></code></pre></li>
+</ul>
+</li>
 <li><strong>Process the selected points</strong><br>
 You might want to do something with the selected points, to do this:
 <ul>
@@ -701,8 +721,45 @@ custom_module <span style="color:#f92672">=</span> toolutils<span style="color:#
 custom<span style="color:#f92672">.</span>your_func(kwargs)
 <span style="color:#75715e"># from button parameter</span>
 hou<span style="color:#f92672">.</span>phm()<span style="color:#f92672">.</span>custom<span style="color:#f92672">.</span>your_func(kwargs)
-</code></pre></div><h2 id="userdata">UserData</h2>
-<h3 id="custom-qtwidget">Custom QtWidget</h3>
+</code></pre></div><h2 id="flags">Flags</h2>
+<ul>
+<li><strong>Output for view</strong>
+<ul>
+<li>To set the output node of an HDA with python</li>
+<li>The arg is the output index to use</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hda_node<span style="color:#f92672">.</span>setOutputForViewFlag(<span style="color:#ae81ff">2</span>)
+</code></pre></div><pre><code></code></pre></li>
+<li><strong>Add a callback on flag change</strong>
+<ul>
+<li>RMB click the HDA &gt; Type Properties and select the <strong>Scripts</strong> tab</li>
+<li>In the <strong>Event Handler</strong> combobox select <strong>On Created</strong></li>
+<li><strong>Note!</strong> you can probaly also use <strong>On Loaded</strong> or some other handler that makes sense in your case</li>
+<li>In the handler add the following snippet:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">flag_changed</span>(node, event_type, <span style="color:#f92672">**</span>kwargs):
+          
+    <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>isGenericFlagSet(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>Bypass):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;is bypassed&#39;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Normal&#39;</span>)
+
+hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+hda_node<span style="color:#f92672">.</span>addEventCallback((hou<span style="color:#f92672">.</span>nodeEventType<span style="color:#f92672">.</span>FlagChanged,), flag_changed)
+</code></pre></div><pre><code></code></pre></li>
+<li><strong>Documentation</strong>
+<ul>
+<li>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/OpNode.html#callbacks" target="_blank" rel="noopener">callbacks</a></li>
+<li>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/nodeEventType.html" target="_blank" rel="noopener">nodeEventType</a></li>
+<li>
+<a href="https://www.sidefx.com/docs/houdini/hom/hou/nodeFlag.html" target="_blank" rel="noopener">nodeFlag</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="userdata">UserData</h2>
 <p>Here is a way to create a custom Qt ui that can intercat with the HDA node. The Qt Widget instance is saved to the cachedUserDict (which is not persistant) if it exists open it if not create it.<br>
 Also testing the <em>userDict</em> which is persistant and the <em>cachedUserDict</em> which is not. Crteate 3 buttons and connect them to the functions in the script.</p>
 <p>Read more about userData in the SideFX 
@@ -769,7 +826,7 @@ Also testing the <em>userDict</em> which is persistant and the <em>cachedUserDic
         self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setUserData(<span style="color:#e6db74">&#39;persistent_data&#39;</span>, persistent_text)
         self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setCachedUserData(<span style="color:#e6db74">&#39;cached_data&#39;</span>, cached_text)
 </code></pre></div><h2 id="snippets">Snippets</h2>
-<h3 id="revert-to-default">Revert to Default</h3>
+<p><strong>Revert to Default</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reset_all_parms_in_containing_folder</span>(kwargs):
     <span style="color:#e6db74">&#39;&#39;&#39;This will reset all parms in the containing folder (including sub folders)
 </span><span style="color:#e6db74">    of the parm that is the sender of this callback&#39;&#39;&#39;</span>
@@ -786,7 +843,158 @@ Also testing the <em>userDict</em> which is persistant and the <em>cachedUserDic
         <span style="color:#75715e"># print(parm.description())</span>
         parm<span style="color:#f92672">.</span>revertToDefaults()
 
-</code></pre></div><h1 id="help">Help</h1>
+</code></pre></div><h2 id="parm-templates">Parm Templates</h2>
+<p>Here is a way to add parms to the HDA with python. It also connects the parms to the file nodes inside the HDA. Note that your hda needs to have three file nodes named &ldquo;file_1, file_2 &amp; file_3&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hda_asset <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>node(<span style="color:#e6db74">&#39;/obj/geo1/z&#39;</span>)
+hda_parm_list <span style="color:#f92672">=</span> [ hda_asset<span style="color:#f92672">.</span>node(f<span style="color:#e6db74">&#39;file_{i+1}&#39;</span>)<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;file&#39;</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>)]
+
+ptg <span style="color:#f92672">=</span> hda_asset<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>definition()<span style="color:#f92672">.</span>parmTemplateGroup()
+folder <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>FolderParmTemplate(<span style="color:#e6db74">&#34;files&#34;</span>, <span style="color:#e6db74">&#34;Files&#34;</span>, folder_type<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>folderType<span style="color:#f92672">.</span>Collapsible, default_value<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e"># create a folder template</span>
+
+<span style="color:#66d9ef">for</span> i, hda_parm <span style="color:#f92672">in</span> enumerate(hda_parm_list):
+    
+    geo_file_parm <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>StringParmTemplate(f<span style="color:#e6db74">&#39;file_{i+1}&#39;</span>, f<span style="color:#e6db74">&#39;File {i+1}&#39;</span>, <span style="color:#ae81ff">1</span>, string_type<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>stringParmType<span style="color:#f92672">.</span>FileReference, file_type<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>fileType<span style="color:#f92672">.</span>Geometry, default_value<span style="color:#f92672">=</span>([<span style="color:#e6db74">&#39;default.bgeo&#39;</span>]))
+
+    hda_parm<span style="color:#f92672">.</span>set(f<span style="color:#e6db74">&#39;`chs(</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">../file_{i+1}</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">)`&#39;</span>)
+    folder<span style="color:#f92672">.</span>addParmTemplate(geo_file_parm)
+
+ptg<span style="color:#f92672">.</span>addParmTemplate(folder)
+hda_asset<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>definition()<span style="color:#f92672">.</span>setParmTemplateGroup(ptg)
+</code></pre></div><h1 id="minimal-tool-pipeline">Minimal Tool Pipeline</h1>
+<p>Here you can find a minimal example on how to create HDAs and integrate them in the ui.</p>
+<ul>
+<li><strong>Asset Root dir</strong>
+<ul>
+<li>We will specfy a dir that we will use as root for our scripts, icons, toolbar etc</li>
+<li>Creatre a dir, in this example we can call it <em>asset_root_dir</em></li>
+<li>Make sure that the <em>asset_root_dir</em> is on the houdini path
+<ul>
+<li>You can set this in a package file</li>
+<li>&hellip; { &ldquo;HOUDINI_PATH&rdquo;: &ldquo;$HOME/dev/houdini&rdquo; }</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Icon assets</strong>
+<ul>
+<li>In the <em>asset_root_dir</em> create the folders <em>config\icons</em> and save the .svg icons in the icons folder</li>
+</ul>
+</li>
+<li><strong>HDA &amp; Icons</strong>
+<ul>
+<li>If the icon folder is on the houdini path, you can use them in your HDA</li>
+<li>HDA &gt; RMB Click &gt; Type Properties:
+<ul>
+<li>On the <em>Basic</em> tab under the <em>Icon</em> field just enter the file name of the .svg file (do not include the .svg file extension)</li>
+<li>If the <em>Embed Icon in Operator</em> is checked the icon will be embeddd in the HDA
+<ul>
+<li>I have not really look too much into if this has some sideeffects, so I have kept it on for now</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>HDA &amp; Python</strong>
+<ul>
+<li>You can add python modules to your hda in the type proprties window under tab scripts</li>
+<li>Click the <em>Event Handler</em> &gt; On Created
+<ul>
+<li>Here we can do things with our HDA when it is created, like set flags or node color</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+hda_node<span style="color:#f92672">.</span>setGenericFlag(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>OutputForDisplay, <span style="color:#ae81ff">1</span>)
+hda_node<span style="color:#f92672">.</span>setColor(hou<span style="color:#f92672">.</span>Color(<span style="color:#f92672">.</span><span style="color:#ae81ff">4</span>, <span style="color:#f92672">.</span><span style="color:#ae81ff">4</span>, <span style="color:#f92672">.</span><span style="color:#ae81ff">4</span>))
+</code></pre></div><pre><code></code></pre></li>
+</ul>
+</li>
+<li><strong>Toolbar Menu</strong>
+<ul>
+<li>If we want to add the HDA to our scene with some specific parms set&hellip;</li>
+<li>&hellip; or we might want to add more then one HDA here is how we can do this</li>
+<li>In the same <em>asset_root_dir</em> add a folder called <em>toolbar</em>
+<ul>
+<li>Add a file called you_shelf_name.shelf</li>
+<li>In the shelf file</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;shelfDocument&gt;</span>
+  <span style="color:#75715e">&lt;!-- This file contains definitions of shelves, toolbars, and tools.
+</span><span style="color:#75715e"> It should not be hand-edited when it is being used by the application.
+</span><span style="color:#75715e"> Note, that two definitions of the same element are not allowed in
+</span><span style="color:#75715e"> a single file. --&gt;</span>
+
+  <span style="color:#f92672">&lt;toolshelf</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_cool_shelf&#34;</span> <span style="color:#a6e22e">label=</span><span style="color:#e6db74">&#34;My Cool Shelf&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;memberTool</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_cool_tool&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/toolshelf&gt;</span>
+
+  <span style="color:#f92672">&lt;tool</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_cool_tool&#34;</span> <span style="color:#a6e22e">label=</span><span style="color:#e6db74">&#34;My Cool Tool&#34;</span> <span style="color:#a6e22e">icon=</span><span style="color:#e6db74">&#34;your_icon_name&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;toolMenuContext</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;network&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;contextNetType&gt;</span>SOP<span style="color:#f92672">&lt;/contextNetType&gt;</span>
+    <span style="color:#f92672">&lt;/toolMenuContext&gt;</span>
+    <span style="color:#f92672">&lt;toolSubmenu&gt;</span>Cool/Sub Menu<span style="color:#f92672">&lt;/toolSubmenu&gt;</span>
+    <span style="color:#f92672">&lt;script</span> <span style="color:#a6e22e">scriptType=</span><span style="color:#e6db74">&#34;python&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#75715e">&lt;![CDATA[
+</span><span style="color:#75715e">from importlib import reload
+</span><span style="color:#75715e">import your.really.cool_script as cool_script
+</span><span style="color:#75715e">reload(cool_script)
+</span><span style="color:#75715e">cool_script.add_tool(kwargs)
+</span><span style="color:#75715e">    ]]&gt;</span>
+    <span style="color:#f92672">&lt;/script&gt;</span>
+  <span style="color:#f92672">&lt;/tool&gt;</span>
+
+<span style="color:#f92672">&lt;/shelfDocument&gt;</span>
+</code></pre></div><pre><code></code></pre></li>
+<li><em>Note</em>
+<ul>
+<li>If you add more &lt;tool&gt; entries make sure you also specfy it as a <em>&lt;memberTool name=&rdquo;&hellip;</em> in the <em>&lt;toolshelf &hellip; &lt;/toolshelf&gt;</em></li>
+</ul>
+</li>
+<li>todo add keyboard shortcuts&hellip;</li>
+<li>Lets say that we want our script to create HDA and set some parms and also create additional nodes here is how you can do this
+<ul>
+<li>The code belows shows 2 ways of creating the nodes.</li>
+<li>I noticed that if we use the second way in the scene view it does not make all input connections</li>
+<li>I also noticed that both toolutils &amp; soptoolutils has a <em>genericTool</em> function but since we are in SOPS lets use the sop version</li>
+<li>It also seems like if you use generidTool to create a HDA you need the full namespace of the hda</li>
+<li>But you can just use the node name if you use createNode</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> toolutils
+<span style="color:#f92672">import</span> soptoolutils
+
+active_pane <span style="color:#f92672">=</span> toolutils<span style="color:#f92672">.</span>activePane(kwargs)
+
+<span style="color:#66d9ef">if</span> isinstance(active_pane, hou<span style="color:#f92672">.</span>SceneViewer):
+
+    node <span style="color:#f92672">=</span> soptoolutils<span style="color:#f92672">.</span>genericTool(kwargs, <span style="color:#e6db74">&#39;labs::boxcutter::1.0&#39;</span>) 
+          
+    ctp_node <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>parent()<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;copytopoints&#39;</span>)
+    ctp_node<span style="color:#f92672">.</span>setPosition(node<span style="color:#f92672">.</span>position()<span style="color:#f92672">+</span>hou<span style="color:#f92672">.</span>Vector2(<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+    ctp_node<span style="color:#f92672">.</span>setInput(<span style="color:#ae81ff">0</span>, node, <span style="color:#ae81ff">0</span>)
+    ctp_node<span style="color:#f92672">.</span>setInput(<span style="color:#ae81ff">1</span>, node, <span style="color:#ae81ff">0</span>)
+          
+    hou<span style="color:#f92672">.</span>clearAllSelected()
+    [n<span style="color:#f92672">.</span>setSelected(True) <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span>(node, ctp_node)]
+          
+<span style="color:#66d9ef">elif</span> isinstance(active_pane, hou<span style="color:#f92672">.</span>NetworkEditor):
+          
+    node <span style="color:#f92672">=</span> soptoolutils<span style="color:#f92672">.</span>genericTool(kwargs, <span style="color:#e6db74">&#39;labs::boxcutter::1.0&#39;</span>)
+
+    node_name <span style="color:#f92672">=</span> node<span style="color:#f92672">.</span>name()
+          
+    kwargs[<span style="color:#e6db74">&#39;inputnodename&#39;</span>] <span style="color:#f92672">=</span> node_name
+    kwargs[<span style="color:#e6db74">&#39;inputs&#39;</span>] <span style="color:#f92672">=</span> [(node_name, <span style="color:#ae81ff">0</span>), (node_name, <span style="color:#ae81ff">0</span>)]
+    kwargs[<span style="color:#e6db74">&#39;nodepositionx&#39;</span>] <span style="color:#f92672">=</span> str(node<span style="color:#f92672">.</span>position()<span style="color:#f92672">.</span>x())
+    kwargs[<span style="color:#e6db74">&#39;nodepositiony&#39;</span>] <span style="color:#f92672">=</span> str(node<span style="color:#f92672">.</span>position()<span style="color:#f92672">.</span>y() <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.5</span>)
+          
+    ctp_node <span style="color:#f92672">=</span> soptoolutils<span style="color:#f92672">.</span>genericTool(kwargs, <span style="color:#e6db74">&#39;copytopoints&#39;</span>)
+
+    hou<span style="color:#f92672">.</span>clearAllSelected()
+    [n<span style="color:#f92672">.</span>setSelected(True) <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span>(node, ctp_node)]
+</code></pre></div><pre><code></code></pre></li>
+</ul>
+</li>
+</ul>
+<h1 id="help">Help</h1>
 <p>It is a really good idea to add some help notes. Both for yourself down the line and if you share the HDA. There is a help tab on the HDA where you can add some notes. Read the 
 <a href="https://www.sidefx.com/docs/houdini/help/nodes.html" target="_blank" rel="noopener">docs</a> here</p>
 <h1 id="expressions">Expressions</h1>
@@ -929,18 +1137,13 @@ Houdini supports two different but compatible systems for versioning assets, sup
       <ul>
         <li><a href="#pythonmodule">PythonModule</a></li>
         <li><a href="#additional-modules">Additional Modules</a></li>
-        <li><a href="#userdata">UserData</a>
-          <ul>
-            <li><a href="#custom-qtwidget">Custom QtWidget</a></li>
-          </ul>
-        </li>
-        <li><a href="#snippets">Snippets</a>
-          <ul>
-            <li><a href="#revert-to-default">Revert to Default</a></li>
-          </ul>
-        </li>
+        <li><a href="#flags">Flags</a></li>
+        <li><a href="#userdata">UserData</a></li>
+        <li><a href="#snippets">Snippets</a></li>
+        <li><a href="#parm-templates">Parm Templates</a></li>
       </ul>
     </li>
+    <li><a href="#minimal-tool-pipeline">Minimal Tool Pipeline</a></li>
     <li><a href="#help">Help</a></li>
     <li><a href="#expressions">Expressions</a>
       <ul>
@@ -1037,18 +1240,13 @@ Houdini supports two different but compatible systems for versioning assets, sup
       <ul>
         <li><a href="#pythonmodule">PythonModule</a></li>
         <li><a href="#additional-modules">Additional Modules</a></li>
-        <li><a href="#userdata">UserData</a>
-          <ul>
-            <li><a href="#custom-qtwidget">Custom QtWidget</a></li>
-          </ul>
-        </li>
-        <li><a href="#snippets">Snippets</a>
-          <ul>
-            <li><a href="#revert-to-default">Revert to Default</a></li>
-          </ul>
-        </li>
+        <li><a href="#flags">Flags</a></li>
+        <li><a href="#userdata">UserData</a></li>
+        <li><a href="#snippets">Snippets</a></li>
+        <li><a href="#parm-templates">Parm Templates</a></li>
       </ul>
     </li>
+    <li><a href="#minimal-tool-pipeline">Minimal Tool Pipeline</a></li>
     <li><a href="#help">Help</a></li>
     <li><a href="#expressions">Expressions</a>
       <ul>
@@ -1094,7 +1292,7 @@ Houdini supports two different but compatible systems for versioning assets, sup
                   <a class="home-icon" href="https://www.petfactory.se/">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="#e83e8c" width="18" height="18" viewBox="0 0 61.44 61.67"><path class="a" d="M1.28,45.25V56.6a6,6,0,0,0,6,6H18.64A27.07,27.07,0,0,1,8,55.93,25.6,25.6,0,0,1,1.28,45.25Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M28,7.85a27.08,27.08,0,0,1,19.37,7.79L52,20.31,41.35,31,36.9,26.55A13.24,13.24,0,0,0,28,23a12.91,12.91,0,1,0,0,25.82,13.24,13.24,0,0,0,8.9-3.56L62.72,19.42V7.18a6,6,0,0,0-6-6H7.29a6.33,6.33,0,0,0-6,6.23V26.77A28.27,28.27,0,0,1,28,7.85Z" transform="translate(-1.28 -1.17)"/><path class="a" d="M47.36,56.6a27,27,0,0,1-10.24,6.23H56.49a6,6,0,0,0,6-6V41.46Z" transform="translate(-1.28 -1.17)"/></svg>
                   </a>
-                  <span class="footer-logo-lext">petfactory &copy; 2024</span>
+                  <span class="footer-logo-lext">petfactory &copy; 2025</span>
 
               </div>
 

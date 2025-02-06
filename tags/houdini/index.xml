@@ -6,10 +6,19 @@
     <description>Recent content in Houdini on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Nov 2024 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/houdini/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lego - Porsche 911 RSR - 01</title>
+      <link>https://www.petfactory.se/work/lego-porsche-911-rsr-01-md/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/lego-porsche-911-rsr-01-md/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The aim with the project was to understand Vertex Animation Textures (VAT) well enough to be able to build a VAT export tool in Houdini. And over in Unreal, how to build a material that can use the textures to set the position of the vertices. In short VAT is a way to animate meshes on the GPU, using only textures, shaders and data stored on the mesh as vertex colors and custom uv channels.</description>
+    </item>
     
     <item>
       <title>Polestar 3 - 03</title>

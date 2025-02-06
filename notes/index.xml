@@ -55,7 +55,8 @@ Graph Coloring  Graph Coloring  Graph coloring is a process where the primitives
       <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-vat/</guid>
-      <description>Installation  Installation  The VAT Vertex Animation Texures is a part of the SideFX Labs toolset  Make sure that the SideFX Labs shelf is loaded You can press the Update Toolset button on far left on the shelf to update   In the Out context add a Labs Vertax Animatiin Textures node On the node, click the &amp;ldquo;Real-Time Shaders&amp;rdquo; section.  Click the Unreal Engine Content Plugin &amp;amp; Guides button to open up the dir.</description>
+      <description>Save position as property There are many ways to get save the position of the vertices on a mesh as data. It can be saved on the mesh as vertex color, as custom uv attribute or as a texture.
+ Position as Vertex Color  Gotcha  When we bring in the      Sequencer  Animating In Sequencer  info  If we want to animate the parameter driving the VAT WPO material we can do the following Note that when using the workflow below, the animated parameter gets associated with the slot</description>
     </item>
     
     <item>
@@ -558,10 +559,7 @@ Venv Setup a virtual environment It is a good idea to install packages in virtua
       
       <guid>https://www.petfactory.se/notes/miscellaneous/</guid>
       <description>Here I will post (mildly) useful things that falls outside more specfic topics.
-Git Bash Which which ffmpeg/c/Program Files/ImageMagick/ffmpegPython Web scraping  pip install requests-html  Imagemagick You can RMB click and choose Git Bash here (or any other console you want to use)
-Resize In-place resizing
-magick mogrify -resize 50% *.pngResize to a separate folder (make sure the folder exists)
-magick mogrify -resize 50% -path ./DST *.</description>
+Web Downloadable Link  Downloadable Goggle Drive Link  Upload the file to google drive On the file, navigate to the Share menu:  Under General Access set the share option to Anyone with the link You probably want to keep the default value of the Role as Viewer Copy the link (click the copy link button)   Copy the section of the file URL between file/d/ and / and add it to</description>
     </item>
     
   </channel>
