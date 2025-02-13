@@ -395,104 +395,91 @@ icon <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span
 icon <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>qt<span style="color:#f92672">.</span>Icon(node<span style="color:#f92672">.</span>type()<span style="color:#f92672">.</span>icon(), width<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span>)
 </code></pre></div></li>
 </ul>
-<h2 id="custom-tool">Custom Tool</h2>
-<ul>
-<li>Add new shelf tool
-<ul>
-<li>RMB click the shelf &gt; New Tool</li>
-</ul>
-</li>
-<li><strong>Options</strong> Tab
-<ul>
-<li>In the <em>Name</em> field type &ldquo;my_tool&rdquo;</li>
-<li>In he <em>Label</em> filed type &ldquo;My Tool&rdquo; (This name will be used in the tab menu)</li>
-<li>For a better UX
-<ul>
-<li>Add Icon, Keywords</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Context</strong> tab
-<ul>
-<li><em>Network Pane</em> tab
-<ul>
-<li>Enable the <em>SOP</em> checkbox (the context we want to create the tool in)</li>
-</ul>
-</li>
-<li><em>Viewer Pane</em> tab
-<ul>
-<li>If you want it accessible from here also:
-<ul>
-<li>Enable the <em>SOP</em> checkbox (the context we want to create the tool in)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><em>TAB Submenu Path</em>
-<ul>
-<li>The name of the tab sub menu</li>
-<li>Type &ldquo;My Tools&rdquo;</li>
-</ul>
-</li>
-<li><em>Hotkeys</em>
-<ul>
-<li>We might want ti assign it to a hot key</li>
-<li>On the right hand side of the <em>Network Pane</em> click the edit an add a hot key</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Scrips</strong> tab
-<ul>
-<li>Add the following script
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> toolutils
-<span style="color:#f92672">import</span> hou
+<!--
+    
+## Custom Tool
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_setup</span>(parent, position):
-          
-    node <span style="color:#f92672">=</span> parent<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;null&#39;</span>, <span style="color:#e6db74">&#39;Hello&#39;</span>)
-    node<span style="color:#f92672">.</span>setPosition(position)
+* Add new shelf tool
+    * RMB click the shelf > New Tool
+* **Options** Tab
+    * In the *Name* field type "my_tool"
+    * In he *Label* filed type "My Tool" (This name will be used in the tab menu)
+    * For a better UX
+        * Add Icon, Keywords
+* **Context** tab
+    * *Network Pane* tab
+        * Enable the *SOP* checkbox (the context we want to create the tool in)
+    * *Viewer Pane* tab
+        * If you want it accessible from here also:
+            * Enable the *SOP* checkbox (the context we want to create the tool in)
+    * *TAB Submenu Path*
+        * The name of the tab sub menu
+        * Type "My Tools"
+    * *Hotkeys*
+        * We might want ti assign it to a hot key
+        * On the right hand side of the *Network Pane* click the edit an add a hot key
+* **Scrips** tab
+    * Add the following script  
+        ```python
+        import toolutils
+        import hou
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">doit</span>():
+        def create_setup(parent, position):
+            
+            node = parent.createNode('null', 'Hello')
+            node.setPosition(position)
 
-    pane <span style="color:#f92672">=</span> kwargs<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;pane&#39;</span>)
-          
-    <span style="color:#66d9ef">if</span> pane <span style="color:#f92672">==</span> None: <span style="color:#75715e"># triggered form the shelf</span>
-        parent <span style="color:#f92672">=</span> toolutils<span style="color:#f92672">.</span>networkEditor()<span style="color:#f92672">.</span>pwd()
+        def doit():
 
-    <span style="color:#66d9ef">else</span>:
-        parent <span style="color:#f92672">=</span> pane<span style="color:#f92672">.</span>pwd()
+            pane = kwargs.get('pane')
+            
+            if pane == None: # triggered form the shelf
+                parent = toolutils.networkEditor().pwd()
 
-    <span style="color:#66d9ef">if</span> isinstance(pane, hou<span style="color:#f92672">.</span>NetworkEditor):
-        <span style="color:#75715e"># only get the cursor pos if the tool was requested from the</span>
-        <span style="color:#75715e"># network editor, if not the cursor pos will be quite useless</span>
-        position <span style="color:#f92672">=</span> pane<span style="color:#f92672">.</span>cursorPosition()
-        <span style="color:#75715e"># print(f&#39;{pane=}, {parent=}, {position=}&#39;)</span>
-              
-    <span style="color:#66d9ef">else</span>:
-        position <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>Vector2(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
-        <span style="color:#75715e"># maybe use move to good location or what it is called?</span>
+            else:
+                parent = pane.pwd()
 
-    create_setup(parent, position)
+            if isinstance(pane, hou.NetworkEditor):
+                # only get the cursor pos if the tool was requested from the
+                # network editor, if not the cursor pos will be quite useless
+                position = pane.cursorPosition()
+                # print(f'{pane=}, {parent=}, {position=}')
+                
+            else:
+                position = hou.Vector2(0, 0)
+                # maybe use move to good location or what it is called?
 
-doit()
-</code></pre></div></li>
-</ul>
-</li>
-<li><strong>To Do</strong>
-<ul>
-<li>Look into how to create the nodes, and lay the down on the node graph when the LMB is clicked.</li>
-<li>Look into the help tab</li>
-<li>Look into add icon</li>
-<li>Look into add keywords</li>
-</ul>
-</li>
-</ul>
-<hr>
+            create_setup(parent, position)
+
+        doit()
+        ```
+* **To Do**
+    * Look into how to create the nodes, and lay the down on the node graph when the LMB is clicked.
+    * Look into the help tab
+    * Look into add icon
+    * Look into add keywords
+
+---
+-->
 <h2 id="houui">hou.ui</h2>
-<h3 id="confirmation-dialog">Confirmation Dialog</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>displayConfirmation( text,
+<h3 id="dialogs">Dialogs</h3>
+<p>We can use the display message dialog to give the user oprions on how to continue</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">help_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;If the parameter is not enabled the mesh</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">will not export in correct Unreal Scale</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Which Scale do you want?&#39;</span>
+
+mode <span style="color:#f92672">=</span> hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>displayMessage(  <span style="color:#e6db74">&#39;Use UE Scale not Enabled&#39;</span>,
+                                buttons<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;UE Scale&#39;</span>, <span style="color:#e6db74">&#39;Current Scale&#39;</span>, <span style="color:#e6db74">&#39;Cancel&#39;</span>),
+                                severity<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>severityType<span style="color:#f92672">.</span>Message,
+                                default_choice<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,
+                                close_choice<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+                                help<span style="color:#f92672">=</span>help_str, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;UE Scale&#39;</span>)
+
+<span style="color:#66d9ef">if</span> mode <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+    use_ue_scale_parm<span style="color:#f92672">.</span>set(True)
+<span style="color:#66d9ef">elif</span> mode <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+    <span style="color:#66d9ef">pass</span>
+<span style="color:#66d9ef">elif</span> mode <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>:
+    <span style="color:#66d9ef">return</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>displayConfirmation( text,
                             severity<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>severityType<span style="color:#f92672">.</span>Message,
                             help<span style="color:#f92672">=</span>None,
                             title<span style="color:#f92672">=</span>None,
@@ -511,7 +498,6 @@ doit()
 </ul>
 </li>
 </ul>
-<h3 id="input-dialog">Input Dialog</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>readMultiInput(<span style="color:#e6db74">&#39;mess&#39;</span>, (<span style="color:#e6db74">&#39;From&#39;</span>, <span style="color:#e6db74">&#39;To&#39;</span>), initial_contents<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#39;*_L&#39;</span>, <span style="color:#e6db74">&#39;*_R&#39;</span>))
 </code></pre></div><p>The 
 <a href="https://www.sidefx.com/docs/houdini/hom/hou/ui.html" target="_blank" rel="noopener">hou.ui module</a> contains some nice user interface related functions. For instance:</p>
@@ -784,11 +770,9 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
     <li><a href="#ui">UI</a>
       <ul>
         <li><a href="#icons">Icons</a></li>
-        <li><a href="#custom-tool">Custom Tool</a></li>
         <li><a href="#houui">hou.ui</a>
           <ul>
-            <li><a href="#confirmation-dialog">Confirmation Dialog</a></li>
-            <li><a href="#input-dialog">Input Dialog</a></li>
+            <li><a href="#dialogs">Dialogs</a></li>
           </ul>
         </li>
         <li><a href="#camera-viewport">Camera Viewport</a></li>
@@ -886,11 +870,9 @@ node<span style="color:#f92672">.</span>setParmTemplateGroup(parm_template_group
     <li><a href="#ui">UI</a>
       <ul>
         <li><a href="#icons">Icons</a></li>
-        <li><a href="#custom-tool">Custom Tool</a></li>
         <li><a href="#houui">hou.ui</a>
           <ul>
-            <li><a href="#confirmation-dialog">Confirmation Dialog</a></li>
-            <li><a href="#input-dialog">Input Dialog</a></li>
+            <li><a href="#dialogs">Dialogs</a></li>
           </ul>
         </li>
         <li><a href="#camera-viewport">Camera Viewport</a></li>
