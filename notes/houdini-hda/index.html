@@ -840,7 +840,21 @@ Also testing the <em>userDict</em> which is persistant and the <em>cachedUserDic
         self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setUserData(<span style="color:#e6db74">&#39;persistent_data&#39;</span>, persistent_text)
         self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setCachedUserData(<span style="color:#e6db74">&#39;cached_data&#39;</span>, cached_text)
 </code></pre></div><h2 id="snippets">Snippets</h2>
-<p><strong>Revert to Default</strong></p>
+<p><strong>Object merge</strong></p>
+<p>Sometimes it can be nice to obj merge in a node form within an HDA. In that case:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_obj_merge</span>(hda_node, internal_name, obj_merge_name):
+
+    hda_internal_src_node <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>node(internal_name)
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> hda_internal_src_node<span style="color:#f92672">.</span>geometry()<span style="color:#f92672">.</span>points():
+        hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>displayMessage(<span style="color:#e6db74">&#39;No points found&#39;</span>)
+        <span style="color:#66d9ef">return</span> None
+        
+    obj_merge_node <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>parent()<span style="color:#f92672">.</span>createNode(<span style="color:#e6db74">&#39;object_merge&#39;</span>, obj_merge_name)
+    obj_merge_node<span style="color:#f92672">.</span>setGenericFlag(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>DisplayDescriptiveName, False)
+    obj_merge_node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;objpath1&#39;</span>)<span style="color:#f92672">.</span>set(obj_merge_node<span style="color:#f92672">.</span>relativePathTo(hda_internal_src_node))
+
+    <span style="color:#66d9ef">return</span> obj_merge_node
+</code></pre></div><p><strong>Revert to Default</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reset_all_parms_in_containing_folder</span>(kwargs):
     <span style="color:#e6db74">&#39;&#39;&#39;This will reset all parms in the containing folder (including sub folders)
 </span><span style="color:#e6db74">    of the parm that is the sender of this callback&#39;&#39;&#39;</span>
@@ -917,8 +931,26 @@ hda_asset<span style="color:#f92672">.</span>type()<span style="color:#f92672">.
 <li>Here we can do things with our HDA when it is created, like set flags or node color</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
-hda_node<span style="color:#f92672">.</span>setGenericFlag(hou<span style="color:#f92672">.</span>nodeFlag<span style="color:#f92672">.</span>OutputForDisplay, <span style="color:#ae81ff">1</span>)
+hda_node<span style="color:#f92672">.</span>setOutputForViewFlag(<span style="color:#ae81ff">2</span>)
 hda_node<span style="color:#f92672">.</span>setColor(hou<span style="color:#f92672">.</span>Color(<span style="color:#f92672">.</span><span style="color:#ae81ff">4</span>, <span style="color:#f92672">.</span><span style="color:#ae81ff">4</span>, <span style="color:#f92672">.</span><span style="color:#ae81ff">4</span>))
+</code></pre></div></li>
+<li>You can also add an ordered menu, add callback on change and call this function
+<ul>
+<li>Set view output</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">set_display_output</span>(kwargs):
+
+    hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    mode <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;script_value&#39;</span>]
+          
+    <span style="color:#66d9ef">if</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;mesh&#39;</span>:
+        hda_node<span style="color:#f92672">.</span>setOutputForViewFlag(<span style="color:#ae81ff">0</span>)
+              
+    <span style="color:#66d9ef">elif</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;points&#39;</span>:
+        hda_node<span style="color:#f92672">.</span>setOutputForViewFlag(<span style="color:#ae81ff">1</span>)
+              
+    <span style="color:#66d9ef">elif</span> mode <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;ctp&#39;</span>:
+        hda_node<span style="color:#f92672">.</span>setOutputForViewFlag(<span style="color:#ae81ff">2</span>)
 </code></pre></div><pre><code></code></pre></li>
 </ul>
 </li>
