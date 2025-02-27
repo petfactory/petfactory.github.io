@@ -840,7 +840,27 @@ Also testing the <em>userDict</em> which is persistant and the <em>cachedUserDic
         self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setUserData(<span style="color:#e6db74">&#39;persistent_data&#39;</span>, persistent_text)
         self<span style="color:#f92672">.</span>hda_node<span style="color:#f92672">.</span>setCachedUserData(<span style="color:#e6db74">&#39;cached_data&#39;</span>, cached_text)
 </code></pre></div><h2 id="snippets">Snippets</h2>
-<p><strong>Object merge</strong></p>
+<p><strong>Open Dir</strong></p>
+<p>Open a dir</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+<span style="color:#f92672">import</span> os
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">open_tex_dst_dir</span>(kwargs):
+
+    hda_node <span style="color:#f92672">=</span> kwargs[<span style="color:#e6db74">&#39;node&#39;</span>]
+    dst_dir <span style="color:#f92672">=</span> hda_node<span style="color:#f92672">.</span>parm(<span style="color:#e6db74">&#39;tex_dst_dir&#39;</span>)<span style="color:#f92672">.</span>evalAsString()<span style="color:#f92672">.</span>strip()
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> dst_dir:
+        hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>setStatusMessage(<span style="color:#e6db74">&#39;No dst directory found&#39;</span>, severity<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>severityType<span style="color:#f92672">.</span>Warning)
+        <span style="color:#66d9ef">return</span>
+
+    <span style="color:#66d9ef">if</span> Path(dst_dir)<span style="color:#f92672">.</span>is_dir():
+        os<span style="color:#f92672">.</span>startfile(dst_dir)
+        
+    <span style="color:#66d9ef">else</span>:
+        hou<span style="color:#f92672">.</span>ui<span style="color:#f92672">.</span>setStatusMessage(f<span style="color:#e6db74">&#39;Not a valid directory &#34;{dst_dir}&#34;&#39;</span>, severity<span style="color:#f92672">=</span>hou<span style="color:#f92672">.</span>severityType<span style="color:#f92672">.</span>Warning)
+
+</code></pre></div><p><strong>Object merge</strong></p>
 <p>Sometimes it can be nice to obj merge in a node form within an HDA. In that case:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_obj_merge</span>(hda_node, internal_name, obj_merge_name):
 

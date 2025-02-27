@@ -6,10 +6,19 @@
     <description>Recent content in Houdini on Petfactory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2025 00:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.petfactory.se/tags/houdini/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Polestar 3 - 04</title>
+      <link>https://www.petfactory.se/work/polestar3-04/</link>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0100</pubDate>
+      
+      <guid>https://www.petfactory.se/work/polestar3-04/</guid>
+      <description>This project is a mix of Houdini &amp;amp; Unreal. The aim with the project was to explore how Vertex Animation Textures (VAT) could be used in a lighting and material workflow. In previous VAT projects I have mainly used the textures for color, position and orientation. Here I wanted to expand the material to include custom roughness, metallic and emissive properties per &amp;ldquo;piece&amp;rdquo;. The roughness and metallic is not using a VAT texture, but since the mesh in Unreal is only using 1 material I wanted to export a roughness and metallic map that can vary across the &amp;ldquo;pieces&amp;rdquo; of the mesh.</description>
+    </item>
     
     <item>
       <title>Lego Jeep - 02</title>
