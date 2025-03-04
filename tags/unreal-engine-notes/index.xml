@@ -35,8 +35,9 @@
       <pubDate>Wed, 01 May 2024 00:00:00 +0100</pubDate>
       
       <guid>https://www.petfactory.se/notes/ue5-vat/</guid>
-      <description>Save position as property There are many ways to get save the position of the vertices on a mesh as data. It can be saved on the mesh as vertex color, as custom uv attribute or as a texture.
- Position as Vertex Color  Gotcha  When we bring in the      Sequencer  Animating In Sequencer  info  If we want to animate the parameter driving the VAT WPO material we can do the following Note that when using the workflow below, the animated parameter gets associated with the slot</description>
+      <description>Sequencer  Animating In Sequencer  info  If we want to animate the parameter driving the VAT WPO material we can do the following Note that when using the workflow below, the animated parameter gets associated with the slot
+so we can change the matrial and as long as the new material has a parameter named the same the
+animation will be animated   Drag the static mesh actor to sequencer on the sm click&amp;hellip;    General Ray tracing &amp;amp; Path tracing  VAT &amp;amp; ray / path tracing  Select the mesh In the details panel start typing &amp;ldquo;world&amp;hellip;&amp;rdquo; Rendering &amp;gt; Advanced &amp;gt; Evaluate World Position in Ray Tracing : On  This is required to be able ti use ray traced shadows It is also needed if you want to use the path tracer      SideFX Labs - VAT  Installation  The VAT Vertex Animation Texures is a part of the SideFX Labs toolset  Make sure that the SideFX Labs shelf is loaded You can press the Update Toolset button on far left on the shelf to update   In the Out context add a Labs Vertax Animatiin Textures node On the node, click the &amp;ldquo;Real-Time Shaders&amp;rdquo; section.</description>
     </item>
     
     <item>
