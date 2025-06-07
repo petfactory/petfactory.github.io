@@ -126,7 +126,127 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 notes-wrap">
-    	<h1 id="how-to">How to</h1>
+    	<h1 id="layered-material">Layered material</h1>
+<ul>
+<li><strong>Create a Layered Material</strong>
+<ul>
+<li>Create a <em>Material</em> (just a standard material)
+<ul>
+<li>Lets call it <em>M_layered</em></li>
+</ul>
+</li>
+<li>Open up the material</li>
+<li>Set the material to use <em>Material Attributes</em>
+<ul>
+<li>Material &gt; Use Material Attributes : Enabled</li>
+</ul>
+</li>
+<li>Create a <em>Material Attributes Layers</em> node
+<ul>
+<li>Connect the output (of the Material Attributes Layers) to the input of the material result node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Material Layer</strong>
+<ul>
+<li>RMB click &gt; Material &gt; Layers &gt; Material Layer</li>
+<li>Lets call it <em>ML_vertex_color</em></li>
+<li>On the <em>Set Material Attributes</em> add 5 attributes
+<ul>
+<li>Click the + button and add:
+<ul>
+<li>BaseColor</li>
+<li>Metallic</li>
+<li>Specular</li>
+<li>Roughness</li>
+<li>Normal</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create your material setup and connect to the PBR attribute inputs we just created
+<ul>
+<li>in our test case we will expose the <em>Base Color</em> so that we can set the color with a vector parameter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Material Layer Blend</strong>
+<ul>
+<li>RMB click &gt; Material &gt; Layers &gt; Material Layer Blend</li>
+<li>Lets call it <em>MLB_vertex_color</em></li>
+<li>Lets add functionality for the user to use vertex colors and ability to select which channel to use
+<ul>
+<li>Create a <em>Vertex Color</em> node</li>
+<li>Create a <em>Append Vector</em> node
+<ul>
+<li>Connect the <em>RGB</em> output (the top white outout) from the <em>vertex color</em> node to the A input of the <em>Append</em> node</li>
+<li>Connect the Alpha (at the bottom) output to the B input of the append node</li>
+<li>We do this since we want the ability to choose RGBA in the channel mask parameter</li>
+</ul>
+</li>
+<li>Create a <em>Channel Mask Parameter</em> node
+<ul>
+<li>Name the parameter <em>Vertex Color Channel</em></li>
+<li>Connect the output of the append node to the input of the channel mask parameter node</li>
+</ul>
+</li>
+<li>Connect the output of the channel mask parameter node to the <em>Alpha</em> input of the <em>Blend Matwerial Attributes</em> node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Create a Layered Material</strong>
+<ul>
+<li><em>Create the Layered material Instance</em>
+<ul>
+<li>Create a Material Instance of the <em>M_layered</em> material</li>
+<li>Call it <em>MI_layered</em></li>
+<li>Open it up</li>
+<li>In the <em>Layers Parameter</em> tab you can see the layers
+<ul>
+<li>If it is not visible, Window &gt; Layer Parameters</li>
+</ul>
+</li>
+<li>On the + button next to the <em>Material Layers</em> click to add as many layers as you need
+<ul>
+<li>In this example we will add 3 layers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Add layer instances</em>
+<ul>
+<li>Create <em>Material Layer</em> instances
+<ul>
+<li>RMB click on the <em>Material Layer &gt; Create Layer Instance</em></li>
+</ul>
+</li>
+<li>In our example we will create 3 layers, &ldquo;red, green and blue&rdquo;
+<ul>
+<li>Call the instances <em>MLI_red</em>, <em>MLI_green</em> and <em>MLI_blue</em></li>
+<li>Change the Base Color so they reflect the names</li>
+</ul>
+</li>
+<li>Drag and drop the material layer instances on the slots in the <em>MI_layered</em> Material instance</li>
+</ul>
+</li>
+<li><em>Add blend assets</em>
+<ul>
+<li>If you have more than one layer (which you will) then you will see an input called <em>Blend Assets</em></li>
+<li>This controls how the material layers blend</li>
+<li>Create an instance of the <em>Material Layer Blend</em> asset</li>
+<li>Call it &ldquo;MLBI_vertex_color&rdquo;</li>
+<li>Drag and drop the asset on the <em>Blend Asset</em> in the layered material (<em>MI_layered</em>)</li>
+<li>Expand the properties and set the and set which vertex color channel that should be sued for each layer</li>
+</ul>
+</li>
+<li><em>Done!</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="how-to">How to</h1>
 <h2 id="translucency--refraction-pbr">Translucency &amp; refraction (PBR)</h2>
 <ul>
 <li>Create a translucent, refractive material in UE 5.2
@@ -4612,6 +4732,7 @@ End Object
     	<div class="toc-content">
 			<nav id="TableOfContents">
   <ul>
+    <li><a href="#layered-material">Layered material</a></li>
     <li><a href="#how-to">How to</a>
       <ul>
         <li><a href="#translucency--refraction-pbr">Translucency &amp; refraction (PBR)</a></li>
@@ -4675,6 +4796,7 @@ End Object
 	  	<div data-bs-dismiss="offcanvas">
 	    	<nav id="TableOfContents">
   <ul>
+    <li><a href="#layered-material">Layered material</a></li>
     <li><a href="#how-to">How to</a>
       <ul>
         <li><a href="#translucency--refraction-pbr">Translucency &amp; refraction (PBR)</a></li>
