@@ -1,12 +1,11 @@
 ---
 title: "Fluorescent"
 date: 2020-01-21T13:45:58+01:00
-draft: false
 description: "Vellum exploration"
 poster: "fluorescent_960.jpg"
-tags: ["Houdini"]
-info:  ["Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

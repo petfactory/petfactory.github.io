@@ -1,12 +1,12 @@
 ---
 title: "Pet Roadeo"
 date: 2023-06-01T00:00:00+01:00
-draft: false
 description: "Exploring the workflow between Houdini and Unreal. Focusing on environment building and character & camera animation"
 poster: "pet_roadeo_01_960.jpg"
-tags: ["Houdini", "Unreal"]
-info: ["Houdini", "Unreal"]
 template: "work_single.html"
+tags:
+    - Unreal
+    - Houdini
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

@@ -1,12 +1,12 @@
 ---
 title: "Jeep Wrangler 1987 - 02"
 date: 2024-09-19T00:00:00+01:00
-draft: false
 description: "Unreal Engine & Houdini"
 poster: "jeep_lab_01_640.jpg"
-tags: ["Unreal", "Houdini"]
-info: ["Unreal", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

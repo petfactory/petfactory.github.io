@@ -1,12 +1,12 @@
 ---
 title: "Polestar 3 - 04"
 date: 2025-02-27T00:00:00+01:00
-draft: false
 description: "This project is a mix of Houdini & Unreal. The aim with the project was to explore how Vertex Animation Textures (VAT) could be used in a lighting and material workflow."
 poster: "polestar3_susp_vat_02_960.jpg"
-tags: ["Unreal", "Houdini"]
-info: ["Unreal", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

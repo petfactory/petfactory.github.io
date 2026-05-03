@@ -1,12 +1,12 @@
 ---
 title: "65 Mustang Fastback - 02"
 date: 2024-04-18T00:00:00+01:00
-draft: false
 description: "Unreal Engine & Houdini"
 poster: "mustang_drift_04_960.jpg"
-tags: ["Unreal", "Houdini"]
-info: ["Unreal", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

@@ -1,12 +1,12 @@
 ---
 title: "Polestar 3 - 01"
 date: 2024-10-03T00:00:00+01:00
-draft: false
 description: "Unreal Engine & Houdini"
 poster: "polestar_3_01_640.jpg"
-tags: ["Unreal", "Houdini"]
-info: ["Unreal", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

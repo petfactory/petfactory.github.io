@@ -1,12 +1,11 @@
 ---
 title: "Lego Jeep - 02"
 date: 2025-02-15T00:00:00+01:00
-draft: false
 description: "Houdini"
 poster: "lego_jeep_vat_04_960.jpg"
-tags: ["Houdini"]
-info: ["Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

@@ -1,12 +1,12 @@
 ---
 title: "Flip - Essence 01"
 date: 2024-05-30T00:00:00+01:00
-draft: false
 description: "Flip sim in Houdini"
 poster: "flip_iittala_04_960.jpg"
-tags: ["Flip", "Houdini"]
-info: ["Flip", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Flip
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

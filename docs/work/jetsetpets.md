@@ -1,12 +1,12 @@
 ---
 title: "Jet Set Pets"
 date: 2019-06-01T15:10:51+01:00
-draft: false
 description: "This animation was created as a part of an animation to be projected on a building."
 poster: "jet_set_pets_01_960.png"
-tags: ["Maya", "Nuke"]
-info: ["Maya", "Nuke"]
 template: "work_single.html"
+tags:
+    - Maya
+    - Nuke
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

@@ -1,12 +1,12 @@
 ---
 title: "Lego Jeep - 01"
 date: 2024-09-23T00:00:00+01:00
-draft: false
 description: "Unreal Engine & Houdini"
 poster: "lego_jeep_02_640.jpg"
-tags: ["Unreal", "Houdini"]
-info: ["Unreal", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

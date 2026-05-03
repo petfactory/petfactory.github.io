@@ -1,12 +1,12 @@
 ---
 title: "Lego - Porsche 911 RSR - 01"
 date: 2025-02-06T00:00:00+01:00
-draft: false
 description: "Unreal Engine & Houdini"
 poster: "porsche_911_RSR_03_960.jpg"
-tags: ["Unreal", "Houdini"]
-info: ["Unreal", "Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

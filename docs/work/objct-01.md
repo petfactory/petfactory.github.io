@@ -1,12 +1,13 @@
 ---
 title: "Objct - 01"
 date: 2023-08-22T00:00:00+01:00
-draft: false
 description: "Houdini project using RBD & KarmaXPU"
 poster: "objct_03_960.jpg"
-tags: ["Houdini", "Solaris"]
-info: ["Houdini", "Solaris"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Solaris
+    - Karma
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

@@ -1,12 +1,12 @@
 ---
 title: "Guided"
 date: 2020-01-09T13:45:58+01:00
-draft: false
 description: "Exploring RBD simulation using guided simulation in Houdini. Rendered with Mantra."
 poster: "guided_v01_960.jpg"
-tags: ["Houdini"]
-info:  ["Houdini"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Mantra
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

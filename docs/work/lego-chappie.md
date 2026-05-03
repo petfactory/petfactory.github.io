@@ -1,12 +1,14 @@
 ---
 title: "Lego - Chappie"
 date: 2022-05-01T15:20:58+01:00
-draft: false
 description: "Houdini & Unreal project. Exploring KineFX (procedural rigging and animation framework), rigid body dynamics and Solaris (scene building, layout, lighting, and rendering tools based on the USD framework)"
 poster: "chappie_02_960.jpg"
-tags: ["Houdini", "Solaris", "KineFX", "Unreal"]
-info: ["Houdini", "Solaris", "KineFX"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Solaris
+    - KineFX
+    - Unreal
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

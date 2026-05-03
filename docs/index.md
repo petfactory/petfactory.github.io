@@ -8,5 +8,4 @@ hide:
   - sidebar
 ---
 
-# HOME
-
+# Home

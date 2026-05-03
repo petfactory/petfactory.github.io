@@ -1,12 +1,14 @@
 ---
 title: "Mocap Dance"
 date: 2020-04-20T13:45:58+01:00
-draft: false
 description: "Exploration of various softwares & workflow."
 poster: "mocap_dance_v04_960.jpg"
-tags: ["Houdini", "Marvelous Designer", "Substance Painter", "Redshift"]
-info: ["Houdini", "Marvelous Designer", "Substance Painter", "Redshift"]
 template: "work_single.html"
+tags:
+    - Houdini
+    - Marvelous Designer
+    - Substance Painter
+    - Redshift
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">

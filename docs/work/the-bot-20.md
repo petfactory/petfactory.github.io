@@ -1,12 +1,13 @@
 ---
 title: "The Bot 20"
 date: 2020-05-27T15:10:51+01:00
-draft: false
 description: "Exploration of the rigging & rendering pipeline"
 poster: "thebot_01_960.jpg"
-tags: ["Maya", "Rigging", "V-Ray"]
-info: ["Houdini", "Redshift"]
 template: "work_single.html"
+tags:
+    - Maya
+    - Rigging
+    - V-Ray
 ---
 
 <div style="position: relative; width: 100%; padding-bottom: 56.25%">
