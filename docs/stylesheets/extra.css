@@ -1,0 +1,230 @@
+/*
+------------------------------------------------- 
+  Theme color
+------------------------------------------------- 
+*/
+
+:root > * {
+  --md-accent-fg-color: #e83e8c;
+  --md-accent-fg-color--transparent: rgba(255, 82, 82, 0.1);
+}
+
+
+/*
+------------------------------------------------- 
+  Image grid
+------------------------------------------------- 
+*/
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1px;
+  /* padding: 0px; */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Container needs relative positioning for the absolute overlay */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease; /* Subtle zoom effect */
+  /* opacity: 0.4; */
+}
+
+/* The Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+/* The Text */
+.text {
+  color: white;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+/* Hover States */
+.grid-item:hover .overlay {
+  opacity: 1; /* Show overlay */
+}
+
+.grid-item:hover img {
+  transform: scale(1.05); /* Slight zoom on image */
+}
+
+@media (max-width: 1020px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+
+
+/*
+------------------------------------------------- 
+  About 
+------------------------------------------------- 
+*/
+
+.about-column-right h1 {
+  color: #e83e8c; 
+}
+
+.about-column-right a {
+  color: hotpink;
+  text-decoration: none;
+}
+.about-column-right a:visited  {
+  color: hotpink;
+}
+.about-column-right a:hover  {
+  color: #e83e8c;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
+  grid-template-columns: 40% 60%; 
+}
+
+.about-column-left {
+  padding-right: 60px;
+  padding-top: 30px;
+  text-align: right;
+}
+
+.about-column-right {
+  padding: 20px;
+}
+
+@media (max-width: 1220px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-column-left {
+    padding-right: 60px;
+    padding-top: 30px;
+    text-align: center;
+  } 
+}
+
+
+
+/*
+.about-grid {
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+}
+.about-parent {
+  display: grid;
+  place-items: center;
+}
+
+.about-div {
+  max-width: 600pt;
+  padding-left: 80pt;
+
+}
+
+.about-img-div {
+  display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 310px;
+}
+
+@media (max-width: 1220px) {
+  .about-div  {
+    max-width: 600pt;
+    padding-left: 0pt;
+
+  }
+}
+*/
+
+/*
+------------------------------------------------- 
+  CV 
+------------------------------------------------- 
+*/
+
+
+.cv-year-div {
+  margin-top: 0px;
+  position: absolute;
+  left: -60px;
+  font-size: 12pt;
+  font-weight: lighter;
+  color: #e83e8c;
+}
+
+.cv-info-div {
+  max-width: 400pt;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #292929;
+}
+
+.cv-role {
+  font-weight: lighter;
+  font-size: 12t;
+  color: #999;
+}
+
+.cv-description {
+  margin-top: -10px;
+  font-weight: lighter;
+  font-size: 12pt;
+  color: #777;
+}
+
+@media (max-width: 1220px) {
+  .cv-year-div {
+    margin-top: 10px;
+    position: relative;
+    left: 0px;
+
+  }
+}

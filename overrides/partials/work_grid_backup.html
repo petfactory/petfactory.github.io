@@ -1,0 +1,8 @@
+
+{% for project in config.extra.pet_projects %}
+
+<a href="{{ project.url }}">{{ project.title  }}
+    <img src="{{ project.thumb }}" class="work-img">
+</a>
+
+{% endfor %}

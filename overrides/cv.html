@@ -1,0 +1,70 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+
+<!-- {# Initialize a variable to track the year change #} -->
+{% set last_year = "" %}
+
+{% for item in page.meta.cv_data %}
+
+    <!-- {# get the year from the fata strimg #} -->
+    {% set current_year = item.date[:4] %}
+
+    <div style="position: relative;">
+
+        <!-- {# If the year is different from the last one, print the H1 #} -->
+        {% if current_year != last_year %}
+        <div class="cv-year-div" id="{{ current_year }}">
+          {{ current_year }}
+        </div>
+
+        {% set last_year = current_year %}
+        {% endif %}
+        
+        <div class="cv-info-div">
+            <p>
+                <span class="cv-client-name">{{ item.client_name }}</span>
+                <span class="cv-role">| {{ item.title }}</span>
+            </p>
+            <p class="cv-description">{{ item.info }}</p>
+        </div>
+    </div>
+
+{% endfor %}
+
+
+
+<!-- this draws a simple TOC. Look into using the real one
+<div>
+  <ul>
+    
+    {% set last_year = "" %}
+
+      {% for item in page.meta.cv_data %}
+
+        {% set current_year = item.date[:4] %}
+
+        {% if current_year != last_year %}
+        
+            <li>
+              <a href="#{{ current_year }}">{{ current_year }}</a>
+            </li>
+                  
+          {% set last_year = current_year %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  </ul>
+</div> -->
+
+
+{% endblock %}
+
+
+
+
+
