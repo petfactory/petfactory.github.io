@@ -4,7 +4,7 @@ hide:
   - toc
   - navigation
 template: "about.html"
-title: Hello There!
+title: Hello!
 ---
 
 My name is Johan Borgström and I am a Designer & Technical Artist. Petfactory was founded with the aim to fuse **Design** with **Animation**. When I code I prefer to do so with Python and VEX.
