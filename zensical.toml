@@ -48,11 +48,11 @@ nav = [
   { "About" = "about.md" },
   { "Work" = "work.md" },
   { "CV" = "cv.md" },
-#  {"Notes" = [
-#    "notes/houdini/_houdini_.md",
-#    "notes/unreal/_unreal_.md",
-#    "notes/resolve/_resolve_.md"
-#  ]}
+  { "Notes" = [
+    { "Misc" = [
+      { "Drone" = "notes/drone-intro.md" },
+    ]},
+  ]}
 ]
 
 # With the "extra_css" option you can add your own CSS styling to customize
