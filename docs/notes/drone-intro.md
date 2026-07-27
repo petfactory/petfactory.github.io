@@ -26,13 +26,13 @@ tags:
 
 ##  Luftrummet
 
-Information från [Transportstyrelsen](https://www.transportstyrelsen.se/sv/luftfart/luftfartyg-och-luftvardighet/dronare/flyga-dronare-i-luftrummet/){:target="_blank"} om att flyga drönare i luftrummet
+I Sverige finns två klasser av luftrum. Luftrumsklass C samt G
 
+Information från [Transportstyrelsen](https://www.transportstyrelsen.se/sv/luftfart/luftfartyg-och-luftvardighet/dronare/flyga-dronare-i-luftrummet/){:target="_blank"} om att flyga drönare i luftrummet  
 På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du se vilka geografiska områden du får flyga i.
 
-### Kontrollerat luftrum - C 
 
-I Sverige finns två typer, eller klasser, av luftrum. Luftrumsklass C samt G
+### C - Kontrollerat luftrum 
 
 - [x] Luftrumsklass C - Kontrollerat luftrum 
     - CTR - Control Zone. Finns runt flygplatser och övervakas av en flygtrafikledning.
@@ -53,8 +53,9 @@ I Sverige finns två typer, eller klasser, av luftrum. Luftrumsklass C samt G
         - Kontakta flygplatsen för samråd innan du flyger inom 1 km från helikopterflygplatsen.
         - Telefonnummer till helikopterflygplatserna finns i [AIP GEN 3.3](https://aro.lfv.se/Editorial/View/IAIP?folderId=6){:target="_blank"} 
 
+ Aerodrome: Any basic site intended for plane or helicopter takeoff and landing, with or without extra facilities.
 
-### Okontrollerat luftrum - G
+### G - Okontrollerat luftrum
 
 - [x] Luftrumsklass G - Okontrollerat luftrum 
     - luftrum som inte övervakas eller kontrolleras av en flygtrafikledning.
@@ -69,3 +70,57 @@ I Sverige finns två typer, eller klasser, av luftrum. Luftrumsklass C samt G
 
     
 ## Restriktionsområden 
+
+Skydd för de som flyger i luftrummet eller för verksamhet på marken
+Vissa områden är av bland annat säkerhetsskäl begränsade för drönarflygning
+
+!!! info "Notera"
+    - Restrikonsområden, farliga områden och skyddsobjekt gäller för all typ av luftfart. 
+
+### R - Restricted Area
+!!! warning "Permanenta restriktionsområden"
+    - Krävs i de flesta fall tillstånd från Transportstyrelsen eller flygtrafikledning
+    - Finns exempelvis vid:
+        - Kärnkraftverk
+        - Fängelser
+        - Skyddade naturområden
+        - Militära anläggningar
+
+!!! warning "Tillfälliga restriktionsområden"
+    - Skapas för att bibehålla allmän ordning och säkerhet.
+    - Upprättas exempelvis vid:
+        - Polisinsatser med eller utan drönare
+        - Militära övningar och skjutningar
+    - På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"} finns information om dessa områden
+
+### D - Danger Area
+!!! danger "Farliga områden"
+    - Det är fjärrpilotens ansvar att bedöma risken av att flyga in i ett farligt område.
+    - Kontakt med ansvarig kontaktperson för området innan flygning i området rekomenderas.
+    - Dessa områden varnar piloter om potentiella faror, exempelvis:
+        - Sprängningar i dagbrott eller vid industrier
+        - Målbogsering
+        - Testverksamhet
+        - Drönarverksamhet som bedrivs utom synhåll från fjärrpiloten
+
+### Skyddsobjekt
+
+!!! warning "Skyddsobjekt"
+    - För flygning krävs tillstånd från skyddsobjektet i fråga.
+    - Vissa skyddsobjekt har fotoförbud
+
+
+## Geografiska UAS-zoner
+
+!!! info "UAS : Unmanned Aircraft System"
+
+    - Geografiska UAS-zoner gäller och påverkar endast obemannad luftfart (drönare).
+    
+Syftet med geografiska UAS-zoner är att på ett tydligt sätt visa vad som gäller inom ett visst område för dig som ska flyga drönare.
+
+- Geografiska UAS-zoner kan vara:
+    - Uteslutande (förbjudande)
+    - Begränsande (restriktiva)
+    - Tillåtande.
+
+
