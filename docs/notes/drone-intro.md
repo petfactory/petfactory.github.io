@@ -24,7 +24,7 @@ tags:
 
 
 
-##  Luftrummet
+## Luftrummet
 
 I Sverige finns två klasser av luftrum:
 
@@ -34,21 +34,21 @@ I Sverige finns två klasser av luftrum:
 Information från [Transportstyrelsen](https://www.transportstyrelsen.se/sv/luftfart/luftfartyg-och-luftvardighet/dronare/flyga-dronare-i-luftrummet/){:target="_blank"} om att flyga drönare i luftrummet  
 På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du se vilka geografiska områden du får flyga i.
 
+### Luftrumsklasser
 
-### C - Kontrollerat luftrum 
+**Kontrollerat luftrum - C** 
 
-- Luftrumsklass C
-    - CTR - Control Zone. Finns runt flygplatser och övervakas av en flygtrafikledning.
-    - TIZ - Traffic Information Zone. Motsvarande luftrum för okontrollerade flygplatser.
+- CTR - Control Zone. Finns runt flygplatser och övervakas av en flygtrafikledning.  
+- TIZ - Traffic Information Zone. Motsvarande luftrum för okontrollerade flygplatser.  
 
-!!! danger  "CTR och TIZ"
+!!! danger "CTR och TIZ"
 
     - 5-km-zon
         - Flygning förbjuden utan särskilt tillstånd av flygtrafikledningen
     - På höjder mindre än 50 m från marken och mer än 5 km från flygplatsens banor krävs inget särskilt tillstånd för drönare med vikt upp till 7 kg och hastighet under 90 km/h.
     - På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du se vilka geografiska områden du får flyga i.
 
-!!! danger  "Helikopterflygplats & ATZ - Aerodrome Traffic Zone"
+!!! danger "Helikopterflygplats & ATZ - Aerodrome Traffic Zone"
 
     - Helikopterflygplatser finns exempelvis vid sjukhus.
     - Det finns ofta ett riskområde på 1 km radie runt helikopterflygplatsen
@@ -57,20 +57,18 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 
  Aerodrome: Any basic site intended for plane or helicopter takeoff and landing, with or without extra facilities.
 
-### G - Okontrollerat luftrum
+**Okontrollerat luftrum - G** 
 
-- Luftrumsklass G - Ej övervakad eller kontrollerat av en flygtrafikledning.
+- Ej övervakad eller kontrollerat av en flygtrafikledning.
 
-!!! success  "luftrumsklass G"
+!!! success "luftrumsklass G"
 
-    Regler för att flyga i luftrumsklass G med drönare
-    Om du flyger inom den öppna kategorin gäller följande:
-
-    - Maxhöjd: 120 meter.
-    - Drönaren måste flygas inom synhåll från dig som fjärrpilot.
+    - Flygning med drönare i öppen kategori i luftrumsklass G
+        - Maxhöjd: 120 meter.
+        - Drönaren måste flygas inom synhåll från dig som fjärrpilot.
 
     
-## Restriktionsområden 
+### Restriktionsområden 
 
 - Skydd för de som flyger i luftrummet eller för verksamhet på marken.  
 - Vissa områden är av bland annat säkerhetsskäl begränsade för drönarflygning
@@ -78,7 +76,8 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 !!! info "Notera"
     - Restrikonsområden, farliga områden och skyddsobjekt gäller för all typ av luftfart. 
 
-### R - Restricted Area
+**Restricted Area ( R )**
+
 !!! danger "Permanenta restriktionsområden"
     - Krävs i de flesta fall tillstånd från transportstyrelsen eller flygtrafikledning
     - Finns exempelvis vid:
@@ -94,7 +93,7 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
         - Militära övningar och skjutningar
     - På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"} finns information om dessa områden
 
-### D - Danger Area
+**Danger Area ( D )**
 !!! warning "Farliga områden"
     - Det är fjärrpilotens ansvar att bedöma risken av att flyga in i ett farligt område.
     - Kontakt med ansvarig kontaktperson för området innan flygning i området rekomenderas.
@@ -111,7 +110,7 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
     - Vissa skyddsobjekt har fotoförbud
 
 
-## Geografiska UAS-zoner
+### Geografiska UAS-zoner
 
 !!! info "UAS : Unmanned Aircraft System"
     - Även kallade geo-zoner
@@ -121,7 +120,7 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 
 - Geografiska UAS-zoner kan vara:
 
-    !!! danger  "Uteslutande (förbjudande)"
+    !!! danger "Uteslutande (förbjudande)"
         - Förbjudet för all drönartrafik
         - Viss grupp av operatörer kan uteslutas från zonen
         - Exempelvis vid:
@@ -129,14 +128,14 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
             - Vissa anstalter
             - Andra områden olämpliga för drönartrafik
 
-    !!! warning  "Begränsande (restriktiva)"
+    !!! warning "Begränsande (restriktiva)"
         - Särskilda krav/villkor för att få flyga drönare i ett sådant område
         - Exempelvis:
             - Endast vissa klasser av drönare tillåtna
             - Drönare måste ha vissa tekniska egenskaper, ex fjärridentifiering
             - Flygning kan vara förbjudna under vissa tidpunkter under dygnet
 
-    !!! success   "Tillåtande"
+    !!! success "Tillåtande"
         - Områden där undantag från reglerna i den öppna kategorin har beviljats
         - Gäller normalt bara operatörer som ansökt och fått beviljat tillstånd
         - Exempelvis:
@@ -146,7 +145,7 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 
 ### Drönarkartan
 
-!!! info "Du som drönarpilot är skyldig att ta samma hänsyn till:"
+!!! info "Du som drönarpilot är skyldig att ta hänsyn till:"
 
 - [x] Geografiska UAS-zoner
 - [x] Restriktionsområden - R
@@ -156,11 +155,11 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 Innan du flyger och säkerställa att du vet var dessa områden finns, vilka eventuella begränsningar som gäller samt följa dessa. På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"} finns information om dessa områden
 
 
-## U-Space
+### U-Space
 
 U-Space (Unmanned) är ett europiskt koncept av tjänster som på ett automatiserat sätt ska möjliggöra integrering av ett stort antal drönare i luftrummet. Detta är en UAS-zon där drönare endast får flyga med stöd av U-Space tjänster. Detta skapar möjlighet för tät, säker och effektiv flygning utom synhåll i tätbebyggda områden utan att R (restriktiva) och D (farliga) områden behövs. U-space utvecklas kontinuerligt fram till 2035 då målet är att U-space-konceptet ska vara fullt utvecklat och integrerat i luftrummet. 
   
-Det som skiljer en ett U-Space från en geografisk UAS-zon är att digitala tjänster tillhandahålls och ska användas. Det finns dock undantag enligt de europeiska reglerna. Som fjärrpilot måste du förhålla dig till vraje U-Space och dess specifika regler eller begränsningar.
+Det som skiljer en ett U-Space från en geografisk UAS-zon är att digitala tjänster tillhandahålls och ska användas. Det finns dock undantag enligt de europeiska reglerna. Som fjärrpilot måste du förhålla dig till varje U-Space och dess specifika regler eller begränsningar.
 
 !!! info "U-Space Service Providers  - USSP"
     - Levererar tjänsterna i ett U-Space
@@ -173,15 +172,15 @@ Innan du kan flyga där behöver du säkerställa att du kan nyttja tjänster so
 
 En USSP kan välja att erbjuda fler tjänster och transportstyrelsen kan även besluta att andra tjänster ska vara obligatoriska i ett visst U-space-luftrum om det bedöms att det behövs för att uppnå en god flygsäkerhet.
 
-### Obligatoriska tjänster
+#### Obligatoriska tjänster
 
-!!! success   "Nätverksidentifieringstjänst"
+!!! success "Nätverksidentifieringstjänst"
 
     - Identifiering av drönare under hele flygningen
-    - Information förmedlas till USSPS, flygtrafikledning, allmänhet samt relevanta myndigheter
+    - Information förmedlas till USSP, flygtrafikledning, allmänhet samt relevanta myndigheter
         - Exempelvis: position, riktning, höjd och fart.
 
-!!! success   "Geomedvetenhetstjänst"
+!!! success "Geomedvetenhetstjänst"
 
     -  information till pilot och drönare:
         - Operativa villkor
@@ -189,13 +188,13 @@ En USSP kan välja att erbjuda fler tjänster och transportstyrelsen kan även b
         - Vilka geografiska UAS-zoner som är tillllgängliga
         - Andra tillfälliga restriktioner eller förändringar i luftrummet
 
-!!! success   "Flygtillståndstjänster"
+!!! success "Flygtillståndstjänster"
 
     - Behandlar begäran om att få flyga i U-space-luftrummet
         - Underrättar piloten om begäran godkänns eller avslås.
         - Tjänsten meddelar också vilken avvikelse från den godkända flygplanen som är godtagbar
 
-!!! success   "Trafikinformationstjänst"
+!!! success "Trafikinformationstjänst"
 
     -  Informerar piloten om all synlig trafik nära drönarens position eller avsedda flygväg
         - informerar både om obemannad- och bemannad luftfart
@@ -205,3 +204,182 @@ En USSP kan välja att erbjuda fler tjänster och transportstyrelsen kan även b
 Det finns även frivilliga tjänster. Detta kan exempelvis vara:  
 - Väderinformationstjänst  
 - Kontrolltjänst för regelefterlevnad
+
+### Geomedvetenhet
+
+Drönare i klasserna C1, C2 och C3 inom den öppna kategorin ska vara utrustande med:
+
+- Geommedvetenhet:
+    - [x] Piloten ska få information om gränser i luftrummet ang drönarens position och höjd
+    - [x] Varnad vid eventuella överträdelser i luftrummet
+
+!!! info "Piloten har alltid fullt ansvar att flygningen sker på säkert och godkännt sätt"
+
+
+- Geostaket
+    - Vissa områden med flygförbud är skyddade av geostaket
+    - Virtuellt staket i luftrummet som inte går att passera
+
+- Geobur
+    - Stänger in dränaren i en virtuellbur i luftrummet
+
+### Viktig information
+
+!!! success "NOTAM - Notice to Airmen ( Meddeland till flygare )"
+
+    - Tjänst som löpande publicerar viktig information för piloter om risker som kan påverka flygsäkerheten längs rutt eller på plats
+    - Är ett måste för alla piloter
+    - Även för drönarpiloter
+    - NOTAM hitter du på luftfartsverkets [webbplats](https://aro.lfv.se/Links/Link/ShowFileList?type=AIS&path=%5Cpibsweden%5C&torlinkName=NOTAM%20Sweden){:target="_blank"}
+
+Du kan på sidan välja bland fem publikationer. ESAA FIR 99days ger den fullständiga informationsmängden.
+
+
+!!! success "AIP - Aeronautical Information Publication"
+    - Piloter har skyldighet att ta del av relevant information från AIP innan flygning
+    - Information av varaktig karaktär väsentlig för luftfarten
+    - Ges ut av varje stat
+    - AIP ges i Sveriga ut av [Luftfartsverket](https://aro.lfv.se/content/eaip/default_offline.html){:target="_blank"}
+
+!!! success "AIP SUP - Aeronautical Information Publication Supplement"
+
+    - Innehåller informayion om tillfälliga förändringar i AIP av både långvarig och kortare karaktär, ofta med tillhörande kartor.
+    - Finns att läsa under en egen flik i AIP Sverige, den benämns där SUPs
+
+
+#### Kartor
+
+- **Kartor att läsa**
+
+    - [x] Drönarkartan från [luftfartsverket](https://dronechart.lfv.se/){:target="_blank"}
+        - Specialgjord karta för drönarpiloter som ger dig aktuell status för det svenska luftrummet
+        - Informerar var du kan flyga utan att störa ordinarie lufttrafik
+        - Hur och var du söker tillstånd att flyga i ett visst område
+
+    - [x] Naturvårdsverket [vebbplats](https://skyddadnatur.naturvardsverket.se/){:target="_blank"}
+        - Skyddad natur, dvs nationalparker, naturreservat och övriga skyddade områden där det kan finnas begränsningar
+        - Ex ej tillåtet att starta eller landa med luftfartyg inom nationalparker utan tillstånd från Länsstyrelsen
+
+
+## Luftfartsregleringar
+
+- Drönarpiloter är skyldiga att följa de regler som gäller för luftfarten.
+- EU-kommissionen har med stöd av den europeiska flygsäkerhetsmyndigheten EASA skrivit
+nya gemensamma [regler](https://www.easa.europa.eu/en/newsroom-and-events/news/eu-wide-rules-drones-published){:target="_blank"} för drönarflygning för alla inom EU. EASA har också skrivit vägledande
+material, så att det blir lättare att följa de nya reglerna.
+- Andra internationella regler
+- Sverige har också nationella bestämmelser som man ska följa:
+    -  luftfartslagen
+    - luftfartsförordningen
+    - Transportstyrelsens föreskrifter
+
+### Kategorier
+
+Syftet med de nya reglerna är att underlätta den snabba utvecklingen av drönaranvändning
+och samtidigt behålla säkerheten i takt med att trafiken ökar.
+
+!!! success "Öppna Kategorin"
+    - Inget tillständ krävs om:
+        - Flygs inom synhåll
+        - Drönaren under 25 kilo
+        - Flyga max 120 meter högt
+        - Inte flyga över människor
+
+!!! warning "Specifika / Certifierade kategorin"
+    
+    - Tllstånd hos transportstyrelsen krävs:
+        - Drönare över 25 kilo
+        - Flygs utom synhåll (undantaget flygning i följ-mig läge eller vid användandet av en drönarobservatör)
+        - Högre än 120 meter
+        - I närheten av människor
+
+
+#### Underkategorier
+
+!!! note "A1"
+    - Förenklat de allra lättaste drönarna: de som väger under 900 gram.
+    - Främst är det C0- och C1-klassade drönare som ingår, men även de hemmabyggda drönare som klarar kraven
+    - Dessa drönare är så pass lätta att de får flyga över eller nära enstaka personer
+    - Dock ska de som väger över 250 gram inte flygas där det rimligtvis kan finnas icke-medverkande personer. Om man trots allt råkar göra det, ska man som fjärrpilot se till att styra undan så fort och säkert som möjligt.
+    - Drönare oavsett vikt i den öppna kategorin får aldrig flygas över folksamlingar
+    - [x] C0 - klassade får flygas över icke-medverkande människor, men aldrig över folksammlingar
+    - [ ] C1 - klassade får aldrig flygas över folksammlingar och icke-medverkande människor
+
+!!! note "A2"
+    - I stort sett enbart C2-klassade drönare
+    - Det är drönare som får väga max fyra kilo och som aldrig får flygas över vare sig ickemedverkande personer eller folksamlingar
+    - [x] C2-klassade (om de inte är privatbyggda) under fyra kilo, får flygas på 30 meters horisontellt avstånd från människor (5 meter om låghastighetsläget är aktiverat) men aldrig över.
+        - Kräver kunskap om meteorologi, din drönares prestanda och segregeringen av de område som överflygs
+    - [ ] C2 - klassade får aldrig flygas över folksammlingar och icke-medverkande människor
+
+!!! note "A3"
+
+    - De tyngre drönartyperna i den öppna kategorin, alltså de som får lov att väga upp till och med 25 kilo
+    - Det rör sig om alltifrån C2- till C4-klassade drönare eller hemmabyggen som uppfyller kraven
+        - (notera motsättning längre ned kolla in vad som gäller)
+    - Det betyder alltså att C2-klassade drönare kan ingå i både underkategori A2 och A3
+    - Oavsett C-klassificering får du aldrig flyga någon drönare som ingår i underkategori A3 över eller i närheten av människor som inte medverkar i flygningen
+    -  Dessutom måste du hålla din drönare på minst 150 meters avstånd från bostads-, affärs-, industri- eller rekreationsområden.
+    - [ ] C2- till C4-klassade (om de inte är privatbyggda) under 25 kilo, får aldrig flygas i närheten av människor eller på platser där människor troligtvis kan befinna sig
+
+
+- [ ] **Observera**
+
+    - Det kan finnas områden där flygmöjligheterna för alla underkategorier är tydligt begränsade av hänsyn till människor, djur, miljö eller egendom.
+    - I de fall man är osäker är det viktigt att bedömningen sker utifrån gällande regler och sunt förnuft, och där har operatören ett stort ansvar
+
+
+- [ ] **Rekreationsområde**
+
+    - Det går inte att definiera exakt vad ett rekreationsområde är
+    - Ett Område som allmänheten har tillgång till för att utöva fritidsaktiviteter.
+    - Dessa områden behöver inte vara fasta utan kan vara tidsberoende och/eller säsongsberoende utifrån hur många människor som vistas eller antas vistas där.
+        - En strand kan till exempel betraktas som rekreationsområde under vissa tider på sommaren men inte under andra perioder.
+        - Bedömningen behöver därför göras utifrån situationen, och där har operatören ett stort ansvar.
+
+### Tekniska krav
+
+- [x] Ska vara CE-märkt
+    - Drönaren uppfyller EU:s grundläggande hälso-, miljö- och säkerhetskrav
+
+#### C-klasser
+
+- [x] Ska ha C-märkning
+    - Anger drönarens tekniska specifikationer
+    - C0, C1, C2, C3 och C4
+    - Exempel på teknisk specifikation är att drönaren måste kunna identifieras på avstånd. Det ska gå att fastställa drönarens geografiska position, höjd, hastighet och flygväg
+
+!!! note "C0"
+    - Hello
+    - World!
+
+!!! note "C1"
+    - Hello
+    - World!
+
+!!! note "C2"
+    - Hello
+    - World!
+
+!!! note "C3"
+    - Hello
+    - World!
+
+!!! note "C4"
+    - Hello
+    - World!
+        
+### FPV
+
+- Förstaperspersonsvy (FPV)
+    - Fjärrpiloten kan använda en drönarobservatör (UA-observatör) som hjälper till att hålla drönaren borta från hinder och annan flygtrafik (såsom bemannade flygplan)
+    - Drönarobservatören måste befinna sig bredvid fjärrpiloten
+    - Drönarobservatörer måste användas när fjärrpiloten uför drönarflygningar med förstapersonsvy (FPV)
+    - Fjärrpiloten alltid ansvarig för flygsäkerheten
+    - Drönarobservatören får inte använda hjälpmedel (t.ex. kikare)
+        - Syftet är inte att utöka drönarens räckvidd bortom synhåll (VLOS)
+        - Undantag är nödsituationer ex nödlandning långt från sin position. Då får kikare kan användas för att landa drönaren på ett säkert sätt
+
+
+
+## Människans prestationsförmåga
