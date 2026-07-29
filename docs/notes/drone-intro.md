@@ -520,3 +520,42 @@ uppmuntrar Transportstyrelsen all rapportering på frivillig basis för att för
 
 
 ## Människans prestationsförmåga
+
+**Stress**
+
+!!! success "Lagom stress"
+
+    - Frisätter hormoner som signalerar att mobilisera energi
+    - Höjer blodsockret
+    - Ökar puls
+    - Kan höja prestationsförmågan
+    - Förbättrar reaktionstiden
+
+!!! danger "För mycket stress"
+
+    - Kan parylysera eller ge panik
+    - Kan skapa minnesluckor
+    - Trögtänkt
+    - Svårt att lösa situationer
+
+- Sätt att undvika stress
+
+    - [x] Hålla lägre fart & flyga defensivt
+        - Ger bätte konroll över drönaren
+        - Ger marginaler så att piloten hinner reagera om något oväntat sker, ex fåglar eller andra luftfarkoster
+    - [x] Flyga i ett lugnare område
+        - Flyg gärna i områden där aktiviteten både i luften och på marken är lugnare
+    - [x] Planering och god framförhållning
+        - Om piloten har god uppsikt över området, vädret, på att drönaren är hel och flyger som den ska kommer piloten vara lugnare och tryggare och kommer då flyga mer kontrollerat
+    - [x] Att vara utvilad och pigg
+
+
+!!! warning "Flygning får aldrig ske under påverkan"
+    - Kan få drönarkortet indraget
+    - Nolltolerans för alkohol eller droger
+    - Flyg aldrig om medicinering påverkar din prestationsförmåga
+    - Flyg aldrig om du är trött
+
+**Synen**
+
+Normalt är synfältet 180 grader och av det utgör en till två procent det så kallade **direktseendet**, det seendet som ger fokus.
