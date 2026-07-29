@@ -17,12 +17,12 @@
 */
 
 /* Target top-level (H1) links in the Table of Contents - The :not ... part makes sure the active item is still styled */
-.md-sidebar--secondary .md-nav--secondary > ul > .md-nav__item > .md-nav__link:not(.md-nav__link--active):not(:focus) {
+.md-sidebar--secondary .md-nav--secondary > ul > .md-nav__item > .md-nav__link:not(.md-nav__link--active):not(:focus):not(:hover) {
   color: #CCC;
 }
   
 /* Target top-level (H2) links in the Table of Contents - The :not ... part makes sure the active item is still styled */
-.md-sidebar--secondary .md-nav__list .md-nav__item .md-nav__list .md-nav__link:not(.md-nav__link--active):not(:focus) {
+.md-sidebar--secondary .md-nav__list .md-nav__item .md-nav__list .md-nav__link:not(.md-nav__link--active):not(:focus):not(:hover) {
     color: #888;
 }
 
