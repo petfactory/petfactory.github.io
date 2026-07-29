@@ -269,8 +269,8 @@ nya gemensamma [regler](https://www.easa.europa.eu/en/newsroom-and-events/news/e
 material, så att det blir lättare att följa de nya reglerna.
 - Andra internationella regler
 - Sverige har också nationella bestämmelser som man ska följa:
-    -  luftfartslagen
-    - luftfartsförordningen
+    - Luftfartslagen
+    - Luftfartsförordningen
     - Transportstyrelsens föreskrifter
 
 ### Kategorier
@@ -339,6 +339,8 @@ och samtidigt behålla säkerheten i takt med att trafiken ökar.
 
 ### Tekniska krav
 
+Om drönaren ingår i den **öppna kategorin** och är **fabrikstillverkad** ska den ha CE-märkning samt ha en viss C-klass.
+
 - [x] Ska vara CE-märkt
     - Drönaren uppfyller EU:s grundläggande hälso-, miljö- och säkerhetskrav
 
@@ -346,40 +348,175 @@ och samtidigt behålla säkerheten i takt med att trafiken ökar.
 
 - [x] Ska ha C-märkning
     - Anger drönarens tekniska specifikationer
-    - C0, C1, C2, C3 och C4
-    - Exempel på teknisk specifikation är att drönaren måste kunna identifieras på avstånd. Det ska gå att fastställa drönarens geografiska position, höjd, hastighet och flygväg
+        - Exempelvis:
+            - Kunna identifieras på avstånd
+            - Fastställa drönarens geografiska position, höjd, hastighet och flygväg
+    - Vilken klass en drönare har beror på:
+        - Storlek
+        - Hastighet
+        - Hur mycket energi den avger vid krock
+        !!! info "Beräkna kinetisk energi"
+            KE = joule (J)<br>
+            m = kg<br>
+            v = m/s<br>
+            KE  = 0.5 * mv^2^<br>
 
-!!! note "C0"
-    - Hello
-    - World!
+
+!!! danger "Följande gäller alla drönare i den öppna kategorin:"
+    - [ ] Får max flygas på 120 meters höjd
+    - [ ] Får ej flyga över folksamlingar
+
+
+!!! tip "C0 ( eller privatbyggda drönare under 250 gram )"
+    - [ ] Ingen utbildning
+    - [ ] Ingen åldersgräns.
+    - [ ] Drönaren är utrustad med en sensor som kan fånga upp personuppgifter
+        - Måste registrera sig som operatör
+    - [ ] Väger drönaren över 250 gram
+        - Krävs att fjärrpiloten fyllt 15 år
+        - Drönaren måste vara identifierbar
+        - Operatören (den ansvariga) är registrerad och identifierbar
+
 
 !!! note "C1"
-    - Hello
-    - World!
+    - [ ] Max 19 meter per sekund (~68 km/h)
+    - [ ] Max 899 gram
+    - [ ] Ej ge ifrån sig mer än 80 joule vid kollision
+    - [ ] Ej medvetet flygas över icke-medverkande
+        - Om så sker ska drönaren skyndsamt flygas undan
 
 !!! note "C2"
-    - Hello
-    - World!
+    - [ ] Max fyra kilo
+    - [ ] Ej flygas över personer eller folksamlingar.
+    - [ ] Ej flygas i närheten av människor på ett horisontellt avstånd på minst 30 meter
+        - Eller fem meter om låghastighetsläget är aktiverat
 
 !!! note "C3"
-    - Hello
-    - World!
+    - [ ] Max 25 kilo
+    - [ ] Max tre meter bred
+    - [ ] Ingår i underkategori A3
+        - Vilket innebär att de bara får flygas i områden där andra personer rimligtvis inte befinner sig
+    - [ ] Ej flygas i närheten av människor
+    - [ ] Måste hållas minst 150 meter från bostads-, affärs-, industri- eller rekreationsområden
 
 !!! note "C4"
-    - Hello
-    - World!
+    - [ ] Max 25 kilo
+    - [ ] Får inte styras automatiskt
+    - [ ] Ej flygas i närheten av människor
+    - [ ] Måste hållas minst 150 meter från bostads-, affärs-, industri- eller rekreationsområden
         
+
+!!! info "Förtöjning eller trådad kraftöverföring ( C2 och C3 )"
+
+    - [ ] Gemensamt för C2- och C3-klassade drönare är att om trådad kraftöverföring eller förtöjning krävs så gäller följade:  
+        - Hållfasthet som är mer än 10 gånger så stark som vikten på din drönare
+            - Dvs om drönaren väger 1o kilo, måste förtöjningen ha en hållfasthet på över 100 kilo. 
+        - Förtöjningen max 50 meter lång
+
+
 ### FPV
 
-- Förstaperspersonsvy (FPV)
-    - Fjärrpiloten kan använda en drönarobservatör (UA-observatör) som hjälper till att hålla drönaren borta från hinder och annan flygtrafik (såsom bemannade flygplan)
-    - Drönarobservatören måste befinna sig bredvid fjärrpiloten
-    - Drönarobservatörer måste användas när fjärrpiloten uför drönarflygningar med förstapersonsvy (FPV)
-    - Fjärrpiloten alltid ansvarig för flygsäkerheten
-    - Drönarobservatören får inte använda hjälpmedel (t.ex. kikare)
+- [x] Förstaperspersonsvy (FPV)
+    - [ ] Fjärrpiloten kan använda en drönarobservatör (UA-observatör)
+        - Hjälper till att hålla drönaren borta från hinder och annan flygtrafik (såsom bemannade flygplan)
+        - Drönarobservatören måste befinna sig bredvid fjärrpiloten
+    - [ ] Drönarobservatörer måste användas när fjärrpiloten uför drönarflygningar med förstapersonsvy (FPV)
+    - [ ] Fjärrpiloten alltid ansvarig för flygsäkerheten
+    - [ ] Drönarobservatören får inte använda hjälpmedel (t.ex. kikare)
         - Syftet är inte att utöka drönarens räckvidd bortom synhåll (VLOS)
         - Undantag är nödsituationer ex nödlandning långt från sin position. Då får kikare kan användas för att landa drönaren på ett säkert sätt
 
+
+
+### Operatören
+
+**Operatörens ansvar**
+
+- [ ] Operatören måste vara registrerad om:
+    - Drönaren väger mer än 250 gram
+    - Drönaren är utrustad med en sensor som kan fånga upp personuppgifter
+        - Notera att detta krav även gäller om drönaren väger under 250 gram
+- [ ] Om operatören även är fjärrpiloten:
+    - Behöver inte ta fram egna operationella procedurer
+    - Räcker att följa drönartillverkarens procedurer
+- [ ] Om det är ett företag som bär ansvaret för drönaren är operatören oftast en juridisk och inte fysisk person
+
+
+!!! warning "Operatörens ansvar"
+
+    - [ ] Operatören har bland annat följande skyldigheter:
+        - Att utforma operativa förfaranden för att koordinera aktiviteter bland sina anställda
+        - Att skapa och kontinuerligt uppdatera en lista över sin personal och deras ansvar
+        - Säkerställa effektiv användning av radiospektret
+        - Utse en fjärrpilot för varje flygning
+        - Säkerställa att fjärrpiloter har satt sig in i drönarens användarmanual och operatörens förfaranden
+        - Att i tillämpliga fall uppdatera geomedvetenhet-systemet
+        - Att samtliga medverkande personer som befinner sig i det område där driften i underkategori A2 eller A3 sker har informerats om riskerna och utryckligen har gått med på att delta.
+
+
+#### Registrering
+
+- [x] Registrering av drönare och operatör:
+
+    - Alla drönare som omfattas av det nya regelverket kommer att ha kontaktuppgifter knutna till den ansvariga operatören.
+    - Oavsett om du äger den drönare du flyger eller inte, måste den person (fysisk eller juridisk) som ansvarar över drönaren vara registrerad hos transportstyrelsen med följande information:
+ 
+!!! info "Information om operatör"
+
+    - [ ] Följande information om operatör måste finnas:
+        - Den fysiska personens fullständiga namn och personnummer
+            - Alternativt fullständigt namn och identifieringsnummer på juridiska personer
+        - Operatörens adress
+        - Operatörens mejladress
+        - Operatörens telefonnummer
+        - Bekräftelse från juridisk person om att fjärrpiloterna som ska flyga luftfartyget har behörig kompetensnivå
+        - Försäkringsnummer om drönaroperatören omfattas av krav på försäkring, exempelvis om drönaren väger mer än 20 kg eller används kommersiellt
+
+### Fjärrpiloten
+
+**Fjärrpilotens ansvar**
+
+Även om du inte är operatör och ansvarig för operationen så har du som fjärrpilot ett ansvar för flygningen.
+
+!!! warning "Fjärrpilotens ansvar"
+
+    - [ ] Fjärrpiloten har ansvar för flygningen
+    - [ ] Behöver leva upp till vissa krav:
+        - Avklarad utbildning
+        - Ej påverkad av alkohol eller droger
+        - Ej vara trött, skadad,  eller påverkad av som påverkar flygförmågan
+        - God koll på regler och begränsningar som gäller inom de områden där flygningen sker
+        - Använder drönarsystemet enligt användarmanualen från tillverkaren
+        - Inte flyger nära eller inom områden där en nödinsats pågår – om inte räddningstjänsten gett tillstånd
+        - Säkerställ att drönarens system fungerar som det ska under hela flygningen
+
+
+### Händelse eller olycka
+
+Om en olycka eller händelse skulle inträffa när du är ute och flyger, måste du rapportera det
+till [transportstyrelsen](https://www.transportstyrelsen.se/sv/luftfart/luftfartyg-och-luftvardighet/dronare/rapportera-handelse-med-dronare/){:target="_blank"}
+
+- [x] Varför ska jag rapportera en händelse med min drönare
+    - Hjälper till att förbättra flygsäkerheten
+    - Genom analyser av rapporterna kan transportstyrelsen tdigare se mönster och hitta risker och faror som är svåra att upptäcka vid enskilda händelser
+    - Rapporterna får bara användas bara till flygsäkerhetsarbete
+        - Undantag vid stort och allvarligt risktagande, om något avsiktligt eller medvetet görs för att äventyra flygsäkerheten
+
+
+**Är det obligatoriskt att rapportera händelser med drönare?**
+
+Det finns regler som talar om när det är obligatoriskt att rapportera och vilka händelser som
+behöver rapporteras. Även om en händelse inte är obligatorisk att rapportera eller om rapportören inte måste,
+uppmuntrar Transportstyrelsen all rapportering på frivillig basis för att förbättra flygsäkerheten.
+
+- [x] Händelser som är obligatoriska att rapportera av alla som flyger drönare:
+    - Om någon skadats allvarligt
+    - Om det skett en händelse med dödlig utgång
+    - Om händelsen involverade bemannade luftfartyg (flygplan, helikoptrar etc)
+
+!!! info "Notera"
+
+    Om någon skadats allvarligt eller med dödlig utgång eller om ett luftfartyg fått omfattande skador, ska händelsen rapporteras både till transportstyrelsen och till statens haverikommission
 
 
 ## Människans prestationsförmåga
