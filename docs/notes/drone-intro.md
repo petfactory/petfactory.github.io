@@ -521,7 +521,7 @@ uppmuntrar Transportstyrelsen all rapportering på frivillig basis för att för
 
 ## Människans prestationsförmåga
 
-**Stress**
+### Stress
 
 !!! success "Lagom stress"
 
@@ -556,6 +556,134 @@ uppmuntrar Transportstyrelsen all rapportering på frivillig basis för att för
     - Flyg aldrig om medicinering påverkar din prestationsförmåga
     - Flyg aldrig om du är trött
 
-**Synen**
+### Syn
 
-Normalt är synfältet 180 grader och av det utgör en till två procent det så kallade **direktseendet**, det seendet som ger fokus.
+- [x] Syn
+    - Normalt är synfältet 180 grader
+    - En till två procent utgör **Direktseendet**, seendet som ger fokus.
+    - Mörkerseendet blir ofta sämre ju äldre vi blir
+        - Linsen tappar sin elasticitet och blir grumligare
+        - Vissa har i princip inget mörkerseende - **nattblindhet**
+    - Många drabbas av närsynthet i mörker
+        - Linsen får svårare att anpassa sig vid mindre ljus
+    - Sannolikaheten att bländas ökar ju sämre mörkerseende man har
+        - Ögonen har då svårare att ställa om från mörker till ljus och tvärtom
+        - Var därför uppmärksam på starka ljus vid dåligt mörkerseende
+    - Anpassa tekniken till efter miljön
+        - Vid mörker dra ner ljusstyrkan från radiosändarens skärm
+        - Vid mycket sol använda solskyddshuv
+
+
+- [x] Avsökning av lufthavet
+    - VLOS - flyga inom synhåll
+        - Tydligt se drönaren
+        - Hålla uppsikt om luftrummet omkring
+    - För en bra avsökning av lufthavet:
+        - Flytta synfokus systematiskt mellan punkter på himlen
+        - Svep inte med blicken
+    - Ögat ser allra bäst när vi fokuserar blicken
+        - Kan då nyttja alla synceller som sitter tätt i **gula fläcken**
+        - Tapparna, som uppfattar detaljer väldigt mycket bättre än stavarna, sitter mycket tätare här
+    - Vi uppfattar rörelser bäst när vi inte själva sveper med blicken
+        - Utan istället nyttjar det perifera seendet.
+        - Stavarna som ögat använder för periferiseende är känsligare för rörelser än tapparna, men ger suddigare bild
+
+
+!!! info "Träna på avsökning"
+
+    - Svep inte med blicken när du spanar efter andra luftfartyg
+    - Fokusera blicken och flytta den systematiskt mellan olika delar av himlen
+    - Träna in att regelbundet titta till de tre delarna i din avskanning:
+        - Drönaren
+        - Kontrollenheten
+        - Omgivningen
+    - Denna metoden används även av trafikflygare
+        - Innebär att du endast tittar en kort tid på din kontrollenhet innan du tittar upp mot himlen igen
+        - Behöver du se mer på kontrollenheten tittar du sedan ner en stund till för att kort därefter titta på nästa del av himlen och så vidare
+
+### Inlärning
+
+- [ ] Inlärning
+    - [x] Djupinlärning
+        - Förstår logiken bakom regler samt sammanhang och orsaker
+        - Kunnskapen fastnar bättre
+    - [x] Ytinlärning
+        - Ytlig kunskap som glömms snabbt
+    - [x] Imitationsinlärning
+        - Omedvetet tar efter och lär dig genom hur andra i din närhet gör
+        - I många fall är detta något oundvikligt, tänk på att själv vara en god förebild
+    - [x] Överinärning
+        - Genom övning och erfarenhet automatiseras mycket av flygningen
+        - Detta frigör fokus på omgivningen, upptäcka faror och planering
+    - [x] Sannolikhetsinlärning
+        - Blir man för bekväm kan de resultera i att man blir mindre uppmärksam
+            - Eftersom man litar lite för mycket på din egen kompetens och förmåga
+        - Flyger man ofta i samma område kan man ta mycket för givet 
+            - Och blir mindre uppmärksam och vaksam
+
+
+### Automation
+
+Den snabba utvecklingen av tekniken inom flyget och drönarsegmentet har lett till avancerad automation, vilket förändrat pilotens arbetssätt. Från att fysiskt ”handflyga” drönaren övervakar piloten i stället periodvis de olika systemen och flygningen
+
+!!! success "Fördelar med automation"
+    - Ökad effektivitet och säkerhet
+    - Minskar arbetsbelastningen för piloten (mental och fysisk)
+    - Ökad precision i navigering
+    - RTH funktionen avlastar - piloten kan ägna mer uppmärksamhet att säkerställa ett fritt landningsområde
+
+!!! warning "Nackdelar med automation"
+    - Människor är vanligtvis dåliga övervakare av rutinartade situationer
+    - Övervaka drönare kan bitvis uppfattas som understimulerande och påverka din uppmärksamhet negativt
+    - Påfrestning att snabbt ställa om till manuellt läge om automatiserat system fallerar
+        - Om RTH fallerar behöver piloten snabbt bedöma situationen, fatta beslut och övergå till manuell kontroll vilket kan innebära stora påfrestningar på dig som pilot.
+    - Manuella färdigheter försämras om de inte används
+    - AutomaTIonen kan bidra TIll en falsk känsla av trygghet
+    - Kan vara svårt att upptäcka fel i automationen pga mycket sker i bakgrunden
+        - Kan därför vara svårt att förstå logiken i automationens beteende
+        - Vilket kan göra det svårare för att förutse automationens nästa drag
+
+!!! info "Notera"
+
+    Utnyttja automationen när så är lämpligt men glöm inte att även flyga manuellt i tillräcklig omfattning så du inte tappar din flygförmåga.
+
+
+- [ ] Var extra uppmärksam på
+    - [x] Tappa inte din flygförmåga
+        - varva mellan manuell flygning och automationen
+    - [x] Lär dig din drönares olika automationsfunktioner (s.k. modes)
+        - möjligheter och begränsningar
+    - [x] Lita inte blint på automationen
+        - Bevaka och följ upp under flygning. Ta över om du är tveksam
+    - [x] Förbered dig mentalt
+        - På olika nödsituationer och hur du omhändertar dem på bästa sätt
+    - [x] Du är ansvarig
+        - För att drönaren framförs på ett säkert sätt, inte automationen
+
+
+### Riskmedvetenhet
+
+Hur stor risk vi är beredda att utsätta oss och andra för påverkas av olika faktorer, till exempel vår upplevelse av egen kontroll över ett förlopp, drönaren eller omgivningen har stor betydelse för vårt risktagande.
+
+!!! warning "Riskmedvetenhet"
+
+    - [ ] Människan har en tendens att underskatte risker vars konsekvenser visar sig först längre fram
+        - Exempelvis en liten förändring i vindriktning vilket senare leder till stark motvind hem kan resultera i en lägre batterinivå än förväntat och begränsa dina valmöjligheter
+    - [ ] Vanligt att (medvetet eller omedvetet) förneka eller förminska risker på grund av en stark vilja att avklara något som redan är påbörjat
+        - För att undvika detta är det viktigt att ha tydliga operativa procedurer och följa dem
+        - Exempelvis att alltid avbryta flygningen vid en viss batteriprocent och aldrig överskrida denna, hur lite det än är kvar av uppdraget. Något oväntat kan alltid hända
+        - Det är också viktigt att vara medveten om sina begränsningar och inte tänja på dem
+    - [ ] Om man börjar känns sig bekväm kan det leda till att man tänjer på gränser och tar risker
+        - Om man flera gånger varit i riskfyllda situationer och inget negativt hänt kan sannolikheten för att ta större risker öka vilket kan resultera i beslut som sätter oss i situationer som kan påverka säkerheten negativt
+    - [ ] Tidigare framgång är ingen garanti för framtida säkerhet
+        - Varje ny flygning är unik och innehåller nya risker och utmaningar
+
+- [ ] Var extra uppmärksam på
+    - [x] Var medveten om dina begränsningar 
+        - Tänj inte på dem och ta inga onödiga risker
+    - [x] Följ fastställda operativa procedurer 
+        - De finns där för din och andras säkerhet
+    - [x] Kom ihåg – även om uppdraget är viktigt
+        - Så är flygsäkerheten absolut viktigast
+
+## Operativa procedurer
