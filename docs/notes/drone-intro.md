@@ -483,6 +483,7 @@ Om drönaren ingår i den **öppna kategorin** och är **fabrikstillverkad** ska
     - [ ] Fjärrpiloten har ansvar för flygningen
     - [ ] Behöver leva upp till vissa krav:
         - Avklarad utbildning
+        - Drönarkort måste kunna visas upp, utskrivet eller via drönarsidan
         - Ej påverkad av alkohol eller droger
         - Ej vara trött, skadad,  eller påverkad av som påverkar flygförmågan
         - God koll på regler och begränsningar som gäller inom de områden där flygningen sker
@@ -687,3 +688,165 @@ Hur stor risk vi är beredda att utsätta oss och andra för påverkas av olika 
         - Så är flygsäkerheten absolut viktigast
 
 ## Operativa procedurer
+
+Som färrpilot har du särskilda skyldigheter både före, under och efter flygningen. Du är
+dessutom ansvarig att känna till var du kan hitta information som påverkar din flygning.
+
+
+### Innan flygning
+
+!!! info "Att tänka på före flygning"
+
+    - [ ] Ha med ditt drönarkort
+        - Kunna visas upp antingen via drönarsidan eller utskriven version
+        - Drönarkort är giltigt i 5 år, tre månader innan drönarkortet går ut kan du förlänga det genom att göra om teoriprovet
+    - [ ] Undersök området som du tänker flyga i
+        - Undersök i förväg hur området ser ut på karta eller satellitbild om du saknar lokalkännedom
+    - [ ] Veta om det finns restriktioner i området
+        - Kontrollera alltid varaktig och temporär information i både
+            - AIP
+            - AIP SUP
+            - NOTAM
+    - [ ] Skaffa överblick över miljön där du ska flyga ex:
+        - Eventuella hinder
+        - Icke-medverkande personer
+        - Det du främst ska kontrollera är om det går att hålla avstånd till människor och åskådare, samt att du inte kommer att flyga nära djur
+        - En bra tumregel är att undvika områden där det periodvis samlas folk, såsom parker, rekreationsområden, vissa tävlingar eller andra evenemang
+        - Hur ser området och luftrummet ut
+    - [ ] Gå igenom uppdraget
+        - Gå igenom den planerade rutten med alla medverkande, ex vad vill uppnås med flygningen
+        - Se till att startplatsen är fri från hinder och personer och att det finns information om att flygning pågår
+        - Piloten bör ha varselväst och det är också bra om en skylt finns utsatt 
+        - Om ni är flera, är det viktigt att ni före start klargör varje persons roll
+            - Vem är fjärrpilot och vilken roll har eventuellt andra medverkande personer
+            - Bra om en tekniskt ansvarig person utses om flera användare finns på samma luftfartyg
+            - Det kan vara bra med en observatör
+                - Håller extra uppsikt över omgivningen
+                - Upptäcka faror och se till så att ingen befinner sig i riskområdet
+                - Svara på frågor från förbipasserande, ta telefonsamtal eller liknande så att piloten inte blir störd.
+    - [ ] Kontrollera drönarsystemet
+        - Inställningar och att både hård- och mjukvaror fungerar som de ska
+            - Propellrar, gimbal, transportskydd etc
+            - ställ in RTH och dess höjd om sådana
+            - kontrollera eventuella felmeddelanden
+        - Kontrollera batterinivåerna – både radiosändare och drönare ska vara fulladdade inför varje ny flygning
+        - Se till att det inte finns några frekvensstörningar som kan påverka video och mottagare
+            - Ev metall eller antenner
+        - Kom ihåg att drönarens IR-sensorer kan störas av reflektioner från blanka ytor, såsom vatten glas eller mosaik. Det kan göra att den tappar kontrollen över sin egen position och höjd, vilket i värsta fall kan leda till haveri.
+            - Om du ska flyga över sjöar, hav, dammar eller andra vattenansamlingar, bör du stänga av sensorer som sitter på drönarens undersida
+        - Kolla så att SD-kortet foto- och videoutrustningen sitter på plats och fungerar som de ska
+        - Göra en kompasskalibrering om det behövs
+        - Se till att drönaren inte väger mer än vad som är godkänt för dess klass
+    - [ ] Startplats
+        - Ha gott om plats runt omkring och starta från en slät och jämn yta
+    - [ ] Väder
+        - kontrollera temperatur, vindens riktning och hastighet samt risk för turbulens och dimma
+
+
+
+**Välj startplats**
+
+- [ ] Var noggrann när du väljer startplats för flygningen för att både start och landning ska gå till
+på ett säkert vis.
+- [ ] Platsen ska helst vara på en jämn, slät yta, som har gott om utrymme och ligger på avstånd från hinder och människor.
+- [ ] Ytor med grus eller liknande ska undvikas, men om det av någon anledning inte går kan du använda en startplatta
+- [ ] Undersök och välj ut alternativa landningsplatser om du skulle tvingas nödlanda.
+
+
+**Kontrollera väder**
+
+- [ ] Kontrollera väderleken: temperatur, vind, dimma, molnighet.
+- [ ] Låg temperatur påverkar batterier negativt. Se till att hålla dem uppvärmda före start.  
+    Vid låg temperatur krävs extra kunskaper om batterierna, ta reda på hur just dina fungerar
+- [ ] I fuktigt väder och låg temperatur kan det bildas is på propellrarna som innebär stor risk för haveri.
+- [ ] Tänk på att vindhastigheten ofta ökar med höjden
+
+
+**Starta flygningen**
+
+
+- [x] Starta radiosändaren först och därefter drönaren
+    - Om du gör tvärtom kan RTH-funktionen i sällsynta fall aktiveras, eftersom drönaren inte får kontakt med radiosändaren, därefter kan du starta annan eventuell kringutrustning.
+- [x] När drönaren är igång kan du starta kameran och se till att kamerainställningar är korrekta:
+    - stillbild, video, bildhastighet (FPS), färgsystem (NTSC/PAL) och så vidare.
+- [x] Är alla spakar i neutralläge?
+    - Om svaret är ja, är du redo att flyga!
+- [x] Om du flyger en multirotor-drönare ska du först av allt kontrollera den medan den är i luften på låg höjd.
+    - Det gör du genom att lyfta den ungefär fem meter ovanför mark och sedan låta den stå och hovra i den positionen.
+    - Lyssna här efter ovanliga ljud och kontrollera att styrningen reagerar normalt och att batterinivåerna är tillräckliga. - Kontrollera till sist att GNSS:en fungerar som den ska.
+
+
+
+### Under flygning
+
+!!! warning "Skyldigheter under flygning"
+
+    - [ ] VLOS - allid kunna se din drönare
+        - För att undvika olyckor
+        - Så att överföringen av flygdata eller styrning inte blockeras
+    - [ ] Inte vara i ett tillstånd som negativt inverkar på flygförmågan, ex
+        - Inte vara påverkad av alkohol eller droger
+        - Inte vara trött, eller påverkad av medicinering
+    - [ ] Att avbryta flygningen om den utgör en risk för andra luftfartyg
+        - Du är skyldig att väja för alla andra typer av luftfarkoster
+        - Landa genast drönaren om någon helikopter eller annan lågt flygande farkost närmar sig området
+    - [ ] Inte utgöra någon fara för människor, djur och miljö.
+        - Flyg inte över människor som inte medverkar i flygningen
+        -  Skulle du på något sätt utgöra några risker måste du genast avbryta flygningen på ett säkert och kontrollerat sätt
+    - [ ] Ha god koll på regler och begränsningar som gäller inom de områden där flygningen sker
+    - [ ] Använd drönarsystemet enligt användarmanualen från tillverkaren
+        - Läs i drönarens manual hur du stänger av motorerna i luften vid en nödsituation, en så kallad planerad krasch, för att vara beredd om det skulle behövas
+    - [ ] Inte flyga nära eller inom områden där en nödinsats pågår – om inte räddningstjänsten gett tillstånd
+
+
+!!! info "Under flygning"
+    - Vikigt att fjärrpilot hela tiden håller fingrarna på radiosändaren
+    - Se också till att radiosändarens antenner är riktade på rätt sätt mot drönaren för bästa möjliga mottagningsförmåga. Det är extra viktigt vid flygning på långt avstånd.
+    - Du måste också kunna hålla kontroll på området under och kring drönaren hela tiden
+    - Försök att stiga till optimal höjd för att minska risker eller oväsen
+    - Undvik att flyga över djur, elektriska ledningar och byggnader
+
+### Nödsituationer
+
+Nödsituationer kan uppstå när du minst anar det och då gäller det att vara beredd. Det kan röra sig om alltifrån fel i drönarens system eller konstruktion till missöden som beror på naturen och väder. Här är några exempel på vad som kan hända:
+
+- [ ] Kompassen störs ut
+    - Kompassen kan störas i områden med mycket elektroniska störningar
+    - Ex där det finns elledningar, antenner eller större metallföremål.
+    - Genom att då röra sig uppåt och låta drönaren stiga i höjd kan störningarna minska och drönaren hitta tillbaka till sin magnetiska riktning.
+    - Men kom ihåg att den trots detta inte får stiga över maxhöjden 120 m.
+- [ ] Motorhaveri
+    - Olika drönare har olika många motorer och reagerar därför också på olika sätt vid motorhaveri
+    - Det är troligare att en mindre drönare med färre motorer inte skulle klara av ett borrtall och därför krascha
+    - Däremot skulle drönare med många motorer (sex stycken eller fler) eventuellt klara av att fortsätta flyga och landa säkert
+    - Vissa typer av drönare har autorotering som funktion vid motorhaveri
+        - Det innebär att drönaren börjar rotera i stället för att falla rakt ner mot marken
+        - På så sätt får den en mjukare landning. Det ger dessutom dig och andra i omgivningen mer tid till att ta skydd för den fallande drönaren
+        - Ta därför reda på hur din drönare fungerar och vad den klarar av
+- [ ] Isbildning kan leda till haveri
+    - Det kan bildas is på propellrarna. Då skapar de inte den lyftkraft de behöver för att genomföra en säker flygning, vilket i värsta fall kan leda till haveri. Vissa drönare har säkerhetsspärrar som går igång vid isbildning. De gör då en autolandning. Man kan inte styra drönarens sjunkhastighet, men däremot kan man styra dess flygväg och på så sätt undvika hinder.
+- [ ] Radiosändaren tappar kontakten med drönaren
+    - Kontakten mellan radiosändare och drönare kan tappas. Om RTH aktiveras, är det viktigt att du ställt in en säker höjd för en automatisk hemfärd
+    - Dessutom är det viktigt att du gjort de inställningar för RTH och startposition som passar bäst för det specifika tillfället.
+    - Om drönaren exempelvis flyger över vatten och du själv befinner dig ombord på en båt som rör sig, kan det vara lämpligt att inte låta drönaren flyga tillbaka till startpositionen och på så sätt landa i vattnet. Då är det lämpligare att luftfartyget följer radiosändaren eller dig genom att du placerar ut nya startpositioner under flygningens gång.
+    - Detta kan vara bra att ha med i en checklista före flygningen så att du hela tiden är beredd på vad som sker vid aktivering av RTH
+- [ ] Nyfikna fåglar i vägen
+    - Det är viktigt att ha god uppsikt över andra luftfartyg i luftrummet men också över fåglar
+    - Fåglar är ofta nyfikna, ibland även aggressiva och kan utgöra stora störningsmoment och risker
+    - Om du flyger över vatten, ska du också tänka på att fåglar gärna flyger lågt över ytan
+    - Om du under flygning har nyfikna eller aggressiva fåglar i närheten av din drönare, ska du överväga att landa och avbryta flygningen
+
+
+**När du ska landa**
+
+### Efter flygning
+
+!!! info "Skyldigheter under flygning"
+
+
+## Allmän drönarkunskap
+
+## Integritet och känslig information
+
+## Försäkringar
+
