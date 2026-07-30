@@ -7,7 +7,7 @@ tags:
     - Drone
 ---
 
-##  Flygsäkerhet
+##  1 | Flygsäkerhet
 
 - [x] Ta hänsyn till miljön
 - [x] Frisk och fokuserad
@@ -24,7 +24,7 @@ tags:
 
 
 
-## Luftrummet
+## 2 | Luftrummet
 
 I Sverige finns två klasser av luftrum:
 
@@ -261,7 +261,7 @@ Du kan på sidan välja bland fem publikationer. ESAA FIR 99days ger den fullst�
         - Ex ej tillåtet att starta eller landa med luftfartyg inom nationalparker utan tillstånd från Länsstyrelsen
 
 
-## Luftfartsregleringar
+## 3 | Luftfartsregleringar
 
 - Drönarpiloter är skyldiga att följa de regler som gäller för luftfarten.
 - EU-kommissionen har med stöd av den europeiska flygsäkerhetsmyndigheten EASA skrivit
@@ -520,7 +520,7 @@ uppmuntrar Transportstyrelsen all rapportering på frivillig basis för att för
     Om någon skadats allvarligt eller med dödlig utgång eller om ett luftfartyg fått omfattande skador, ska händelsen rapporteras både till transportstyrelsen och till statens haverikommission
 
 
-## Människans prestationsförmåga
+## 4 | Människans prestationsförmåga
 
 ### Stress
 
@@ -687,7 +687,7 @@ Hur stor risk vi är beredda att utsätta oss och andra för påverkas av olika 
     - [x] Kom ihåg – även om uppdraget är viktigt
         - Så är flygsäkerheten absolut viktigast
 
-## Operativa procedurer
+## 5 | Operativa procedurer
 
 Som färrpilot har du särskilda skyldigheter både före, under och efter flygningen. Du är
 dessutom ansvarig att känna till var du kan hitta information som påverkar din flygning.
@@ -805,6 +805,7 @@ på ett säkert vis.
     - Du måste också kunna hålla kontroll på området under och kring drönaren hela tiden
     - Försök att stiga till optimal höjd för att minska risker eller oväsen
     - Undvik att flyga över djur, elektriska ledningar och byggnader
+    - Var beredd på nödsituationer
 
 ### Nödsituationer
 
@@ -839,14 +840,182 @@ Nödsituationer kan uppstå när du minst anar det och då gäller det att vara 
 
 **När du ska landa**
 
+- Ett vanligt sätt är att aktivera RTH för att automatiskt flyga tillbaka till startpositionen eller radiosändaren
+- Därefter sker landningen automatoskt eller manuellt
+- Du måste kontrollera om det finns några hinder eller risker i landningsområdet
+- Till sist stänger du av strömmen till drönaren och landningen är avklarad
+
+
+
 ### Efter flygning
 
-!!! info "Skyldigheter under flygning"
+!!! info "Efter landning"
+    - [ ] Om du flugit i **kontrollzon** och fått ett tillstånd från flygtrafikledningen
+        – Meddela flygtrafikledningen att flygningen är genomförd
+        - Du ska också fylla i loggbok eller på annat sätt se till att flygningen har registrerats
+        - Om olyckor eller haveri inträffat under flygningen måste du anmäla dem till Transportstyrelsen.
+    - [ ] Kontrollera drönaren - gör en okulärbesiktning 
+        - Titta efter skador och onormalt slitage på och omkring flygkroppen, kablar och propellrar.
+        - Alla lösa delar, såsom skruvar, fästen och leder, ska sitta fast ordentligt
+        - Om du snurrar på propellrarna ska de inte låta nämnvärt. Knastrande ljud kan tyda på smuts i motorns kullager.
+        - Om propellrarna är skadade på något vis, måste de bytas ut
+    - [ ] Batterier
+        - Batterierna kräver noggrant underhåll.
+        - Efter varje landning ska du ta ut dem och så snart som möjligt sätta dem på laddning
+        - Batterierna ska sedan förvaras på ett mörkt, svalt och säkert ställe med eldfast underlag
+        - Om du inte laddar upp batterierna så att de har chans att ladda ur till "store mode" utan i stället låter dem ligga förvarade med för låg laddning (under 10 procent), kan de ta permanent skada och vara farliga att flyga med
+
+### Checklistor
+
+Ta för vana att gå igenom checklistor både före och efter flygning för att allt ska gå så smidigt
+och säkert som möjligt. Listorna kan se olika ut och du kan anpassa dem till din drönare. Se exempel nedan:
+
+#### Okulärbesiktning
+
+- Okulärbesiktning
+
+    - [ ] Finns det några sprickbildningar i flygkroppen eller glapp i lederna kring de fällbara
+    armarna och så vidare?
+    - [ ] Uppstår det ovanliga ljud från propellrarna om du snurrar dem med fingrarna?  
+    Knastrande ljud kan tyda på smuts i motorns kullager och ska inte ignoreras.
+    - [ ] Är skruvar, fästen, leder eller fastsättningar lösa eller skadade? Byt ut vid behov.
+    - [ ] Finns det några skador eller sprickor på propellrarna? Flyg aldrig med skadade
+    propellrar.
+    - [ ] Finns det några lösa eller skadade kablar?
+    - [ ] Finns det några lösa eller skadade anslutningar?
+    - [ ] Sitter propellerfästen, skruvar och propellerlås fast? (Känn efter så att de är
+    åtdragna.)
+
+#### Kompass-kalibrering
+
+Du ska i första hand följa drönartillverkarens instruktioner gällande kompass-kalibrering. Om
+instruktionerna saknas, och det finns ett behov av kompass-kalibrering, kan du använda
+nedanstående checklista.
+
+- [x] Kompass-kalibrering
+
+    - [ ] Ta av klocka och andra metallföremål från dina kläder och på kroppen.
+    - [ ] Slå på radiosändaren.
+    - [ ] Ställ drönaren utomhus på ett underlag utan metall. Slå på strömmen.
+    - [ ] Vänta tills minst sex satelliter är synliga i appen eller på radiosändarens display.
+    - [ ] Starta kalibreringen i appen (om tillämpbart) eller via radiosändaren.
+    - [ ] Lägg radiosändaren åt sidan, ställ dig bakom drönaren med kameran riktad från dig och lyft sedan drönaren och håll den med raka armar.
+    - [ ] Rotera medurs ett komplett varv på cirka fem till sju sekunder.
+    - [ ] "Vält" drönaren framåt så att kamera pekar rakt nedåt i marken. Påbörja ett nytt varv i samma tempo som innan.
+    - [ ] Ställ ned drönaren och säkerställ att kalibreringen lyckats.
 
 
-## Allmän drönarkunskap
+#### Förberedelser före start
 
-## Integritet och känslig information
+- [x] Förberedelser före start
 
-## Försäkringar
+    - [ ] Är radiosändaren och batterierna ombord på drönaren fulladdade?
+    - [ ] Finns det några frekvensstörningar som påverkar video och mottagare?
+    - [ ] Behövs det en kalibrering av kompassen?
+    - [ ] Är foto- och videoutrustningen korrekt monterad?
+    - [ ] Är startplatsen säkrad?
+    - [ ] Finns det eventuella luftrumsrestriktioner (ref. kapitel 2 för luftrumsrestriktioner, drönarkartan, NOTAM, AIP och AIP SUP)?
+    - [ ] Starta radiosändaren först, därefter drönaren och sist annan eventuell kringutrustning.
+    - [ ] Starta kamerasystemet (om tillämpbart).
+    - [ ] Är alla spakar i neutralläge?
+    - [ ] Fungerar systemen för fjärridentifiering som de ska?
+    - [ ] Starta!
 
+
+#### Under flygning
+
+- [x] Under flygning
+
+    - [ ] Håll hela tiden fingrarna på radiosändaren.
+    - [ ] Flyg inte över 120 meter ovanför mark (i okontrollerat luftrum) och håll drönaren inom synhåll.
+    - [ ] Stig till optimal höjd för att minska risker eller oväsen.
+    - [ ] Undvik att flyga över människor, djur, elektriska ledningar och byggnader.
+    - [ ] Stör inga pågående räddningsinsatser.
+    - [ ] Landa genast drönaren om en helikopter eller någon annan lågt flygande farkost närmar sig
+
+
+#### Landning
+
+- [x] Landning
+
+    - [ ] Kontrollera landningsområdet så att det inte finns hinder eller någon annan fara.
+    - [ ] Landa drönaren med säkert avstånd från hinder och människor.
+    - [ ] Stäng av strömmen till drönaren.
+
+#### Efter flygning
+
+- [x] Efter flygning
+
+    - [ ] Meddela flygtrafikledningen att du genomfört flygningen.
+    - [ ] Stäng av strömmen till kameran eller annan utrustning.
+    - [ ] Okulärbesikta: titta efter skador och onormalt slitage.
+    - [ ] Ta ut batterierna, ladda upp dem och förvara på säkert ställe
+
+
+## 6 | Allmän drönarkunskap
+
+Drönare är en vardagligare benämning för det som mer korrekt kallas för obemannade
+luftfartyg eller obemannade luftfartygssystem – det vill säga luftfartyg som styrs antingen
+automatiskt, självständigt eller av fjärrpilot på distans. På engelska kallas något av följande:
+
+- **UAV** - Unmanned Aircraft Vehicle
+- **UAS** - Unmanned Aerial System
+
+vars förkortningar ofta dyker upp även i Sverige. Drönare finns i alla möjliga storlekar och kan väga alltifrån något hundratal gram till flera tusentals kilo. De kan också se ut på olika sätt, till exempel som den vanligare helikopterliknande multirotorn eller multikoptern, eller som den mer flygplansliknande drönaren med fasta vingar. 
+
+
+### Viktiga funktooner
+
+- [x] Drönare med propellrar
+    - [ ] I normalfall har drönaren fyra armar och fyra propellrar:
+        - Två propellrar som snurrar medurs och två moturs
+        - På så sätt blir den totala rotationskraften neutral.
+        - Om en drönare har fler än en propeller kallas den för multirotor eller multikopter
+    - [ ] Det är viktigt att propellrarna sitter på rätt plats
+        - I de flesta drönarsystem går det inte att sätta propellrarna fel, men det är viktigt att kontrollera att de sitter fast ordentligt
+    - [ ] Propellrarna utsätts för hög belastning och det kan lätt uppstå sprickor
+        - Så ta också för vana att alltid känna över propellerbladen före start genom att försiktigt böja dem
+
+- [x] Drönare med fasta vingar
+    - [ ] Oftast har de då enbart en eller två propellrar och både ett annat syfte och funktion än den vanligare multirotordrönaren
+    - [ ] Dessa drönare kan både nå en längre räckvidd och flygtid än multirotordrönare
+    - [ ] Dessutom komma upp i högre hastigheter
+    - [ ] Dock behöver de en start- och landningsbana, eftersom de kastas igång
+    - [ ] Värt att nämna är att det finns hybridvarianter där drönare med fasta vingar har fler än två propellrar.
+
+- [x] Radiosändaren
+    - test
+
+- [x] Fjärridentifiering
+    - test
+
+- [x] Följ-mig-läge 
+    - test
+
+- [x] RTH – drönaren flyger hem automatiskt
+    - test
+
+- [x] Geomedvetenhet
+    - test
+
+- [x] Kompass
+    - test
+
+- [x] Gimbal
+    - test
+
+- [x] Hantering av drönarens batterier
+    - test
+
+- [x] Drönarens drivkraft
+    - test
+
+- [x] Belysning
+    - test
+
+
+## 7 | Integritet och känslig information
+
+## 8 | Försäkringar
+
+## 9 | Luftfartsskydd
