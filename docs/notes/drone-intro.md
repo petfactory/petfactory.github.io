@@ -230,9 +230,10 @@ Drönare i klasserna C1, C2 och C3 inom den öppna kategorin ska vara utrustande
     - Tjänst som löpande publicerar viktig information för piloter om risker som kan påverka flygsäkerheten längs rutt eller på plats
     - Är ett måste för alla piloter
     - Även för drönarpiloter
-    - NOTAM hitter du på luftfartsverkets [webbplats](https://aro.lfv.se/Links/Link/ShowFileList?type=AIS&path=%5Cpibsweden%5C&torlinkName=NOTAM%20Sweden){:target="_blank"}
-
-Du kan på sidan välja bland fem publikationer. ESAA FIR 99days ger den fullständiga informationsmängden.
+    - NOTAM hitter du hos [luftfartsverket](https://aro.lfv.se/Links/Link/ShowFileList?type=AIS&path=%5Cpibsweden%5C&torlinkName=NOTAM%20Sweden){:target="_blank"}
+        - Du kan på sidan välja bland fem publikationer. ESAA FIR 99days ger den fullständiga informationsmängden.
+        - Om ett område är markerat längs din planerade rutt och du har svårt att tyda informationen, kan du när som helst dygnet runt ringa Flight Planning Centre (FPC) så förklarar de för dig vad den innebär
+        - Du kan också ringa och berätta när och var du tänker flyga så kollar de NOTAM och AIP åt dig (se nedan) och du kan planera din rutt utifrån det.
 
 
 !!! success "AIP - Aeronautical Information Publication"
@@ -961,7 +962,7 @@ automatiskt, självständigt eller av fjärrpilot på distans. På engelska kall
 - **UAV** - Unmanned Aircraft Vehicle
 - **UAS** - Unmanned Aerial System
 
-vars förkortningar ofta dyker upp även i Sverige. Drönare finns i alla möjliga storlekar och kan väga alltifrån något hundratal gram till flera tusentals kilo. De kan också se ut på olika sätt, till exempel som den vanligare helikopterliknande multirotorn eller multikoptern, eller som den mer flygplansliknande drönaren med fasta vingar. 
+Dessa förkortningar dyker även upp i Sverige. Drönare finns i alla möjliga storlekar och kan väga alltifrån något hundratal gram till flera tusentals kilo. De kan också se ut på olika sätt, till exempel som den vanligare helikopterliknande multirotorn eller multikoptern, eller som den mer flygplansliknande drönaren med fasta vingar. 
 
 
 ### Viktiga funktooner
@@ -984,34 +985,68 @@ vars förkortningar ofta dyker upp även i Sverige. Drönare finns i alla möjli
     - [ ] Värt att nämna är att det finns hybridvarianter där drönare med fasta vingar har fler än två propellrar.
 
 - [x] Radiosändaren
-    - test
+    - [ ] Om kontakten från radiosändaren bryts, har många drönare som funktion att den efter några sekunder automatiskt flyger tillbaka till startpositionen och landar
+    - [ ] Antennernas placering är extra viktig vid flygning på längre avstånd.
+        - Det är antennernas långsidor som ska peka mot drönaren, inte spetsarna (Spetsarna saknar sändnings- och motaagningsförmåga)
+    - [ ] Radiosändaren kommunicerar med drönaren via radiovågor med olika frekvenser
+        - Drönaren och den tillhörande radiosändaren är normalt sammanlänkade via radiolänk på 2,4 GHz och 5,8 GHz.
+        - Ju högre frekvensen är, desto mer data kan skickas med kort fördröjning men med kortare räckvidd till följd
+        - En frekvens på 2,4 GHz är tillräcklig för att inom laglig effektgräns på 125 mW sända styrning och HD-video (1080i) på avstånd upp till 4 km. Längre räckvidd kan uppnås med högre uteffekt och rätt vinklade antenner
+        - GHz-bandet är känsligt för fysiska hinder och det är därför viktigt att säkerställa fri sikt mellan radiosändaren och drönaren. Det blir viktigare och känsligare vid längre avstånd.
+        - Radiosändaren behöver inte kommunicera med drönaren via GHz-frekvenser utan kan också i vissa fall göra det genom 4G-nät och en dator
 
 - [x] Fjärridentifiering
-    - test
+    - [ ] Fjärridentifiering är till för att till exempel polis och andra myndigheter ska kunna identifiera drönaren i luften och få information om bland annat dess märkning, registrering och operatör
 
 - [x] Följ-mig-läge 
-    - test
-
-- [x] RTH – drönaren flyger hem automatiskt
-    - test
+    - [ ] Följ-mig-läge är en funktion som finns hos multirotordrönare.
+        - Precis som det låter går funktionen ut på att drönaren automatiskt följer dig eller din radiosändare
+        - Om du har aktiverat det här läget, får din drönare inte befinna sig mer än 50 meter ifrån dig
 
 - [x] Geomedvetenhet
-    - test
+    - [ ] Alla typer av drönarsystem, förutom C0 och C4, i den öppna kategorin ska efter den 1 juli 2020 vara utrustade med en så kallad geomedvetenhet
+        - Denna funktion går ut på att du som fjärrpilot ska kunna få information om till exempel gränser i luftrummet i förhållande till din drönares position och höjd.
+        - Dessutom ska du kunna bli varnad vid eventuella överträdelser i luftrummet
+
+- [x] RTH – Return To Home
+    - [ ] Drönaren flyger hem automatiskt
+        - Om kommunikationen mellan drönaren och radiosändaren bryts under ett antal sekunder, kan RTH träda in som en skyddsåtgärd
+    - [ ] Drönaren kommer då att på angiven minimihöjd flyga hem till startposition och landa automatiskt
+        - Det är viktigt att förstå att höjden som drönaren flyger hem på alltid är i relation till sin startposition
+        - Drönaren förstår alltså inte den faktiska höjden från marken, så kollisioner med exempelvis master eller höga berg kan ske, om de är i vägen när drönaren är på väg tillbaka till startposition
+        - Vissa drönare har dock antikollisionssensorer som kan se och undvika hinder
+    - [ ] RTH-funktionen kan också aktiveras manuellt av dig som är fjärrpilot
+        - Det är bra om du skulle tappa orienteringen på drönaren eller om videolänken skulle brytas.
+        - Använd inte RTH vid problem med drönarens kompass
+
 
 - [x] Kompass
-    - test
+    - [ ] Att kalibrera den inbyggda kompassen (magnetometern) är absolut nödvändigt för att drönarsystemet ska känna av jordens magnetfält på platsen
+    - [ ] Om en kalibrering utförs felaktigt eller inte alls på en ny plats, kan det i värsta fall leda till haveri och att drönaren uppvisar oregelbundna och ofrivilliga rörelser
 
 - [x] Gimbal
-    - test
+    - [ ] En gimbal har till uppgift att motverka drönarens rörelser och vibrationer under flygning för en inbyggd eller externt monterad kamera
+        - Resultatet blir en horisontellt rak bild utan skakningar
+        - För att tekniken ska fungera är det viktigt att varje axel som ska balanseras är i absolut balans
 
 - [x] Hantering av drönarens batterier
-    - test
-
-- [x] Drönarens drivkraft
-    - test
+    - [ ] Alla C-märkta drönare, förutom C4, måste drivas av elektricitet och kräver därför batterier för att kunna flygas
+    - [ ] Bland annat kan kyla vara skadligt och de behöver därför förvaras så nära rumstemperatur som möjligt före varje flygning
+        - Ett bra tips är att ha dem i innerfickan på sin jacka
+        - Ett kallt batteri har sämre kapacitet och kan i värsta fall orsaka att drönarsystemet havererar
+        - Vissa drönare har inbyggt skydd som mäter batteriets temperatur och ger varningar och förslag till åtgärder vid exempelvis för kall drift
+        - Du ska ladda dina batterier enligt tillverkarens instruktioner i drönarens manual och sedan förvara dem svalt och aldrig i direkt solljus
+    - [ ] Många moderna drönare har ett så kallat "store mode"
+        - Det innebär att om flygning inte sker på 10 dagar eller mer efter laddning, kommer batteriet automatiskt att ladda ur till cirka 60 procent
+        - Detta görs för att skydda batterierna som kan ta skada om de ligger fullt laddade en längre tid.
+    - [ ] Om batterierna ligger förvarade med för låg laddning (under 10 procent), kan de ta permanent skada och vara farliga att flyga med. Ladda därför upp dem så snart som möjligt efter flygning
+    - [ ] Lipo-batterier (liumum polymer) är den vanligaste typen av batterier i drönarsystem
+        - Dessa kräver en speciell typ av brandsläckare
+        - Ta därför reda på vilka typer av batterier ditt system har och vilken typ av släckare det kräver
 
 - [x] Belysning
-    - test
+    - [ ] För att förbättra drönarens synlighet vid flygningar i mörker, och särskilt för att göra det möjligt för en person på marken att enkelt skilja drönaren från bemannade luftfartyg, måste den ha ett grönt blinkande ljus
+
 
 
 ## 7 | Integritet och känslig information
