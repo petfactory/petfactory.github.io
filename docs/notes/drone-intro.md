@@ -1153,6 +1153,68 @@ Det finns inte bara krav på skydd mot spridning av personuppgifter utan också 
 
 ## 8 | Försäkringar
 
+
+- Enligt EU-reglerna ska varje drönare som väger över 20 kilo vara försäkrad
+- Även om de flesta drönarna i den öppna kategorin inte omfattas av försäkringskraven är det en god idé att ändå vara försäkrad ifall olyckan skulle vara framme
+- Om du som fjärrpilot själv inte är ägare eller operatör är det bra att känna till om eller hur drönaren du ska flyga är försäkrad
+- Det är varje operatörs ansvar att försäkra sin eller sina drönare
+- Om en olycka sker vid olaglig eller otillåten flygning täcks den inte av någon försäkring
+
+
+!!! success "Två viktiga försäkringar" 
+
+    - [ ] Ansvarsförsäkring
+        - Krävs för drönare över 20 kilo
+        - Rekommendera för alla viktklasser
+    - [ ] Sakförsäkring
+        - Inget krav
+
+
+!!! note "Ansvarsförsäkring" 
+    - [ ] Även kallad tredje-mans-försäkring
+    - [ ] Täcker det man råkar orsaka andra
+    - [ ] Men inte det man orsakar sig själv
+    - [ ] Har man inte ansvarsförsäkring
+        - Kan bli tal om höga kostnader
+        - I vissa fall kan man bli tvungen att betala skadestånd
+    - [ ] Om man varit grovt oaktsam eller på något annat sätt brutit mot lagen gäller inte ansvarsförsäkringen
+
+!!! note "Sakförsäkring" 
+    - [ ] Även kallad kaskoförsäkring eller egendomsförsäkring
+    - [ ] Täcker det som tillhör dig
+        - Vid krasch, brand eller stöld kommer skadan med avdrag för eventuell självrisk att bli ersatt
+
+
+- [x] Vad ingår i din hemförsäkring
+    - [ ] Ofta ingår både sak- och ansvarsförsäkring
+        - Dock kan många hemförsäkringar ha begränsningar gälland flygning med drönare
+        - I vissa fall ingår det inte alls
+    - [ ] Ta därför reda på vad som gäller i din försäkring
+
+
+- [x] Om du flyger på uppdrag för någon annan
+    - [ ] Om du flyger kommersiellt gäller oftast inte hemförsäkringen
+    - [ ] Företagare behöver därför ha en företagsförsäkring
+        - Finns även här ofta begränsningar för flygning med drönare
+    - [ ] Ta därför reda på vad som gäller i din försäkring
+
+
+!!! note "Transportförsäkring" 
+    - [ ] Om du behöver frakta din drönare med ett transportbolag och den skadas:
+        - Får du vanligtvis bara ersättning som motsvarar vikten på drönaren
+        - Innebär för det mesta en stor förlust
+    - [ ] Därför kan det vara bra att teckna en transportförsäkring
+        - Tecknas hos via vissa transportbolag direkt eller hos olika försäkringsbolag
+    - [ ] Många företagsförsäkringar skydd mot transportskador
+        - Vilket är värt att tänkapå innan du tecknar en sådan försäkring
+
+    
+!!! info "Utomlands" 
+
+    - [ ] Kontrollera var din försäkring gäller geografiskt
+    - [ ] Ta reda på om det finns några nationella regler där du ska flyga
+    - [ ] Kontrollera att din försäkring täcker eventuella skador i utlandet
+
 ## 9 | Luftfartsskydd
 
 - [x] Luftfartsskyddet
