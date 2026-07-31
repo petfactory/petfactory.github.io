@@ -7,6 +7,8 @@ tags:
     - Drone
 ---
 
+[Drönarsidan](https://dronarsidan.transportstyrelsen.se/){:target="_blank"}
+
 ##  1 | Flygsäkerhet
 
 - [x] Ta hänsyn till miljön
