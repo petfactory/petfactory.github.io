@@ -15,14 +15,16 @@ tags:
 - [x] Frisk och fokuserad
 
 - [x] SA - Situation Awareness
-    * Kontroll över hela situationen.
-    * Flygningen, drönaren, omgivningen, flygområdet, andra flygare, väder, drönarens samt pilotens begränsningar mm.
+    - Kontroll över hela situationen.
+    - Flygningen, drönaren, omgivningen, flygområdet, andra flygare, väder, drönarens samt pilotens begränsningar mm.
 
 - [x] VLOS - Visual Line Of Sight
     - Kunna se drönaren samt hålla säkert avstånd till människa, djur, byggnader, fordon andra luftfartyg.
     - Inte flyga högre än 120 m
 
-- [x] Ej farliga ämnen, gaser, vätskor som last
+- [x] Farligt gods
+    - Det är inte tillåtet att flyga med farligt gods utan tillstånd
+    - Ex farliga ämnen, gaser, vätskor som last
 
 
 
@@ -149,14 +151,20 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 
 ### Drönarkartan
 
-!!! info "Du som drönarpilot är skyldig att ta hänsyn till:"
+!!! info "Drönarkartan"
 
-- [x] Geografiska UAS-zoner
-- [x] Restriktionsområden - R
-- [x] Farliga områden - D
-- [x] Skyddsobjekt
+    - En specialgjord karta för drönarpiloter som ger dig aktuell status för det svenska luftrummet
+        - Hjälper dig att avgöra var du kan flyga utan att störa ordinarie lufttrafik
+        - Luftfartsverkets [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}
 
-Innan du flyger och säkerställa att du vet var dessa områden finns, vilka eventuella begränsningar som gäller samt följa dessa. På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"} finns information om dessa områden
+- [ ] Du som drönarpilot är skyldig att ta hänsyn till:
+
+    - [x] Geografiska UAS-zoner
+    - [x] Restriktionsområden - R
+    - [x] Farliga områden - D
+    - [x] Skyddsobjekt
+
+Detta ska ske innan du flyger.Säkerställ att du vet var dessa områden finns, vilka eventuella begränsningar som gäller samt följa dessa.
 
 
 ### U-Space
@@ -1067,6 +1075,7 @@ spridningstillstånd.
         - Säkerställa att uppgifter om personer används på rätt sätt, och ej missbrukas
         - Personuppgifterna ska vara korrekta och raderas så snart de inte behövs längre
         - Uppgifter bara får samlas in för specifika, särskilt angivna och berätigade ändamål
+    - [ ] Integritetsskyddsmyndigheten är den myndighet som har tillsynsansvar och granskar att GDPR följs
         - Info om GDPR hittar du hos [integritetsskyddsmyndighetens](https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/grundlaggande-principer){:target="_blank"}
  
 - [x] Personuppgifter
@@ -1227,5 +1236,7 @@ Det finns inte bara krav på skydd mot spridning av personuppgifter utan också 
         - Men däremot måste du som flyger drönare känna till vad det innebär
     - [ ] I Sverige ansvarar transportstyrelsen för att utveckla Sveriges nationella säkerhetsprogram (NASP)
         - Även om programmet innehåller Sveriges nationella krav, styrs de i hög grad av internationella regler och gemensamma bestämmelser inom EU
+    - [ ]  Ser olika ut i olika länder
+        - Eftersom varje land har sin egen myndighet som ansvarar för sitt luftfartsskydd kan kraven och reglerna se olika ut beroende på var man befinner sig
 
     
