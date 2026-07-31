@@ -1,7 +1,7 @@
 ---
 title: "Drone - Intro"
 date: 2026-07-27T00:00:00+01:00
-description: "An overview of drone flight training and regulations in Sweden. In swedish :)"
+description: "An overview of drone flight regulations in Sweden. Mostly in swedish :)"
 template: "notes.html"
 tags:
     - Drone
@@ -38,8 +38,8 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
 
 **Kontrollerat luftrum - C** 
 
-- CTR - Control Zone. Finns runt flygplatser och övervakas av en flygtrafikledning.  
-- TIZ - Traffic Information Zone. Motsvarande luftrum för okontrollerade flygplatser.  
+- CTR - Control Zone. Finns runt flygplatser och övervakas av en flygtrafikledning  
+- TIZ - Traffic Information Zone. Motsvarande luftrum för okontrollerade flygplatser  
 
 !!! danger "CTR och TIZ"
 
@@ -48,14 +48,16 @@ På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du s
     - På höjder mindre än 50 m från marken och mer än 5 km från flygplatsens banor krävs inget särskilt tillstånd för drönare med vikt upp till 7 kg och hastighet under 90 km/h.
     - På LFV:s [drönarkarta](https://dronechart.lfv.se/){:target="_blank"}  kan du se vilka geografiska områden du får flyga i.
 
-!!! danger "Helikopterflygplats & ATZ - Aerodrome Traffic Zone"
+- ATZ - Aerodrome Traffic Zone.  
+    - Aerodrome - Any basic site intended for plane or helicopter takeoff and landing, with or without extra facilities  
+
+!!! danger "Helikopterflygplats & ATZ"
 
     - Helikopterflygplatser finns exempelvis vid sjukhus.
     - Det finns ofta ett riskområde på 1 km radie runt helikopterflygplatsen
         - Kontakta flygplatsen för samråd innan du flyger inom 1 km från helikopterflygplatsen.
         - Telefonnummer till helikopterflygplatserna finns i [AIP GEN 3.3](https://aro.lfv.se/Editorial/View/IAIP?folderId=6){:target="_blank"} 
 
- Aerodrome: Any basic site intended for plane or helicopter takeoff and landing, with or without extra facilities.
 
 **Okontrollerat luftrum - G** 
 
@@ -965,7 +967,7 @@ automatiskt, självständigt eller av fjärrpilot på distans. På engelska kall
 Dessa förkortningar dyker även upp i Sverige. Drönare finns i alla möjliga storlekar och kan väga alltifrån något hundratal gram till flera tusentals kilo. De kan också se ut på olika sätt, till exempel som den vanligare helikopterliknande multirotorn eller multikoptern, eller som den mer flygplansliknande drönaren med fasta vingar. 
 
 
-### Viktiga funktooner
+### Viktiga funktioner
 
 - [x] Drönare med propellrar
     - [ ] I normalfall har drönaren fyra armar och fyra propellrar:
