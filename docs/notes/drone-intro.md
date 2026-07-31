@@ -24,7 +24,7 @@ tags:
 
 
 
-## 2 | Luftrummet
+## 2 | Luftrumsrestriktioner
 
 I Sverige finns två klasser av luftrum:
 
@@ -1051,6 +1051,115 @@ Dessa förkortningar dyker även upp i Sverige. Drönare finns i alla möjliga s
 
 ## 7 | Integritet och känslig information
 
+Man får inte fotografera, övervaka eller sprida vad som helst och i vissa fall behövs
+spridningstillstånd.
+
+### GDPR
+
+!!! info "Dataskyddsförordningen - GDPR"
+    - [ ] GDPR gäller bara om man filmar identifierbara personer eller andra personuppgifter
+    - [ ] Gemensam förordning för alla inom EU
+        - Skydda personliga integritet från att kränkas
+        - Säkerställa att uppgifter om personer används på rätt sätt, och ej missbrukas
+        - Personuppgifterna ska vara korrekta och raderas så snart de inte behövs längre
+        - Uppgifter bara får samlas in för specifika, särskilt angivna och berätigade ändamål
+        - Info om GDPR hittar du hos [integritetsskyddsmyndighetens](https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/grundlaggande-principer){:target="_blank"}
+ 
+- [x] Personuppgifter
+    - [ ] Allt som kan kopplas till en fysisk person som är i livet
+        - Namn
+        - Adress
+        - Personnummer
+        - E-postadresser
+        - Telefonnummer
+        - Registreringsnummermen
+    - [ ] Karaktärsbeskrivningar
+        - Som gör att en person går att identifiera
+        - Bild
+        - Inspelning av en röst
+
+!!! Warning "Känsligare uppgifter"
+    - [ ] Har ett starkare skydd och får bara samlas in och användas om den berörda personen godkänt det, eller om landets lag tillåter det, ex:
+        - Som rör en persons hälsa
+        - Etniska ursprung
+        - Politiska åsikt
+        - Sexuella läggning 
+
+ - [ ] För att undvika personuppgiftsbehandling:
+    - [x] Foto eller filma på tillräckligt hög höjd så att personer på marken inte går att identifiera
+    - [x] Ev avstå från att ta bilder eller video med kameran när du är på platser där det finns många människor
+    - [x] Flyga under tider på dygnet när färre människor är ute
+    - [x] Undvika att flyga i områden där många befinner sig
+
+!!! info "kamerabevakning"
+    -  [ ] Bildupptagning med drönare kan utgöra kamerabevakning
+        - Om personer varaktigt eller upprepat finns med och är identifierbara
+    - [ ] Privatpersoner har normalt rätt att kamerabevaka:
+        - Sin egen bostad och tomt, här ingår exempelvis:
+            - Inhägnad trädgård
+            - Andra privata byggnader som garage eller förråd
+        - Det är dock alltid viktigt att informera om att kamerabevakning sker
+    - [ ] Kamerans upptagningsområde är det som avgör om en kamerabevakning är tillåten
+        - Det är vad som fångas på film och inte syftet som avgör om bevakningen är laglig
+        - Ej filmar andras trädgårdar, trottoaren eller vägen utanför bostaden
+        - Ej någon annan plats där allmänheten kan röra sig
+        - Man får inte kamerabevaka byggnader, bilar eller båtar som används i yrkes- eller affärsverksamhet
+
+### Geografisk information
+
+Det finns inte bara krav på skydd mot spridning av personuppgifter utan också på skydd mot spridning av **geografisk information**. För att inte riskera att sprida skyddade uppgifter måste du ta hänsyn till att vissa platser, byggnader och liknande skyddas av **avbildningsförbud**.
+
+!!! Warning "Avbildningsförbud"
+    - [ ] Förbjudet att avbilda
+        - Företag
+        - Skyddsobjekt
+        - Privata områden där avbildningsförbud råder
+        - Ofta finns skyltar som informerar om avbildningsförbud
+    - [ ] Gäller även:
+        - Laserskanner
+        - Värmekamera
+        - Radar 
+
+
+!!! info "Skog"
+
+    Det kan vara bra att tänka på att skog ofta är privatägd. Om du själv äger skogen du tänkt
+    avbilda får du sprida materialet som du vill – så länge det inte innehåller himmel, horisont, byggnader eller andra konstruktioner som inte hör till skogsbruket
+
+- [x] Spridningstillstånd
+
+    - [ ] Om du ska publicera material du filmat eller fotograferat under en flygning ex:
+        - sociala medier, på hemsidor eller liknande,
+    - [ ] Kan du behöva ett spridningstillstånd:
+        - [Lantmäteriet](https://www.lantmateriet.se/spridningstillstand/){:target="_blank"}
+        - [Sjöfartsverket](https://www.sjofartsverket.se/sv/tjanster/sjokortsprodukter/digital-data/djupdata---detaljerad-information/spridningstillstand/){:target="_blank"}
+    - [ ] Om du av misstag skulle sprida material med känslig information, riskerar du straff:
+        -  Bryter du mot lagen om skydd för geografisk information kan du få böter eller fängelse i upp till ett år
+        - Tänk på att du inte kan lagra material som är konfidentiellt på molntjänster, eftersom företagen som äger dessa kan ha åtkomst till innehållet. Då klassas det som spridning
+
+
+!!! success "Vad får spridas utan tillstånd?"
+
+    - [ ] Det är i regel inte tillåtet att sprida bilder eller filmer. Dock finns det speciella undantag
+        - Generellt kan man säga att om horisonten inte finns med i bilden eller på filmen så kan möjligheten finnas att använda något av undantagen för spridning
+        - Undantag finns att läsa mer om hos [lantmäteriet](https://www.lantmateriet.se/sv/spridningstillstand/undantag/){:target="_blank"}
+    - [ ] Områden som du får avbilda för att sedan sprida utan tillstånd:
+        - Offentliga platser
+        - Offentliga tillställningar
+        - Bostadsbyggnader, åkermark, golfbanor och byggarbetsplatser
+    - [ ] Men glöm inte att förhålla dig till det som står i GDPR om personuppgiftsbehandling
+
 ## 8 | Försäkringar
 
 ## 9 | Luftfartsskydd
+
+- [x] Luftfartsskyddet
+    - [ ] Finns för att motverka brottslighet riktad mot flyget
+        - Passagerare, besättning, markpersonal, allmänhet och egendom ska skyddas mot ex
+        - Sabotage, kapningar eller gisslantagningar
+    - [ ] Drönarflygning påverkas inte i dagsläget av luftfartsskyddet
+        - Men däremot måste du som flyger drönare känna till vad det innebär
+    - [ ] I Sverige ansvarar transportstyrelsen för att utveckla Sveriges nationella säkerhetsprogram (NASP)
+        - Även om programmet innehåller Sveriges nationella krav, styrs de i hög grad av internationella regler och gemensamma bestämmelser inom EU
+
+    
