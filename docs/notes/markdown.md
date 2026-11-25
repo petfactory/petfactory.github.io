@@ -114,8 +114,8 @@ Zensical supports standard PyMdown admonitions as well as GitHub-Flavored Markdo
 !!! note "Standard Admonition"
     This is a standard note callout box. You can use types like `info`, `warning`, `danger`, or `success`.
 
-> [!TIP]
-> This is a GFM-style tip block, fully supported natively within Zensical workflows.
+<!-- > [!TIP] -->
+<!-- > This is a GFM-style tip block, fully supported natively within Zensical workflows. -->
 
 ### Collapsible Blocks
 Hide deeply technical sections or FAQs behind an expandable dropdown interface:
