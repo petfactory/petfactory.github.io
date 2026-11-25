@@ -49,8 +49,11 @@ nav = [
   { "Work" = "work.md" },
   { "CV" = "cv.md" },
   { "Notes" = [
-    { "Misc" = [
+    { "Gaussian Splats" = [
       { "Drone" = "notes/drone-intro.md" },
+    ]},
+    { "Unreal" = [
+      { "Megaplants" = "notes/unreal-megaplants.md" },
     ]},
   ]}
 ]
