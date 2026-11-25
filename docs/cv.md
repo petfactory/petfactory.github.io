@@ -115,8 +115,7 @@ cv_data:
 - date: "2013-12-01"
   client_name: "Atlas Copco Rock Drills"
   title: "Interactive mockup of LHD Fleet"
-  info: "Interactive mockup of the LHD Fleet and System -
-  tactical visualization. The mockup was written in AS3"
+  info: "Interactive mockup of the LHD Fleet and System - tactical visualization. The mockup was written in AS3"
 
 - date: "2013-07-01"
   client_name: "Atlas Copco Rock Drills"
