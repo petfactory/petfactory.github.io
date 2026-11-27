@@ -53,6 +53,7 @@ nav = [
       { "Drone" = "notes/drone-intro.md" },
     ]},
     { "Unreal" = [
+      { "PCG" = "notes/unreal-pcg.md" },
       { "Megaplants" = "notes/unreal-megaplants.md" },
     ]},
   ]}
